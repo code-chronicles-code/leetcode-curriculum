@@ -86,3 +86,53 @@ It's also useful to have a specific npm/yarn script under scripts in `package.js
   }
 }
 ```
+
+## Side Quest: Shell greetings!
+Are you lonely? Craving companionship? Looking for a relationship with your laptop? Look no further, because you are in the right place.
+
+~/.zprofile is our startup/shutdown file for the zsh shell.
+There's also a cousin, ~/.zshrc, which is an interactive file read while our shell is running. This config file is written in a scripting language specific to the shell, which in this case is **Zsh**. Feel free to take a look at the ZSH [documentation](https://zsh.sourceforge.io/Doc/Release/Files.html#Files) for more info.
+
+To cd to home directory and open the zprofile file, run:
+```
+cd ~ && open .zprofile
+```
+
+Next, you have the option to do what I (ethan) did and use chat GPT to write a script. Here's an example:
+`write me a script for my zprofile that greets me according to the time of day`      
+Which would give:
+
+```
+#!/bin/zsh
+
+hour=$(date +%H)
+greeting=""
+
+if (( hour >= 5 && hour < 12 )); then
+    greeting="Good morning"
+elif (( hour >= 12 && hour < 18 )); then
+    greeting="Good afternoon"
+else
+    greeting="Good evening"
+fi
+
+echo "$greeting! Welcome back!"
+```
+
+There's no limit to how much you can customize your .zprofile! 
+
+In case you're curious what *my* .zprofile looks like:
+```
+current_hour=$(date +%H)
+
+if ((current_hour >= 2 && current_hour < 5 )); then
+    echo "Ethan, venture into the depths of the pre-dawn hours with caution, for the productivity that dwells within holds a power both intoxicating and perilous. It is a path reserved for the bold, the restless, and the mad."
+elif (( current_hour >= 5 && current_hour < 12 )); then	
+    echo "Good Morning, Ethan"
+elif (( current_hour >= 12 && current_hour < 17 )); then
+    echo "Good Afternoon, Ethan"
+elif ((current_hour >= 17 && current_hour < 24)) || ((current_hour >= 0 && current_hour < 2)); then
+    echo "Good Evening, Ethan"
+fi
+```
+
