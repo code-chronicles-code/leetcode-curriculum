@@ -34,6 +34,14 @@ If any installation step failed you'll see `______ not found`. If you don't see 
 
 ### Side Quest: bashrc/zshrc
 
+## Main Quest: Setup of package.json
+
+Here, we're going to want to create a `package.json` file for yarn. This file will store two main things for our project: a list of libraries (packages) that you can used in your code, and a list of "scripts" to simplify any long, repetitive commands you might come across.
+
+First off, we're going to want to create a new folder to store our project - you can put this wherever you want and give it whatever name you want, just so long as you're not going to lose it. With your project folder created, you'll then want to navigate to it in your terminal (recall `cd` command) - make sure you don't skip this step, as accidentally creating your project in the wrong directory has been known to cause problems.
+
+Once you're in this folder, you can tell yarn to set it up as a project by simply entering the command `yarn init`. This will prompt you to enter some info about your project, and for the purposes of learning you can answer just about anything here - when complete, it will create a new `package.json` file in your current (project) folder, concluding its basic setup.
+
 ## Main Quest: Hello World via React
 
 ## Prettier
