@@ -136,3 +136,60 @@ elif ((current_hour >= 17 && current_hour < 24)) || ((current_hour >= 0 && curre
 fi
 ```
 
+## Main Quest: Add name to Authors via pull request. 
+
+First, we need to install GitHub CLI with:
+
+```sh
+apt-get install gh
+sudo apt-get install gh
+```
+Next, we need to authenticate with: 
+```sh
+gh auth login
+```
+After authenticating and selecting project to work on with :
+```sh
+gh repo clone code-chronicles-code/webdev
+```
+We need to make a new branch with the command 
+```sh
+git branch name/add-to-author
+```
+This will add a new branch and we can switch to the new branch with command 
+```sh
+git checkout name/add-to-author
+```
+Before committing to changes we need to add signatures for changes with commands:
+```sh
+git config --global user.name
+git config --global user.email
+```
+Now we can edit with and enter name in alphabetical order:
+```sh 
+code AUTHORS
+```
+We need to do
+```sh
+git add .
+``` 
+We commit file with command
+```sh 
+git commit
+``` 
+Next we execute the command:
+```sh 
+gh pr create
+``` 
+Now we switch to the main branch
+```sh  
+git checkout main
+```  
+Delete old branch 
+```sh  
+git branch -D name/add-to-author
+```  
+Finally, we run and wait for review.
+```sh  
+git pull 
+```
