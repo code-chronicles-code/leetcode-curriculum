@@ -48,6 +48,14 @@ which yarn
 
 If any installation step failed you'll see `______ not found`. If you don't see that then you're ready to continue on your quest, fellow coder.
 
+The next step would be to add express to your project, which can be done using a simple yarn command
+
+```
+yarn add express
+```
+
+If you open your project file in an editor (we at code chronicles like using VS code because it's good), you can see a console.log() statement which you can edit as per your liking.
+
 ### Side Quest: bashrc/zshrc
 
 ## Main Quest: Setup of package.json
@@ -58,7 +66,39 @@ First off, we're going to want to create a new folder to store our project - you
 
 Once you're in this folder, you can tell yarn to set it up as a project by simply entering the command `yarn init`. This will prompt you to enter some info about your project, and for the purposes of learning you can answer just about anything here - when complete, it will create a new `package.json` file in your current (project) folder, concluding its basic setup.
 
-## Main Quest: Hello World in Express
+## Main Quest: Running the project
+
+### Side Quest: Running it using the node command
+
+Once the package.json file is done with the initial setup, we can now run the our project and see how it looks on the browser.
+
+To run the project, go into your terminal and type the following command,
+
+```
+node main.js
+```
+
+### Side Quest: Running it using the scripts
+
+The above commad for the future steps can become difficult to use and redundant in the future. Keeping our goals in mind, running our project using this method will make it easier.
+
+In your package.json, we will be editing the scripts as follows:
+
+```json
+{
+  "scripts": {
+    "start": "node main.js"
+  }
+}
+```
+
+Once this has been added in your package.json, save all the changes and type the following command in your terminal.
+
+```
+yarn start
+```
+
+This might look like an extra step now but once we start adding & building more stuff this would come handy and would make the whole process a lot easier.
 
 ## Main Quest: Hello World via React
 
@@ -100,6 +140,7 @@ It's also useful to have a specific npm/yarn script under scripts in `package.js
 ```json
 {
   "scripts": {
+    "start": "node main.js",
     "format": "prettier --write ."
   }
 }
@@ -119,6 +160,7 @@ cd ~ && open .zprofile
 ```
 
 Next, you have the option to do what I (ethan) did and use chat GPT to write a script. Here's an example:
+`write me a script for my zprofile that greets me according to the time of day`  
 `write me a script for my zprofile that greets me according to the time of day`  
 Which would give:
 
@@ -140,6 +182,9 @@ echo "$greeting! Welcome back!"
 ```
 
 There's no limit to how much you can customize your .zprofile!
+There's no limit to how much you can customize your .zprofile!
+
+In case you're curious what _my_ .zprofile looks like:
 
 In case you're curious what _my_ .zprofile looks like:
 
@@ -148,6 +193,7 @@ current_hour=$(date +%H)
 
 if ((current_hour >= 2 && current_hour < 5 )); then
     echo "Ethan, venture into the depths of the pre-dawn hours with caution, for the productivity that dwells within holds a power both intoxicating and perilous. It is a path reserved for the bold, the restless, and the mad."
+elif (( current_hour >= 5 && current_hour < 12 )); then
 elif (( current_hour >= 5 && current_hour < 12 )); then
     echo "Good Morning, Ethan"
 elif (( current_hour >= 12 && current_hour < 17 )); then
