@@ -287,8 +287,6 @@ git pull
 
 ## Setting up Webpack
 
-- add webpack
-
 ### Adding Webpack
 
 What is webpack? It is designed primarily for JavaScript, but if the appropriate loaders are included, it can also transform front-end assets like HTML, CSS, and images. When given dependencies-containing modules, Webpack creates static assets to represent those modules.
