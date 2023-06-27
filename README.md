@@ -284,3 +284,81 @@ Finally, we run and wait for review.
 ```sh
 git pull
 ```
+
+## Setting up Webpack
+
+- add webpack
+
+### Adding Webpack
+
+What is webpack? It is designed primarily for JavaScript, but if the appropriate loaders are included, it can also transform front-end assets like HTML, CSS, and images. When given dependencies-containing modules, Webpack creates static assets to represent those modules.
+
+Read more about webpack here, https://webpack.js.org/
+
+Basically, in our project we use webpack, so that we don't need to kill and restart the server everytime we make the changes in the client side.
+
+## Creating the webpack.config.js file
+
+Create a webpack.config.js file in the root directory of your project folder and write the code mentioned below.
+
+```
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+};
+```
+
+### Setting the location of the packages in webpack config file
+
+When you add the below code in you file make sure you update the the path of "entry" & "path" in the output with client.tsx and client.js in the build folder.
+
+```
+const path = require('path');
+
+module.exports = {
+  entry: "./src/client.tsx",
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "client.js",
+  },
+};
+```
+
+### Runing the project with webpack
+
+To run your project with webpack, just type `yarn webpack --mode development --watch` in a seperate terminal and keep it running till the time you want to.
+
+After this, in a different terminal use the regular `yarn start` command to run your project.
+
+NOTE: Although any changes made to the server side code, you will have to kill the running webpack code and redo the whole process.
+
+### Make a script in your package.json
+
+Making a script would be helpful for running the all the commands together and we recommed to edit it something like the code provided below.
+
+```
+"scripts": {
+    "start": "ts-node src/main.tsx",
+    "build": "webpack --mode development --watch",
+    "format": "prettier --write .",
+    "start-full": "yarn build && yarn start"
+  }
+```
+
+### Run it all!
+
+To run in all just say `yarn start-full` in your terminal. Once you do check your local host, now any changes that you make to your client side code you can see those changes being updated as soon as you reload the browser.
