@@ -40,6 +40,7 @@ These problems or their problem tag might look or say that it's not an "easy" pr
 
 14. https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
 
+15. https://leetcode.com/problems/ransom-note/
 ## Difficulty Level : Medium
 
 1. https://leetcode.com/problems/add-two-numbers/
