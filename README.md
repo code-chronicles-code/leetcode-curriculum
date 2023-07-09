@@ -41,6 +41,15 @@ These problems or their problem tag might look or say that it's not an "easy" pr
 14. https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
 
 15. https://leetcode.com/problems/ransom-note/
+
+16. https://leetcode.com/problems/to-lower-case/
+
+17. https://leetcode.com/problems/defanging-an-ip-address/
+
+18. https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+
+19. https://leetcode.com/problems/number-of-good-pairs/
+
 ## Difficulty Level : Medium
 
 1. https://leetcode.com/problems/add-two-numbers/
