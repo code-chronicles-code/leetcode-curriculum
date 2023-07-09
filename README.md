@@ -41,6 +41,11 @@ These problems or their problem tag might look or say that it's not an "easy" pr
 14. https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
 
 15. https://leetcode.com/problems/ransom-note/
+
+16. https://leetcode.com/problems/fizz-buzz/
+
+17. https://leetcode.com/problems/squares-of-a-sorted-array/
+
 ## Difficulty Level : Medium
 
 1. https://leetcode.com/problems/add-two-numbers/
@@ -54,5 +59,7 @@ These problems or their problem tag might look or say that it's not an "easy" pr
 5. https://leetcode.com/problems/left-and-right-sum-differences/
 
 6. https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/
+
+7. https://leetcode.com/problems/squares-of-a-sorted-array/
 
 The above will list will be updated every week.
