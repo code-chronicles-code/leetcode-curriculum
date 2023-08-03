@@ -4,7 +4,7 @@
 |[Smallest Even Multiple](https://leetcode.com/problems/smallest-even-multiple/)|_TODO: add_|✅|✅|
 |[Maximum Number of Words Found in Sentences](https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/)|_TODO: add_|✅|✅|
 |[Convert the Temperature](https://leetcode.com/problems/convert-the-temperature/)|_TODO: add_|✅||
-|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|_TODO: add_|✅||
+|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|_TODO: add_|✅|✅|
 |[Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)|_TODO: add_|✅||
 |[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|_TODO: add_|✅||
 |[Find the Difference](https://leetcode.com/problems/find-the-difference/)|_TODO: add_|✅||
@@ -26,3 +26,5 @@
 |[Two Sum](https://leetcode.com/problems/two-sum/)|_TODO: add_|✅||
 |[Truncate Sentence](https://leetcode.com/problems/truncate-sentence/)|_TODO: add_|✅||
 |[Check If Two String Arrays are Equivalent](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/)|_TODO: add_|✅||
+|[Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)|_TODO: add_|✅||
+|[Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/)|_TODO: add_|✅|✅|
