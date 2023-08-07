@@ -10,7 +10,7 @@
 |[Find the Difference](https://leetcode.com/problems/find-the-difference/)|_TODO: add_|✅|✅|
 |[Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)|_TODO: add_|✅|✅|
 |[Left and Right Sum Differences](https://leetcode.com/problems/left-and-right-sum-differences/)|_TODO: add_|✅|✅|
-|[Find First Palindromic String in the Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)|_TODO: add_|✅||
+|[Find First Palindromic String in the Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)|_TODO: add_|✅|✅|
 |[Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)|_TODO: add_|✅||
 |[Count the Digits That Divide a Number](https://leetcode.com/problems/count-the-digits-that-divide-a-number/)|_TODO: add_|✅||
 |[Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address/)|_TODO: add_|✅||
