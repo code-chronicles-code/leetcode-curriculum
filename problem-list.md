@@ -28,3 +28,7 @@
 |[Check If Two String Arrays are Equivalent](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/)|_TODO: add_|✅||
 |[Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)|_TODO: add_|✅||
 |[Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/)|_TODO: add_|✅|✅|
+|[Account Balance After Rounded Purchase](https://leetcode.com/problems/account-balance-after-rounded-purchase/)|_TODO: add_|✅|✅|
+|[Number of Common Factors](https://leetcode.com/problems/number-of-common-factors/)|_TODO: add_|✅||
+|[Sum of Squares of Special Elements](https://leetcode.com/problems/sum-of-squares-of-special-elements/)|_TODO: add_|✅||
+|[Remove Trailing Zeros From a String](https://leetcode.com/problems/remove-trailing-zeros-from-a-string/)|_TODO: add_|✅||
