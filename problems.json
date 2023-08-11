@@ -2798,5 +2798,705 @@
     "name": "Remove One Element to Make the Array Strictly Increasing",
     "difficulty": "Easy",
     "isPremium": false
+  },
+  {
+    "code": "maximum-product-difference-between-two-pairs",
+    "problemNumber": 1913,
+    "name": "Maximum Product Difference Between Two Pairs",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "build-array-from-permutation",
+    "problemNumber": 1920,
+    "name": "Build Array from Permutation",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-square-sum-triples",
+    "problemNumber": 1925,
+    "name": "Count Square Sum Triples",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "concatenation-of-array",
+    "problemNumber": 1929,
+    "name": "Concatenation of Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-string-is-decomposable-into-value-equal-substrings",
+    "problemNumber": 1933,
+    "name": "Check if String Is Decomposable Into Value-Equal Substrings",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "maximum-number-of-words-you-can-type",
+    "problemNumber": 1935,
+    "name": "Maximum Number of Words You Can Type",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-all-characters-have-equal-number-of-occurrences",
+    "problemNumber": 1941,
+    "name": "Check if All Characters Have Equal Number of Occurrences",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-digits-of-string-after-convert",
+    "problemNumber": 1945,
+    "name": "Sum of Digits of String After Convert",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "three-divisors",
+    "problemNumber": 1952,
+    "name": "Three Divisors",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "delete-characters-to-make-fancy-string",
+    "problemNumber": 1957,
+    "name": "Delete Characters to Make Fancy String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-string-is-a-prefix-of-array",
+    "problemNumber": 1961,
+    "name": "Check If String Is a Prefix of Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-strings-that-appear-as-substrings-in-word",
+    "problemNumber": 1967,
+    "name": "Number of Strings That Appear as Substrings in Word",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-if-path-exists-in-graph",
+    "problemNumber": 1971,
+    "name": "Find if Path Exists in Graph",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-time-to-type-word-using-special-typewriter",
+    "problemNumber": 1974,
+    "name": "Minimum Time to Type Word Using Special Typewriter",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-greatest-common-divisor-of-array",
+    "problemNumber": 1979,
+    "name": "Find Greatest Common Divisor of Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-difference-between-highest-and-lowest-of-k-scores",
+    "problemNumber": 1984,
+    "name": "Minimum Difference Between Highest and Lowest of K Scores",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-middle-index-in-array",
+    "problemNumber": 1991,
+    "name": "Find the Middle Index in Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-special-quadruplets",
+    "problemNumber": 1995,
+    "name": "Count Special Quadruplets",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "reverse-prefix-of-word",
+    "problemNumber": 2000,
+    "name": "Reverse Prefix of Word",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-number-of-pairs-with-absolute-difference-k",
+    "problemNumber": 2006,
+    "name": "Count Number of Pairs With Absolute Difference K",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "final-value-of-variable-after-performing-operations",
+    "problemNumber": 2011,
+    "name": "Final Value of Variable After Performing Operations",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-difference-between-increasing-elements",
+    "problemNumber": 2016,
+    "name": "Maximum Difference Between Increasing Elements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "convert-1d-array-into-2d-array",
+    "problemNumber": 2022,
+    "name": "Convert 1D Array Into 2D Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-moves-to-convert-string",
+    "problemNumber": 2027,
+    "name": "Minimum Moves to Convert String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "two-out-of-three",
+    "problemNumber": 2032,
+    "name": "Two Out of Three",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-number-of-moves-to-seat-everyone",
+    "problemNumber": 2037,
+    "name": "Minimum Number of Moves to Seat Everyone",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-numbers-are-ascending-in-a-sentence",
+    "problemNumber": 2042,
+    "name": "Check if Numbers Are Ascending in a Sentence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-valid-words-in-a-sentence",
+    "problemNumber": 2047,
+    "name": "Number of Valid Words in a Sentence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "kth-distinct-string-in-an-array",
+    "problemNumber": 2053,
+    "name": "Kth Distinct String in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "smallest-index-with-equal-value",
+    "problemNumber": 2057,
+    "name": "Smallest Index With Equal Value",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-vowel-substrings-of-a-string",
+    "problemNumber": 2062,
+    "name": "Count Vowel Substrings of a String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-whether-two-strings-are-almost-equivalent",
+    "problemNumber": 2068,
+    "name": "Check Whether Two Strings are Almost Equivalent",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "time-needed-to-buy-tickets",
+    "problemNumber": 2073,
+    "name": "Time Needed to Buy Tickets",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "two-furthest-houses-with-different-colors",
+    "problemNumber": 2078,
+    "name": "Two Furthest Houses With Different Colors",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-common-words-with-one-occurrence",
+    "problemNumber": 2085,
+    "name": "Count Common Words With One Occurrence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-target-indices-after-sorting-array",
+    "problemNumber": 2089,
+    "name": "Find Target Indices After Sorting Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "finding-3-digit-even-numbers",
+    "problemNumber": 2094,
+    "name": "Finding 3-Digit Even Numbers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-subsequence-of-length-k-with-the-largest-sum",
+    "problemNumber": 2099,
+    "name": "Find Subsequence of Length K With the Largest Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "rings-and-rods",
+    "problemNumber": 2103,
+    "name": "Rings and Rods",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-first-palindromic-string-in-the-array",
+    "problemNumber": 2108,
+    "name": "Find First Palindromic String in the Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-number-of-words-found-in-sentences",
+    "problemNumber": 2114,
+    "name": "Maximum Number of Words Found in Sentences",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "a-number-after-a-double-reversal",
+    "problemNumber": 2119,
+    "name": "A Number After a Double Reversal",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-all-as-appears-before-all-bs",
+    "problemNumber": 2124,
+    "name": "Check if All A's Appears Before All B's",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "capitalize-the-title",
+    "problemNumber": 2129,
+    "name": "Capitalize the Title",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-every-row-and-column-contains-all-numbers",
+    "problemNumber": 2133,
+    "name": "Check if Every Row and Column Contains All Numbers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "divide-a-string-into-groups-of-size-k",
+    "problemNumber": 2138,
+    "name": "Divide a String Into Groups of Size k",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-cost-of-buying-candies-with-discount",
+    "problemNumber": 2144,
+    "name": "Minimum Cost of Buying Candies With Discount",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-elements-with-strictly-smaller-and-greater-elements",
+    "problemNumber": 2148,
+    "name": "Count Elements With Strictly Smaller and Greater Elements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "keep-multiplying-found-values-by-two",
+    "problemNumber": 2154,
+    "name": "Keep Multiplying Found Values by Two",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-sum-of-four-digit-number-after-splitting-digits",
+    "problemNumber": 2160,
+    "name": "Minimum Sum of Four Digit Number After Splitting Digits",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sort-even-and-odd-indices-independently",
+    "problemNumber": 2164,
+    "name": "Sort Even and Odd Indices Independently",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-operations-to-obtain-zero",
+    "problemNumber": 2169,
+    "name": "Count Operations to Obtain Zero",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-equal-and-divisible-pairs-in-an-array",
+    "problemNumber": 2176,
+    "name": "Count Equal and Divisible Pairs in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-integers-with-even-digit-sum",
+    "problemNumber": 2180,
+    "name": "Count Integers With Even Digit Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "counting-words-with-a-given-prefix",
+    "problemNumber": 2185,
+    "name": "Counting Words With a Given Prefix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "most-frequent-number-following-key-in-an-array",
+    "problemNumber": 2190,
+    "name": "Most Frequent Number Following Key In an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "cells-in-a-range-on-an-excel-sheet",
+    "problemNumber": 2194,
+    "name": "Cells in a Range on an Excel Sheet",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-all-k-distant-indices-in-an-array",
+    "problemNumber": 2200,
+    "name": "Find All K-Distant Indices in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "divide-array-into-equal-pairs",
+    "problemNumber": 2206,
+    "name": "Divide Array Into Equal Pairs",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-hills-and-valleys-in-an-array",
+    "problemNumber": 2210,
+    "name": "Count Hills and Valleys in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-difference-of-two-arrays",
+    "problemNumber": 2215,
+    "name": "Find the Difference of Two Arrays",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-bit-flips-to-convert-number",
+    "problemNumber": 2220,
+    "name": "Minimum Bit Flips to Convert Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-number-of-operations-to-convert-time",
+    "problemNumber": 2224,
+    "name": "Minimum Number of Operations to Convert Time",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-an-array-is-consecutive",
+    "problemNumber": 2229,
+    "name": "Check if an Array Is Consecutive",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "largest-number-after-digit-swaps-by-parity",
+    "problemNumber": 2231,
+    "name": "Largest Number After Digit Swaps by Parity",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "add-two-integers",
+    "problemNumber": 2235,
+    "name": "Add Two Integers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "root-equals-sum-of-children",
+    "problemNumber": 2236,
+    "name": "Root Equals Sum of Children",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-closest-number-to-zero",
+    "problemNumber": 2239,
+    "name": "Find Closest Number to Zero",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "calculate-digit-sum-of-a-string",
+    "problemNumber": 2243,
+    "name": "Calculate Digit Sum of a String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "intersection-of-multiple-arrays",
+    "problemNumber": 2248,
+    "name": "Intersection of Multiple Arrays",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-prefixes-of-a-given-string",
+    "problemNumber": 2255,
+    "name": "Count Prefixes of a Given String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "remove-digit-from-number-to-maximize-result",
+    "problemNumber": 2259,
+    "name": "Remove Digit From Number to Maximize Result",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-3-same-digit-number-in-string",
+    "problemNumber": 2264,
+    "name": "Largest 3-Same-Digit Number in String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-k-beauty-of-a-number",
+    "problemNumber": 2269,
+    "name": "Find the K-Beauty of a Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-resultant-array-after-removing-anagrams",
+    "problemNumber": 2273,
+    "name": "Find Resultant Array After Removing Anagrams",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "percentage-of-letter-in-string",
+    "problemNumber": 2278,
+    "name": "Percentage of Letter in String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-number-has-equal-digit-count-and-digit-value",
+    "problemNumber": 2283,
+    "name": "Check if Number Has Equal Digit Count and Digit Value",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "rearrange-characters-to-make-target-string",
+    "problemNumber": 2287,
+    "name": "Rearrange Characters to Make Target String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "min-max-game",
+    "problemNumber": 2293,
+    "name": "Min Max Game",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "strong-password-checker-ii",
+    "problemNumber": 2299,
+    "name": "Strong Password Checker II",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "calculate-amount-paid-in-taxes",
+    "problemNumber": 2303,
+    "name": "Calculate Amount Paid in Taxes",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "greatest-english-letter-in-upper-and-lower-case",
+    "problemNumber": 2309,
+    "name": "Greatest English Letter in Upper and Lower Case",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-asterisks",
+    "problemNumber": 2315,
+    "name": "Count Asterisks",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-matrix-is-x-matrix",
+    "problemNumber": 2319,
+    "name": "Check if Matrix Is X-Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "decode-the-message",
+    "problemNumber": 2325,
+    "name": "Decode the Message",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "evaluate-boolean-binary-tree",
+    "problemNumber": 2331,
+    "name": "Evaluate Boolean Binary Tree",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-amount-of-time-to-fill-cups",
+    "problemNumber": 2335,
+    "name": "Minimum Amount of Time to Fill Cups",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-number-of-pairs-in-array",
+    "problemNumber": 2341,
+    "name": "Maximum Number of Pairs in Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "best-poker-hand",
+    "problemNumber": 2347,
+    "name": "Best Poker Hand",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "first-letter-to-appear-twice",
+    "problemNumber": 2351,
+    "name": "First Letter to Appear Twice",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "make-array-zero-by-subtracting-equal-amounts",
+    "problemNumber": 2357,
+    "name": "Make Array Zero by Subtracting Equal Amounts",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "merge-similar-items",
+    "problemNumber": 2363,
+    "name": "Merge Similar Items",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-arithmetic-triplets",
+    "problemNumber": 2367,
+    "name": "Number of Arithmetic Triplets",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-local-values-in-a-matrix",
+    "problemNumber": 2373,
+    "name": "Largest Local Values in a Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-recolors-to-get-k-consecutive-black-blocks",
+    "problemNumber": 2379,
+    "name": "Minimum Recolors to Get K Consecutive Black Blocks",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-hours-of-training-to-win-a-competition",
+    "problemNumber": 2383,
+    "name": "Minimum Hours of Training to Win a Competition",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "longest-subsequence-with-limited-sum",
+    "problemNumber": 2389,
+    "name": "Longest Subsequence With Limited Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-subarrays-with-equal-sum",
+    "problemNumber": 2395,
+    "name": "Find Subarrays With Equal Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-distances-between-same-letters",
+    "problemNumber": 2399,
+    "name": "Check Distances Between Same Letters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "most-frequent-even-element",
+    "problemNumber": 2404,
+    "name": "Most Frequent Even Element",
+    "difficulty": "Easy",
+    "isPremium": false
   }
 ]
