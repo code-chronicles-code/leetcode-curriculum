@@ -32,3 +32,6 @@
 |[Number of Common Factors](https://leetcode.com/problems/number-of-common-factors/)|_TODO: add_|✅||
 |[Sum of Squares of Special Elements](https://leetcode.com/problems/sum-of-squares-of-special-elements/)|_TODO: add_|✅||
 |[Remove Trailing Zeros From a String](https://leetcode.com/problems/remove-trailing-zeros-from-a-string/)|_TODO: add_|✅||
+|[Rings and Rods](https://leetcode.com/problems/rings-and-rods/)|_TODO: add_|✅||
+|[Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)|_TODO: add_|✅|✅|
+|[Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/)|_TODO: add_|✅|✅|
