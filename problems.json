@@ -2098,5 +2098,705 @@
     "name": "Minimum Value to Get Positive Step by Step Sum",
     "difficulty": "Easy",
     "isPremium": false
+  },
+  {
+    "code": "reformat-the-string",
+    "problemNumber": 1417,
+    "name": "Reformat The String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-score-after-splitting-a-string",
+    "problemNumber": 1422,
+    "name": "Maximum Score After Splitting a String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "counting-elements",
+    "problemNumber": 1426,
+    "name": "Counting Elements",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "perform-string-shifts",
+    "problemNumber": 1427,
+    "name": "Perform String Shifts",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "kids-with-the-greatest-number-of-candies",
+    "problemNumber": 1431,
+    "name": "Kids With the Greatest Number of Candies",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "destination-city",
+    "problemNumber": 1436,
+    "name": "Destination City",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-all-1s-are-at-least-length-k-places-away",
+    "problemNumber": 1437,
+    "name": "Check If All 1's Are at Least Length K Places Away",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "consecutive-characters",
+    "problemNumber": 1446,
+    "name": "Consecutive Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-students-doing-homework-at-a-given-time",
+    "problemNumber": 1450,
+    "name": "Number of Students Doing Homework at a Given Time",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence",
+    "problemNumber": 1455,
+    "name": "Check If a Word Occurs As a Prefix of Any Word in a Sentence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "make-two-arrays-equal-by-reversing-subarrays",
+    "problemNumber": 1460,
+    "name": "Make Two Arrays Equal by Reversing Subarrays",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-product-of-two-elements-in-an-array",
+    "problemNumber": 1464,
+    "name": "Maximum Product of Two Elements in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-all-the-lonely-nodes",
+    "problemNumber": 1469,
+    "name": "Find All The Lonely Nodes",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "shuffle-the-array",
+    "problemNumber": 1470,
+    "name": "Shuffle the Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "delete-n-nodes-after-m-nodes-of-a-linked-list",
+    "problemNumber": 1474,
+    "name": "Delete N Nodes After M Nodes of a Linked List",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "final-prices-with-a-special-discount-in-a-shop",
+    "problemNumber": 1475,
+    "name": "Final Prices With a Special Discount in a Shop",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "running-sum-of-1d-array",
+    "problemNumber": 1480,
+    "name": "Running Sum of 1d Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "xor-operation-in-an-array",
+    "problemNumber": 1486,
+    "name": "XOR Operation in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "average-salary-excluding-the-minimum-and-maximum-salary",
+    "problemNumber": 1491,
+    "name": "Average Salary Excluding the Minimum and Maximum Salary",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "path-crossing",
+    "problemNumber": 1496,
+    "name": "Path Crossing",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "can-make-arithmetic-progression-from-sequence",
+    "problemNumber": 1502,
+    "name": "Can Make Arithmetic Progression From Sequence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "reformat-date",
+    "problemNumber": 1507,
+    "name": "Reformat Date",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-good-pairs",
+    "problemNumber": 1512,
+    "name": "Number of Good Pairs",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "water-bottles",
+    "problemNumber": 1518,
+    "name": "Water Bottles",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-odd-numbers-in-an-interval-range",
+    "problemNumber": 1523,
+    "name": "Count Odd Numbers in an Interval Range",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "shuffle-string",
+    "problemNumber": 1528,
+    "name": "Shuffle String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-good-triplets",
+    "problemNumber": 1534,
+    "name": "Count Good Triplets",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "kth-missing-positive-number",
+    "problemNumber": 1539,
+    "name": "Kth Missing Positive Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "make-the-string-great",
+    "problemNumber": 1544,
+    "name": "Make The String Great",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "three-consecutive-odds",
+    "problemNumber": 1550,
+    "name": "Three Consecutive Odds",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "thousand-separator",
+    "problemNumber": 1556,
+    "name": "Thousand Separator",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "most-visited-sector-in-a-circular-track",
+    "problemNumber": 1560,
+    "name": "Most Visited Sector in a Circular Track",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "detect-pattern-of-length-m-repeated-k-or-more-times",
+    "problemNumber": 1566,
+    "name": "Detect Pattern of Length M Repeated K or More Times",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "matrix-diagonal-sum",
+    "problemNumber": 1572,
+    "name": "Matrix Diagonal Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "replace-all-s-to-avoid-consecutive-repeating-characters",
+    "problemNumber": 1576,
+    "name": "Replace All ?'s to Avoid Consecutive Repeating Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "special-positions-in-a-binary-matrix",
+    "problemNumber": 1582,
+    "name": "Special Positions in a Binary Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-all-odd-length-subarrays",
+    "problemNumber": 1588,
+    "name": "Sum of All Odd Length Subarrays",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "rearrange-spaces-between-words",
+    "problemNumber": 1592,
+    "name": "Rearrange Spaces Between Words",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "crawler-log-folder",
+    "problemNumber": 1598,
+    "name": "Crawler Log Folder",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "design-parking-system",
+    "problemNumber": 1603,
+    "name": "Design Parking System",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "special-array-with-x-elements-greater-than-or-equal-x",
+    "problemNumber": 1608,
+    "name": "Special Array With X Elements Greater Than or Equal X",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-nesting-depth-of-the-parentheses",
+    "problemNumber": 1614,
+    "name": "Maximum Nesting Depth of the Parentheses",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "mean-of-array-after-removing-some-elements",
+    "problemNumber": 1619,
+    "name": "Mean of Array After Removing Some Elements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-substring-between-two-equal-characters",
+    "problemNumber": 1624,
+    "name": "Largest Substring Between Two Equal Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "slowest-key",
+    "problemNumber": 1629,
+    "name": "Slowest Key",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sort-array-by-increasing-frequency",
+    "problemNumber": 1636,
+    "name": "Sort Array by Increasing Frequency",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-array-formation-through-concatenation",
+    "problemNumber": 1640,
+    "name": "Check Array Formation Through Concatenation",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "get-maximum-in-generated-array",
+    "problemNumber": 1646,
+    "name": "Get Maximum in Generated Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "defuse-the-bomb",
+    "problemNumber": 1652,
+    "name": "Defuse the Bomb",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "design-an-ordered-stream",
+    "problemNumber": 1656,
+    "name": "Design an Ordered Stream",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-two-string-arrays-are-equivalent",
+    "problemNumber": 1662,
+    "name": "Check If Two String Arrays are Equivalent",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-repeating-substring",
+    "problemNumber": 1668,
+    "name": "Maximum Repeating Substring",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "richest-customer-wealth",
+    "problemNumber": 1672,
+    "name": "Richest Customer Wealth",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "goal-parser-interpretation",
+    "problemNumber": 1678,
+    "name": "Goal Parser Interpretation",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-the-number-of-consistent-strings",
+    "problemNumber": 1684,
+    "name": "Count the Number of Consistent Strings",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-of-matches-in-tournament",
+    "problemNumber": 1688,
+    "name": "Count of Matches in Tournament",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "reformat-phone-number",
+    "problemNumber": 1694,
+    "name": "Reformat Phone Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-students-unable-to-eat-lunch",
+    "problemNumber": 1700,
+    "name": "Number of Students Unable to Eat Lunch",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "determine-if-string-halves-are-alike",
+    "problemNumber": 1704,
+    "name": "Determine if String Halves Are Alike",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-subarray-length-k",
+    "problemNumber": 1708,
+    "name": "Largest Subarray Length K",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "maximum-units-on-a-truck",
+    "problemNumber": 1710,
+    "name": "Maximum Units on a Truck",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "calculate-money-in-leetcode-bank",
+    "problemNumber": 1716,
+    "name": "Calculate Money in Leetcode Bank",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "decode-xored-array",
+    "problemNumber": 1720,
+    "name": "Decode XORed Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-rectangles-that-can-form-the-largest-square",
+    "problemNumber": 1725,
+    "name": "Number Of Rectangles That Can Form The Largest Square",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-highest-altitude",
+    "problemNumber": 1732,
+    "name": "Find the Highest Altitude",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "latest-time-by-replacing-hidden-digits",
+    "problemNumber": 1736,
+    "name": "Latest Time by Replacing Hidden Digits",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-number-of-balls-in-a-box",
+    "problemNumber": 1742,
+    "name": "Maximum Number of Balls in a Box",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-unique-elements",
+    "problemNumber": 1748,
+    "name": "Sum of Unique Elements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-array-is-sorted-and-rotated",
+    "problemNumber": 1752,
+    "name": "Check if Array Is Sorted and Rotated",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-changes-to-make-alternating-binary-string",
+    "problemNumber": 1758,
+    "name": "Minimum Changes To Make Alternating Binary String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "longest-nice-substring",
+    "problemNumber": 1763,
+    "name": "Longest Nice Substring",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "merge-strings-alternately",
+    "problemNumber": 1768,
+    "name": "Merge Strings Alternately",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-items-matching-a-rule",
+    "problemNumber": 1773,
+    "name": "Count Items Matching a Rule",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-nearest-point-that-has-the-same-x-or-y-coordinate",
+    "problemNumber": 1779,
+    "name": "Find Nearest Point That Has the Same X or Y Coordinate",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-binary-string-has-at-most-one-segment-of-ones",
+    "problemNumber": 1784,
+    "name": "Check if Binary String Has at Most One Segment of Ones",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-one-string-swap-can-make-strings-equal",
+    "problemNumber": 1790,
+    "name": "Check if One String Swap Can Make Strings Equal",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-center-of-star-graph",
+    "problemNumber": 1791,
+    "name": "Find Center of Star Graph",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "second-largest-digit-in-a-string",
+    "problemNumber": 1796,
+    "name": "Second Largest Digit in a String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-ascending-subarray-sum",
+    "problemNumber": 1800,
+    "name": "Maximum Ascending Subarray Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-different-integers-in-a-string",
+    "problemNumber": 1805,
+    "name": "Number of Different Integers in a String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "determine-color-of-a-chessboard-square",
+    "problemNumber": 1812,
+    "name": "Determine Color of a Chessboard Square",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "truncate-sentence",
+    "problemNumber": 1816,
+    "name": "Truncate Sentence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sign-of-the-product-of-an-array",
+    "problemNumber": 1822,
+    "name": "Sign of the Product of an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "faulty-sensor",
+    "problemNumber": 1826,
+    "name": "Faulty Sensor",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "minimum-operations-to-make-the-array-increasing",
+    "problemNumber": 1827,
+    "name": "Minimum Operations to Make the Array Increasing",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-the-sentence-is-pangram",
+    "problemNumber": 1832,
+    "name": "Check if the Sentence Is Pangram",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-digits-in-base-k",
+    "problemNumber": 1837,
+    "name": "Sum of Digits in Base K",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "replace-all-digits-with-characters",
+    "problemNumber": 1844,
+    "name": "Replace All Digits with Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-distance-to-the-target-element",
+    "problemNumber": 1848,
+    "name": "Minimum Distance to the Target Element",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-population-year",
+    "problemNumber": 1854,
+    "name": "Maximum Population Year",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sorting-the-sentence",
+    "problemNumber": 1859,
+    "name": "Sorting the Sentence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-all-subset-xor-totals",
+    "problemNumber": 1863,
+    "name": "Sum of All Subset XOR Totals",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "longer-contiguous-segments-of-ones-than-zeros",
+    "problemNumber": 1869,
+    "name": "Longer Contiguous Segments of Ones than Zeros",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "substrings-of-size-three-with-distinct-characters",
+    "problemNumber": 1876,
+    "name": "Substrings of Size Three with Distinct Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-word-equals-summation-of-two-words",
+    "problemNumber": 1880,
+    "name": "Check if Word Equals Summation of Two Words",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "determine-whether-matrix-can-be-obtained-by-rotation",
+    "problemNumber": 1886,
+    "name": "Determine Whether Matrix Can Be Obtained By Rotation",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-all-the-integers-in-a-range-are-covered",
+    "problemNumber": 1893,
+    "name": "Check if All the Integers in a Range Are Covered",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "redistribute-characters-to-make-all-strings-equal",
+    "problemNumber": 1897,
+    "name": "Redistribute Characters to Make All Strings Equal",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-odd-number-in-string",
+    "problemNumber": 1903,
+    "name": "Largest Odd Number in String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "remove-one-element-to-make-the-array-strictly-increasing",
+    "problemNumber": 1909,
+    "name": "Remove One Element to Make the Array Strictly Increasing",
+    "difficulty": "Easy",
+    "isPremium": false
   }
 ]
