@@ -3498,5 +3498,544 @@
     "name": "Most Frequent Even Element",
     "difficulty": "Easy",
     "isPremium": false
+  },
+  {
+    "code": "count-days-spent-together",
+    "problemNumber": 2409,
+    "name": "Count Days Spent Together",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "smallest-even-multiple",
+    "problemNumber": 2413,
+    "name": "Smallest Even Multiple",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sort-the-people",
+    "problemNumber": 2418,
+    "name": "Sort the People",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "remove-letter-to-equalize-frequency",
+    "problemNumber": 2423,
+    "name": "Remove Letter To Equalize Frequency",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-common-factors",
+    "problemNumber": 2427,
+    "name": "Number of Common Factors",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "the-employee-that-worked-on-the-longest-task",
+    "problemNumber": 2432,
+    "name": "The Employee That Worked on the Longest Task",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-valid-clock-times",
+    "problemNumber": 2437,
+    "name": "Number of Valid Clock Times",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-positive-integer-that-exists-with-its-negative",
+    "problemNumber": 2441,
+    "name": "Largest Positive Integer That Exists With Its Negative",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "determine-if-two-events-have-conflict",
+    "problemNumber": 2446,
+    "name": "Determine if Two Events Have Conflict",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "odd-string-difference",
+    "problemNumber": 2451,
+    "name": "Odd String Difference",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "average-value-of-even-numbers-that-are-divisible-by-three",
+    "problemNumber": 2455,
+    "name": "Average Value of Even Numbers That Are Divisible by Three",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "apply-operations-to-an-array",
+    "problemNumber": 2460,
+    "name": "Apply Operations to an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-distinct-averages",
+    "problemNumber": 2465,
+    "name": "Number of Distinct Averages",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "convert-the-temperature",
+    "problemNumber": 2469,
+    "name": "Convert the Temperature",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-unequal-triplets-in-array",
+    "problemNumber": 2475,
+    "name": "Number of Unequal Triplets in Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-cuts-to-divide-a-circle",
+    "problemNumber": 2481,
+    "name": "Minimum Cuts to Divide a Circle",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-pivot-integer",
+    "problemNumber": 2485,
+    "name": "Find the Pivot Integer",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "circular-sentence",
+    "problemNumber": 2490,
+    "name": "Circular Sentence",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-value-of-a-string-in-an-array",
+    "problemNumber": 2496,
+    "name": "Maximum Value of a String in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "delete-greatest-value-in-each-row",
+    "problemNumber": 2500,
+    "name": "Delete Greatest Value in Each Row",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-pairs-of-similar-strings",
+    "problemNumber": 2506,
+    "name": "Count Pairs Of Similar Strings",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-enemy-forts-that-can-be-captured",
+    "problemNumber": 2511,
+    "name": "Maximum Enemy Forts That Can Be Captured",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "shortest-distance-to-target-string-in-a-circular-array",
+    "problemNumber": 2515,
+    "name": "Shortest Distance to Target String in a Circular Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-the-digits-that-divide-a-number",
+    "problemNumber": 2520,
+    "name": "Count the Digits That Divide a Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "categorize-box-according-to-criteria",
+    "problemNumber": 2525,
+    "name": "Categorize Box According to Criteria",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-count-of-positive-integer-and-negative-integer",
+    "problemNumber": 2529,
+    "name": "Maximum Count of Positive Integer and Negative Integer",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "difference-between-element-sum-and-digit-sum-of-an-array",
+    "problemNumber": 2535,
+    "name": "Difference Between Element Sum and Digit Sum of an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-common-value",
+    "problemNumber": 2540,
+    "name": "Minimum Common Value",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "alternating-digit-sum",
+    "problemNumber": 2544,
+    "name": "Alternating Digit Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-distinct-numbers-on-board",
+    "problemNumber": 2549,
+    "name": "Count Distinct Numbers on Board",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "separate-the-digits-in-an-array",
+    "problemNumber": 2553,
+    "name": "Separate the Digits in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "take-gifts-from-the-richest-pile",
+    "problemNumber": 2558,
+    "name": "Take Gifts From the Richest Pile",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-array-concatenation-value",
+    "problemNumber": 2562,
+    "name": "Find the Array Concatenation Value",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-difference-by-remapping-a-digit",
+    "problemNumber": 2566,
+    "name": "Maximum Difference by Remapping a Digit",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "merge-two-2d-arrays-by-summing-values",
+    "problemNumber": 2570,
+    "name": "Merge Two 2D Arrays by Summing Values",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "left-and-right-sum-differences",
+    "problemNumber": 2574,
+    "name": "Left and Right Sum Differences",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "split-with-minimum-sum",
+    "problemNumber": 2578,
+    "name": "Split With Minimum Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "pass-the-pillow",
+    "problemNumber": 2582,
+    "name": "Pass the Pillow",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-the-number-of-vowel-strings-in-range",
+    "problemNumber": 2586,
+    "name": "Count the Number of Vowel Strings in Range",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "distribute-money-to-maximum-children",
+    "problemNumber": 2591,
+    "name": "Distribute Money to Maximum Children",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-even-and-odd-bits",
+    "problemNumber": 2595,
+    "name": "Number of Even and Odd Bits",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "k-items-with-the-maximum-sum",
+    "problemNumber": 2600,
+    "name": "K Items With the Maximum Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "form-smallest-number-from-two-digit-arrays",
+    "problemNumber": 2605,
+    "name": "Form Smallest Number From Two Digit Arrays",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-longest-balanced-substring-of-a-binary-string",
+    "problemNumber": 2609,
+    "name": "Find the Longest Balanced Substring of a Binary String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "prime-in-diagonal",
+    "problemNumber": 2614,
+    "name": "Prime In Diagonal",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-width-of-columns-of-a-grid",
+    "problemNumber": 2639,
+    "name": "Find the Width of Columns of a Grid",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "row-with-maximum-ones",
+    "problemNumber": 2643,
+    "name": "Row With Maximum Ones",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-maximum-divisibility-score",
+    "problemNumber": 2644,
+    "name": "Find the Maximum Divisibility Score",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "calculate-delayed-arrival-time",
+    "problemNumber": 2651,
+    "name": "Calculate Delayed Arrival Time",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-multiples",
+    "problemNumber": 2652,
+    "name": "Sum Multiples",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-sum-with-exactly-k-elements",
+    "problemNumber": 2656,
+    "name": "Maximum Sum With Exactly K Elements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "determine-the-winner-of-a-bowling-game",
+    "problemNumber": 2660,
+    "name": "Determine the Winner of a Bowling Game",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-distinct-difference-array",
+    "problemNumber": 2670,
+    "name": "Find the Distinct Difference Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-senior-citizens",
+    "problemNumber": 2678,
+    "name": "Number of Senior Citizens",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-losers-of-the-circular-game",
+    "problemNumber": 2682,
+    "name": "Find the Losers of the Circular Game",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "extract-kth-character-from-the-rope-tree",
+    "problemNumber": 2689,
+    "name": "Extract Kth Character From The Rope Tree",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "minimum-string-length-after-removing-substrings",
+    "problemNumber": 2696,
+    "name": "Minimum String Length After Removing Substrings",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "lexicographically-smallest-palindrome",
+    "problemNumber": 2697,
+    "name": "Lexicographically Smallest Palindrome",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "buy-two-chocolates",
+    "problemNumber": 2706,
+    "name": "Buy Two Chocolates",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "remove-trailing-zeros-from-a-string",
+    "problemNumber": 2710,
+    "name": "Remove Trailing Zeros From a String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimize-string-length",
+    "problemNumber": 2716,
+    "name": "Minimize String Length",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "semi-ordered-permutation",
+    "problemNumber": 2717,
+    "name": "Semi-Ordered Permutation",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-houses-in-a-circular-street",
+    "problemNumber": 2728,
+    "name": "Count Houses in a Circular Street",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "check-if-the-number-is-fascinating",
+    "problemNumber": 2729,
+    "name": "Check if The Number is Fascinating",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "neither-minimum-nor-maximum",
+    "problemNumber": 2733,
+    "name": "Neither Minimum nor Maximum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "total-distance-traveled",
+    "problemNumber": 2739,
+    "name": "Total Distance Traveled",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-maximum-number-of-string-pairs",
+    "problemNumber": 2744,
+    "name": "Find Maximum Number of String Pairs",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-beautiful-pairs",
+    "problemNumber": 2748,
+    "name": "Number of Beautiful Pairs",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "longest-even-odd-subarray-with-threshold",
+    "problemNumber": 2760,
+    "name": "Longest Even Odd Subarray With Threshold",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "longest-alternating-subarray",
+    "problemNumber": 2765,
+    "name": "Longest Alternating Subarray",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-maximum-achievable-number",
+    "problemNumber": 2769,
+    "name": "Find the Maximum Achievable Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-squares-of-special-elements",
+    "problemNumber": 2778,
+    "name": "Sum of Squares of Special Elements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-array-is-good",
+    "problemNumber": 2784,
+    "name": "Check if Array is Good",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "split-strings-by-separator",
+    "problemNumber": 2788,
+    "name": "Split Strings by Separator",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-employees-who-met-the-target",
+    "problemNumber": 2798,
+    "name": "Number of Employees Who Met the Target",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "account-balance-after-rounded-purchase",
+    "problemNumber": 2806,
+    "name": "Account Balance After Rounded Purchase",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "faulty-keyboard",
+    "problemNumber": 2810,
+    "name": "Faulty Keyboard",
+    "difficulty": "Easy",
+    "isPremium": false
   }
 ]
