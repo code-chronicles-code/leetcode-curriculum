@@ -1398,5 +1398,705 @@
     "name": "Long Pressed Name",
     "difficulty": "Easy",
     "isPremium": false
+  },
+  {
+    "code": "unique-email-addresses",
+    "problemNumber": 929,
+    "name": "Unique Email Addresses",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-recent-calls",
+    "problemNumber": 933,
+    "name": "Number of Recent Calls",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "range-sum-of-bst",
+    "problemNumber": 938,
+    "name": "Range Sum of BST",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "valid-mountain-array",
+    "problemNumber": 941,
+    "name": "Valid Mountain Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "di-string-match",
+    "problemNumber": 942,
+    "name": "DI String Match",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "delete-columns-to-make-sorted",
+    "problemNumber": 944,
+    "name": "Delete Columns to Make Sorted",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "verifying-an-alien-dictionary",
+    "problemNumber": 953,
+    "name": "Verifying an Alien Dictionary",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "n-repeated-element-in-size-2n-array",
+    "problemNumber": 961,
+    "name": "N-Repeated Element in Size 2N Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "univalued-binary-tree",
+    "problemNumber": 965,
+    "name": "Univalued Binary Tree",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-perimeter-triangle",
+    "problemNumber": 976,
+    "name": "Largest Perimeter Triangle",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "squares-of-a-sorted-array",
+    "problemNumber": 977,
+    "name": "Squares of a Sorted Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "add-to-array-form-of-integer",
+    "problemNumber": 989,
+    "name": "Add to Array-Form of Integer",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "cousins-in-binary-tree",
+    "problemNumber": 993,
+    "name": "Cousins in Binary Tree",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-town-judge",
+    "problemNumber": 997,
+    "name": "Find the Town Judge",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "available-captures-for-rook",
+    "problemNumber": 999,
+    "name": "Available Captures for Rook",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-common-characters",
+    "problemNumber": 1002,
+    "name": "Find Common Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximize-sum-of-array-after-k-negations",
+    "problemNumber": 1005,
+    "name": "Maximize Sum Of Array After K Negations",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "complement-of-base-10-integer",
+    "problemNumber": 1009,
+    "name": "Complement of Base 10 Integer",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "partition-array-into-three-parts-with-equal-sum",
+    "problemNumber": 1013,
+    "name": "Partition Array Into Three Parts With Equal Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "binary-prefix-divisible-by-5",
+    "problemNumber": 1018,
+    "name": "Binary Prefix Divisible By 5",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "remove-outermost-parentheses",
+    "problemNumber": 1021,
+    "name": "Remove Outermost Parentheses",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-root-to-leaf-binary-numbers",
+    "problemNumber": 1022,
+    "name": "Sum of Root To Leaf Binary Numbers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "divisor-game",
+    "problemNumber": 1025,
+    "name": "Divisor Game",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "matrix-cells-in-distance-order",
+    "problemNumber": 1030,
+    "name": "Matrix Cells in Distance Order",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "valid-boomerang",
+    "problemNumber": 1037,
+    "name": "Valid Boomerang",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "last-stone-weight",
+    "problemNumber": 1046,
+    "name": "Last Stone Weight",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "remove-all-adjacent-duplicates-in-string",
+    "problemNumber": 1047,
+    "name": "Remove All Adjacent Duplicates In String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "height-checker",
+    "problemNumber": 1051,
+    "name": "Height Checker",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "confusing-number",
+    "problemNumber": 1056,
+    "name": "Confusing Number",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "fixed-point",
+    "problemNumber": 1064,
+    "name": "Fixed Point",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "index-pairs-of-a-string",
+    "problemNumber": 1065,
+    "name": "Index Pairs of a String",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "greatest-common-divisor-of-strings",
+    "problemNumber": 1071,
+    "name": "Greatest Common Divisor of Strings",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "occurrences-after-bigram",
+    "problemNumber": 1078,
+    "name": "Occurrences After Bigram",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-digits-in-the-minimum-number",
+    "problemNumber": 1085,
+    "name": "Sum of Digits in the Minimum Number",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "high-five",
+    "problemNumber": 1086,
+    "name": "High Five",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "duplicate-zeros",
+    "problemNumber": 1089,
+    "name": "Duplicate Zeros",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "two-sum-less-than-k",
+    "problemNumber": 1099,
+    "name": "Two Sum Less Than K",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "distribute-candies-to-people",
+    "problemNumber": 1103,
+    "name": "Distribute Candies to People",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "defanging-an-ip-address",
+    "problemNumber": 1108,
+    "name": "Defanging an IP Address",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-days-in-a-month",
+    "problemNumber": 1118,
+    "name": "Number of Days in a Month",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "remove-vowels-from-a-string",
+    "problemNumber": 1119,
+    "name": "Remove Vowels from a String",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "relative-sort-array",
+    "problemNumber": 1122,
+    "name": "Relative Sort Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-equivalent-domino-pairs",
+    "problemNumber": 1128,
+    "name": "Number of Equivalent Domino Pairs",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "largest-unique-number",
+    "problemNumber": 1133,
+    "name": "Largest Unique Number",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "armstrong-number",
+    "problemNumber": 1134,
+    "name": "Armstrong Number",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "n-th-tribonacci-number",
+    "problemNumber": 1137,
+    "name": "N-th Tribonacci Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-a-number-is-majority-element-in-a-sorted-array",
+    "problemNumber": 1150,
+    "name": "Check If a Number Is Majority Element in a Sorted Array",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "day-of-the-year",
+    "problemNumber": 1154,
+    "name": "Day of the Year",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-words-that-can-be-formed-by-characters",
+    "problemNumber": 1160,
+    "name": "Find Words That Can Be Formed by Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "single-row-keyboard",
+    "problemNumber": 1165,
+    "name": "Single-Row Keyboard",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "prime-arrangements",
+    "problemNumber": 1175,
+    "name": "Prime Arrangements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "diet-plan-performance",
+    "problemNumber": 1176,
+    "name": "Diet Plan Performance",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "count-substrings-with-only-one-distinct-letter",
+    "problemNumber": 1180,
+    "name": "Count Substrings with Only One Distinct Letter",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "distance-between-bus-stops",
+    "problemNumber": 1184,
+    "name": "Distance Between Bus Stops",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "day-of-the-week",
+    "problemNumber": 1185,
+    "name": "Day of the Week",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-number-of-balloons",
+    "problemNumber": 1189,
+    "name": "Maximum Number of Balloons",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "how-many-apples-can-you-put-into-the-basket",
+    "problemNumber": 1196,
+    "name": "How Many Apples Can You Put into the Basket",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "minimum-absolute-difference",
+    "problemNumber": 1200,
+    "name": "Minimum Absolute Difference",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "unique-number-of-occurrences",
+    "problemNumber": 1207,
+    "name": "Unique Number of Occurrences",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "intersection-of-three-sorted-arrays",
+    "problemNumber": 1213,
+    "name": "Intersection of Three Sorted Arrays",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "minimum-cost-to-move-chips-to-the-same-position",
+    "problemNumber": 1217,
+    "name": "Minimum Cost to Move Chips to The Same Position",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "split-a-string-in-balanced-strings",
+    "problemNumber": 1221,
+    "name": "Split a String in Balanced Strings",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "missing-number-in-arithmetic-progression",
+    "problemNumber": 1228,
+    "name": "Missing Number In Arithmetic Progression",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "check-if-it-is-a-straight-line",
+    "problemNumber": 1232,
+    "name": "Check If It Is a Straight Line",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "array-transformation",
+    "problemNumber": 1243,
+    "name": "Array Transformation",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "cells-with-odd-values-in-a-matrix",
+    "problemNumber": 1252,
+    "name": "Cells with Odd Values in a Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "shift-2d-grid",
+    "problemNumber": 1260,
+    "name": "Shift 2D Grid",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-time-visiting-all-points",
+    "problemNumber": 1266,
+    "name": "Minimum Time Visiting All Points",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "hexspeak",
+    "problemNumber": 1271,
+    "name": "Hexspeak",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "find-winner-on-a-tic-tac-toe-game",
+    "problemNumber": 1275,
+    "name": "Find Winner on a Tic Tac Toe Game",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "subtract-the-product-and-sum-of-digits-of-an-integer",
+    "problemNumber": 1281,
+    "name": "Subtract the Product and Sum of Digits of an Integer",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "element-appearing-more-than-25-in-sorted-array",
+    "problemNumber": 1287,
+    "name": "Element Appearing More Than 25% In Sorted Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "convert-binary-number-in-a-linked-list-to-integer",
+    "problemNumber": 1290,
+    "name": "Convert Binary Number in a Linked List to Integer",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-numbers-with-even-number-of-digits",
+    "problemNumber": 1295,
+    "name": "Find Numbers with Even Number of Digits",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "replace-elements-with-greatest-element-on-right-side",
+    "problemNumber": 1299,
+    "name": "Replace Elements with Greatest Element on Right Side",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-n-unique-integers-sum-up-to-zero",
+    "problemNumber": 1304,
+    "name": "Find N Unique Integers Sum up to Zero",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "decrypt-string-from-alphabet-to-integer-mapping",
+    "problemNumber": 1309,
+    "name": "Decrypt String from Alphabet to Integer Mapping",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "decompress-run-length-encoded-list",
+    "problemNumber": 1313,
+    "name": "Decompress Run-Length Encoded List",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "convert-integer-to-the-sum-of-two-no-zero-integers",
+    "problemNumber": 1317,
+    "name": "Convert Integer to the Sum of Two No-Zero Integers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-69-number",
+    "problemNumber": 1323,
+    "name": "Maximum 69 Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "rank-transform-of-an-array",
+    "problemNumber": 1331,
+    "name": "Rank Transform of an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "remove-palindromic-subsequences",
+    "problemNumber": 1332,
+    "name": "Remove Palindromic Subsequences",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "the-k-weakest-rows-in-a-matrix",
+    "problemNumber": 1337,
+    "name": "The K Weakest Rows in a Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-steps-to-reduce-a-number-to-zero",
+    "problemNumber": 1342,
+    "name": "Number of Steps to Reduce a Number to Zero",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-n-and-its-double-exist",
+    "problemNumber": 1346,
+    "name": "Check If N and Its Double Exist",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-negative-numbers-in-a-sorted-matrix",
+    "problemNumber": 1351,
+    "name": "Count Negative Numbers in a Sorted Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sort-integers-by-the-number-of-1-bits",
+    "problemNumber": 1356,
+    "name": "Sort Integers by The Number of 1 Bits",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-days-between-two-dates",
+    "problemNumber": 1360,
+    "name": "Number of Days Between Two Dates",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "how-many-numbers-are-smaller-than-the-current-number",
+    "problemNumber": 1365,
+    "name": "How Many Numbers Are Smaller Than the Current Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "increasing-decreasing-string",
+    "problemNumber": 1370,
+    "name": "Increasing Decreasing String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "generate-a-string-with-characters-that-have-odd-counts",
+    "problemNumber": 1374,
+    "name": "Generate a String With Characters That Have Odd Counts",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree",
+    "problemNumber": 1379,
+    "name": "Find a Corresponding Node of a Binary Tree in a Clone of That Tree",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "lucky-numbers-in-a-matrix",
+    "problemNumber": 1380,
+    "name": "Lucky Numbers in a Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-distance-value-between-two-arrays",
+    "problemNumber": 1385,
+    "name": "Find the Distance Value Between Two Arrays",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "create-target-array-in-the-given-order",
+    "problemNumber": 1389,
+    "name": "Create Target Array in the Given Order",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-lucky-integer-in-an-array",
+    "problemNumber": 1394,
+    "name": "Find Lucky Integer in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-largest-group",
+    "problemNumber": 1399,
+    "name": "Count Largest Group",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-subsequence-in-non-increasing-order",
+    "problemNumber": 1403,
+    "name": "Minimum Subsequence in Non-Increasing Order",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "string-matching-in-an-array",
+    "problemNumber": 1408,
+    "name": "String Matching in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-value-to-get-positive-step-by-step-sum",
+    "problemNumber": 1413,
+    "name": "Minimum Value to Get Positive Step by Step Sum",
+    "difficulty": "Easy",
+    "isPremium": false
   }
 ]
