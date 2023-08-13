@@ -11,17 +11,17 @@
 |[Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)|_TODO: add_|✅|✅|
 |[Left and Right Sum Differences](https://leetcode.com/problems/left-and-right-sum-differences/)|_TODO: add_|✅|✅|
 |[Find First Palindromic String in the Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)|_TODO: add_|✅|✅|
-|[Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)|_TODO: add_|✅||
-|[Count the Digits That Divide a Number](https://leetcode.com/problems/count-the-digits-that-divide-a-number/)|_TODO: add_|✅||
+|[Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)|_TODO: add_|✅|✅|
+|[Count the Digits That Divide a Number](https://leetcode.com/problems/count-the-digits-that-divide-a-number/)|_TODO: add_|✅|✅|
 |[Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address/)|_TODO: add_|✅||
-|[Split a String in Balanced Strings](https://leetcode.com/problems/split-a-string-in-balanced-strings/)|_TODO: add_|✅||
+|[Split a String in Balanced Strings](https://leetcode.com/problems/split-a-string-in-balanced-strings/)|_TODO: add_|✅|✅|
 |[Goal Parser Interpretation](https://leetcode.com/problems/goal-parser-interpretation/)|_TODO: add_|✅||
 |[Sum Multiples](https://leetcode.com/problems/sum-multiples/)|_TODO: add_|✅||
 |[Find Center of Star Graph](https://leetcode.com/problems/find-center-of-star-graph/)|_TODO: add_|✅||
 |[Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)|_TODO: add_|✅||
 |[Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/)|_TODO: add_|✅||
-|[How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)|_TODO: add_|✅||
-|[Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/)|_TODO: add_|✅||
+|[How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)|_TODO: add_|✅|✅|
+|[Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/)|_TODO: add_|✅|✅|
 |[Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/)|_TODO: add_|✅||
 |[Two Sum](https://leetcode.com/problems/two-sum/)|_TODO: add_|✅||
 |[Truncate Sentence](https://leetcode.com/problems/truncate-sentence/)|_TODO: add_|✅||
