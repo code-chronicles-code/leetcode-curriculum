@@ -4,7 +4,7 @@ Hello, this is a short guide on how to start your journey with LeetCode, as we a
 
 These problems are picked after trying them ourselves and we believe this can could be beneficial to you all.
 
-We recommend starting out in a language you are comfortable with but we recommend C++ or java to understand problem-solving and getting used to the habit of coding.
+We recommend starting out in a language you are comfortable with but we recommend C++ or Java to understand problem-solving and getting used to the habit of coding.
 
 These problems or their problem tag might look or say that it's not an "easy" problem but don't let LeetCode trick you like they did us.
 
@@ -63,5 +63,7 @@ These problems or their problem tag might look or say that it's not an "easy" pr
 5. https://leetcode.com/problems/left-and-right-sum-differences/
 
 6. https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/
+
+7. https://leetcode.com/problems/degree-of-an-array/
 
 The above will list will be updated every week.
