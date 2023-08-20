@@ -39,4 +39,6 @@
 |[To Lower Case](https://leetcode.com/problems/to-lower-case/)|_TODO: add_|✅||
 |[Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)|_TODO: add_|✅||
 |[Majority Element](https://leetcode.com/problems/majority-element/)|_TODO: add_|✅||
-|[Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/)|_TODO: add_|✅||
+|[Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/)|_TODO: add_|✅|✅|
+|[Max Pair Sum in an Array](https://leetcode.com/problems/max-pair-sum-in-an-array/)|_TODO: add_|✅|✅|
+|[Neither Minimum nor Maximum](https://leetcode.com/problems/neither-minimum-nor-maximum/)|_TODO: add_|✅||
