@@ -13,8 +13,10 @@ Some reference solutions for inspiration:
 * stretch ||with frequency map as we go along|| ([TypeScript](https://leetcode.com/problems/number-of-good-pairs/submissions/1029693483/), [Python](https://leetcode.com/problems/number-of-good-pairs/submissions/1029669207/), [Ruby](https://leetcode.com/problems/number-of-good-pairs/submissions/1029691987/))
 * stretch stretch ||building entire frequency map first|| ([TypeScript](https://leetcode.com/problems/number-of-good-pairs/submissions/1047135786/), [Python](https://leetcode.com/problems/number-of-good-pairs/submissions/1029672967/), [Ruby](https://leetcode.com/problems/number-of-good-pairs/submissions/1029688211/), [C](https://leetcode.com/problems/number-of-good-pairs/submissions/1047141779/))
 * stretch stretch one-liner ||using a frequency map built-in|| ([Python](https://leetcode.com/problems/number-of-good-pairs/submissions/1029674137/), [Ruby](https://leetcode.com/problems/number-of-good-pairs/submissions/1029686605/))
- 
-# Notes for Facilitators
+
+ # Notes for Facilitators
+
+## Checklist for a good session:
 
 * controlled the clock
   * started on time
@@ -23,5 +25,19 @@ Some reference solutions for inspiration:
   * led the discussion with enthusiasm
   * involved the audience
   * confirmed that people understand the code being shown
+* covered the brute force solution
+  * explained how to look at the problem constraints and take an educated guess regarding whether a particular time complexity will be good enough to get accepted (i.e. the "millions of operations" heuristic)
+* covered the solution that uses a frequency map along the way
+  * went over a specific example by hand, in detail, to show why this works
+  * encouraged people to print more often in their code
+* showed a solution using the handshake formula
+  * if time, modified the code from the previous frequency map solution, if not enough time at least showed a complete solution and encouraged people to research it further
 
-TODO: will add more
+## Bonus points:
+
+* got at least 2 people to share their code during the session
+* discussed the handshake formula in-depth
+  * showed with some small examples that the formula works
+  * explained an inituitive derivation, for example: if you have N people, each one shakes hands with N - 1 others, but that counted the handshake between person A and person B twice, for both person A and person B (and this is true for all handshakes) so we have to divide by 2
+  * asked somebody in the audience how many handshakes we'd have with 10 people
+* showed built-ins such as Python's `Counter` or Ruby's `.tally` as a way to quickly get frequency maps
