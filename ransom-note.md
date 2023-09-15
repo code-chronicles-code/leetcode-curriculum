@@ -23,5 +23,15 @@ Some reference solutions for inspiration:
   * led the discussion with enthusiasm
   * involved the audience
   * confirmed that people understand the code being shown
+* covered the solution using 26 iterations through the inputs
+  * encouraged the audience to consider hacky solutions when they can't think of something better
+  * mentioned that 26 times the size of the inputs is still small enough to be only "millions" of operations, so it's good enough to get accepted
+* covered the solution using frequency map, only using one iteration
+  * explained how to avoid if statements for setting up the frequency map, for example `freq.get(c, 0)` in Python, `(freq[c] ?? 0)` in JavaScript, and `freq.getOrDefault(c, 0)` in Java
 
-TODO: add more
+Bonus points:
+
+* got at least 2 people to share their code during the session
+* explained that we can use an array of size 26 for the frequencies
+  * if time, got someone to actually code this solution, but at a bare minimum showed a solution and shared a link to it
+* showed built-ins such as Python's `Counter` or Ruby's `.tally` as a way to quickly get frequency maps
