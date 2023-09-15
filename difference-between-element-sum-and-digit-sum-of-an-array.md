@@ -59,6 +59,6 @@ Some reference solutions for inspiration:
   * Brute Force: Can start 2nd index in the for loop at i + 1
   * Memory Efficiency: can use `yield` to avoid using arrays (If language allows it)
 * Other
-  * See if other languages allows forEach to iterate through the input
+  * See if other languages allows [Foreach loop](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
  
  
