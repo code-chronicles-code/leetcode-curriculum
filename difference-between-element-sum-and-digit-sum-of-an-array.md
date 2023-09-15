@@ -44,3 +44,21 @@ Some reference solutions for inspiration:
   * explained that we'd need a way to get the digit at a particular "index" in the number, as well as a way of getting the number of digits
   * explained, using examples, that logarithms can help us get the number of digits
   * explained, using examples, how to access the digit at a particular "index" in the number
+
+## Code Review:
+
+* Problem
+  * No need for absolute value since, the sum of elements is always greater than the sum of digits.
+* Variables
+  * Clear and concise variable names
+  * Using let instead of const when variable isn't reassigned
+  * Extra variables that could be inlined (variables only used once)  
+* Helper functions
+  * To get digits
+* Optimization
+  * Brute Force: Can start 2nd index in the for loop at i + 1
+  * Memory Efficiency: can use `yield` to avoid using arrays (If language allows it)
+* Other
+  * See if other languages allows forEach to iterate through the input
+ 
+ 
