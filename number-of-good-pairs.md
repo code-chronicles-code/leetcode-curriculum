@@ -41,3 +41,18 @@ Some reference solutions for inspiration:
   * explained an inituitive derivation, for example: if you have N people, each one shakes hands with N - 1 others, but that counted the handshake between person A and person B twice, for both person A and person B (and this is true for all handshakes) so we have to divide by 2
   * asked somebody in the audience how many handshakes we'd have with 10 people
 * showed built-ins such as Python's `Counter` or Ruby's `.tally` as a way to quickly get frequency maps
+
+## Code Review:
+
+* Variables / Operations
+  * Clear and concise variable names
+  * Using let instead of const when variable isn't reassigned
+  * Extra variables that could be inlined (variables only used once)
+  * Using strict equality (For JS and TS)
+  * Use defaults everytime we use dictionary/object/map
+* Optimization
+  * Brute Force: Can start 2nd index in the for loop at i + 1 (Also satisfies i < j)
+  * Built in `count` functions can be equivalent to a loop that traverses the entire input!
+* Other
+  * See if other languages allows [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
+  * Used built-ins such as Python's `Counter` or Ruby's `.tally` to get frequency maps
