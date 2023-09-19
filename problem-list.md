@@ -34,8 +34,8 @@
 |[Remove Trailing Zeros From a String](https://leetcode.com/problems/remove-trailing-zeros-from-a-string/)|_TODO: add_|✅||
 |[Rings and Rods](https://leetcode.com/problems/rings-and-rods/)|_TODO: add_|✅||
 |[Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)|_TODO: add_|✅✅||
-|[Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/)|_TODO: add_|✅✅||
-|[Ransom Note](https://leetcode.com/problems/ransom-note/)|_TODO: add_|✅||
+|[Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/)|_TODO: add_|✅✅|✅|
+|[Ransom Note](https://leetcode.com/problems/ransom-note/)|_TODO: add_|✅✅|✅|
 |[To Lower Case](https://leetcode.com/problems/to-lower-case/)|_TODO: add_|✅|✅|
 |[Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)|_TODO: add_|✅||
 |[Majority Element](https://leetcode.com/problems/majority-element/)|_TODO: add_|✅||
@@ -66,4 +66,7 @@
 |[Length of Last Word](https://leetcode.com/problems/length-of-last-word/)|_TODO: add_|✅✅||
 |[Number of Segments in a String](https://leetcode.com/problems/number-of-segments-in-a-string/)|_TODO: add_|✅✅||
 |[Reverse String](https://leetcode.com/problems/reverse-string/)|_TODO: add_|✅✅||
-|[Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters/)|_TODO: add_|✅✅||
+|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|_TODO: add_|✅✅||
+|[Remove Letter To Equalize Frequency](https://leetcode.com/problems/remove-letter-to-equalize-frequency/)|_TODO: add_|✅✅|✅|
+|[Largest Positive Integer That Exists With Its Negative](https://leetcode.com/problems/largest-positive-integer-that-exists-with-its-negative/)|_TODO: add_|✅✅|✅|
+|[Circular Sentence](https://leetcode.com/problems/circular-sentence/)|_TODO: add_|✅✅||
