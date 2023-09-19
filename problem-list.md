@@ -6,9 +6,9 @@
 |[Convert the Temperature](https://leetcode.com/problems/convert-the-temperature/)|_TODO: add_|✅✅|✅|
 |[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|_TODO: add_|✅✅|✅|
 |[Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/)|_TODO: add_|✅||
-|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|_TODO: add_|✅✅||
-|[Find the Difference](https://leetcode.com/problems/find-the-difference/)|_TODO: add_|✅✅||
-|[Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)|_TODO: add_|✅✅||
+|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|_TODO: add_|✅✅|✅|
+|[Find the Difference](https://leetcode.com/problems/find-the-difference/)|_TODO: add_|✅✅|✅|
+|[Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)|_TODO: add_|✅✅|✅|
 |[Left and Right Sum Differences](https://leetcode.com/problems/left-and-right-sum-differences/)|_TODO: add_|✅✅||
 |[Find First Palindromic String in the Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)|_TODO: add_|✅✅||
 |[Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)|_TODO: add_|✅✅||
@@ -21,12 +21,12 @@
 |[Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)|_TODO: add_|✅||
 |[Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/)|_TODO: add_|✅||
 |[How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)|_TODO: add_|✅✅||
-|[Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/)|_TODO: add_|✅✅||
+|[Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/)|_TODO: add_|✅✅|✅|
 |[Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/)|_TODO: add_|✅✅||
 |[Two Sum](https://leetcode.com/problems/two-sum/)|_TODO: add_|✅✅||
 |[Truncate Sentence](https://leetcode.com/problems/truncate-sentence/)|_TODO: add_|✅||
 |[Check If Two String Arrays are Equivalent](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/)|_TODO: add_|✅||
-|[Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)|_TODO: add_|✅✅||
+|[Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)|_TODO: add_|✅✅|✅|
 |[Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/)|_TODO: add_|✅✅||
 |[Account Balance After Rounded Purchase](https://leetcode.com/problems/account-balance-after-rounded-purchase/)|_TODO: add_|✅✅||
 |[Number of Common Factors](https://leetcode.com/problems/number-of-common-factors/)|_TODO: add_|✅||
@@ -34,8 +34,8 @@
 |[Remove Trailing Zeros From a String](https://leetcode.com/problems/remove-trailing-zeros-from-a-string/)|_TODO: add_|✅||
 |[Rings and Rods](https://leetcode.com/problems/rings-and-rods/)|_TODO: add_|✅||
 |[Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)|_TODO: add_|✅✅||
-|[Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/)|_TODO: add_|✅✅||
-|[Ransom Note](https://leetcode.com/problems/ransom-note/)|_TODO: add_|✅||
+|[Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/)|_TODO: add_|✅✅|✅|
+|[Ransom Note](https://leetcode.com/problems/ransom-note/)|_TODO: add_|✅✅|✅|
 |[To Lower Case](https://leetcode.com/problems/to-lower-case/)|_TODO: add_|✅|✅|
 |[Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)|_TODO: add_|✅||
 |[Majority Element](https://leetcode.com/problems/majority-element/)|_TODO: add_|✅||
@@ -62,3 +62,11 @@
 |[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|_TODO: add_|✅✅||
 |[Largest Odd Number in String](https://leetcode.com/problems/largest-odd-number-in-string/)|_TODO: add_|✅✅||
 |[Maximum Number of Pairs in Array](https://leetcode.com/problems/maximum-number-of-pairs-in-array/)|_TODO: add_|✅✅||
+|[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)|_TODO: add_|✅✅||
+|[Length of Last Word](https://leetcode.com/problems/length-of-last-word/)|_TODO: add_|✅✅||
+|[Number of Segments in a String](https://leetcode.com/problems/number-of-segments-in-a-string/)|_TODO: add_|✅✅||
+|[Reverse String](https://leetcode.com/problems/reverse-string/)|_TODO: add_|✅✅||
+|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|_TODO: add_|✅✅||
+|[Remove Letter To Equalize Frequency](https://leetcode.com/problems/remove-letter-to-equalize-frequency/)|_TODO: add_|✅✅|✅|
+|[Largest Positive Integer That Exists With Its Negative](https://leetcode.com/problems/largest-positive-integer-that-exists-with-its-negative/)|_TODO: add_|✅✅|✅|
+|[Circular Sentence](https://leetcode.com/problems/circular-sentence/)|_TODO: add_|✅✅||
