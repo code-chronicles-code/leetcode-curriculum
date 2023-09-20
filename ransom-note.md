@@ -48,7 +48,7 @@ Bonus points:
 * Optimization
   * Space Complexity
     * Can solve using one frequency map.
-    * Can iterate through O(alphabet size) and count the occurance between magazine and ransom note
+    * Can iterate through O(alphabet size) and count the occurence between magazine and ransom note
 * Other
   * See if other languages allows [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
   * Used built-ins such as Python's `Counter` or Ruby's `.tally` to get frequency maps
