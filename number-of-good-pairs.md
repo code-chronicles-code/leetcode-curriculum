@@ -54,5 +54,5 @@ Some reference solutions for inspiration:
   * Brute Force: Can start 2nd index in the for loop at i + 1 (Also satisfies i < j)
   * Built-in `count` functions can be equivalent to a loop that traverses the entire input!
 * Other
-  * See if other languages allows [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
+  * See if other languages allow [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
   * Used built-ins such as Python's `Counter` or Ruby's `.tally` to get frequency maps
