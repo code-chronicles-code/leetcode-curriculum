@@ -57,5 +57,5 @@ Since the solution using a built-in function is so simple, this is also an oppor
   * Extra variables that could be inlined (variables only used once)
   * Using strict equality (For JS and TS)
 * Other
-  * See if other languages allows [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
+  * See if other languages allow [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
   * Avoid the need to remember ASCII codes
