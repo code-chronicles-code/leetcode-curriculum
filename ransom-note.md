@@ -47,7 +47,7 @@ Bonus points:
   * Use [tenary operators](https://en.wikipedia.org/wiki/Ternary_conditional_operator)
 * Optimization
   * Space Complexity
-    * Can solve using one frequency map.
+    * Can solve using one frequency map
     * Can iterate through O(alphabet size) and count the occurence between magazine and ransom note
 * Other
   * See if other languages allow [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
