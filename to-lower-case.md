@@ -48,3 +48,14 @@ Since the solution using a built-in function is so simple, this is also an oppor
   * gave a specific example, such as String vs. StringBuilder in Java
   * encouraged everyone to look up what is the most efficient way of appending to a string in their language and share it in the problem thread
 * showed a solution that's independent of ASCII codes, for example [this one](https://leetcode.com/problems/to-lower-case/submissions/1021132714/) (most likely the facilitator will need to either project or code this up)
+
+## Code Review:
+
+* Variables / Operations
+  * Clear and concise variable names
+  * Using let instead of const when variable isn't reassigned
+  * Extra variables that could be inlined (variables only used once)
+  * Using strict equality (For JS and TS)
+* Other
+  * See if other languages allow [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
+  * Avoid the need to remember ASCII codes

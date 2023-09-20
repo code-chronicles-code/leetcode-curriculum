@@ -35,3 +35,21 @@ Bonus points:
 * explained that we can use an array of size 26 for the frequencies
   * if time, got someone to actually code this solution, but at a bare minimum showed a solution and shared a link to it
 * showed built-ins such as Python's `Counter` or Ruby's `.tally` as a way to quickly get frequency maps
+
+## Code Review:
+
+* Variables / Operations
+  * Clear and concise variable names
+  * Using let instead of const when variable isn't reassigned
+  * Extra variables that could be inlined (variables only used once)
+  * Using strict equality (For JS and TS)
+  * Use defaults every time we use dictionary/object/map
+  * Use [tenary operators](https://en.wikipedia.org/wiki/Ternary_conditional_operator)
+* Optimization
+  * Space Complexity
+    * Can solve using one frequency map
+    * Can iterate through O(alphabet size) and count the occurence between magazine and ransom note
+* Other
+  * See if other languages allow [foreach](https://en.wikipedia.org/wiki/Foreach_loop) to iterate through the input
+  * Used built-ins such as Python's `Counter` or Ruby's `.tally` to get frequency maps
+
