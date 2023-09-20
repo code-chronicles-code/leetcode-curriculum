@@ -43,7 +43,7 @@ Bonus points:
   * Using let instead of const when variable isn't reassigned
   * Extra variables that could be inlined (variables only used once)
   * Using strict equality (For JS and TS)
-  * Use defaults everytime we use dictionary/object/map
+  * Use defaults every time we use dictionary/object/map
   * Use [tenary operators](https://en.wikipedia.org/wiki/Ternary_conditional_operator)
 * Optimization
   * Space Complexity
