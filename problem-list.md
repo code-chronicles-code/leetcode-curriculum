@@ -65,8 +65,15 @@
 |[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)|_TODO: add_|✅✅||
 |[Length of Last Word](https://leetcode.com/problems/length-of-last-word/)|_TODO: add_|✅✅||
 |[Number of Segments in a String](https://leetcode.com/problems/number-of-segments-in-a-string/)|_TODO: add_|✅✅||
-|[Reverse String](https://leetcode.com/problems/reverse-string/)|_TODO: add_|✅✅||
-|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|_TODO: add_|✅✅||
+|[Reverse String](https://leetcode.com/problems/reverse-string/)|_TODO: add_|✅✅|✅|
+|[Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters/)|_TODO: add_|✅✅|✅|
+|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|_TODO: add_|✅✅|✅|
 |[Remove Letter To Equalize Frequency](https://leetcode.com/problems/remove-letter-to-equalize-frequency/)|_TODO: add_|✅✅|✅|
 |[Largest Positive Integer That Exists With Its Negative](https://leetcode.com/problems/largest-positive-integer-that-exists-with-its-negative/)|_TODO: add_|✅✅|✅|
 |[Circular Sentence](https://leetcode.com/problems/circular-sentence/)|_TODO: add_|✅✅||
+|[Maximum Value of a String in an Array](https://leetcode.com/problems/maximum-value-of-a-string-in-an-array/)|_TODO: add_|✅✅||
+|[Find the Array Concatenation Value](https://leetcode.com/problems/find-the-array-concatenation-value/)|_TODO: add_|✅✅|✅|
+|[Base 7](https://leetcode.com/problems/base-7/)|_TODO: add_|✅✅||
+|[Count the Number of Vowel Strings in Range](https://leetcode.com/problems/count-the-number-of-vowel-strings-in-range/)|_TODO: add_|✅✅||
+|[Is Subsequence](https://leetcode.com/problems/is-subsequence/)|_TODO: add_|✅✅|✅|
+|[Count Odd Numbers in an Interval Range](https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/)|_TODO: add_|✅✅|✅|
