@@ -10,7 +10,7 @@
 |[Find the Difference](https://leetcode.com/problems/find-the-difference/)|✅✅|✅|
 |[Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)|✅✅|✅|
 |[Left and Right Sum Differences](https://leetcode.com/problems/left-and-right-sum-differences/)|✅✅||
-|[Find First Palindromic String in the Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)|✅✅||
+|[Find First Palindromic String in the Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)|✅✅|✅|
 |[Decompress Run-Length Encoded List](https://leetcode.com/problems/decompress-run-length-encoded-list/)|✅✅||
 |[Count the Digits That Divide a Number](https://leetcode.com/problems/count-the-digits-that-divide-a-number/)|✅✅|✅|
 |[Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address/)|✅||
@@ -19,7 +19,7 @@
 |[Sum Multiples](https://leetcode.com/problems/sum-multiples/)|✅✅||
 |[Find Center of Star Graph](https://leetcode.com/problems/find-center-of-star-graph/)|✅||
 |[Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)|✅||
-|[Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/)|✅||
+|[Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/)|✅✅|✅|
 |[How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/)|✅✅||
 |[Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/)|✅✅|✅|
 |[Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/)|✅✅||
@@ -31,7 +31,7 @@
 |[Account Balance After Rounded Purchase](https://leetcode.com/problems/account-balance-after-rounded-purchase/)|✅✅||
 |[Number of Common Factors](https://leetcode.com/problems/number-of-common-factors/)|✅||
 |[Sum of Squares of Special Elements](https://leetcode.com/problems/sum-of-squares-of-special-elements/)|✅||
-|[Remove Trailing Zeros From a String](https://leetcode.com/problems/remove-trailing-zeros-from-a-string/)|✅||
+|[Remove Trailing Zeros From a String](https://leetcode.com/problems/remove-trailing-zeros-from-a-string/)|✅✅|✅|
 |[Rings and Rods](https://leetcode.com/problems/rings-and-rods/)|✅||
 |[Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)|✅✅||
 |[Separate the Digits in an Array](https://leetcode.com/problems/separate-the-digits-in-an-array/)|✅✅|✅|
@@ -60,7 +60,7 @@
 |[Count Pairs Whose Sum is Less than Target](https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/)|✅✅||
 |[Prime In Diagonal](https://leetcode.com/problems/prime-in-diagonal/)|✅✅||
 |[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|✅✅||
-|[Largest Odd Number in String](https://leetcode.com/problems/largest-odd-number-in-string/)|✅✅||
+|[Largest Odd Number in String](https://leetcode.com/problems/largest-odd-number-in-string/)|✅✅|✅|
 |[Maximum Number of Pairs in Array](https://leetcode.com/problems/maximum-number-of-pairs-in-array/)|✅✅||
 |[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)|✅✅||
 |[Length of Last Word](https://leetcode.com/problems/length-of-last-word/)|✅✅||
@@ -77,3 +77,19 @@
 |[Count the Number of Vowel Strings in Range](https://leetcode.com/problems/count-the-number-of-vowel-strings-in-range/)|✅✅||
 |[Is Subsequence](https://leetcode.com/problems/is-subsequence/)|✅✅|✅|
 |[Count Odd Numbers in an Interval Range](https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/)|✅✅|✅|
+|[Points That Intersect With Cars](https://leetcode.com/problems/points-that-intersect-with-cars/)|✅✅|✅|
+|[Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)|✅✅|✅|
+|[Number of Valid Clock Times](https://leetcode.com/problems/number-of-valid-clock-times/)|✅✅||
+|[Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)|✅✅||
+|[Monotonic Array](https://leetcode.com/problems/monotonic-array/)|✅✅||
+|[Count Pairs Of Similar Strings](https://leetcode.com/problems/count-pairs-of-similar-strings/)|✅✅|✅|
+|[Number of Unequal Triplets in Array](https://leetcode.com/problems/number-of-unequal-triplets-in-array/)|✅✅|✅|
+|[Determine if Two Events Have Conflict](https://leetcode.com/problems/determine-if-two-events-have-conflict/)|✅✅|✅|
+|[Check Whether Two Strings are Almost Equivalent](https://leetcode.com/problems/check-whether-two-strings-are-almost-equivalent/)|✅✅|✅|
+|[Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/)|✅✅|✅|
+|[Keyboard Row](https://leetcode.com/problems/keyboard-row/)|✅✅|✅|
+|[Student Attendance Record I](https://leetcode.com/problems/student-attendance-record-i/)|✅✅|✅|
+|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)|✅✅|✅|
+|[Divisible and Non-divisible Sums Difference]()|✅✅|✅|
+|[Single Number](https://leetcode.com/problems/single-number/)|✅✅|✅|
+|[Second Largest Digit in a String](https://leetcode.com/problems/second-largest-digit-in-a-string/)|✅✅||
