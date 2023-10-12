@@ -92,4 +92,6 @@
 |[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)|✅✅|✅|
 |[Divisible and Non-divisible Sums Difference]()|✅✅|✅|
 |[Single Number](https://leetcode.com/problems/single-number/)|✅✅|✅|
-|[Second Largest Digit in a String](https://leetcode.com/problems/second-largest-digit-in-a-string/)|✅✅||
+|[Second Largest Digit in a String](https://leetcode.com/problems/second-largest-digit-in-a-string/)|✅✅|✅|
+|[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/)|✅✅|✅|
+|[Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/)|✅✅||
