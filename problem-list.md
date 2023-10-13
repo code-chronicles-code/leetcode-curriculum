@@ -40,7 +40,7 @@
 |[Shuffle the Array](https://leetcode.com/problems/shuffle-the-array/)|✅||
 |[Majority Element](https://leetcode.com/problems/majority-element/)|✅||
 |[Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/)|✅✅||
-|[Max Pair Sum in an Array](https://leetcode.com/problems/max-pair-sum-in-an-array/)|✅✅||
+|[Max Pair Sum in an Array](https://leetcode.com/problems/max-pair-sum-in-an-array/)|✅✅|✅|
 |[Neither Minimum nor Maximum](https://leetcode.com/problems/neither-minimum-nor-maximum/)|✅✅||
 |[Split Strings by Separator](https://leetcode.com/problems/split-strings-by-separator/)|✅||
 |[Find Maximum Number of String Pairs](https://leetcode.com/problems/find-maximum-number-of-string-pairs/)|✅||
@@ -95,3 +95,4 @@
 |[Second Largest Digit in a String](https://leetcode.com/problems/second-largest-digit-in-a-string/)|✅✅|✅|
 |[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/)|✅✅|✅|
 |[Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/)|✅✅||
+|[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)|✅✅||
