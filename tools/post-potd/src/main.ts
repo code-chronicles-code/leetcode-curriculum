@@ -35,7 +35,7 @@ async function getDataForLeetCodeUrl(
   return data.props.pageProps.dehydratedState.queries;
 }
 
-async function getLastLeetCodePotd(): Promise<Question> {
+async function getLatestLeetCodePotd(): Promise<Question> {
   const queries = await getDataForLeetCodeUrl(
     "https://leetcode.com/problemset/all/",
   );
@@ -46,12 +46,28 @@ async function getLastLeetCodePotd(): Promise<Question> {
   const problems = relevantQueries.flatMap(
     (query) => query.state.data.dailyCodingChallengeV2.challenges,
   );
-  // TODO: use max instead of sorting everything
-  problems.sort((a, b) => a.date.localeCompare(b.date));
+  const latestProblem = maxBy(problems, (problem) => problem.date);
+
   return nullthrows(
-    problems.at(-1)?.question,
+    latestProblem?.question,
     "Did not find a problem of the day!",
   );
+}
+
+function maxBy<T>(
+  arr: readonly T[],
+  rank: ((elem: T) => string) | ((elem: T) => number),
+): T | undefined {
+  let maxAndRank: { element: T; rank: string | number } | undefined = undefined;
+
+  for (const elem of arr) {
+    const elemRank = rank(elem);
+    if (maxAndRank == null || maxAndRank.rank < elemRank) {
+      maxAndRank = { element: elem, rank: elemRank };
+    }
+  }
+
+  return maxAndRank?.element;
 }
 
 async function sendDiscordMessage(content: string): Promise<void> {
@@ -74,7 +90,7 @@ async function sendDiscordMessage(content: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const potd = await getLastLeetCodePotd();
+  const potd = await getLatestLeetCodePotd();
 
   const potdNumber = parseInt(potd.questionFrontendId);
   const potdTitle = potd.title;
