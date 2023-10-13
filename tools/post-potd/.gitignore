@@ -1,2 +1,4 @@
 node_modules/
 yarn-error.log
+
+secrets_DO_NOT_COMMIT_OR_SHARE.json
