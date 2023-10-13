@@ -3,20 +3,24 @@ import invariant from "invariant";
 import { parse as parseHtml } from "node-html-parser";
 import nullthrows from "nullthrows";
 import process from "process";
+import { z } from "zod";
 
 import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
 
-type LeetCodeQueryData = {
-  // TODO: replace with actual validated type
-  state: any;
-  queryKey: [string, ...unknown[]];
-};
+const leetCodeQueryParser = z.object({
+  state: z.object({ data: z.unknown() }),
+  queryKey: z.tuple([z.string()]).rest(z.unknown()),
+});
 
-type Question = {
-  questionFrontendId: string;
-  title: string;
-  titleSlug: string;
-};
+const leetCodeNextDataParser = z.object({
+  props: z.object({
+    pageProps: z.object({
+      dehydratedState: z.object({
+        queries: z.array(leetCodeQueryParser),
+      }),
+    }),
+  }),
+});
 
 async function getDataForLeetCodeUrl(
   url: string,
@@ -27,15 +31,46 @@ async function getDataForLeetCodeUrl(
   }
 
   // The page's data is stored in a <script> element with id "__NEXT_DATA__".
+  // The parsers are based on the structure we've typically observed.
   const html = parseHtml(await response.text());
-  const data = JSON.parse(html.getElementById("__NEXT_DATA__").innerText);
+  const data = leetCodeNextDataParser.parse(
+    JSON.parse(html.getElementById("__NEXT_DATA__").innerText),
+  );
 
-  // The data we care about is typically nested like this.
-  // TODO: validate the structure
   return data.props.pageProps.dehydratedState.queries;
 }
 
-async function getLatestLeetCodePotd(): Promise<Question> {
+type LeetCodeQueryData = z.infer<typeof leetCodeQueryParser>;
+
+const leetCodeQuestionParser = z
+  .object({
+    questionFrontendId: z.string().regex(/^[1-9][0-9]*$/),
+    title: z.string().min(1).trim(),
+    titleSlug: z
+      .string()
+      .trim()
+      .regex(/^[a-z0-9\-]+$/),
+  })
+  .transform(({ questionFrontendId, title, titleSlug }) => ({
+    problemNumber: parseInt(questionFrontendId),
+    title,
+    titleSlug,
+  }));
+
+const leetCodeQuestionAndDateParser = z.object({
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  question: leetCodeQuestionParser,
+});
+
+const leetCodePotdQueryDataParser = z.object({
+  dailyCodingChallengeV2: z.object({
+    challenges: z.array(leetCodeQuestionAndDateParser),
+  }),
+});
+
+type LeetCodeQuestionAndDate = z.infer<typeof leetCodeQuestionAndDateParser>;
+
+async function getLatestLeetCodePotd(): Promise<LeetCodeQuestionAndDate> {
   const queries = await getDataForLeetCodeUrl(
     "https://leetcode.com/problemset/all/",
   );
@@ -43,15 +78,14 @@ async function getLatestLeetCodePotd(): Promise<Question> {
     (query) => query.queryKey[0] === "dailyCodingQuestionRecords",
   );
 
-  const problems = relevantQueries.flatMap(
-    (query) => query.state.data.dailyCodingChallengeV2.challenges,
+  const questions = relevantQueries.flatMap(
+    (query) =>
+      leetCodePotdQueryDataParser.parse(query.state.data).dailyCodingChallengeV2
+        .challenges,
   );
-  const latestProblem = maxBy(problems, (problem) => problem.date);
+  const latestQuestion = maxBy(questions, (q) => q.date);
 
-  return nullthrows(
-    latestProblem?.question,
-    "Did not find a problem of the day!",
-  );
+  return nullthrows(latestQuestion, "Did not find a problem of the day!");
 }
 
 function maxBy<T>(
@@ -90,14 +124,12 @@ async function sendDiscordMessage(content: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const potd = await getLatestLeetCodePotd();
-
-  const potdNumber = parseInt(potd.questionFrontendId);
-  const potdTitle = potd.title;
+  const { question: potd } = await getLatestLeetCodePotd();
   const potdLink = "https://leetcode.com/problems/" + potd.titleSlug + "/";
 
-  const message = `New LeetCode problem of the day! [${potdNumber}. ${potdTitle}](${potdLink})`;
+  const message = `New LeetCode problem of the day! [${potd.problemNumber}. ${potd.title}](${potdLink})`;
   await sendDiscordMessage(message);
+  console.log(message);
 }
 
 main().catch((err) => {
