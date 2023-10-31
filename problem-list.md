@@ -24,7 +24,7 @@
 |[Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/)|✅✅|✅|
 |[Number of Arithmetic Triplets](https://leetcode.com/problems/number-of-arithmetic-triplets/)|✅✅||
 |[Two Sum](https://leetcode.com/problems/two-sum/)|✅✅||
-|[Truncate Sentence](https://leetcode.com/problems/truncate-sentence/)|✅||
+|[Truncate Sentence](https://leetcode.com/problems/truncate-sentence/)|✅✅|✅|
 |[Check If Two String Arrays are Equivalent](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/)|✅||
 |[Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)|✅✅|✅|
 |[Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/)|✅✅||
@@ -70,16 +70,16 @@
 |[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|✅✅|✅|
 |[Remove Letter To Equalize Frequency](https://leetcode.com/problems/remove-letter-to-equalize-frequency/)|✅✅|✅|
 |[Largest Positive Integer That Exists With Its Negative](https://leetcode.com/problems/largest-positive-integer-that-exists-with-its-negative/)|✅✅|✅|
-|[Circular Sentence](https://leetcode.com/problems/circular-sentence/)|✅✅||
-|[Maximum Value of a String in an Array](https://leetcode.com/problems/maximum-value-of-a-string-in-an-array/)|✅✅||
+|[Circular Sentence](https://leetcode.com/problems/circular-sentence/)|✅✅|✅|
+|[Maximum Value of a String in an Array](https://leetcode.com/problems/maximum-value-of-a-string-in-an-array/)|✅✅|✅|
 |[Find the Array Concatenation Value](https://leetcode.com/problems/find-the-array-concatenation-value/)|✅✅|✅|
-|[Base 7](https://leetcode.com/problems/base-7/)|✅✅||
-|[Count the Number of Vowel Strings in Range](https://leetcode.com/problems/count-the-number-of-vowel-strings-in-range/)|✅✅||
+|[Base 7](https://leetcode.com/problems/base-7/)|✅✅|✅|
+|[Count the Number of Vowel Strings in Range](https://leetcode.com/problems/count-the-number-of-vowel-strings-in-range/)|✅✅|✅|
 |[Is Subsequence](https://leetcode.com/problems/is-subsequence/)|✅✅|✅|
 |[Count Odd Numbers in an Interval Range](https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/)|✅✅|✅|
 |[Points That Intersect With Cars](https://leetcode.com/problems/points-that-intersect-with-cars/)|✅✅|✅|
 |[Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)|✅✅|✅|
-|[Number of Valid Clock Times](https://leetcode.com/problems/number-of-valid-clock-times/)|✅✅||
+|[Number of Valid Clock Times](https://leetcode.com/problems/number-of-valid-clock-times/)|✅✅|✅|
 |[Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)|✅✅||
 |[Monotonic Array](https://leetcode.com/problems/monotonic-array/)|✅✅||
 |[Count Pairs Of Similar Strings](https://leetcode.com/problems/count-pairs-of-similar-strings/)|✅✅|✅|
@@ -96,3 +96,21 @@
 |[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/)|✅✅|✅|
 |[Count Integers With Even Digit Sum](https://leetcode.com/problems/count-integers-with-even-digit-sum/)|✅✅||
 |[Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)|✅✅||
+|[Degree of an Array](https://leetcode.com/problems/degree-of-an-array/)|✅✅|✅|
+|[Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)|✅✅|✅|
+|[License Key Formatting](https://leetcode.com/problems/license-key-formatting/)|✅✅||
+|[Longest Harmonious Subsequence](https://leetcode.com/problems/longest-harmonious-subsequence/)|✅✅||
+|[Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/)|✅✅||
+|[Latest Time by Replacing Hidden Digits](https://leetcode.com/problems/latest-time-by-replacing-hidden-digits/)|✅✅||
+|[Binary Gap](https://leetcode.com/problems/binary-gap/)|✅✅|✅|
+|[Plus One](https://leetcode.com/problems/plus-one/)|✅✅|✅|
+|[Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)|✅✅|✅|
+|[Detect Capital](https://leetcode.com/problems/detect-capital/)|✅✅|✅|
+|[Check If All 1's Are at Least Length K Places Away](https://leetcode.com/problems/check-if-all-1s-are-at-least-length-k-places-away/)|✅✅|✅|
+|[Sign of the Product of an Array](https://leetcode.com/problems/sign-of-the-product-of-an-array/)|✅✅||
+|[Maximum Odd Binary Number](https://leetcode.com/problems/maximum-odd-binary-number/)|✅✅|✅|
+|[First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)|✅✅|✅|
+|[Number of Different Integers in a String](https://leetcode.com/problems/number-of-different-integers-in-a-string/)|✅✅|✅|
+|[Long Pressed Name](https://leetcode.com/problems/long-pressed-name/)|✅✅|✅|
+|[Power of Two](https://leetcode.com/problems/power-of-two/)|✅✅|✅|
+|[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)|✅✅||
