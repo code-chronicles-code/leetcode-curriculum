@@ -1,3 +1,5 @@
+# Summer / September 2023 cohorts
+
 |Problem|Summer cohort|September cohort|
 |-|-|-|
 |[Add Two Integers](https://leetcode.com/problems/add-two-integers/)|✅✅|✅|
@@ -114,3 +116,25 @@
 |[Long Pressed Name](https://leetcode.com/problems/long-pressed-name/)|✅✅|✅|
 |[Power of Two](https://leetcode.com/problems/power-of-two/)|✅✅|✅|
 |[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)|✅✅||
+
+# Text cohort (November 2023 - )
+
+|Problem|
+|-|
+|[Power of Four](https://leetcode.com/problems/power-of-four/)|
+|[Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)|
+|[Complement of Base 10 Integer](https://leetcode.com/problems/complement-of-base-10-integer/)|
+|[Check if All the Integers in a Range Are Covered](https://leetcode.com/problems/check-if-all-the-integers-in-a-range-are-covered/)|
+|[A Number After a Double Reversal](https://leetcode.com/problems/a-number-after-a-double-reversal/)|
+|[Maximum Product of Two Elements in an Array](https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/)|
+|[Minimum Bit Flips to Convert Number](https://leetcode.com/problems/minimum-bit-flips-to-convert-number/)|
+|[Last Stone Weight](https://leetcode.com/problems/last-stone-weight/)|
+|[Sort Integers by The Number of 1 Bits](https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/)|
+|[Count the Number of Consistent Strings](https://leetcode.com/problems/count-the-number-of-consistent-strings/)|
+|[Check if the Sentence Is Pangram](https://leetcode.com/problems/check-if-the-sentence-is-pangram/)|
+|[Check if The Number is Fascinating](https://leetcode.com/problems/check-if-the-number-is-fascinating/)|
+|[Take Gifts From the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/)|
+|[Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/)|
+|[Three Consecutive Odds](https://leetcode.com/problems/three-consecutive-odds/)|
+|[Percentage of Letter in String](https://leetcode.com/problems/percentage-of-letter-in-string/)|
+|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)|
