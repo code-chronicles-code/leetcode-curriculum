@@ -1,46 +1,47 @@
 import { ChannelType, Client, GatewayIntentBits } from "discord.js";
 import invariant from "invariant";
-import { parse as parseHtml } from "node-html-parser";
-import nullthrows from "nullthrows";
 import process from "process";
 import { z } from "zod";
 
 import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
 
-const leetCodeQueryParser = z.object({
-  state: z.object({ data: z.unknown() }),
-  queryKey: z.tuple([z.string()]).rest(z.unknown()),
+const leetGraphQLQueryParser = z.object({
+  data: z.unknown(),
 });
 
-const leetCodeNextDataParser = z.object({
-  props: z.object({
-    pageProps: z.object({
-      dehydratedState: z.object({
-        queries: z.array(leetCodeQueryParser),
-      }),
-    }),
-  }),
-});
+type LeetCodeGraphQLData = z.infer<typeof leetGraphQLQueryParser>;
 
-async function getDataForLeetCodeUrl(
-  url: string,
-): Promise<LeetCodeQueryData[]> {
-  const response = await fetch(url);
+async function getLeetCodeGraphQLData(
+  operationName: string,
+  query: string,
+): Promise<LeetCodeGraphQLData> {
+  const response = await fetch("https://leetcode.com/graphql/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ query, operationName, variables: {} }),
+  });
+
   if (!response.ok) {
     throw new Error(`Got status ${response.status} from server!`);
   }
 
-  // The page's data is stored in a <script> element with id "__NEXT_DATA__".
-  // The parsers are based on the structure we've typically observed.
-  const html = parseHtml(await response.text());
-  const data = leetCodeNextDataParser.parse(
-    JSON.parse(html.getElementById("__NEXT_DATA__").innerText),
-  );
-
-  return data.props.pageProps.dehydratedState.queries;
+  return leetGraphQLQueryParser.parse(await response.json());
 }
 
-type LeetCodeQueryData = z.infer<typeof leetCodeQueryParser>;
+const PROBLEM_OF_THE_DAY_QUERY = `
+  query questionOfToday {
+    activeDailyCodingChallengeQuestion {
+      date
+      question {
+        questionFrontendId
+        title
+        titleSlug
+      }
+    }
+  }
+`.replace(/\s+/g, " ");
 
 const leetCodeQuestionParser = z
   .object({
@@ -57,51 +58,25 @@ const leetCodeQuestionParser = z
     titleSlug,
   }));
 
-const leetCodeQuestionAndDateParser = z.object({
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  question: leetCodeQuestionParser,
-});
+const leetCodeQuestionOfTodayQueryDataParser = z
+  .object({
+    activeDailyCodingChallengeQuestion: z.object({
+      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      question: leetCodeQuestionParser,
+    }),
+  })
+  .transform((data) => data.activeDailyCodingChallengeQuestion);
 
-const leetCodePotdQueryDataParser = z.object({
-  dailyCodingChallengeV2: z.object({
-    challenges: z.array(leetCodeQuestionAndDateParser),
-  }),
-});
-
-type LeetCodeQuestionAndDate = z.infer<typeof leetCodeQuestionAndDateParser>;
+type LeetCodeQuestionAndDate = z.infer<
+  typeof leetCodeQuestionOfTodayQueryDataParser
+>;
 
 async function getLatestLeetCodePotd(): Promise<LeetCodeQuestionAndDate> {
-  const queries = await getDataForLeetCodeUrl(
-    "https://leetcode.com/problemset/all/",
+  const { data } = await getLeetCodeGraphQLData(
+    "questionOfToday",
+    PROBLEM_OF_THE_DAY_QUERY,
   );
-  const relevantQueries = queries.filter(
-    (query) => query.queryKey[0] === "dailyCodingQuestionRecords",
-  );
-
-  const questions = relevantQueries.flatMap(
-    (query) =>
-      leetCodePotdQueryDataParser.parse(query.state.data).dailyCodingChallengeV2
-        .challenges,
-  );
-  const latestQuestion = maxBy(questions, (q) => q.date);
-
-  return nullthrows(latestQuestion, "Did not find a problem of the day!");
-}
-
-function maxBy<T>(
-  arr: readonly T[],
-  rank: ((elem: T) => string) | ((elem: T) => number),
-): T | undefined {
-  let maxAndRank: { element: T; rank: string | number } | undefined = undefined;
-
-  for (const elem of arr) {
-    const elemRank = rank(elem);
-    if (maxAndRank == null || maxAndRank.rank < elemRank) {
-      maxAndRank = { element: elem, rank: elemRank };
-    }
-  }
-
-  return maxAndRank?.element;
+  return leetCodeQuestionOfTodayQueryDataParser.parse(data);
 }
 
 async function sendDiscordMessage(content: string): Promise<void> {
@@ -125,7 +100,7 @@ async function sendDiscordMessage(content: string): Promise<void> {
 
 async function main(): Promise<void> {
   const { question: potd } = await getLatestLeetCodePotd();
-  const potdLink = "https://leetcode.com/problems/" + potd.titleSlug + "/";
+  const potdLink = `https://leetcode.com/problems/${potd.titleSlug}/`;
 
   const message = `New LeetCode problem of the day! [${potd.problemNumber}. ${potd.title}](${potdLink})`;
   await sendDiscordMessage(message);
