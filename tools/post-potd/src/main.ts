@@ -4,7 +4,7 @@ import process from "process";
 
 import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
 
-import { getTodaysLeetCodePotd } from "@code-chronicles/leetcode-api";
+import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
 
 async function sendDiscordMessage(content: string): Promise<void> {
   const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -26,7 +26,7 @@ async function sendDiscordMessage(content: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const { question: potd } = await getTodaysLeetCodePotd();
+  const { question: potd } = await getPotd();
   const potdLink = `https://leetcode.com/problems/${potd.titleSlug}/`;
 
   const message = `New LeetCode problem of the day! [${potd.problemNumber}. ${potd.title}](${potdLink})`;
