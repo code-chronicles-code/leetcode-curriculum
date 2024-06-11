@@ -10,9 +10,9 @@ async function sendDiscordMessage(content: string): Promise<void> {
   const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
   try {
-    await client.login(secrets.token);
+    await client.login(secrets.discordToken);
 
-    const channel = await client.channels.fetch(secrets.channelID);
+    const channel = await client.channels.fetch(secrets.discordChannelID);
     invariant(
       channel?.type === ChannelType.GuildText,
       "Channel must be a text channel!",
