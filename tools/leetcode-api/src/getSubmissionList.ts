@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const submissionParser = (() => {
   const int = z.number().int();
-  const positiveInt = int.min(1);
+  const positiveInt = int.positive();
   const trimmedNonEmptyString = z.string().trim().min(1);
   const untrimmedNonEmptyString = z.string().min(1);
 
@@ -13,7 +13,7 @@ const submissionParser = (() => {
       lang: trimmedNonEmptyString,
       lang_name: trimmedNonEmptyString,
       time: trimmedNonEmptyString,
-      timestamp: positiveInt,
+      timestamp: int.nonnegative(),
       status: int,
       status_display: trimmedNonEmptyString,
       runtime: trimmedNonEmptyString,
@@ -54,11 +54,15 @@ const submissionListParser = z.object({
 
 export type SubmissionList = z.infer<typeof submissionListParser>;
 
-export async function getSubmissionList(
-  session: string,
-  offset: number = 0,
-  limit: number = 50,
-): Promise<SubmissionList> {
+export async function getSubmissionList({
+  limit = 50,
+  offset = 0,
+  session,
+}: {
+  limit: number;
+  offset: number;
+  session: string;
+}): Promise<SubmissionList> {
   const url = new URL("https://leetcode.com/api/submissions/");
   url.search = new URLSearchParams({
     offset: String(offset),

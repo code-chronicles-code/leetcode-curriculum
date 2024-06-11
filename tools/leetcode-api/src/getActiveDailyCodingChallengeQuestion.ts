@@ -57,9 +57,11 @@ export async function getActiveDailyCodingChallengeQuestionWithoutDateValidation
   return activeDailyCodingChallengeQuestionParser.parse(data);
 }
 
-export async function getActiveDailyCodingChallengeQuestionWithDateValidation(
-  wrongDateRetries: number = 3,
-): Promise<ActiveDailyCodingChallengeQuestion> {
+export async function getActiveDailyCodingChallengeQuestionWithDateValidation({
+  wrongDateRetries = 3,
+}: {
+  wrongDateRetries?: number;
+} = {}): Promise<ActiveDailyCodingChallengeQuestion> {
   for (let retry = 0; retry <= wrongDateRetries; ++retry) {
     const res =
       await getActiveDailyCodingChallengeQuestionWithoutDateValidation();

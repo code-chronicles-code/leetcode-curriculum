@@ -20,7 +20,7 @@ const submissionParser = z.object({
     .string()
     .trim()
     .regex(/^[1-9][0-9]*$/),
-  title: z.string().min(1).trim(),
+  title: z.string().trim().min(1),
   titleSlug: z
     .string()
     .trim()
@@ -40,10 +40,13 @@ const recentAcSubmissionListParser = z
   })
   .transform((data) => data.recentAcSubmissionList);
 
-export async function getRecentAcSubmissionList(
-  username: string,
-  limit: number = 50,
-): Promise<RecentAcSubmission[]> {
+export async function getRecentAcSubmissionList({
+  limit = 50,
+  username,
+}: {
+  limit?: number;
+  username: string;
+}): Promise<RecentAcSubmission[]> {
   const { data } = await getGraphQLData(QUERY, { username, limit });
   return recentAcSubmissionListParser.parse(data);
 }
