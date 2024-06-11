@@ -20,17 +20,19 @@ const QUERY = `
 
 const questionParser = z
   .object({
-    questionFrontendId: z.string().regex(/^[1-9][0-9]*$/),
+    questionFrontendId: z
+      .string()
+      .regex(/^[1-9][0-9]*$/)
+      .transform((value) => parseInt(value, 10)),
     title: z.string().min(1).trim(),
     titleSlug: z
       .string()
       .trim()
       .regex(/^[a-z0-9\-]+$/),
   })
-  .transform(({ questionFrontendId, title, titleSlug }) => ({
-    problemNumber: parseInt(questionFrontendId),
-    title,
-    titleSlug,
+  .transform(({ questionFrontendId, ...rest }) => ({
+    problemNumber: questionFrontendId,
+    ...rest,
   }));
 
 const activeDailyCodingChallengeQuestionParser = z
