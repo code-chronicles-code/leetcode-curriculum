@@ -1,6 +1,7 @@
 {
   "private": true,
   "workspaces": [
+    "get-recent-submissions",
     "leetcode-api",
     "post-potd"
   ]
