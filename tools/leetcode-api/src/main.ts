@@ -9,7 +9,6 @@ const leetCodeGraphQLQueryParser = z.object({
 type LeetCodeGraphQLData = z.infer<typeof leetCodeGraphQLQueryParser>;
 
 async function getLeetCodeGraphQLData(
-  operationName: string,
   query: string,
 ): Promise<LeetCodeGraphQLData> {
   const response = await fetch("https://leetcode.com/graphql/", {
@@ -17,7 +16,7 @@ async function getLeetCodeGraphQLData(
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ query, operationName, variables: {} }),
+    body: JSON.stringify({ query, variables: {} }),
   });
 
   if (!response.ok) {
@@ -28,7 +27,7 @@ async function getLeetCodeGraphQLData(
 }
 
 const PROBLEM_OF_THE_DAY_QUERY = `
-  query questionOfToday {
+  query {
     activeDailyCodingChallengeQuestion {
       date
       question {
@@ -38,7 +37,9 @@ const PROBLEM_OF_THE_DAY_QUERY = `
       }
     }
   }
-`.replace(/\s+/g, " ");
+`
+  .trim()
+  .replace(/\s+/g, " ");
 
 const leetCodeQuestionParser = z
   .object({
@@ -69,10 +70,7 @@ type LeetCodeQuestionAndDate = z.infer<
 >;
 
 export async function getLatestLeetCodePotdEvenIfNotTodays(): Promise<LeetCodeQuestionAndDate> {
-  const { data } = await getLeetCodeGraphQLData(
-    "questionOfToday",
-    PROBLEM_OF_THE_DAY_QUERY,
-  );
+  const { data } = await getLeetCodeGraphQLData(PROBLEM_OF_THE_DAY_QUERY);
   return leetCodeQuestionOfTodayQueryDataParser.parse(data);
 }
 
