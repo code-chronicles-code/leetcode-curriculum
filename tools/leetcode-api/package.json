@@ -13,11 +13,9 @@
     "typecheck": "tsc --noEmit --project ."
   },
   "dependencies": {
-    "invariant": "2.2.4",
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@types/invariant": "2.2.37",
     "@types/node": "20.14.2",
     "prettier": "3.3.2",
     "typescript": "5.4.5"
