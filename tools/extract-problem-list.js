@@ -6,7 +6,7 @@ Array.from(document.getElementsByTagName("a"))
   .filter(
     (a) =>
       a.getAttribute("href")?.startsWith("/problems/") &&
-      /^(\d+)\. /.test(a.innerText.trim())
+      /^(\d+)\. /.test(a.innerText.trim()),
   )
   .map((a) => ({
     code: a

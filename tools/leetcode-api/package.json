@@ -1,5 +1,5 @@
 {
-  "name": "@code-chronicles/post-potd",
+  "name": "@code-chronicles/leetcode-api",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
@@ -7,19 +7,15 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "main": "src/main.ts",
   "scripts": {
     "format": "prettier --write .",
-    "start": "ts-node src/main.ts",
     "typecheck": "tsc --noEmit --project ."
   },
   "dependencies": {
-    "@code-chronicles/leetcode-api": "0.0.1",
-    "invariant": "2.2.4",
-    "discord.js": "14.15.3",
-    "ts-node": "10.9.2"
+    "zod": "3.23.8"
   },
   "devDependencies": {
-    "@types/invariant": "2.2.37",
     "@types/node": "20.14.2",
     "prettier": "3.3.2",
     "typescript": "5.4.5"
