@@ -7,15 +7,15 @@
     "typecheck": "tsc --noEmit --project ."
   },
   "dependencies": {
-    "discord.js": "14.14.1",
+    "discord.js": "14.15.3",
     "invariant": "2.2.4",
     "ts-node": "10.9.2",
-    "typescript": "5.3.3",
-    "zod": "3.22.4"
+    "typescript": "5.4.5",
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@types/invariant": "2.2.37",
-    "@types/node": "20.10.6",
-    "prettier": "3.1.1"
+    "@types/node": "20.14.2",
+    "prettier": "3.3.1"
   }
 }

@@ -5,11 +5,11 @@ import { z } from "zod";
 
 import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
 
-const leetGraphQLQueryParser = z.object({
+const leetCodeGraphQLQueryParser = z.object({
   data: z.unknown(),
 });
 
-type LeetCodeGraphQLData = z.infer<typeof leetGraphQLQueryParser>;
+type LeetCodeGraphQLData = z.infer<typeof leetCodeGraphQLQueryParser>;
 
 async function getLeetCodeGraphQLData(
   operationName: string,
@@ -27,7 +27,7 @@ async function getLeetCodeGraphQLData(
     throw new Error(`Got status ${response.status} from server!`);
   }
 
-  return leetGraphQLQueryParser.parse(await response.json());
+  return leetCodeGraphQLQueryParser.parse(await response.json());
 }
 
 const PROBLEM_OF_THE_DAY_QUERY = `
@@ -79,6 +79,36 @@ async function getLatestLeetCodePotd(): Promise<LeetCodeQuestionAndDate> {
   return leetCodeQuestionOfTodayQueryDataParser.parse(data);
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function getTodaysLeetCodePotd(
+  wrongDateRetries: number = 3,
+): Promise<LeetCodeQuestionAndDate> {
+  for (let retry = 0; retry <= wrongDateRetries; ++retry) {
+    const res = await getLatestLeetCodePotd();
+
+    const now = new Date();
+    const today = [
+      now.getUTCFullYear(),
+      (now.getUTCMonth() + 1).toString().padStart(2, "0"),
+      now.getUTCDate().toString().padStart(2, "0"),
+    ].join("-");
+
+    if (res.date === today) {
+      return res;
+    }
+
+    // Wait a minute then try again.
+    await sleep(60000);
+  }
+
+  throw new Error("Exhausted wrong date retries!");
+}
+
 async function sendDiscordMessage(content: string): Promise<void> {
   const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -99,7 +129,7 @@ async function sendDiscordMessage(content: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const { question: potd } = await getLatestLeetCodePotd();
+  const { question: potd } = await getTodaysLeetCodePotd();
   const potdLink = `https://leetcode.com/problems/${potd.titleSlug}/`;
 
   const message = `New LeetCode problem of the day! [${potd.problemNumber}. ${potd.title}](${potdLink})`;
