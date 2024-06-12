@@ -11,6 +11,33 @@ import { sleep } from "@code-chronicles/leetcode-api/src/sleep";
 
 import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
 
+// TODO: Verify that this is an exhaustive list of LeetCode languages.
+export const LANGUAGE_TO_FILE_EXTENSION: Record<string, string> = {
+  bash: "sh",
+  c: "c",
+  cpp: "cpp",
+  csharp: "cs",
+  dart: "dart",
+  elixir: "ex",
+  erlang: "erl",
+  golang: "go",
+  java: "java",
+  javascript: "js",
+  kotlin: "kt",
+  mssql: "sql",
+  mysql: "sql",
+  php: "php",
+  python: "py",
+  python3: "py",
+  pythondata: "py",
+  racket: "rkt",
+  ruby: "rb",
+  rust: "rs",
+  scala: "scala",
+  swift: "swift",
+  typescript: "ts",
+};
+
 function transformSubmission({ code, compare_result, ...rest }: Submission): {
   code: string;
   submission: Omit<
@@ -111,7 +138,11 @@ async function main(): Promise<void> {
 
         // TODO: Maybe batch? This isn't the slow part of this script anyway.
         console.error(`Saving submission ${submission.id} to a file.`);
-        await fsPromises.writeFile(`submissions/${submission.id}.txt`, code);
+        const extension = LANGUAGE_TO_FILE_EXTENSION[submission.lang] ?? "txt";
+        await fsPromises.writeFile(
+          `submissions/${submission.id}.${extension}`,
+          code,
+        );
       }
 
       console.error(
