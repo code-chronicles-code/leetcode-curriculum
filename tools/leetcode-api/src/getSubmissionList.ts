@@ -1,5 +1,28 @@
 import { z } from "zod";
 
+export const SUBMISSION_STATUS_TO_DISPLAY_TEXT: ReadonlyMap<number, string> =
+  new Map([
+    [10, "Accepted"],
+    [11, "Wrong Answer"],
+    [12, "Memory Limit Exceeded"],
+    [13, "Output Limit Exceeded"],
+    [14, "Time Limit Exceeded"],
+    [15, "Runtime Error"],
+    [16, "Internal Error"],
+    [20, "Compile Error"],
+  ]);
+
+export const SUBMISSION_STATUS_TO_ABBREVIATION = {
+  Accepted: "AC",
+  "Wrong Answer": "WA",
+  "Memory Limit Exceeded": "MLE",
+  "Output Limit Exceeded": "OLE",
+  "Time Limit Exceeded": "TLE",
+  "Runtime Error": "RE",
+  "Internal Error": "IE",
+  "Compile Error": "CE",
+} as const;
+
 const submissionParser = (() => {
   const int = z.number().int();
   const positiveInt = int.positive();

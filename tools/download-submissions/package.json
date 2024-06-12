@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@code-chronicles/leetcode-api": "0.0.1",
+    "nullthrows": "1.1.1",
     "ts-node": "10.9.2"
   },
   "devDependencies": {
