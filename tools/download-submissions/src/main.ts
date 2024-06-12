@@ -68,6 +68,30 @@ type TransformedSubmission = ReturnType<
 
 const SUMMARY_FILE = "submissions.json";
 
+function getFilenameForSubmission(submission: TransformedSubmission): string {
+  const extension = LANGUAGE_TO_FILE_EXTENSION[submission.lang] ?? "txt";
+  return `${submission.id}.${extension}`;
+}
+
+const PROBLEMS_PER_GROUP = 100;
+
+function padProblemNumber(n: number): string {
+  return n.toString().padStart(4, "0");
+}
+
+function getDirnameForSubmission(submission: TransformedSubmission): string {
+  const { questionFrontendId, titleSlug } = submission.question;
+  const start =
+    questionFrontendId - (questionFrontendId % PROBLEMS_PER_GROUP) + 1;
+  const end = start - 1 + PROBLEMS_PER_GROUP;
+
+  return [
+    "submissions",
+    `${padProblemNumber(start)}-${padProblemNumber(end)}`,
+    `${padProblemNumber(questionFrontendId)}-${titleSlug}`,
+  ].join("/");
+}
+
 async function main(): Promise<void> {
   const submissionsMap = new Map<string, TransformedSubmission>();
 
@@ -138,11 +162,12 @@ async function main(): Promise<void> {
 
         // TODO: Maybe batch? This isn't the slow part of this script anyway.
         console.error(`Saving submission ${submission.id} to a file.`);
-        const extension = LANGUAGE_TO_FILE_EXTENSION[submission.lang] ?? "txt";
-        await fsPromises.writeFile(
-          `submissions/${submission.id}.${extension}`,
-          code,
-        );
+
+        const dir = getDirnameForSubmission(submission);
+        await fsPromises.mkdir(dir, { recursive: true });
+
+        const filename = getFilenameForSubmission(submission);
+        await fsPromises.writeFile(`${dir}/${filename}`, code);
       }
 
       console.error(
