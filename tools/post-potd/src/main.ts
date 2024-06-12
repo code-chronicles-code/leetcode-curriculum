@@ -29,7 +29,7 @@ async function main(): Promise<void> {
   const { question: potd } = await getPotd();
   const potdLink = `https://leetcode.com/problems/${potd.titleSlug}/`;
 
-  const message = `New LeetCode problem of the day! [${potd.problemNumber}. ${potd.title}](${potdLink})`;
+  const message = `New LeetCode problem of the day! [${potd.questionFrontendId}. ${potd.title}](${potdLink})`;
   await sendDiscordMessage(message);
   console.log(message);
 }

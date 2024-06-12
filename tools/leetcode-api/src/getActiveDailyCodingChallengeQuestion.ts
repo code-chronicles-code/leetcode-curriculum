@@ -18,23 +18,18 @@ const QUERY = `
   .trim()
   .replace(/\s+/g, " ");
 
-const questionParser = z
-  .object({
-    questionFrontendId: z
-      .string()
-      .trim()
-      .regex(/^[1-9][0-9]*$/)
-      .transform((value) => parseInt(value, 10)),
-    title: z.string().trim().min(1),
-    titleSlug: z
-      .string()
-      .trim()
-      .regex(/^[a-z0-9\-]+$/),
-  })
-  .transform(({ questionFrontendId, ...rest }) => ({
-    ...rest,
-    problemNumber: questionFrontendId,
-  }));
+const questionParser = z.object({
+  questionFrontendId: z
+    .string()
+    .trim()
+    .regex(/^[1-9][0-9]*$/)
+    .transform((value) => parseInt(value, 10)),
+  title: z.string().trim().min(1),
+  titleSlug: z
+    .string()
+    .trim()
+    .regex(/^[a-z0-9\-]+$/),
+});
 
 const activeDailyCodingChallengeQuestionParser = z
   .object({

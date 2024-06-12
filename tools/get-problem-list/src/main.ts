@@ -29,7 +29,7 @@ async function main(): Promise<void> {
     totalCount = data.totalNum;
 
     for (const question of data.questions) {
-      problemsMap.set(question.problemNumber, question);
+      problemsMap.set(question.questionFrontendId, question);
     }
 
     if (data.questions.length === 0) {
@@ -45,7 +45,7 @@ async function main(): Promise<void> {
   }
 
   const problems = [...problemsMap.values()].sort(
-    (a, b) => a.problemNumber - b.problemNumber,
+    (a, b) => a.questionFrontendId - b.questionFrontendId,
   );
   console.log(JSON.stringify(problems, null, 2));
 }
