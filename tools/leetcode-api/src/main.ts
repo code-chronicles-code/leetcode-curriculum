@@ -15,4 +15,8 @@ export {
   type RecentAcSubmission,
 } from "./getRecentAcSubmissionList";
 
-export { getSubmissionList } from "./getSubmissionList";
+export {
+  getSubmissionList,
+  type Submission,
+  type SubmissionList,
+} from "./getSubmissionList";
