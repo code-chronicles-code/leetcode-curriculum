@@ -8,3 +8,5 @@ export {
   getRecentAcSubmissionList,
   type RecentAcSubmission,
 } from "./getRecentAcSubmissionList";
+
+export { getSubmissionList } from "./getSubmissionList";

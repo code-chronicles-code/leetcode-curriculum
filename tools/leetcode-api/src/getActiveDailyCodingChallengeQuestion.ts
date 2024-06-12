@@ -22,23 +22,27 @@ const questionParser = z
   .object({
     questionFrontendId: z
       .string()
+      .trim()
       .regex(/^[1-9][0-9]*$/)
       .transform((value) => parseInt(value, 10)),
-    title: z.string().min(1).trim(),
+    title: z.string().trim().min(1),
     titleSlug: z
       .string()
       .trim()
       .regex(/^[a-z0-9\-]+$/),
   })
   .transform(({ questionFrontendId, ...rest }) => ({
-    problemNumber: questionFrontendId,
     ...rest,
+    problemNumber: questionFrontendId,
   }));
 
 const activeDailyCodingChallengeQuestionParser = z
   .object({
     activeDailyCodingChallengeQuestion: z.object({
-      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      date: z
+        .string()
+        .trim()
+        .regex(/^\d{4}-\d{2}-\d{2}$/),
       question: questionParser,
     }),
   })
