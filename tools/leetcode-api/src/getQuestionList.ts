@@ -24,30 +24,20 @@ const QUERY = `
   .trim()
   .replace(/\s+/g, " ");
 
-const questionParser = z
-  .object({
-    difficulty: z.enum(["Easy", "Medium", "Hard"]),
-    isPaidOnly: z.boolean(),
-    questionFrontendId: z
-      .string()
-      .trim()
-      .regex(/^[1-9][0-9]*$/)
-      .transform((value) => parseInt(value, 10)),
-    title: z.string().trim().min(1),
-    titleSlug: z
-      .string()
-      .trim()
-      .regex(/^[a-z0-9\-]+$/),
-  })
-  .transform(
-    ({ titleSlug, questionFrontendId, title, difficulty, isPaidOnly }) => ({
-      code: titleSlug,
-      problemNumber: questionFrontendId,
-      name: title,
-      difficulty,
-      isPremium: isPaidOnly,
-    }),
-  );
+const questionParser = z.object({
+  difficulty: z.enum(["Easy", "Medium", "Hard"]),
+  isPaidOnly: z.boolean(),
+  questionFrontendId: z
+    .string()
+    .trim()
+    .regex(/^[1-9][0-9]*$/)
+    .transform((value) => parseInt(value, 10)),
+  title: z.string().trim().min(1),
+  titleSlug: z
+    .string()
+    .trim()
+    .regex(/^[a-z0-9\-]+$/),
+});
 
 export type QuestionListQuestion = z.infer<typeof questionParser>;
 
