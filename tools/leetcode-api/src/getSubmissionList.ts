@@ -40,7 +40,11 @@ const submissionParser = (() => {
     })
     .transform(({ question_id, title, title_slug, ...rest }) => ({
       ...rest,
-      question: { title, titleSlug: title_slug, problemNumber: question_id },
+      question: {
+        questionFrontendId: question_id,
+        title,
+        titleSlug: title_slug,
+      },
     }));
 })();
 
