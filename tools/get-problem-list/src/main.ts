@@ -106,8 +106,8 @@ async function main(): Promise<void> {
   );
 
   const filename = await writeToTemporaryFile(
-    JSON.stringify(problems, null, 2) + "\n",
-    { prefix: "problems-", suffix: ".json" },
+    problems.map((p) => JSON.stringify(p) + "\n"),
+    { prefix: "problems-", suffix: ".jsonl" },
   );
   console.log(`Wrote data to: ${filename}`);
 }
