@@ -1,6 +1,7 @@
 {
   "private": true,
   "workspaces": [
+    "download-submissions",
     "get-problem-list",
     "get-recent-submissions",
     "leetcode-api",

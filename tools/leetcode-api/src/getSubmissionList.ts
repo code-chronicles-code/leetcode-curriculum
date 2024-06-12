@@ -12,7 +12,7 @@ const submissionParser = (() => {
       question_id: positiveInt,
       lang: trimmedNonEmptyString,
       lang_name: trimmedNonEmptyString,
-      time: trimmedNonEmptyString,
+      time: trimmedNonEmptyString.transform((s) => s.replace(/\u00a0/g, " ")),
       timestamp: int.nonnegative(),
       status: int,
       status_display: trimmedNonEmptyString,
@@ -30,7 +30,8 @@ const submissionParser = (() => {
       compare_result: z
         .string()
         .regex(/^[01]*$/)
-        .transform((value) => Array.from(value).map((c) => c === "1")),
+        .transform((value) => Array.from(value).map((c) => c === "1"))
+        .nullable(),
       title_slug: z
         .string()
         .trim()
@@ -58,18 +59,21 @@ const submissionListParser = z.object({
 
 export type SubmissionList = z.infer<typeof submissionListParser>;
 
+const PAGE_SIZE = 20;
+
 export async function getSubmissionList({
-  limit = 50,
-  offset = 0,
+  // Note: Even if you specify a higher limit it seems LeetCode caps this to the page size.
+  limit = PAGE_SIZE,
+  page = 0,
   session,
 }: {
-  limit: number;
-  offset: number;
+  limit?: number;
+  page?: number;
   session: string;
 }): Promise<SubmissionList> {
   const url = new URL("https://leetcode.com/api/submissions/");
   url.search = new URLSearchParams({
-    offset: String(offset),
+    offset: String(page * PAGE_SIZE),
     limit: String(limit),
   }).toString();
 
@@ -82,6 +86,7 @@ export async function getSubmissionList({
   });
 
   if (!response.ok) {
+    console.log(await response.text());
     throw new Error(`Got status ${response.status} from server!`);
   }
 
