@@ -78,10 +78,8 @@ async function main(): Promise<void> {
 
     console.error("Fetching...");
     const data = await getQuestionList({
-      categorySlug: "algorithms",
       skip,
       limit: 500,
-      filters: { difficulty: "EASY" },
     });
     totalCount = data.totalNum;
 
