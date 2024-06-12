@@ -32,13 +32,13 @@ const submissionParser = z.object({
     .transform((value) => parseInt(value, 10)),
 });
 
+export type RecentAcSubmission = z.infer<typeof submissionParser>;
+
 const recentAcSubmissionListParser = z
   .object({
     recentAcSubmissionList: z.array(submissionParser),
   })
   .transform((data) => data.recentAcSubmissionList);
-
-export type RecentAcSubmission = z.infer<typeof submissionParser>;
 
 export async function getRecentAcSubmissionList(
   username: string,
