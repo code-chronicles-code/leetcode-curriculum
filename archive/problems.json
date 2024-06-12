@@ -938,13 +938,6 @@
     "isPremium": false
   },
   {
-    "code": "construct-string-from-binary-tree",
-    "problemNumber": 606,
-    "name": "Construct String from Binary Tree",
-    "difficulty": "Easy",
-    "isPremium": false
-  },
-  {
     "code": "merge-two-binary-trees",
     "problemNumber": 617,
     "name": "Merge Two Binary Trees",
@@ -2319,7 +2312,7 @@
   {
     "code": "most-visited-sector-in-a-circular-track",
     "problemNumber": 1560,
-    "name": "Most Visited Sector in a Circular Track",
+    "name": "Most Visited Sector in  a Circular Track",
     "difficulty": "Easy",
     "isPremium": false
   },
@@ -2418,6 +2411,13 @@
     "code": "sort-array-by-increasing-frequency",
     "problemNumber": 1636,
     "name": "Sort Array by Increasing Frequency",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "widest-vertical-area-between-two-points-containing-no-points",
+    "problemNumber": 1637,
+    "name": "Widest Vertical Area Between Two Points Containing No Points",
     "difficulty": "Easy",
     "isPremium": false
   },
@@ -4035,6 +4035,503 @@
     "code": "faulty-keyboard",
     "problemNumber": 2810,
     "name": "Faulty Keyboard",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "max-pair-sum-in-an-array",
+    "problemNumber": 2815,
+    "name": "Max Pair Sum in an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-pairs-whose-sum-is-less-than-target",
+    "problemNumber": 2824,
+    "name": "Count Pairs Whose Sum is Less than Target",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-a-string-is-an-acronym-of-words",
+    "problemNumber": 2828,
+    "name": "Check if a String Is an Acronym of Words",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "furthest-point-from-origin",
+    "problemNumber": 2833,
+    "name": "Furthest Point From Origin",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-strings-can-be-made-equal-with-operations-i",
+    "problemNumber": 2839,
+    "name": "Check if Strings Can be Made Equal With Operations I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-symmetric-integers",
+    "problemNumber": 2843,
+    "name": "Count Symmetric Integers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "points-that-intersect-with-cars",
+    "problemNumber": 2848,
+    "name": "Points That Intersect With Cars",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-right-shifts-to-sort-the-array",
+    "problemNumber": 2855,
+    "name": "Minimum Right Shifts to Sort the Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "sum-of-values-at-indices-with-k-set-bits",
+    "problemNumber": 2859,
+    "name": "Sum of Values at Indices With K Set Bits",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-odd-binary-number",
+    "problemNumber": 2864,
+    "name": "Maximum Odd Binary Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-operations-to-collect-elements",
+    "problemNumber": 2869,
+    "name": "Minimum Operations to Collect Elements",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-value-of-an-ordered-triplet-i",
+    "problemNumber": 2873,
+    "name": "Maximum Value of an Ordered Triplet I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "divisible-and-non-divisible-sums-difference",
+    "problemNumber": 2894,
+    "name": "Divisible and Non-divisible Sums Difference",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "last-visited-integers",
+    "problemNumber": 2899,
+    "name": "Last Visited Integers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "longest-unequal-adjacent-groups-subsequence-i",
+    "problemNumber": 2900,
+    "name": "Longest Unequal Adjacent Groups Subsequence I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-indices-with-index-and-value-difference-i",
+    "problemNumber": 2903,
+    "name": "Find Indices With Index and Value Difference I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-sum-of-mountain-triplets-i",
+    "problemNumber": 2908,
+    "name": "Minimum Sum of Mountain Triplets I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "subarrays-distinct-element-sum-of-squares-i",
+    "problemNumber": 2913,
+    "name": "Subarrays Distinct Element Sum of Squares I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-k-or-of-an-array",
+    "problemNumber": 2917,
+    "name": "Find the K-or of an Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-champion-i",
+    "problemNumber": 2923,
+    "name": "Find Champion I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "distribute-candies-among-children-i",
+    "problemNumber": 2928,
+    "name": "Distribute Candies Among Children I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-strong-pair-xor-i",
+    "problemNumber": 2932,
+    "name": "Maximum Strong Pair XOR I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "make-three-strings-equal",
+    "problemNumber": 2937,
+    "name": "Make Three Strings Equal",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-words-containing-character",
+    "problemNumber": 2942,
+    "name": "Find Words Containing Character",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "matrix-similarity-after-cyclic-shifts",
+    "problemNumber": 2946,
+    "name": "Matrix Similarity After Cyclic Shifts",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-peaks",
+    "problemNumber": 2951,
+    "name": "Find the Peaks",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-common-elements-between-two-arrays",
+    "problemNumber": 2956,
+    "name": "Find Common Elements Between Two Arrays",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-tested-devices-after-test-operations",
+    "problemNumber": 2960,
+    "name": "Count Tested Devices After Test Operations",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-missing-and-repeated-values",
+    "problemNumber": 2965,
+    "name": "Find Missing and Repeated Values",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-the-number-of-incremovable-subarrays-i",
+    "problemNumber": 2970,
+    "name": "Count the Number of Incremovable Subarrays I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-number-game",
+    "problemNumber": 2974,
+    "name": "Minimum Number Game",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-bitwise-or-has-trailing-zeros",
+    "problemNumber": 2980,
+    "name": "Check if Bitwise OR Has Trailing Zeros",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "smallest-missing-integer-greater-than-sequential-prefix-sum",
+    "problemNumber": 2996,
+    "name": "Smallest Missing Integer Greater Than Sequential Prefix Sum",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-area-of-longest-diagonal-rectangle",
+    "problemNumber": 3000,
+    "name": "Maximum Area of Longest Diagonal Rectangle",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-elements-with-maximum-frequency",
+    "problemNumber": 3005,
+    "name": "Count Elements With Maximum Frequency",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "divide-an-array-into-subarrays-with-minimum-cost-i",
+    "problemNumber": 3010,
+    "name": "Divide an Array Into Subarrays With Minimum Cost I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-number-of-pushes-to-type-word-i",
+    "problemNumber": 3014,
+    "name": "Minimum Number of Pushes to Type Word I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "number-of-changing-keys",
+    "problemNumber": 3019,
+    "name": "Number of Changing Keys",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "type-of-triangle",
+    "problemNumber": 3024,
+    "name": "Type of Triangle",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "ant-on-the-boundary",
+    "problemNumber": 3028,
+    "name": "Ant on the Boundary",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-numbers-with-unique-digits-ii",
+    "problemNumber": 3032,
+    "name": "Count Numbers With Unique Digits II",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "modify-the-matrix",
+    "problemNumber": 3033,
+    "name": "Modify the Matrix",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-number-of-operations-with-the-same-score-i",
+    "problemNumber": 3038,
+    "name": "Maximum Number of Operations With the Same Score I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-prefix-and-suffix-pairs-i",
+    "problemNumber": 3042,
+    "name": "Count Prefix and Suffix Pairs I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "split-the-array",
+    "problemNumber": 3046,
+    "name": "Split the Array",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "winner-of-the-linked-list-game",
+    "problemNumber": 3062,
+    "name": "Winner of the Linked List Game",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "linked-list-frequency",
+    "problemNumber": 3063,
+    "name": "Linked List Frequency",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "minimum-operations-to-exceed-threshold-value-i",
+    "problemNumber": 3065,
+    "name": "Minimum Operations to Exceed Threshold Value I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "distribute-elements-into-two-arrays-i",
+    "problemNumber": 3069,
+    "name": "Distribute Elements Into Two Arrays I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "apple-redistribution-into-boxes",
+    "problemNumber": 3074,
+    "name": "Apple Redistribution into Boxes",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-sum-of-encrypted-integers",
+    "problemNumber": 3079,
+    "name": "Find the Sum of Encrypted Integers",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "existence-of-a-substring-in-a-string-and-its-reverse",
+    "problemNumber": 3083,
+    "name": "Existence of a Substring in a String and Its Reverse",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "maximum-length-substring-with-two-occurrences",
+    "problemNumber": 3090,
+    "name": "Maximum Length Substring With Two Occurrences",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "shortest-subarray-with-or-at-least-k-i",
+    "problemNumber": 3095,
+    "name": "Shortest Subarray With OR at Least K I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "harshad-number",
+    "problemNumber": 3099,
+    "name": "Harshad Number",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "longest-strictly-increasing-or-strictly-decreasing-subarray",
+    "problemNumber": 3105,
+    "name": "Longest Strictly Increasing or Strictly Decreasing Subarray",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "score-of-a-string",
+    "problemNumber": 3110,
+    "name": "Score of a String",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "latest-time-you-can-obtain-after-replacing-characters",
+    "problemNumber": 3114,
+    "name": "Latest Time You Can Obtain After Replacing Characters",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "count-the-number-of-special-characters-i",
+    "problemNumber": 3120,
+    "name": "Count the Number of Special Characters I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "make-a-square-with-the-same-color",
+    "problemNumber": 3127,
+    "name": "Make a Square with the Same Color",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-integer-added-to-array-i",
+    "problemNumber": 3131,
+    "name": "Find the Integer Added to Array I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "valid-word",
+    "problemNumber": 3136,
+    "name": "Valid Word",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "check-if-grid-satisfies-conditions",
+    "problemNumber": 3142,
+    "name": "Check if Grid Satisfies Conditions",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "permutation-difference-between-two-strings",
+    "problemNumber": 3146,
+    "name": "Permutation Difference between Two Strings",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "special-array-i",
+    "problemNumber": 3151,
+    "name": "Special Array I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-xor-of-numbers-which-appear-twice",
+    "problemNumber": 3158,
+    "name": "Find the XOR of Numbers Which Appear Twice",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-number-of-good-pairs-i",
+    "problemNumber": 3162,
+    "name": "Find the Number of Good Pairs I",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "minimum-number-of-chairs-in-a-waiting-room",
+    "problemNumber": 3168,
+    "name": "Minimum Number of Chairs in a Waiting Room",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "bitwise-or-of-adjacent-elements",
+    "problemNumber": 3173,
+    "name": "Bitwise OR of Adjacent Elements",
+    "difficulty": "Easy",
+    "isPremium": true
+  },
+  {
+    "code": "clear-digits",
+    "problemNumber": 3174,
+    "name": "Clear Digits",
+    "difficulty": "Easy",
+    "isPremium": false
+  },
+  {
+    "code": "find-the-child-who-has-the-ball-after-k-seconds",
+    "problemNumber": 3178,
+    "name": "Find the Child Who Has the Ball After K Seconds",
     "difficulty": "Easy",
     "isPremium": false
   }
