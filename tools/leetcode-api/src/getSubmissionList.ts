@@ -109,7 +109,6 @@ export async function getSubmissionList({
   });
 
   if (!response.ok) {
-    console.log(await response.text());
     throw new Error(`Got status ${response.status} from server!`);
   }
 
