@@ -10,6 +10,7 @@
   "main": "src/main.ts",
   "scripts": {
     "format": "prettier --write .",
+    "lint": "eslint .",
     "typecheck": "tsc --project ."
   },
   "dependencies": {
@@ -17,6 +18,9 @@
   },
   "devDependencies": {
     "@types/node": "20.14.2",
+    "@typescript-eslint/parser": "7.13.0",
+    "eslint": "9.4.0",
+    "globals": "15.4.0",
     "prettier": "3.3.2",
     "typescript": "5.4.5"
   }

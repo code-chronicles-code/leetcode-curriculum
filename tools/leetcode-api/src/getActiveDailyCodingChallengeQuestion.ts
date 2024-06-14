@@ -59,6 +59,7 @@ export async function getActiveDailyCodingChallengeQuestionWithDateValidation({
 } = {}): Promise<ActiveDailyCodingChallengeQuestion> {
   for (let retry = 0; retry <= wrongDateRetries; ++retry) {
     const res =
+      // eslint-disable-next-line no-await-in-loop
       await getActiveDailyCodingChallengeQuestionWithoutDateValidation();
 
     const now = new Date();
@@ -73,6 +74,7 @@ export async function getActiveDailyCodingChallengeQuestionWithDateValidation({
     }
 
     // Wait a minute then try again.
+    // eslint-disable-next-line no-await-in-loop
     await sleep(60000);
   }
 
