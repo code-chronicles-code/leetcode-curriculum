@@ -10,7 +10,7 @@
   "scripts": {
     "format": "prettier --write .",
     "start": "ts-node src/main.ts",
-    "typecheck": "tsc --noEmit --project ."
+    "typecheck": "tsc --project ."
   },
   "dependencies": {
     "@code-chronicles/leetcode-api": "0.0.1",

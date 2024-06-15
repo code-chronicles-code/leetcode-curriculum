@@ -10,7 +10,7 @@
   "main": "src/main.ts",
   "scripts": {
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit --project ."
+    "typecheck": "tsc --project ."
   },
   "dependencies": {
     "zod": "3.23.8"
