@@ -1,7 +1,9 @@
 import fsPromises from "node:fs/promises";
+import nullthrows from "nullthrows";
 import process from "process";
 
 import {
+  SUBMISSION_STATUS_TO_ABBREVIATION,
   getSubmissionList,
   type Submission,
 } from "@code-chronicles/leetcode-api";
@@ -12,7 +14,7 @@ import { sleep } from "@code-chronicles/leetcode-api/src/sleep";
 import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
 
 // TODO: Verify that this is an exhaustive list of LeetCode languages.
-export const LANGUAGE_TO_FILE_EXTENSION: Record<string, string> = {
+const LANGUAGE_TO_FILE_EXTENSION: Record<string, string> = {
   bash: "sh",
   c: "c",
   cpp: "cpp",
@@ -68,9 +70,35 @@ type TransformedSubmission = ReturnType<
 
 const SUMMARY_FILE = "submissions.json";
 
-function getFilenameForSubmission(submission: TransformedSubmission): string {
-  const extension = LANGUAGE_TO_FILE_EXTENSION[submission.lang] ?? "txt";
-  return `${submission.id}.${extension}`;
+// TODO: Make into a shared utility?
+function timestampToDate(timestampInSeconds: number): string {
+  const parts = new Intl.DateTimeFormat(undefined, {
+    timeZone: "UTC",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date(timestampInSeconds * 1000));
+
+  return ["year", "month", "day"]
+    .map((partType) => nullthrows(parts.find((p) => p.type === partType)).value)
+    .join("");
+}
+
+function getFilenameForSubmission({
+  id,
+  lang,
+  timestamp,
+  status_display,
+}: TransformedSubmission): string {
+  const extension = LANGUAGE_TO_FILE_EXTENSION[lang] ?? "txt";
+  const date = timestampToDate(timestamp);
+  const resultAbbreviation = nullthrows(
+    SUBMISSION_STATUS_TO_ABBREVIATION[
+      status_display as keyof typeof SUBMISSION_STATUS_TO_ABBREVIATION
+    ],
+  ).toLowerCase();
+
+  return `${date}-${id}-${resultAbbreviation}.${extension}`;
 }
 
 const PROBLEMS_PER_GROUP = 100;

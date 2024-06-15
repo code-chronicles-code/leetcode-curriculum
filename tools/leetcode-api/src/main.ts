@@ -16,6 +16,8 @@ export {
 } from "./getRecentAcSubmissionList";
 
 export {
+  SUBMISSION_STATUS_TO_ABBREVIATION,
+  SUBMISSION_STATUS_TO_DISPLAY_TEXT,
   getSubmissionList,
   type Submission,
   type SubmissionList,
