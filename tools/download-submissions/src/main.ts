@@ -159,14 +159,17 @@ async function main(): Promise<void> {
       let data;
       try {
         console.error("Fetching...");
+        // eslint-disable-next-line no-await-in-loop
         data = await getSubmissionList({
           session: secrets.leetcodeSessionCookie,
           // TODO: Don't hardcode the 20, export the constant from the API library.
           page: Math.floor(submissionsMap.size / 20),
         });
       } catch (e) {
+        // eslint-disable-next-line no-await-in-loop
         await writeSubmissions();
         console.error("Sleeping because of an error:", e);
+        // eslint-disable-next-line no-await-in-loop
         await sleep(60000);
         continue;
       }
@@ -192,9 +195,11 @@ async function main(): Promise<void> {
         console.error(`Saving submission ${submission.id} to a file.`);
 
         const dir = getDirnameForSubmission(submission);
+        // eslint-disable-next-line no-await-in-loop
         await fsPromises.mkdir(dir, { recursive: true });
 
         const filename = getFilenameForSubmission(submission);
+        // eslint-disable-next-line no-await-in-loop
         await fsPromises.writeFile(`${dir}/${filename}`, code);
       }
 
@@ -207,10 +212,12 @@ async function main(): Promise<void> {
       }
 
       if (Math.random() < 0.1) {
+        // eslint-disable-next-line no-await-in-loop
         await writeSubmissions();
       }
 
       console.error("Sleeping...");
+      // eslint-disable-next-line no-await-in-loop
       await sleep(3000);
     }
   } finally {

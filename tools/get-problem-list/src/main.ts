@@ -27,11 +27,14 @@ async function createTemporaryFile(
   prefix: string = "",
   suffix: string = "",
 ): Promise<[string, FileHandle]> {
+  // TODO: Maybe do set some limit.
   while (true) {
     try {
+      // eslint-disable-next-line no-await-in-loop
       const filename = [prefix, await getRandomString(), suffix].join("");
       return [
         filename,
+        // eslint-disable-next-line no-await-in-loop
         await fsPromises.open(
           filename,
           constants.O_CREAT | constants.O_RDWR | constants.O_EXCL,
@@ -73,10 +76,12 @@ async function main(): Promise<void> {
   while (problemsMap.size !== totalCount) {
     if (totalCount != null) {
       console.error("Sleeping...");
+      // eslint-disable-next-line no-await-in-loop
       await sleep(5000);
     }
 
     console.error("Fetching...");
+    // eslint-disable-next-line no-await-in-loop
     const data = await getQuestionList({
       skip,
       limit: 500,
