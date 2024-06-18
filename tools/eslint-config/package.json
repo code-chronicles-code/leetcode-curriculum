@@ -1,5 +1,5 @@
 {
-  "name": "@code-chronicles/leetcode-api",
+  "name": "@code-chronicles/eslint-config",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
@@ -7,20 +7,17 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
-  "main": "src/main.ts",
+  "main": "eslint.config.js",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint .",
-    "typecheck": "tsc --project ."
+    "lint": "eslint ."
   },
   "dependencies": {
-    "zod": "3.23.8"
+    "@typescript-eslint/parser": "7.13.0",
+    "globals": "15.4.0"
   },
   "devDependencies": {
-    "@code-chronicles/eslint-config": "0.0.1",
-    "@types/node": "20.14.2",
     "eslint": "9.4.0",
-    "prettier": "3.3.2",
-    "typescript": "5.4.5"
+    "prettier": "3.3.2"
   }
 }
