@@ -150,7 +150,7 @@ async function main(): Promise<void> {
   console.error(
     `Prior data available on ${[priorSubmissionsMap.size]} submissions so far.`,
   );
-  let latestPriorSubmissionTimestamp = Math.min(
+  let latestPriorSubmissionTimestamp = Math.max(
     ...Array.from(priorSubmissionsMap.values()).map((s) => s.timestamp),
   );
 
@@ -179,7 +179,7 @@ async function main(): Promise<void> {
       )) {
         submissionsMap.set(submission.id, submission);
 
-        if (submission.timestamp >= latestPriorSubmissionTimestamp) {
+        if (submission.timestamp < latestPriorSubmissionTimestamp) {
           console.error("Merging with prior submissions!");
           for (const priorSubmission of priorSubmissionsMap.values()) {
             if (!submissionsMap.has(priorSubmission.id)) {
@@ -187,7 +187,7 @@ async function main(): Promise<void> {
             }
           }
 
-          latestPriorSubmissionTimestamp = Infinity;
+          latestPriorSubmissionTimestamp = -Infinity;
           priorSubmissionsMap.clear();
         }
 
