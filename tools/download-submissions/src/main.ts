@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fsPromises from "node:fs/promises";
 import nullthrows from "nullthrows";
 import process from "process";
@@ -40,15 +41,6 @@ const LANGUAGE_TO_FILE_EXTENSION: Record<string, string> = {
   typescript: "ts",
 };
 
-type Omittable = keyof any;
-type Omit2<T, A extends Omittable, B extends Omittable> = Omit<Omit<T, A>, B>;
-type Omit3<
-  T,
-  A extends Omittable,
-  B extends Omittable,
-  C extends Omittable,
-> = Omit<Omit2<T, A, B>, C>;
-
 function transformSubmission({
   code,
   compare_result,
@@ -56,27 +48,39 @@ function transformSubmission({
   ...rest
 }: Submission): {
   code: string;
-  submission: Omit3<
+  submission: Omit<
     Submission,
     // Separate the code from the submission, since we're saving it in separate
-    // files.
-    "code",
+    // files. We will instead include a hash of the code in the submission
+    // object.
+    | "code"
+
     // Stringifying the compare_result was taking up too much space so
     // representing it as a string of 0s and 1s instead of an array of
     // booleans. This is actually the same format that the API originally
     // returns.
-    "compare_result",
+    | "compare_result"
+
     // The time field is a relative time string, so it's not as useful
     // considering we also have an absolute timestamp field.
-    "time"
+    | "time"
   > & {
+    // Transformed compare_result data as mentioned above.
     compare_result: string | null;
+
+    // SHA-512 hash of the submission's code text.
+    sha512: string;
   };
 } {
   return {
     code,
     submission: {
       ...rest,
+      sha512: crypto
+        .createHash("sha512")
+        .update(code, "utf8")
+        .digest()
+        .toString("hex"),
       compare_result: compare_result?.map(Number).join("") ?? null,
     },
   };
@@ -141,19 +145,6 @@ function getDirnameForSubmission(submission: TransformedSubmission): string {
 async function main(): Promise<void> {
   const submissionsMap = new Map<string, TransformedSubmission>();
 
-  const writeSubmissions = async () => {
-    const submissions = [...submissionsMap.values()].sort(
-      (a, b) => a.timestamp - b.timestamp,
-    );
-
-    await fsPromises.writeFile(
-      METADATA_FILE,
-      submissions
-        .map((submission) => JSON.stringify(submission) + "\n")
-        .join(""),
-    );
-  };
-
   const priorSubmissionsMap: Map<string, TransformedSubmission> =
     await fsPromises.readFile(METADATA_FILE, { encoding: "utf8" }).then(
       (data) => {
@@ -178,6 +169,31 @@ async function main(): Promise<void> {
     ...Array.from(priorSubmissionsMap.values()).map((s) => s.timestamp),
   );
 
+  const writeSubmissionsMetadata = async () => {
+    // Don't do anything if we didn't get data on any submissions.
+    if (submissionsMap.size === 0) {
+      return;
+    }
+
+    // If we haven't caught up to where the prior submissions left off, don't
+    // overwrite them. This might result in repeated work but we won't lose
+    // data or create gaps in submissions ranges.
+    if (priorSubmissionsMap.size > 0) {
+      return;
+    }
+
+    const submissions = [...submissionsMap.values()].sort(
+      (a, b) => a.timestamp - b.timestamp,
+    );
+
+    await fsPromises.writeFile(
+      METADATA_FILE,
+      submissions
+        .map((submission) => JSON.stringify(submission) + "\n")
+        .join(""),
+    );
+  };
+
   try {
     while (true) {
       let data;
@@ -191,7 +207,7 @@ async function main(): Promise<void> {
         });
       } catch (e) {
         // eslint-disable-next-line no-await-in-loop
-        await writeSubmissions();
+        await writeSubmissionsMetadata();
         console.error("Sleeping because of an error:", e);
         // eslint-disable-next-line no-await-in-loop
         await sleep(60000);
@@ -237,7 +253,7 @@ async function main(): Promise<void> {
 
       if (Math.random() < 0.1) {
         // eslint-disable-next-line no-await-in-loop
-        await writeSubmissions();
+        await writeSubmissionsMetadata();
       }
 
       console.error("Sleeping...");
@@ -245,7 +261,7 @@ async function main(): Promise<void> {
       await sleep(3000);
     }
   } finally {
-    await writeSubmissions();
+    await writeSubmissionsMetadata();
   }
 }
 

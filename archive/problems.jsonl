@@ -3181,3 +3181,8 @@
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3181,"title":"Maximum Total Reward Using Operations II","titleSlug":"maximum-total-reward-using-operations-ii"}
 {"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3182,"title":"Find Top Scoring Students","titleSlug":"find-top-scoring-students"}
 {"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3183,"title":"The Number of Ways to Make the Sum","titleSlug":"the-number-of-ways-to-make-the-sum"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3184,"title":"Count Pairs That Form a Complete Day I","titleSlug":"count-pairs-that-form-a-complete-day-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3185,"title":"Count Pairs That Form a Complete Day II","titleSlug":"count-pairs-that-form-a-complete-day-ii"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3186,"title":"Maximum Total Damage With Spell Casting","titleSlug":"maximum-total-damage-with-spell-casting"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3187,"title":"Peaks in Array","titleSlug":"peaks-in-array"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3188,"title":"Find Top Scoring Students II","titleSlug":"find-top-scoring-students-ii"}
