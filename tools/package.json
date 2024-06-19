@@ -1,6 +1,7 @@
 {
   "private": true,
   "workspaces": [
+    "adventure-pack",
     "download-submissions",
     "eslint-config",
     "get-problem-list",
@@ -9,8 +10,8 @@
     "post-potd"
   ],
   "scripts": {
-    "lint": "(cd download-submissions; yarn lint) && (cd eslint-config; yarn lint) && (cd get-problem-list; yarn lint) && (cd get-recent-submissions; yarn lint) && (cd leetcode-api; yarn lint) && (cd post-potd; yarn lint)",
-    "format": "(cd download-submissions; yarn format) && (cd eslint-config; yarn lint) && (cd get-problem-list; yarn format) && (cd get-recent-submissions; yarn format) && (cd leetcode-api; yarn format) && (cd post-potd; yarn format)",
-    "typecheck": "(cd download-submissions; yarn typecheck) && (cd get-problem-list; yarn typecheck) && (cd get-recent-submissions; yarn typecheck) && (cd leetcode-api; yarn typecheck) && (cd post-potd; yarn typecheck)"
+    "format": "(cd adventure-pack; yarn format) && (cd download-submissions; yarn format) && (cd eslint-config; yarn format) && (cd get-problem-list; yarn format) && (cd get-recent-submissions; yarn format) && (cd leetcode-api; yarn format) && (cd post-potd; yarn format)",
+    "lint": "(cd adventure-pack; yarn lint) && (cd download-submissions; yarn lint) && (cd eslint-config; yarn lint) && (cd get-problem-list; yarn lint) && (cd get-recent-submissions; yarn lint) && (cd leetcode-api; yarn lint) && (cd post-potd; yarn lint)",
+    "typecheck": "(cd adventure-pack; yarn typecheck) && (cd download-submissions; yarn typecheck) && (cd get-problem-list; yarn typecheck) && (cd get-recent-submissions; yarn typecheck) && (cd leetcode-api; yarn typecheck) && (cd post-potd; yarn typecheck)"
   }
 }

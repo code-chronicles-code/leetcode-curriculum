@@ -1,20 +1,19 @@
 {
-  "name": "@code-chronicles/leetcode-api",
+  "name": "@code-chronicles/adventure-pack",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
-  "author": {
-    "name": "Miorel-Lucian Palii",
-    "url": "https://github.com/miorel"
-  },
-  "main": "src/main.ts",
+  "contributors": [
+    {
+      "name": "Miorel-Lucian Palii",
+      "url": "https://github.com/miorel"
+    }
+  ],
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint .",
+    "start": "ts-node src/main.ts",
     "typecheck": "tsc --project ."
-  },
-  "dependencies": {
-    "zod": "3.23.8"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
