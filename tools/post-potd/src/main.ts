@@ -1,5 +1,3 @@
-import { ChannelType, Client, GatewayIntentBits } from "discord.js";
-import invariant from "invariant";
 import process from "process";
 
 import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
@@ -7,29 +5,13 @@ import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } fr
 import { sleep } from "@code-chronicles/leetcode-api/src/sleep";
 
 import { readScriptData, writeScriptData } from "./readScriptData";
-
-import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
-
-async function sendDiscordMessage(content: string): Promise<void> {
-  const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
-  try {
-    await client.login(secrets.discordToken);
-
-    const channel = await client.channels.fetch(secrets.discordChannelID);
-    invariant(
-      channel?.type === ChannelType.GuildText,
-      "Channel must be a text channel!",
-    );
-
-    const message = await channel.send(content);
-    await message.suppressEmbeds(true);
-  } finally {
-    await client.destroy();
-  }
-}
+import { readSecrets } from "./readSecrets";
+import { sendDiscordMessage } from "./sendDiscordMessage";
 
 async function main(): Promise<void> {
+  // TODO: maybe create the file from a template if it doesn't exist
+  const secrets = await readSecrets();
+
   while (true) {
     const { date, question: potd } = await getPotd();
     const scriptData = await readScriptData();
@@ -58,7 +40,7 @@ async function main(): Promise<void> {
 
     const potdLink = `https://leetcode.com/problems/${potd.titleSlug}/`;
     const message = `New LeetCode problem of the day! [${potd.questionFrontendId}. ${potd.title}](${potdLink})`;
-    await sendDiscordMessage(message);
+    await sendDiscordMessage(secrets, message);
     await writeScriptData({ lastPostedDate: date });
     console.log(message);
     break;
