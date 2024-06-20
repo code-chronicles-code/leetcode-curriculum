@@ -86,7 +86,7 @@ type TransformedSubmission = ReturnType<
   typeof transformSubmission
 >["submission"];
 
-const METADATA_FILE = "submissions.json";
+const METADATA_FILE = "submissions.jsonl";
 
 // TODO: Make into a shared utility?
 function timestampToDate(timestampInSeconds: number): string {
@@ -148,16 +148,22 @@ async function main(): Promise<void> {
 
     await fsPromises.writeFile(
       METADATA_FILE,
-      JSON.stringify(submissions, null, 2) + "\n",
+      submissions
+        .map((submission) => JSON.stringify(submission) + "\n")
+        .join(""),
     );
   };
 
   const priorSubmissionsMap: Map<string, TransformedSubmission> =
     await fsPromises.readFile(METADATA_FILE, { encoding: "utf8" }).then(
-      (data) =>
-        new Map(
-          (JSON.parse(data) as TransformedSubmission[]).map((s) => [s.id, s]),
-        ),
+      (data) => {
+        const map = new Map<string, TransformedSubmission>();
+        for (const [line] of data.matchAll(/[^\n]+/g)) {
+          const submission = JSON.parse(line) as TransformedSubmission;
+          map.set(submission.id, submission);
+        }
+        return map;
+      },
       (e) => {
         if (e.code === "ENOENT") {
           return new Map();
