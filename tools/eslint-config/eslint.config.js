@@ -90,7 +90,7 @@ module.exports = [
       "no-unused-private-class-members": "error",
 
       // TODO: explore the options in more detail
-      "no-unused-vars": "error",
+      "no-unused-vars": ["error", { argsIgnorePattern: "^_$" }],
 
       "no-use-before-define": [
         "error",

@@ -40,17 +40,35 @@ const LANGUAGE_TO_FILE_EXTENSION: Record<string, string> = {
   typescript: "ts",
 };
 
-function transformSubmission({ code, compare_result, ...rest }: Submission): {
+type Omittable = keyof any;
+type Omit2<T, A extends Omittable, B extends Omittable> = Omit<Omit<T, A>, B>;
+type Omit3<
+  T,
+  A extends Omittable,
+  B extends Omittable,
+  C extends Omittable,
+> = Omit<Omit2<T, A, B>, C>;
+
+function transformSubmission({
+  code,
+  compare_result,
+  time: _,
+  ...rest
+}: Submission): {
   code: string;
-  submission: Omit<
-    // Separate the code from the submission, since we're saving it in
-    // separate files.
-    Omit<Submission, "code">,
+  submission: Omit3<
+    Submission,
+    // Separate the code from the submission, since we're saving it in separate
+    // files.
+    "code",
     // Stringifying the compare_result was taking up too much space so
     // representing it as a string of 0s and 1s instead of an array of
     // booleans. This is actually the same format that the API originally
     // returns.
-    "compare_result"
+    "compare_result",
+    // The time field is a relative time string, so it's not as useful
+    // considering we also have an absolute timestamp field.
+    "time"
   > & {
     compare_result: string | null;
   };
@@ -68,7 +86,7 @@ type TransformedSubmission = ReturnType<
   typeof transformSubmission
 >["submission"];
 
-const SUMMARY_FILE = "submissions.json";
+const METADATA_FILE = "submissions.json";
 
 // TODO: Make into a shared utility?
 function timestampToDate(timestampInSeconds: number): string {
@@ -129,13 +147,13 @@ async function main(): Promise<void> {
     );
 
     await fsPromises.writeFile(
-      SUMMARY_FILE,
+      METADATA_FILE,
       JSON.stringify(submissions, null, 2) + "\n",
     );
   };
 
   const priorSubmissionsMap: Map<string, TransformedSubmission> =
-    await fsPromises.readFile(SUMMARY_FILE, { encoding: "utf8" }).then(
+    await fsPromises.readFile(METADATA_FILE, { encoding: "utf8" }).then(
       (data) =>
         new Map(
           (JSON.parse(data) as TransformedSubmission[]).map((s) => [s.id, s]),
