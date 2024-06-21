@@ -39,5 +39,11 @@ jobs:
         env:
           SECRETS_FILE: ${{ secrets.SECRETS_FILE }}
 
+      - name: Prepare cached script data
+        uses: actions/cache@v4
+        with:
+          path: tools/post-potd/data.json
+          key: post-potd-script-data
+
       - name: Post problem of the day
         run: (cd tools/post-potd && yarn start)
