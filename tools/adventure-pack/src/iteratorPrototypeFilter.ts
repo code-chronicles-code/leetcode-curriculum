@@ -4,18 +4,20 @@ import { iteratorToIterable } from "./iteratorToIterable";
 declare global {
   interface Iterator<T> {
     filter(
-      callbackFn: (element: T, index: number) => boolean,
+      callbackfn: (value: T, index: number, array: T[]) => any, thisArg?: any
     ): Generator<T, void, undefined>;
   }
 }
 
-iteratorPrototype.filter = function* <T>(
+iteratorPrototype.filter ??= function* <T>(
   this: Iterator<T>,
-  callbackFn: (element: T, index: number) => boolean,
+  callbackFn: (element: T, index: number, array: T[]) => any,
 ) {
   let index = 0;
-  for (const element of iteratorToIterable(this)) {
-    if(callbackFn(element, index)) {
+  const iterable = iteratorToIterable(this);
+  const array = Array.from(iterable);
+  for (const element of iterable) {
+    if (callbackFn(element, index, array)) {
       yield element;
     }
     ++index;
