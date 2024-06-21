@@ -10,6 +10,7 @@
     }
   ],
   "scripts": {
+    "build-app": "yarn webpack --entry ./src/app/main.js && cp index.html dist/",
     "format": "prettier --write .",
     "lint": "eslint .",
     "start": "ts-node src/main.ts",
@@ -25,6 +26,8 @@
     "prettier": "3.3.2",
     "ts-jest": "29.1.5",
     "ts-node": "10.9.2",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "webpack": "5.92.1",
+    "webpack-cli": "5.1.4"
   }
 }
