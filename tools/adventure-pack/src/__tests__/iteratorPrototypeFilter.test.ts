@@ -16,11 +16,11 @@ describe("Iterator.prototype.filter", () => {
     },
   ])("can filter an Array's values()", ({ array, condition, expected }) => {
     const filterResult = array.values().filter(condition);
-    
-    expected.forEach(e => {
+
+    expected.forEach((e) => {
       expect(filterResult.next().value).toBe(e);
     });
-  
+
     expect(filterResult.next().done).toBe(true);
   });
 

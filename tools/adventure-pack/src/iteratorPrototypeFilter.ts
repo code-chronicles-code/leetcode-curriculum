@@ -4,7 +4,8 @@ import { iteratorToIterable } from "./iteratorToIterable";
 declare global {
   interface Iterator<T> {
     filter(
-      callbackfn: (value: T, index: number, array: T[]) => any, thisArg?: any
+      callbackfn: (value: T, index: number, array: T[]) => any,
+      thisArg?: any,
     ): Generator<T, void, undefined>;
   }
 }
