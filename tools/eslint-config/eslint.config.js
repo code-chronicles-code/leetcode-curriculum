@@ -5,7 +5,7 @@ const globals = require("globals");
 // TODO: see if we can get typechecking
 
 const vanilla = {
-  files: ["**/*.js"],
+  files: ["**/*.js", "**/*.jsx"],
   languageOptions: {
     globals: globals.node,
     parser: typeScriptEslintParser,
@@ -115,13 +115,19 @@ const vanilla = {
 
 const typescript = {
   ...vanilla,
-  files: ["**/*.ts"],
+  files: ["**/*.ts", "**/*.tsx"],
   rules: {
     ...vanilla.rules,
 
     // In TypeScript files, use the TypeScript version of the rule.
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": vanilla.rules["no-unused-vars"],
+
+    // In TypeScript files, use the TypeScript version of the rule.
+    "no-use-before-define": "off",
+    // TODO: configure the additional options
+    "@typescript-eslint/no-use-before-define":
+      vanilla.rules["no-use-before-define"],
   },
   plugins: {
     ...vanilla.plugins,
