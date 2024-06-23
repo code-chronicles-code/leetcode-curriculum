@@ -17,6 +17,7 @@
     "@code-chronicles/leetcode-api": "0.0.1",
     "discord.js": "14.15.3",
     "invariant": "2.2.4",
+    "nullthrows": "1.1.1",
     "ts-node": "10.9.2"
   },
   "devDependencies": {
