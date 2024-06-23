@@ -75,4 +75,8 @@ describe("Number.prototype.digits", () => {
     expect(() => n.digits(42)).not.toThrow();
     expect(() => n.digits(1337)).not.toThrow();
   });
+
+  it("accepts Number objects", () => {
+    expect([...new Number(42).digits()]).toEqual([2, 4]);
+  });
 });
