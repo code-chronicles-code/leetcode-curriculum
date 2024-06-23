@@ -1,5 +1,5 @@
 {
-  "name": "@code-chronicles/get-problem-list",
+  "name": "@code-chronicles/util",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
@@ -7,16 +7,14 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "main": "src/index.ts",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint .",
-    "start": "ts-node src/main.ts",
     "typecheck": "tsc --project ."
   },
   "dependencies": {
-    "@code-chronicles/leetcode-api": "0.0.1",
-    "@code-chronicles/util": "0.0.1",
-    "ts-node": "10.9.2"
+    "nullthrows": "1.1.1"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",

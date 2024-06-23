@@ -2,7 +2,7 @@ import process from "process";
 
 import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
 
-import { sleep } from "@code-chronicles/leetcode-api/src/sleep";
+import { sleep } from "@code-chronicles/util";
 
 import { readScriptData, writeScriptData } from "./readScriptData";
 import { readSecrets } from "./readSecrets";
@@ -13,7 +13,9 @@ async function main(): Promise<void> {
   const secrets = await readSecrets();
 
   while (true) {
+    // eslint-disable-next-line no-await-in-loop
     const { date, question: potd } = await getPotd();
+    // eslint-disable-next-line no-await-in-loop
     const scriptData = await readScriptData();
 
     if (
@@ -34,13 +36,16 @@ async function main(): Promise<void> {
       console.log(
         `Already posted the problem for ${date}, will sleep ${secondsToSleep} seconds until the next day.`,
       );
+      // eslint-disable-next-line no-await-in-loop
       await sleep(secondsToSleep * 1000);
       continue;
     }
 
     const potdLink = `https://leetcode.com/problems/${potd.titleSlug}/`;
     const message = `New LeetCode problem of the day! [${potd.questionFrontendId}. ${potd.title}](${potdLink})`;
+    // eslint-disable-next-line no-await-in-loop
     await sendDiscordMessage(secrets, message);
+    // eslint-disable-next-line no-await-in-loop
     await writeScriptData({ lastPostedDate: date });
     console.log(message);
     break;

@@ -1,122 +1,19 @@
-import crypto from "node:crypto";
 import fsPromises from "node:fs/promises";
-import nullthrows from "nullthrows";
 import process from "process";
 
-import {
-  SUBMISSION_STATUS_TO_ABBREVIATION,
-  getSubmissionList,
-  type Submission,
-} from "@code-chronicles/leetcode-api";
+import { getSubmissionList } from "@code-chronicles/leetcode-api";
+import { sleep } from "@code-chronicles/util";
 
-// TODO: Make into a shared utility?
-import { sleep } from "@code-chronicles/leetcode-api/src/sleep";
-
-import { LANGUAGE_TO_FILE_EXTENSION } from "./constants";
+import { getFilenameForSubmission } from "./getFilenameForSubmission";
+import { getDirnameForSubmission } from "./getDirnameForSubmission";
 import { readSecrets } from "./readSecrets";
-
-type TransformedSubmission = Omit<
-  Submission,
-  // Separate the code from the submission, since we're saving it in separate
-  // files. We will instead include a hash of the code in the submission
-  // object.
-  | "code"
-
-  // Stringifying the compare_result was taking up too much space so
-  // representing it as a string of 0s and 1s instead of an array of
-  // booleans. This is actually the same format that the API originally
-  // returns.
-  | "compare_result"
-
-  // The time field is a relative time string, so it's not as useful
-  // considering we also have an absolute timestamp field.
-  | "time"
-> & {
-  // Transformed compare_result data as mentioned above.
-  compare_result: string | null;
-
-  // SHA-512 hash of the submission's code text.
-  sha512: string;
-};
-
-function transformSubmission({
-  code,
-  compare_result,
-  time: _,
-  ...rest
-}: Submission): {
-  code: string;
-  submission: TransformedSubmission;
-} {
-  return {
-    code,
-    submission: {
-      ...rest,
-      sha512: crypto
-        .createHash("sha512")
-        .update(code, "utf8")
-        .digest()
-        .toString("hex"),
-      compare_result: compare_result?.map(Number).join("") ?? null,
-    },
-  };
-}
+import {
+  transformSubmission,
+  type TransformedSubmission,
+} from "./transformSubmission";
 
 const METADATA_FILE = "submissions.jsonl";
 const HASHES_FILE = "submissions.sha512";
-
-// TODO: Make into a shared utility?
-function timestampToDate(timestampInSeconds: number): string {
-  const parts = new Intl.DateTimeFormat(undefined, {
-    timeZone: "UTC",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).formatToParts(new Date(timestampInSeconds * 1000));
-
-  return ["year", "month", "day"]
-    .map((partType) => nullthrows(parts.find((p) => p.type === partType)).value)
-    .join("");
-}
-
-function getFilenameForSubmission({
-  id,
-  lang,
-  timestamp,
-  status_display,
-}: TransformedSubmission): string {
-  const extension =
-    LANGUAGE_TO_FILE_EXTENSION[
-      lang as keyof typeof LANGUAGE_TO_FILE_EXTENSION
-    ] ?? "txt";
-  const date = timestampToDate(timestamp);
-  const resultAbbreviation = nullthrows(
-    SUBMISSION_STATUS_TO_ABBREVIATION[
-      status_display as keyof typeof SUBMISSION_STATUS_TO_ABBREVIATION
-    ],
-  ).toLowerCase();
-
-  return `${date}-${id}-${resultAbbreviation}.${extension}`;
-}
-
-const PROBLEMS_PER_GROUP = 100;
-
-function padProblemNumber(n: number): string {
-  return n.toString().padStart(4, "0");
-}
-
-function getDirnameForSubmission(submission: TransformedSubmission): string {
-  const { questionFrontendId, titleSlug } = submission.question;
-  const start =
-    questionFrontendId - (questionFrontendId % PROBLEMS_PER_GROUP) + 1;
-  const end = start - 1 + PROBLEMS_PER_GROUP;
-
-  return [
-    "submissions",
-    `${padProblemNumber(start)}-${padProblemNumber(end)}`,
-    `${padProblemNumber(questionFrontendId)}-${titleSlug}`,
-  ].join("/");
-}
 
 async function main(): Promise<void> {
   // TODO: maybe create the file from a template if it doesn't exist
