@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
-    "@types/node": "20.14.6",
+    "@types/node": "20.14.8",
     "eslint": "9.5.0",
     "prettier": "3.3.2",
-    "typescript": "5.4.5"
+    "typescript": "5.5.2"
   }
 }
