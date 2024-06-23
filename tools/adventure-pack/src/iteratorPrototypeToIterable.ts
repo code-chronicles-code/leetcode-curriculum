@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "Iterator.prototype.toIterable"}
+ */
+
 import "./functionReturnThis";
 
 import { iteratorPrototype } from "./iteratorPrototype";

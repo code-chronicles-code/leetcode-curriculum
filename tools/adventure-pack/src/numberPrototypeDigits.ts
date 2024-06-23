@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "Number.prototype.digits"}
+ */
+
 import "./numberIsIntegerOrIntegerObject";
 
 declare global {

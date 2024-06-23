@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "Iterator.prototype.filter"}
+ */
+
 import "./iteratorPrototypeToIterable";
 
 import { iteratorPrototype } from "./iteratorPrototype";

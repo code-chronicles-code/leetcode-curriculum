@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "Number.prototype.chr"}
+ */
+
 declare global {
   interface Number {
     chr(): string;
