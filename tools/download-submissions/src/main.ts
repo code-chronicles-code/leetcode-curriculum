@@ -14,31 +14,30 @@ import { sleep } from "@code-chronicles/leetcode-api/src/sleep";
 
 import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
 
-// TODO: Verify that this is an exhaustive list of LeetCode languages.
-const LANGUAGE_TO_FILE_EXTENSION: Record<string, string> = {
-  bash: "sh",
-  c: "c",
-  cpp: "cpp",
-  csharp: "cs",
-  dart: "dart",
-  elixir: "ex",
-  erlang: "erl",
-  golang: "go",
-  java: "java",
-  javascript: "js",
-  kotlin: "kt",
-  mssql: "sql",
-  mysql: "sql",
-  php: "php",
-  python: "py",
-  python3: "py",
-  pythondata: "py",
-  racket: "rkt",
-  ruby: "rb",
-  rust: "rs",
-  scala: "scala",
-  swift: "swift",
-  typescript: "ts",
+import { LANGUAGE_TO_FILE_EXTENSION } from "./constants";
+
+type TransformedSubmission = Omit<
+  Submission,
+  // Separate the code from the submission, since we're saving it in separate
+  // files. We will instead include a hash of the code in the submission
+  // object.
+  | "code"
+
+  // Stringifying the compare_result was taking up too much space so
+  // representing it as a string of 0s and 1s instead of an array of
+  // booleans. This is actually the same format that the API originally
+  // returns.
+  | "compare_result"
+
+  // The time field is a relative time string, so it's not as useful
+  // considering we also have an absolute timestamp field.
+  | "time"
+> & {
+  // Transformed compare_result data as mentioned above.
+  compare_result: string | null;
+
+  // SHA-512 hash of the submission's code text.
+  sha512: string;
 };
 
 function transformSubmission({
@@ -48,29 +47,7 @@ function transformSubmission({
   ...rest
 }: Submission): {
   code: string;
-  submission: Omit<
-    Submission,
-    // Separate the code from the submission, since we're saving it in separate
-    // files. We will instead include a hash of the code in the submission
-    // object.
-    | "code"
-
-    // Stringifying the compare_result was taking up too much space so
-    // representing it as a string of 0s and 1s instead of an array of
-    // booleans. This is actually the same format that the API originally
-    // returns.
-    | "compare_result"
-
-    // The time field is a relative time string, so it's not as useful
-    // considering we also have an absolute timestamp field.
-    | "time"
-  > & {
-    // Transformed compare_result data as mentioned above.
-    compare_result: string | null;
-
-    // SHA-512 hash of the submission's code text.
-    sha512: string;
-  };
+  submission: TransformedSubmission;
 } {
   return {
     code,
@@ -86,11 +63,8 @@ function transformSubmission({
   };
 }
 
-type TransformedSubmission = ReturnType<
-  typeof transformSubmission
->["submission"];
-
 const METADATA_FILE = "submissions.jsonl";
+const HASHES_FILE = "submissions.sha512";
 
 // TODO: Make into a shared utility?
 function timestampToDate(timestampInSeconds: number): string {
@@ -112,7 +86,10 @@ function getFilenameForSubmission({
   timestamp,
   status_display,
 }: TransformedSubmission): string {
-  const extension = LANGUAGE_TO_FILE_EXTENSION[lang] ?? "txt";
+  const extension =
+    LANGUAGE_TO_FILE_EXTENSION[
+      lang as keyof typeof LANGUAGE_TO_FILE_EXTENSION
+    ] ?? "txt";
   const date = timestampToDate(timestamp);
   const resultAbbreviation = nullthrows(
     SUBMISSION_STATUS_TO_ABBREVIATION[
@@ -169,7 +146,7 @@ async function main(): Promise<void> {
     ...Array.from(priorSubmissionsMap.values()).map((s) => s.timestamp),
   );
 
-  const writeSubmissionsMetadata = async () => {
+  const writeSubmissionsMetadataAndHashes = async () => {
     // Don't do anything if we didn't get data on any submissions.
     if (submissionsMap.size === 0) {
       return;
@@ -186,12 +163,27 @@ async function main(): Promise<void> {
       (a, b) => a.timestamp - b.timestamp,
     );
 
-    await fsPromises.writeFile(
-      METADATA_FILE,
-      submissions
-        .map((submission) => JSON.stringify(submission) + "\n")
-        .join(""),
-    );
+    await Promise.all([
+      fsPromises.writeFile(
+        METADATA_FILE,
+        submissions
+          .map((submission) => JSON.stringify(submission) + "\n")
+          .join(""),
+      ),
+
+      fsPromises.writeFile(
+        HASHES_FILE,
+        submissions
+          .map(
+            (submission) =>
+              // Two spaces intentional, see `shasum` manual.
+              `${submission.sha512}  ${getDirnameForSubmission(
+                submission,
+              )}/${getFilenameForSubmission(submission)}\n`,
+          )
+          .join(""),
+      ),
+    ]);
   };
 
   try {
@@ -207,7 +199,7 @@ async function main(): Promise<void> {
         });
       } catch (e) {
         // eslint-disable-next-line no-await-in-loop
-        await writeSubmissionsMetadata();
+        await writeSubmissionsMetadataAndHashes();
         console.error("Sleeping because of an error:", e);
         // eslint-disable-next-line no-await-in-loop
         await sleep(60000);
@@ -253,7 +245,7 @@ async function main(): Promise<void> {
 
       if (Math.random() < 0.1) {
         // eslint-disable-next-line no-await-in-loop
-        await writeSubmissionsMetadata();
+        await writeSubmissionsMetadataAndHashes();
       }
 
       console.error("Sleeping...");
@@ -261,7 +253,7 @@ async function main(): Promise<void> {
       await sleep(3000);
     }
   } finally {
-    await writeSubmissionsMetadata();
+    await writeSubmissionsMetadataAndHashes();
   }
 }
 
