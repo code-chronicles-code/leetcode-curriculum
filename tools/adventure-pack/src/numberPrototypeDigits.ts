@@ -7,15 +7,15 @@ import "./numberIsIntegerOrIntegerObject";
 
 declare global {
   interface Number {
-    digits(): Generator<number, void, undefined>;
-    digits(radix: number): Generator<number, void, undefined>;
+    digits(): Generator<number, void, void>;
+    digits(radix: number): Generator<number, void, void>;
   }
 }
 
 Number.prototype.digits = function (
   this: Number,
   radix: number = 10,
-): Generator<number, void, undefined> {
+): Generator<number, void, void> {
   if (!(Number.isIntegerOrIntegerObject(this) && Number(this) >= 0)) {
     throw new Error("Must invoke on a non-negative integer.");
   }

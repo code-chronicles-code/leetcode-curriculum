@@ -119,6 +119,9 @@ const typescript = {
   rules: {
     ...vanilla.rules,
 
+    // In TypeScript files, TypeScript itself should take care of this.
+    "no-undef": "off",
+
     // In TypeScript files, use the TypeScript version of the rule.
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": vanilla.rules["no-unused-vars"],

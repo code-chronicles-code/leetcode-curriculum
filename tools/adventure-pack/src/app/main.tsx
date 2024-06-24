@@ -1,11 +1,8 @@
-// TODO: specify the globals via ESLint config
-/* global window, document */
-
 import nullthrows from "nullthrows";
 import { format as prettierFormat } from "prettier/standalone";
 import * as prettierPluginESTree from "prettier/plugins/estree";
 import * as prettierPluginTypeScript from "prettier/plugins/typescript";
-import React, { useEffect, useId, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow as syntaxHighlighterStyle } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -55,10 +52,9 @@ function Checkbox({
   isChecked: boolean;
   onChange: () => void;
 }) {
-  const id = useId();
   return (
     <label style={{ display: "block" }}>
-      <input type="checkbox" id={id} checked={isChecked} onChange={onChange} />
+      <input type="checkbox" checked={isChecked} onChange={onChange} />
       {children}
     </label>
   );

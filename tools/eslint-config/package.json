@@ -13,8 +13,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@typescript-eslint/parser": "7.13.1",
-    "@typescript-eslint/eslint-plugin": "7.13.1",
+    "@typescript-eslint/parser": "7.14.1",
+    "@typescript-eslint/eslint-plugin": "7.14.1",
     "globals": "15.6.0"
   },
   "devDependencies": {
