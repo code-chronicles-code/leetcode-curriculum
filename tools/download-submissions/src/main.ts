@@ -12,9 +12,8 @@ import {
 // TODO: Make into a shared utility?
 import { sleep } from "@code-chronicles/leetcode-api/src/sleep";
 
-import secrets from "../secrets_DO_NOT_COMMIT_OR_SHARE.json";
-
 import { LANGUAGE_TO_FILE_EXTENSION } from "./constants";
+import { readSecrets } from "./readSecrets";
 
 type TransformedSubmission = Omit<
   Submission,
@@ -120,6 +119,9 @@ function getDirnameForSubmission(submission: TransformedSubmission): string {
 }
 
 async function main(): Promise<void> {
+  // TODO: maybe create the file from a template if it doesn't exist
+  const { leetcodeSessionCookie } = await readSecrets();
+
   const submissionsMap = new Map<string, TransformedSubmission>();
 
   const priorSubmissionsMap: Map<string, TransformedSubmission> =
@@ -193,7 +195,7 @@ async function main(): Promise<void> {
         console.error("Fetching...");
         // eslint-disable-next-line no-await-in-loop
         data = await getSubmissionList({
-          session: secrets.leetcodeSessionCookie,
+          session: leetcodeSessionCookie,
           // TODO: Don't hardcode the 20, export the constant from the API library.
           page: Math.floor(submissionsMap.size / 20),
         });
