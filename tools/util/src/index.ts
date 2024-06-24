@@ -5,5 +5,7 @@ export { sha512 } from "./sha512";
 export { sleep } from "./sleep";
 export { stripPrefix } from "./stripPrefix";
 export { stripPrefixOrThrow } from "./stripPrefixOrThrow";
+export { stripSuffix } from "./stripSuffix";
+export { stripSuffixOrThrow } from "./stripSuffixOrThrow";
 export { timestampToYearMonthDay } from "./timestampToYearMonthDay";
 export { writeToTemporaryFile } from "./writeToTemporaryFile";
