@@ -18,6 +18,8 @@ async function main(): Promise<void> {
     // eslint-disable-next-line no-await-in-loop
     const scriptData = await readScriptData();
 
+    console.log({ scriptData });
+
     if (
       scriptData.lastPostedDate != null &&
       date === scriptData.lastPostedDate
@@ -46,7 +48,7 @@ async function main(): Promise<void> {
     // eslint-disable-next-line no-await-in-loop
     await sendDiscordMessage(secrets, message);
     // eslint-disable-next-line no-await-in-loop
-    await writeScriptData({ lastPostedDate: date });
+    await writeScriptData({ ...scriptData, lastPostedDate: date });
     console.log(message);
     break;
   }
