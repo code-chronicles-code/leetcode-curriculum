@@ -1,7 +1,8 @@
 import { z } from "zod";
 
+import { sleep } from "@code-chronicles/util";
+
 import { getGraphQLData } from "./getGraphQLData";
-import { sleep } from "./sleep";
 
 const QUERY = `
   query {
