@@ -6,6 +6,11 @@ const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
 module.exports = {
   entry: "./src/app/main.tsx",
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
+  },
+
   module: {
     rules: [
       {
@@ -20,17 +25,30 @@ module.exports = {
             },
           },
         ],
-        exclude: /node_modules/,
+        exclude: /\bnode_modules\b/,
       },
     ],
   },
+
+  resolve: {
+    extensions: [".tsx", ".ts", "..."],
+  },
+
   plugins: [
     new webpack.DefinePlugin({
       ADVENTURE_PACK_COMMIT_HASH: JSON.stringify(commitHash),
     }),
   ],
-  output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
+
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        dependencies: {
+          test: /\bnode_modules\b/,
+          name: "dependencies",
+          chunks: "all",
+        },
+      },
+    },
   },
 };
