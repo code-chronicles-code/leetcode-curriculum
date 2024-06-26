@@ -1,6 +1,7 @@
 import invariant from "invariant";
 import fsPromises from "node:fs/promises";
 import path from "node:path";
+import nullthrows from "nullthrows";
 import * as prettier from "prettier";
 import { z } from "zod";
 import {
@@ -14,7 +15,6 @@ import {
   stripPrefixOrThrow,
   stripSuffixOrThrow,
 } from "@code-chronicles/util";
-import nullthrows from "nullthrows";
 
 const headerParser = z
   .object({ name: z.string().min(1).regex(/^\S/) })
