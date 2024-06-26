@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "Array.prototype.slidingWindows"}
+ */
+
 type ArraySliceProxyHandler<T> = {
   get(
     target: ArraySlice<T>,

@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "Function.returnThis"}
+ */
+
 declare global {
   interface FunctionConstructor {
     returnThis<T>(this: T): T;

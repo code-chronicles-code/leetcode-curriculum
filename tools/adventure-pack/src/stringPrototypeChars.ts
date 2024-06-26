@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "String.prototype.chars"}
+ */
+
 declare global {
   interface String {
     chars(): IterableIterator<string>;

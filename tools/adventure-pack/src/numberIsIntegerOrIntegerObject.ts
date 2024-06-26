@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "Number.isIntegerOrIntegerObject"}
+ */
+
 declare global {
   interface NumberConstructor {
     isIntegerOrIntegerObject(num: unknown): boolean;

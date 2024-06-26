@@ -1,3 +1,8 @@
+/**
+ * @adventure
+ * {"name": "String.prototype.ord"}
+ */
+
 declare global {
   interface String {
     ord(): number | undefined;
