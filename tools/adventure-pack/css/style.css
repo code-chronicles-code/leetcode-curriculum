@@ -1,0 +1,23 @@
+html,
+body,
+#main {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.courgette-regular {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

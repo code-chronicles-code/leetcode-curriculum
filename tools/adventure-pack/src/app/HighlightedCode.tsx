@@ -9,9 +9,10 @@ type Props = {
 export function HighlightedCode({ children }: Props) {
   return (
     <SyntaxHighlighter
+      customStyle={{ fontSize: "12px", margin: 0 }}
       language="typescript"
-      style={syntaxHighlighterStyle}
       showLineNumbers
+      style={syntaxHighlighterStyle}
     >
       {children}
     </SyntaxHighlighter>

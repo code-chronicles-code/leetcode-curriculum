@@ -188,7 +188,7 @@ async function main(): Promise<void> {
   await fsPromises.mkdir("dist", { recursive: true });
   await fsPromises.writeFile(
     path.join("dist", "goodies.json"),
-    JSON.stringify(sortObjectKeys(goodiesByName)),
+    JSON.stringify(sortObjectKeys(goodiesByName)) + "\n",
   );
 }
 
