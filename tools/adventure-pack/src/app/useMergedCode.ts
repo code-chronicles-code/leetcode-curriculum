@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { centerTextInComment } from "./centerTextInComment";
 import type { Goody } from "./fetchGoodies";
 
-async function mergeCode({
+function mergeCode({
   commitHash,
   goodies,
   selectedGoodies,
@@ -15,7 +15,7 @@ async function mergeCode({
   goodies: Record<string, Goody>;
   selectedGoodies: ReadonlySet<string>;
 }): Promise<string> {
-  return await prettierFormat(
+  return prettierFormat(
     centerTextInComment("BEGIN ADVENTURE PACK CODE") +
       "\n" +
       `// Adventure Pack commit ${commitHash}\n` +
