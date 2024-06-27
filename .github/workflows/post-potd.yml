@@ -52,7 +52,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: tools/post-potd/data.json
-          key: post-potd-script-data
+          restore-keys: post-potd-script-data-
+          # TODO: maybe label with the date instead of the run ID?
+          key: post-potd-script-data-${{ github.run_id }}
 
       - name: Post problem of the day
         run: (cd tools/post-potd && yarn start)
