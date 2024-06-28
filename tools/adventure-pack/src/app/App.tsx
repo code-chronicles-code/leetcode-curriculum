@@ -1,11 +1,11 @@
-import immutableUpdate from "immutability-helper";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { Checkbox } from "./Checkbox";
 import { GoodyCard } from "./GoodyCard";
 import { HighlightedCode } from "./HighlightedCode";
-import { fetchGoodies, type Goody } from "./fetchGoodies";
+import { fetchGoodies } from "./fetchGoodies";
 import { useMergedCode } from "./useMergedCode";
+import { useAppState } from "./useAppState";
 
 function Column({
   children,
@@ -29,17 +29,24 @@ type Props = {
 };
 
 export function App({ commitHash }: Props) {
-  const [goodies, setGoodies] = useState<Record<string, Goody> | null>(null);
-  const [error, setError] = useState<Error | null>(null);
+  const [state, dispatch] = useAppState();
+
   useEffect(() => {
-    fetchGoodies().then(setGoodies, setError);
+    fetchGoodies().then(
+      (goodiesByLanguage) =>
+        dispatch({ type: "load-goodies-success", goodiesByLanguage }),
+      (error) => dispatch({ type: "load-goodies-error", error }),
+    );
   }, []);
 
-  const [selectedGoodies, setSelectedGoodies] = useState<ReadonlySet<string>>(
-    new Set(),
-  );
+  const goodies = state.goodiesByLanguage?.[state.activeLanguage] ?? null;
+  const selectedGoodies = state.equippedGoodiesByLanguage[state.activeLanguage];
 
-  const code = useMergedCode({ commitHash, goodies, selectedGoodies });
+  const code = useMergedCode({
+    commitHash,
+    goodies,
+    selectedGoodies,
+  });
 
   return (
     <div
@@ -68,7 +75,9 @@ export function App({ commitHash }: Props) {
             String.fromCodePoint(0x1f9d9)}
         </span>
       </div>
-      {error && <pre>{error.stack}</pre>}
+      {state.goodiesByLanguageError && (
+        <pre>{state.goodiesByLanguageError.stack}</pre>
+      )}
       <div
         style={{
           flex: "1 1 0",
@@ -86,14 +95,12 @@ export function App({ commitHash }: Props) {
               key={goody.name}
               isChecked={selectedGoodies.has(goody.name)}
               onChange={() =>
-                setSelectedGoodies((set) =>
-                  immutableUpdate(
-                    set,
-                    set.has(goody.name)
-                      ? { $remove: [goody.name] }
-                      : { $add: [goody.name] },
-                  ),
-                )
+                dispatch({
+                  name: goody.name,
+                  type: selectedGoodies.has(goody.name)
+                    ? "unequip-goody"
+                    : "equip-goody",
+                })
               }
             >
               {goody.name}

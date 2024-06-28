@@ -1,5 +1,5 @@
 import { constants } from "node:fs";
-import fsPromises, { type FileHandle } from "node:fs/promises";
+import { open as openFile, type FileHandle } from "node:fs/promises";
 
 import { getRandomBytes } from "./getRandomBytes";
 
@@ -20,7 +20,7 @@ export async function createTemporaryFile(
       return [
         filename,
         // eslint-disable-next-line no-await-in-loop
-        await fsPromises.open(
+        await openFile(
           filename,
           constants.O_CREAT | constants.O_RDWR | constants.O_EXCL,
         ),

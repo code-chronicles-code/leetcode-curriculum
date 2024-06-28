@@ -11,15 +11,11 @@ type ArraySliceProxyHandler<T> = {
 };
 
 class ArraySlice<T> {
-  readonly array: ReadonlyArray<T>;
-  readonly start: number;
-  readonly end: number;
-
-  private constructor(array: ReadonlyArray<T>, start: number, end: number) {
-    this.array = array;
-    this.start = start;
-    this.end = end;
-  }
+  private constructor(
+    public readonly array: ReadonlyArray<T>,
+    public readonly start: number,
+    public readonly end: number,
+  ) {}
 
   get length(): number {
     return this.end - this.start + 1;
@@ -50,7 +46,7 @@ class ArraySlice<T> {
     return this.end === this.array.length - 1;
   }
 
-  private static proxyHandler?: ArraySliceProxyHandler<unknown>;
+  private declare static proxyHandler?: ArraySliceProxyHandler<unknown>;
 
   static get<T>(
     array: ReadonlyArray<T>,

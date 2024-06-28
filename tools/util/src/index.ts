@@ -1,6 +1,8 @@
 export { createTemporaryFile } from "./createTemporaryFile";
 export { getLines } from "./getLines";
 export { getRandomBytes } from "./getRandomBytes";
+export { objectFromKeys } from "./objectFromKeys";
+export { promiseIdleCallback } from "./promiseIdleCallback";
 export { sha512 } from "./sha512";
 export { sleep } from "./sleep";
 export { sortObjectKeys } from "./sortObjectKeys";
