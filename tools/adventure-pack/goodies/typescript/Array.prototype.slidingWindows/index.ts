@@ -88,15 +88,11 @@ type IndexableArraySlice<T> = ArraySlice<T> & {
 
 declare global {
   interface ReadonlyArray<T> {
-    slidingWindows(
-      windowSize: number,
-    ): Generator<ArraySlice<T>, void, undefined>;
+    slidingWindows(windowSize: number): Generator<ArraySlice<T>, void, void>;
   }
 
   interface Array<T> {
-    slidingWindows(
-      windowSize: number,
-    ): Generator<ArraySlice<T>, void, undefined>;
+    slidingWindows(windowSize: number): Generator<ArraySlice<T>, void, void>;
   }
 }
 

@@ -7,6 +7,15 @@ import { fetchGoodies } from "./fetchGoodies";
 import { useMergedCode } from "./useMergedCode";
 import { useAppState } from "./useAppState";
 
+import type { Language } from "./languageParser";
+
+const LANGUAGE_NAMES: Record<Language, string> = {
+  java: "Java",
+  javascript: "JavaScript",
+  python3: "Python 3",
+  typescript: "TypeScript",
+};
+
 function Column({
   children,
   flex,
@@ -89,7 +98,24 @@ export function App({ commitHash }: Props) {
           padding: "12px",
         }}
       >
-        <Column title="Pick Your Goodies" flex="0 0 auto">
+        <Column title="Equip Goodies" flex="0 0 auto">
+          <select
+            value={state.activeLanguage}
+            onChange={(ev) =>
+              dispatch({
+                type: "select-language",
+                language: ev.target.value as Language,
+              })
+            }
+          >
+            {(Object.entries(LANGUAGE_NAMES) as [Language, string][]).map(
+              ([language, languageName]) => (
+                <option key={language} value={language}>
+                  {languageName}
+                </option>
+              ),
+            )}
+          </select>
           {Object.values(goodies ?? {}).map((goody) => (
             <Checkbox
               key={goody.name}
