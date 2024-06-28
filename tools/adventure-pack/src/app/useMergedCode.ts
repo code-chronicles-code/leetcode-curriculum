@@ -4,28 +4,16 @@ import * as prettierPluginESTree from "prettier/plugins/estree";
 import * as prettierPluginTypeScript from "prettier/plugins/typescript";
 import { useEffect, useState } from "react";
 
-import { centerTextInComment } from "./centerTextInComment";
-import type { Goody } from "./fetchGoodies";
+// TODO: split util by type of util so importing the main package doesn't pull in node:fs
+import { promiseIdleCallback } from "@code-chronicles/util/src/promiseIdleCallback";
 
-function promiseIdleCallback<T>(callback: () => T): Promise<T> {
-  return new Promise((resolve, reject) => {
-    requestIdleCallback(() => {
-      try {
-        resolve(callback());
-      } catch (err) {
-        reject(err);
-      }
-    });
-  });
-}
+import { centerTextInComment } from "./centerTextInComment";
+import type { Goody } from "./goodyParser";
 
 class InefficientPriorityQueue<T> {
-  private items: T[] = [];
-  private compareFn: (a: T, b: T) => number;
+  private readonly items: T[] = [];
 
-  constructor(compareFn: (a: T, b: T) => number) {
-    this.compareFn = compareFn;
-  }
+  constructor(private readonly compareFn: (a: T, b: T) => number) {}
 
   push(item: T): void {
     this.items.push(item);
@@ -61,18 +49,24 @@ function topo({
     }
   }
 
-  const unsatisfiedDependencies = new Map<string, Set<string>>();
-  const unblocks = new Map<string, Set<string>>();
+  const unsatisfiedImports = new Map<string, Set<string>>();
+  const importedBy = new Map<string, ReadonlySet<string>>();
   for (const name of recursivelySelectedGoodies) {
     const goody = goodies[name];
+
+    importedBy.set(
+      name,
+      new Set(
+        goody.importedBy.filter((importer) =>
+          recursivelySelectedGoodies.has(importer),
+        ),
+      ),
+    );
+
     if (goody.imports.length === 0) {
       pq.push(name);
     } else {
-      unsatisfiedDependencies.set(name, new Set(goody.imports));
-      for (const im of goody.imports) {
-        unblocks.has(im) || unblocks.set(im, new Set());
-        unblocks.get(im)!.add(name);
-      }
+      unsatisfiedImports.set(name, new Set(goody.imports));
     }
   }
 
@@ -81,17 +75,20 @@ function topo({
     const name = pq.pop()!;
     res.push(name);
 
-    for (const unblocked of unblocks.get(name) ?? []) {
-      const depsOfUnblocked = unsatisfiedDependencies.get(unblocked)!;
-      depsOfUnblocked.delete(name);
-      if (depsOfUnblocked.size === 0) {
-        unsatisfiedDependencies.delete(unblocked);
-        pq.push(unblocked);
+    for (const importer of importedBy.get(name) ?? []) {
+      const importerUnsatisfiedImports = unsatisfiedImports.get(importer)!;
+      importerUnsatisfiedImports.delete(name);
+      if (importerUnsatisfiedImports.size === 0) {
+        unsatisfiedImports.delete(importer);
+        pq.push(importer);
       }
     }
   }
 
-  invariant(unsatisfiedDependencies.size === 0, "TODO");
+  invariant(
+    unsatisfiedImports.size === 0,
+    "Failed to satisfy all the imports.",
+  );
   return res;
 }
 
@@ -108,11 +105,25 @@ async function mergeCode({
     return "// Equip some goodies to generate your pack!";
   }
 
-  const mergedCode = await promiseIdleCallback(() =>
-    topo({ selectedGoodies, goodies })
-      .map((name) => goodies[name].code)
-      .join("\n\n"),
-  );
+  const mergedCode = await promiseIdleCallback(() => {
+    const orderedGoodies = topo({ selectedGoodies, goodies }).map(
+      (name) => goodies[name],
+    );
+
+    const globalModuleDeclarations = orderedGoodies.flatMap(
+      (goody) => goody.globalModuleDeclarations,
+    );
+
+    return [
+      globalModuleDeclarations.length > 0
+        ? `declare global {\n${globalModuleDeclarations.join("\n\n")}\n}\n`
+        : "",
+
+      ...orderedGoodies.map((goody) => goody.code),
+    ]
+      .filter(Boolean)
+      .join("\n\n");
+  });
 
   return (
     await prettierFormat(
@@ -121,7 +132,7 @@ async function mergeCode({
         `// Adventure Pack commit ${commitHash}\n` +
         `// Running at: ${window.location.href}\n\n` +
         mergedCode +
-        "\n" +
+        "\n\n" +
         centerTextInComment("END ADVENTURE PACK CODE"),
       {
         parser: "typescript",
