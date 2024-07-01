@@ -1,8 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
 import "./index";
-import "../Iterator.prototype.map";
-import "../Iterator.prototype.filter";
 
 describe("Iterator.prototype.toArray", () => {
   it("converts an iterator to an array", () => {
