@@ -61,4 +61,13 @@ describe("Iterator.prototype.forEach", () => {
       [6, 4],
     ]);
   });
+
+  it("should not fail if the callback returns a value", () => {
+    const array = [2, 3, 5, 7];
+    const callback = jest.fn(() => "ignored");
+
+    expect(() => {
+      array.values().forEach(callback);
+    }).not.toThrow();
+  });
 });
