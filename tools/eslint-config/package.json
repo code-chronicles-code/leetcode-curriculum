@@ -13,12 +13,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@typescript-eslint/parser": "7.14.1",
-    "@typescript-eslint/eslint-plugin": "7.14.1",
-    "globals": "15.6.0"
+    "@typescript-eslint/parser": "7.15.0",
+    "@typescript-eslint/eslint-plugin": "7.15.0",
+    "globals": "15.8.0"
   },
   "devDependencies": {
-    "eslint": "9.5.0",
+    "eslint": "9.6.0",
     "prettier": "3.3.2"
   }
 }
