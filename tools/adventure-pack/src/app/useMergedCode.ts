@@ -9,6 +9,7 @@ import { promiseIdleCallback } from "@code-chronicles/util/src/promiseIdleCallba
 
 import { centerTextInComment } from "./centerTextInComment";
 import type { Goody } from "./goodyParser";
+import type { Language } from "./languageParser";
 
 class InefficientPriorityQueue<T> {
   private readonly items: T[] = [];
@@ -92,17 +93,23 @@ function topo({
   return res;
 }
 
+type Data = {
+  commitHash: string;
+  goodies: Record<string, Goody>;
+  language: Language;
+  selectedGoodies: ReadonlySet<string>;
+};
+
 async function mergeCode({
   commitHash,
   goodies,
+  language,
   selectedGoodies,
-}: {
-  commitHash: string;
-  goodies: Record<string, Goody>;
-  selectedGoodies: ReadonlySet<string>;
-}): Promise<string> {
+}: Data): Promise<string> {
   if (selectedGoodies.size === 0) {
-    return "// Equip some goodies to generate your pack!";
+    return language === "python3"
+      ? "# Equip some goodies to generate your pack!"
+      : "// Equip some goodies to generate your pack!";
   }
 
   const mergedCode = await promiseIdleCallback(() => {
@@ -125,15 +132,54 @@ async function mergeCode({
       .join("\n\n");
   });
 
+  if (language === "java") {
+    return (
+      centerTextInComment({
+        text: "BEGIN ADVENTURE PACK CODE",
+        commentType: "//",
+      }) +
+      "\n" +
+      `// Adventure Pack commit ${commitHash}\n` +
+      `// Running at: ${window.location.href}\n\n` +
+      mergedCode +
+      "\n" +
+      centerTextInComment({
+        text: "END ADVENTURE PACK CODE",
+        commentType: "//",
+      })
+    );
+  }
+
+  if (language === "python3") {
+    return (
+      centerTextInComment({
+        text: "BEGIN ADVENTURE PACK CODE",
+        commentType: "#",
+      }) +
+      "\n" +
+      `# Adventure Pack commit ${commitHash}\n` +
+      `# Running at: ${window.location.href}\n\n` +
+      mergedCode +
+      "\n" +
+      centerTextInComment({ text: "END ADVENTURE PACK CODE", commentType: "#" })
+    );
+  }
+
   return (
     await prettierFormat(
-      centerTextInComment("BEGIN ADVENTURE PACK CODE") +
+      centerTextInComment({
+        text: "BEGIN ADVENTURE PACK CODE",
+        commentType: "//",
+      }) +
         "\n" +
         `// Adventure Pack commit ${commitHash}\n` +
         `// Running at: ${window.location.href}\n\n` +
         mergedCode +
         "\n\n" +
-        centerTextInComment("END ADVENTURE PACK CODE"),
+        centerTextInComment({
+          text: "END ADVENTURE PACK CODE",
+          commentType: "//",
+        }),
       {
         parser: "typescript",
         plugins: [prettierPluginESTree, prettierPluginTypeScript],
@@ -145,12 +191,9 @@ async function mergeCode({
 export function useMergedCode({
   commitHash,
   goodies,
+  language,
   selectedGoodies,
-}: {
-  commitHash: string;
-  goodies: Record<string, Goody> | null;
-  selectedGoodies: ReadonlySet<string>;
-}): string {
+}: Omit<Data, "goodies"> & { goodies: Data["goodies"] | null }): string {
   const [code, setCode] = useState("");
 
   useEffect(() => {
@@ -160,14 +203,16 @@ export function useMergedCode({
 
     let isActive = true;
 
-    mergeCode({ commitHash, goodies, selectedGoodies }).then((mergedCode) => {
-      isActive && setCode(mergedCode);
-    });
+    mergeCode({ commitHash, goodies, language, selectedGoodies }).then(
+      (mergedCode) => {
+        isActive && setCode(mergedCode);
+      },
+    );
 
     return () => {
       isActive = false;
     };
-  }, [goodies, selectedGoodies]);
+  }, [commitHash, goodies, language, selectedGoodies]);
 
   return code;
 }

@@ -2,6 +2,7 @@ export { createTemporaryFile } from "./createTemporaryFile";
 export { getLines } from "./getLines";
 export { getRandomBytes } from "./getRandomBytes";
 export { objectFromKeys } from "./objectFromKeys";
+export { only } from "./only";
 export { promiseIdleCallback } from "./promiseIdleCallback";
 export { sha512 } from "./sha512";
 export { sleep } from "./sleep";

@@ -37,8 +37,8 @@ async function main(): Promise<void> {
               href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
               rel="stylesheet"
             />
-            <script async src="main.js"></script>
-            <script async src="dependencies.js"></script>
+            <script async src="main.js" />
+            <script async src="dependencies.js" />
             <link href="style.css" rel="stylesheet" />
           </head>
           <body>

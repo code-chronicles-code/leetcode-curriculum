@@ -1,18 +1,28 @@
-export function centerTextInComment(
-  text: string,
-  preferredLineWidth: number = 80,
-): string {
+export function centerTextInComment({
+  commentType,
+  preferredLineWidth = 80,
+  text,
+}: {
+  commentType: "#" | "//";
+  preferredLineWidth?: number;
+  text: string;
+}): string {
   const prefix = " ";
   const suffix = " ";
-  const left = "/".repeat(
-    Math.max(
-      2,
-      Math.floor(
-        (preferredLineWidth - text.length - prefix.length - suffix.length) / 2,
+
+  const left =
+    commentType +
+    commentType[0].repeat(
+      Math.max(
+        0,
+        Math.floor(
+          (preferredLineWidth - text.length - prefix.length - suffix.length) /
+            2,
+        ) - commentType.length,
       ),
-    ),
-  );
-  const right = "/".repeat(
+    );
+
+  const right = commentType[0].repeat(
     Math.max(
       0,
       preferredLineWidth -
@@ -22,5 +32,6 @@ export function centerTextInComment(
         left.length,
     ),
   );
+
   return [left, prefix, text, suffix, right].join("").trim();
 }

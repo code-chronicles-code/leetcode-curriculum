@@ -2,7 +2,7 @@ import fsPromises from "node:fs/promises";
 import path from "node:path";
 import { SourceFile as TSSourceFile, SyntaxKind } from "ts-morph";
 
-import type { Goody } from "../../app/goodyParser";
+import type { Goody } from "../../../app/goodyParser";
 import { createSourceFile } from "./createSourceFile";
 import { extractImports } from "./extractImports";
 import { extractMetadata, type Metadata } from "./extractMetadata";

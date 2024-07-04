@@ -54,6 +54,7 @@ export function App({ commitHash }: Props) {
   const code = useMergedCode({
     commitHash,
     goodies,
+    language: state.activeLanguage,
     selectedGoodies,
   });
 
@@ -135,12 +136,18 @@ export function App({ commitHash }: Props) {
         </Column>
         <Column title="Browse" flex="1 1 0">
           {Object.values(goodies ?? {}).map((goody) => (
-            <GoodyCard key={goody.name} goody={goody} />
+            <GoodyCard
+              key={goody.name}
+              goody={goody}
+              language={state.activeLanguage}
+            />
           ))}
         </Column>
 
         <Column title="Code" flex="1 1 0">
-          <HighlightedCode>{code}</HighlightedCode>
+          <HighlightedCode language={state.activeLanguage}>
+            {code}
+          </HighlightedCode>
         </Column>
       </div>
     </div>
