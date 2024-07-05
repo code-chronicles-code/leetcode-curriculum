@@ -1,6 +1,6 @@
 class UnionFind {
 
-  private int[] parent;
+  private final int[] parent;
 
   public UnionFind(int n) {
     parent = new int[n];
@@ -20,6 +20,7 @@ class UnionFind {
     if (parent[a] == a) {
       return a;
     }
+
     return parent[a] = find(parent[a]);
   }
 }
