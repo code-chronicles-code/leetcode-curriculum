@@ -1,7 +1,7 @@
 import invariant from "invariant";
 import {
   createScanner,
-  transpile,
+  transpile as originalTranspile,
   LanguageVariant,
   SyntaxKind,
   ScriptTarget,
@@ -11,7 +11,7 @@ import { getRandomBytes } from "@code-chronicles/util";
 
 import { formatCode } from "./formatCode";
 
-export async function transpileTypeScript(code: string): Promise<string> {
+export async function transpile(code: string): Promise<string> {
   // There is some dark magic here to work around the fact that TypeScript
   // doesn't preserve newlines when transpiling! So we add a special comment
   // to track newlines in the original code, and then we restore them later.
@@ -51,7 +51,7 @@ export async function transpileTypeScript(code: string): Promise<string> {
   }
 
   new RegExp("\\/\\*" + sig + ":(\\d+)\\*\\/", "g");
-  const transpiledCode = transpile(codeWithMarkedNewlines.join(""), {
+  const transpiledCode = originalTranspile(codeWithMarkedNewlines.join(""), {
     target: ScriptTarget.Latest,
   }).replaceAll(
     new RegExp("\\/\\*" + sig + ":(\\d+)\\*\\/", "g"),

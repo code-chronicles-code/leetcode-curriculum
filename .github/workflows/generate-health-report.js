@@ -33,11 +33,13 @@ module.exports = async ({ context, github }) => {
 
   const lines = [];
   for (const command of COMMANDS) {
-    console.log("Running: " + command);
+    console.error("Running: " + command);
     try {
-      await exec(command);
+      const { stderr } = await exec(command + " 1>&2");
+      console.error(stderr);
       lines.push(` * \`${command}\`: ✅`);
     } catch (err) {
+      console.error(err.stderr);
       console.error(err);
       lines.push(` * \`${command}\`: ❌`);
     }

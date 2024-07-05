@@ -1,8 +1,7 @@
-import invariant from "invariant";
 import { SourceFile as TSSourceFile } from "ts-morph";
 import { z } from "zod";
 
-import { getLines, stripPrefixOrThrow } from "@code-chronicles/util";
+import { getLines, only, stripPrefixOrThrow } from "@code-chronicles/util";
 
 import { getCodeAt } from "./getCodeAt";
 import { getTrivia } from "./getTrivia";
@@ -25,15 +24,13 @@ function parseMetadata(metadata: string): Metadata {
 }
 
 export function extractMetadata(sourceFile: TSSourceFile): Metadata {
-  const metadataComments = getTrivia(sourceFile).filter((range) =>
-    /\@goody\b/.test(getCodeAt(sourceFile, range)),
-  );
-  invariant(
-    metadataComments.length === 1,
-    "Expected exactly one metadata comment",
+  const metadataComment = only(
+    getTrivia(sourceFile).filter((range) =>
+      /\@goody\b/.test(getCodeAt(sourceFile, range)),
+    ),
   );
 
-  const metadata = parseMetadata(getCodeAt(sourceFile, metadataComments[0]));
-  sourceFile.replaceText(metadataComments[0], "");
+  const metadata = parseMetadata(getCodeAt(sourceFile, metadataComment));
+  sourceFile.replaceText(metadataComment, "");
   return metadata;
 }
