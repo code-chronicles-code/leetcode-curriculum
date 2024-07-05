@@ -3,20 +3,21 @@ import fsPromises from "node:fs/promises";
 
 import { stripPrefixOrThrow } from "@code-chronicles/util";
 
-import type { Goody } from "../../../app/goodyParser";
+import type { JavaScriptGoody } from "../../../app/parsers/javaScriptGoodyParser";
+import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";
 import { readBasicGoody, GOODIES_DIRECTORY } from "./readBasicGoody";
 import { transpile } from "./transpile";
 
 export async function readGoodies(): Promise<{
-  javascript: Record<string, Goody>;
-  typescript: Record<string, Goody>;
+  javascript: Record<string, JavaScriptGoody>;
+  typescript: Record<string, TypeScriptGoody>;
 }> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {
     withFileTypes: true,
   });
 
-  const goodiesByName: Record<string, Goody> = {};
-  const registerGoody = (goody: Goody): void => {
+  const goodiesByName: Record<string, TypeScriptGoody> = {};
+  const registerGoody = (goody: TypeScriptGoody): void => {
     invariant(
       goodiesByName[goody.name] == null,
       `Goody ${goody.name} already exists!`,
@@ -58,8 +59,8 @@ export async function readGoodies(): Promise<{
   }
 
   const res: {
-    javascript: Record<string, Goody>;
-    typescript: Record<string, Goody>;
+    javascript: Record<string, JavaScriptGoody>;
+    typescript: Record<string, TypeScriptGoody>;
   } = {
     javascript: {},
     typescript: {},
@@ -76,6 +77,7 @@ export async function readGoodies(): Promise<{
       // eslint-disable-next-line no-await-in-loop
       code: await transpile(goody.code),
       globalModuleDeclarations: [],
+      language: "javascript",
     };
   }
 

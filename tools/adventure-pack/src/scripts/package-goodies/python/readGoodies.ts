@@ -1,16 +1,16 @@
 import invariant from "invariant";
 import fsPromises from "node:fs/promises";
 
-import type { Goody } from "../../../app/goodyParser";
+import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
 import { readBasicGoody, GOODIES_DIRECTORY } from "./readBasicGoody";
 
-export async function readGoodies(): Promise<Record<string, Goody>> {
+export async function readGoodies(): Promise<Record<string, Python3Goody>> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {
     withFileTypes: true,
   });
 
-  const goodiesByName: Record<string, Goody> = {};
-  const registerGoody = (goody: Goody): void => {
+  const goodiesByName: Record<string, Python3Goody> = {};
+  const registerGoody = (goody: Python3Goody): void => {
     invariant(
       goodiesByName[goody.name] == null,
       `Goody ${goody.name} already exists!`,

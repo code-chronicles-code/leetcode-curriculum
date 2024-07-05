@@ -1,14 +1,13 @@
 import fsPromises from "node:fs/promises";
 import path from "node:path";
 
-import type { Goody } from "../../app/goodyParser";
-import type { Language } from "../../app/languageParser";
+import type { GoodiesByLanguage } from "../../app/fetchGoodies";
 import { readGoodies as readJavaGoodies } from "./java/readGoodies";
 import { readGoodies as readPythonGoodies } from "./python/readGoodies";
 import { readGoodies as readTypeScriptAndJavaScriptGoodies } from "./typescript/readGoodies";
 
 async function main(): Promise<void> {
-  const goodies: Record<Language, Record<string, Goody>> = {
+  const goodies: GoodiesByLanguage = {
     java: await readJavaGoodies(),
     python3: await readPythonGoodies(),
     ...(await readTypeScriptAndJavaScriptGoodies()),

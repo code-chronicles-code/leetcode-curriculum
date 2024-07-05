@@ -2,10 +2,9 @@ import fsPromises from "node:fs/promises";
 import path from "node:path";
 import { SourceFile as TSSourceFile, SyntaxKind } from "ts-morph";
 
-import type { Goody } from "../../../app/goodyParser";
+import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";
 import { createSourceFile } from "./createSourceFile";
 import { extractImports } from "./extractImports";
-import { extractMetadata, type Metadata } from "./extractMetadata";
 import { formatCode } from "./formatCode";
 import { removeNode } from "./removeNode";
 
@@ -28,16 +27,13 @@ function extractGlobalModuleDeclarations(sourceFile: TSSourceFile): string[] {
   return res;
 }
 
-export async function readBasicGoody(
-  name: string,
-): Promise<Goody & { metadata: Metadata }> {
+export async function readBasicGoody(name: string): Promise<TypeScriptGoody> {
   const code = await fsPromises.readFile(
     path.join(GOODIES_DIRECTORY, name, "index.ts"),
     "utf8",
   );
 
   const sourceFile = createSourceFile(code);
-  const metadata = extractMetadata(sourceFile);
   const imports = extractImports(sourceFile);
   const globalModuleDeclarations = extractGlobalModuleDeclarations(sourceFile);
 
@@ -58,7 +54,7 @@ export async function readBasicGoody(
     globalModuleDeclarations,
     importedBy: [],
     imports: Array.from(imports),
-    metadata,
     name,
+    language: "typescript",
   };
 }

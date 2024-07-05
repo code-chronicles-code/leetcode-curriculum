@@ -1,15 +1,13 @@
 import immutableUpdate from "immutability-helper";
 import React, { useReducer } from "react";
 
-import type { Goody } from "./goodyParser";
-import type { Language } from "./languageParser";
+import type { GoodiesByLanguage } from "./fetchGoodies";
+import type { Language } from "./Language";
 
 type Action =
   | {
       type: "load-goodies-success";
-      goodiesByLanguage: Readonly<
-        Record<string, Readonly<Record<string, Goody>>>
-      >;
+      goodiesByLanguage: GoodiesByLanguage;
     }
   | {
       type: "load-goodies-error";
@@ -29,9 +27,7 @@ type Action =
     };
 
 export type AppState = Readonly<{
-  goodiesByLanguage: Readonly<
-    Record<Language, Readonly<Record<string, Goody>>>
-  > | null;
+  goodiesByLanguage: GoodiesByLanguage | null;
   goodiesByLanguageError: Error | null;
 
   equippedGoodiesByLanguage: Readonly<Record<Language, ReadonlySet<string>>>;

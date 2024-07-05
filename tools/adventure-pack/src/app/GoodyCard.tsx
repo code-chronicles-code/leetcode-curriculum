@@ -1,19 +1,17 @@
 import React from "react";
 
+import type { Goody } from "./Goody";
 import { HighlightedCode } from "./HighlightedCode";
-import type { Goody } from "./goodyParser";
-import type { Language } from "./languageParser";
 
 type Props = {
   goody: Goody;
-  language: Language;
 };
 
-export function GoodyCard({ goody, language }: Props) {
+export function GoodyCard({ goody }: Props) {
   return (
     <div>
       <h2>{goody.name}</h2>
-      <HighlightedCode language={language}>
+      <HighlightedCode language={goody.language}>
         {(
           goody.imports
             .sort()

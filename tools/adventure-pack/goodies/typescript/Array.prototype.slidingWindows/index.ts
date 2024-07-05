@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 type ArraySliceProxyHandler<T> = {
   get(
     target: ArraySlice<T>,
