@@ -7,6 +7,7 @@ const GITHUB_ACTIONS_BOT_ID = 41898282;
 const HEALTH_REPORT_PREFIX = `<!-- HEALTH REPORT -->\n\n`;
 
 const COMMANDS = [
+  "npx prettier --write .github && ! (git status --porcelain | grep .)",
   "(cd tools && yarn format && ! (git status --porcelain | grep .))",
   "(cd tools && yarn lint)",
   "(cd tools && yarn typecheck)",
@@ -33,6 +34,9 @@ module.exports = async ({ context, github }) => {
 
   const lines = [];
   for (const command of COMMANDS) {
+    await exec("git reset --hard HEAD");
+    await exec("git clean -fd");
+
     console.error("Running: " + command);
     try {
       const { stderr } = await exec(command + " 1>&2");

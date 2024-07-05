@@ -1,0 +1,6 @@
+# These generate errors
+goodies/java/build.gradle.kts
+goodies/java/settings.gradle.kts
+
+goodies/java/.gradle/
+goodies/java/build/

@@ -25,6 +25,14 @@ jobs:
           cache: yarn
           cache-dependency-path: tools/yarn.lock
 
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+          cache-dependency-path: tools/adventure-pack/goodies/java/build.gradle.kts
+
       - name: Install dependencies
         run: (cd tools && yarn)
 
