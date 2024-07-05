@@ -18,10 +18,17 @@
     }
   ],
   "scripts": {
+    "goodies:python:format": "bash -c 'cd goodies/python && source .venv/bin/activate && black .'",
+    "goodies:python:install": "bash -c 'cd goodies/python && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt'",
+    "goodies:python:test": "bash -c 'cd goodies/python && source .venv/bin/activate && pytest'",
+    "goodies:typescript:format": "prettier --write .",
+    "goodies:typescript:install": "yarn",
+    "goodies:typescript:test": "jest",
     "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && NODE_ENV=development webpack && cp css/style.css dist/style.css",
-    "format": "prettier --write .",
+    "format": "yarn goodies:python:format && yarn goodies:typescript:format",
     "lint": "eslint .",
-    "test": "jest",
+    "postinstall": "yarn goodies:python:install",
+    "test": "yarn goodies:python:test && yarn goodies:typescript:test",
     "typecheck": "tsc --project ."
   },
   "dependencies": {
