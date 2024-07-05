@@ -2,14 +2,11 @@ name: Post LeetCode PotD to Discord
 
 on:
   schedule:
-    # A new problem of the day is posted at 00:00 UTC each day.
-    - cron: "0 0 * * *"
-
     # Scheduled GitHub Actions seem to be consistently delayed... So this is
-    # a bit of a hack to also kick off this workflow an hour early. If it
-    # runs before the new problem of the day is available, it will simply
-    # sleep until it is. And since we only post once per day thanks to the
-    # cache, this shouldn't result in any duplicate posts.
+    # a bit of a hack to kick off this workflow an hour early. If it runs
+    # before the new problem of the day is available, it will simply sleep
+    # until it is. And since we only post once per day thanks to the cache,
+    # this shouldn't result in any duplicate posts.
     - cron: "0 23 * * *"
 
   # Allows running this workflow manually from the Actions tab.
