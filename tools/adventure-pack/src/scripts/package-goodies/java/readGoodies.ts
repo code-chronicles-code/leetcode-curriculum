@@ -4,6 +4,8 @@ import fsPromises from "node:fs/promises";
 import type { Goody } from "../../../app/goodyParser";
 import { readBasicGoody, GOODIES_DIRECTORY } from "./readBasicGoody";
 
+const EXCLUDED_DIRECTORIES = new Set([".gradle", "gradle", "build"]);
+
 export async function readGoodies(): Promise<Record<string, Goody>> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {
     withFileTypes: true,
@@ -19,7 +21,7 @@ export async function readGoodies(): Promise<Record<string, Goody>> {
   };
 
   for (const entry of fileEntries) {
-    if (!entry.isDirectory()) {
+    if (!entry.isDirectory() || EXCLUDED_DIRECTORIES.has(entry.name)) {
       continue;
     }
 

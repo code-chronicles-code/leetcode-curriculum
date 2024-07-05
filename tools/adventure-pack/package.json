@@ -18,6 +18,9 @@
     }
   ],
   "scripts": {
+    "goodies:java:format": "prettier --write .",
+    "goodies:java:install": "javac -version",
+    "goodies:java:test": "(cd goodies/java && ./gradlew test)",
     "goodies:python:format": "bash -c 'cd goodies/python && source .venv/bin/activate && black --line-length=80 .'",
     "goodies:python:install": "bash -c 'cd goodies/python && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt'",
     "goodies:python:test": "bash -c 'cd goodies/python && source .venv/bin/activate && pytest --color=yes'",
@@ -27,8 +30,8 @@
     "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && NODE_ENV=development webpack && cp css/style.css dist/style.css",
     "format": "yarn goodies:python:format && yarn goodies:typescript:format",
     "lint": "eslint .",
-    "postinstall": "yarn goodies:python:install",
-    "test": "yarn goodies:python:test && yarn goodies:typescript:test",
+    "postinstall": "yarn goodies:java:install && yarn goodies:python:install",
+    "test": "yarn goodies:java:test && yarn goodies:python:test && yarn goodies:typescript:test",
     "typecheck": "tsc --project ."
   },
   "dependencies": {
