@@ -1,4 +1,4 @@
-import {describe, expect, it} from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 
 import "./index";
 
@@ -11,8 +11,8 @@ describe("Iterator.prototype.some", () => {
     expect([1, 3, 5, 7, 9].values().some(callbackFn)).toBe(false);
   });
 
-  it("should return true for an empty iterator", () => {
-    expect([].values().some((element: number) => element > 5)).toBe(true);
+  it("should return false for an empty iterator", () => {
+    expect([].values().some((element: number) => element > 5)).toBe(false);
   });
 
   it("can test Map entries()", () => {
@@ -28,14 +28,15 @@ describe("Iterator.prototype.some", () => {
       ["L", 1],
       ["D", 2],
     ]);
-    const callbackFn = ([key, value]: [string, number]) => key === key.toUpperCase() && value > 0;
+    const callbackFn = ([key, value]: [string, number]) =>
+      key === key.toUpperCase() && value > 0;
     expect(map.entries().some(callbackFn)).toBe(true);
-  })
+  });
 
   it("can test Set values()", () => {
     const set = new Set([1, 1, 2, 3, 3, 4, 5, 5, 6]);
     expect(set.values().some((element: number) => element > 0)).toBe(true);
-  })
+  });
 
   it("can test a Generator object", () => {
     const generator = function* (): Generator<number, void, undefined> {
@@ -44,9 +45,9 @@ describe("Iterator.prototype.some", () => {
       yield 6;
       yield 8;
       yield 10;
-    }
-  
+    };
+
     expect(generator().some((element: number) => element % 2 === 0)).toBe(true);
     expect(generator().some((element: number) => element < 7)).toBe(true);
-  })
+  });
 });

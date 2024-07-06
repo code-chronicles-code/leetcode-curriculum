@@ -1,14 +1,14 @@
-import {describe, expect, it} from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 
 import "./index";
 
 describe("Iterator.prototype.every", () => {
   it("should return true if all elements pass the test and false if an element fails a test", () => {
-    const callbackFn = (element: number) => element % 2 === 0;
-    expect([2, 4, 6, 8, 10].values().every(callbackFn)).toBe(true);
-    expect([2, 4, 6, 7, 8, 10].values().every(callbackFn)).toBe(false);
-    expect([1, 4, 6, 8, 10].values().every(callbackFn)).toBe(false);
-    expect([2, 4, 6, 8, 4].values().every(callbackFn)).toBe(false);
+    const isEven = (element: number) => element % 2 === 0;
+    expect([2, 4, 6, 8, 10].values().every(isEven)).toBe(true);
+    expect([2, 4, 6, 7, 8, 10].values().every(isEven)).toBe(false);
+    expect([1, 4, 6, 8, 10].values().every(isEven)).toBe(false);
+    expect([2, 4, 6, 8, 11].values().every(isEven)).toBe(false);
   });
 
   it("should return true for an empty iterator", () => {
@@ -28,14 +28,15 @@ describe("Iterator.prototype.every", () => {
       ["L", 1],
       ["D", 2],
     ]);
-    const callbackFn = ([key, value]: [string, number]) => key === key.toUpperCase() && value > 0;
+    const callbackFn = ([key, value]: [string, number]) =>
+      key === key.toUpperCase() && value > 0;
     expect(map.entries().every(callbackFn)).toBe(false);
-  })
+  });
 
   it("can test Set values()", () => {
     const set = new Set([1, 1, 2, 3, 3, 4, 5, 5, 6]);
     expect(set.values().every((element: number) => element > 0)).toBe(true);
-  })
+  });
 
   it("can test a Generator object", () => {
     const generator = function* (): Generator<number, void, undefined> {
@@ -44,9 +45,11 @@ describe("Iterator.prototype.every", () => {
       yield 6;
       yield 8;
       yield 10;
-    }
-  
-    expect(generator().every((element: number) => element % 2 === 0)).toBe(true);
+    };
+
+    expect(generator().every((element: number) => element % 2 === 0)).toBe(
+      true,
+    );
     expect(generator().every((element: number) => element < 7)).toBe(false);
-  })
+  });
 });
