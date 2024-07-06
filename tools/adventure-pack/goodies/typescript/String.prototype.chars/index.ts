@@ -1,6 +1,6 @@
 declare global {
   interface String {
-    chars(): IterableIterator<string>;
+    chars(this: String): IterableIterator<string>;
   }
 }
 

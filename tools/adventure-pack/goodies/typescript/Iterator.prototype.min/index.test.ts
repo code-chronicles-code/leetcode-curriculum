@@ -25,6 +25,17 @@ describe("Iterator.prototype.min", () => {
     expect([2n ** 100n, 10n ** 100n, 5n].values().min()).toBe(5n);
   });
 
+  it("can find the min of an iterator of tuples", () => {
+    expect(
+      [
+        [2, 3],
+        [7, 9],
+      ]
+        .values()
+        .min(),
+    ).toEqual([2, 3]);
+  });
+
   it("can handle exclusively negative numbers", () => {
     expect([-78.7, -100, -78.4, -85.2].values().min()).toBe(-100);
     expect([-79n, -100n, -78n, -85n].values().min()).toBe(-100n);
