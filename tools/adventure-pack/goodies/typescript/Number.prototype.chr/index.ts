@@ -1,6 +1,6 @@
 declare global {
   interface Number {
-    chr(): string;
+    chr(this: Number): string;
   }
 }
 

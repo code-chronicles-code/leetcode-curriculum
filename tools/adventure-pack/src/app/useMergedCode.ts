@@ -8,28 +8,10 @@ import type { ReadonlyDeep } from "type-fest";
 // TODO: split util by type of util so importing the main package doesn't pull in node:fs
 import { promiseIdleCallback } from "@code-chronicles/util/src/promiseIdleCallback";
 
+import { BinaryHeap } from "./BinaryHeap";
 import { centerTextInComment } from "./centerTextInComment";
 import type { Goody } from "./Goody";
 import type { Language } from "./Language";
-
-class InefficientPriorityQueue<T> {
-  private readonly items: T[] = [];
-
-  constructor(private readonly compareFn: (a: T, b: T) => number) {}
-
-  push(item: T): void {
-    this.items.push(item);
-  }
-
-  pop(): T | undefined {
-    this.items.sort(this.compareFn);
-    return this.items.shift();
-  }
-
-  isEmpty(): boolean {
-    return this.items.length === 0;
-  }
-}
 
 function topo({
   goodies,
@@ -38,7 +20,7 @@ function topo({
   goodies: ReadonlyDeep<Record<string, Goody>>;
   equippedGoodies: ReadonlySet<string>;
 }): string[] {
-  const pq = new InefficientPriorityQueue<string>((a, b) => a.localeCompare(b));
+  const pq = new BinaryHeap<string>((a, b) => a.localeCompare(b));
 
   const stack = Array.from(equippedGoodies);
   const recursivelyequippedGoodies = new Set(stack);

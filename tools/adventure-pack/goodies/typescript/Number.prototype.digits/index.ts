@@ -2,8 +2,8 @@ import "../Number.isIntegerOrIntegerObject";
 
 declare global {
   interface Number {
-    digits(): Generator<number, void, void>;
-    digits(radix: number): Generator<number, void, void>;
+    digits(this: Number): Generator<number, void, void>;
+    digits(this: Number, radix: number): Generator<number, void, void>;
   }
 }
 

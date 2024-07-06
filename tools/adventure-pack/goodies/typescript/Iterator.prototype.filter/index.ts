@@ -4,6 +4,7 @@ import { iteratorPrototype } from "../Iterator.prototype";
 declare global {
   interface Iterator<T> {
     filter(
+      this: Iterator<T>,
       callbackfn: (value: T, index: number) => unknown,
     ): Generator<T, void, void>;
   }

@@ -12,5 +12,6 @@ export { stripPrefix } from "./stripPrefix";
 export { stripPrefixOrThrow } from "./stripPrefixOrThrow";
 export { stripSuffix } from "./stripSuffix";
 export { stripSuffixOrThrow } from "./stripSuffixOrThrow";
+export { swap } from "./swap";
 export { timestampToYearMonthDay } from "./timestampToYearMonthDay";
 export { writeToTemporaryFile } from "./writeToTemporaryFile";

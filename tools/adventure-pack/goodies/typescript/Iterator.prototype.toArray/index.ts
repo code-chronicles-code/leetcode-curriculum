@@ -3,7 +3,7 @@ import { iteratorPrototype } from "../Iterator.prototype";
 
 declare global {
   interface Iterator<T> {
-    toArray(): T[];
+    toArray(this: Iterator<T>): T[];
   }
 }
 
