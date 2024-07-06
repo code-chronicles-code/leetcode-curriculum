@@ -29,7 +29,7 @@
     "goodies:typescript:test": "jest --color",
     "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && NODE_ENV=development webpack && cp css/style.css dist/style.css",
     "format": "yarn goodies:python:format && yarn goodies:typescript:format",
-    "lint": "eslint .",
+    "lint": "eslint --max-warnings=0 .",
     "postinstall": "yarn goodies:java:install && yarn goodies:python:install",
     "test": "yarn goodies:java:test && yarn goodies:python:test && yarn goodies:typescript:test",
     "typecheck": "tsc --project ."

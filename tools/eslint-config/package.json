@@ -10,11 +10,13 @@
   "main": "eslint.config.js",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint --max-warnings=0 ."
   },
   "dependencies": {
-    "@typescript-eslint/parser": "7.15.0",
+    "@stylistic/eslint-plugin-js": "2.3.0",
+    "@stylistic/eslint-plugin-ts": "2.3.0",
     "@typescript-eslint/eslint-plugin": "7.15.0",
+    "@typescript-eslint/parser": "7.15.0",
     "globals": "15.8.0"
   },
   "devDependencies": {
