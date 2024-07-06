@@ -1,3 +1,5 @@
+const stylisticPluginJs = require("@stylistic/eslint-plugin-js");
+const stylisticPluginTs = require("@stylistic/eslint-plugin-ts");
 const typescriptEslintPlugin = require("@typescript-eslint/eslint-plugin");
 const typeScriptEslintParser = require("@typescript-eslint/parser");
 const globals = require("globals");
@@ -10,12 +12,27 @@ const vanilla = {
     globals: globals.node,
     parser: typeScriptEslintParser,
   },
+  plugins: {
+    "@stylistic/js": stylisticPluginJs,
+  },
   rules: {
+    "@stylistic/js/quotes": [
+      "warn",
+      // Recommend double quotes, for consistency with Prettier's default.
+      "double",
+      {
+        // Really what we're trying to do is prevent useless backticks.
+        allowTemplateLiterals: false,
+        // Prettier will take care of string literals.
+        ignoreStringLiterals: true,
+      },
+    ],
     "array-callback-return": [
       "error",
       { allowImplicit: false, checkForEach: true, allowVoid: false },
     ],
     "constructor-super": "error",
+    curly: ["warn", "all"],
     "for-direction": "error",
     "getter-return": "error",
     "no-async-promise-executor": "error",
@@ -116,6 +133,11 @@ const vanilla = {
 const typescript = {
   ...vanilla,
   files: ["**/*.ts", "**/*.tsx"],
+  plugins: {
+    ...vanilla.plugins,
+    "@typescript-eslint": typescriptEslintPlugin,
+    "@stylistic/ts": stylisticPluginTs,
+  },
   rules: {
     ...vanilla.rules,
 
@@ -131,10 +153,10 @@ const typescript = {
     // TODO: configure the additional options
     "@typescript-eslint/no-use-before-define":
       vanilla.rules["no-use-before-define"],
-  },
-  plugins: {
-    ...vanilla.plugins,
-    "@typescript-eslint": typescriptEslintPlugin,
+
+    // In TypeScript files, use the TypeScript version of the rule.
+    "@stylistic/js/quotes": "off",
+    "@stylistic/ts/quotes": vanilla.rules["@stylistic/js/quotes"],
   },
 };
 
