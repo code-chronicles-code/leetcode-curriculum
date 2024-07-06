@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 import "../Function.returnThis";
 import { iteratorPrototype } from "../Iterator.prototype";
 

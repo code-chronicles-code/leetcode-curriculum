@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 declare global {
   interface NumberConstructor {
     isIntegerOrIntegerObject(num: unknown): boolean;

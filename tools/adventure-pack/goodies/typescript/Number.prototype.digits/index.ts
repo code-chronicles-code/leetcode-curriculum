@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 import "../Number.isIntegerOrIntegerObject";
 
 declare global {

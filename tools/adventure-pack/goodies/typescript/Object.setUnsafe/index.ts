@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 declare global {
   interface ObjectConstructor {
     setUnsafe(

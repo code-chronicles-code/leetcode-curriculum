@@ -4,10 +4,10 @@ import { Checkbox } from "./Checkbox";
 import { GoodyCard } from "./GoodyCard";
 import { HighlightedCode } from "./HighlightedCode";
 import { fetchGoodies } from "./fetchGoodies";
+import type { Language } from "./Language";
 import { useMergedCode } from "./useMergedCode";
 import { useAppState } from "./useAppState";
-
-import type { Language } from "./languageParser";
+import { Goody } from "./Goody";
 
 const LANGUAGE_NAMES: Record<Language, string> = {
   java: "Java",
@@ -49,13 +49,13 @@ export function App({ commitHash }: Props) {
   }, []);
 
   const goodies = state.goodiesByLanguage?.[state.activeLanguage] ?? null;
-  const selectedGoodies = state.equippedGoodiesByLanguage[state.activeLanguage];
+  const equippedGoodies = state.equippedGoodiesByLanguage[state.activeLanguage];
 
   const code = useMergedCode({
     commitHash,
     goodies,
     language: state.activeLanguage,
-    selectedGoodies,
+    equippedGoodies,
   });
 
   return (
@@ -120,11 +120,11 @@ export function App({ commitHash }: Props) {
           {Object.values(goodies ?? {}).map((goody) => (
             <Checkbox
               key={goody.name}
-              isChecked={selectedGoodies.has(goody.name)}
+              isChecked={equippedGoodies.has(goody.name)}
               onChange={() =>
                 dispatch({
                   name: goody.name,
-                  type: selectedGoodies.has(goody.name)
+                  type: equippedGoodies.has(goody.name)
                     ? "unequip-goody"
                     : "equip-goody",
                 })
@@ -135,12 +135,8 @@ export function App({ commitHash }: Props) {
           ))}
         </Column>
         <Column title="Browse" flex="1 1 0">
-          {Object.values(goodies ?? {}).map((goody) => (
-            <GoodyCard
-              key={goody.name}
-              goody={goody}
-              language={state.activeLanguage}
-            />
+          {(Object.values(goodies ?? {}) as Goody[]).map((goody) => (
+            <GoodyCard key={goody.name} goody={goody} />
           ))}
         </Column>
 

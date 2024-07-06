@@ -3,13 +3,14 @@ import { format as prettierFormat } from "prettier/standalone";
 import * as prettierPluginESTree from "prettier/plugins/estree";
 import * as prettierPluginTypeScript from "prettier/plugins/typescript";
 import { useEffect, useState } from "react";
+import type { ReadonlyDeep } from "type-fest";
 
 // TODO: split util by type of util so importing the main package doesn't pull in node:fs
 import { promiseIdleCallback } from "@code-chronicles/util/src/promiseIdleCallback";
 
 import { centerTextInComment } from "./centerTextInComment";
-import type { Goody } from "./goodyParser";
-import type { Language } from "./languageParser";
+import type { Goody } from "./Goody";
+import type { Language } from "./Language";
 
 class InefficientPriorityQueue<T> {
   private readonly items: T[] = [];
@@ -32,19 +33,19 @@ class InefficientPriorityQueue<T> {
 
 function topo({
   goodies,
-  selectedGoodies,
+  equippedGoodies,
 }: {
-  goodies: Record<string, Goody>;
-  selectedGoodies: ReadonlySet<string>;
+  goodies: ReadonlyDeep<Record<string, Goody>>;
+  equippedGoodies: ReadonlySet<string>;
 }): string[] {
   const pq = new InefficientPriorityQueue<string>((a, b) => a.localeCompare(b));
 
-  const stack = Array.from(selectedGoodies);
-  const recursivelySelectedGoodies = new Set(stack);
+  const stack = Array.from(equippedGoodies);
+  const recursivelyequippedGoodies = new Set(stack);
   while (stack.length > 0) {
     for (const im of goodies[stack.pop()!].imports) {
-      if (!recursivelySelectedGoodies.has(im)) {
-        recursivelySelectedGoodies.add(im);
+      if (!recursivelyequippedGoodies.has(im)) {
+        recursivelyequippedGoodies.add(im);
         stack.push(im);
       }
     }
@@ -52,14 +53,14 @@ function topo({
 
   const unsatisfiedImports = new Map<string, Set<string>>();
   const importedBy = new Map<string, ReadonlySet<string>>();
-  for (const name of recursivelySelectedGoodies) {
+  for (const name of recursivelyequippedGoodies) {
     const goody = goodies[name];
 
     importedBy.set(
       name,
       new Set(
         goody.importedBy.filter((importer) =>
-          recursivelySelectedGoodies.has(importer),
+          recursivelyequippedGoodies.has(importer),
         ),
       ),
     );
@@ -95,25 +96,25 @@ function topo({
 
 type Data = {
   commitHash: string;
-  goodies: Record<string, Goody>;
+  goodies: ReadonlyDeep<Record<string, Goody>>;
   language: Language;
-  selectedGoodies: ReadonlySet<string>;
+  equippedGoodies: ReadonlySet<string>;
 };
 
 async function mergeCode({
   commitHash,
   goodies,
   language,
-  selectedGoodies,
+  equippedGoodies,
 }: Data): Promise<string> {
-  if (selectedGoodies.size === 0) {
+  if (equippedGoodies.size === 0) {
     return language === "python3"
       ? "# Equip some goodies to generate your pack!"
       : "// Equip some goodies to generate your pack!";
   }
 
   const mergedCode = await promiseIdleCallback(() => {
-    const orderedGoodies = topo({ selectedGoodies, goodies }).map(
+    const orderedGoodies = topo({ equippedGoodies, goodies }).map(
       (name) => goodies[name],
     );
 
@@ -192,7 +193,7 @@ export function useMergedCode({
   commitHash,
   goodies,
   language,
-  selectedGoodies,
+  equippedGoodies,
 }: Omit<Data, "goodies"> & { goodies: Data["goodies"] | null }): string {
   const [code, setCode] = useState("");
 
@@ -203,7 +204,7 @@ export function useMergedCode({
 
     let isActive = true;
 
-    mergeCode({ commitHash, goodies, language, selectedGoodies }).then(
+    mergeCode({ commitHash, goodies, language, equippedGoodies }).then(
       (mergedCode) => {
         isActive && setCode(mergedCode);
       },
@@ -212,7 +213,7 @@ export function useMergedCode({
     return () => {
       isActive = false;
     };
-  }, [commitHash, goodies, language, selectedGoodies]);
+  }, [commitHash, goodies, language, equippedGoodies]);
 
   return code;
 }

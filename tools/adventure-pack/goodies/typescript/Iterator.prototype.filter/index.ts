@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 import "../Iterator.prototype.toIterable";
 import { iteratorPrototype } from "../Iterator.prototype";
 

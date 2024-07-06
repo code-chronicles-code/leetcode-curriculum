@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 declare global {
   interface Math {
     primes(): Generator<number, void, void>;

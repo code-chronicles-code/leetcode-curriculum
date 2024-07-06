@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 declare global {
   interface FunctionConstructor {
     returnThis<T>(this: T): T;

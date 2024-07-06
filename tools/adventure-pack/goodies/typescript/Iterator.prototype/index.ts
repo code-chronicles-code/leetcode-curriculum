@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 import "../Object.getUnsafe";
 
 export const iteratorPrototype = Object.getUnsafe(globalThis, [

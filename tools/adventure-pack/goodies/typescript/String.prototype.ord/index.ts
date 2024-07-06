@@ -1,7 +1,3 @@
-/**
- * @goody {}
- */
-
 declare global {
   interface String {
     ord(): number | undefined;
