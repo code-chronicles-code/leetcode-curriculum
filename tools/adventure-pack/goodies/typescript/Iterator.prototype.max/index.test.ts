@@ -26,6 +26,17 @@ describe("Iterator.prototype.max", () => {
     expect([5n, 2n ** 100n, 10n ** 100n].values().max()).toBe(10n ** 100n);
   });
 
+  it("can find the max of an iterator of tuples", () => {
+    expect(
+      [
+        [2, 3],
+        [7, 9],
+      ]
+        .values()
+        .max(),
+    ).toEqual([7, 9]);
+  });
+
   it("can handle exclusively negative numbers", () => {
     expect([-78.7, -100, -78.4, -85.2].values().max()).toBe(-78.4);
     expect([-100n, -78n, -85n].values().max()).toBe(-78n);

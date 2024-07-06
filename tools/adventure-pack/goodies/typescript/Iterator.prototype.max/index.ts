@@ -1,4 +1,4 @@
-import "../Comparator.natural";
+import { compareNatural } from "../compareNatural";
 import "../Iterator.prototype.toIterable";
 import { iteratorPrototype } from "../Iterator.prototype";
 
@@ -14,7 +14,7 @@ declare global {
 
 iteratorPrototype.max = function <T>(
   this: Iterator<T>,
-  compareFn: (a: T, b: T) => number = Comparator.natural,
+  compareFn: (a: T, b: T) => number = compareNatural,
   { nanBehavior = "avoid" }: { nanBehavior?: "avoid" | "compare" } = {},
 ): T | undefined {
   let res: T | undefined = undefined;
