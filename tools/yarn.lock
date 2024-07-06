@@ -844,11 +844,6 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@korzio/djv-draft-04@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@korzio/djv-draft-04/-/djv-draft-04-2.0.1.tgz#2984289426cac5ed622b26a58c3af8584aefbdfe"
-  integrity sha512-MeTVcNsfCIYxK6T7jW1sroC7dBAb4IfLmQe6RoCqlxHN5NFkzNpgdnBPR+/0D2wJDUJHM9s9NQv+ouhxKjvUjg==
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1853,13 +1848,6 @@ discord.js@14.15.3:
     lodash.snakecase "4.1.1"
     tslib "2.6.2"
     undici "6.13.0"
-
-djv@^2.1.3-alpha.0:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/djv/-/djv-2.1.4.tgz#a6bde1a87184be4f10640184de76079c1423023f"
-  integrity sha512-giDn+BVbtLlwtkvtcsZjbjzpALHB77skiv3FIu6Wp8b5j8BunDcVJYH0cGUaexp6s0Sb7IkquXXjsLBJhXwQpA==
-  optionalDependencies:
-    "@korzio/djv-draft-04" "^2.0.1"
 
 electron-to-chromium@^1.4.796:
   version "1.4.807"
@@ -3366,15 +3354,6 @@ prettier-plugin-java@2.6.0:
     lodash "4.17.21"
     prettier "3.2.5"
 
-prettier-plugin-kotlin@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-kotlin/-/prettier-plugin-kotlin-2.1.0.tgz#6f2c2bfee15a08347f3e8b6a5d0a7401d0bfa8fb"
-  integrity sha512-DfffhPlGQqJJyUfaNJXzRlCbtQWHpFi3jzahOJ/6fxawPGnZuIWauMj9yN0daRcVLvv/pR8IXan1YkCTw5TaPw==
-  dependencies:
-    djv "^2.1.3-alpha.0"
-    glob "^7.1.4"
-    prettier "^1.18.2"
-
 prettier@3.2.5:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.2.5.tgz#e52bc3090586e824964a8813b09aba6233b28368"
@@ -3384,11 +3363,6 @@ prettier@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.3.2.tgz#03ff86dc7c835f2d2559ee76876a3914cec4a90a"
   integrity sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==
-
-prettier@^1.18.2:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
-  integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
 
 pretty-format@^29.7.0:
   version "29.7.0"
