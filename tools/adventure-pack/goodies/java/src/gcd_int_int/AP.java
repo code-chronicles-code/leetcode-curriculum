@@ -1,6 +1,6 @@
-package gcd;
+package gcd_int_int;
 
-public class Main {
+public final class AP {
 
   public static int gcd(int a, int b) {
     if (a < 0 || b < 0) {
