@@ -1,5 +1,6 @@
+package union_find;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static unionfind.Main.*;
 
 import org.junit.jupiter.api.Test;
 

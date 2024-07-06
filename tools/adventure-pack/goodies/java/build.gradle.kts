@@ -7,22 +7,14 @@ plugins {
 sourceSets {
     main {
         java {
-            srcDirs(".")
-            include("**/Main.java")
-
-            exclude(".gradle/**")
-            exclude("gradle/**")
-            exclude("build/**")
+            srcDirs("src")
+            exclude("**/Test.java")
         }
     }
     test {
         java {
-            srcDirs(".")
+            srcDirs("src")
             include("**/Test.java")
-
-            exclude(".gradle/**")
-            exclude("gradle/**")
-            exclude("build/**")
         }
     }
 }
