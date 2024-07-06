@@ -44,7 +44,7 @@ export async function transpile(code: string): Promise<string> {
 
     if (token === SyntaxKind.NewLineTrivia) {
       invariant(!/[^\n]/.test(text), "New lines should only be new lines!");
-      codeWithMarkedNewlines.push(` /*${sig}:${text.length}*/ `);
+      codeWithMarkedNewlines.push(`\n/*${sig}:${text.length}*/\n`);
     } else {
       codeWithMarkedNewlines.push(text);
     }
@@ -54,7 +54,7 @@ export async function transpile(code: string): Promise<string> {
   const transpiledCode = originalTranspile(codeWithMarkedNewlines.join(""), {
     target: ScriptTarget.Latest,
   }).replaceAll(
-    new RegExp("\\/\\*" + sig + ":(\\d+)\\*\\/", "g"),
+    new RegExp("\\s*\\/\\*" + sig + ":(\\d+)\\*\\/\\s*", "g"),
     (_match, len) => "\n".repeat(Number(len)),
   );
 

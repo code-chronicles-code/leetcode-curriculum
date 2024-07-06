@@ -4,6 +4,7 @@ import { iteratorPrototype } from "../Iterator.prototype";
 declare global {
   interface Iterator<T> {
     map<TOut>(
+      this: Iterator<T>,
       callbackFn: (element: T, index: number) => TOut,
     ): Generator<TOut, void, void>;
   }

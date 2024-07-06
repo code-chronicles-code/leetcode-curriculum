@@ -3,7 +3,10 @@ import { iteratorPrototype } from "../Iterator.prototype";
 
 declare global {
   interface Iterator<T> {
-    forEach(callbackFn: (element: T, index: number) => void): void;
+    forEach(
+      this: Iterator<T>,
+      callbackFn: (element: T, index: number) => void,
+    ): void;
   }
 }
 

@@ -3,7 +3,7 @@ import { iteratorPrototype } from "../Iterator.prototype";
 
 declare global {
   interface Iterator<T> {
-    toIterable(): IterableIterator<T>;
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 

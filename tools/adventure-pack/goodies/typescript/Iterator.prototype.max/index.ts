@@ -5,6 +5,7 @@ import { iteratorPrototype } from "../Iterator.prototype";
 declare global {
   interface Iterator<T> {
     max(
+      this: Iterator<T>,
       compareFn?: (a: T, b: T) => number,
       options?: { nanBehavior?: "avoid" | "compare" },
     ): T | undefined;
@@ -17,6 +18,7 @@ iteratorPrototype.max = function <T>(
   { nanBehavior = "avoid" }: { nanBehavior?: "avoid" | "compare" } = {},
 ): T | undefined {
   let res: T | undefined = undefined;
+
   let isFirst = true;
   for (const element of this.toIterable()) {
     if (
@@ -28,5 +30,6 @@ iteratorPrototype.max = function <T>(
       isFirst = false;
     }
   }
+
   return res;
 };
