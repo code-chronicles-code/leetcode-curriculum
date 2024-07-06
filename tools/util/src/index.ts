@@ -2,6 +2,7 @@ export { createTemporaryFile } from "./createTemporaryFile";
 export { getLines } from "./getLines";
 export { getMultilineCommentText } from "./getMultilineCommentText";
 export { getRandomBytes } from "./getRandomBytes";
+export { isStringEmptyOrWhitespaceOnly } from "./isStringEmptyOrWhitespaceOnly";
 export { objectFromKeys } from "./objectFromKeys";
 export { only } from "./only";
 export { promiseIdleCallback } from "./promiseIdleCallback";
