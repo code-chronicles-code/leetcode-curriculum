@@ -1,0 +1,25 @@
+import "../Iterator.prototype.toIterable";
+import { iteratorPrototype } from "../Iterator.prototype";
+
+declare global {
+  interface Iterator<T> {
+    every(
+      this: Iterator<T>,
+      callbackfn: (value: T, index: number) => unknown,
+    ): boolean; 
+  }
+}
+
+iteratorPrototype.every ??= function <T> (
+  this: Iterator<T>,
+  callbackfn: (element: T, index: number) => unknown,
+): boolean {
+  let index = 0;
+  for(const element of this.toIterable()) {
+    if(!callbackfn(element, index)) {
+      return false;
+    }
+    ++index;
+  }
+  return true;
+}
