@@ -3,7 +3,7 @@ import { describe, expect, it } from "@jest/globals";
 import "./index";
 
 describe("Iterator.prototype.every", () => {
-  it("should return true if all elements pass the test and false if an element fails a test", () => {
+  it("returns true if all elements pass the test and false if an element fails a test", () => {
     const isEven = (element: number) => element % 2 === 0;
     expect([2, 4, 6, 8, 10].values().every(isEven)).toBe(true);
     expect([2, 4, 6, 7, 8, 10].values().every(isEven)).toBe(false);
@@ -11,8 +11,8 @@ describe("Iterator.prototype.every", () => {
     expect([2, 4, 6, 8, 11].values().every(isEven)).toBe(false);
   });
 
-  it("should return true for an empty iterator", () => {
-    expect([].values().every((element: number) => element > 5)).toBe(true);
+  it("returns true for an empty iterator", () => {
+    expect([].values().every((element) => element > 5)).toBe(true);
   });
 
   it("can test Map entries()", () => {
@@ -47,9 +47,7 @@ describe("Iterator.prototype.every", () => {
       yield 10;
     };
 
-    expect(generator().every((element: number) => element % 2 === 0)).toBe(
-      true,
-    );
-    expect(generator().every((element: number) => element < 7)).toBe(false);
+    expect(generator().every((element) => element % 2 === 0)).toBe(true);
+    expect(generator().every((element) => element < 7)).toBe(false);
   });
 });

@@ -6,20 +6,20 @@ declare global {
     some(
       this: Iterator<T>,
       callbackfn: (value: T, index: number) => unknown,
-    ): boolean; 
+    ): boolean;
   }
 }
 
-iteratorPrototype.some ??= function <T> (
+iteratorPrototype.some ??= function <T>(
   this: Iterator<T>,
   callbackfn: (element: T, index: number) => unknown,
 ): boolean {
   let index = 0;
-  for(const element of this.toIterable()) {
-    if(callbackfn(element, index)) {
+  for (const element of this.toIterable()) {
+    if (callbackfn(element, index)) {
       return true;
     }
     ++index;
   }
   return false;
-}
+};
