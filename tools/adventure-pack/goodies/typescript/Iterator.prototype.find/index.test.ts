@@ -4,7 +4,7 @@ import "./index";
 
 describe("Iterator.prototype.find", () => {
   it("returns the first element that satisfies the callback", () => {
-    const array = [5, 2, 1, 7];
+    const array = [5, 2, 1, 7, -2];
     expect(array.values().find((element) => element % 2 === 0)).toBe(2);
     expect(array.values().find((element) => element > 5)).toBe(7);
     expect(array.values().find((element) => element > 0)).toBe(5);
@@ -27,15 +27,17 @@ describe("Iterator.prototype.find", () => {
       ["StEaK", { type: "meat", price: 8.99 }],
       ["GRAPES", { type: "fruit", price: 2.99 }],
     ]);
-    const callbackFn = ([key, value]: [
-      string,
-      { type: string; price: number },
-    ]) =>
-      key === key.toUpperCase() && value.type === "fruit" && value.price < 3.0;
-    expect(map.entries().find(callbackFn)).toBe([
-      "GRAPES",
-      { type: "fruit", price: 2.99 },
-    ]);
+
+    expect(
+      map
+        .entries()
+        .find(
+          ([key, value]) =>
+            key === key.toUpperCase() &&
+            value.type === "fruit" &&
+            value.price < 3.0,
+        ),
+    ).toEqual(["GRAPES", { type: "fruit", price: 2.99 }]);
   });
 
   it("can test Set values()", () => {
