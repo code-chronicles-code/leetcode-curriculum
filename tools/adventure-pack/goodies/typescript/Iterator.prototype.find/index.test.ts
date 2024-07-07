@@ -1,5 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 
+import { iteratorPrototype } from "../Iterator.prototype";
+delete (iteratorPrototype as unknown as Record<string, unknown>).find;
+
 import "./index";
 
 describe("Iterator.prototype.find", () => {
@@ -41,7 +44,7 @@ describe("Iterator.prototype.find", () => {
   });
 
   it("can test Set values()", () => {
-    const set = new Set([2, 2, -3, -3, 4, -5, 5, -6]);
+    const set = new Set([2, 2, -3, -3, 4, -5, 5, -6, 6]);
     expect(set.values().find((element) => element > 4)).toBe(5);
   });
 
@@ -49,10 +52,10 @@ describe("Iterator.prototype.find", () => {
     const generator = function* (): Generator<number, void, undefined> {
       yield 2;
       yield -4;
-      yield 6;
+      yield 1;
       yield -8;
       yield 3;
     };
-    expect(generator().find((element) => element % 2 === 1)).toBe(3);
+    expect(generator().find((element) => element % 2 === 1)).toBe(1);
   });
 });
