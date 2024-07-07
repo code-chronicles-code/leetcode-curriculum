@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: ["prettier-plugin-java", "prettier-plugin-kotlin"],
+  plugins: ["prettier-plugin-java"],
 };
