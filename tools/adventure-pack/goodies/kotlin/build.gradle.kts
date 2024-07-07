@@ -2,34 +2,29 @@ import com.ncorti.ktfmt.gradle.tasks.*
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
-  java
+  kotlin("jvm") version "2.0.0"
 
   id("com.ncorti.ktfmt.gradle") version "0.19.0"
 }
 
 sourceSets {
   main {
-    java {
+    kotlin {
       srcDirs("src")
-      exclude("**/Test.java")
+      exclude("**/Test.kt")
     }
   }
-
   test {
-    java {
+    kotlin {
       srcDirs("src")
-      include("**/Test.java")
+      include("**/Test.kt")
     }
   }
 }
 
 repositories { mavenCentral() }
 
-dependencies {
-  testImplementation(platform("org.junit:junit-bom:5.10.3"))
-  testImplementation("org.junit.jupiter:junit-jupiter")
-  testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
+dependencies { testImplementation(kotlin("test")) }
 
 tasks.test {
   useJUnitPlatform()
@@ -47,4 +42,5 @@ tasks.test {
 tasks.register<KtfmtFormatTask>("ktfmtCustom") {
   source = project.fileTree(rootDir)
   include("*.gradle.kts")
+  include("**/*.kt")
 }

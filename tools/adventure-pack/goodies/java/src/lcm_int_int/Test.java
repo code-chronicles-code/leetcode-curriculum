@@ -1,6 +1,6 @@
 package lcm_int_int;
 
-import static lcm_int_int.AP.*;
+import static lcm_int_int.AP.lcm;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;

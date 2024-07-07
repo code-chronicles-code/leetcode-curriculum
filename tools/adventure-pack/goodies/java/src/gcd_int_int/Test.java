@@ -1,6 +1,6 @@
 package gcd_int_int;
 
-import static gcd_int_int.AP.*;
+import static gcd_int_int.AP.gcd;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
