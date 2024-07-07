@@ -56,7 +56,7 @@ describe("Iterator.prototype.every", () => {
 
   it("does not check every element to determine the result", () => {
     const callbackFn = jest.fn((element: number) => element > 0);
-    expect([6, 1, -1, 2, -10].values().some(callbackFn)).toBe(true);
+    expect([6, 1, -1, 2, -10].values().every(callbackFn)).toBe(false);
     expect(callbackFn).toHaveBeenCalledTimes(3);
   });
 });
