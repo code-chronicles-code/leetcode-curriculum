@@ -1,6 +1,9 @@
-# These generate errors
-goodies/java/build.gradle.kts
-goodies/java/settings.gradle.kts
-
 goodies/java/.gradle/
 goodies/java/build/
+
+goodies/kotlin/.gradle/
+goodies/kotlin/.kotlin/
+goodies/kotlin/build/
+
+goodies/python/.pytest_cache/
+goodies/python/.venv/

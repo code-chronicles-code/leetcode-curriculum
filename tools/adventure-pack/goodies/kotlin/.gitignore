@@ -1,0 +1,9 @@
+# Ignore Gradle project-specific cache directory
+.gradle/
+
+# Ignore Gradle build output directory
+build/
+
+# Ignore Kotlin Gradle plugin persistent project-specific data
+# See: https://kotlinlang.org/docs/gradle-configure-project.html#kotlin-gradle-plugin-data-in-a-project
+.kotlin/
