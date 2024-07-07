@@ -1,5 +1,8 @@
 import { describe, expect, it, jest } from "@jest/globals";
 
+import { iteratorPrototype } from "../Iterator.prototype";
+delete (iteratorPrototype as unknown as Record<string, unknown>).every;
+
 import "./index";
 
 describe("Iterator.prototype.every", () => {
