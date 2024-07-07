@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-iteratorPrototype.max ??= function <T>(
+iteratorPrototype.max = function <T>(
   this: Iterator<T>,
   compareFn: (a: T, b: T) => number = compareNatural,
   { nanBehavior = "avoid" }: { nanBehavior?: "avoid" | "compare" } = {},
