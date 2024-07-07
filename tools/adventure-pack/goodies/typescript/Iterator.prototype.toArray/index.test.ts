@@ -1,5 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 
+import "../Iterator.prototype.filter";
+import "../Iterator.prototype.map";
+
 import "./index";
 
 describe("Iterator.prototype.toArray", () => {
