@@ -1,4 +1,4 @@
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it, jest } from "@jest/globals";
 
 import { iteratorPrototype } from "../Iterator.prototype";
 delete (iteratorPrototype as unknown as Record<string, unknown>).find;
@@ -57,5 +57,13 @@ describe("Iterator.prototype.find", () => {
       yield 3;
     };
     expect(generator().find((element) => element % 2 === 1)).toBe(1);
+  });
+
+  it("does not check every element to determine the result", () => {
+    const callbackFn = jest.fn((element: string) => element === "o");
+    expect(
+      ["z", "o", "d", "i", "s", "c", "o", "o", "l"].values().find(callbackFn),
+    ).toBe(2);
+    expect(callbackFn).toHaveBeenCalledTimes(2);
   });
 });
