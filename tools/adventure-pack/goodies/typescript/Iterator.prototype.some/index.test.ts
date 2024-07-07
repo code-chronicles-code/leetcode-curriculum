@@ -5,10 +5,10 @@ import "./index";
 describe("Iterator.prototype.some", () => {
   it("returns true if one element passes a test and false if all elements fails the test", () => {
     const isEven = (element: number) => element % 2 === 0;
-    expect([2, 4, 6, 8, 10].values().some(isEven)).toBe(true);
-    expect([2, 4, 6, 7, 8, 10].values().some(isEven)).toBe(true);
-    expect([1, 4, 6, 8, 10].values().some(isEven)).toBe(true);
-    expect([1, 3, 5, 7, 9].values().some(isEven)).toBe(false);
+    expect([10, 2, 8, 6, 4].values().some(isEven)).toBe(true);
+    expect([2, -4, -6, 7, -8, 10].values().some(isEven)).toBe(true);
+    expect([1, -4, -122, 8, 1337].values().some(isEven)).toBe(true);
+    expect([-1, 3, -5, 7, 129].values().some(isEven)).toBe(false);
   });
 
   it("returns false for an empty iterator", () => {
@@ -39,7 +39,7 @@ describe("Iterator.prototype.some", () => {
   });
 
   it("can test a Generator object", () => {
-    const generator = function* (): Generator<number, void, undefined> {
+    const generator = function* (): Generator<number, void, void> {
       yield 2;
       yield 4;
       yield 6;
@@ -49,5 +49,15 @@ describe("Iterator.prototype.some", () => {
 
     expect(generator().some((element) => element % 2 === 0)).toBe(true);
     expect(generator().some((element) => element < 7)).toBe(true);
+  });
+
+  it("does not check every element to determine the result", () => {
+    let callbackCount = 0;
+    const isPositive = (element: number) => {
+      ++callbackCount;
+      return element > 0;
+    };
+    expect([-1, -8, -10, -2, 5].values().some(isPositive)).toBe(true);
+    expect(callbackCount).toBe(5);
   });
 });
