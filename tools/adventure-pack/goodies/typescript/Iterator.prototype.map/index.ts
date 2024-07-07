@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-iteratorPrototype.map = function* <TIn, TOut>(
+iteratorPrototype.map ??= function* <TIn, TOut>(
   this: Iterator<TIn>,
   callbackFn: (element: TIn, index: number) => TOut,
 ): Generator<TOut, void, void> {
