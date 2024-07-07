@@ -20,6 +20,13 @@ function goodyToText(goody: Goody): string {
         goody.code
       ).trim();
     }
+    case "kotlin": {
+      return (
+        `package ${goody.packageName};\n\n` +
+        goody.importsCode +
+        goody.code
+      ).trim();
+    }
     case "python3": {
       return goody.code.trim();
     }

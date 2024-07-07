@@ -1,3 +1,4 @@
+import { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
 import { goodyBaseParser } from "./goodyBaseParser";
@@ -10,4 +11,6 @@ export const typeScriptGoodyParser = goodyBaseParser.extend({
   language: z.literal("typescript"),
 });
 
-export type TypeScriptGoody = z.infer<typeof typeScriptGoodyParser>;
+export type TypeScriptGoody = ReadonlyDeep<
+  z.infer<typeof typeScriptGoodyParser>
+>;

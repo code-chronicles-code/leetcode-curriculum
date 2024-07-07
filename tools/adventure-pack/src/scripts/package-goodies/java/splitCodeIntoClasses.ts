@@ -6,12 +6,7 @@ import {
   mapObjectValues,
 } from "@code-chronicles/util";
 
-import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
-import { extractImports } from "./extractImports";
-import { readCode } from "./readCode";
-import { readMetadata } from "./readMetadata";
-
-function splitCodeIntoClasses(
+export function splitCodeIntoClasses(
   code: string,
 ): Record<string, { code: string; modifiers: string[] }> {
   const classes: Record<string, { code: string[]; modifiers: Set<string> }> =
@@ -53,26 +48,4 @@ function splitCodeIntoClasses(
     code: code.join("").replace(/^\n+/, "").replace(/\n+$/, ""),
     modifiers: Array.from(modifiers),
   }));
-}
-
-export async function readBasicGoody(packageName: string): Promise<JavaGoody> {
-  const [codeWithImports, { name }] = await Promise.all([
-    readCode(packageName),
-    readMetadata(packageName),
-  ]);
-
-  const { codeWithoutImports, imports, importsCode } =
-    extractImports(codeWithImports);
-
-  const codeByClass = splitCodeIntoClasses(codeWithoutImports);
-
-  return {
-    codeByClass,
-    importedBy: [],
-    imports: Array.from(imports),
-    importsCode,
-    name,
-    language: "java",
-    packageName,
-  };
 }

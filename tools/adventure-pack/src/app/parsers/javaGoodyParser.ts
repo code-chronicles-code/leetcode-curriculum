@@ -1,3 +1,4 @@
+import { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
 import { goodyBaseParser } from "./goodyBaseParser";
@@ -14,14 +15,14 @@ export const javaGoodyParser = goodyBaseParser
         })
         .strict(),
     ),
+    importsCode: z.string(),
     language: z.literal("java"),
     packageName: z
       .string()
       .regex(/^[a-z0-9_]+$/)
       .regex(/^[^_]/)
       .regex(/[^_]$/),
-    importsCode: z.string(),
   })
   .strict();
 
-export type JavaGoody = z.infer<typeof javaGoodyParser>;
+export type JavaGoody = ReadonlyDeep<z.infer<typeof javaGoodyParser>>;

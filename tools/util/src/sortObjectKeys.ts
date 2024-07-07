@@ -1,10 +1,12 @@
-export function sortObjectKeys<TKey extends string | symbol | number, TVal>(
-  obj: Readonly<Record<TKey, TVal>>,
-  compareFn: (a: TKey, b: TKey) => number = (a: unknown, b: unknown): number =>
-    String(a).localeCompare(String(b)),
-): Record<TKey, TVal> {
-  const res = {} as Record<TKey, TVal>;
-  for (const key of (Object.keys(obj) as TKey[]).sort(compareFn)) {
+export function sortObjectKeys<TObj extends Record<PropertyKey, unknown>>(
+  obj: Readonly<TObj>,
+  compareFn: (a: keyof TObj, b: keyof TObj) => number = (
+    a: PropertyKey,
+    b: PropertyKey,
+  ): number => String(a).localeCompare(String(b)),
+): TObj {
+  const res = {} as TObj;
+  for (const key of (Object.keys(obj) as (keyof TObj)[]).sort(compareFn)) {
     res[key] = obj[key];
   }
   return res;

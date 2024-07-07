@@ -85,6 +85,7 @@ export function useAppState(): [AppState, React.Dispatch<Action>] {
       equippedGoodiesByLanguage: {
         java: new Set(),
         javascript: new Set(),
+        kotlin: new Set(),
         python3: new Set(),
         typescript: new Set(),
       },
