@@ -63,7 +63,7 @@ describe("Iterator.prototype.find", () => {
     const callbackFn = jest.fn((element: string) => element === "o");
     expect(
       ["z", "o", "d", "i", "s", "c", "o", "o", "l"].values().find(callbackFn),
-    ).toBe(2);
+    ).toBe("o");
     expect(callbackFn).toHaveBeenCalledTimes(2);
   });
 });
