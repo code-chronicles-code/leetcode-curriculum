@@ -8,5 +8,3 @@ export const goodyBaseParser = z.object({
   importedBy: z.array(nonBlankStringParser),
   name: nonBlankStringParser,
 });
-
-export type GoodyBase = z.infer<typeof goodyBaseParser>;

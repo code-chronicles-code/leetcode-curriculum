@@ -13,7 +13,6 @@ export async function readBasicGoody(name: string): Promise<Python3Goody> {
 
   return {
     code,
-    globalModuleDeclarations: [],
     importedBy: [],
     imports: [],
     name,

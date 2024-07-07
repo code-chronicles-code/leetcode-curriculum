@@ -20,7 +20,9 @@ function topo({
   goodies: ReadonlyDeep<Record<string, Goody>>;
   equippedGoodies: ReadonlySet<string>;
 }): string[] {
-  const pq = new BinaryHeap<string>((a, b) => a.localeCompare(b));
+  const pq = new BinaryHeap<string>((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
+  );
 
   const stack = Array.from(equippedGoodies);
   const recursivelyequippedGoodies = new Set(stack);
@@ -100,9 +102,14 @@ async function mergeCode({
       (name) => goodies[name],
     );
 
-    const globalModuleDeclarations = orderedGoodies.flatMap(
-      (goody) => goody.globalModuleDeclarations,
-    );
+    const globalModuleDeclarations =
+      language === "typescript"
+        ? orderedGoodies.flatMap((goody) =>
+            goody.language === "typescript"
+              ? goody.globalModuleDeclarations
+              : [],
+          )
+        : [];
 
     return [
       globalModuleDeclarations.length > 0

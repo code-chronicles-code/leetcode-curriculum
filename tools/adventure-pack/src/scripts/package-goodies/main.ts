@@ -3,7 +3,7 @@ import path from "node:path";
 
 import type { GoodiesByLanguage } from "../../app/fetchGoodies";
 import { readGoodies as readJavaGoodies } from "./java/readGoodies";
-import { readGoodies as readPythonGoodies } from "./python/readGoodies";
+import { readGoodies as readPythonGoodies } from "./python3/readGoodies";
 import { readGoodies as readTypeScriptAndJavaScriptGoodies } from "./typescript/readGoodies";
 
 async function main(): Promise<void> {

@@ -71,12 +71,12 @@ export async function readGoodies(): Promise<{
 
     res.typescript[name] = goody;
 
+    const { globalModuleDeclarations: _, ...rest } = goody;
     res.javascript[name] = {
-      ...goody,
+      ...rest,
 
       // eslint-disable-next-line no-await-in-loop
       code: await transpile(goody.code),
-      globalModuleDeclarations: [],
       language: "javascript",
     };
   }
