@@ -28,9 +28,12 @@ describe("Iterator.prototype.every", () => {
       ["L", 1],
       ["D", 2],
     ]);
-    const callbackFn = ([key, value]: [string, number]) =>
-      key === key.toUpperCase() && value > 0;
-    expect(map.entries().every(callbackFn)).toBe(false);
+
+    expect(
+      map
+        .entries()
+        .every(([key, value]) => key === key.toUpperCase() && value > 0),
+    ).toBe(false);
   });
 
   it("can test Set values()", () => {
@@ -53,11 +56,12 @@ describe("Iterator.prototype.every", () => {
 
   it("does not check every element to determine the result", () => {
     let callbackCount = 0;
-    const isPositive = (element: number) => {
-      ++callbackCount;
-      return element > 0;
-    };
-    expect([6, 1, -1, 2, -10].values().every(isPositive)).toBe(false);
+    expect(
+      [6, 1, -1, 2, -10].values().every((element) => {
+        ++callbackCount;
+        return element > 0;
+      }),
+    ).toBe(false);
     expect(callbackCount).toBe(3);
   });
 });
