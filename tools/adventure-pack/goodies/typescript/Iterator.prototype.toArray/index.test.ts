@@ -1,5 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 
+import { iteratorPrototype } from "../Iterator.prototype";
+delete (iteratorPrototype as unknown as Record<string, unknown>).toArray;
+
 import "../Iterator.prototype.filter";
 import "../Iterator.prototype.map";
 

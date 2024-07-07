@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-iteratorPrototype.min = function <T>(
+iteratorPrototype.min ??= function <T>(
   this: Iterator<T>,
   compareFn: (a: T, b: T) => number = compareNatural,
   { nanBehavior = "avoid" }: { nanBehavior?: "avoid" | "compare" } = {},
