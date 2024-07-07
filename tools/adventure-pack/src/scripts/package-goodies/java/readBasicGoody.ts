@@ -1,99 +1,58 @@
-import fsPromises from "node:fs/promises";
-import path from "node:path";
-import { z } from "zod";
+import invariant from "invariant";
 
 import {
   getLines,
   isStringEmptyOrWhitespaceOnly,
-  only,
+  mapObjectValues,
 } from "@code-chronicles/util";
 
 import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
+import { extractImports } from "./extractImports";
+import { readCode } from "./readCode";
+import { readMetadata } from "./readMetadata";
 
-export const GOODIES_DIRECTORY = path.join("goodies", "java", "src");
+function splitCodeIntoClasses(
+  code: string,
+): Record<string, { code: string; modifiers: string[] }> {
+  const classes: Record<string, { code: string[]; modifiers: Set<string> }> =
+    {};
 
-async function readCode(packageName: string): Promise<string> {
-  const fileEntries = await fsPromises.readdir(
-    path.join(GOODIES_DIRECTORY, packageName),
-    { withFileTypes: true },
-  );
+  let currentClassName: string | null = null;
+  for (const line of getLines(code)) {
+    const classMatch = line.match(
+      /^((?:(?:abstract|final|public)\s+)*)class\s+(\S+)\s*{/,
+    );
+    if (classMatch != null) {
+      invariant(currentClassName == null, "Top-level class nesting?");
 
-  const mainFileName = only(
-    fileEntries.filter(
-      (entry) =>
-        entry.isFile() &&
-        entry.name.endsWith(".java") &&
-        entry.name !== "Test.java",
-    ),
-  ).name;
+      const modifiers = new Set(classMatch[1].trim().split(/\s+/));
+      modifiers.delete("public");
 
-  return await fsPromises.readFile(
-    path.join(GOODIES_DIRECTORY, packageName, mainFileName),
-    "utf8",
-  );
-}
-
-const metadataParser = z
-  .object({
-    name: z.string().regex(/^\S/).regex(/\S$/),
-  })
-  .strict();
-
-type Metadata = z.infer<typeof metadataParser>;
-
-async function readMetadata(packageName: string): Promise<Metadata> {
-  const text = await fsPromises.readFile(
-    path.join(GOODIES_DIRECTORY, packageName, "goody.json"),
-    "utf8",
-  );
-
-  return metadataParser.parse(JSON.parse(text));
-}
-
-function extractImports(code: string): {
-  codeWithoutImports: string;
-  imports: Set<string>;
-  importsCode: string;
-} {
-  const lines = Array.from(getLines(code));
-  const imports = new Set<string>();
-  const importsCode: string[] = [];
-
-  while (lines.length > 0) {
-    if (isStringEmptyOrWhitespaceOnly(lines[0])) {
-      importsCode.push(lines.shift()!);
+      currentClassName = classMatch[2];
+      classes[currentClassName] = { modifiers, code: [] };
       continue;
     }
 
-    const packageNameMatch = lines[0].match(/^package\s+[^;]+;\n?$/);
-    if (packageNameMatch != null) {
-      // TODO: verify that the package name matches what's expected
-      lines.shift();
+    if (/^}\n?$/.test(line)) {
+      invariant(currentClassName != null, "Top-level brace outside a class?");
+      currentClassName = null;
       continue;
     }
 
-    const importMatch = lines[0].match(/^import\s+(?:static\s+)?([^\.]+)\./);
-    if (importMatch != null) {
-      importsCode.push(lines.shift()!);
-      imports.add(importMatch[1]);
+    if (isStringEmptyOrWhitespaceOnly(line) && currentClassName == null) {
       continue;
     }
 
-    break;
+    invariant(currentClassName != null, "Code outside a class?");
+    classes[currentClassName].code.push(line);
   }
 
-  while (
-    importsCode.length > 0 &&
-    isStringEmptyOrWhitespaceOnly(importsCode[0])
-  ) {
-    importsCode.shift();
-  }
+  invariant(currentClassName == null, "Unfinished class?");
 
-  return {
-    codeWithoutImports: lines.join(""),
-    imports,
-    importsCode: importsCode.join(""),
-  };
+  return mapObjectValues(classes, ({ code, modifiers }) => ({
+    code: code.join("").replace(/^\n+/, "").replace(/\n+$/, ""),
+    modifiers: Array.from(modifiers),
+  }));
 }
 
 export async function readBasicGoody(packageName: string): Promise<JavaGoody> {
@@ -105,8 +64,10 @@ export async function readBasicGoody(packageName: string): Promise<JavaGoody> {
   const { codeWithoutImports, imports, importsCode } =
     extractImports(codeWithImports);
 
+  const codeByClass = splitCodeIntoClasses(codeWithoutImports);
+
   return {
-    code: codeWithoutImports,
+    codeByClass,
     importedBy: [],
     imports: Array.from(imports),
     importsCode,

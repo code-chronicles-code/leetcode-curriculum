@@ -12,6 +12,8 @@ import { BinaryHeap } from "./BinaryHeap";
 import { centerTextInComment } from "./centerTextInComment";
 import type { Goody } from "./Goody";
 import type { Language } from "./Language";
+import { mergeJavaCode } from "./mergeJavaCode";
+import type { JavaGoody } from "./parsers/javaGoodyParser";
 
 function topo({
   goodies,
@@ -102,6 +104,18 @@ async function mergeCode({
       (name) => goodies[name],
     );
 
+    if (language === "java") {
+      return mergeJavaCode(
+        orderedGoodies.map((goody): ReadonlyDeep<JavaGoody> => {
+          invariant(
+            goody.language === "java",
+            "Goodies must match the language!",
+          );
+          return goody;
+        }),
+      );
+    }
+
     const globalModuleDeclarations =
       language === "typescript"
         ? orderedGoodies.flatMap((goody) =>
@@ -116,7 +130,13 @@ async function mergeCode({
         ? `declare global {\n${globalModuleDeclarations.join("\n\n")}\n}\n`
         : "",
 
-      ...orderedGoodies.map((goody) => goody.code),
+      ...orderedGoodies.map((goody) => {
+        invariant(
+          goody.language !== "java",
+          "Java has already been handled separately.",
+        );
+        return goody.code.trim();
+      }),
     ]
       .filter(Boolean)
       .join("\n\n");
@@ -132,7 +152,7 @@ async function mergeCode({
       `// Adventure Pack commit ${commitHash}\n` +
       `// Running at: ${window.location.href}\n\n` +
       mergedCode +
-      "\n" +
+      "\n\n" +
       centerTextInComment({
         text: "END ADVENTURE PACK CODE",
         commentType: "//",
@@ -150,7 +170,7 @@ async function mergeCode({
       `# Adventure Pack commit ${commitHash}\n` +
       `# Running at: ${window.location.href}\n\n` +
       mergedCode +
-      "\n" +
+      "\n\n" +
       centerTextInComment({ text: "END ADVENTURE PACK CODE", commentType: "#" })
     );
   }

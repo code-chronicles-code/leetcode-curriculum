@@ -2,6 +2,7 @@ import React from "react";
 
 import type { Goody } from "./Goody";
 import { HighlightedCode } from "./HighlightedCode";
+import { mergeJavaCode } from "./mergeJavaCode";
 
 function goodyToText(goody: Goody): string {
   switch (goody.language) {
@@ -9,14 +10,14 @@ function goodyToText(goody: Goody): string {
       return (
         `package ${goody.packageName};\n\n` +
         goody.importsCode +
-        goody.code
+        mergeJavaCode([goody])
       ).trim();
     }
     case "javascript": {
       return (
         goody.imports.map((im) => `import ${JSON.stringify(im)};\n`).join("") +
         "\n" +
-        +goody.code
+        goody.code
       ).trim();
     }
     case "python3": {

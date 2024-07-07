@@ -2,7 +2,8 @@ import invariant from "invariant";
 import fsPromises from "node:fs/promises";
 
 import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
-import { readBasicGoody, GOODIES_DIRECTORY } from "./readBasicGoody";
+import { GOODIES_DIRECTORY } from "./constants";
+import { readBasicGoody } from "./readBasicGoody";
 
 export async function readGoodies(): Promise<Record<string, JavaGoody>> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {
@@ -59,12 +60,16 @@ export async function readGoodies(): Promise<Record<string, JavaGoody>> {
     });
   }
 
+  // TODO: assert that the AP class is the only one that exists in multiple goodies
+
+  // TODO: reuse this code across languages
   for (const goody of Object.values(goodiesByName)) {
     for (const im of goody.imports) {
       goodiesByName[im].importedBy.push(goody.name);
     }
   }
 
+  // TODO: sort imports case-insensitively
   for (const goody of Object.values(goodiesByName)) {
     goody.importedBy.sort();
     goody.imports.sort();
