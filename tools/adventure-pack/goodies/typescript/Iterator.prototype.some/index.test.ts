@@ -1,9 +1,9 @@
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it, jest } from "@jest/globals";
 
 import "./index";
 
 describe("Iterator.prototype.some", () => {
-  it("returns true if one element passes a test and false if all elements fails the test", () => {
+  it("returns true if one element passes a test and false if all elements fail the test", () => {
     const isEven = (element: number) => element % 2 === 0;
     expect([10, 2, 8, 6, 4].values().some(isEven)).toBe(true);
     expect([2, -4, -6, 7, -8, 10].values().some(isEven)).toBe(true);
@@ -55,13 +55,8 @@ describe("Iterator.prototype.some", () => {
   });
 
   it("does not check every element to determine the result", () => {
-    let callbackCount = 0;
-    expect(
-      [-1, -8, -10, -2, 5].values().some((element) => {
-        ++callbackCount;
-        return element > 0;
-      }),
-    ).toBe(true);
-    expect(callbackCount).toBe(5);
+    const callbackFn = jest.fn((element: number) => element > 0);
+    expect([-1, -8, -10, -2, 5].values().some(callbackFn)).toBe(true);
+    expect(callbackFn).toHaveBeenCalledTimes(5);
   });
 });

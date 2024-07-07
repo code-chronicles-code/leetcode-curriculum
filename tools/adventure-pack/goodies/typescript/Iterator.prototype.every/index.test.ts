@@ -1,4 +1,4 @@
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it, jest } from "@jest/globals";
 
 import "./index";
 
@@ -55,13 +55,8 @@ describe("Iterator.prototype.every", () => {
   });
 
   it("does not check every element to determine the result", () => {
-    let callbackCount = 0;
-    expect(
-      [6, 1, -1, 2, -10].values().every((element) => {
-        ++callbackCount;
-        return element > 0;
-      }),
-    ).toBe(false);
-    expect(callbackCount).toBe(3);
+    const callbackFn = jest.fn((element: number) => element > 0);
+    expect([6, 1, -1, 2, -10].values().some(callbackFn)).toBe(true);
+    expect(callbackFn).toHaveBeenCalledTimes(3);
   });
 });
