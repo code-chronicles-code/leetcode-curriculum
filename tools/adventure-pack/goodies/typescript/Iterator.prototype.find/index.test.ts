@@ -1,0 +1,56 @@
+import { describe, expect, it } from "@jest/globals";
+
+import "./index";
+
+describe("Iterator.prototype.find", () => {
+  it("returns the first element that satisfies the callback", () => {
+    const array = [5, 2, 1, 7];
+    expect(array.values().find((element) => element % 2 === 0)).toBe(2);
+    expect(array.values().find((element) => element > 5)).toBe(7);
+    expect(array.values().find((element) => element > 0)).toBe(5);
+  });
+
+  it("returns undefined if no element satisfies the callback", () => {
+    const array = [-8, -3, -9, -2];
+    expect(array.values().find((element) => element > 0)).toBeUndefined();
+  });
+
+  it("returns undefined for an empty iterator", () => {
+    expect([].values().find(() => true)).toBeUndefined();
+  });
+
+  it("can test Map entries()", () => {
+    const map = new Map([
+      ["aPpLes", { type: "fruit", price: 1.99 }],
+      ["CHICKEN", { type: "meat", price: 10.99 }],
+      ["oranges", { type: "fruit", price: 3.99 }],
+      ["StEaK", { type: "meat", price: 8.99 }],
+      ["GRAPES", { type: "fruit", price: 2.99 }],
+    ]);
+    const callbackFn = ([key, value]: [
+      string,
+      { type: string; price: number },
+    ]) =>
+      key === key.toUpperCase() && value.type === "fruit" && value.price < 3.0;
+    expect(map.entries().find(callbackFn)).toBe([
+      "GRAPES",
+      { type: "fruit", price: 2.99 },
+    ]);
+  });
+
+  it("can test Set values()", () => {
+    const set = new Set([2, 2, -3, -3, 4, -5, 5, -6]);
+    expect(set.values().find((element) => element > 4)).toBe(5);
+  });
+
+  it("can test a Generator object", () => {
+    const generator = function* (): Generator<number, void, undefined> {
+      yield 2;
+      yield -4;
+      yield 6;
+      yield -8;
+      yield 3;
+    };
+    expect(generator().find((element) => element % 2 === 1)).toBe(3);
+  });
+});
