@@ -1,5 +1,6 @@
 import {
   compareStringsCaseInsensitive,
+  promiseAllObject,
   sortObjectKeysRecursive,
 } from "@code-chronicles/util";
 
@@ -16,10 +17,18 @@ function sortLanguagesGoodiesAndGoodyFields(
 }
 
 export async function readAllGoodies(): Promise<GoodiesByLanguage> {
+  const [typeScriptAndJavaScriptGoodies, otherLanguageGoodies] =
+    await Promise.all([
+      readTypeScriptAndJavaScriptGoodies(),
+      promiseAllObject({
+        java: readJavaGoodies(),
+        kotlin: readKotlinGoodies(),
+        python3: readPythonGoodies(),
+      }),
+    ]);
+
   return sortLanguagesGoodiesAndGoodyFields({
-    java: await readJavaGoodies(),
-    kotlin: await readKotlinGoodies(),
-    python3: await readPythonGoodies(),
-    ...(await readTypeScriptAndJavaScriptGoodies()),
+    ...typeScriptAndJavaScriptGoodies,
+    ...otherLanguageGoodies,
   });
 }
