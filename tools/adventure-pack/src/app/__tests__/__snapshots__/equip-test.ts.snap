@@ -1,0 +1,1971 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App can equip single goody: Java UnionFind 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+class UnionFind {
+  private final int[] parent;
+
+  public UnionFind(int n) {
+    parent = new int[n];
+    for (int i = 0; i < n; ++i) {
+      parent[i] = i;
+    }
+  }
+
+  public void union(int a, int b) {
+    int pa = find(a);
+    int pb = find(b);
+
+    parent[pa] = parent[pb];
+  }
+
+  public int find(int a) {
+    if (parent[a] == a) {
+      return a;
+    }
+
+    return parent[a] = find(parent[a]);
+  }
+
+  public boolean areConnected(int a, int b) {
+    return find(a) == find(b);
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: Java gcd(int,int) 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+final class AP {
+  private AP() {}
+
+  public static int gcd(int a, int b) {
+    if (a < 0 || b < 0) {
+      throw new IllegalArgumentException(
+        "Can only find the GCD of non-negative integers!"
+      );
+    }
+
+    while (b != 0) {
+      int tmp = b;
+      b = a % b;
+      a = tmp;
+    }
+
+    return a;
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: Java lcm(int,int) 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+final class AP {
+  private AP() {}
+
+  public static int gcd(int a, int b) {
+    if (a < 0 || b < 0) {
+      throw new IllegalArgumentException(
+        "Can only find the GCD of non-negative integers!"
+      );
+    }
+
+    while (b != 0) {
+      int tmp = b;
+      b = a % b;
+      a = tmp;
+    }
+
+    return a;
+  }
+
+  public static int lcm(int a, int b) {
+    return (a / gcd(a, b)) * b;
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Array.prototype.slidingWindows 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+class ArraySlice {
+  array;
+  start;
+  end;
+  constructor(array, start, end) {
+    this.array = array;
+    this.start = start;
+    this.end = end;
+  }
+
+  get length() {
+    return this.end - this.start + 1;
+  }
+
+  at(index) {
+    const adjustedIndex = index < 0 ? index + this.length : index;
+    return this.array[this.start + adjustedIndex];
+  }
+
+  [Symbol.iterator] = function* () {
+    for (let i = this.start; i <= this.end; ++i) {
+      yield this.array[i];
+    }
+  };
+
+  slide(delta = 1) {
+    return ArraySlice.get(this.array, this.start + delta, this.end + delta);
+  }
+
+  isPrefix() {
+    return this.start === 0;
+  }
+
+  isSuffix() {
+    return this.end === this.array.length - 1;
+  }
+
+  static get(array, start, end) {
+    ArraySlice.proxyHandler ??= {
+      get(target, property, receiver) {
+        if (typeof property === "string") {
+          const index = parseInt(property, 10);
+          if (String(index) === property) {
+            if (index < 0 || index >= receiver.length) {
+              return undefined;
+            }
+            return receiver.at(index);
+          }
+        }
+
+        return target[property];
+      },
+    };
+
+    return new Proxy(
+      new ArraySlice(array, start, end),
+      ArraySlice.proxyHandler,
+    );
+  }
+}
+
+Array.prototype.slidingWindows = function* (windowSize) {
+  for (
+    let win = ArraySlice.get(this, 0, windowSize - 1);
+    win != null;
+    win = win.isSuffix() ? null : win.slide()
+  ) {
+    yield win;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Array.prototype.swap 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Array.prototype.swap = function (i, j) {
+  const tmp = this[i];
+  this[i] = this[j];
+  this[j] = tmp;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript BinaryHeap 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Array.prototype.swap = function (i, j) {
+  const tmp = this[i];
+  this[i] = this[j];
+  this[j] = tmp;
+};
+
+export class BinaryHeap {
+  compareFn;
+  items = [];
+
+  constructor(compareFn) {
+    this.compareFn = compareFn;
+  }
+
+  push(item) {
+    this.items.push(item);
+    this.bubbleUp(this.items.length - 1);
+  }
+
+  peek() {
+    return this.items[0];
+  }
+
+  pop() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    this.items.swap(0, this.items.length - 1);
+    const res = this.items.pop();
+    this.bubbleDown(0);
+    return res;
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  static getParentIndex(index) {
+    return Math.floor((index - 1) / 2);
+  }
+
+  static getChildIndexes(index) {
+    // TODO: investigate whether listing the right child first can offer a
+    // performance boost in bubbleDown(), due to favoring the side of the
+    // tree that may be smaller
+    return [2 * index + 1, 2 * index + 2];
+  }
+
+  bubbleUp(index) {
+    if (index === 0) {
+      return;
+    }
+
+    const parentIndex = BinaryHeap.getParentIndex(index);
+    if (this.compareFn(this.items[index], this.items[parentIndex]) < 0) {
+      this.items.swap(index, parentIndex);
+      this.bubbleUp(parentIndex);
+    }
+  }
+
+  bubbleDown(index) {
+    let bestIndex = index;
+    for (const childIndex of BinaryHeap.getChildIndexes(index)) {
+      if (
+        childIndex < this.items.length &&
+        this.compareFn(this.items[childIndex], this.items[bestIndex]) < 0
+      ) {
+        bestIndex = childIndex;
+      }
+    }
+
+    if (bestIndex !== index) {
+      this.items.swap(index, bestIndex);
+      this.bubbleDown(bestIndex);
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Function.returnThis 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.every 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.every ??= function (callbackfn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (!callbackfn(element, index)) {
+      return false;
+    }
+    ++index;
+  }
+  return true;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.filter 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.filter ??= function* (callbackFn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (callbackFn(element, index)) {
+      yield element;
+    }
+    ++index;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.find 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.find ??= function (callbackFn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (callbackFn(element, index)) {
+      return element;
+    }
+    ++index;
+  }
+  return undefined;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.forEach 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.forEach ??= function (callbackFn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    callbackFn(element, index);
+    ++index;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.map 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.map ??= function* (callbackFn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    yield callbackFn(element, index);
+    ++index;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.max 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+export function compareNatural(a, b) {
+  if (
+    (typeof a === "number" && typeof b === "number") ||
+    (typeof a === "string" && typeof b === "string") ||
+    (typeof a === "bigint" && typeof b === "bigint")
+  ) {
+    return a < b ? -1 : a > b ? 1 : 0;
+  }
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    for (let i = 0; i < a.length && i < b.length; ++i) {
+      const compareResult = compareNatural(a[i], b[i]);
+      if (compareResult !== 0) {
+        return compareResult;
+      }
+    }
+
+    return a.length - b.length;
+  }
+
+  throw new Error("Comparing mismatched types!");
+}
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.max = function (
+  compareFn = compareNatural,
+  { nanBehavior = "avoid" } = {},
+) {
+  let res = undefined;
+
+  let isFirst = true;
+  for (const element of this.toIterable()) {
+    if (
+      isFirst ||
+      compareFn(element, res) > 0 ||
+      (nanBehavior === "avoid" && Number.isNaN(res) && !Number.isNaN(element))
+    ) {
+      res = element;
+      isFirst = false;
+    }
+  }
+
+  return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.min 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+export function compareNatural(a, b) {
+  if (
+    (typeof a === "number" && typeof b === "number") ||
+    (typeof a === "string" && typeof b === "string") ||
+    (typeof a === "bigint" && typeof b === "bigint")
+  ) {
+    return a < b ? -1 : a > b ? 1 : 0;
+  }
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    for (let i = 0; i < a.length && i < b.length; ++i) {
+      const compareResult = compareNatural(a[i], b[i]);
+      if (compareResult !== 0) {
+        return compareResult;
+      }
+    }
+
+    return a.length - b.length;
+  }
+
+  throw new Error("Comparing mismatched types!");
+}
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.min = function (
+  compareFn = compareNatural,
+  { nanBehavior = "avoid" } = {},
+) {
+  let res = undefined;
+
+  let isFirst = true;
+  for (const element of this.toIterable()) {
+    if (
+      isFirst ||
+      compareFn(element, res) < 0 ||
+      (nanBehavior === "avoid" && Number.isNaN(res) && !Number.isNaN(element))
+    ) {
+      res = element;
+      isFirst = false;
+    }
+  }
+
+  return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.some 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.some ??= function (callbackfn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (callbackfn(element, index)) {
+      return true;
+    }
+    ++index;
+  }
+  return false;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.toArray 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.toArray ??= function () {
+  return [...this.toIterable()];
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.toIterable 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Math.primes 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Math.primes = function* () {
+  yield 2;
+
+  const oddPrimes = [];
+  for (let num = 3; ; num += 2) {
+    if (oddPrimes.every((p) => num % p !== 0)) {
+      yield num;
+      oddPrimes.push(num);
+    }
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Number.isIntegerOrIntegerObject 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Number.isIntegerOrIntegerObject = function (num) {
+  return (
+    (typeof num === "number" || num instanceof Number) &&
+    Number.isInteger(Number(num))
+  );
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Number.prototype.chr 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Number.prototype.chr = function () {
+  return String.fromCodePoint(Number(this));
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Number.prototype.digits 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Number.isIntegerOrIntegerObject = function (num) {
+  return (
+    (typeof num === "number" || num instanceof Number) &&
+    Number.isInteger(Number(num))
+  );
+};
+
+Number.prototype.digits = function (radix = 10) {
+  if (!(Number.isIntegerOrIntegerObject(this) && Number(this) >= 0)) {
+    throw new Error("Must invoke on a non-negative integer.");
+  }
+  if (!(Number.isIntegerOrIntegerObject(radix) && radix >= 2)) {
+    throw new Error("Radix must be an integer >= 2.");
+  }
+
+  return function* () {
+    let num = Number(this);
+    do {
+      yield num % radix;
+      num = Math.floor(num / radix);
+    } while (num > 0);
+  }.call(this);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Object.getUnsafe 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Object.getUnsafe = function (obj, properties) {
+  let res = obj;
+  for (const property of properties) {
+    res = res[property];
+  }
+  return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Object.setUnsafe 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Object.setUnsafe = function (obj, properties, value) {
+  let map = obj;
+  for (let i = 0; i < properties.length - 1; ++i) {
+    map = map[properties[i]] ??= {};
+  }
+  map[properties.at(-1)] = value;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript String.prototype.chars 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+String.prototype.chars = String.prototype[Symbol.iterator];
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript String.prototype.ord 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+String.prototype.ord = function () {
+  return this.codePointAt(0);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript compareNatural 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+export function compareNatural(a, b) {
+  if (
+    (typeof a === "number" && typeof b === "number") ||
+    (typeof a === "string" && typeof b === "string") ||
+    (typeof a === "bigint" && typeof b === "bigint")
+  ) {
+    return a < b ? -1 : a > b ? 1 : 0;
+  }
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    for (let i = 0; i < a.length && i < b.length; ++i) {
+      const compareResult = compareNatural(a[i], b[i]);
+      if (compareResult !== 0) {
+        return compareResult;
+      }
+    }
+
+    return a.length - b.length;
+  }
+
+  throw new Error("Comparing mismatched types!");
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: Kotlin gcd(Int,Int) 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+fun gcd(a: Int, b: Int): Int {
+  var mutableA = a
+  var mutableB = b
+
+  while (mutableB != 0) {
+    mutableB = (mutableA % mutableB).also { mutableA = mutableB }
+  }
+
+  return mutableA
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: Kotlin lcm(Int,Int) 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+fun gcd(a: Int, b: Int): Int {
+  var mutableA = a
+  var mutableB = b
+
+  while (mutableB != 0) {
+    mutableB = (mutableA % mutableB).also { mutableA = mutableB }
+  }
+
+  return mutableA
+}
+
+fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: Python 3 int.digits 1`] = `
+"########################## BEGIN ADVENTURE PACK CODE ###########################
+# Adventure Pack commit fake-commit-hash
+# Running at: https://example.com/
+
+def set_up_adventure_pack():
+    def digits(self: int, radix: int = 10):
+        if self < 0:
+            raise ValueError("Must invoke on a non-negative integer.")
+
+        if self == 0:
+            yield 0
+            return
+
+        num = self
+        while num > 0:
+            yield num % radix
+            num //= radix
+
+    import ctypes, gc
+
+    gc.get_referents(int.__dict__)[0]["digits"] = digits
+    ctypes.pythonapi.PyType_Modified(ctypes.py_object(int))
+
+
+set_up_adventure_pack()
+del set_up_adventure_pack
+
+########################### END ADVENTURE PACK CODE ############################"
+`;
+
+exports[`App can equip single goody: TypeScript Array.prototype.slidingWindows 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface ReadonlyArray<T> {
+    slidingWindows(
+      this: ReadonlyArray<T>,
+      windowSize: number,
+    ): Generator<ArraySlice<T>, void, void>;
+  }
+
+  interface Array<T> {
+    slidingWindows(
+      this: ReadonlyArray<T>,
+      windowSize: number,
+    ): Generator<ArraySlice<T>, void, void>;
+  }
+}
+
+type ArraySliceProxyHandler<T> = {
+  get(
+    target: ArraySlice<T>,
+    property: string | symbol,
+    receiver: ArraySlice<T>,
+  ): unknown;
+};
+
+class ArraySlice<T> {
+  private constructor(
+    public readonly array: ReadonlyArray<T>,
+    public readonly start: number,
+    public readonly end: number,
+  ) {}
+
+  get length(): number {
+    return this.end - this.start + 1;
+  }
+
+  at(index: number): T | undefined {
+    const adjustedIndex = index < 0 ? index + this.length : index;
+    return this.array[this.start + adjustedIndex];
+  }
+
+  [Symbol.iterator] = function* (
+    this: ArraySlice<T>,
+  ): Generator<T, void, undefined> {
+    for (let i = this.start; i <= this.end; ++i) {
+      yield this.array[i];
+    }
+  };
+
+  slide(delta: number = 1): IndexableArraySlice<T> {
+    return ArraySlice.get(this.array, this.start + delta, this.end + delta);
+  }
+
+  isPrefix(): boolean {
+    return this.start === 0;
+  }
+
+  isSuffix(): boolean {
+    return this.end === this.array.length - 1;
+  }
+
+  private declare static proxyHandler?: ArraySliceProxyHandler<unknown>;
+
+  static get<T>(
+    array: ReadonlyArray<T>,
+    start: number,
+    end: number,
+  ): IndexableArraySlice<T> {
+    ArraySlice.proxyHandler ??= {
+      get(
+        target: ArraySlice<unknown>,
+        property: string | symbol,
+        receiver: ArraySlice<unknown>,
+      ): unknown {
+        if (typeof property === "string") {
+          const index = parseInt(property, 10);
+          if (String(index) === property) {
+            if (index < 0 || index >= receiver.length) {
+              return undefined;
+            }
+            return receiver.at(index);
+          }
+        }
+
+        return (target as unknown as Record<string | symbol, unknown>)[
+          property
+        ];
+      },
+    };
+
+    return new Proxy(
+      new ArraySlice(array, start, end),
+      ArraySlice.proxyHandler as ArraySliceProxyHandler<T>,
+    ) as IndexableArraySlice<T>;
+  }
+}
+
+type IndexableArraySlice<T> = ArraySlice<T> & {
+  [index: number]: T | undefined;
+};
+
+Array.prototype.slidingWindows = function* <T>(
+  this: ReadonlyArray<T>,
+  windowSize: number,
+): Generator<ArraySlice<T>, void, undefined> {
+  for (
+    let win: IndexableArraySlice<T> | null = ArraySlice.get(
+      this,
+      0,
+      windowSize - 1,
+    );
+    win != null;
+    win = win.isSuffix() ? null : win.slide()
+  ) {
+    yield win;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Array.prototype.swap 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Array<T> {
+    swap(this: T[], i: number, j: number): void;
+  }
+}
+
+Array.prototype.swap = function <T>(this: T[], i: number, j: number): void {
+  const tmp = this[i];
+  this[i] = this[j];
+  this[j] = tmp;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript BinaryHeap 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Array<T> {
+    swap(this: T[], i: number, j: number): void;
+  }
+}
+
+Array.prototype.swap = function <T>(this: T[], i: number, j: number): void {
+  const tmp = this[i];
+  this[i] = this[j];
+  this[j] = tmp;
+};
+
+export class BinaryHeap<T> {
+  private readonly items: T[] = [];
+
+  constructor(private readonly compareFn: (a: T, b: T) => number) {}
+
+  push(item: T): void {
+    this.items.push(item);
+    this.bubbleUp(this.items.length - 1);
+  }
+
+  peek(): T | undefined {
+    return this.items[0];
+  }
+
+  pop(): T | undefined {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    this.items.swap(0, this.items.length - 1);
+    const res = this.items.pop();
+    this.bubbleDown(0);
+    return res;
+  }
+
+  isEmpty(): boolean {
+    return this.items.length === 0;
+  }
+
+  private static getParentIndex(index: number): number {
+    return Math.floor((index - 1) / 2);
+  }
+
+  private static getChildIndexes(index: number): [number, number] {
+    // TODO: investigate whether listing the right child first can offer a
+    // performance boost in bubbleDown(), due to favoring the side of the
+    // tree that may be smaller
+    return [2 * index + 1, 2 * index + 2];
+  }
+
+  private bubbleUp(index: number): void {
+    if (index === 0) {
+      return;
+    }
+
+    const parentIndex = BinaryHeap.getParentIndex(index);
+    if (this.compareFn(this.items[index], this.items[parentIndex]) < 0) {
+      this.items.swap(index, parentIndex);
+      this.bubbleUp(parentIndex);
+    }
+  }
+
+  private bubbleDown(index: number): void {
+    let bestIndex = index;
+    for (const childIndex of BinaryHeap.getChildIndexes(index)) {
+      if (
+        childIndex < this.items.length &&
+        this.compareFn(this.items[childIndex], this.items[bestIndex]) < 0
+      ) {
+        bestIndex = childIndex;
+      }
+    }
+
+    if (bestIndex !== index) {
+      this.items.swap(index, bestIndex);
+      this.bubbleDown(bestIndex);
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Function.returnThis 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.every 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    every(
+      this: Iterator<T>,
+      callbackfn: (value: T, index: number) => unknown,
+    ): boolean;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.every ??= function <T>(
+  this: Iterator<T>,
+  callbackfn: (element: T, index: number) => unknown,
+): boolean {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (!callbackfn(element, index)) {
+      return false;
+    }
+    ++index;
+  }
+  return true;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.filter 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    filter(
+      this: Iterator<T>,
+      callbackfn: (value: T, index: number) => unknown,
+    ): Generator<T, void, void>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.filter ??= function* <T>(
+  this: Iterator<T>,
+  callbackFn: (element: T, index: number) => unknown,
+): Generator<T, void, void> {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (callbackFn(element, index)) {
+      yield element;
+    }
+    ++index;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.find 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    find(
+      this: Iterator<T>,
+      callbackFn: (element: T, index: number) => boolean,
+    ): T | undefined;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.find ??= function <T>(
+  this: Iterator<T>,
+  callbackFn: (element: T, index: number) => boolean,
+): T | undefined {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (callbackFn(element, index)) {
+      return element;
+    }
+    ++index;
+  }
+  return undefined;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.forEach 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    forEach(
+      this: Iterator<T>,
+      callbackFn: (element: T, index: number) => void,
+    ): void;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.forEach ??= function <T>(
+  this: Iterator<T>,
+  callbackFn: (element: T, index: number) => void,
+): void {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    callbackFn(element, index);
+    ++index;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.map 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    map<TOut>(
+      this: Iterator<T>,
+      callbackFn: (element: T, index: number) => TOut,
+    ): Generator<TOut, void, void>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.map ??= function* <TIn, TOut>(
+  this: Iterator<TIn>,
+  callbackFn: (element: TIn, index: number) => TOut,
+): Generator<TOut, void, void> {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    yield callbackFn(element, index);
+    ++index;
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.max 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    max(
+      this: Iterator<T>,
+      compareFn?: (a: T, b: T) => number,
+      options?: { nanBehavior?: "avoid" | "compare" },
+    ): T | undefined;
+  }
+}
+
+export function compareNatural<T>(a: T, b: T): number {
+  if (
+    (typeof a === "number" && typeof b === "number") ||
+    (typeof a === "string" && typeof b === "string") ||
+    (typeof a === "bigint" && typeof b === "bigint")
+  ) {
+    return a < b ? -1 : a > b ? 1 : 0;
+  }
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    for (let i = 0; i < a.length && i < b.length; ++i) {
+      const compareResult = compareNatural(a[i], b[i]);
+      if (compareResult !== 0) {
+        return compareResult;
+      }
+    }
+
+    return a.length - b.length;
+  }
+
+  throw new Error("Comparing mismatched types!");
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.max = function <T>(
+  this: Iterator<T>,
+  compareFn: (a: T, b: T) => number = compareNatural,
+  { nanBehavior = "avoid" }: { nanBehavior?: "avoid" | "compare" } = {},
+): T | undefined {
+  let res: T | undefined = undefined;
+
+  let isFirst = true;
+  for (const element of this.toIterable()) {
+    if (
+      isFirst ||
+      compareFn(element, res as T) > 0 ||
+      (nanBehavior === "avoid" && Number.isNaN(res) && !Number.isNaN(element))
+    ) {
+      res = element;
+      isFirst = false;
+    }
+  }
+
+  return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.min 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    min(
+      this: Iterator<T>,
+      compareFn?: (a: T, b: T) => number,
+      options?: { nanBehavior?: "avoid" | "compare" },
+    ): T | undefined;
+  }
+}
+
+export function compareNatural<T>(a: T, b: T): number {
+  if (
+    (typeof a === "number" && typeof b === "number") ||
+    (typeof a === "string" && typeof b === "string") ||
+    (typeof a === "bigint" && typeof b === "bigint")
+  ) {
+    return a < b ? -1 : a > b ? 1 : 0;
+  }
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    for (let i = 0; i < a.length && i < b.length; ++i) {
+      const compareResult = compareNatural(a[i], b[i]);
+      if (compareResult !== 0) {
+        return compareResult;
+      }
+    }
+
+    return a.length - b.length;
+  }
+
+  throw new Error("Comparing mismatched types!");
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.min = function <T>(
+  this: Iterator<T>,
+  compareFn: (a: T, b: T) => number = compareNatural,
+  { nanBehavior = "avoid" }: { nanBehavior?: "avoid" | "compare" } = {},
+): T | undefined {
+  let res: T | undefined = undefined;
+
+  let isFirst = true;
+  for (const element of this.toIterable()) {
+    if (
+      isFirst ||
+      compareFn(element, res as T) < 0 ||
+      (nanBehavior === "avoid" && Number.isNaN(res) && !Number.isNaN(element))
+    ) {
+      res = element;
+      isFirst = false;
+    }
+  }
+
+  return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.some 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    some(
+      this: Iterator<T>,
+      callbackfn: (value: T, index: number) => unknown,
+    ): boolean;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.some ??= function <T>(
+  this: Iterator<T>,
+  callbackfn: (element: T, index: number) => unknown,
+): boolean {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    if (callbackfn(element, index)) {
+      return true;
+    }
+    ++index;
+  }
+  return false;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.toArray 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Iterator<T> {
+    toArray(this: Iterator<T>): T[];
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.toArray ??= function <T>(this: Iterator<T>): T[] {
+  return [...this.toIterable()];
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.toIterable 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Math.primes 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Math {
+    primes(): Generator<number, void, void>;
+  }
+}
+
+Math.primes = function* (): Generator<number, void, void> {
+  yield 2;
+
+  const oddPrimes: number[] = [];
+  for (let num = 3; ; num += 2) {
+    if (oddPrimes.every((p) => num % p !== 0)) {
+      yield num;
+      oddPrimes.push(num);
+    }
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Number.isIntegerOrIntegerObject 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface NumberConstructor {
+    isIntegerOrIntegerObject(num: unknown): boolean;
+  }
+}
+
+Number.isIntegerOrIntegerObject = function (num: unknown): boolean {
+  return (
+    (typeof num === "number" || num instanceof Number) &&
+    Number.isInteger(Number(num))
+  );
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Number.prototype.chr 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Number {
+    chr(this: Number): string;
+  }
+}
+
+Number.prototype.chr = function (this: Number): string {
+  return String.fromCodePoint(Number(this));
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Number.prototype.digits 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface NumberConstructor {
+    isIntegerOrIntegerObject(num: unknown): boolean;
+  }
+
+  interface Number {
+    digits(this: Number): Generator<number, void, void>;
+    digits(this: Number, radix: number): Generator<number, void, void>;
+  }
+}
+
+Number.isIntegerOrIntegerObject = function (num: unknown): boolean {
+  return (
+    (typeof num === "number" || num instanceof Number) &&
+    Number.isInteger(Number(num))
+  );
+};
+
+Number.prototype.digits = function (
+  this: Number,
+  radix: number = 10,
+): Generator<number, void, void> {
+  if (!(Number.isIntegerOrIntegerObject(this) && Number(this) >= 0)) {
+    throw new Error("Must invoke on a non-negative integer.");
+  }
+  if (!(Number.isIntegerOrIntegerObject(radix) && radix >= 2)) {
+    throw new Error("Radix must be an integer >= 2.");
+  }
+
+  return function* (this: Number) {
+    let num = Number(this);
+    do {
+      yield num % radix;
+      num = Math.floor(num / radix);
+    } while (num > 0);
+  }.call(this);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Object.getUnsafe 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface ObjectConstructor {
+    getUnsafe(
+      obj: unknown,
+      properties: readonly [string, ...string[]],
+    ): unknown;
+  }
+}
+
+Object.getUnsafe = function (
+  obj: unknown,
+  properties: readonly [string, ...string[]],
+): unknown {
+  let res = obj;
+  for (const property of properties) {
+    res = (res as Record<string, unknown>)[property];
+  }
+  return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Object.setUnsafe 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface ObjectConstructor {
+    setUnsafe(
+      obj: unknown,
+      properties: readonly [string, ...string[]],
+      value: unknown,
+    ): void;
+  }
+}
+
+Object.setUnsafe = function (
+  obj: unknown,
+  properties: readonly [string, ...string[]],
+  value: unknown,
+): void {
+  let map = obj;
+  for (let i = 0; i < properties.length - 1; ++i) {
+    map = (map as Record<string, unknown>)[properties[i]] ??= {};
+  }
+  (map as Record<string, unknown>)[properties.at(-1)!] = value;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript String.prototype.chars 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface String {
+    chars(this: String): IterableIterator<string>;
+  }
+}
+
+String.prototype.chars = String.prototype[Symbol.iterator];
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript String.prototype.ord 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface String {
+    ord(this: String): number | undefined;
+  }
+}
+
+String.prototype.ord = function (this: String): number | undefined {
+  return this.codePointAt(0);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript compareNatural 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+export function compareNatural<T>(a: T, b: T): number {
+  if (
+    (typeof a === "number" && typeof b === "number") ||
+    (typeof a === "string" && typeof b === "string") ||
+    (typeof a === "bigint" && typeof b === "bigint")
+  ) {
+    return a < b ? -1 : a > b ? 1 : 0;
+  }
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    for (let i = 0; i < a.length && i < b.length; ++i) {
+      const compareResult = compareNatural(a[i], b[i]);
+      if (compareResult !== 0) {
+        return compareResult;
+      }
+    }
+
+    return a.length - b.length;
+  }
+
+  throw new Error("Comparing mismatched types!");
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;

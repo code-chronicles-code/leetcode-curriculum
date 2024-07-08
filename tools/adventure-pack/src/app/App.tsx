@@ -9,13 +9,7 @@ import { useMergedCode } from "./useMergedCode";
 import { useAppState } from "./useAppState";
 import { Goody } from "./Goody";
 
-const LANGUAGE_NAMES: Record<Language, string> = {
-  java: "Java",
-  javascript: "JavaScript",
-  kotlin: "Kotlin",
-  python3: "Python 3",
-  typescript: "TypeScript",
-};
+import { LANGUAGE_NAMES } from "./constants";
 
 function Column({
   children,
