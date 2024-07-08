@@ -4,7 +4,7 @@ import { WritableDeep } from "type-fest";
 
 import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
 
-export const GOODIES_DIRECTORY = path.join("goodies", "python");
+export const GOODIES_DIRECTORY = path.join("goodies", "python3");
 
 export type Python3GoodyBase = Omit<WritableDeep<Python3Goody>, "importedBy">;
 
