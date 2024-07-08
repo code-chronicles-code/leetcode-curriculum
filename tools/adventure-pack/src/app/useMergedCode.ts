@@ -160,6 +160,24 @@ async function mergeCode({
     );
   }
 
+  if (language === "kotlin") {
+    return (
+      centerTextInComment({
+        text: "BEGIN ADVENTURE PACK CODE",
+        commentType: "//",
+      }) +
+      "\n" +
+      `// Adventure Pack commit ${commitHash}\n` +
+      `// Running at: ${window.location.href}\n\n` +
+      mergedCode +
+      "\n\n" +
+      centerTextInComment({
+        text: "END ADVENTURE PACK CODE",
+        commentType: "//",
+      })
+    );
+  }
+
   if (language === "python3") {
     return (
       centerTextInComment({

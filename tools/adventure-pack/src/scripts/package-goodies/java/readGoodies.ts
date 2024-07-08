@@ -1,30 +1,20 @@
 import invariant from "invariant";
 import fsPromises from "node:fs/promises";
 
+import { setIfNotHasOwnOrThrow } from "@code-chronicles/util";
+
 import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
 import { GOODIES_DIRECTORY } from "./constants";
-import { readBasicGoody } from "./readBasicGoody";
+import { type JavaGoodyBase, readBaseGoody } from "./readBaseGoody";
+import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
 
 export async function readGoodies(): Promise<Record<string, JavaGoody>> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {
     withFileTypes: true,
   });
 
-  const goodiesByName: Record<string, JavaGoody> = {};
-  const goodiesByPackageName: Record<string, JavaGoody> = {};
-  const registerGoody = (goody: JavaGoody): void => {
-    invariant(
-      goodiesByName[goody.name] == null,
-      `Goody ${goody.name} already exists!`,
-    );
-    invariant(
-      goodiesByPackageName[goody.packageName] == null,
-      `Goody with package name ${goody.packageName} already exists!`,
-    );
-
-    goodiesByName[goody.name] = goody;
-    goodiesByPackageName[goody.packageName] = goody;
-  };
+  const baseGoodiesByName: Record<string, JavaGoodyBase> = {};
+  const baseGoodiesByPackageName: Record<string, JavaGoodyBase> = {};
 
   for (const entry of fileEntries) {
     const packageName = entry.name;
@@ -34,46 +24,38 @@ export async function readGoodies(): Promise<Record<string, JavaGoody>> {
     );
 
     // eslint-disable-next-line no-await-in-loop
-    const goody = await readBasicGoody(packageName);
+    const baseGoody = await readBaseGoody(packageName);
 
-    const expectedPackageName = goody.name
+    const expectedPackageName = baseGoody.name
       .replace(/[A-Z]+/g, ([upper]) => "_" + upper.toLowerCase())
       .replace(/[^a-z0-9]+/gi, "_")
       .replace(/_$/, "")
       .replace(/^_/, "");
     invariant(
       packageName === expectedPackageName,
-      `Mismatched package name for goody! Expected ${JSON.stringify(expectedPackageName)} based on goody name ${JSON.stringify(goody.name)} but got ${JSON.stringify(packageName)}.`,
+      `Mismatched package name for goody! Expected ${JSON.stringify(expectedPackageName)} based on goody name ${JSON.stringify(baseGoody.name)} but got ${JSON.stringify(packageName)}.`,
     );
 
-    registerGoody(goody);
+    setIfNotHasOwnOrThrow(baseGoodiesByName, baseGoody.name, baseGoody);
+    setIfNotHasOwnOrThrow(
+      baseGoodiesByPackageName,
+      baseGoody.packageName,
+      baseGoody,
+    );
   }
 
-  for (const goody of Object.values(goodiesByName)) {
-    goody.imports = goody.imports.map((im) => {
-      const importedGoody = goodiesByPackageName[im];
+  for (const baseGoody of Object.values(baseGoodiesByName)) {
+    baseGoody.imports = baseGoody.imports.map((im) => {
+      const importedBaseGoody = baseGoodiesByPackageName[im];
       invariant(
-        importedGoody != null,
-        `Unknown import ${JSON.stringify(im)} in ${goody.name}`,
+        importedBaseGoody != null,
+        `Unknown import ${JSON.stringify(im)} in ${importedBaseGoody.name}`,
       );
-      return importedGoody.name;
+      return importedBaseGoody.name;
     });
   }
 
   // TODO: assert that the AP class is the only one that exists in multiple goodies
 
-  // TODO: reuse this code across languages
-  for (const goody of Object.values(goodiesByName)) {
-    for (const im of goody.imports) {
-      goodiesByName[im].importedBy.push(goody.name);
-    }
-  }
-
-  // TODO: sort imports case-insensitively
-  for (const goody of Object.values(goodiesByName)) {
-    goody.importedBy.sort();
-    goody.imports.sort();
-  }
-
-  return goodiesByName;
+  return fillOutImportedByAndSortImports(baseGoodiesByName);
 }

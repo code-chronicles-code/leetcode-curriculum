@@ -5,12 +5,18 @@ import { tomorrow as syntaxHighlighterStyle } from "react-syntax-highlighter/dis
 import type { Language } from "./Language";
 
 // Cross-reference with https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_LANGUAGES_PRISM.MD
-type HighlighterLanguage = "java" | "javascript" | "python" | "typescript";
+type HighlighterLanguage =
+  | "java"
+  | "javascript"
+  | "kotlin"
+  | "python"
+  | "typescript";
 
 const LANGUAGE_TO_HIGHLIGHTER_LANGUAGE: Record<Language, HighlighterLanguage> =
   {
     java: "java",
     javascript: "javascript",
+    kotlin: "kotlin",
     python3: "python",
     typescript: "typescript",
   };

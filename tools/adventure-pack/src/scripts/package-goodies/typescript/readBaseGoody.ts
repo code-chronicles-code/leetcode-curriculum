@@ -1,6 +1,9 @@
 import fsPromises from "node:fs/promises";
 import path from "node:path";
 import { SourceFile as TSSourceFile, SyntaxKind } from "ts-morph";
+import { WritableDeep } from "type-fest";
+
+import { stripPrefixOrThrow } from "@code-chronicles/util";
 
 import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";
 import { createSourceFile } from "./createSourceFile";
@@ -27,7 +30,14 @@ function extractGlobalModuleDeclarations(sourceFile: TSSourceFile): string[] {
   return res;
 }
 
-export async function readBasicGoody(name: string): Promise<TypeScriptGoody> {
+export type TypeScriptGoodyBase = Omit<
+  WritableDeep<TypeScriptGoody>,
+  "importedBy"
+>;
+
+export async function readBaseGoody(
+  name: string,
+): Promise<TypeScriptGoodyBase> {
   const code = await fsPromises.readFile(
     path.join(GOODIES_DIRECTORY, name, "index.ts"),
     "utf8",
@@ -52,9 +62,8 @@ export async function readBasicGoody(name: string): Promise<TypeScriptGoody> {
   return {
     code: updatedCode,
     globalModuleDeclarations,
-    importedBy: [],
-    imports: Array.from(imports),
-    name,
+    imports: Array.from(imports).map((im) => stripPrefixOrThrow(im, "../")),
     language: "typescript",
+    name,
   };
 }

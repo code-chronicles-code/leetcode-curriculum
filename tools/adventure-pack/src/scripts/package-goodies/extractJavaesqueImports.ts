@@ -1,6 +1,6 @@
 import { getLines, isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util";
 
-export function extractImports(code: string): {
+export function extractJavaesqueImports(code: string): {
   codeWithoutImports: string;
   imports: Set<string>;
   importsCode: string;
@@ -15,7 +15,7 @@ export function extractImports(code: string): {
       continue;
     }
 
-    const packageNameMatch = lines[0].match(/^package\s+[^;]+;\n?$/);
+    const packageNameMatch = lines[0].match(/^package\s+[^;\s]+;?\n?$/);
     if (packageNameMatch != null) {
       // TODO: verify that the package name matches what's expected
       lines.shift();
