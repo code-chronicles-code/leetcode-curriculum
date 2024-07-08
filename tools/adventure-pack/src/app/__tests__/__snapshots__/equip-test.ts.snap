@@ -202,7 +202,7 @@ Array.prototype.swap = function (i, j) {
   this[j] = tmp;
 };
 
-export class BinaryHeap {
+class BinaryHeap {
   compareFn;
   items = [];
 
@@ -460,7 +460,7 @@ exports[`App can equip single goody: JavaScript Iterator.prototype.max 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-export function compareNatural(a, b) {
+function compareNatural(a, b) {
   if (
     (typeof a === "number" && typeof b === "number") ||
     (typeof a === "string" && typeof b === "string") ||
@@ -525,7 +525,7 @@ exports[`App can equip single goody: JavaScript Iterator.prototype.min 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-export function compareNatural(a, b) {
+function compareNatural(a, b) {
   if (
     (typeof a === "number" && typeof b === "number") ||
     (typeof a === "string" && typeof b === "string") ||
@@ -801,7 +801,7 @@ exports[`App can equip single goody: JavaScript compareNatural 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-export function compareNatural(a, b) {
+function compareNatural(a, b) {
   if (
     (typeof a === "number" && typeof b === "number") ||
     (typeof a === "string" && typeof b === "string") ||
@@ -945,7 +945,7 @@ class ArraySlice<T> {
 
   [Symbol.iterator] = function* (
     this: ArraySlice<T>,
-  ): Generator<T, void, undefined> {
+  ): Generator<T, void, void> {
     for (let i = this.start; i <= this.end; ++i) {
       yield this.array[i];
     }
@@ -1006,7 +1006,7 @@ type IndexableArraySlice<T> = ArraySlice<T> & {
 Array.prototype.slidingWindows = function* <T>(
   this: ReadonlyArray<T>,
   windowSize: number,
-): Generator<ArraySlice<T>, void, undefined> {
+): Generator<ArraySlice<T>, void, void> {
   for (
     let win: IndexableArraySlice<T> | null = ArraySlice.get(
       this,
@@ -1060,7 +1060,7 @@ Array.prototype.swap = function <T>(this: T[], i: number, j: number): void {
   this[j] = tmp;
 };
 
-export class BinaryHeap<T> {
+class BinaryHeap<T> {
   private readonly items: T[] = [];
 
   constructor(private readonly compareFn: (a: T, b: T) => number) {}
@@ -1454,7 +1454,7 @@ declare global {
   }
 }
 
-export function compareNatural<T>(a: T, b: T): number {
+function compareNatural<T>(a: T, b: T): number {
   if (
     (typeof a === "number" && typeof b === "number") ||
     (typeof a === "string" && typeof b === "string") ||
@@ -1541,7 +1541,7 @@ declare global {
   }
 }
 
-export function compareNatural<T>(a: T, b: T): number {
+function compareNatural<T>(a: T, b: T): number {
   if (
     (typeof a === "number" && typeof b === "number") ||
     (typeof a === "string" && typeof b === "string") ||
@@ -1944,7 +1944,7 @@ exports[`App can equip single goody: TypeScript compareNatural 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-export function compareNatural<T>(a: T, b: T): number {
+function compareNatural<T>(a: T, b: T): number {
   if (
     (typeof a === "number" && typeof b === "number") ||
     (typeof a === "string" && typeof b === "string") ||

@@ -24,7 +24,7 @@ class ArraySlice<T> {
 
   [Symbol.iterator] = function* (
     this: ArraySlice<T>,
-  ): Generator<T, void, undefined> {
+  ): Generator<T, void, void> {
     for (let i = this.start; i <= this.end; ++i) {
       yield this.array[i];
     }
@@ -101,7 +101,7 @@ declare global {
 Array.prototype.slidingWindows = function* <T>(
   this: ReadonlyArray<T>,
   windowSize: number,
-): Generator<ArraySlice<T>, void, undefined> {
+): Generator<ArraySlice<T>, void, void> {
   for (
     let win: IndexableArraySlice<T> | null = ArraySlice.get(
       this,
