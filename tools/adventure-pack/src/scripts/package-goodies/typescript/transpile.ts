@@ -10,6 +10,7 @@ import {
 import { getRandomBytes } from "@code-chronicles/util";
 
 import { formatCode } from "./formatCode";
+import { removeUninitializedPropertyDeclarations } from "./removeUninitializedPropertyDeclarations";
 
 export async function transpile(code: string): Promise<string> {
   // There is some dark magic here to work around the fact that TypeScript
@@ -17,7 +18,7 @@ export async function transpile(code: string): Promise<string> {
   // to track newlines in the original code, and then we restore them later.
 
   const sig = await (async () => {
-    for (let len = 16; ; ) {
+    for (let len = 16; ; ++len) {
       // eslint-disable-next-line no-await-in-loop
       const s = (await getRandomBytes(len)).toString("hex");
       if (!code.includes(s)) {
@@ -50,7 +51,6 @@ export async function transpile(code: string): Promise<string> {
     }
   }
 
-  new RegExp("\\/\\*" + sig + ":(\\d+)\\*\\/", "g");
   const transpiledCode = originalTranspile(codeWithMarkedNewlines.join(""), {
     target: ScriptTarget.Latest,
   }).replaceAll(
@@ -58,5 +58,7 @@ export async function transpile(code: string): Promise<string> {
     (_match, len) => "\n".repeat(Number(len)),
   );
 
-  return await formatCode(transpiledCode);
+  return await formatCode(
+    removeUninitializedPropertyDeclarations(transpiledCode),
+  );
 }

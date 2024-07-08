@@ -104,9 +104,6 @@ exports[`App can equip single goody: JavaScript Array.prototype.slidingWindows 1
 // Running at: https://example.com/
 
 class ArraySlice {
-  array;
-  start;
-  end;
   constructor(array, start, end) {
     this.array = array;
     this.start = start;
@@ -203,7 +200,6 @@ Array.prototype.swap = function (i, j) {
 };
 
 class BinaryHeap {
-  compareFn;
   items = [];
 
   constructor(compareFn) {
