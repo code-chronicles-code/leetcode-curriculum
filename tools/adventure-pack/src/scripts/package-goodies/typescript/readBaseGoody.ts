@@ -53,10 +53,6 @@ export async function readBaseGoody(
     }
   });
 
-  sourceFile.getVariableDeclarations().forEach((decl) => {
-    decl.getVariableStatementOrThrow().setIsExported(false);
-  });
-
   const updatedCode = await formatCode(sourceFile.getFullText());
 
   return {

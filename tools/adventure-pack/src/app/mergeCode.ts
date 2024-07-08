@@ -201,7 +201,7 @@ export async function mergeCode({
         "\n" +
         `// Adventure Pack commit ${commitHash}\n` +
         `// Running at: ${window.location.href}\n\n` +
-        mergedCode +
+        mergedCode.replaceAll(/^export\s+/gm, "") +
         "\n\n" +
         centerTextInComment({
           text: "END ADVENTURE PACK CODE",
