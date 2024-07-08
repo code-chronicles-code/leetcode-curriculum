@@ -29,12 +29,13 @@
     "goodies:python:test": "bash -c 'cd goodies/python && source .venv/bin/activate && pytest --color=yes'",
     "goodies:typescript:format": "prettier --write goodies/typescript",
     "goodies:typescript:install": "yarn",
-    "goodies:typescript:test": "jest --color",
+    "goodies:typescript:test": "jest --color goodies/typescript",
     "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && NODE_ENV=development webpack && cp css/style.css dist/style.css",
+    "package-goodies:test": "NODE_OPTIONS=--experimental-vm-modules jest --color --testPathIgnorePatterns=\"/goodies/\"",
     "format": "yarn goodies:java:format && yarn goodies:kotlin:format && yarn goodies:python:format && yarn goodies:typescript:format && prettier --write .",
     "lint": "eslint --max-warnings=0 .",
     "postinstall": "yarn goodies:java:install && yarn goodies:kotlin:install && yarn goodies:python:install",
-    "test": "yarn goodies:java:test && yarn goodies:kotlin:test && yarn goodies:python:test && yarn goodies:typescript:test",
+    "test": "yarn goodies:java:test && yarn goodies:kotlin:test && yarn goodies:python:test && yarn goodies:typescript:test && yarn package-goodies:test",
     "typecheck": "tsc --project ."
   },
   "dependencies": {
