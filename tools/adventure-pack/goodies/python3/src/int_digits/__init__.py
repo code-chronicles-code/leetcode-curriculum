@@ -1,5 +1,8 @@
-def set_up_adventure_pack():
-    def digits(self: int, radix: int = 10):
+from typing import Generator
+
+
+def set_up_adventure_pack() -> None:
+    def digits(self: int, radix: int = 10) -> Generator[int, None, None]:
         if self < 0:
             raise ValueError("Must invoke on a non-negative integer.")
 
