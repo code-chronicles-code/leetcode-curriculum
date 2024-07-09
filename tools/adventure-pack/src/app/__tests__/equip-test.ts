@@ -17,7 +17,6 @@ function setUnsafe(
   (map as Record<string, unknown>)[properties.at(-1)!] = value;
 }
 
-setUnsafe(globalThis, ["requestIdleCallback"], <T>(fn: () => T): T => fn());
 setUnsafe(globalThis, ["window", "location", "href"], "https://example.com/");
 
 describe("App", () => {
@@ -27,8 +26,7 @@ describe("App", () => {
     for (const language of Object.keys(goodiesByLanguage) as Language[]) {
       const goodies = goodiesByLanguage[language];
       for (const goodyName of Object.keys(goodies)) {
-        // eslint-disable-next-line no-await-in-loop
-        const mergedCode = await mergeCode({
+        const mergedCode = mergeCode({
           commitHash: "fake-commit-hash",
           goodies,
           language,

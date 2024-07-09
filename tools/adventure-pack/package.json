@@ -24,7 +24,7 @@
     "goodies:kotlin:format": "(cd goodies/kotlin && ./gradlew ktfmtCustom)",
     "goodies:kotlin:install": "javac -version",
     "goodies:kotlin:test": "(cd goodies/kotlin && ./gradlew test)",
-    "goodies:python3:format": "bash goodies/python3/format.sh",
+    "goodies:python3:format": "prettier --write goodies/python3 && bash goodies/python3/format.sh",
     "goodies:python3:install": "bash goodies/python3/install.sh",
     "goodies:python3:test": "bash goodies/python3/test.sh",
     "goodies:typescript:format": "prettier --write goodies/typescript",

@@ -7,6 +7,7 @@ import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
 import { GOODIES_DIRECTORY } from "./constants";
 import { type JavaGoodyBase, readBaseGoody } from "./readBaseGoody";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
+import { normalizeGoodyNameToPackageOrModuleName } from "../normalizeGoodyNameToPackageOrModuleName";
 
 export async function readGoodies(): Promise<Record<string, JavaGoody>> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {
@@ -26,11 +27,9 @@ export async function readGoodies(): Promise<Record<string, JavaGoody>> {
     // eslint-disable-next-line no-await-in-loop
     const baseGoody = await readBaseGoody(packageName);
 
-    const expectedPackageName = baseGoody.name
-      .replace(/[A-Z]+/g, ([upper]) => "_" + upper.toLowerCase())
-      .replace(/[^a-z0-9]+/gi, "_")
-      .replace(/_$/, "")
-      .replace(/^_/, "");
+    const expectedPackageName = normalizeGoodyNameToPackageOrModuleName(
+      baseGoody.name,
+    );
     invariant(
       packageName === expectedPackageName,
       `Mismatched package name for goody! Expected ${JSON.stringify(expectedPackageName)} based on goody name ${JSON.stringify(baseGoody.name)} but got ${JSON.stringify(packageName)}.`,
