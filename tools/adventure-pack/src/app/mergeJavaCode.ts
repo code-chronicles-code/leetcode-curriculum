@@ -15,7 +15,7 @@ export function mergeJavaCode(goodies: Iterable<ReadonlyDeep<JavaGoody>>) {
         `Only the ${ADVENTURE_PACK_CLASS_NAME} class can exist in multiple goodies!`,
       );
 
-      classes[className] ??= { modifiers: new Set(), code: [] };
+      classes[className] ??= { code: [], modifiers: new Set() };
       for (const modifier of goody.codeByClass[className].modifiers) {
         classes[className].modifiers.add(modifier);
       }

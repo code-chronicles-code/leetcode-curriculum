@@ -22,8 +22,8 @@ export async function readBaseGoody(
     code: codeWithoutImports,
     imports: Array.from(imports),
     importsCode,
-    name,
     language: "kotlin",
+    name,
     packageName,
   };
 }

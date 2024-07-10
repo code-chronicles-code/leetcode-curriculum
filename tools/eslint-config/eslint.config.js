@@ -6,6 +6,18 @@ const globals = require("globals");
 
 // TODO: see if we can get typechecking
 
+/*
+console.log(
+  JSON.stringify(
+    Object.fromEntries(
+      Array.from(require("../node_modules/eslint/lib/rules/index.js").keys())
+        .sort()
+        .map((ruleId) => [ruleId, "off"])
+    )
+  )
+);
+*/
+
 const vanilla = {
   files: ["**/*.js", "**/*.jsx"],
   languageOptions: {

@@ -14,11 +14,11 @@ import { sortTypeScriptModuleAndInterfaceDeclarations } from "./sortTypeScriptMo
 import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
 
 function topo({
-  goodies,
   equippedGoodies,
+  goodies,
 }: {
-  goodies: ReadonlyDeep<Record<string, Goody>>;
   equippedGoodies: ReadonlySet<string>;
+  goodies: ReadonlyDeep<Record<string, Goody>>;
 }): string[] {
   const pq = new BinaryHeap<string>(compareStringsCaseInsensitive);
 
@@ -78,16 +78,16 @@ function topo({
 
 export type Data = {
   commitHash: string;
+  equippedGoodies: ReadonlySet<string>;
   goodies: ReadonlyDeep<Record<string, Goody>>;
   language: Language;
-  equippedGoodies: ReadonlySet<string>;
 };
 
 export function mergeCode({
   commitHash,
+  equippedGoodies,
   goodies,
   language,
-  equippedGoodies,
 }: Data): string {
   if (equippedGoodies.size === 0) {
     return language === "python3"
@@ -159,8 +159,8 @@ export function mergeCode({
   if (language === "java") {
     return (
       centerTextInComment({
-        text: "BEGIN ADVENTURE PACK CODE",
         commentType: "//",
+        text: "BEGIN ADVENTURE PACK CODE",
       }) +
       "\n" +
       `// Adventure Pack commit ${commitHash}\n` +
@@ -168,8 +168,8 @@ export function mergeCode({
       mergedCode +
       "\n\n" +
       centerTextInComment({
-        text: "END ADVENTURE PACK CODE",
         commentType: "//",
+        text: "END ADVENTURE PACK CODE",
       })
     );
   }
@@ -177,8 +177,8 @@ export function mergeCode({
   if (language === "kotlin") {
     return (
       centerTextInComment({
-        text: "BEGIN ADVENTURE PACK CODE",
         commentType: "//",
+        text: "BEGIN ADVENTURE PACK CODE",
       }) +
       "\n" +
       `// Adventure Pack commit ${commitHash}\n` +
@@ -195,22 +195,22 @@ export function mergeCode({
   if (language === "python3") {
     return (
       centerTextInComment({
-        text: "BEGIN ADVENTURE PACK CODE",
         commentType: "#",
+        text: "BEGIN ADVENTURE PACK CODE",
       }) +
       "\n" +
       `# Adventure Pack commit ${commitHash}\n` +
       `# Running at: ${window.location.href}\n\n` +
       mergedCode +
       "\n\n" +
-      centerTextInComment({ text: "END ADVENTURE PACK CODE", commentType: "#" })
+      centerTextInComment({ commentType: "#", text: "END ADVENTURE PACK CODE" })
     );
   }
 
   return (
     centerTextInComment({
-      text: "BEGIN ADVENTURE PACK CODE",
       commentType: "//",
+      text: "BEGIN ADVENTURE PACK CODE",
     }) +
     "\n" +
     `// Adventure Pack commit ${commitHash}\n` +
@@ -218,8 +218,8 @@ export function mergeCode({
     mergedCode.replaceAll(/^export\s+/gm, "") +
     "\n\n" +
     centerTextInComment({
-      text: "END ADVENTURE PACK CODE",
       commentType: "//",
+      text: "END ADVENTURE PACK CODE",
     })
   ).trim();
 }

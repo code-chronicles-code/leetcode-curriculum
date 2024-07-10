@@ -7,9 +7,9 @@ import { type Data, mergeCode } from "./mergeCode";
 
 export function useMergedCode({
   commitHash,
+  equippedGoodies,
   goodies,
   language,
-  equippedGoodies,
 }: Omit<Data, "goodies"> & { goodies: Data["goodies"] | null }): string {
   const [code, setCode] = useState("");
 
@@ -25,9 +25,9 @@ export function useMergedCode({
         setCode(
           mergeCode({
             commitHash,
+            equippedGoodies,
             goodies,
             language,
-            equippedGoodies,
           }),
         );
     });
@@ -35,7 +35,7 @@ export function useMergedCode({
     return () => {
       isActive = false;
     };
-  }, [commitHash, goodies, language, equippedGoodies]);
+  }, [commitHash, equippedGoodies, goodies, language]);
 
   return code;
 }
