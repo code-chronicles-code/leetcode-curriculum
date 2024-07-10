@@ -507,6 +507,51 @@ exports[`App can render goody: JavaScript compareNatural 1`] = `
 }"
 `;
 
+exports[`App can render goody: JavaScript traverseInorder 1`] = `
+"export function* traverseInorder(root) {
+  const stack = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseChildren] = stack.pop();
+    if (node) {
+      if (didTraverseChildren) {
+        yield node;
+      } else {
+        stack.push([node.right, false], [node, true], [node.left, false]);
+      }
+    }
+  }
+}"
+`;
+
+exports[`App can render goody: JavaScript traversePostorder 1`] = `
+"export function* traversePostorder(root) {
+  const stack = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseChildren] = stack.pop();
+    if (node) {
+      if (didTraverseChildren) {
+        yield node;
+      } else {
+        stack.push([node, true], [node.right, false], [node.left, false]);
+      }
+    }
+  }
+}"
+`;
+
+exports[`App can render goody: JavaScript traversePreorder 1`] = `
+"export function* traversePreorder(root) {
+  const stack = [root];
+  while (stack.length > 0) {
+    const node = stack.pop();
+    if (node) {
+      yield node;
+      stack.push(node.right, node.left);
+    }
+  }
+}"
+`;
+
 exports[`App can render goody: Kotlin gcd(Int,Int) 1`] = `
 "package gcd_int_int
 
@@ -1224,5 +1269,56 @@ exports[`App can render goody: TypeScript compareNatural 1`] = `
   }
 
   throw new Error("Comparing mismatched types!");
+}"
+`;
+
+exports[`App can render goody: TypeScript traverseInorder 1`] = `
+"export function* traverseInorder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T, void, void> {
+  const stack: [T | null | undefined, boolean][] = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseChildren] = stack.pop()!;
+    if (node) {
+      if (didTraverseChildren) {
+        yield node;
+      } else {
+        stack.push([node.right, false], [node, true], [node.left, false]);
+      }
+    }
+  }
+}"
+`;
+
+exports[`App can render goody: TypeScript traversePostorder 1`] = `
+"export function* traversePostorder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T, void, void> {
+  const stack: [T | null | undefined, boolean][] = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseChildren] = stack.pop()!;
+    if (node) {
+      if (didTraverseChildren) {
+        yield node;
+      } else {
+        stack.push([node, true], [node.right, false], [node.left, false]);
+      }
+    }
+  }
+}"
+`;
+
+exports[`App can render goody: TypeScript traversePreorder 1`] = `
+"export function* traversePreorder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T, void, void> {
+  const stack = [root];
+  while (stack.length > 0) {
+    const node = stack.pop();
+    if (node) {
+      yield node;
+      stack.push(node.right, node.left);
+    }
+  }
 }"
 `;
