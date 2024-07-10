@@ -10,6 +10,8 @@ import type { Goody } from "./Goody";
 import type { Language } from "./Language";
 import { mergeJavaCode } from "./mergeJavaCode";
 import type { JavaGoody } from "./parsers/javaGoodyParser";
+import { sortTypeScriptModuleAndInterfaceDeclarations } from "./sortTypeScriptModuleAndInterfaceDeclarations";
+import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
 
 function topo({
   goodies,
@@ -110,19 +112,37 @@ export function mergeCode({
       );
     }
 
-    const globalModuleDeclarations =
-      language === "typescript"
-        ? orderedGoodies.flatMap((goody) =>
-            goody.language === "typescript"
-              ? goody.globalModuleDeclarations
-              : [],
-          )
-        : [];
+    const moduleDeclarations = (() => {
+      if (language !== "typescript") {
+        return "";
+      }
+
+      const mergedDeclarations: Record<string, Record<string, string[]>> = {};
+      for (const goody of orderedGoodies) {
+        invariant(
+          goody.language === "typescript",
+          "Goody language must match language!",
+        );
+
+        for (const [moduleName, interfaceDeclarations] of Object.entries(
+          goody.moduleDeclarations,
+        )) {
+          for (const [interfaceName, codeGroups] of Object.entries(
+            interfaceDeclarations,
+          )) {
+            ((mergedDeclarations[moduleName] ??= {})[interfaceName] ??=
+              []).push(...codeGroups);
+          }
+        }
+      }
+
+      return stringifyTypeScriptModuleDeclarations(
+        sortTypeScriptModuleAndInterfaceDeclarations(mergedDeclarations),
+      );
+    })();
 
     return [
-      globalModuleDeclarations.length > 0
-        ? `declare global {\n${globalModuleDeclarations.join("\n\n")}\n}`
-        : "",
+      moduleDeclarations,
 
       ...orderedGoodies.map((goody) => {
         invariant(

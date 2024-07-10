@@ -22,13 +22,11 @@ class ArraySlice<T> {
     return this.array[this.start + adjustedIndex];
   }
 
-  [Symbol.iterator] = function* (
-    this: ArraySlice<T>,
-  ): Generator<T, void, void> {
+  *[Symbol.iterator](this: ArraySlice<T>): Generator<T, void, void> {
     for (let i = this.start; i <= this.end; ++i) {
       yield this.array[i];
     }
-  };
+  }
 
   slide(delta: number = 1): IndexableArraySlice<T> {
     return ArraySlice.get(this.array, this.start + delta, this.end + delta);
