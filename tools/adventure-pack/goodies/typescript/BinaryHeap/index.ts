@@ -25,8 +25,12 @@ export class BinaryHeap<T> {
     return res;
   }
 
+  get size(): number {
+    return this.items.length;
+  }
+
   isEmpty(): boolean {
-    return this.items.length === 0;
+    return this.size === 0;
   }
 
   private static getParentIndex(index: number): number {

@@ -1,6 +1,8 @@
 // TODO: split util by type of util so importing the main package doesn't pull in node:fs
 import { swap } from "@code-chronicles/util/src/swap";
 
+// TODO: find a way to keep the code in sync with the BinaryHeap goody
+
 export class BinaryHeap<T> {
   private readonly items: T[] = [];
 
@@ -26,8 +28,12 @@ export class BinaryHeap<T> {
     return res;
   }
 
+  get size(): number {
+    return this.items.length;
+  }
+
   isEmpty(): boolean {
-    return this.items.length === 0;
+    return this.size === 0;
   }
 
   private static getParentIndex(index: number): number {
