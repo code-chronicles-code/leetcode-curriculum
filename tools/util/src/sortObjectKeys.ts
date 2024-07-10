@@ -1,13 +1,11 @@
-export function sortObjectKeys<TObj extends Record<PropertyKey, unknown>>(
+export function sortObjectKeys<TObj extends Record<string, unknown>>(
   obj: Readonly<TObj>,
-  compareFn: (a: keyof TObj, b: keyof TObj) => number = (
-    a: PropertyKey,
-    b: PropertyKey,
-  ): number => String(a).localeCompare(String(b)),
+  compareFn: (a: string, b: string) => number = (
+    a: string,
+    b: string,
+  ): number => a.localeCompare(b),
 ): TObj {
-  const res = {} as TObj;
-  for (const key of (Object.keys(obj) as (keyof TObj)[]).sort(compareFn)) {
-    res[key] = obj[key];
-  }
-  return res;
+  return Object.fromEntries(
+    Object.entries(obj).sort(([a], [b]) => compareFn(a, b)),
+  ) as TObj;
 }

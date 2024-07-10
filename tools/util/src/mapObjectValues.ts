@@ -1,14 +1,8 @@
-export function mapObjectValues<TKey extends PropertyKey, TVal, TOut>(
-  obj: Readonly<Record<TKey, TVal>>,
-  mapFn: (value: TVal, key: TKey) => TOut,
-): Record<TKey, TOut> {
-  const res = {} as Record<TKey, TOut>;
-
-  for (const [key, val] of Object.entries(
-    obj as unknown as Record<TKey, TVal>,
-  ) as [TKey, TVal][]) {
-    res[key] = mapFn(val, key);
-  }
-
-  return res;
+export function mapObjectValues<TIn, TOut>(
+  obj: Readonly<Record<string, TIn>>,
+  mapFn: (value: TIn, key: string) => TOut,
+): Record<string, TOut> {
+  return Object.fromEntries(
+    Object.entries(obj).map(([key, val]) => [key, mapFn(val, key)]),
+  );
 }

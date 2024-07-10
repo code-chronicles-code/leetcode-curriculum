@@ -1,7 +1,3 @@
-import type { ReadonlyDeep } from "type-fest";
-
-export function isObject(
-  obj: unknown,
-): obj is ReadonlyDeep<Record<PropertyKey, unknown>> {
+export function isObject(obj: unknown): obj is Record<string, unknown> {
   return obj != null && typeof obj === "object" && !Array.isArray(obj);
 }

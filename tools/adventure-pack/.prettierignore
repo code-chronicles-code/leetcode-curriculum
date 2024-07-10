@@ -5,5 +5,5 @@ goodies/kotlin/.gradle/
 goodies/kotlin/.kotlin/
 goodies/kotlin/build/
 
-goodies/python/.pytest_cache/
-goodies/python/.venv/
+goodies/python3/.pytest_cache/
+goodies/python3/.venv/

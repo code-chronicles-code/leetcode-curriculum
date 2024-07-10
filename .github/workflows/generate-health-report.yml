@@ -31,7 +31,9 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: gradle
-          cache-dependency-path: tools/adventure-pack/goodies/java/build.gradle.kts
+          cache-dependency-path: |
+            tools/adventure-pack/goodies/java/build.gradle.kts
+            tools/adventure-pack/goodies/kotlin/build.gradle.kts
 
       - name: Install dependencies
         run: (cd tools && yarn)

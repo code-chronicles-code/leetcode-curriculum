@@ -9,6 +9,7 @@ export { mapObjectValues } from "./mapObjectValues";
 export { mapObjectValuesAsync } from "./mapObjectValuesAsync";
 export { objectFromKeys } from "./objectFromKeys";
 export { only } from "./only";
+export { promiseAllObject } from "./promiseAllObject";
 export { promiseIdleCallback } from "./promiseIdleCallback";
 export { setIfNotHasOwnOrThrow } from "./setIfNotHasOwnOrThrow";
 export { sha512 } from "./sha512";
