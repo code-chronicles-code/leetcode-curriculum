@@ -27,12 +27,46 @@ const vanilla = {
         ignoreStringLiterals: true,
       },
     ],
+
+    "accessor-pairs": [
+      "error",
+      {
+        getWithoutSet: false,
+        setWithoutGet: true,
+        enforceForClassMembers: true,
+      },
+    ],
     "array-callback-return": [
       "error",
       { allowImplicit: false, checkForEach: true, allowVoid: false },
     ],
+    "arrow-body-style": [
+      "warn",
+      "as-needed",
+      { requireReturnForObjectLiteral: false },
+    ],
+    "block-scoped-var": "error",
+    camelcase: [
+      "warn",
+      {
+        properties: "always",
+        ignoreDestructuring: false,
+        ignoreImports: false,
+        ignoreGlobals: false,
+        allow: [],
+      },
+    ],
+    "class-methods-use-this": [
+      "warn",
+      { exceptMethods: [], enforceForClassFields: true },
+    ],
+    complexity: ["warn", { max: 20 }],
+    "consistent-return": ["error", { treatUndefinedAsUnspecified: false }],
+    "consistent-this": ["warn", "self"],
     "constructor-super": "error",
     curly: ["warn", "all"],
+    "default-case-last": "error",
+    eqeqeq: ["error", "always", { null: "never" }],
     "for-direction": "error",
     "getter-return": "error",
     "no-async-promise-executor": "error",
@@ -125,6 +159,9 @@ const vanilla = {
     "no-useless-assignment": "error",
     "no-useless-backreference": "error",
     "require-atomic-updates": "error",
+    "require-await": "error",
+    "require-yield": "error",
+    "symbol-description": "warn",
     "use-isnan": [
       "error",
       { enforceForSwitchCase: true, enforceForIndexOf: true },
@@ -138,11 +175,15 @@ const typescript = {
   files: ["**/*.ts", "**/*.tsx"],
   plugins: {
     ...vanilla.plugins,
-    "@typescript-eslint": typescriptEslintPlugin,
     "@stylistic/ts": stylisticPluginTs,
+    "@typescript-eslint": typescriptEslintPlugin,
   },
   rules: {
     ...vanilla.rules,
+
+    // In TypeScript files, use the TypeScript version of the rule.
+    "@stylistic/js/quotes": "off",
+    "@stylistic/ts/quotes": vanilla.rules["@stylistic/js/quotes"],
 
     // In TypeScript files, TypeScript itself should take care of this.
     "no-undef": "off",
@@ -156,10 +197,6 @@ const typescript = {
     // TODO: configure the additional options
     "@typescript-eslint/no-use-before-define":
       vanilla.rules["no-use-before-define"],
-
-    // In TypeScript files, use the TypeScript version of the rule.
-    "@stylistic/js/quotes": "off",
-    "@stylistic/ts/quotes": vanilla.rules["@stylistic/js/quotes"],
   },
 };
 
