@@ -18,12 +18,14 @@ export async function readGoodies(): Promise<Record<string, Python3Goody>> {
   const baseGoodiesByName: Record<string, Python3GoodyBase> = {};
 
   for (const entry of fileEntries) {
-    if (!entry.isDirectory() || entry.name.startsWith(".")) {
-      continue;
-    }
+    const moduleName = entry.name;
+    invariant(
+      entry.isDirectory(),
+      `Found non-module ${JSON.stringify(moduleName)} in Python 3 goodies directory!`,
+    );
 
     // eslint-disable-next-line no-await-in-loop
-    const baseGoody = await readBaseGoody(entry.name);
+    const baseGoody = await readBaseGoody(moduleName);
     invariant(baseGoody.name === entry.name, "Mismatched goody name!");
     setIfNotHasOwnOrThrow(baseGoodiesByName, baseGoody.name, baseGoody);
   }

@@ -530,9 +530,12 @@ import gcd_int_int.gcd
 fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b"
 `;
 
-exports[`App can render goody: Python 3 int.digits 1`] = `
-"def set_up_adventure_pack():
-    def digits(self: int, radix: int = 10):
+exports[`App can render goody: Python 3 int_digits 1`] = `
+"from typing import Generator
+
+
+def set_up_adventure_pack() -> None:
+    def digits(self: int, radix: int = 10) -> Generator[int, None, None]:
         if self < 0:
             raise ValueError("Must invoke on a non-negative integer.")
 

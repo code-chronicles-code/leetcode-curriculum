@@ -4,20 +4,22 @@ import { WritableDeep } from "type-fest";
 
 import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
 
-export const GOODIES_DIRECTORY = path.join("goodies", "python3");
+export const GOODIES_DIRECTORY = path.join("goodies", "python3", "src");
 
 export type Python3GoodyBase = Omit<WritableDeep<Python3Goody>, "importedBy">;
 
-export async function readBaseGoody(name: string): Promise<Python3GoodyBase> {
+export async function readBaseGoody(
+  moduleName: string,
+): Promise<Python3GoodyBase> {
   const code = await fsPromises.readFile(
-    path.join(GOODIES_DIRECTORY, name, "__init__.py"),
+    path.join(GOODIES_DIRECTORY, moduleName, "__init__.py"),
     "utf8",
   );
 
   return {
     code,
     imports: [],
-    name,
     language: "python3",
+    name: moduleName,
   };
 }
