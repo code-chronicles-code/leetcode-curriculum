@@ -21,7 +21,12 @@ function extractGlobalModuleDeclarations(sourceFile: TSSourceFile): string[] {
     .forEach((decl) => {
       if (decl.getName() === "global") {
         res.push(
-          decl.getBodyOrThrow().getChildSyntaxListOrThrow().getFullText(),
+          decl
+            .getBodyOrThrow()
+            .getChildSyntaxListOrThrow()
+            .getFullText()
+            .replace(/^\n+/, "")
+            .replace(/\n+$/, ""),
         );
         removeNode(decl);
       }

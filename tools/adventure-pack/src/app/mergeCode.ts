@@ -1,13 +1,8 @@
 import invariant from "invariant";
-import { format as prettierFormat } from "prettier/standalone";
-import * as prettierPluginESTree from "prettier/plugins/estree";
-import * as prettierPluginTypeScript from "prettier/plugins/typescript";
 import type { ReadonlyDeep } from "type-fest";
 
 // TODO: split util by type of util so importing the main package doesn't pull in node:fs
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/src/compareStringsCaseInsensitive";
-// TODO: split util by type of util so importing the main package doesn't pull in node:fs
-import { promiseIdleCallback } from "@code-chronicles/util/src/promiseIdleCallback";
 
 import { BinaryHeap } from "./BinaryHeap";
 import { centerTextInComment } from "./centerTextInComment";
@@ -86,19 +81,19 @@ export type Data = {
   equippedGoodies: ReadonlySet<string>;
 };
 
-export async function mergeCode({
+export function mergeCode({
   commitHash,
   goodies,
   language,
   equippedGoodies,
-}: Data): Promise<string> {
+}: Data): string {
   if (equippedGoodies.size === 0) {
     return language === "python3"
       ? "# Equip some goodies to generate your pack!"
       : "// Equip some goodies to generate your pack!";
   }
 
-  const mergedCode = await promiseIdleCallback(() => {
+  const mergedCode = (() => {
     const orderedGoodies = topo({ equippedGoodies, goodies }).map(
       (name) => goodies[name],
     );
@@ -126,7 +121,7 @@ export async function mergeCode({
 
     return [
       globalModuleDeclarations.length > 0
-        ? `declare global {\n${globalModuleDeclarations.join("\n\n")}\n}\n`
+        ? `declare global {\n${globalModuleDeclarations.join("\n\n")}\n}`
         : "",
 
       ...orderedGoodies.map((goody) => {
@@ -139,7 +134,7 @@ export async function mergeCode({
     ]
       .filter(Boolean)
       .join("\n\n");
-  });
+  })();
 
   if (language === "java") {
     return (
@@ -193,24 +188,18 @@ export async function mergeCode({
   }
 
   return (
-    await prettierFormat(
-      centerTextInComment({
-        text: "BEGIN ADVENTURE PACK CODE",
-        commentType: "//",
-      }) +
-        "\n" +
-        `// Adventure Pack commit ${commitHash}\n` +
-        `// Running at: ${window.location.href}\n\n` +
-        mergedCode.replaceAll(/^export\s+/gm, "") +
-        "\n\n" +
-        centerTextInComment({
-          text: "END ADVENTURE PACK CODE",
-          commentType: "//",
-        }),
-      {
-        parser: "typescript",
-        plugins: [prettierPluginESTree, prettierPluginTypeScript],
-      },
-    )
+    centerTextInComment({
+      text: "BEGIN ADVENTURE PACK CODE",
+      commentType: "//",
+    }) +
+    "\n" +
+    `// Adventure Pack commit ${commitHash}\n` +
+    `// Running at: ${window.location.href}\n\n` +
+    mergedCode.replaceAll(/^export\s+/gm, "") +
+    "\n\n" +
+    centerTextInComment({
+      text: "END ADVENTURE PACK CODE",
+      commentType: "//",
+    })
   ).trim();
 }
