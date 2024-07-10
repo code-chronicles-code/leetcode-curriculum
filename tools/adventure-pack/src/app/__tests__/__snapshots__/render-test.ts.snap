@@ -74,9 +74,6 @@ final class AP {
 
 exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
 "class ArraySlice {
-  array;
-  start;
-  end;
   constructor(array, start, end) {
     this.array = array;
     this.start = start;
@@ -157,7 +154,6 @@ exports[`App can render goody: JavaScript BinaryHeap 1`] = `
 "import "Array.prototype.swap";
 
 export class BinaryHeap {
-  compareFn;
   items = [];
 
   constructor(compareFn) {
