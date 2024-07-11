@@ -530,7 +530,7 @@ import gcd_int_int.gcd
 fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b"
 `;
 
-exports[`App can render goody: Python 3 int_digits 1`] = `
+exports[`App can render goody: Python 3 int.digits 1`] = `
 "from typing import Generator
 
 

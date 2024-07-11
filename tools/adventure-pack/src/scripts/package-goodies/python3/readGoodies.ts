@@ -4,11 +4,9 @@ import fsPromises from "node:fs/promises";
 
 import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
-import {
-  type Python3GoodyBase,
-  readBaseGoody,
-  GOODIES_DIRECTORY,
-} from "./readBaseGoody";
+import { GOODIES_DIRECTORY } from "./constants";
+import { type Python3GoodyBase, readBaseGoody } from "./readBaseGoody";
+import { normalizeGoodyNameToPackageOrModuleName } from "../normalizeGoodyNameToPackageOrModuleName";
 
 export async function readGoodies(): Promise<Record<string, Python3Goody>> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {
@@ -26,7 +24,15 @@ export async function readGoodies(): Promise<Record<string, Python3Goody>> {
 
     // eslint-disable-next-line no-await-in-loop
     const baseGoody = await readBaseGoody(moduleName);
-    invariant(baseGoody.name === entry.name, "Mismatched goody name!");
+
+    const expectedModuleName = normalizeGoodyNameToPackageOrModuleName(
+      baseGoody.name,
+    );
+    invariant(
+      moduleName === expectedModuleName,
+      `Mismatched module name for goody! Expected ${JSON.stringify(expectedModuleName)} based on goody name ${JSON.stringify(baseGoody.name)} but got ${JSON.stringify(moduleName)}.`,
+    );
+
     setIfNotHasOwnOrThrow(baseGoodiesByName, baseGoody.name, baseGoody);
   }
 
