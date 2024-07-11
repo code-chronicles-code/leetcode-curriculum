@@ -39,7 +39,6 @@ export async function readGoodies(): Promise<{
   const goodiesByName = fillOutImportedByAndSortImports(baseGoodiesByName);
 
   return {
-    typescript: goodiesByName,
     javascript: await mapObjectValuesAsync(
       goodiesByName,
       async (goody: TypeScriptGoody): Promise<JavaScriptGoody> => {
@@ -52,5 +51,7 @@ export async function readGoodies(): Promise<{
         };
       },
     ),
+
+    typescript: goodiesByName,
   };
 }

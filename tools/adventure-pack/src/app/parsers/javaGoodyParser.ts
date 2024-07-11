@@ -10,8 +10,8 @@ export const javaGoodyParser = goodyBaseParser
       nonBlankStringParser,
       z
         .object({
-          modifiers: z.array(nonBlankStringParser),
           code: z.string(),
+          modifiers: z.array(nonBlankStringParser),
         })
         .strict(),
     ),

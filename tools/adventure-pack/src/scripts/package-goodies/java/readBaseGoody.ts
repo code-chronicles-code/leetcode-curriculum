@@ -25,8 +25,8 @@ export async function readBaseGoody(
     codeByClass,
     imports: Array.from(imports),
     importsCode,
-    name,
     language: "java",
+    name,
     packageName,
   };
 }

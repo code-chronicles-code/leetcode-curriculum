@@ -5,7 +5,7 @@ import path from "node:path";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
-import { App } from "../app/App";
+import { App } from "../app/components/App";
 
 const exec = promisify(execWithCallback);
 

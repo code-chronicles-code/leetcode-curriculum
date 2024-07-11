@@ -24,7 +24,7 @@ export function splitCodeIntoClasses(
       modifiers.delete("public");
 
       currentClassName = classMatch[2];
-      classes[currentClassName] = { modifiers, code: [] };
+      classes[currentClassName] = { code: [], modifiers };
       continue;
     }
 

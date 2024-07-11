@@ -1,7 +1,7 @@
 import React from "react";
 
-import type { Goody } from "./Goody";
-import { goodyToText } from "./goodyToText";
+import type { Goody } from "../Goody";
+import { goodyToText } from "../goodyToText";
 import { HighlightedCode } from "./HighlightedCode";
 
 type Props = {

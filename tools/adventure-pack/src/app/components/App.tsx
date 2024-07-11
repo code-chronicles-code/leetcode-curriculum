@@ -3,13 +3,11 @@ import React, { useEffect } from "react";
 import { Checkbox } from "./Checkbox";
 import { GoodyCard } from "./GoodyCard";
 import { HighlightedCode } from "./HighlightedCode";
-import { fetchGoodies } from "./fetchGoodies";
-import type { Language } from "./Language";
-import { useMergedCode } from "./useMergedCode";
-import { useAppState } from "./useAppState";
-import { Goody } from "./Goody";
-
-import { LANGUAGE_NAMES } from "./constants";
+import { fetchGoodies } from "../fetchGoodies";
+import { useMergedCode } from "../useMergedCode";
+import { useAppState } from "../useAppState";
+import { Goody } from "../Goody";
+import { LanguageSelector } from "./LanguageSelector";
 
 function Column({
   children,
@@ -56,19 +54,19 @@ export function App({ commitHash }: Props) {
   return (
     <div
       style={{
+        alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         height: "100%",
       }}
     >
       <div
         style={{
-          flex: "0 0 auto",
-          display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          display: "flex",
+          flex: "0 0 auto",
           gap: "24px",
+          justifyContent: "space-between",
           width: "60%",
         }}
       >
@@ -95,23 +93,15 @@ export function App({ commitHash }: Props) {
         }}
       >
         <Column title="Equip Goodies" flex="0 0 auto">
-          <select
-            value={state.activeLanguage}
-            onChange={(ev) =>
+          <LanguageSelector
+            selectedLanguage={state.activeLanguage}
+            onChange={(language) =>
               dispatch({
                 type: "select-language",
-                language: ev.target.value as Language,
+                language,
               })
             }
-          >
-            {(Object.entries(LANGUAGE_NAMES) as [Language, string][]).map(
-              ([language, languageName]) => (
-                <option key={language} value={language}>
-                  {languageName}
-                </option>
-              ),
-            )}
-          </select>
+          />
           {Object.values(goodies ?? {}).map((goody) => (
             <Checkbox
               key={goody.name}
