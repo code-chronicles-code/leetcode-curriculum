@@ -32,12 +32,15 @@ const submissionParser = (() => {
   return z
     .object({
       id: positiveInt.transform(String),
+      // eslint-disable-next-line camelcase
       question_id: positiveInt,
       lang: trimmedNonEmptyString,
+      // eslint-disable-next-line camelcase
       lang_name: trimmedNonEmptyString,
       time: trimmedNonEmptyString.transform((s) => s.replace(/\u00a0/g, " ")),
       timestamp: int.nonnegative(),
       status: int,
+      // eslint-disable-next-line camelcase
       status_display: trimmedNonEmptyString,
       runtime: trimmedNonEmptyString,
       url: z
@@ -46,37 +49,56 @@ const submissionParser = (() => {
         .transform((value) =>
           new URL(value, "https://leetcode.com/").toString(),
         ),
+      // eslint-disable-next-line camelcase
       is_pending: trimmedNonEmptyString,
       title: trimmedNonEmptyString,
       memory: trimmedNonEmptyString,
       code: untrimmedNonEmptyString,
+      // eslint-disable-next-line camelcase
       compare_result: z
         .string()
         .regex(/^[01]*$/)
         .transform((value) => Array.from(value).map((c) => c === "1"))
         .nullable(),
+      // eslint-disable-next-line camelcase
       title_slug: z
         .string()
         .trim()
         .regex(/^[a-z0-9\-]+$/),
+      // eslint-disable-next-line camelcase
       has_notes: z.boolean(),
+      // eslint-disable-next-line camelcase
       flag_type: int,
     })
-    .transform(({ question_id, title, title_slug, ...rest }) => ({
-      ...rest,
-      question: {
-        questionFrontendId: question_id,
+    .transform(
+      ({
+        // eslint-disable-next-line camelcase
+        question_id,
         title,
-        titleSlug: title_slug,
-      },
-    }));
+        // eslint-disable-next-line camelcase
+        title_slug,
+        ...rest
+      }) => ({
+        ...rest,
+        question: {
+          // eslint-disable-next-line camelcase
+          questionFrontendId: question_id,
+          title,
+          // eslint-disable-next-line camelcase
+          titleSlug: title_slug,
+        },
+      }),
+    );
 })();
 
 export type Submission = z.infer<typeof submissionParser>;
 
 const submissionListParser = z.object({
+  // eslint-disable-next-line camelcase
   submissions_dump: z.array(submissionParser),
+  // eslint-disable-next-line camelcase
   has_next: z.boolean(),
+  // eslint-disable-next-line camelcase
   last_key: z.string(),
 });
 

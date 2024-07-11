@@ -9,8 +9,9 @@ import type { TransformedSubmission } from "./transformSubmission";
 export function getFilenameForSubmission({
   id,
   lang,
-  timestamp,
+  // eslint-disable-next-line camelcase
   status_display,
+  timestamp,
 }: TransformedSubmission): string {
   const extension =
     LANGUAGE_TO_FILE_EXTENSION[
@@ -19,6 +20,7 @@ export function getFilenameForSubmission({
   const date = timestampToYearMonthDay(timestamp, "");
   const resultAbbreviation = nullthrows(
     SUBMISSION_STATUS_TO_ABBREVIATION[
+      // eslint-disable-next-line camelcase
       status_display as keyof typeof SUBMISSION_STATUS_TO_ABBREVIATION
     ],
   ).toLowerCase();

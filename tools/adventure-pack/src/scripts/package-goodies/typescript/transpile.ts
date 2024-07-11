@@ -1,10 +1,10 @@
 import invariant from "invariant";
 import {
+  LanguageVariant,
+  ScriptTarget,
+  SyntaxKind,
   createScanner,
   transpile as originalTranspile,
-  LanguageVariant,
-  SyntaxKind,
-  ScriptTarget,
 } from "typescript";
 
 import { getRandomBytes } from "@code-chronicles/util";

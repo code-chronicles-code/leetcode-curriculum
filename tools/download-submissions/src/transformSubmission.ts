@@ -28,6 +28,7 @@ export type TransformedSubmission = Omit<
 
 export function transformSubmission({
   code,
+  // eslint-disable-next-line camelcase
   compare_result,
   time: _,
   ...rest
@@ -40,6 +41,7 @@ export function transformSubmission({
     submission: {
       ...rest,
       sha512: sha512(code),
+      // eslint-disable-next-line camelcase
       compare_result: compare_result?.map(Number).join("") ?? null,
     },
   };

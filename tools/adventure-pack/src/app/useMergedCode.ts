@@ -15,7 +15,7 @@ export function useMergedCode({
 
   useEffect(() => {
     if (goodies == null) {
-      return;
+      return undefined;
     }
 
     let isActive = true;

@@ -40,7 +40,7 @@ describe("Number.isIntegerOrIntegerObject", () => {
     expect(Number.isIntegerOrIntegerObject(true)).toBe(false);
     expect(Number.isIntegerOrIntegerObject(false)).toBe(false);
     expect(Number.isIntegerOrIntegerObject(Symbol("12"))).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(Symbol())).toBe(false);
+    expect(Number.isIntegerOrIntegerObject(Symbol(undefined))).toBe(false);
     expect(Number.isIntegerOrIntegerObject({})).toBe(false);
     expect(Number.isIntegerOrIntegerObject([])).toBe(false);
     expect(Number.isIntegerOrIntegerObject([12])).toBe(false);

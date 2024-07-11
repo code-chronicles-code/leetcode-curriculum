@@ -10,9 +10,9 @@ import type { JavaScriptGoody } from "../../../app/parsers/javaScriptGoodyParser
 import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
 import {
+  GOODIES_DIRECTORY,
   type TypeScriptGoodyBase,
   readBaseGoody,
-  GOODIES_DIRECTORY,
 } from "./readBaseGoody";
 import { transpile } from "./transpile";
 
