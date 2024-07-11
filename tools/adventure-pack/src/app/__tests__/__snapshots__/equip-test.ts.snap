@@ -827,6 +827,69 @@ function compareNatural(a, b) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript traverseInorder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traverseInorder(root) {
+  const stack = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseLeftChild] = stack.pop();
+    if (node) {
+      if (didTraverseLeftChild) {
+        yield node;
+      } else {
+        stack.push([node.right, false], [node, true], [node.left, false]);
+      }
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript traversePostorder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traversePostorder(root) {
+  const stack = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseChildren] = stack.pop();
+    if (node) {
+      if (didTraverseChildren) {
+        yield node;
+      } else {
+        stack.push([node, true], [node.right, false], [node.left, false]);
+      }
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript traversePreorder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traversePreorder(root) {
+  const stack = [root];
+  while (stack.length > 0) {
+    const node = stack.pop();
+    if (node) {
+      yield node;
+      stack.push(node.right, node.left);
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: Kotlin gcd(Int,Int) 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -1952,6 +2015,75 @@ function compareNatural<T>(a: T, b: T): number {
   }
 
   throw new Error("Comparing mismatched types!");
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript traverseInorder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traverseInorder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T, void, void> {
+  const stack: [T | null | undefined, boolean][] = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseLeftChild] = stack.pop()!;
+    if (node) {
+      if (didTraverseLeftChild) {
+        yield node;
+      } else {
+        stack.push([node.right, false], [node, true], [node.left, false]);
+      }
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript traversePostorder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traversePostorder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T, void, void> {
+  const stack: [T | null | undefined, boolean][] = [[root, false]];
+  while (stack.length > 0) {
+    const [node, didTraverseChildren] = stack.pop()!;
+    if (node) {
+      if (didTraverseChildren) {
+        yield node;
+      } else {
+        stack.push([node, true], [node.right, false], [node.left, false]);
+      }
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript traversePreorder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traversePreorder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T, void, void> {
+  const stack = [root];
+  while (stack.length > 0) {
+    const node = stack.pop();
+    if (node) {
+      yield node;
+      stack.push(node.right, node.left);
+    }
+  }
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
