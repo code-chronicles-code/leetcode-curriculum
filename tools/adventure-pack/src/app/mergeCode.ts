@@ -127,11 +127,11 @@ export function mergeCode({
         for (const [moduleName, interfaceDeclarations] of Object.entries(
           goody.moduleDeclarations,
         )) {
-          for (const [interfaceName, codeGroups] of Object.entries(
+          for (const [interfaceName, codeSections] of Object.entries(
             interfaceDeclarations,
           )) {
             ((mergedDeclarations[moduleName] ??= {})[interfaceName] ??=
-              []).push(...codeGroups);
+              []).push(...codeSections);
           }
         }
       }

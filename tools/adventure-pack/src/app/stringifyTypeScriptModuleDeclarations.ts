@@ -8,7 +8,7 @@ export function stringifyTypeScriptModuleDeclarations(
   return Object.entries(moduleDeclarations)
     .map(
       ([moduleName, interfaceDeclarations]) =>
-        `declare ${moduleName} {\n${stringifyTypeScriptInterfaceDeclarations(interfaceDeclarations, "  ")}\n}`,
+        `declare ${moduleName} {\n${stringifyTypeScriptInterfaceDeclarations(interfaceDeclarations, { indent: "  " })}\n}`,
     )
     .join("\n\n");
 }

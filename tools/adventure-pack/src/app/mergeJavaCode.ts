@@ -6,8 +6,7 @@ import type { JavaGoody } from "./parsers/javaGoodyParser";
 const ADVENTURE_PACK_CLASS_NAME = "AP";
 
 export function mergeJavaCode(goodies: Iterable<ReadonlyDeep<JavaGoody>>) {
-  const classes: Record<string, { code: string[]; modifiers: Set<string> }> =
-    {};
+  const classes: Record<string, { code: string[]; declaration: string }> = {};
   for (const goody of goodies) {
     for (const className of Object.keys(goody.codeByClass)) {
       invariant(
@@ -15,10 +14,10 @@ export function mergeJavaCode(goodies: Iterable<ReadonlyDeep<JavaGoody>>) {
         `Only the ${ADVENTURE_PACK_CLASS_NAME} class can exist in multiple goodies!`,
       );
 
-      classes[className] ??= { code: [], modifiers: new Set() };
-      for (const modifier of goody.codeByClass[className].modifiers) {
-        classes[className].modifiers.add(modifier);
-      }
+      classes[className] ??= {
+        code: [],
+        declaration: goody.codeByClass[className].declaration,
+      };
       classes[className].code.push(goody.codeByClass[className].code);
     }
   }
@@ -32,8 +31,13 @@ export function mergeJavaCode(goodies: Iterable<ReadonlyDeep<JavaGoody>>) {
 
   const res: string[] = [];
   for (const className of Object.keys(classes)) {
+    const classData = classes[className];
+    const codeSections = classData.code.filter(Boolean);
+
     res.push(
-      `${[...classes[className].modifiers, "class", className].join(" ")} {\n${classes[className].code.map((section) => section + "\n").join("\n")}}`,
+      codeSections.length > 0
+        ? `${classData.declaration}\n${codeSections.map((codeSection) => codeSection + "\n").join("\n")}}`
+        : classData.declaration + "}",
     );
   }
 

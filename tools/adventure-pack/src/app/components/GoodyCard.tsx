@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { Goody } from "../Goody";
-import { goodyToText } from "../goodyToText";
+import { stringifyGoody } from "../stringifyGoody";
 import { HighlightedCode } from "./HighlightedCode";
 
 type Props = {
@@ -13,7 +13,7 @@ export function GoodyCard({ goody }: Props) {
     <div>
       <h2>{goody.name}</h2>
       <HighlightedCode language={goody.language}>
-        {goodyToText(goody)}
+        {stringifyGoody(goody)}
       </HighlightedCode>
     </div>
   );
