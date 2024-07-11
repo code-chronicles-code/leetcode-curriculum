@@ -44,3 +44,5 @@ tasks.register<KtfmtFormatTask>("ktfmtCustom") {
   include("*.gradle.kts")
   include("**/*.kt")
 }
+
+// TODO: Kotlin equivalent of -Xlint:all
