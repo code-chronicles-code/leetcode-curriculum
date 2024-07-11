@@ -1,6 +1,5 @@
 import fsPromises from "node:fs/promises";
 import path from "node:path";
-import { SourceFile as TSSourceFile, SyntaxKind } from "ts-morph";
 import { WritableDeep } from "type-fest";
 
 import { stripPrefixOrThrow } from "@code-chronicles/util";
@@ -8,32 +7,11 @@ import { stripPrefixOrThrow } from "@code-chronicles/util";
 import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";
 import { createSourceFile } from "./createSourceFile";
 import { extractImports } from "./extractImports";
+import { extractModuleDeclarations } from "./extractModuleDeclarations";
 import { formatCode } from "./formatCode";
 import { removeNode } from "./removeNode";
 
 export const GOODIES_DIRECTORY = path.join("goodies", "typescript");
-
-function extractGlobalModuleDeclarations(sourceFile: TSSourceFile): string[] {
-  const res: string[] = [];
-
-  sourceFile
-    .getDescendantsOfKind(SyntaxKind.ModuleDeclaration)
-    .forEach((decl) => {
-      if (decl.getName() === "global") {
-        res.push(
-          decl
-            .getBodyOrThrow()
-            .getChildSyntaxListOrThrow()
-            .getFullText()
-            .replace(/^\n+/, "")
-            .replace(/\n+$/, ""),
-        );
-        removeNode(decl);
-      }
-    });
-
-  return res;
-}
 
 export type TypeScriptGoodyBase = Omit<
   WritableDeep<TypeScriptGoody>,
@@ -50,7 +28,7 @@ export async function readBaseGoody(
 
   const sourceFile = createSourceFile(code);
   const imports = extractImports(sourceFile);
-  const globalModuleDeclarations = extractGlobalModuleDeclarations(sourceFile);
+  const moduleDeclarations = extractModuleDeclarations(sourceFile);
 
   sourceFile.getExportDeclarations().forEach((decl) => {
     if (decl.getNamedExports().length === 0) {
@@ -62,9 +40,9 @@ export async function readBaseGoody(
 
   return {
     code: updatedCode,
-    globalModuleDeclarations,
     imports: Array.from(imports).map((im) => stripPrefixOrThrow(im, "../")),
     language: "typescript",
+    moduleDeclarations,
     name,
   };
 }

@@ -89,11 +89,11 @@ exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
     return this.array[this.start + adjustedIndex];
   }
 
-  [Symbol.iterator] = function* () {
+  *[Symbol.iterator]() {
     for (let i = this.start; i <= this.end; ++i) {
       yield this.array[i];
     }
-  };
+  }
 
   slide(delta = 1) {
     return ArraySlice.get(this.array, this.start + delta, this.end + delta);
@@ -560,14 +560,14 @@ del set_up_adventure_pack"
 
 exports[`App can render goody: TypeScript Array.prototype.slidingWindows 1`] = `
 "declare global {
-  interface ReadonlyArray<T> {
+  interface Array<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
     ): Generator<ArraySlice<T>, void, void>;
   }
 
-  interface Array<T> {
+  interface ReadonlyArray<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
@@ -599,13 +599,11 @@ class ArraySlice<T> {
     return this.array[this.start + adjustedIndex];
   }
 
-  [Symbol.iterator] = function* (
-    this: ArraySlice<T>,
-  ): Generator<T, void, void> {
+  *[Symbol.iterator](this: ArraySlice<T>): Generator<T, void, void> {
     for (let i = this.start; i <= this.end; ++i) {
       yield this.array[i];
     }
-  };
+  }
 
   slide(delta: number = 1): IndexableArraySlice<T> {
     return ArraySlice.get(this.array, this.start + delta, this.end + delta);

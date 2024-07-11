@@ -6,8 +6,10 @@ import { nonBlankStringParser } from "./nonBlankStringParser";
 
 export const typeScriptGoodyParser = goodyBaseParser.extend({
   code: nonBlankStringParser,
-  // TODO: generalize to simply declarations
-  globalModuleDeclarations: z.array(nonBlankStringParser),
+  moduleDeclarations: z.record(
+    z.string(),
+    z.record(z.string(), z.array(nonBlankStringParser)),
+  ),
   language: z.literal("typescript"),
 });
 

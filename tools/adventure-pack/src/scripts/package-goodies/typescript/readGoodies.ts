@@ -43,7 +43,7 @@ export async function readGoodies(): Promise<{
     javascript: await mapObjectValuesAsync(
       goodiesByName,
       async (goody: TypeScriptGoody): Promise<JavaScriptGoody> => {
-        const { globalModuleDeclarations: _, ...rest } = goody;
+        const { moduleDeclarations: _, ...rest } = goody;
         return {
           ...rest,
 

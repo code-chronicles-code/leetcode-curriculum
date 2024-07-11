@@ -1,5 +1,6 @@
 import type { Goody } from "./Goody";
 import { mergeJavaCode } from "./mergeJavaCode";
+import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
 
 export function goodyToText(goody: Goody): string {
   switch (goody.language) {
@@ -28,14 +29,14 @@ export function goodyToText(goody: Goody): string {
       return goody.code.trim();
     }
     case "typescript": {
+      const moduleDeclarations = stringifyTypeScriptModuleDeclarations(
+        goody.moduleDeclarations,
+      );
+
       return (
         goody.imports.map((im) => `import ${JSON.stringify(im)};\n`).join("") +
         "\n" +
-        (goody.globalModuleDeclarations.length > 0
-          ? `declare global {\n  ${goody.globalModuleDeclarations
-              .join("\n\n")
-              .trim()}\n}\n\n`
-          : "") +
+        (moduleDeclarations.length > 0 ? moduleDeclarations + "\n\n" : "") +
         goody.code
       ).trim();
     }

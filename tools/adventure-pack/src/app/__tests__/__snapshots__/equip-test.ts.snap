@@ -119,11 +119,11 @@ class ArraySlice {
     return this.array[this.start + adjustedIndex];
   }
 
-  [Symbol.iterator] = function* () {
+  *[Symbol.iterator]() {
     for (let i = this.start; i <= this.end; ++i) {
       yield this.array[i];
     }
-  };
+  }
 
   slide(delta = 1) {
     return ArraySlice.get(this.array, this.start + delta, this.end + delta);
@@ -907,14 +907,14 @@ exports[`App can equip single goody: TypeScript Array.prototype.slidingWindows 1
 // Running at: https://example.com/
 
 declare global {
-  interface ReadonlyArray<T> {
+  interface Array<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
     ): Generator<ArraySlice<T>, void, void>;
   }
 
-  interface Array<T> {
+  interface ReadonlyArray<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
@@ -946,13 +946,11 @@ class ArraySlice<T> {
     return this.array[this.start + adjustedIndex];
   }
 
-  [Symbol.iterator] = function* (
-    this: ArraySlice<T>,
-  ): Generator<T, void, void> {
+  *[Symbol.iterator](this: ArraySlice<T>): Generator<T, void, void> {
     for (let i = this.start; i <= this.end; ++i) {
       yield this.array[i];
     }
-  };
+  }
 
   slide(delta: number = 1): IndexableArraySlice<T> {
     return ArraySlice.get(this.array, this.start + delta, this.end + delta);
@@ -1181,14 +1179,12 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     every(
       this: Iterator<T>,
       callbackfn: (value: T, index: number) => unknown,
     ): boolean;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1236,14 +1232,12 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     filter(
       this: Iterator<T>,
       callbackfn: (value: T, index: number) => unknown,
     ): Generator<T, void, void>;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1290,14 +1284,12 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     find(
       this: Iterator<T>,
       callbackFn: (element: T, index: number) => boolean,
     ): T | undefined;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1345,14 +1337,12 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     forEach(
       this: Iterator<T>,
       callbackFn: (element: T, index: number) => void,
     ): void;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1397,14 +1387,12 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     map<TOut>(
       this: Iterator<T>,
       callbackFn: (element: T, index: number) => TOut,
     ): Generator<TOut, void, void>;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1449,15 +1437,13 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     max(
       this: Iterator<T>,
       compareFn?: (a: T, b: T) => number,
       options?: { nanBehavior?: "avoid" | "compare" },
     ): T | undefined;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1536,15 +1522,13 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     min(
       this: Iterator<T>,
       compareFn?: (a: T, b: T) => number,
       options?: { nanBehavior?: "avoid" | "compare" },
     ): T | undefined;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1623,14 +1607,12 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     some(
       this: Iterator<T>,
       callbackfn: (value: T, index: number) => unknown,
     ): boolean;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1678,11 +1660,9 @@ declare global {
   }
 
   interface Iterator<T> {
-    toIterable(this: Iterator<T>): IterableIterator<T>;
-  }
-
-  interface Iterator<T> {
     toArray(this: Iterator<T>): T[];
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
   }
 }
 
@@ -1814,13 +1794,13 @@ exports[`App can equip single goody: TypeScript Number.prototype.digits 1`] = `
 // Running at: https://example.com/
 
 declare global {
-  interface NumberConstructor {
-    isIntegerOrIntegerObject(num: unknown): boolean;
-  }
-
   interface Number {
     digits(this: Number): Generator<number, void, void>;
     digits(this: Number, radix: number): Generator<number, void, void>;
+  }
+
+  interface NumberConstructor {
+    isIntegerOrIntegerObject(num: unknown): boolean;
   }
 }
 
