@@ -511,9 +511,9 @@ exports[`App can render goody: JavaScript traverseInorder 1`] = `
 "export function* traverseInorder(root) {
   const stack = [[root, false]];
   while (stack.length > 0) {
-    const [node, didTraverseChildren] = stack.pop();
+    const [node, didTraverseLeftChild] = stack.pop();
     if (node) {
-      if (didTraverseChildren) {
+      if (didTraverseLeftChild) {
         yield node;
       } else {
         stack.push([node.right, false], [node, true], [node.left, false]);
@@ -1278,9 +1278,9 @@ exports[`App can render goody: TypeScript traverseInorder 1`] = `
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
   while (stack.length > 0) {
-    const [node, didTraverseChildren] = stack.pop()!;
+    const [node, didTraverseLeftChild] = stack.pop()!;
     if (node) {
-      if (didTraverseChildren) {
+      if (didTraverseLeftChild) {
         yield node;
       } else {
         stack.push([node.right, false], [node, true], [node.left, false]);
