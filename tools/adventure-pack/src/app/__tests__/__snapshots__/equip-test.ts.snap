@@ -185,6 +185,116 @@ final class AP {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: Java traverseInorder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Stack;
+
+record Pair<TFirst, TSecond>(TFirst first, TSecond second) {}
+
+interface SimpleIterator<T> {
+  public T next();
+
+  static enum HasNextState {
+    TRUE,
+    FALSE,
+    UNKNOWN,
+  }
+
+  public static <T> Iterator<T> toIterator(final SimpleIterator<T> iterator) {
+    final HasNextState[] hasNextState = { HasNextState.UNKNOWN };
+    final Object[] elementReserve = { null };
+
+    return new Iterator<T>() {
+      public boolean hasNext() {
+        if (hasNextState[0] == HasNextState.UNKNOWN) {
+          try {
+            elementReserve[0] = iterator.next();
+            hasNextState[0] = HasNextState.TRUE;
+          } catch (NoSuchElementException e) {
+            hasNextState[0] = HasNextState.FALSE;
+          }
+        }
+
+        return hasNextState[0] == HasNextState.TRUE;
+      }
+
+      public T next() {
+        if (hasNextState[0] == HasNextState.TRUE) {
+          hasNextState[0] = HasNextState.UNKNOWN;
+
+          @SuppressWarnings("unchecked")
+          T element = (T) elementReserve[0];
+
+          elementReserve[0] = null;
+          return element;
+        }
+
+        if (hasNextState[0] == HasNextState.UNKNOWN) {
+          return iterator.next();
+        }
+
+        throw new NoSuchElementException();
+      }
+    };
+  }
+}
+
+final class AP {
+  private AP() {}
+
+  public static <T> Iterable<T> toIterable(final Iterator<T> iterator) {
+    return () -> iterator;
+  }
+
+  public static Iterable<TreeNode> traverseInorder(final TreeNode root) {
+    final var stack = new Stack<Pair<TreeNode, Boolean>>();
+    stack.push(new Pair<>(root, false));
+
+    return toIterable(
+      SimpleIterator.toIterator(() -> {
+        while (!stack.isEmpty()) {
+          var nodeAndDidTraverseLeftChild = stack.pop();
+
+          var node = nodeAndDidTraverseLeftChild.first();
+          if (node == null) {
+            continue;
+          }
+
+          if (nodeAndDidTraverseLeftChild.second()) {
+            return node;
+          }
+
+          stack.push(new Pair<>(node.right, false));
+          stack.push(new Pair<>(node, true));
+          stack.push(new Pair<>(node.left, false));
+        }
+
+        throw new NoSuchElementException();
+      })
+    );
+  }
+}
+
+class TreeNode {
+  // TODO: support comments outside a class in code extraction
+
+  // TODO: don't include this class in the goody, since it's automatically defined by LeetCode
+
+  // TODO: get coreImports to be first in generated output
+
+  // TODO: alphabetize classes when merging Java code
+
+  TreeNode left, right;
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Array.prototype.slidingWindows 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
