@@ -93,7 +93,29 @@ final class AP {
 `;
 
 exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
-"class ArraySlice {
+"import "ArraySlice";
+
+Array.prototype.slidingWindows = function* (windowSize) {
+  for (
+    let win = ArraySlice.get(this, 0, windowSize - 1);
+    win != null;
+    win = win.isSuffix() ? null : win.slide()
+  ) {
+    yield win;
+  }
+};"
+`;
+
+exports[`App can render goody: JavaScript Array.prototype.swap 1`] = `
+"Array.prototype.swap = function (i, j) {
+  const tmp = this[i];
+  this[i] = this[j];
+  this[j] = tmp;
+};"
+`;
+
+exports[`App can render goody: JavaScript ArraySlice 1`] = `
+"export class ArraySlice {
   constructor(array, start, end) {
     this.array = array;
     this.start = start;
@@ -130,9 +152,9 @@ exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
   static get(array, start, end) {
     ArraySlice.proxyHandler ??= {
       get(target, property, receiver) {
-        if (typeof property === "string") {
-          const index = parseInt(property, 10);
-          if (String(index) === property) {
+        if (typeof property === "string" || typeof property === "number") {
+          const index = parseInt(String(property), 10);
+          if (String(index) === String(property)) {
             if (index < 0 || index >= receiver.length) {
               return undefined;
             }
@@ -149,25 +171,7 @@ exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
       ArraySlice.proxyHandler,
     );
   }
-}
-
-Array.prototype.slidingWindows = function* (windowSize) {
-  for (
-    let win = ArraySlice.get(this, 0, windowSize - 1);
-    win != null;
-    win = win.isSuffix() ? null : win.slide()
-  ) {
-    yield win;
-  }
-};"
-`;
-
-exports[`App can render goody: JavaScript Array.prototype.swap 1`] = `
-"Array.prototype.swap = function (i, j) {
-  const tmp = this[i];
-  this[i] = this[j];
-  this[j] = tmp;
-};"
+}"
 `;
 
 exports[`App can render goody: JavaScript BinaryHeap 1`] = `
@@ -624,31 +628,70 @@ del set_up_adventure_pack"
 `;
 
 exports[`App can render goody: TypeScript Array.prototype.slidingWindows 1`] = `
-"declare global {
+"import "ArraySlice";
+
+declare global {
   interface Array<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
-    ): Generator<ArraySlice<T>, void, void>;
+    ): Generator<IndexableArraySlice<T>, void, void>;
   }
 
   interface ReadonlyArray<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
-    ): Generator<ArraySlice<T>, void, void>;
+    ): Generator<IndexableArraySlice<T>, void, void>;
   }
 }
 
-type ArraySliceProxyHandler<T> = {
+Array.prototype.slidingWindows = function* <T>(
+  this: ReadonlyArray<T>,
+  windowSize: number,
+): Generator<IndexableArraySlice<T>, void, void> {
+  for (
+    let win: IndexableArraySlice<T> | null = ArraySlice.get(
+      this,
+      0,
+      windowSize - 1,
+    );
+    win != null;
+    win = win.isSuffix() ? null : win.slide()
+  ) {
+    yield win;
+  }
+};"
+`;
+
+exports[`App can render goody: TypeScript Array.prototype.swap 1`] = `
+"declare global {
+  interface Array<T> {
+    swap(this: T[], i: number, j: number): void;
+  }
+}
+
+Array.prototype.swap = function <T>(this: T[], i: number, j: number): void {
+  const tmp = this[i];
+  this[i] = this[j];
+  this[j] = tmp;
+};"
+`;
+
+exports[`App can render goody: TypeScript ArraySlice 1`] = `
+"type ArraySliceProxyHandler<T> = {
   get(
     target: ArraySlice<T>,
-    property: string | symbol,
+    property: PropertyKey,
     receiver: ArraySlice<T>,
   ): unknown;
 };
 
-class ArraySlice<T> {
+export type IndexableArraySlice<T> = ArraySlice<T> & {
+  [index: number]: T | undefined;
+};
+
+export class ArraySlice<T> {
   private constructor(
     public readonly array: ReadonlyArray<T>,
     public readonly start: number,
@@ -692,12 +735,12 @@ class ArraySlice<T> {
     ArraySlice.proxyHandler ??= {
       get(
         target: ArraySlice<unknown>,
-        property: string | symbol,
+        property: PropertyKey,
         receiver: ArraySlice<unknown>,
       ): unknown {
-        if (typeof property === "string") {
-          const index = parseInt(property, 10);
-          if (String(index) === property) {
+        if (typeof property === "string" || typeof property === "number") {
+          const index = parseInt(String(property), 10);
+          if (String(index) === String(property)) {
             if (index < 0 || index >= receiver.length) {
               return undefined;
             }
@@ -705,9 +748,7 @@ class ArraySlice<T> {
           }
         }
 
-        return (target as unknown as Record<string | symbol, unknown>)[
-          property
-        ];
+        return (target as unknown as Record<PropertyKey, unknown>)[property];
       },
     };
 
@@ -716,42 +757,7 @@ class ArraySlice<T> {
       ArraySlice.proxyHandler as ArraySliceProxyHandler<T>,
     ) as IndexableArraySlice<T>;
   }
-}
-
-type IndexableArraySlice<T> = ArraySlice<T> & {
-  [index: number]: T | undefined;
-};
-
-Array.prototype.slidingWindows = function* <T>(
-  this: ReadonlyArray<T>,
-  windowSize: number,
-): Generator<ArraySlice<T>, void, void> {
-  for (
-    let win: IndexableArraySlice<T> | null = ArraySlice.get(
-      this,
-      0,
-      windowSize - 1,
-    );
-    win != null;
-    win = win.isSuffix() ? null : win.slide()
-  ) {
-    yield win;
-  }
-};"
-`;
-
-exports[`App can render goody: TypeScript Array.prototype.swap 1`] = `
-"declare global {
-  interface Array<T> {
-    swap(this: T[], i: number, j: number): void;
-  }
-}
-
-Array.prototype.swap = function <T>(this: T[], i: number, j: number): void {
-  const tmp = this[i];
-  this[i] = this[j];
-  this[j] = tmp;
-};"
+}"
 `;
 
 exports[`App can render goody: TypeScript BinaryHeap 1`] = `
