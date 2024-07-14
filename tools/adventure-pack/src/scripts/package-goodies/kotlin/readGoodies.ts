@@ -48,7 +48,7 @@ export async function readGoodies(): Promise<Record<string, KotlinGoody>> {
       const importedBaseGoody = baseGoodiesByPackageName[im];
       invariant(
         importedBaseGoody != null,
-        `Unknown import ${JSON.stringify(im)} in ${importedBaseGoody.name}`,
+        `Unknown import ${JSON.stringify(im)} in goody ${JSON.stringify(baseGoody.name)}.`,
       );
       return importedBaseGoody.name;
     });

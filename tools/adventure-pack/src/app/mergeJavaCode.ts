@@ -7,7 +7,13 @@ const ADVENTURE_PACK_CLASS_NAME = "AP";
 
 export function mergeJavaCode(goodies: Iterable<ReadonlyDeep<JavaGoody>>) {
   const classes: Record<string, { code: string[]; declaration: string }> = {};
+  const coreImports: Set<string> = new Set();
+
   for (const goody of goodies) {
+    for (const im of goody.coreImports) {
+      coreImports.add(im);
+    }
+
     for (const className of Object.keys(goody.codeByClass)) {
       invariant(
         classes[className] == null || className === ADVENTURE_PACK_CLASS_NAME,
@@ -30,6 +36,10 @@ export function mergeJavaCode(goodies: Iterable<ReadonlyDeep<JavaGoody>>) {
   }
 
   const res: string[] = [];
+  if (coreImports.size > 0) {
+    res.push([...coreImports].sort().join("\n"));
+  }
+
   for (const className of Object.keys(classes)) {
     const classData = classes[className];
     const codeSections = classData.code.filter(Boolean);

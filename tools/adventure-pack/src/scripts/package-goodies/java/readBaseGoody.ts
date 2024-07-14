@@ -16,13 +16,14 @@ export async function readBaseGoody(
     readMetadata(packageName),
   ]);
 
-  const { codeWithoutImports, imports, importsCode } =
+  const { codeWithoutImports, coreImports, imports, importsCode } =
     extractJavaesqueImports(codeWithImports);
 
   const codeByClass = splitCodeIntoClasses(codeWithoutImports);
 
   return {
     codeByClass,
+    coreImports,
     imports: Array.from(imports),
     importsCode,
     language: "java",

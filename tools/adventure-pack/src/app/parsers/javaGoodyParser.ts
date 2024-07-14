@@ -15,6 +15,7 @@ export const javaGoodyParser = goodyBaseParser
         })
         .strict(),
     ),
+    coreImports: z.array(nonBlankStringParser),
     importsCode: z.string(),
     language: z.literal("java"),
     packageName: z

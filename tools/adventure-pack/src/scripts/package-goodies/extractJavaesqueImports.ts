@@ -2,10 +2,13 @@ import { getLines, isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util";
 
 export function extractJavaesqueImports(code: string): {
   codeWithoutImports: string;
+  coreImports: string[];
   imports: Set<string>;
   importsCode: string;
 } {
   const lines = Array.from(getLines(code));
+
+  const coreImports: string[] = [];
   const imports = new Set<string>();
   const importsCode: string[] = [];
 
@@ -19,6 +22,14 @@ export function extractJavaesqueImports(code: string): {
     if (packageNameMatch != null) {
       // TODO: verify that the package name matches what's expected
       lines.shift();
+      continue;
+    }
+
+    const coreImmportMatch = lines[0].match(
+      /^import\s+(?:static\s+)?(?:java|javafx|javax\.)/,
+    );
+    if (coreImmportMatch != null) {
+      coreImports.push(lines.shift()!.replace(/\n+$/, ""));
       continue;
     }
 
@@ -41,6 +52,7 @@ export function extractJavaesqueImports(code: string): {
 
   return {
     codeWithoutImports: lines.join(""),
+    coreImports,
     imports,
     importsCode: importsCode.join(""),
   };

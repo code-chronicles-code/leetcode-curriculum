@@ -78,6 +78,20 @@ final class AP {
 }"
 `;
 
+exports[`App can render goody: Java toIterable 1`] = `
+"package to_iterable;
+
+import java.util.Iterator;
+
+final class AP {
+  private AP() {}
+
+  public static <T> Iterable<T> toIterable(Iterator<T> iterator) {
+    return () -> iterator;
+  }
+}"
+`;
+
 exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
 "class ArraySlice {
   constructor(array, start, end) {
