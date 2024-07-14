@@ -2,7 +2,7 @@ import type { Goody } from "./Goody";
 import { mergeJavaCode } from "./mergeJavaCode";
 import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
 
-export function goodyToText(goody: Goody): string {
+export function stringifyGoody(goody: Goody): string {
   switch (goody.language) {
     case "java": {
       return (

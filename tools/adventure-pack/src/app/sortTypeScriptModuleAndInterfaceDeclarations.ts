@@ -12,8 +12,8 @@ export function sortTypeScriptModuleAndInterfaceDeclarations(
 ): Record<string, Record<string, string[]>> {
   return sortObjectKeysRecursive(
     mapObjectValues(moduleDeclarations, (interfaceDeclarations) =>
-      mapObjectValues(interfaceDeclarations, (codeGroups) =>
-        [...codeGroups].sort(compareStringsCaseInsensitive),
+      mapObjectValues(interfaceDeclarations, (codeSections) =>
+        [...codeSections].sort(compareStringsCaseInsensitive),
       ),
     ),
     compareStringsCaseInsensitive,

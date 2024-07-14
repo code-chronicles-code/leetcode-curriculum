@@ -11,7 +11,7 @@ export const javaGoodyParser = goodyBaseParser
       z
         .object({
           code: z.string(),
-          modifiers: z.array(nonBlankStringParser),
+          declaration: nonBlankStringParser,
         })
         .strict(),
     ),
