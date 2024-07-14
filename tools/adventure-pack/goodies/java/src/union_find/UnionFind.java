@@ -44,7 +44,11 @@ public class UnionFind {
     return parent[a] = find(parent[a]);
   }
 
-  public boolean areConnected(int a, int b) { return find(a) == find(b); }
+  public boolean areConnected(int a, int b) {
+    return find(a) == find(b);
+  }
 
-  public int components() { return components; }
+  public int components() {
+    return components;
+  }
 }

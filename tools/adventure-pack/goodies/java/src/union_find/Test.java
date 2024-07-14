@@ -25,25 +25,25 @@ class UnionFindTest {
 
   @Test
   public void componentsTracked() {
-  	UnionFind uf = new UnionFind(3);
-	assertEquals(
-		3,
-		uf.components(),
-		"There should be 3 components to start with."
-	);
+    UnionFind uf = new UnionFind(3);
+    assertEquals(
+      3,
+      uf.components(),
+      "There should be 3 components to start with."
+    );
 
-	uf.union(0,1);
-	assertEquals(
-		2,
-		uf.components(),
-		"There should be 2 components after an union of 0 and 1."
-	);
+    uf.union(0, 1);
+    assertEquals(
+      2,
+      uf.components(),
+      "There should be 2 components after an union of 0 and 1."
+    );
 
-	uf.union(0,2);
-	assertEquals(
-		1,
-		uf.components(),
-		"There should be 1 component now that we've connected all."
-	);
+    uf.union(0, 2);
+    assertEquals(
+      1,
+      uf.components(),
+      "There should be 1 component now that we've connected all."
+    );
   }
 }
