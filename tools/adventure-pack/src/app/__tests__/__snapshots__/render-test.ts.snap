@@ -147,6 +147,63 @@ final class AP {
 }"
 `;
 
+exports[`App can render goody: Java traverseInorder 1`] = `
+"package traverse_inorder;
+
+import static to_iterable.AP.*;
+
+import pair.Pair;
+import simple_iterator.SimpleIterator;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Stack;
+
+final class AP {
+  private AP() {}
+
+  public static Iterable<TreeNode> traverseInorder(final TreeNode root) {
+    final var stack = new Stack<Pair<TreeNode, Boolean>>();
+    stack.push(new Pair<>(root, false));
+
+    return toIterable(
+      SimpleIterator.toIterator(() -> {
+        while (!stack.isEmpty()) {
+          var nodeAndDidTraverseLeftChild = stack.pop();
+
+          var node = nodeAndDidTraverseLeftChild.first();
+          if (node == null) {
+            continue;
+          }
+
+          if (nodeAndDidTraverseLeftChild.second()) {
+            return node;
+          }
+
+          stack.push(new Pair<>(node.right, false));
+          stack.push(new Pair<>(node, true));
+          stack.push(new Pair<>(node.left, false));
+        }
+
+        throw new NoSuchElementException();
+      })
+    );
+  }
+}
+
+class TreeNode {
+  // TODO: support comments outside a class in code extraction
+
+  // TODO: don't include this class in the goody, since it's automatically defined by LeetCode
+
+  // TODO: get coreImports to be first in generated output
+
+  // TODO: alphabetize classes when merging Java code
+
+  TreeNode left, right;
+}"
+`;
+
 exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
 "import "ArraySlice";
 
