@@ -48,3 +48,9 @@ tasks.register<KtfmtFormatTask>("ktfmtCustom") {
   source = project.fileTree(rootDir)
   include("*.gradle.kts")
 }
+
+tasks.withType<JavaCompile> {
+  options.compilerArgs.add("-Xlint:all")
+  options.compilerArgs.add("-Werror")
+  options.isWarnings = true
+}

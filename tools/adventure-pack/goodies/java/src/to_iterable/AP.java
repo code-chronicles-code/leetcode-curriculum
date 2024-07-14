@@ -2,7 +2,7 @@ import java.util.Iterator;
 
 final class AP {
 
-  public static <T> Iterable<T> toIterable(Iterator<T> iterator) {
+  public static <T> Iterable<T> toIterable(final Iterator<T> iterator) {
     return () -> iterator;
   }
 }
