@@ -1,7 +1,6 @@
 package traverse_inorder;
 
-import static to_iterable.AP.*;
-
+import iterable_stream.IterableStream;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
@@ -10,11 +9,11 @@ import simple_iterator.SimpleIterator;
 
 public final class AP {
 
-  public static Iterable<TreeNode> traverseInorder(final TreeNode root) {
+  public static IterableStream<TreeNode> traverseInorder(final TreeNode root) {
     final var stack = new Stack<Pair<TreeNode, Boolean>>();
     stack.push(new Pair<>(root, false));
 
-    return toIterable(
+    return IterableStream.from(
       SimpleIterator.toIterator(() -> {
         while (!stack.isEmpty()) {
           var nodeAndDidTraverseLeftChild = stack.pop();

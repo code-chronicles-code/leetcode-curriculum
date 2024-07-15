@@ -1,5 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App can equip single goody: Java IterableStream 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
+interface IterableStream<T> extends Iterable<T>, Stream<T> {
+  @Override
+  public void forEach(Consumer<? super T> action);
+
+  @Override
+  public Spliterator<T> spliterator();
+
+  public static <T> IterableStream<T> from(final Iterable<T> iterable) {
+    return from(iterable.spliterator());
+  }
+
+  public static <T> IterableStream<T> from(final Iterator<T> iterator) {
+    return from(() -> iterator);
+  }
+
+  public static <T> IterableStream<T> from(final Spliterator<T> spliterator) {
+    return from(StreamSupport.stream(spliterator, false));
+  }
+
+  public static <T> IterableStream<T> from(final Stream<T> stream) {
+    @SuppressWarnings("unchecked")
+    var proxy = (IterableStream<T>) Proxy.newProxyInstance(
+      ClassLoader.getSystemClassLoader(),
+      new Class<?>[] { IterableStream.class },
+      (Object _proxy, Method method, Object[] args) ->
+        Stream.class.getMethod(
+            method.getName(),
+            method.getParameterTypes()
+          ).invoke(stream, args)
+    );
+    return proxy;
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: Java Pair 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -189,32 +239,54 @@ final class AP {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: Java toIterable 1`] = `
-"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
-// Adventure Pack commit fake-commit-hash
-// Running at: https://example.com/
-
-import java.util.Iterator;
-
-final class AP {
-  private AP() {}
-
-  public static <T> Iterable<T> toIterable(final Iterator<T> iterator) {
-    return () -> iterator;
-  }
-}
-
-/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
-`;
-
 exports[`App can equip single goody: Java traverseInorder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Spliterator;
 import java.util.Stack;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
+interface IterableStream<T> extends Iterable<T>, Stream<T> {
+  @Override
+  public void forEach(Consumer<? super T> action);
+
+  @Override
+  public Spliterator<T> spliterator();
+
+  public static <T> IterableStream<T> from(final Iterable<T> iterable) {
+    return from(iterable.spliterator());
+  }
+
+  public static <T> IterableStream<T> from(final Iterator<T> iterator) {
+    return from(() -> iterator);
+  }
+
+  public static <T> IterableStream<T> from(final Spliterator<T> spliterator) {
+    return from(StreamSupport.stream(spliterator, false));
+  }
+
+  public static <T> IterableStream<T> from(final Stream<T> stream) {
+    @SuppressWarnings("unchecked")
+    var proxy = (IterableStream<T>) Proxy.newProxyInstance(
+      ClassLoader.getSystemClassLoader(),
+      new Class<?>[] { IterableStream.class },
+      (Object _proxy, Method method, Object[] args) ->
+        Stream.class.getMethod(
+            method.getName(),
+            method.getParameterTypes()
+          ).invoke(stream, args)
+    );
+    return proxy;
+  }
+}
 
 record Pair<TFirst, TSecond>(TFirst first, TSecond second) {}
 
@@ -269,15 +341,11 @@ interface SimpleIterator<T> {
 final class AP {
   private AP() {}
 
-  public static <T> Iterable<T> toIterable(final Iterator<T> iterator) {
-    return () -> iterator;
-  }
-
-  public static Iterable<TreeNode> traverseInorder(final TreeNode root) {
+  public static IterableStream<TreeNode> traverseInorder(final TreeNode root) {
     final var stack = new Stack<Pair<TreeNode, Boolean>>();
     stack.push(new Pair<>(root, false));
 
-    return toIterable(
+    return IterableStream.from(
       SimpleIterator.toIterator(() -> {
         while (!stack.isEmpty()) {
           var nodeAndDidTraverseLeftChild = stack.pop();

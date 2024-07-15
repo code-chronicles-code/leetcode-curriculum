@@ -1,5 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App can render goody: Java IterableStream 1`] = `
+"package iterable_stream;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
+interface IterableStream<T> extends Iterable<T>, Stream<T> {
+  @Override
+  public void forEach(Consumer<? super T> action);
+
+  @Override
+  public Spliterator<T> spliterator();
+
+  public static <T> IterableStream<T> from(final Iterable<T> iterable) {
+    return from(iterable.spliterator());
+  }
+
+  public static <T> IterableStream<T> from(final Iterator<T> iterator) {
+    return from(() -> iterator);
+  }
+
+  public static <T> IterableStream<T> from(final Spliterator<T> spliterator) {
+    return from(StreamSupport.stream(spliterator, false));
+  }
+
+  public static <T> IterableStream<T> from(final Stream<T> stream) {
+    @SuppressWarnings("unchecked")
+    var proxy = (IterableStream<T>) Proxy.newProxyInstance(
+      ClassLoader.getSystemClassLoader(),
+      new Class<?>[] { IterableStream.class },
+      (Object _proxy, Method method, Object[] args) ->
+        Stream.class.getMethod(
+            method.getName(),
+            method.getParameterTypes()
+          ).invoke(stream, args)
+    );
+    return proxy;
+  }
+}"
+`;
+
 exports[`App can render goody: Java Pair 1`] = `
 "package pair;
 
@@ -155,25 +201,10 @@ final class AP {
 }"
 `;
 
-exports[`App can render goody: Java toIterable 1`] = `
-"package to_iterable;
-
-import java.util.Iterator;
-
-final class AP {
-  private AP() {}
-
-  public static <T> Iterable<T> toIterable(final Iterator<T> iterator) {
-    return () -> iterator;
-  }
-}"
-`;
-
 exports[`App can render goody: Java traverseInorder 1`] = `
 "package traverse_inorder;
 
-import static to_iterable.AP.*;
-
+import iterable_stream.IterableStream;
 import pair.Pair;
 import simple_iterator.SimpleIterator;
 
@@ -184,11 +215,11 @@ import java.util.Stack;
 final class AP {
   private AP() {}
 
-  public static Iterable<TreeNode> traverseInorder(final TreeNode root) {
+  public static IterableStream<TreeNode> traverseInorder(final TreeNode root) {
     final var stack = new Stack<Pair<TreeNode, Boolean>>();
     stack.push(new Pair<>(root, false));
 
-    return toIterable(
+    return IterableStream.from(
       SimpleIterator.toIterator(() -> {
         while (!stack.isEmpty()) {
           var nodeAndDidTraverseLeftChild = stack.pop();
