@@ -7,6 +7,8 @@ import {
   mapObjectValues,
 } from "@code-chronicles/util";
 
+const CLASSES_TO_IGNORE: ReadonlySet<string> = new Set(["TreeNode"]);
+
 export function splitCodeIntoClasses(
   code: string,
 ): Record<string, { code: string; declaration: string }> {
@@ -56,6 +58,10 @@ export function splitCodeIntoClasses(
   }
 
   invariant(currentClassName == null, "Unfinished class?");
+
+  for (const classToIgnore of CLASSES_TO_IGNORE) {
+    delete classes[classToIgnore];
+  }
 
   return mapObjectValues(classes, ({ code, declaration }) => ({
     code: code.join("").replace(/^\n+/, "").replace(/\n+$/, ""),
