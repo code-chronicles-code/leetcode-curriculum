@@ -51,8 +51,6 @@ tasks.register<KtfmtFormatTask>("ktfmtCustom") {
 
 tasks.withType<JavaCompile> {
   options.compilerArgs.add("-Xlint:all")
-  // TODO: re-enable the options once we can apply @SuppressWarnings("overloads") to
-  // IterableIntStream
-  // options.compilerArgs.add("-Werror")
+  options.compilerArgs.add("-Werror")
   options.isWarnings = true
 }
