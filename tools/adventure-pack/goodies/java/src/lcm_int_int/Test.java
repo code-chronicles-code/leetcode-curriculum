@@ -9,6 +9,6 @@ class LcmTest {
 
   @Test
   public void findsTheLcm() {
-    assertEquals(12, lcm(6, 4), "lcm(6, 4) == 12");
+    assertEquals(12, lcm(6, 4));
   }
 }
