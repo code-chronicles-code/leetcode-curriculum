@@ -1,6 +1,6 @@
 package gcd_int_int
 
-fun gcd(a: Int, b: Int): Int {
+public fun gcd(a: Int, b: Int): Int {
   var mutableA = a
   var mutableB = b
 

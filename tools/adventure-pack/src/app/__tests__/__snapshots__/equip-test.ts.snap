@@ -1387,7 +1387,7 @@ exports[`App can equip single goody: Kotlin gcd(Int,Int) 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-fun gcd(a: Int, b: Int): Int {
+public fun gcd(a: Int, b: Int): Int {
   var mutableA = a
   var mutableB = b
 
@@ -1406,7 +1406,7 @@ exports[`App can equip single goody: Kotlin lcm(Int,Int) 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-fun gcd(a: Int, b: Int): Int {
+public fun gcd(a: Int, b: Int): Int {
   var mutableA = a
   var mutableB = b
 
@@ -1417,7 +1417,7 @@ fun gcd(a: Int, b: Int): Int {
   return mutableA
 }
 
-fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b
+public fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
