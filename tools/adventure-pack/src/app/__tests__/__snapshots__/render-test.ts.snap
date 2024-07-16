@@ -744,6 +744,22 @@ exports[`App can render goody: JavaScript compareNatural 1`] = `
 }"
 `;
 
+exports[`App can render goody: JavaScript invariant 1`] = `
+"export function invariant(condition, errorMessage = "Invariant violation!") {
+  if (!condition) {
+    throw new Error(errorMessage);
+  }
+}"
+`;
+
+exports[`App can render goody: JavaScript invariantViolation 1`] = `
+"import "invariant";
+
+export function invariantViolation(errorMessage) {
+  invariant(false, errorMessage);
+}"
+`;
+
 exports[`App can render goody: JavaScript traverseInorder 1`] = `
 "export function* traverseInorder(root) {
   const stack = [[root, false]];
@@ -1518,6 +1534,25 @@ exports[`App can render goody: TypeScript compareNatural 1`] = `
   }
 
   throw new Error("Comparing mismatched types!");
+}"
+`;
+
+exports[`App can render goody: TypeScript invariant 1`] = `
+"export function invariant(
+  condition: boolean,
+  errorMessage: string = "Invariant violation!",
+): asserts condition {
+  if (!condition) {
+    throw new Error(errorMessage);
+  }
+}"
+`;
+
+exports[`App can render goody: TypeScript invariantViolation 1`] = `
+"import "invariant";
+
+export function invariantViolation(errorMessage?: string): never {
+  invariant(false, errorMessage);
 }"
 `;
 
