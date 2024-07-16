@@ -12,12 +12,6 @@ import java.util.stream.StreamSupport;
 
 public interface IterableIntStream extends Iterable<Integer>, IntStream {
   @Override
-  public void forEach(Consumer<? super Integer> action);
-
-  @Override
-  public void forEach(IntConsumer action);
-
-  @Override
   public Spliterator.OfInt spliterator();
 
   public static IterableIntStream from(final Iterable<Integer> iterable) {
