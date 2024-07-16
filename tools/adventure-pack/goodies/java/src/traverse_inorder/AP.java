@@ -38,7 +38,7 @@ public final class AP {
   }
 }
 
-private class TreeNode {
+class TreeNode {
 
   // TODO: support comments outside a class in code extraction
 
