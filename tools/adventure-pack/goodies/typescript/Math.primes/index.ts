@@ -9,7 +9,17 @@ Math.primes = function* (): Generator<number, void, void> {
 
   const oddPrimes: number[] = [];
   for (let num = 3; ; num += 2) {
-    if (oddPrimes.every((p) => num % p !== 0)) {
+    let isPrime = true;
+    for (const p of oddPrimes) {
+      if (p * p > num) {
+        break;
+      }
+      if (num % p === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+    if (isPrime) {
       yield num;
       oddPrimes.push(num);
     }
