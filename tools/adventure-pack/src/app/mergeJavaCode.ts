@@ -33,6 +33,9 @@ export function mergeJavaCode(goodies: Iterable<ReadonlyDeep<JavaGoody>>) {
     adventurePackClass.code.unshift(
       `  private ${ADVENTURE_PACK_CLASS_NAME}() {}`,
     );
+
+    delete classes[ADVENTURE_PACK_CLASS_NAME];
+    classes[ADVENTURE_PACK_CLASS_NAME] = adventurePackClass;
   }
 
   const res: string[] = [];
