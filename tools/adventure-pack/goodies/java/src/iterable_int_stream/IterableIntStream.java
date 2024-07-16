@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
+@SuppressWarnings("overloads")
 public interface IterableIntStream extends Iterable<Integer>, IntStream {
   @Override
   public Spliterator.OfInt spliterator();
