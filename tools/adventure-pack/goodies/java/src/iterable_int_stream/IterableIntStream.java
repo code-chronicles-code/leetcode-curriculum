@@ -4,12 +4,16 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Iterator;
 import java.util.Spliterator;
+import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public interface IterableIntStream extends Iterable<Integer>, IntStream {
+  @Override
+  public void forEach(Consumer<? super Integer> action);
+
   @Override
   public void forEach(IntConsumer action);
 
