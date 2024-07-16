@@ -17,7 +17,7 @@ export function splitCodeIntoClasses(
   let currentClassName: string | null = null;
   for (const line of getLines(code)) {
     const classMatch = line.match(
-      /^((?:(?:abstract|final|public)\s+)*)((?:class|enum|interface|record)\s+(\S+)\s*[{<].*)$/s,
+      /^((?:(?:abstract|final|public)\s+)*)((?:class|enum|interface|record)\s+(\S+)\s*(?:extends|implements|<|{).*)$/s,
     );
     if (classMatch != null) {
       invariant(currentClassName == null, "Top-level class nesting?");
