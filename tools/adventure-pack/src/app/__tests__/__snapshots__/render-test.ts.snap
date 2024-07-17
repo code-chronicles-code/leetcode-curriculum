@@ -814,6 +814,12 @@ export function invariantViolation(errorMessage) {
 }"
 `;
 
+exports[`App can render goody: JavaScript isNonNullish 1`] = `
+"export function isNonNullish(value) {
+  return value != null;
+}"
+`;
+
 exports[`App can render goody: JavaScript traverseInorder 1`] = `
 "export function* traverseInorder(root) {
   const stack = [[root, false]];
@@ -831,7 +837,9 @@ exports[`App can render goody: JavaScript traverseInorder 1`] = `
 `;
 
 exports[`App can render goody: JavaScript traverseLevelOrder 1`] = `
-"export function* traverseLevelOrder(root) {
+"import "isNonNullish";
+
+export function* traverseLevelOrder(root) {
   if (!root) {
     return;
   }
@@ -839,7 +847,9 @@ exports[`App can render goody: JavaScript traverseLevelOrder 1`] = `
   let level = [root];
   do {
     yield level;
-    level = level.flatMap((node) => [node.left, node.right]).filter(Boolean);
+    level = level
+      .flatMap((node) => [node.left, node.right])
+      .filter(isNonNullish);
   } while (level.length > 0);
 }"
 `;
@@ -1624,6 +1634,12 @@ export function invariantViolation(errorMessage?: string): never {
 }"
 `;
 
+exports[`App can render goody: TypeScript isNonNullish 1`] = `
+"export function isNonNullish<T>(value: T | null | undefined): value is T {
+  return value != null;
+}"
+`;
+
 exports[`App can render goody: TypeScript traverseInorder 1`] = `
 "export function* traverseInorder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
@@ -1643,7 +1659,9 @@ exports[`App can render goody: TypeScript traverseInorder 1`] = `
 `;
 
 exports[`App can render goody: TypeScript traverseLevelOrder 1`] = `
-"export function* traverseLevelOrder<
+"import "isNonNullish";
+
+export function* traverseLevelOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T[], void, void> {
   if (!root) {
@@ -1655,7 +1673,7 @@ exports[`App can render goody: TypeScript traverseLevelOrder 1`] = `
     yield level;
     level = level
       .flatMap((node) => [node.left, node.right])
-      .filter(Boolean) as T[];
+      .filter(isNonNullish);
   } while (level.length > 0);
 }"
 `;
