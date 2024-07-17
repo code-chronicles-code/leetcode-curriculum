@@ -3,6 +3,8 @@ import { z } from "zod";
 import { sleep } from "@code-chronicles/util";
 
 import { getGraphQLData } from "./getGraphQLData";
+import { questionDifficultyParser } from "./parsers/questionDifficultyParser";
+import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
 const QUERY = `
   query {
@@ -21,17 +23,14 @@ const QUERY = `
   .replace(/\s+/g, " ");
 
 const questionParser = z.object({
-  difficulty: z.enum(["Easy", "Medium", "Hard"]),
+  difficulty: questionDifficultyParser,
   questionFrontendId: z
     .string()
     .trim()
     .regex(/^[1-9][0-9]*$/)
     .transform((value) => parseInt(value, 10)),
   title: z.string().trim().min(1),
-  titleSlug: z
-    .string()
-    .trim()
-    .regex(/^[a-z0-9\-]+$/),
+  titleSlug: questionTitleSlugParser,
 });
 
 const activeDailyCodingChallengeQuestionParser = z

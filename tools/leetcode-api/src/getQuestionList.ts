@@ -1,6 +1,8 @@
 import { z } from "zod";
 
 import { getGraphQLData } from "./getGraphQLData";
+import { questionDifficultyParser } from "./parsers/questionDifficultyParser";
+import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
 const QUERY = `
   query ($categorySlug: String!, $limit: Int, $skip: Int, $filters: QuestionListFilterInput!) {
@@ -25,7 +27,7 @@ const QUERY = `
   .replace(/\s+/g, " ");
 
 const questionParser = z.object({
-  difficulty: z.enum(["Easy", "Medium", "Hard"]),
+  difficulty: questionDifficultyParser,
   isPaidOnly: z.boolean(),
   questionFrontendId: z
     .string()
@@ -33,10 +35,7 @@ const questionParser = z.object({
     .regex(/^[1-9][0-9]*$/)
     .transform((value) => parseInt(value, 10)),
   title: z.string().trim().min(1),
-  titleSlug: z
-    .string()
-    .trim()
-    .regex(/^[a-z0-9\-]+$/),
+  titleSlug: questionTitleSlugParser,
 });
 
 export type QuestionListQuestion = z.infer<typeof questionParser>;
