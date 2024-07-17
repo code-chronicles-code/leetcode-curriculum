@@ -15,9 +15,19 @@ export function splitCodeIntoClasses(
   const classes: Record<string, { code: string[]; declaration: string }> = {};
 
   let currentClassName: string | null = null;
+  const annotations = [];
   for (const line of getLines(code)) {
+    if (/^\@\S.*$/s.test(line)) {
+      invariant(
+        currentClassName == null,
+        "Top-level annotation inside a class?",
+      );
+      annotations.push(line);
+      continue;
+    }
+
     const classMatch = line.match(
-      /^((?:(?:abstract|final|public)\s+)*)((?:class|enum|interface|record)\s+(\S+)\s*[{<].*)$/s,
+      /^((?:(?:abstract|final|public)\s+)*)((?:class|enum|interface|record)\s+(\S+)\s*(?:extends|implements|<|{).*)$/s,
     );
     if (classMatch != null) {
       invariant(currentClassName == null, "Top-level class nesting?");
@@ -28,13 +38,16 @@ export function splitCodeIntoClasses(
       currentClassName = classMatch[3];
       classes[currentClassName] = {
         code: [],
-        declaration: [
-          ...Array.from(modifiers).sort(compareStringsCaseInsensitive),
-          classMatch[2].replace(/}?\n*$/, ""),
-        ]
-          .filter(Boolean)
-          .join(" "),
+        declaration:
+          annotations.join("") +
+          [
+            ...Array.from(modifiers).sort(compareStringsCaseInsensitive),
+            classMatch[2].replace(/}?\n*$/, ""),
+          ]
+            .filter(Boolean)
+            .join(" "),
       };
+      annotations.length = 0;
 
       if (/}\n*$/.test(line)) {
         currentClassName = null;
@@ -58,6 +71,7 @@ export function splitCodeIntoClasses(
   }
 
   invariant(currentClassName == null, "Unfinished class?");
+  invariant(annotations.length === 0, "Orphaned annotations?");
 
   for (const classToIgnore of CLASSES_TO_IGNORE) {
     delete classes[classToIgnore];

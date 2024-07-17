@@ -1,7 +1,7 @@
 package primes;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static primes.AP.primes;
 
 import java.util.List;
@@ -11,7 +11,7 @@ class PrimeTest {
 
   @Test
   public void generatesTheCorrectSmallPrimes() {
-    var smallPrimes = List.of(
+    int[] smallPrimes = {
       2,
       3,
       5,
@@ -28,11 +28,11 @@ class PrimeTest {
       43,
       47,
       53,
-      59
-    );
-    assertIterableEquals(
+      59,
+    };
+    assertArrayEquals(
       smallPrimes,
-      primes().limit(smallPrimes.size()).toList()
+      primes().limit(smallPrimes.length).toArray()
     );
   }
 

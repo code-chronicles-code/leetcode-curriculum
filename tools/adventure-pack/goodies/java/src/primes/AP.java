@@ -1,17 +1,17 @@
 package primes;
 
-import iterable_stream.IterableStream;
+import iterable_int_stream.IterableIntStream;
 import java.util.ArrayList;
 import java.util.List;
 import simple_iterator.SimpleIterator;
 
 public final class AP {
 
-  public static IterableStream<Integer> primes() {
+  public static IterableIntStream primes() {
     final boolean[] yieldedTwo = { false };
     final List<Integer> oddPrimes = new ArrayList<>();
 
-    return IterableStream.from(
+    return IterableIntStream.from(
       SimpleIterator.toIterator(() -> {
         if (!yieldedTwo[0]) {
           yieldedTwo[0] = true;
