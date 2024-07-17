@@ -9,6 +9,7 @@ const QUERY = `
     activeDailyCodingChallengeQuestion {
       date
       question {
+        difficulty
         questionFrontendId
         title
         titleSlug
@@ -20,6 +21,7 @@ const QUERY = `
   .replace(/\s+/g, " ");
 
 const questionParser = z.object({
+  difficulty: z.enum(["Easy", "Medium", "Hard"]),
   questionFrontendId: z
     .string()
     .trim()
