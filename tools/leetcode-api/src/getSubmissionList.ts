@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
 export const SUBMISSION_STATUS_TO_DISPLAY_TEXT: ReadonlyMap<number, string> =
   new Map([
@@ -61,10 +62,7 @@ const submissionParser = (() => {
         .transform((value) => Array.from(value).map((c) => c === "1"))
         .nullable(),
       // eslint-disable-next-line camelcase
-      title_slug: z
-        .string()
-        .trim()
-        .regex(/^[a-z0-9\-]+$/),
+      title_slug: questionTitleSlugParser,
       // eslint-disable-next-line camelcase
       has_notes: z.boolean(),
       // eslint-disable-next-line camelcase

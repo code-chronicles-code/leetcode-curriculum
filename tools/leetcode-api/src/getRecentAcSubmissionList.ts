@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { getGraphQLData } from "./getGraphQLData";
+import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
 const QUERY = `
   query ($username: String!, $limit: Int!) {
@@ -21,10 +22,7 @@ const submissionParser = z.object({
     .trim()
     .regex(/^[1-9][0-9]*$/),
   title: z.string().trim().min(1),
-  titleSlug: z
-    .string()
-    .trim()
-    .regex(/^[a-z0-9\-]+$/),
+  titleSlug: questionTitleSlugParser,
   timestamp: z
     .string()
     .trim()

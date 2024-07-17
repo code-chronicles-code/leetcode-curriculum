@@ -22,3 +22,5 @@ export {
   type Submission,
   type SubmissionList,
 } from "./getSubmissionList";
+
+export type { QuestionDifficulty } from "./parsers/questionDifficultyParser";
