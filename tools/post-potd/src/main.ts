@@ -4,6 +4,7 @@ import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } fr
 
 import { sleep } from "@code-chronicles/util";
 
+import { getPotdMessage } from "./getPotdMessage";
 import { readScriptData, writeScriptData } from "./readScriptData";
 import { readSecrets } from "./readSecrets";
 import { sendDiscordMessage } from "./sendDiscordMessage";
@@ -43,8 +44,7 @@ async function main(): Promise<void> {
       continue;
     }
 
-    const potdLink = `https://leetcode.com/problems/${potd.titleSlug}/`;
-    const message = `New LeetCode problem of the day! [${potd.questionFrontendId}. ${potd.title}](${potdLink})`;
+    const message = getPotdMessage(potd);
     // eslint-disable-next-line no-await-in-loop
     await sendDiscordMessage(secrets, message);
     // eslint-disable-next-line no-await-in-loop
