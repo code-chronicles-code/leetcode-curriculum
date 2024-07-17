@@ -808,7 +808,7 @@ exports[`App can render goody: JavaScript traversePreorder 1`] = `
 exports[`App can render goody: Kotlin gcd(Int,Int) 1`] = `
 "package gcd_int_int
 
-fun gcd(a: Int, b: Int): Int {
+public fun gcd(a: Int, b: Int): Int {
   var mutableA = a
   var mutableB = b
 
@@ -825,7 +825,7 @@ exports[`App can render goody: Kotlin lcm(Int,Int) 1`] = `
 
 import gcd_int_int.gcd
 
-fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b"
+public fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b"
 `;
 
 exports[`App can render goody: Python 3 int.digits 1`] = `

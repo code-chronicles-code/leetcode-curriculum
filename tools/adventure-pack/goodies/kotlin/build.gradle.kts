@@ -1,5 +1,6 @@
-import com.ncorti.ktfmt.gradle.tasks.*
+import com.ncorti.ktfmt.gradle.tasks.KtfmtFormatTask
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("jvm") version "2.0.0"
@@ -45,4 +46,8 @@ tasks.register<KtfmtFormatTask>("ktfmtCustom") {
   include("**/*.kt")
 }
 
-// TODO: Kotlin equivalent of -Xlint:all
+tasks.withType<KotlinCompile> {
+  compilerOptions {
+    freeCompilerArgs.addAll(listOf("-progressive", "-Xexplicit-api=strict", "-Xjsr305=strict"))
+  }
+}

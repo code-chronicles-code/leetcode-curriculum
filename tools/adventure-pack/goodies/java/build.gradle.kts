@@ -1,4 +1,4 @@
-import com.ncorti.ktfmt.gradle.tasks.*
+import com.ncorti.ktfmt.gradle.tasks.KtfmtFormatTask
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
