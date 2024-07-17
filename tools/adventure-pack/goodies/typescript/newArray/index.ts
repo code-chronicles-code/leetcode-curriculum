@@ -1,4 +1,4 @@
-import { invariant } from "../invariant";
+import { nullthrows } from "../nullthrows";
 
 export function newArray(dimensions: [], fillValue?: unknown): never;
 export function newArray<T>(dimensions: [number]): (T | null)[];
@@ -31,9 +31,7 @@ export function newArray(
   [first, ...rest]: number[],
   fillValue: unknown = null,
 ): unknown {
-  // TODO: add a nullthrows function
-  invariant(first != null, "Missing dimensions!");
-  const outer = Array(first);
+  const outer = Array(nullthrows(first, "Missing dimensions!"));
   if (rest.length === 0) {
     return outer.fill(fillValue);
   }

@@ -15,12 +15,12 @@
   "dependencies": {
     "@stylistic/eslint-plugin-js": "2.3.0",
     "@stylistic/eslint-plugin-ts": "2.3.0",
-    "@typescript-eslint/eslint-plugin": "7.16.0",
-    "@typescript-eslint/parser": "7.16.0",
+    "@typescript-eslint/eslint-plugin": "7.16.1",
+    "@typescript-eslint/parser": "7.16.1",
     "globals": "15.8.0"
   },
   "devDependencies": {
-    "eslint": "9.6.0",
-    "prettier": "3.3.2"
+    "eslint": "9.7.0",
+    "prettier": "3.3.3"
   }
 }
