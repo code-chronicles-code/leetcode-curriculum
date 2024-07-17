@@ -1,14 +1,11 @@
+import type { ActiveDailyCodingChallengeQuestion } from "@code-chronicles/leetcode-api";
+
 export function getPotdMessage({
   difficulty,
   questionFrontendId,
   title,
   titleSlug,
-}: {
-  difficulty: "Easy" | "Medium" | "Hard";
-  questionFrontendId: number;
-  title: string;
-  titleSlug: string;
-}): string {
+}: ActiveDailyCodingChallengeQuestion["question"]): string {
   const link = `https://leetcode.com/problems/${titleSlug}/`;
   const sentences = [
     `✨ New LeetCode problem of the day: [${questionFrontendId}. ${title}](${link}) ✨`,
