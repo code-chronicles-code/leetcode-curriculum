@@ -42,11 +42,7 @@ class TreeNode {
 
   // TODO: support comments outside a class in code extraction
 
-  // TODO: don't include this class in the goody, since it's automatically defined by LeetCode
-
   // TODO: get coreImports to be first in generated output
-
-  // TODO: alphabetize classes when merging Java code
 
   int val;
   TreeNode left;
