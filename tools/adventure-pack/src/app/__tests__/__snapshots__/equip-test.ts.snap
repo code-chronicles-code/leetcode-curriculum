@@ -1439,6 +1439,26 @@ function* traverseInorder(root) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript traverseLevelOrder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traverseLevelOrder(root) {
+  if (!root) {
+    return;
+  }
+
+  let level = [root];
+  while (level.length > 0) {
+    yield level;
+    level = level.flatMap((node) => [node.left, node.right].filter(Boolean));
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript traversePostorder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -1512,8 +1532,7 @@ public fun gcd(a: Int, b: Int): Int {
     mutableB = (mutableA % mutableB).also { mutableA = mutableB }
   }
 
-  return mutableA
-}
+import gcd_int_int.gcd
 
 public fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b
 
@@ -2762,6 +2781,30 @@ function* traverseInorder<
         stack.push([node.right, false], [node, true], [node.left, false]);
       }
     }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript traverseLevelOrder 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traverseLevelOrder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T[], void, void> {
+  if (!root) {
+    return;
+  }
+
+  let level = [root];
+  while (level.length > 0) {
+    yield level;
+    level = level.flatMap(
+      (node) => [node.left, node.right].filter(Boolean) as T[],
+    );
   }
 }
 

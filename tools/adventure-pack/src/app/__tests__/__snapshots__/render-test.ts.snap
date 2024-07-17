@@ -830,6 +830,20 @@ exports[`App can render goody: JavaScript traverseInorder 1`] = `
 }"
 `;
 
+exports[`App can render goody: JavaScript traverseLevelOrder 1`] = `
+"export function* traverseLevelOrder(root) {
+  if (!root) {
+    return;
+  }
+
+  let level = [root];
+  while (level.length > 0) {
+    yield level;
+    level = level.flatMap((node) => [node.left, node.right].filter(Boolean));
+  }
+}"
+`;
+
 exports[`App can render goody: JavaScript traversePostorder 1`] = `
 "export function* traversePostorder(root) {
   const stack = [[root, false]];
@@ -876,6 +890,8 @@ public fun gcd(a: Int, b: Int): Int {
 
 exports[`App can render goody: Kotlin lcm(Int,Int) 1`] = `
 "package lcm_int_int
+
+package lcm_int_int
 
 import gcd_int_int.gcd
 
@@ -1624,6 +1640,24 @@ exports[`App can render goody: TypeScript traverseInorder 1`] = `
         stack.push([node.right, false], [node, true], [node.left, false]);
       }
     }
+  }
+}"
+`;
+
+exports[`App can render goody: TypeScript traverseLevelOrder 1`] = `
+"export function* traverseLevelOrder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T[], void, void> {
+  if (!root) {
+    return;
+  }
+
+  let level = [root];
+  while (level.length > 0) {
+    yield level;
+    level = level.flatMap(
+      (node) => [node.left, node.right].filter(Boolean) as T[],
+    );
   }
 }"
 `;
