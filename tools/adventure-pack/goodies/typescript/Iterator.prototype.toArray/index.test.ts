@@ -9,10 +9,16 @@ import "../Iterator.prototype.map";
 import "./index";
 
 describe("Iterator.prototype.toArray", () => {
-  it("converts an iterator to an array", () => {
-    expect(
-      [1, 1, "a", 2, "b", "b", 3, "c"][Symbol.iterator]().toArray(),
-    ).toEqual([1, 1, "a", 2, "b", "b", 3, "c"]);
+  it("copies an array", () => {
+    const originalArray = [1, 1, "a", 2, "b", "b", 3, "c", -7, new Set()];
+    const iteratorToArray = originalArray.values().toArray();
+
+    expect(iteratorToArray).not.toBe(originalArray);
+    expect(iteratorToArray).toEqual(originalArray);
+  });
+
+  it("converts a Set's values() to an array", () => {
+    expect(new Set("hello").values().toArray()).toEqual(["h", "e", "l", "o"]);
   });
 
   it("returns an empty array for an empty iterator", () => {
@@ -20,12 +26,12 @@ describe("Iterator.prototype.toArray", () => {
   });
 
   it("can chain with other iterator methods", () => {
-    const iterator = [1, 2, 3, 4, 5].values();
     expect(
-      iterator
+      [4, 1, 2, 5, 3]
+        .values()
         .map((x) => x ** 2)
         .filter((x) => x % 2 === 0)
         .toArray(),
-    ).toEqual([4, 16]);
+    ).toEqual([16, 4]);
   });
 });
