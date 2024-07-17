@@ -1,4 +1,4 @@
-package traverse_inorder;
+package traverse_in_order;
 
 import iterable_stream.IterableStream;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import simple_iterator.SimpleIterator;
 
 public final class AP {
 
-  public static IterableStream<TreeNode> traverseInorder(final TreeNode root) {
+  public static IterableStream<TreeNode> traverseInOrder(final TreeNode root) {
     final var stack = new Stack<Pair<TreeNode, Boolean>>();
     stack.push(new Pair<>(root, false));
 

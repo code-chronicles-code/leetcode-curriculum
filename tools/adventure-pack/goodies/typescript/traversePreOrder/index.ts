@@ -1,4 +1,4 @@
-export function* traversePreorder<
+export function* traversePreOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack = [root];
