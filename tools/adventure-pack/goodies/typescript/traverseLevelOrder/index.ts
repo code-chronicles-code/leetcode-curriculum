@@ -6,10 +6,10 @@ export function* traverseLevelOrder<
   }
 
   let level = [root];
-  while (level.length > 0) {
+  do {
     yield level;
-    level = level.flatMap(
-      (node) => [node.left, node.right].filter(Boolean) as T[],
-    );
-  }
+    level = level
+      .flatMap((node) => [node.left, node.right])
+      .filter(Boolean) as T[];
+  } while (level.length > 0);
 }
