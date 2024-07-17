@@ -830,6 +830,20 @@ exports[`App can render goody: JavaScript traverseInorder 1`] = `
 }"
 `;
 
+exports[`App can render goody: JavaScript traverseLevelOrder 1`] = `
+"export function* traverseLevelOrder(root) {
+  if (!root) {
+    return;
+  }
+
+  let level = [root];
+  do {
+    yield level;
+    level = level.flatMap((node) => [node.left, node.right]).filter(Boolean);
+  } while (level.length > 0);
+}"
+`;
+
 exports[`App can render goody: JavaScript traversePostorder 1`] = `
 "export function* traversePostorder(root) {
   const stack = [[root, false]];
@@ -1625,6 +1639,24 @@ exports[`App can render goody: TypeScript traverseInorder 1`] = `
       }
     }
   }
+}"
+`;
+
+exports[`App can render goody: TypeScript traverseLevelOrder 1`] = `
+"export function* traverseLevelOrder<
+  T extends { left?: T | null | undefined; right?: T | null | undefined },
+>(root: T | null | undefined): Generator<T[], void, void> {
+  if (!root) {
+    return;
+  }
+
+  let level = [root];
+  do {
+    yield level;
+    level = level
+      .flatMap((node) => [node.left, node.right])
+      .filter(Boolean) as T[];
+  } while (level.length > 0);
 }"
 `;
 
