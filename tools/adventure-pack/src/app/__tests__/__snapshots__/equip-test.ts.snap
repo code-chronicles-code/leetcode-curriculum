@@ -446,7 +446,7 @@ final class AP {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: Java traverseInorder 1`] = `
+exports[`App can equip single goody: Java traverseInOrder() 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
@@ -548,7 +548,7 @@ interface SimpleIterator<T> {
 final class AP {
   private AP() {}
 
-  public static IterableStream<TreeNode> traverseInorder(final TreeNode root) {
+  public static IterableStream<TreeNode> traverseInOrder(final TreeNode root) {
     final var stack = new Stack<Pair<TreeNode, Boolean>>();
     stack.push(new Pair<>(root, false));
 
@@ -868,10 +868,10 @@ iteratorPrototype.toIterable = function () {
   return this;
 };
 
-iteratorPrototype.every ??= function (callbackfn) {
+iteratorPrototype.every ??= function (callbackFn) {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (!callbackfn(element, index)) {
+    if (!callbackFn(element, index)) {
       return false;
     }
     ++index;
@@ -1151,10 +1151,10 @@ iteratorPrototype.toIterable = function () {
   return this;
 };
 
-iteratorPrototype.some ??= function (callbackfn) {
+iteratorPrototype.some ??= function (callbackFn) {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (callbackfn(element, index)) {
+    if (callbackFn(element, index)) {
       return true;
     }
     ++index;
@@ -1429,12 +1429,12 @@ function isNonNullish(value) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: JavaScript traverseInorder 1`] = `
+exports[`App can equip single goody: JavaScript traverseInOrder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function* traverseInorder(root) {
+function* traverseInOrder(root) {
   const stack = [[root, false]];
   while (stack.length > 0) {
     const [node, didTraverseLeftChild] = stack.pop();
@@ -1477,12 +1477,12 @@ function* traverseLevelOrder(root) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: JavaScript traversePostorder 1`] = `
+exports[`App can equip single goody: JavaScript traversePostOrder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function* traversePostorder(root) {
+function* traversePostOrder(root) {
   const stack = [[root, false]];
   while (stack.length > 0) {
     const [node, didTraverseChildren] = stack.pop();
@@ -1499,12 +1499,12 @@ function* traversePostorder(root) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: JavaScript traversePreorder 1`] = `
+exports[`App can equip single goody: JavaScript traversePreOrder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function* traversePreorder(root) {
+function* traversePreOrder(root) {
   const stack = [root];
   while (stack.length > 0) {
     const node = stack.pop();
@@ -1958,7 +1958,7 @@ declare global {
   interface Iterator<T> {
     every(
       this: Iterator<T>,
-      callbackfn: (value: T, index: number) => unknown,
+      callbackFn: (value: T, index: number) => unknown,
     ): boolean;
 
     toIterable(this: Iterator<T>): IterableIterator<T>;
@@ -1983,11 +1983,11 @@ iteratorPrototype.toIterable = function <T>(
 
 iteratorPrototype.every ??= function <T>(
   this: Iterator<T>,
-  callbackfn: (element: T, index: number) => unknown,
+  callbackFn: (element: T, index: number) => unknown,
 ): boolean {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (!callbackfn(element, index)) {
+    if (!callbackFn(element, index)) {
       return false;
     }
     ++index;
@@ -2386,7 +2386,7 @@ declare global {
   interface Iterator<T> {
     some(
       this: Iterator<T>,
-      callbackfn: (value: T, index: number) => unknown,
+      callbackFn: (value: T, index: number) => unknown,
     ): boolean;
 
     toIterable(this: Iterator<T>): IterableIterator<T>;
@@ -2411,11 +2411,11 @@ iteratorPrototype.toIterable = function <T>(
 
 iteratorPrototype.some ??= function <T>(
   this: Iterator<T>,
-  callbackfn: (element: T, index: number) => unknown,
+  callbackFn: (element: T, index: number) => unknown,
 ): boolean {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (callbackfn(element, index)) {
+    if (callbackFn(element, index)) {
       return true;
     }
     ++index;
@@ -2794,12 +2794,12 @@ function isNonNullish<T>(value: T | null | undefined): value is T {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: TypeScript traverseInorder 1`] = `
+exports[`App can equip single goody: TypeScript traverseInOrder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function* traverseInorder<
+function* traverseInOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
@@ -2846,12 +2846,12 @@ function* traverseLevelOrder<
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: TypeScript traversePostorder 1`] = `
+exports[`App can equip single goody: TypeScript traversePostOrder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function* traversePostorder<
+function* traversePostOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
@@ -2870,12 +2870,12 @@ function* traversePostorder<
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: TypeScript traversePreorder 1`] = `
+exports[`App can equip single goody: TypeScript traversePreOrder 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function* traversePreorder<
+function* traversePreOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack = [root];

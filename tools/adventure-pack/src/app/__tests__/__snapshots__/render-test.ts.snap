@@ -305,8 +305,8 @@ final class AP {
 }"
 `;
 
-exports[`App can render goody: Java traverseInorder 1`] = `
-"package traverse_inorder;
+exports[`App can render goody: Java traverseInOrder() 1`] = `
+"package traverse_in_order;
 
 import iterable_stream.IterableStream;
 import pair.Pair;
@@ -319,7 +319,7 @@ import java.util.Stack;
 final class AP {
   private AP() {}
 
-  public static IterableStream<TreeNode> traverseInorder(final TreeNode root) {
+  public static IterableStream<TreeNode> traverseInOrder(final TreeNode root) {
     final var stack = new Stack<Pair<TreeNode, Boolean>>();
     stack.push(new Pair<>(root, false));
 
@@ -527,10 +527,10 @@ exports[`App can render goody: JavaScript Iterator.prototype.every 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
 
-iteratorPrototype.every ??= function (callbackfn) {
+iteratorPrototype.every ??= function (callbackFn) {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (!callbackfn(element, index)) {
+    if (!callbackFn(element, index)) {
       return false;
     }
     ++index;
@@ -654,10 +654,10 @@ exports[`App can render goody: JavaScript Iterator.prototype.some 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
 
-iteratorPrototype.some ??= function (callbackfn) {
+iteratorPrototype.some ??= function (callbackFn) {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (callbackfn(element, index)) {
+    if (callbackFn(element, index)) {
       return true;
     }
     ++index;
@@ -820,8 +820,8 @@ exports[`App can render goody: JavaScript isNonNullish 1`] = `
 }"
 `;
 
-exports[`App can render goody: JavaScript traverseInorder 1`] = `
-"export function* traverseInorder(root) {
+exports[`App can render goody: JavaScript traverseInOrder 1`] = `
+"export function* traverseInOrder(root) {
   const stack = [[root, false]];
   while (stack.length > 0) {
     const [node, didTraverseLeftChild] = stack.pop();
@@ -854,8 +854,8 @@ export function* traverseLevelOrder(root) {
 }"
 `;
 
-exports[`App can render goody: JavaScript traversePostorder 1`] = `
-"export function* traversePostorder(root) {
+exports[`App can render goody: JavaScript traversePostOrder 1`] = `
+"export function* traversePostOrder(root) {
   const stack = [[root, false]];
   while (stack.length > 0) {
     const [node, didTraverseChildren] = stack.pop();
@@ -870,8 +870,8 @@ exports[`App can render goody: JavaScript traversePostorder 1`] = `
 }"
 `;
 
-exports[`App can render goody: JavaScript traversePreorder 1`] = `
-"export function* traversePreorder(root) {
+exports[`App can render goody: JavaScript traversePreOrder 1`] = `
+"export function* traversePreOrder(root) {
   const stack = [root];
   while (stack.length > 0) {
     const node = stack.pop();
@@ -1171,18 +1171,18 @@ declare global {
   interface Iterator<T> {
     every(
       this: Iterator<T>,
-      callbackfn: (value: T, index: number) => unknown,
+      callbackFn: (value: T, index: number) => unknown,
     ): boolean;
   }
 }
 
 iteratorPrototype.every ??= function <T>(
   this: Iterator<T>,
-  callbackfn: (element: T, index: number) => unknown,
+  callbackFn: (element: T, index: number) => unknown,
 ): boolean {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (!callbackfn(element, index)) {
+    if (!callbackFn(element, index)) {
       return false;
     }
     ++index;
@@ -1380,18 +1380,18 @@ declare global {
   interface Iterator<T> {
     some(
       this: Iterator<T>,
-      callbackfn: (value: T, index: number) => unknown,
+      callbackFn: (value: T, index: number) => unknown,
     ): boolean;
   }
 }
 
 iteratorPrototype.some ??= function <T>(
   this: Iterator<T>,
-  callbackfn: (element: T, index: number) => unknown,
+  callbackFn: (element: T, index: number) => unknown,
 ): boolean {
   let index = 0;
   for (const element of this.toIterable()) {
-    if (callbackfn(element, index)) {
+    if (callbackFn(element, index)) {
       return true;
     }
     ++index;
@@ -1640,8 +1640,8 @@ exports[`App can render goody: TypeScript isNonNullish 1`] = `
 }"
 `;
 
-exports[`App can render goody: TypeScript traverseInorder 1`] = `
-"export function* traverseInorder<
+exports[`App can render goody: TypeScript traverseInOrder 1`] = `
+"export function* traverseInOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
@@ -1678,8 +1678,8 @@ export function* traverseLevelOrder<
 }"
 `;
 
-exports[`App can render goody: TypeScript traversePostorder 1`] = `
-"export function* traversePostorder<
+exports[`App can render goody: TypeScript traversePostOrder 1`] = `
+"export function* traversePostOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
@@ -1696,8 +1696,8 @@ exports[`App can render goody: TypeScript traversePostorder 1`] = `
 }"
 `;
 
-exports[`App can render goody: TypeScript traversePreorder 1`] = `
-"export function* traversePreorder<
+exports[`App can render goody: TypeScript traversePreOrder 1`] = `
+"export function* traversePreOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack = [root];
