@@ -1,0 +1,39 @@
+name: Update LeetCode problem data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-problem-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: tools/yarn.lock
+
+      - name: Install dependencies
+        run: (cd tools && yarn)
+
+      - name: Get LeetCode problem list
+        run: (cd tools/get-problem-list && yarn start) && mv -f tools/get-problem-list/problems.jsonl archive/
+
+      - name: Create or update PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: leetcode-problem-list-auto-update
+          title: Update LeetCode problem data
+          commit-message: Update LeetCode problem data
+          body: ""
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
