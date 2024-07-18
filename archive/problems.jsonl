@@ -3186,3 +3186,36 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3186,"title":"Maximum Total Damage With Spell Casting","titleSlug":"maximum-total-damage-with-spell-casting"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3187,"title":"Peaks in Array","titleSlug":"peaks-in-array"}
 {"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3188,"title":"Find Top Scoring Students II","titleSlug":"find-top-scoring-students-ii"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3189,"title":"Minimum Moves to Get a Peaceful Board","titleSlug":"minimum-moves-to-get-a-peaceful-board"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3190,"title":"Find Minimum Operations to Make All Elements Divisible by Three","titleSlug":"find-minimum-operations-to-make-all-elements-divisible-by-three"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3191,"title":"Minimum Operations to Make Binary Array Elements Equal to One I","titleSlug":"minimum-operations-to-make-binary-array-elements-equal-to-one-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3192,"title":"Minimum Operations to Make Binary Array Elements Equal to One II","titleSlug":"minimum-operations-to-make-binary-array-elements-equal-to-one-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3193,"title":"Count the Number of Inversions","titleSlug":"count-the-number-of-inversions"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3194,"title":"Minimum Average of Smallest and Largest Elements","titleSlug":"minimum-average-of-smallest-and-largest-elements"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3195,"title":"Find the Minimum Area to Cover All Ones I","titleSlug":"find-the-minimum-area-to-cover-all-ones-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3196,"title":"Maximize Total Cost of Alternating Subarrays","titleSlug":"maximize-total-cost-of-alternating-subarrays"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3197,"title":"Find the Minimum Area to Cover All Ones II","titleSlug":"find-the-minimum-area-to-cover-all-ones-ii"}
+{"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3198,"title":"Find Cities in Each State","titleSlug":"find-cities-in-each-state"}
+{"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3199,"title":"Count Triplets with Even XOR Set Bits I","titleSlug":"count-triplets-with-even-xor-set-bits-i"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3200,"title":"Maximum Height of a Triangle","titleSlug":"maximum-height-of-a-triangle"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3201,"title":"Find the Maximum Length of Valid Subsequence I","titleSlug":"find-the-maximum-length-of-valid-subsequence-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3202,"title":"Find the Maximum Length of Valid Subsequence II","titleSlug":"find-the-maximum-length-of-valid-subsequence-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3203,"title":"Find Minimum Diameter After Merging Two Trees","titleSlug":"find-minimum-diameter-after-merging-two-trees"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3204,"title":"Bitwise User Permissions Analysis","titleSlug":"bitwise-user-permissions-analysis"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3205,"title":"Maximum Array Hopping Score I","titleSlug":"maximum-array-hopping-score-i"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3206,"title":"Alternating Groups I","titleSlug":"alternating-groups-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3207,"title":"Maximum Points After Enemy Battles","titleSlug":"maximum-points-after-enemy-battles"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3208,"title":"Alternating Groups II","titleSlug":"alternating-groups-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3209,"title":"Number of Subarrays With AND Value of K","titleSlug":"number-of-subarrays-with-and-value-of-k"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3210,"title":"Find the Encrypted String","titleSlug":"find-the-encrypted-string"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3211,"title":"Generate Binary Strings Without Adjacent Zeros","titleSlug":"generate-binary-strings-without-adjacent-zeros"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3212,"title":"Count Submatrices With Equal Frequency of X and Y","titleSlug":"count-submatrices-with-equal-frequency-of-x-and-y"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3213,"title":"Construct String with Minimum Cost","titleSlug":"construct-string-with-minimum-cost"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3214,"title":"Year on Year Growth Rate","titleSlug":"year-on-year-growth-rate"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3215,"title":"Count Triplets with Even XOR Set Bits II","titleSlug":"count-triplets-with-even-xor-set-bits-ii"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3216,"title":"Lexicographically Smallest String After a Swap","titleSlug":"lexicographically-smallest-string-after-a-swap"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3217,"title":"Delete Nodes From Linked List Present in Array","titleSlug":"delete-nodes-from-linked-list-present-in-array"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3218,"title":"Minimum Cost for Cutting Cake I","titleSlug":"minimum-cost-for-cutting-cake-i"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3219,"title":"Minimum Cost for Cutting Cake II","titleSlug":"minimum-cost-for-cutting-cake-ii"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3220,"title":"Odd and Even Transactions","titleSlug":"odd-and-even-transactions"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3221,"title":"Maximum Array Hopping Score II","titleSlug":"maximum-array-hopping-score-ii"}
