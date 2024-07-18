@@ -1391,7 +1391,7 @@ exports[`App can equip single goody: JavaScript console.meow 1`] = `
 // Running at: https://example.com/
 
 console.meow = function () {
-  console.log.apply(this, ["😺", ...arguments]);
+  console.log.call(this, "😺", ...arguments);
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -2809,7 +2809,7 @@ declare global {
 }
 
 console.meow = function () {
-  console.log.apply(this, ["😺", ...arguments]);
+  console.log.call(this, "😺", ...arguments);
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"

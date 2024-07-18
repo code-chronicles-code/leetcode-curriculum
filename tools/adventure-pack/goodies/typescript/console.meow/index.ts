@@ -5,7 +5,7 @@ declare global {
 }
 
 console.meow = function () {
-  console.log.apply(this, ["😺", ...arguments]);
+  console.log.call(this, "😺", ...arguments);
 };
 
 // Needed to fix the error "Augmentations for the global scope can only be directly nested in external modules or ambient module declarations. ts(2669)"

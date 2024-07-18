@@ -800,7 +800,7 @@ exports[`App can render goody: JavaScript compareNatural 1`] = `
 
 exports[`App can render goody: JavaScript console.meow 1`] = `
 "console.meow = function () {
-  console.log.apply(this, ["😺", ...arguments]);
+  console.log.call(this, "😺", ...arguments);
 };"
 `;
 
@@ -1653,7 +1653,7 @@ exports[`App can render goody: TypeScript console.meow 1`] = `
 }
 
 console.meow = function () {
-  console.log.apply(this, ["😺", ...arguments]);
+  console.log.call(this, "😺", ...arguments);
 };"
 `;
 
