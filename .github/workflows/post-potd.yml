@@ -7,16 +7,17 @@ on:
     # before the new problem of the day is available, it will simply sleep
     # until it is. And since we only post once per day thanks to the cache,
     # this shouldn't result in any duplicate posts.
-    - cron: "0 23 * * *"
+    # See also: https://crontab.guru/
+    - cron: 0 23 * * *
 
-  # Allows running this workflow manually from the Actions tab.
+  # Allows running this workflow manually from the repository's Actions tab.
   workflow_dispatch:
 
-# Allow only one concurrent deployment, skipping runs queued between the run
-# in-progress and latest queued. However, do NOT cancel in-progress runs as
-# we want to allow these production deployments to complete.
+# Allow only one concurrent run, skipping runs queued between the run
+# in-progress and latest queued. However, do NOT cancel in-progress runs as we
+# want to allow them to complete.
 concurrency:
-  group: "post-potd"
+  group: post-potd
   cancel-in-progress: false
 
 jobs:
