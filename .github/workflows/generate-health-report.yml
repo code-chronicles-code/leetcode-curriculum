@@ -22,18 +22,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      #          cache: yarn
-      #          cache-dependency-path: tools/yarn.lock
+          cache: yarn
+          cache-dependency-path: tools/yarn.lock
 
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
-      #          cache: gradle
-      #          cache-dependency-path: |
-      #            tools/adventure-pack/goodies/java/build.gradle.kts
-      #            tools/adventure-pack/goodies/kotlin/build.gradle.kts
+          cache: gradle
+          cache-dependency-path: |
+            tools/adventure-pack/goodies/java/build.gradle.kts
+            tools/adventure-pack/goodies/kotlin/build.gradle.kts
 
       - name: Install dependencies
         run: (cd tools && yarn)
