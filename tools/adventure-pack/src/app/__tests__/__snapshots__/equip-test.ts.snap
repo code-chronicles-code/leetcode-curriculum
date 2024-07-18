@@ -1316,6 +1316,104 @@ Object.getUnsafe = function (obj, properties) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Object.prototype.entries 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.map ??= function* (callbackFn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    yield callbackFn(element, index);
+    ++index;
+  }
+};
+
+Object.prototype.keys = function* () {
+  for (const key in this) {
+    if (Object.hasOwn(this, key)) {
+      yield key;
+    }
+  }
+};
+
+Object.prototype.entries = function () {
+  return this.keys().map((k) => [k, this[k]]);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Object.prototype.keys 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Object.prototype.keys = function* () {
+  for (const key in this) {
+    if (Object.hasOwn(this, key)) {
+      yield key;
+    }
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Object.prototype.values 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.map ??= function* (callbackFn) {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    yield callbackFn(element, index);
+    ++index;
+  }
+};
+
+Object.prototype.keys = function* () {
+  for (const key in this) {
+    if (Object.hasOwn(this, key)) {
+      yield key;
+    }
+  }
+};
+
+Object.prototype.values = function () {
+  return this.keys().map((k) => this[k]);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Object.setUnsafe 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2685,6 +2783,176 @@ Object.getUnsafe = function (
     res = (res as Record<string, unknown>)[property];
   }
   return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Object.prototype.entries 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    map<TOut>(
+      this: Iterator<T>,
+      callbackFn: (element: T, index: number) => TOut,
+    ): Generator<TOut, void, void>;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Object {
+    entries<T extends {}>(
+      this: T,
+    ): Generator<{ [K in keyof T]: [K, T[K]] }[keyof T], void, void>;
+
+    keys<T extends {}>(this: T): Generator<keyof T, void, void>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.map ??= function* <TIn, TOut>(
+  this: Iterator<TIn>,
+  callbackFn: (element: TIn, index: number) => TOut,
+): Generator<TOut, void, void> {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    yield callbackFn(element, index);
+    ++index;
+  }
+};
+
+Object.prototype.keys = function* <T extends {}>(
+  this: T,
+): Generator<keyof T, void, void> {
+  for (const key in this) {
+    if (Object.hasOwn(this, key)) {
+      yield key;
+    }
+  }
+};
+
+Object.prototype.entries = function <T extends {}>(
+  this: T,
+): Generator<{ [K in keyof T]: [K, T[K]] }[keyof T], void, void> {
+  return this.keys().map((k) => [k, this[k]]);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Object.prototype.keys 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Object {
+    keys<T extends {}>(this: T): Generator<keyof T, void, void>;
+  }
+}
+
+Object.prototype.keys = function* <T extends {}>(
+  this: T,
+): Generator<keyof T, void, void> {
+  for (const key in this) {
+    if (Object.hasOwn(this, key)) {
+      yield key;
+    }
+  }
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Object.prototype.values 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    map<TOut>(
+      this: Iterator<T>,
+      callbackFn: (element: T, index: number) => TOut,
+    ): Generator<TOut, void, void>;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface Object {
+    keys<T extends {}>(this: T): Generator<keyof T, void, void>;
+
+    values<T extends {}>(this: T): Generator<T[keyof T], void, void>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.map ??= function* <TIn, TOut>(
+  this: Iterator<TIn>,
+  callbackFn: (element: TIn, index: number) => TOut,
+): Generator<TOut, void, void> {
+  let index = 0;
+  for (const element of this.toIterable()) {
+    yield callbackFn(element, index);
+    ++index;
+  }
+};
+
+Object.prototype.keys = function* <T extends {}>(
+  this: T,
+): Generator<keyof T, void, void> {
+  for (const key in this) {
+    if (Object.hasOwn(this, key)) {
+      yield key;
+    }
+  }
+};
+
+Object.prototype.values = function <T extends {}>(
+  this: T,
+): Generator<T[keyof T], void, void> {
+  return this.keys().map((k) => this[k]);
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
