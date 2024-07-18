@@ -1434,16 +1434,15 @@ exports[`App can equip single goody: JavaScript newArray 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function invariant(condition, errorMessage = "Invariant violation!") {
-  if (!condition) {
+function nullthrows(value, errorMessage = "Unexpected nullish value!") {
+  if (value == null) {
     throw new Error(errorMessage);
   }
+  return value;
 }
 
 function newArray([first, ...rest], fillValue = null) {
-  // TODO: add a nullthrows function
-  invariant(first != null, "Missing dimensions!");
-  const outer = Array(first);
+  const outer = Array(nullthrows(first, "Missing dimensions!"));
   if (rest.length === 0) {
     return outer.fill(fillValue);
   }
@@ -1451,6 +1450,21 @@ function newArray([first, ...rest], fillValue = null) {
     outer[i] = newArray(rest, fillValue);
   }
   return outer;
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript nullthrows 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function nullthrows(value, errorMessage = "Unexpected nullish value!") {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -2826,13 +2840,14 @@ exports[`App can equip single goody: TypeScript newArray 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-function invariant(
-  condition: boolean,
-  errorMessage: string = "Invariant violation!",
-): asserts condition {
-  if (!condition) {
+function nullthrows<T>(
+  value: T | null | undefined,
+  errorMessage: string = "Unexpected nullish value!",
+): T {
+  if (value == null) {
     throw new Error(errorMessage);
   }
+  return value;
 }
 
 function newArray(dimensions: [], fillValue?: unknown): never;
@@ -2866,9 +2881,7 @@ function newArray(
   [first, ...rest]: number[],
   fillValue: unknown = null,
 ): unknown {
-  // TODO: add a nullthrows function
-  invariant(first != null, "Missing dimensions!");
-  const outer = Array(first);
+  const outer = Array(nullthrows(first, "Missing dimensions!"));
   if (rest.length === 0) {
     return outer.fill(fillValue);
   }
@@ -2876,6 +2889,24 @@ function newArray(
     outer[i] = newArray(rest, fillValue);
   }
   return outer;
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript nullthrows 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function nullthrows<T>(
+  value: T | null | undefined,
+  errorMessage: string = "Unexpected nullish value!",
+): T {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
