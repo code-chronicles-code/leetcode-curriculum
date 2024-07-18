@@ -798,6 +798,12 @@ exports[`App can render goody: JavaScript compareNatural 1`] = `
 }"
 `;
 
+exports[`App can render goody: JavaScript console.meow 1`] = `
+"console.meow = function () {
+  console.log.apply(this, ["😺", ...arguments]);
+};"
+`;
+
 exports[`App can render goody: JavaScript invariant 1`] = `
 "export function invariant(condition, errorMessage = "Invariant violation!") {
   if (!condition) {
@@ -1637,6 +1643,18 @@ exports[`App can render goody: TypeScript compareNatural 1`] = `
 
   throw new Error("Comparing mismatched types!");
 }"
+`;
+
+exports[`App can render goody: TypeScript console.meow 1`] = `
+"declare global {
+  interface Console {
+    meow: Console["log"];
+  }
+}
+
+console.meow = function () {
+  console.log.apply(this, ["😺", ...arguments]);
+};"
 `;
 
 exports[`App can render goody: TypeScript invariant 1`] = `

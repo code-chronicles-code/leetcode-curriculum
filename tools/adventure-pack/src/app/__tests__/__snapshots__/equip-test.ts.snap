@@ -1385,6 +1385,18 @@ function compareNatural(a, b) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript console.meow 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+console.meow = function () {
+  console.log.apply(this, ["😺", ...arguments]);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript invariant 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2781,6 +2793,24 @@ function compareNatural<T>(a: T, b: T): number {
 
   throw new Error("Comparing mismatched types!");
 }
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript console.meow 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Console {
+    meow: Console["log"];
+  }
+}
+
+console.meow = function () {
+  console.log.apply(this, ["😺", ...arguments]);
+};
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
