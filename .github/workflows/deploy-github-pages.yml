@@ -46,6 +46,8 @@ jobs:
 
       - name: Build app
         run: (cd tools/adventure-pack && yarn build-app)
+        env:
+          NODE_ENV: ${{ vars.NODE_ENV }}
 
       - name: Set up Pages
         uses: actions/configure-pages@v5
