@@ -2,50 +2,44 @@ import { describe, expect, it } from "@jest/globals";
 
 import "./index";
 
+const INTEGERS = [0, 1, -1, 42, 1337, -(10 ** 6)];
+const NON_INTEGER_NUMBERS = [-5.3, 2.5, Math.PI, Infinity, -Infinity, NaN];
+const NON_NUMBERS = [
+  "12",
+  "0",
+  "",
+  "hi",
+  null,
+  undefined,
+  true,
+  false,
+  Symbol("12"),
+  Symbol(undefined),
+  {},
+  [],
+  [12],
+  new Set([12]),
+  new Map([[12, 34]]),
+];
+
 describe("Number.isIntegerOrIntegerObject", () => {
-  it("returns true for integers", () => {
-    expect(Number.isIntegerOrIntegerObject(0)).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(1)).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(-1)).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(42)).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(1337)).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(-(10 ** 6))).toBe(true);
+  it.each(INTEGERS)("returns true for integer %p", (value) => {
+    expect(Number.isIntegerOrIntegerObject(value)).toBe(true);
   });
 
-  it("returns true for integer objects", () => {
-    expect(Number.isIntegerOrIntegerObject(new Number(0))).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(new Number(1))).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(new Number(-1))).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(new Number(42))).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(new Number(1337))).toBe(true);
-    expect(Number.isIntegerOrIntegerObject(new Number(-(10 ** 6)))).toBe(true);
+  it.each([INTEGERS])("returns true for integer object %p", (value) => {
+    expect(Number.isIntegerOrIntegerObject(new Number(value))).toBe(true);
   });
 
-  it("returns false for non-integer numbers", () => {
-    expect(Number.isIntegerOrIntegerObject(-5.3)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(2.5)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(Math.PI)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(Infinity)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(-Infinity)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(NaN)).toBe(false);
-  });
+  it.each(NON_INTEGER_NUMBERS)(
+    "returns false for non-integer number %p",
+    (value) => {
+      expect(Number.isIntegerOrIntegerObject(value)).toBe(false);
+    },
+  );
 
-  it("returns false for non-numbers", () => {
-    expect(Number.isIntegerOrIntegerObject("12")).toBe(false);
-    expect(Number.isIntegerOrIntegerObject("0")).toBe(false);
-    expect(Number.isIntegerOrIntegerObject("")).toBe(false);
-    expect(Number.isIntegerOrIntegerObject("hi")).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(null)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(undefined)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(true)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(false)).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(Symbol("12"))).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(Symbol(undefined))).toBe(false);
-    expect(Number.isIntegerOrIntegerObject({})).toBe(false);
-    expect(Number.isIntegerOrIntegerObject([])).toBe(false);
-    expect(Number.isIntegerOrIntegerObject([12])).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(new Set([12]))).toBe(false);
-    expect(Number.isIntegerOrIntegerObject(new Map([[12, 34]]))).toBe(false);
+  it.each(NON_NUMBERS)("returns false for non-number %p", (value) => {
+    expect(Number.isIntegerOrIntegerObject(value)).toBe(false);
   });
 
   it("handles negative zero", () => {
