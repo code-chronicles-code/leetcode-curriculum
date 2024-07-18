@@ -1,12 +1,18 @@
+import { constants } from "node:fs";
+import fsPromises from "node:fs/promises";
 import process from "process";
 
 import {
   getQuestionList,
   type QuestionListQuestion,
 } from "@code-chronicles/leetcode-api";
-import { sleep, writeToTemporaryFile } from "@code-chronicles/util";
+import { sleep } from "@code-chronicles/util";
+
+const FILENAME = "problems.jsonl";
 
 async function main(): Promise<void> {
+  // TODO: warn early if the file already exists
+
   let totalCount: number | null = null;
   const problemsMap = new Map<number, QuestionListQuestion>();
   let skip = 0;
@@ -46,11 +52,13 @@ async function main(): Promise<void> {
     (a, b) => a.questionFrontendId - b.questionFrontendId,
   );
 
-  const filename = await writeToTemporaryFile(
+  await fsPromises.writeFile(
+    FILENAME,
     problems.map((p) => JSON.stringify(p) + "\n"),
-    { prefix: "problems-", suffix: ".jsonl" },
+    { flag: constants.O_CREAT | constants.O_RDWR | constants.O_EXCL },
   );
-  console.log(`Wrote data to: ${filename}`);
+
+  console.error(`Wrote data to: ${FILENAME}`);
 }
 
 main().catch((err) => {
