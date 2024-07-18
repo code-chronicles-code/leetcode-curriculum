@@ -1,6 +1,6 @@
 import { constants } from "node:fs";
 import fsPromises from "node:fs/promises";
-import process from "process";
+import process from "node:process";
 
 import {
   getQuestionList,

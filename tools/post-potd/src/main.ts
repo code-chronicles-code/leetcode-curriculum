@@ -1,4 +1,4 @@
-import process from "process";
+import process from "node:process";
 
 import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
 

@@ -26,7 +26,7 @@ jobs:
         run: (cd tools && yarn)
 
       - name: Get LeetCode problem list
-        run: (cd tools/get-problem-list && yarn start) && mv -f tools/get-problem-list/problems.jsonl archive/
+        run: (cd tools/get-leetcode-problem-list && yarn start) && mv -f tools/get-leetcode-problem-list/problems.jsonl archive/
 
       - name: Create or update PR
         uses: peter-evans/create-pull-request@v6
