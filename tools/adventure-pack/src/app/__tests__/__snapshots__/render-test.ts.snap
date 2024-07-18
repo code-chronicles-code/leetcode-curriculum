@@ -685,6 +685,15 @@ iteratorPrototype.toIterable = function () {
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.toMap 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.toMap = function () {
+  return new Map(this.toIterable());
+};"
+`;
+
 exports[`App can render goody: JavaScript Math.primes 1`] = `
 "Math.primes = function* () {
   yield 2;
@@ -1455,6 +1464,29 @@ iteratorPrototype.toIterable = function <T>(
   (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
     Function.returnThis;
   return this as unknown as IterableIterator<T>;
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.toMap 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    toMap(this: Iterator<T>): MapFromEntry<T>;
+  }
+}
+
+type MapFromEntry<TEntry> = TEntry extends readonly [infer K, infer V]
+  ? Map<K, V>
+  : TEntry extends readonly (infer E)[]
+    ? Map<E, E>
+    : Map<unknown, unknown>;
+
+iteratorPrototype.toMap = function <T>(this: Iterator<T>): MapFromEntry<T> {
+  return new Map(
+    this.toIterable() as unknown as Iterable<[unknown, unknown]>,
+  ) as unknown as MapFromEntry<T>;
 };"
 `;
 
