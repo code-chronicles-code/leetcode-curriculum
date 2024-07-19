@@ -237,6 +237,38 @@ class UnionFind {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: Java VirtualList 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+import java.util.AbstractList;
+import java.util.function.IntFunction;
+
+final class VirtualList<T> extends AbstractList<T> {
+  private final int size;
+  private final IntFunction<T> getter;
+
+  public VirtualList(int size, IntFunction<T> getter) {
+    this.getter = getter;
+    this.size = size;
+  }
+
+  public T get(int index) {
+    if (index < 0 || index >= this.size) {
+      throw new IndexOutOfBoundsException();
+    }
+    return this.getter.apply(index);
+  }
+
+  public int size() {
+    return this.size;
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: Java gcd(int,int) 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -1231,6 +1263,31 @@ iteratorPrototype.toIterable = function () {
 
 iteratorPrototype.toMap = function () {
   return new Map(this.toIterable());
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript Iterator.prototype.toObject 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.toObject = function () {
+  return Object.fromEntries(this.toIterable());
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -2715,7 +2772,62 @@ iteratorPrototype.toIterable = function <T>(
 };
 
 iteratorPrototype.toMap = function <T>(this: Iterator<T>) {
-  return new Map(this.toIterable() as unknown as Iterable<[unknown, any]>);
+  return new Map(this.toIterable() as unknown as Iterable<[unknown, unknown]>);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.toObject 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+
+    toObject<TElem extends readonly [unknown, unknown]>(
+      this: Iterator<TElem>,
+    ): Record<PropertyKeyify<TElem[0]>, TElem[1]>;
+    toObject<TElem extends readonly unknown[]>(
+      this: Iterator<TElem>,
+    ): Map<PropertyKeyify<TElem[number]>, TElem[number]>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+type PropertyKeyify<T> = T extends string | symbol
+  ? T
+  : T extends number | bigint | boolean | null | undefined
+    ? \`\${T}\`
+    : T extends { toString(): infer S extends PropertyKey }
+      ? S
+      : string;
+
+iteratorPrototype.toObject = function <T>(this: Iterator<T>) {
+  return Object.fromEntries(
+    this.toIterable() as unknown as Iterable<[unknown, unknown]>,
+  );
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
