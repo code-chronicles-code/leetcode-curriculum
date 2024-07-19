@@ -7,11 +7,11 @@ import "./index";
 
 describe("Iterator.prototype.toMap", () => {
   it("creates a Map from an iterator of tuples", () => {
-    const tuples: [string, number][] = [
+    const tuples = [
       ["human", 1],
       ["cat", 9],
       ["you", 2],
-    ];
+    ] as const;
 
     expect(tuples.values().toMap()).toEqual(new Map(tuples));
   });
