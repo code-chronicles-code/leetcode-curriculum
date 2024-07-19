@@ -1211,6 +1211,31 @@ iteratorPrototype.toIterable = function () {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Iterator.prototype.toMap 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.toMap = function () {
+  return new Map(this.toIterable());
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Math.primes 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2536,6 +2561,51 @@ iteratorPrototype.toIterable = function <T>(
   (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
     Function.returnThis;
   return this as unknown as IterableIterator<T>;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.toMap 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+
+    toMap<TElem extends readonly [unknown, unknown]>(
+      this: Iterator<TElem>,
+    ): Map<TElem[0], TElem[1]>;
+    toMap<TElem extends readonly unknown[]>(
+      this: Iterator<TElem>,
+    ): Map<TElem[number], TElem[number]>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.toMap = function <T>(this: Iterator<T>) {
+  return new Map(this.toIterable() as unknown as Iterable<[unknown, any]>);
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
