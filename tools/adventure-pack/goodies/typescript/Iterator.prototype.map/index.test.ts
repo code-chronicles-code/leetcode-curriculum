@@ -24,11 +24,11 @@ describe("Iterator.prototype.map", () => {
       c,
       c.charCodeAt(0) - "a".charCodeAt(0) + 1,
     ]);
-    expect(mapResult.next().value).toEqual(["h", 8]);
-    expect(mapResult.next().value).toEqual(["o", 15]);
-    expect(mapResult.next().value).toEqual(["w", 23]);
-    expect(mapResult.next().value).toEqual(["d", 4]);
-    expect(mapResult.next().value).toEqual(["y", 25]);
+    expect(mapResult.next().value).toStrictEqual(["h", 8]);
+    expect(mapResult.next().value).toStrictEqual(["o", 15]);
+    expect(mapResult.next().value).toStrictEqual(["w", 23]);
+    expect(mapResult.next().value).toStrictEqual(["d", 4]);
+    expect(mapResult.next().value).toStrictEqual(["y", 25]);
     expect(mapResult.next().done).toBe(true);
   });
 
@@ -87,11 +87,11 @@ describe("Iterator.prototype.map", () => {
     };
 
     const mapResult = factory().map((word, i) => [i, word.toUpperCase()]);
-    expect(mapResult.next().value).toEqual([0, "HELLO"]);
-    expect(mapResult.next().value).toEqual([1, "WORLD"]);
-    expect(mapResult.next().value).toEqual([2, "HOW"]);
-    expect(mapResult.next().value).toEqual([3, "ARE"]);
-    expect(mapResult.next().value).toEqual([4, "YOU"]);
+    expect(mapResult.next().value).toStrictEqual([0, "HELLO"]);
+    expect(mapResult.next().value).toStrictEqual([1, "WORLD"]);
+    expect(mapResult.next().value).toStrictEqual([2, "HOW"]);
+    expect(mapResult.next().value).toStrictEqual([3, "ARE"]);
+    expect(mapResult.next().value).toStrictEqual([4, "YOU"]);
     expect(mapResult.next().done).toBe(true);
   });
 });

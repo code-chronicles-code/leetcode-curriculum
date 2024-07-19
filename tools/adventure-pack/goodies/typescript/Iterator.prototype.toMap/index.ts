@@ -13,5 +13,5 @@ declare global {
 }
 
 iteratorPrototype.toMap = function <T>(this: Iterator<T>) {
-  return new Map(this.toIterable() as unknown as Iterable<[unknown, any]>);
+  return new Map(this.toIterable() as unknown as Iterable<[unknown, unknown]>);
 };

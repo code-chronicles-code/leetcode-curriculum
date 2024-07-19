@@ -43,7 +43,7 @@ describe("Iterator.prototype.forEach", () => {
 
     map.entries().forEach(callback);
     expect(callback).toHaveBeenCalledTimes(map.size);
-    expect(callback.mock.calls).toEqual([
+    expect(callback.mock.calls).toStrictEqual([
       [["car", "red"], 0],
       [["bus", "yellow"], 1],
       [["plane", "white"], 2],
@@ -56,7 +56,7 @@ describe("Iterator.prototype.forEach", () => {
 
     set.values().forEach(callback);
     expect(callback).toHaveBeenCalledTimes(set.size);
-    expect(callback.mock.calls).toEqual([
+    expect(callback.mock.calls).toStrictEqual([
       [2, 0],
       [3, 1],
       [4, 2],

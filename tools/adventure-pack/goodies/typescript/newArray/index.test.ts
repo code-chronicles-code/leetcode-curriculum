@@ -4,7 +4,7 @@ import { newArray } from "./index";
 
 describe("newArray", () => {
   it("respects dimensions", () => {
-    expect(newArray([2, 3, 4])).toEqual([
+    expect(newArray([2, 3, 4])).toStrictEqual([
       [
         [null, null, null, null],
         [null, null, null, null],
@@ -17,7 +17,7 @@ describe("newArray", () => {
       ],
     ]);
 
-    expect(newArray([5, 2, 3, 1], 42)).toEqual([
+    expect(newArray([5, 2, 3, 1], 42)).toStrictEqual([
       [
         [[42], [42], [42]],
         [[42], [42], [42]],
@@ -52,7 +52,7 @@ describe("newArray", () => {
     arr[1][1][3] = 113;
     arr[2][0][2] = 202;
 
-    expect(arr).toEqual([
+    expect(arr).toStrictEqual([
       [
         [0, -1, -1, -1],
         [-1, -1, -1, -1],
@@ -69,33 +69,37 @@ describe("newArray", () => {
   });
 
   it("can handle many dimensions", () => {
-    expect(newArray([1])).toEqual([null]);
-    expect(newArray([1, 1])).toEqual([[null]]);
-    expect(newArray([1, 1, 1])).toEqual([[[null]]]);
-    expect(newArray([1, 1, 1, 1])).toEqual([[[[null]]]]);
-    expect(newArray([1, 1, 1, 1, 1])).toEqual([[[[[null]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1])).toEqual([[[[[[null]]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1])).toEqual([[[[[[[null]]]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1])).toEqual([[[[[[[[null]]]]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1])).toEqual([
+    expect(newArray([1])).toStrictEqual([null]);
+    expect(newArray([1, 1])).toStrictEqual([[null]]);
+    expect(newArray([1, 1, 1])).toStrictEqual([[[null]]]);
+    expect(newArray([1, 1, 1, 1])).toStrictEqual([[[[null]]]]);
+    expect(newArray([1, 1, 1, 1, 1])).toStrictEqual([[[[[null]]]]]);
+    expect(newArray([1, 1, 1, 1, 1, 1])).toStrictEqual([[[[[[null]]]]]]);
+    expect(newArray([1, 1, 1, 1, 1, 1, 1])).toStrictEqual([[[[[[[null]]]]]]]);
+    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1])).toStrictEqual([
+      [[[[[[[null]]]]]]],
+    ]);
+    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1])).toStrictEqual([
       [[[[[[[[null]]]]]]]],
     ]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])).toEqual([
+    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])).toStrictEqual([
       [[[[[[[[[null]]]]]]]]],
     ]);
 
-    expect(newArray([1], 8)).toEqual([8]);
-    expect(newArray([1, 1], 8)).toEqual([[8]]);
-    expect(newArray([1, 1, 1], 8)).toEqual([[[8]]]);
-    expect(newArray([1, 1, 1, 1], 8)).toEqual([[[[8]]]]);
-    expect(newArray([1, 1, 1, 1, 1], 8)).toEqual([[[[[8]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1], 8)).toEqual([[[[[[8]]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1], 8)).toEqual([[[[[[[8]]]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1], 8)).toEqual([[[[[[[[8]]]]]]]]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1], 8)).toEqual([
+    expect(newArray([1], 8)).toStrictEqual([8]);
+    expect(newArray([1, 1], 8)).toStrictEqual([[8]]);
+    expect(newArray([1, 1, 1], 8)).toStrictEqual([[[8]]]);
+    expect(newArray([1, 1, 1, 1], 8)).toStrictEqual([[[[8]]]]);
+    expect(newArray([1, 1, 1, 1, 1], 8)).toStrictEqual([[[[[8]]]]]);
+    expect(newArray([1, 1, 1, 1, 1, 1], 8)).toStrictEqual([[[[[[8]]]]]]);
+    expect(newArray([1, 1, 1, 1, 1, 1, 1], 8)).toStrictEqual([[[[[[[8]]]]]]]);
+    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1], 8)).toStrictEqual([
+      [[[[[[[8]]]]]]],
+    ]);
+    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1], 8)).toStrictEqual([
       [[[[[[[[8]]]]]]]],
     ]);
-    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 8)).toEqual([
+    expect(newArray([1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 8)).toStrictEqual([
       [[[[[[[[[8]]]]]]]]],
     ]);
   });

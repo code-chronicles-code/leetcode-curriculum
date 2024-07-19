@@ -41,9 +41,9 @@ describe("Iterator.prototype.filter", () => {
       .entries()
       .filter(([key, value]) => key === key.toUpperCase() && value > 0);
 
-    expect(filterResult.next().value).toEqual(["A", 1]);
-    expect(filterResult.next().value).toEqual(["C", 3]);
-    expect(filterResult.next().value).toEqual(["E", 5]);
+    expect(filterResult.next().value).toStrictEqual(["A", 1]);
+    expect(filterResult.next().value).toStrictEqual(["C", 3]);
+    expect(filterResult.next().value).toStrictEqual(["E", 5]);
     expect(filterResult.next().done).toBe(true);
   });
 
@@ -64,9 +64,9 @@ describe("Iterator.prototype.filter", () => {
     };
 
     const filterResult = factory().filter((_word, i) => i % 2 === 0);
-    expect(filterResult.next().value).toEqual("hello");
-    expect(filterResult.next().value).toEqual("how");
-    expect(filterResult.next().value).toEqual("you");
+    expect(filterResult.next().value).toStrictEqual("hello");
+    expect(filterResult.next().value).toStrictEqual("how");
+    expect(filterResult.next().value).toStrictEqual("you");
     expect(filterResult.next().done).toBe(true);
   });
 });
