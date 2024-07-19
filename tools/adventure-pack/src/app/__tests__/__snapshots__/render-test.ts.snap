@@ -1553,7 +1553,7 @@ declare global {
   }
 }
 
-iteratorPrototype.toMap = function <T>(this: Iterator<T>) {
+iteratorPrototype.toMap = function (this: Iterator<unknown>) {
   return new Map(this.toIterable() as unknown as Iterable<[unknown, unknown]>);
 };"
 `;
@@ -1581,7 +1581,7 @@ type PropertyKeyify<T> = T extends string | symbol
       ? S
       : string;
 
-iteratorPrototype.toObject = function <T>(this: Iterator<T>) {
+iteratorPrototype.toObject = function (this: Iterator<unknown>) {
   return Object.fromEntries(
     this.toIterable() as unknown as Iterable<[unknown, unknown]>,
   );
