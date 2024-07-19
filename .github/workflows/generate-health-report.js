@@ -13,6 +13,7 @@ const COMMANDS = [
   "(cd tools && yarn typecheck)",
   "(cd tools && yarn test)",
   "(cd tools/adventure-pack && yarn build-app)",
+  "(cd tools/get-leetcode-problem-list && yarn build)",
 ];
 
 module.exports = async ({ context, github }) => {

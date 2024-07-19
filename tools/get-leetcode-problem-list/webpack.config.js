@@ -1,13 +1,10 @@
-const { execSync } = require("node:child_process");
 const path = require("node:path");
 const webpack = require("webpack");
 
-const commitHash = execSync("git rev-parse HEAD").toString().trim();
-
 module.exports = {
-  entry: "./src/app/main.tsx",
+  entry: "./src/main.ts",
   output: {
-    filename: "[name].js",
+    filename: "get-leetcode-problem-list.js",
     path: path.resolve(__dirname, "dist"),
   },
 
@@ -34,21 +31,19 @@ module.exports = {
     extensions: [".tsx", ".ts", "..."],
   },
 
+  externalsType: "commonjs",
+  externals: {
+    "node:crypto": "node:crypto",
+    "node:fs": "node:fs",
+    "node:fs/promises": "node:fs/promises",
+    "node:process": "node:process",
+  },
+
   plugins: [
-    new webpack.DefinePlugin({
-      ADVENTURE_PACK_COMMIT_HASH: JSON.stringify(commitHash),
+    new webpack.BannerPlugin({
+      banner: "#!node\n",
+      raw: true,
+      entryOnly: true,
     }),
   ],
-
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        dependencies: {
-          test: /\bnode_modules\b/,
-          name: "dependencies",
-          chunks: "all",
-        },
-      },
-    },
-  },
 };
