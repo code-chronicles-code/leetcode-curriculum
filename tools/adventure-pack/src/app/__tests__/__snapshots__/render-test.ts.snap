@@ -1473,20 +1473,17 @@ import "Iterator.prototype.toIterable";
 
 declare global {
   interface Iterator<T> {
-    toMap(this: Iterator<T>): MapFromEntry<T>;
+    toMap<TIteratorElement extends readonly [unknown, unknown]>(
+      this: Iterator<TIteratorElement, unknown, unknown>,
+    ): Map<TIteratorElement[0], TIteratorElement[1]>;
+    toMap<TIteratorElement extends readonly unknown[]>(
+      this: Iterator<TIteratorElement, unknown, unknown>,
+    ): Map<TIteratorElement[number], TIteratorElement[number]>;
   }
 }
 
-type MapFromEntry<TEntry> = TEntry extends readonly [infer K, infer V]
-  ? Map<K, V>
-  : TEntry extends readonly (infer E)[]
-    ? Map<E, E>
-    : Map<unknown, unknown>;
-
-iteratorPrototype.toMap = function <T>(this: Iterator<T>): MapFromEntry<T> {
-  return new Map(
-    this.toIterable() as unknown as Iterable<[unknown, unknown]>,
-  ) as unknown as MapFromEntry<T>;
+iteratorPrototype.toMap = function <T>(this: Iterator<T>) {
+  return new Map(this.toIterable() as unknown as Iterable<[unknown, unknown]>);
 };"
 `;
 

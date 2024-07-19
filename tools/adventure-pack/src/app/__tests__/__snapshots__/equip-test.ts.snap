@@ -2579,7 +2579,12 @@ declare global {
   interface Iterator<T> {
     toIterable(this: Iterator<T>): IterableIterator<T>;
 
-    toMap(this: Iterator<T>): MapFromEntry<T>;
+    toMap<TIteratorElement extends readonly [unknown, unknown]>(
+      this: Iterator<TIteratorElement, unknown, unknown>,
+    ): Map<TIteratorElement[0], TIteratorElement[1]>;
+    toMap<TIteratorElement extends readonly unknown[]>(
+      this: Iterator<TIteratorElement, unknown, unknown>,
+    ): Map<TIteratorElement[number], TIteratorElement[number]>;
   }
 }
 
@@ -2599,16 +2604,8 @@ iteratorPrototype.toIterable = function <T>(
   return this as unknown as IterableIterator<T>;
 };
 
-type MapFromEntry<TEntry> = TEntry extends readonly [infer K, infer V]
-  ? Map<K, V>
-  : TEntry extends readonly (infer E)[]
-    ? Map<E, E>
-    : Map<unknown, unknown>;
-
-iteratorPrototype.toMap = function <T>(this: Iterator<T>): MapFromEntry<T> {
-  return new Map(
-    this.toIterable() as unknown as Iterable<[unknown, unknown]>,
-  ) as unknown as MapFromEntry<T>;
+iteratorPrototype.toMap = function <T>(this: Iterator<T>) {
+  return new Map(this.toIterable() as unknown as Iterable<[unknown, unknown]>);
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"

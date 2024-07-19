@@ -12,6 +12,7 @@ describe("Iterator.prototype.toMap", () => {
       ["cat", 9],
       ["you", 2],
     ];
+
     expect(tuples.values().toMap()).toEqual(new Map(tuples));
   });
 
@@ -64,7 +65,7 @@ describe("Iterator.prototype.toMap", () => {
   it.each([[3, 1, 4].values(), "hi".chars(), new Set([3]).values()])(
     "throws when invoked on an iterator of something other than tuples",
     (iter: Iterator<unknown>) => {
-      expect(() => iter.toMap()).toThrow();
+      expect(() => (iter as Iterator<[]>).toMap()).toThrow();
     },
   );
 
