@@ -1,7 +1,20 @@
 name: Update LeetCode problem data
 
 on:
+  schedule:
+    # New problems are usually available each week after a LeetCode contest!
+    # See also: https://crontab.guru/
+    - cron: 5 4 * * 6
+
+  # Allows running this workflow manually from the repository's Actions tab.
   workflow_dispatch:
+
+# Allow only one concurrent run, skipping runs queued between the run
+# in-progress and latest queued. However, do NOT cancel in-progress runs as we
+# want to allow them to complete.
+concurrency:
+  group: update-problem-data
+  cancel-in-progress: false
 
 permissions:
   contents: write
