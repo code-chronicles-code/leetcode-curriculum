@@ -30,7 +30,7 @@
     "goodies:typescript:format": "prettier --write goodies/typescript",
     "goodies:typescript:install": "yarn",
     "goodies:typescript:test": "jest --color goodies/typescript",
-    "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && NODE_ENV=development webpack && cp css/style.css dist/style.css",
+    "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && webpack && cp css/style.css dist/style.css",
     "package-goodies:test": "NODE_OPTIONS=--experimental-vm-modules jest --color --testPathIgnorePatterns=\"/goodies/\"",
     "format": "yarn goodies:java:format && yarn goodies:kotlin:format && yarn goodies:python3:format && yarn goodies:typescript:format && prettier --write .",
     "lint": "eslint --max-warnings=0 .",
