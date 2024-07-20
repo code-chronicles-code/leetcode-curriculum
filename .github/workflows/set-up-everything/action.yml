@@ -22,6 +22,11 @@ runs:
           tools/adventure-pack/goodies/java/build.gradle.kts
           tools/adventure-pack/goodies/kotlin/build.gradle.kts
 
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.12.4
+
     - name: Install dependencies
       # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
       run: (cd tools && yarn install --production=false --frozen-lockfile)
