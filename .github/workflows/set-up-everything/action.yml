@@ -4,14 +4,6 @@ runs:
   using: composite
 
   steps:
-    - name: Set up Node
-      uses: actions/setup-node@v4
-      with:
-        # For some reason Node 22 was causing some problems with installing dependencies.
-        node-version: 20
-        cache: yarn
-        cache-dependency-path: tools/yarn.lock
-
     - name: Set up Java
       uses: actions/setup-java@v4
       with:
@@ -21,6 +13,14 @@ runs:
         cache-dependency-path: |
           tools/adventure-pack/goodies/java/build.gradle.kts
           tools/adventure-pack/goodies/kotlin/build.gradle.kts
+
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        # For some reason Node 22 was causing some problems with installing dependencies.
+        node-version: 20
+        cache: yarn
+        cache-dependency-path: tools/yarn.lock
 
     - name: Set up Python
       uses: actions/setup-python@v5

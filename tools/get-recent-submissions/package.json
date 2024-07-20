@@ -8,7 +8,7 @@
     "url": "https://github.com/miorel"
   },
   "scripts": {
-    "format": "prettier --write .",
+    "format": "prettier --color --write .",
     "lint": "eslint --max-warnings=0 .",
     "start": "ts-node src/main.ts",
     "typecheck": "tsc --project ."

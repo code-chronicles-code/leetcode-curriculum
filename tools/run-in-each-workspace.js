@@ -1,4 +1,4 @@
-const { spawnSync } = require("node:child_process");
+const { spawn } = require("node:child_process");
 const fsPromises = require("node:fs/promises");
 const process = require("node:process");
 
@@ -13,6 +13,28 @@ const SKIP = {
   "post-potd": new Set(["test"]),
   util: new Set(["test"]),
 };
+
+// TODO: reusable utility!
+async function runOrThrow(command, args, options = {}) {
+  return new Promise((resolve, reject) => {
+    const childProcess = spawn(command, args, {
+      ...options,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+
+    childProcess.stdout.pipe(process.stdout);
+    childProcess.stderr.pipe(process.stderr);
+
+    childProcess.on("error", reject);
+    childProcess.on("exit", (exitCode) => {
+      if (exitCode) {
+        reject(new Error(`Non-zero exit code ${exitCode}.`));
+      } else {
+        resolve();
+      }
+    });
+  });
+}
 
 async function main() {
   if (process.argv.length < 3) {
@@ -43,17 +65,10 @@ async function main() {
       continue;
     }
 
-    const { error, status } = spawnSync("yarn", [command], {
+    await runOrThrow("yarn", [command], {
       cwd: workspace,
       shell: "bash",
-      stdio: ["ignore", "inherit", "inherit"],
     });
-    if (error) {
-      throw error;
-    }
-    if (status) {
-      throw new Error(`Non-zero exit code ${status}.`);
-    }
   }
 }
 

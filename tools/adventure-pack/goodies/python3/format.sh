@@ -15,4 +15,4 @@ else
   exit 1
 fi
 
-bash run_python.sh -m black --line-length=80 .
+bash run_python.sh -m black --color --line-length=80 .

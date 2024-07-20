@@ -1,7 +1,4 @@
-const { exec: execWithCallback } = require("node:child_process");
-const { promisify } = require("node:util");
-
-const exec = promisify(execWithCallback);
+const { spawn } = require("node:child_process");
 
 const GITHUB_ACTIONS_BOT_ID = 41898282;
 
@@ -15,9 +12,45 @@ const COMMANDS = [
   "(cd tools/get-leetcode-problem-list && yarn build)",
 ];
 
+// TODO: reusable utility!
+async function runOrThrow(command, args, options = {}) {
+  return new Promise((resolve, reject) => {
+    const childProcess = spawn(command, args, {
+      ...options,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+
+    childProcess.stdout.pipe(process.stdout);
+    childProcess.stderr.pipe(process.stderr);
+
+    childProcess.on("error", reject);
+    childProcess.on("exit", (exitCode) => {
+      if (exitCode) {
+        reject(new Error(`Non-zero exit code ${exitCode}.`));
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
 module.exports = async ({ context, github, os }) => {
   const prNumber = context.payload.pull_request.number;
   const healthReportPrefix = `<!-- HEALTH REPORT: ${os} -->`;
+
+  const lines = [];
+  for (const command of COMMANDS) {
+    await runOrThrow("git", ["reset", "--hard", "HEAD"]);
+    await runOrThrow("git", ["clean", "-fd"]);
+
+    console.error("Running: " + command);
+    try {
+      await runOrThrow("bash", ["-c", command + " 1>&2"]);
+      lines.push(` * \`${command}\`: ✅`);
+    } catch (err) {
+      lines.push(` * \`${command}\`: ❌`);
+    }
+  }
 
   const existingHealthReport = await github.rest.issues
     .listComments({
@@ -32,23 +65,6 @@ module.exports = async ({ context, github, os }) => {
           c.body.startsWith(healthReportPrefix),
       ),
     );
-
-  const lines = [];
-  for (const command of COMMANDS) {
-    await exec("git reset --hard HEAD");
-    await exec("git clean -fd");
-
-    console.error("Running: " + command);
-    try {
-      const { stderr } = await exec(command + " 1>&2", { shell: "bash" });
-      console.error(stderr);
-      lines.push(` * \`${command}\`: ✅`);
-    } catch (err) {
-      console.error(err.stderr);
-      console.error(err);
-      lines.push(` * \`${command}\`: ❌`);
-    }
-  }
 
   const healthReportBody =
     `${healthReportPrefix}\n\n# PR Health Report (${os})\n\nLast checked commit ${context.payload.pull_request.head.sha}.\n\n` +
