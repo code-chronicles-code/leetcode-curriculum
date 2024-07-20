@@ -4,7 +4,6 @@ const { promisify } = require("node:util");
 const exec = promisify(execWithCallback);
 
 const GITHUB_ACTIONS_BOT_ID = 41898282;
-const HEALTH_REPORT_PREFIX = `<!-- HEALTH REPORT -->\n\n`;
 
 const COMMANDS = [
   "npx prettier --write .github .vscode && ! (git status --porcelain | grep .)",
@@ -16,8 +15,9 @@ const COMMANDS = [
   "(cd tools/get-leetcode-problem-list && yarn build)",
 ];
 
-module.exports = async ({ context, github }) => {
+module.exports = async ({ context, github, os }) => {
   const prNumber = context.payload.pull_request.number;
+  const healthReportPrefix = `<!-- HEALTH REPORT: ${os} -->`;
 
   const existingHealthReport = await github.rest.issues
     .listComments({
@@ -29,7 +29,7 @@ module.exports = async ({ context, github }) => {
       data.find(
         (c) =>
           c.user.id === GITHUB_ACTIONS_BOT_ID &&
-          c.body.startsWith(HEALTH_REPORT_PREFIX),
+          c.body.startsWith(healthReportPrefix),
       ),
     );
 
@@ -40,7 +40,7 @@ module.exports = async ({ context, github }) => {
 
     console.error("Running: " + command);
     try {
-      const { stderr } = await exec(command + " 1>&2");
+      const { stderr } = await exec(command + " 1>&2", { shell: "bash" });
       console.error(stderr);
       lines.push(` * \`${command}\`: ✅`);
     } catch (err) {
@@ -51,10 +51,7 @@ module.exports = async ({ context, github }) => {
   }
 
   const healthReportBody =
-    HEALTH_REPORT_PREFIX +
-    "# PR Health Report\n\nLast checked commit " +
-    context.payload.pull_request.head.sha +
-    ".\n\n" +
+    `${healthReportPrefix}\n\n# PR Health Report (${os})\n\nLast checked commit ${context.payload.pull_request.head.sha}.\n\n` +
     lines.map((line) => line + "\n").join("");
 
   if (existingHealthReport) {
