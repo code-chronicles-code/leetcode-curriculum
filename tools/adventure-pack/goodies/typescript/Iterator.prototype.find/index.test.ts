@@ -40,7 +40,7 @@ describe("Iterator.prototype.find", () => {
             value.type === "fruit" &&
             value.price < 3.0,
         ),
-    ).toEqual(["GRAPES", { type: "fruit", price: 2.99 }]);
+    ).toStrictEqual(["GRAPES", { type: "fruit", price: 2.99 }]);
   });
 
   it("can test Set values()", () => {

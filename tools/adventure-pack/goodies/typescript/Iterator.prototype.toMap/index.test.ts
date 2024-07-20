@@ -13,11 +13,11 @@ describe("Iterator.prototype.toMap", () => {
       ["you", 2],
     ] as const;
 
-    expect(tuples.values().toMap()).toEqual(new Map(tuples));
+    expect(tuples.values().toMap()).toStrictEqual(new Map(tuples));
   });
 
   it("returns an empty Map when invoked on an empty iterator", () => {
-    expect([].values().toMap()).toEqual(new Map());
+    expect([].values().toMap()).toStrictEqual(new Map());
   });
 
   it("can be used to shallow clone a Map", () => {
@@ -29,7 +29,7 @@ describe("Iterator.prototype.toMap", () => {
     const newMap = originalMap.entries().toMap();
 
     expect(newMap).not.toBe(originalMap);
-    expect(newMap).toEqual(originalMap);
+    expect(newMap).toStrictEqual(originalMap);
     expect(newMap.get("a set")).toBe(originalMap.get("a set"));
   });
 
@@ -39,7 +39,7 @@ describe("Iterator.prototype.toMap", () => {
         .values()
         .map((num, i) => [num, i * i * i])
         .toMap(),
-    ).toEqual(
+    ).toStrictEqual(
       new Map([
         [3, 0],
         [1, 1],
@@ -52,7 +52,7 @@ describe("Iterator.prototype.toMap", () => {
         .chars()
         .map((c) => [c, c.repeat(3)])
         .toMap(),
-    ).toEqual(
+    ).toStrictEqual(
       new Map([
         ["h", "hhh"],
         ["e", "eee"],
@@ -77,7 +77,7 @@ describe("Iterator.prototype.toMap", () => {
       ]
         .values()
         .toMap(),
-    ).toEqual(
+    ).toStrictEqual(
       new Map([
         [3, 1],
         [1, 5],
@@ -86,8 +86,10 @@ describe("Iterator.prototype.toMap", () => {
   });
 
   it("doesn't complain about missing fields in the tuples", () => {
-    expect([[]].values().toMap()).toEqual(new Map([[undefined, undefined]]));
-    expect([[3], [4], [5]].values().toMap()).toEqual(
+    expect([[]].values().toMap()).toStrictEqual(
+      new Map([[undefined, undefined]]),
+    );
+    expect([[3], [4], [5]].values().toMap()).toStrictEqual(
       new Map([
         [3, undefined],
         [4, undefined],
@@ -95,4 +97,6 @@ describe("Iterator.prototype.toMap", () => {
       ]),
     );
   });
+
+  // TODO: add test for key order
 });

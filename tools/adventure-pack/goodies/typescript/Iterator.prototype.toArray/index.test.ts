@@ -14,15 +14,20 @@ describe("Iterator.prototype.toArray", () => {
     const iteratorToArray = originalArray.values().toArray();
 
     expect(iteratorToArray).not.toBe(originalArray);
-    expect(iteratorToArray).toEqual(originalArray);
+    expect(iteratorToArray).toStrictEqual(originalArray);
   });
 
   it("converts a Set's values() to an array", () => {
-    expect(new Set("hello").values().toArray()).toEqual(["h", "e", "l", "o"]);
+    expect(new Set("hello").values().toArray()).toStrictEqual([
+      "h",
+      "e",
+      "l",
+      "o",
+    ]);
   });
 
   it("returns an empty array for an empty iterator", () => {
-    expect([].values().toArray()).toEqual([]);
+    expect([].values().toArray()).toStrictEqual([]);
   });
 
   it("can chain with other iterator methods", () => {
@@ -32,6 +37,6 @@ describe("Iterator.prototype.toArray", () => {
         .map((x) => x ** 2)
         .filter((x) => x % 2 === 0)
         .toArray(),
-    ).toEqual([16, 4]);
+    ).toStrictEqual([16, 4]);
   });
 });

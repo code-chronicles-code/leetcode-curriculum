@@ -33,7 +33,7 @@ describe("Iterator.prototype.min", () => {
       ]
         .values()
         .min(),
-    ).toEqual([2, 3]);
+    ).toStrictEqual([2, 3]);
   });
 
   it("can handle exclusively negative numbers", () => {
@@ -60,8 +60,10 @@ describe("Iterator.prototype.min", () => {
   });
 
   it("doesn't throw if the iterator only has one element, even if the type is incomparable", () => {
-    expect([new Set([1, 2, 3])].values().min()).toEqual(new Set([1, 2, 3]));
-    expect([new Map([["hello", "goodbye"]])].values().min()).toEqual(
+    expect([new Set([1, 2, 3])].values().min()).toStrictEqual(
+      new Set([1, 2, 3]),
+    );
+    expect([new Map([["hello", "goodbye"]])].values().min()).toStrictEqual(
       new Map([["hello", "goodbye"]]),
     );
   });

@@ -34,7 +34,7 @@ describe("Iterator.prototype.max", () => {
       ]
         .values()
         .max(),
-    ).toEqual([7, 9]);
+    ).toStrictEqual([7, 9]);
   });
 
   it("can handle exclusively negative numbers", () => {
@@ -61,8 +61,10 @@ describe("Iterator.prototype.max", () => {
   });
 
   it("doesn't throw if the iterator only has one element, even if the type is incomparable", () => {
-    expect([new Set([1, 2, 3])].values().max()).toEqual(new Set([1, 2, 3]));
-    expect([new Map([["hello", "goodbye"]])].values().max()).toEqual(
+    expect([new Set([1, 2, 3])].values().max()).toStrictEqual(
+      new Set([1, 2, 3]),
+    );
+    expect([new Map([["hello", "goodbye"]])].values().max()).toStrictEqual(
       new Map([["hello", "goodbye"]]),
     );
   });
