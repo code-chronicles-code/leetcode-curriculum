@@ -11,10 +11,9 @@
     "util"
   ],
   "scripts": {
-    "format": "(cd adventure-pack; yarn format) && (cd download-submissions; yarn format) && (cd eslint-config; yarn format) && (cd get-leetcode-problem-list; yarn format) && (cd get-recent-submissions; yarn format) && (cd leetcode-api; yarn format) && (cd post-potd; yarn format) && (cd util; yarn format)",
-    "lint": "(cd adventure-pack; yarn lint) && (cd download-submissions; yarn lint) && (cd eslint-config; yarn lint) && (cd get-leetcode-problem-list; yarn lint) && (cd get-recent-submissions; yarn lint) && (cd leetcode-api; yarn lint) && (cd post-potd; yarn lint) && (cd util; yarn lint)",
-    "test": "(cd adventure-pack; yarn test)",
-    "typecheck": "(cd adventure-pack; yarn typecheck) && (cd download-submissions; yarn typecheck) && (cd get-leetcode-problem-list; yarn typecheck) && (cd get-recent-submissions; yarn typecheck) && (cd leetcode-api; yarn typecheck) && (cd post-potd; yarn typecheck) && (cd util; yarn typecheck)"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "format": "node run-in-each-workspace.js format",
+    "lint": "node run-in-each-workspace.js lint",
+    "test": "node run-in-each-workspace.js test",
+    "typecheck": "node run-in-each-workspace.js typecheck"
+  }
 }
