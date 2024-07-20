@@ -30,12 +30,12 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
     "@jest/globals": "29.7.0",
-    "@types/node": "22.5.1",
-    "eslint": "9.9.1",
+    "@types/node": "22.5.5",
+    "eslint": "9.10.0",
     "jest": "29.7.0",
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
-    "type-fest": "4.26.0",
-    "typescript": "5.5.4"
+    "type-fest": "4.26.1",
+    "typescript": "5.6.2"
   }
 }

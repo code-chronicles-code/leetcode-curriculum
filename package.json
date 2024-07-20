@@ -27,9 +27,9 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
-    "eslint": "9.9.1",
-    "husky": "9.1.5",
-    "lint-staged": "15.2.9",
+    "eslint": "9.10.0",
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
     "prettier": "3.3.3"
   },
   "packageManager": "yarn@4.4.1"

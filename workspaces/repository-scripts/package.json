@@ -24,11 +24,11 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
-    "@types/node": "22.5.1",
-    "eslint": "9.9.1",
+    "@types/node": "22.5.5",
+    "eslint": "9.10.0",
     "prettier": "3.3.3",
     "ts-node": "10.9.2",
-    "type-fest": "4.26.0",
-    "typescript": "5.5.4"
+    "type-fest": "4.26.1",
+    "typescript": "5.6.2"
   }
 }
