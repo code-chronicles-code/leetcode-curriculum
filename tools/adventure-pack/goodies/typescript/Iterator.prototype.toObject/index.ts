@@ -2,6 +2,7 @@ import "../Iterator.prototype.toIterable";
 import { iteratorPrototype } from "../Iterator.prototype";
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Iterator<T> {
     toObject<TElem extends readonly [unknown, unknown]>(
       this: Iterator<TElem>,
@@ -20,7 +21,7 @@ type PropertyKeyify<T> = T extends string | symbol
       ? S
       : string;
 
-iteratorPrototype.toObject = function <T>(this: Iterator<T>) {
+iteratorPrototype.toObject = function (this: Iterator<unknown>) {
   return Object.fromEntries(
     this.toIterable() as unknown as Iterable<[unknown, unknown]>,
   );

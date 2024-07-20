@@ -1,7 +1,5 @@
 name: Deploy GitHub Pages
 
-# TODO: Set up some environment variables per: https://docs.github.com/en/actions/learn-github-actions/contexts#vars-context
-
 on:
   push:
     branches:
@@ -17,15 +15,15 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Cancel runs in progress as well, since the latest one likely supersedes previous ones.
 concurrency:
-  group: "github-pages"
-  cancel-in-progress: false
+  group: deploy-github-pages
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  deploy-github-pages:
     environment:
-      name: github-pages
+      name: deploy-github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
@@ -37,17 +35,19 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # For some reason Node 22 was causing some problems with installing dependencies.
+          node-version: 20
           cache: yarn
           cache-dependency-path: tools/yarn.lock
 
       - name: Install dependencies
-        run: (cd tools && yarn)
+        # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
+        run: (cd tools && yarn install --production=false --frozen-lockfile)
 
       - name: Build app
         run: (cd tools/adventure-pack && yarn build-app)
         env:
-          NODE_ENV: ${{ vars.NODE_ENV }}
+          NODE_ENV: production
 
       - name: Set up Pages
         uses: actions/configure-pages@v5

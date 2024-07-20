@@ -3,18 +3,18 @@ name: Update LeetCode problem data
 on:
   schedule:
     # New problems are usually available each week after a LeetCode contest!
+    # Note that in UTC time the weekly contests are on Sundays.
     # See also: https://crontab.guru/
-    - cron: 5 4 * * 6
+    - cron: 5 4 * * 0
 
   # Allows running this workflow manually from the repository's Actions tab.
   workflow_dispatch:
 
 # Allow only one concurrent run, skipping runs queued between the run
-# in-progress and latest queued. However, do NOT cancel in-progress runs as we
-# want to allow them to complete.
+# Cancel runs in progress as well, since the latest one likely supersedes previous ones.
 concurrency:
   group: update-problem-data
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -31,12 +31,14 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # For some reason Node 22 was causing some problems with installing dependencies.
+          node-version: 20
           cache: yarn
           cache-dependency-path: tools/yarn.lock
 
       - name: Install dependencies
-        run: (cd tools && yarn)
+        # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
+        run: (cd tools && yarn install --production=false --frozen-lockfile)
 
       - name: Get LeetCode problem list
         run: (cd tools/get-leetcode-problem-list && yarn start) && mv -f tools/get-leetcode-problem-list/problems.jsonl archive/

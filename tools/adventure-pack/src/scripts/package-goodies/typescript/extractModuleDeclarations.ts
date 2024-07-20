@@ -13,11 +13,15 @@ export function extractModuleDeclarations(
       .getBodyOrThrow()
       .getChildSyntaxListOrThrow()
       .getChildren()
-      .forEach((decl) => {
-        const interfaceDecl = decl.asKindOrThrow(
+      .forEach((child) => {
+        if (child.getKind() === SyntaxKind.SingleLineCommentTrivia) {
+          return;
+        }
+
+        const interfaceDecl = child.asKindOrThrow(
           SyntaxKind.InterfaceDeclaration,
           "Only interface declarations are currently supported in module declarations, got: " +
-            decl.getKindName(),
+            child.getKindName(),
         );
 
         const interfaceName = interfaceDecl.getName();
@@ -32,7 +36,7 @@ export function extractModuleDeclarations(
             : `${interfaceName}<${typeParameters}>`;
 
         ((res[mod.getName()] ??= {})[interfaceKey] ??= []).push(
-          decl
+          interfaceDecl
             .getChildSyntaxListOrThrow()
             .getFullText()
             .replace(/^\n+/, "")

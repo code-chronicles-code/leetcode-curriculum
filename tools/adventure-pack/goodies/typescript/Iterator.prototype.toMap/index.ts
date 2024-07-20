@@ -2,6 +2,7 @@ import "../Iterator.prototype.toIterable";
 import { iteratorPrototype } from "../Iterator.prototype";
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Iterator<T> {
     toMap<TElem extends readonly [unknown, unknown]>(
       this: Iterator<TElem>,
@@ -12,6 +13,6 @@ declare global {
   }
 }
 
-iteratorPrototype.toMap = function <T>(this: Iterator<T>) {
+iteratorPrototype.toMap = function (this: Iterator<unknown>) {
   return new Map(this.toIterable() as unknown as Iterable<[unknown, unknown]>);
 };
