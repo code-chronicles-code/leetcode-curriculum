@@ -29,5 +29,5 @@ runs:
 
     - name: Install dependencies
       # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
-      run: (cd tools && yarn install --production=false --frozen-lockfile)
+      run: (cd tools && yarn --production=false --frozen-lockfile --verbose)
       shell: bash
