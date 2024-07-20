@@ -28,17 +28,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          # For some reason Node 22 was causing some problems with installing dependencies.
-          node-version: 20
-          cache: yarn
-          cache-dependency-path: tools/yarn.lock
-
-      - name: Install dependencies
-        # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
-        run: (cd tools && yarn install --production=false --frozen-lockfile)
+      - name: Set up everything
+        uses: ./.github/workflows/set-up-everything
 
       - name: Get LeetCode problem list
         run: (cd tools/get-leetcode-problem-list && yarn start) && mv -f tools/get-leetcode-problem-list/problems.jsonl archive/

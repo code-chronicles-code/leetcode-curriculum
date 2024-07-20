@@ -21,27 +21,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          # For some reason Node 22 was causing some problems with installing dependencies.
-          node-version: 20
-          cache: yarn
-          cache-dependency-path: tools/yarn.lock
-
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 21
-          cache: gradle
-          cache-dependency-path: |
-            tools/adventure-pack/goodies/java/build.gradle.kts
-            tools/adventure-pack/goodies/kotlin/build.gradle.kts
-
-      - name: Install dependencies
-        # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
-        run: (cd tools && yarn install --production=false --frozen-lockfile)
+      - name: Set up everything
+        uses: ./.github/workflows/set-up-everything
 
       - name: Generate health report and post it on PR
         uses: actions/github-script@v7
