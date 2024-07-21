@@ -32,7 +32,7 @@ jobs:
         uses: ./.github/workflows/set-up-everything
 
       - name: Get LeetCode problem list
-        run: (cd tools/get-leetcode-problem-list && yarn start) && mv -f tools/get-leetcode-problem-list/problems.jsonl archive/
+        run: (cd workspaces/fetch-leetcode-problem-list && yarn start) && mv -f fetch-leetcode-problem-list/problems.jsonl workspaces/archive/
 
       - name: Create or update PR
         uses: peter-evans/create-pull-request@v6

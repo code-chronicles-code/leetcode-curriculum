@@ -4,7 +4,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: "./src/main.ts",
   output: {
-    filename: "get-leetcode-problem-list.js",
+    filename: "fetch-leetcode-problem-list.js",
     path: path.resolve(__dirname, "dist"),
   },
 

@@ -1,14 +1,14 @@
 {
   "private": true,
   "workspaces": [
-    "adventure-pack",
-    "download-submissions",
-    "eslint-config",
-    "get-leetcode-problem-list",
-    "get-recent-submissions",
-    "leetcode-api",
-    "post-potd",
-    "util"
+    "workspaces/adventure-pack",
+    "workspaces/download-submissions",
+    "workspaces/eslint-config",
+    "workspaces/fetch-leetcode-problem-list",
+    "workspaces/get-recent-submissions",
+    "workspaces/leetcode-api",
+    "workspaces/post-potd",
+    "workspaces/util"
   ],
   "scripts": {
     "format": "node run-in-each-workspace.js format",

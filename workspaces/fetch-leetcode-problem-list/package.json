@@ -1,5 +1,5 @@
 {
-  "name": "@code-chronicles/get-leetcode-problem-list",
+  "name": "@code-chronicles/fetch-leetcode-problem-list",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
@@ -9,7 +9,7 @@
     "url": "https://github.com/miorel"
   },
   "scripts": {
-    "build": "webpack && chmod +x dist/get-leetcode-problem-list.js",
+    "build": "webpack && chmod +x dist/fetch-leetcode-problem-list.js",
     "format": "prettier --color --write .",
     "lint": "eslint --max-warnings=0 .",
     "start": "ts-node src/main.ts",

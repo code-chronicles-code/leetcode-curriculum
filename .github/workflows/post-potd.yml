@@ -35,17 +35,17 @@ jobs:
         uses: ./.github/workflows/set-up-everything
 
       - name: Prepare secrets
-        run: (cd tools/post-potd && echo "$SECRETS_FILE" > secrets_DO_NOT_COMMIT_OR_SHARE.json)
+        run: (cd workspaces/post-potd && echo "$SECRETS_FILE" > secrets_DO_NOT_COMMIT_OR_SHARE.json)
         env:
           SECRETS_FILE: ${{ secrets.SECRETS_FILE }}
 
       - name: Prepare cached script data
         uses: actions/cache@v4
         with:
-          path: tools/post-potd/data.json
+          path: workspaces/post-potd/data.json
           restore-keys: post-potd-script-data-
           # TODO: maybe label with the date instead of the run ID?
           key: post-potd-script-data-${{ github.run_id }}
 
       - name: Post problem of the day
-        run: (cd tools/post-potd && yarn start)
+        run: (cd workspaces/post-potd && yarn start)

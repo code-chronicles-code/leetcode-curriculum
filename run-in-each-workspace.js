@@ -7,7 +7,7 @@ const COMMANDS = new Set(["format", "lint", "test", "typecheck"]);
 const SKIP = {
   "download-submissions": new Set(["test"]),
   "eslint-config": new Set(["test", "typecheck"]),
-  "get-leetcode-problem-list": new Set(["test"]),
+  "fetch-leetcode-problem-list": new Set(["test"]),
   "get-recent-submissions": new Set(["test"]),
   "leetcode-api": new Set(["test"]),
   "post-potd": new Set(["test"]),
@@ -40,7 +40,7 @@ async function main() {
   if (process.argv.length < 3) {
     throw new Error(
       "Please specify the command to run in each workspace, one of: " +
-        Array.from(COMMANDS).join(", ")
+        Array.from(COMMANDS).join(", "),
     );
   }
 
@@ -55,18 +55,21 @@ async function main() {
 
   process.chdir(__dirname);
 
-  const { workspaces } = JSON.parse(
-    await fsPromises.readFile("package.json", "utf8")
-  );
+  const workspaceDirectories = JSON.parse(
+    await fsPromises.readFile("package.json", "utf8"),
+  ).workspaces;
 
-  for (const workspace of workspaces) {
-    if (SKIP[workspace]?.has(command)) {
-      console.error(`Skipping command ${command} for workspace ${workspace}`);
+  for (const workspaceDirectory of workspaceDirectories) {
+    const workspaceName = workspaceDirectory.replace(/^workspaces\//, "");
+    if (SKIP[workspaceName]?.has(command)) {
+      console.error(
+        `Skipping command ${command} for workspace ${workspaceName}`,
+      );
       continue;
     }
 
     await runOrThrow("yarn", [command], {
-      cwd: workspace,
+      cwd: workspaceDirectory,
       shell: "bash",
     });
   }
