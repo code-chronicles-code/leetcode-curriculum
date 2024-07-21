@@ -23,11 +23,15 @@ public interface IterableDoubleStream extends Iterable<Double>, DoubleStream {
     return from(() -> iterator);
   }
 
-  public static IterableDoubleStream from(final Spliterator<Double> spliterator) {
+  public static IterableDoubleStream from(
+    final Spliterator<Double> spliterator
+  ) {
     return from(StreamSupport.stream(spliterator, false));
   }
 
-  public static IterableDoubleStream from(final Spliterator.OfDouble spliterator) {
+  public static IterableDoubleStream from(
+    final Spliterator.OfDouble spliterator
+  ) {
     return from(StreamSupport.doubleStream(spliterator, false));
   }
 
