@@ -36,7 +36,7 @@ public interface IterableDoubleStream extends Iterable<Double>, DoubleStream {
   }
 
   public static IterableDoubleStream from(final Stream<Double> stream) {
-    return from(stream.mapToDouble(i -> i));
+    return from(stream.mapToDouble(Double::doubleValue));
   }
 
   public static IterableDoubleStream from(final DoubleStream stream) {

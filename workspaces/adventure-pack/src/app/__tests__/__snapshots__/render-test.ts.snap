@@ -39,7 +39,7 @@ interface IterableDoubleStream extends Iterable<Double>, DoubleStream {
   }
 
   public static IterableDoubleStream from(final Stream<Double> stream) {
-    return from(stream.mapToDouble(i -> i));
+    return from(stream.mapToDouble(Double::doubleValue));
   }
 
   public static IterableDoubleStream from(final DoubleStream stream) {
@@ -93,7 +93,7 @@ interface IterableIntStream extends Iterable<Integer>, IntStream {
   }
 
   public static IterableIntStream from(final Stream<Integer> stream) {
-    return from(stream.mapToInt(i -> i));
+    return from(stream.mapToInt(Integer::intValue));
   }
 
   public static IterableIntStream from(final IntStream stream) {

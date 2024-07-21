@@ -32,7 +32,7 @@ public interface IterableIntStream extends Iterable<Integer>, IntStream {
   }
 
   public static IterableIntStream from(final Stream<Integer> stream) {
-    return from(stream.mapToInt(i -> i));
+    return from(stream.mapToInt(Integer::intValue));
   }
 
   public static IterableIntStream from(final IntStream stream) {
