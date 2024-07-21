@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "webpack && chmod +x dist/get-leetcode-problem-list.js",
-    "format": "prettier --write .",
+    "format": "prettier --color --write .",
     "lint": "eslint --max-warnings=0 .",
     "start": "ts-node src/main.ts",
     "typecheck": "tsc --project ."

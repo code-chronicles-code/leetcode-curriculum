@@ -9,7 +9,7 @@
   },
   "main": "eslint.config.js",
   "scripts": {
-    "format": "prettier --write .",
+    "format": "prettier --color --write .",
     "lint": "eslint --max-warnings=0 ."
   },
   "dependencies": {

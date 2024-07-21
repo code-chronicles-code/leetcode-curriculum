@@ -9,7 +9,7 @@
   },
   "main": "src/main.ts",
   "scripts": {
-    "format": "prettier --write .",
+    "format": "prettier --color --write .",
     "lint": "eslint --max-warnings=0 .",
     "typecheck": "tsc --project ."
   },
