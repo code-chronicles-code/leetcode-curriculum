@@ -4,12 +4,12 @@ const GITHUB_ACTIONS_BOT_ID = 41898282;
 
 const COMMANDS = [
   "npx prettier --write .github .vscode && ! (git status --porcelain | grep .)",
-  "(cd tools && yarn format && ! (git status --porcelain | grep .))",
-  "(cd tools && yarn lint)",
-  "(cd tools && yarn typecheck)",
-  "(cd tools && yarn test)",
-  "(cd tools/adventure-pack && yarn build-app)",
-  "(cd tools/get-leetcode-problem-list && yarn build)",
+  "(cd packages && yarn format && ! (git status --porcelain | grep .))",
+  "(cd packages && yarn lint)",
+  "(cd packages && yarn typecheck)",
+  "(cd packages && yarn test)",
+  "(cd packages/adventure-pack && yarn build-app)",
+  "(cd packages/get-leetcode-problem-list && yarn build)",
 ];
 
 // TODO: reusable utility!
