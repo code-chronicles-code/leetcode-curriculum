@@ -3,13 +3,13 @@ const { spawn } = require("node:child_process");
 const GITHUB_ACTIONS_BOT_ID = 41898282;
 
 const COMMANDS = [
-  "npx prettier --write .github .vscode && ! (git status --porcelain | grep .)",
+  "npx prettier --color --write .github .vscode *.js *.json && ! (git status --porcelain | grep .)",
   "yarn format && ! (git status --porcelain | grep .)",
   "yarn lint",
   "yarn typecheck",
   "yarn test",
-  "(cd adventure-pack && yarn build-app)",
-  "(cd get-leetcode-problem-list && yarn build)",
+  "(cd workspaces/adventure-pack && yarn build-app)",
+  "(cd workspaces/fetch-leetcode-problem-list && yarn build)",
 ];
 
 // TODO: reusable utility!

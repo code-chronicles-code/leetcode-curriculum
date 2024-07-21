@@ -11,8 +11,8 @@ runs:
         java-version: 21
         cache: gradle
         cache-dependency-path: |
-          adventure-pack/goodies/java/build.gradle.kts
-          adventure-pack/goodies/kotlin/build.gradle.kts
+          workspaces/adventure-pack/goodies/java/build.gradle.kts
+          workspaces/adventure-pack/goodies/kotlin/build.gradle.kts
 
     - name: Set up Node
       uses: actions/setup-node@v4

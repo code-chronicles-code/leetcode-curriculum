@@ -36,7 +36,7 @@ jobs:
         uses: ./.github/workflows/set-up-everything
 
       - name: Build app
-        run: (cd adventure-pack && yarn build-app)
+        run: (cd workspaces/adventure-pack && yarn build-app)
         env:
           NODE_ENV: production
 
@@ -46,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./adventure-pack/dist
+          path: ./workspaces/adventure-pack/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
