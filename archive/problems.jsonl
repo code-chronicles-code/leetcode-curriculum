@@ -3219,3 +3219,11 @@
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3219,"title":"Minimum Cost for Cutting Cake II","titleSlug":"minimum-cost-for-cutting-cake-ii"}
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3220,"title":"Odd and Even Transactions","titleSlug":"odd-and-even-transactions"}
 {"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3221,"title":"Maximum Array Hopping Score II","titleSlug":"maximum-array-hopping-score-ii"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3222,"title":"Find the Winning Player in Coin Game","titleSlug":"find-the-winning-player-in-coin-game"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3223,"title":"Minimum Length of String After Operations","titleSlug":"minimum-length-of-string-after-operations"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3224,"title":"Minimum Array Changes to Make Differences Equal","titleSlug":"minimum-array-changes-to-make-differences-equal"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3225,"title":"Maximum Score From Grid Operations","titleSlug":"maximum-score-from-grid-operations"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3226,"title":"Number of Bit Changes to Make Two Integers Equal","titleSlug":"number-of-bit-changes-to-make-two-integers-equal"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3227,"title":"Vowels Game in a String","titleSlug":"vowels-game-in-a-string"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3228,"title":"Maximum Number of Operations to Move Ones to the End","titleSlug":"maximum-number-of-operations-to-move-ones-to-the-end"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3229,"title":"Minimum Operations to Make Array Equal to Target","titleSlug":"minimum-operations-to-make-array-equal-to-target"}
