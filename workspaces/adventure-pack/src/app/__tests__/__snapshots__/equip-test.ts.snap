@@ -1316,7 +1316,11 @@ iteratorPrototype.some ??= function (callbackFn) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+<<<<<<< HEAD
 exports[`App can equip single goody: JavaScript Iterator.prototype.sum 1`] = `
+=======
+exports[`App can equip single goody: JavaScript Iterator.prototype.take 1`] = `
+>>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
@@ -1334,12 +1338,31 @@ iteratorPrototype.toIterable = function () {
   return this;
 };
 
+<<<<<<< HEAD
 iteratorPrototype.sum = function () {
   let res = 0;
   for (const element of this.toIterable()) {
     res += element;
   }
   return res;
+=======
+iteratorPrototype.take ??= function (count) {
+  if (!Number.isInteger(count) || count < 0) {
+    throw new RangeError(\`Count must be a non-negative integer, got \${count}\`);
+  }
+  if (count === 0) {
+    return [].values();
+  }
+  return function* () {
+    let index = 0;
+    for (const value of this.toIterable()) {
+      yield value;
+      if (++index >= count) {
+        return;
+      }
+    }
+  }.call(this);
+>>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -2807,7 +2830,11 @@ iteratorPrototype.some ??= function <T>(
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+<<<<<<< HEAD
 exports[`App can equip single goody: TypeScript Iterator.prototype.sum 1`] = `
+=======
+exports[`App can equip single goody: TypeScript Iterator.prototype.take 1`] = `
+>>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
@@ -2818,7 +2845,11 @@ declare global {
   }
 
   interface Iterator<T> {
+<<<<<<< HEAD
     sum(this: Iterator<number>): number;
+=======
+    take(this: Iterator<T>, count: number): IterableIterator<T>;
+>>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 
     toIterable(this: Iterator<T>): IterableIterator<T>;
   }
@@ -2840,12 +2871,37 @@ iteratorPrototype.toIterable = function <T>(
   return this as unknown as IterableIterator<T>;
 };
 
+<<<<<<< HEAD
 iteratorPrototype.sum = function (this: Iterator<number>): number {
   let res = 0;
   for (const element of this.toIterable()) {
     res += element;
   }
   return res;
+=======
+iteratorPrototype.take ??= function <T>(
+  this: Iterator<T>,
+  count: number,
+): IterableIterator<T> {
+  if (!Number.isInteger(count) || count < 0) {
+    throw new RangeError(\`Count must be a non-negative integer, got \${count}\`);
+  }
+
+  if (count === 0) {
+    return [].values();
+  }
+
+  return function* (this: Iterator<T>) {
+    let index = 0;
+
+    for (const value of this.toIterable()) {
+      yield value;
+      if (++index >= count) {
+        return;
+      }
+    }
+  }.call(this);
+>>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
