@@ -11,8 +11,8 @@ runs:
         java-version: 21
         cache: gradle
         cache-dependency-path: |
-          packages/adventure-pack/goodies/java/build.gradle.kts
-          packages/adventure-pack/goodies/kotlin/build.gradle.kts
+          adventure-pack/goodies/java/build.gradle.kts
+          adventure-pack/goodies/kotlin/build.gradle.kts
 
     - name: Set up Node
       uses: actions/setup-node@v4
@@ -20,7 +20,7 @@ runs:
         # For some reason Node 22 was causing some problems with installing dependencies.
         node-version: 20
         cache: yarn
-        cache-dependency-path: packages/yarn.lock
+        cache-dependency-path: yarn.lock
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -29,5 +29,5 @@ runs:
 
     - name: Install dependencies
       # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
-      run: (cd packages && yarn --production=false --frozen-lockfile --verbose)
+      run: yarn --production=false --frozen-lockfile --verbose
       shell: bash
