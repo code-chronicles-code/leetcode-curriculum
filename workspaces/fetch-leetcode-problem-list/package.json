@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
-  "main": "src/main.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
+    "directory": "workspaces/fetch-leetcode-problem-list"
+  },
   "author": {
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "main": "src/main.ts",
   "scripts": {
     "build": "webpack && chmod +x dist/fetch-leetcode-problem-list.js",
     "format": "prettier --color --write .",
