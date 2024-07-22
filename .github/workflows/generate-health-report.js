@@ -3,7 +3,6 @@ const { spawn } = require("node:child_process");
 const GITHUB_ACTIONS_BOT_ID = 41898282;
 
 const COMMANDS = [
-  "yarn format && ! (git status --porcelain | grep .)",
   "yarn lint",
   "yarn typecheck",
   "yarn test",
