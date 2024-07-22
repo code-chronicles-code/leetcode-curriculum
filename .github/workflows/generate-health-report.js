@@ -3,7 +3,6 @@ const { spawn } = require("node:child_process");
 const GITHUB_ACTIONS_BOT_ID = 41898282;
 
 const COMMANDS = [
-  "npx prettier --color --write .github .vscode *.js *.json && ! (git status --porcelain | grep .)",
   "yarn format && ! (git status --porcelain | grep .)",
   "yarn lint",
   "yarn typecheck",

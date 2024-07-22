@@ -1,0 +1,3 @@
+# Ignore the workspaces directory, it will handle its own formatting.
+# See the "format" script in `package.json`.
+workspaces/
