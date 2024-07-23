@@ -1,14 +1,14 @@
 import { type IndexableArraySlice, ArraySlice } from "../ArraySlice";
 
 declare global {
-  interface ReadonlyArray<T> {
+  interface Array<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
     ): Generator<IndexableArraySlice<T>, void, void>;
   }
 
-  interface Array<T> {
+  interface ReadonlyArray<T> {
     slidingWindows(
       this: ReadonlyArray<T>,
       windowSize: number,
