@@ -805,6 +805,19 @@ iteratorPrototype.some ??= function (callbackFn) {
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.sum 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.sum = function () {
+  let res = 0;
+  for (const element of this.toIterable()) {
+    res += element;
+  }
+  return res;
+};"
+`;
+
 exports[`App can render goody: JavaScript Iterator.prototype.toArray 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -1612,6 +1625,25 @@ iteratorPrototype.some ??= function <T>(
     ++index;
   }
   return false;
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.sum 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    sum(this: Iterator<number>): number;
+  }
+}
+
+iteratorPrototype.sum = function (this: Iterator<number>): number {
+  let res = 0;
+  for (const element of this.toIterable()) {
+    res += element;
+  }
+  return res;
 };"
 `;
 
