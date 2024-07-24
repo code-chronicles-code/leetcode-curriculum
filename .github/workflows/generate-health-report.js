@@ -11,7 +11,7 @@ const COMMANDS = [
 ];
 
 // TODO: reusable utility!
-async function runOrThrow(command, args, options = {}) {
+function runOrThrow(command, args, options = {}) {
   return new Promise((resolve, reject) => {
     const childProcess = spawn(command, args, {
       ...options,
@@ -38,14 +38,18 @@ module.exports = async ({ context, github, os }) => {
 
   const lines = [];
   for (const command of COMMANDS) {
+    // eslint-disable-next-line no-await-in-loop
     await runOrThrow("git", ["reset", "--hard", "HEAD"]);
+    // eslint-disable-next-line no-await-in-loop
     await runOrThrow("git", ["clean", "-fd"]);
 
     console.error("Running: " + command);
     try {
+      // eslint-disable-next-line no-await-in-loop
       await runOrThrow("bash", ["-c", command + " 1>&2"]);
       lines.push(` * \`${command}\`: ✅`);
     } catch (err) {
+      console.error(err);
       lines.push(` * \`${command}\`: ❌`);
     }
   }
@@ -54,6 +58,7 @@ module.exports = async ({ context, github, os }) => {
     .listComments({
       owner: context.repo.owner,
       repo: context.repo.repo,
+      // eslint-disable-next-line camelcase -- This casing is required by the API.
       issue_number: prNumber,
     })
     .then(({ data }) =>
@@ -64,14 +69,16 @@ module.exports = async ({ context, github, os }) => {
       ),
     );
 
+  const lastCheckedCommit = context.payload.pull_request.head.sha;
   const healthReportBody =
-    `${healthReportPrefix}\n\n# PR Health Report (${os})\n\nLast checked commit ${context.payload.pull_request.head.sha}.\n\n` +
+    `${healthReportPrefix}\n\n# PR Health Report (${os})\n\nLast checked commit ${lastCheckedCommit}.\n\n` +
     lines.map((line) => line + "\n").join("");
 
   if (existingHealthReport) {
     await github.rest.issues.updateComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
+      // eslint-disable-next-line camelcase -- This casing is required by the API.
       comment_id: existingHealthReport.id,
       body: healthReportBody,
     });
@@ -79,6 +86,7 @@ module.exports = async ({ context, github, os }) => {
     await github.rest.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
+      // eslint-disable-next-line camelcase -- This casing is required by the API.
       issue_number: prNumber,
       body: healthReportBody,
     });
