@@ -3,19 +3,19 @@ import { iteratorPrototype } from "../Iterator.prototype";
 
 declare global {
   interface Iterator<T> {
-    take(this: Iterator<T>, count: number): IterableIterator<T>;
+    take(this: Iterator<T>, limit: number): IterableIterator<T>;
   }
 }
 
 iteratorPrototype.take ??= function <T>(
   this: Iterator<T>,
-  count: number,
+  limit: number,
 ): IterableIterator<T> {
-  if (!Number.isInteger(count) || count < 0) {
-    throw new RangeError(`Count must be a non-negative integer, got ${count}`);
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new RangeError(`Limit must be a non-negative integer, got ${limit}`);
   }
 
-  if (count === 0) {
+  if (limit === 0) {
     return [].values();
   }
 
@@ -24,7 +24,7 @@ iteratorPrototype.take ??= function <T>(
 
     for (const value of this.toIterable()) {
       yield value;
-      if (++index >= count) {
+      if (++index >= limit) {
         return;
       }
     }

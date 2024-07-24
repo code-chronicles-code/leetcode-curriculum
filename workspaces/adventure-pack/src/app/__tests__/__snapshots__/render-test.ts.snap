@@ -805,7 +805,6 @@ iteratorPrototype.some ??= function (callbackFn) {
 };"
 `;
 
-<<<<<<< HEAD
 exports[`App can render goody: JavaScript Iterator.prototype.sum 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -816,28 +815,29 @@ iteratorPrototype.sum = function () {
     res += element;
   }
   return res;
-=======
+};"
+`;
+
 exports[`App can render goody: JavaScript Iterator.prototype.take 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
 
-iteratorPrototype.take ??= function (count) {
-  if (!Number.isInteger(count) || count < 0) {
-    throw new RangeError(\`Count must be a non-negative integer, got \${count}\`);
+iteratorPrototype.take ??= function (limit) {
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new RangeError(\`Limit must be a non-negative integer, got \${limit}\`);
   }
-  if (count === 0) {
+  if (limit === 0) {
     return [].values();
   }
   return function* () {
     let index = 0;
     for (const value of this.toIterable()) {
       yield value;
-      if (++index >= count) {
+      if (++index >= limit) {
         return;
       }
     }
   }.call(this);
->>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 };"
 `;
 
@@ -1651,17 +1651,12 @@ iteratorPrototype.some ??= function <T>(
 };"
 `;
 
-<<<<<<< HEAD
 exports[`App can render goody: TypeScript Iterator.prototype.sum 1`] = `
-=======
-exports[`App can render goody: TypeScript Iterator.prototype.take 1`] = `
->>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
 
 declare global {
   interface Iterator<T> {
-<<<<<<< HEAD
     sum(this: Iterator<number>): number;
   }
 }
@@ -1672,20 +1667,28 @@ iteratorPrototype.sum = function (this: Iterator<number>): number {
     res += element;
   }
   return res;
-=======
-    take(this: Iterator<T>, count: number): IterableIterator<T>;
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.take 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    take(this: Iterator<T>, limit: number): IterableIterator<T>;
   }
 }
 
 iteratorPrototype.take ??= function <T>(
   this: Iterator<T>,
-  count: number,
+  limit: number,
 ): IterableIterator<T> {
-  if (!Number.isInteger(count) || count < 0) {
-    throw new RangeError(\`Count must be a non-negative integer, got \${count}\`);
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new RangeError(\`Limit must be a non-negative integer, got \${limit}\`);
   }
 
-  if (count === 0) {
+  if (limit === 0) {
     return [].values();
   }
 
@@ -1694,12 +1697,11 @@ iteratorPrototype.take ??= function <T>(
 
     for (const value of this.toIterable()) {
       yield value;
-      if (++index >= count) {
+      if (++index >= limit) {
         return;
       }
     }
   }.call(this);
->>>>>>> 9a551e0 (Implement Iterator.prototype.take)
 };"
 `;
 
