@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "format": "prettier --color --write . && node run-in-each-workspace.js format",
-    "lint": "eslint --max-warnings=0 . && node run-in-each-workspace.js lint",
+    "lint": "eslint --color --max-warnings=0 . && node run-in-each-workspace.js lint",
     "test": "node run-in-each-workspace.js test",
     "typecheck": "node run-in-each-workspace.js typecheck"
   },

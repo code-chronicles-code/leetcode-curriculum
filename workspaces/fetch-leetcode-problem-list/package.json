@@ -16,7 +16,7 @@
   "scripts": {
     "build": "webpack && chmod +x dist/fetch-leetcode-problem-list.js",
     "format": "prettier --color --write .",
-    "lint": "eslint --max-warnings=0 .",
+    "lint": "eslint --color --max-warnings=0 .",
     "start": "ts-node src/main.ts",
     "typecheck": "tsc --project ."
   },
