@@ -24,10 +24,10 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
-    "@types/node": "20.14.11",
+    "@types/node": "20.14.12",
     "eslint": "9.7.0",
     "prettier": "3.3.3",
-    "type-fest": "4.22.1",
-    "typescript": "5.5.3"
+    "type-fest": "4.23.0",
+    "typescript": "5.5.4"
   }
 }

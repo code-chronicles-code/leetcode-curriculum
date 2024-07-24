@@ -15,7 +15,7 @@ const SKIP = {
 };
 
 // TODO: reusable utility!
-async function runOrThrow(command, args, options = {}) {
+function runOrThrow(command, args, options = {}) {
   return new Promise((resolve, reject) => {
     const childProcess = spawn(command, args, {
       ...options,
@@ -68,6 +68,7 @@ async function main() {
       continue;
     }
 
+    // eslint-disable-next-line  no-await-in-loop
     await runOrThrow("yarn", [command], {
       cwd: workspaceDirectory,
       shell: "bash",
