@@ -59,6 +59,7 @@ async function main() {
     await fsPromises.readFile("package.json", "utf8"),
   ).workspaces;
 
+  let hasError = false;
   for (const workspaceDirectory of workspaceDirectories) {
     const workspaceName = workspaceDirectory.replace(/^workspaces\//, "");
     if (SKIP[workspaceName]?.has(command)) {
@@ -68,11 +69,21 @@ async function main() {
       continue;
     }
 
-    // eslint-disable-next-line  no-await-in-loop
-    await runOrThrow("yarn", [command], {
-      cwd: workspaceDirectory,
-      shell: "bash",
-    });
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      await runOrThrow("yarn", [command], {
+        cwd: workspaceDirectory,
+        shell: "bash",
+        env: { ...process.env, FORCE_COLOR: 1 },
+      });
+    } catch (err) {
+      hasError = true;
+      console.error(err);
+    }
+  }
+
+  if (hasError) {
+    throw new Error("Some sub-commands did not complete successfully.");
   }
 }
 
@@ -80,5 +91,3 @@ main().catch((err) => {
   console.error(err);
   process.exitCode = 1;
 });
-
-// TODO: get format and lint to run on this file, as well

@@ -50,7 +50,7 @@
     "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && webpack && cp css/style.css dist/style.css",
     "package-goodies:test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --color --testPathIgnorePatterns=\"/goodies/\"",
     "format": "yarn goodies:java:format && yarn goodies:kotlin:format && yarn goodies:python3:format && yarn goodies:typescript:format && prettier --color --write .",
-    "lint": "eslint --max-warnings=0 .",
+    "lint": "eslint --color --max-warnings=0 .",
     "postinstall": "yarn goodies:java:install && yarn goodies:kotlin:install && yarn goodies:python3:install",
     "test": "yarn goodies:java:test && yarn goodies:kotlin:test && yarn goodies:python3:test && yarn goodies:typescript:test && yarn package-goodies:test",
     "typecheck": "tsc --project ."

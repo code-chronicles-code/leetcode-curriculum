@@ -15,7 +15,7 @@
   "main": "eslint.config.js",
   "scripts": {
     "format": "prettier --color --write .",
-    "lint": "eslint --max-warnings=0 ."
+    "lint": "eslint --color --max-warnings=0 ."
   },
   "dependencies": {
     "@stylistic/eslint-plugin-js": "2.3.0",

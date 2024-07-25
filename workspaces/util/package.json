@@ -15,7 +15,7 @@
   "main": "src/index.ts",
   "scripts": {
     "format": "prettier --color --write .",
-    "lint": "eslint --max-warnings=0 .",
+    "lint": "eslint --color --max-warnings=0 .",
     "typecheck": "tsc --project ."
   },
   "dependencies": {
