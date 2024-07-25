@@ -53,7 +53,7 @@
     "lint": "eslint --color --max-warnings=0 .",
     "postinstall": "yarn goodies:java:install && yarn goodies:kotlin:install && yarn goodies:python3:install",
     "test": "yarn goodies:java:test && yarn goodies:kotlin:test && yarn goodies:python3:test && yarn goodies:typescript:test && yarn package-goodies:test",
-    "typecheck": "tsc --project ."
+    "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
     "immutability-helper": "3.1.1",

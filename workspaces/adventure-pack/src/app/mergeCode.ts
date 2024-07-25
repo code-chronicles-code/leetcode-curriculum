@@ -1,8 +1,7 @@
 import invariant from "invariant";
 import type { ReadonlyDeep } from "type-fest";
 
-// TODO: split util by type of util so importing the main package doesn't pull in node:fs
-import { compareStringsCaseInsensitive } from "@code-chronicles/util/src/compareStringsCaseInsensitive";
+import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 
 import { BinaryHeap } from "./BinaryHeap";
 import { centerTextInComment } from "./centerTextInComment";

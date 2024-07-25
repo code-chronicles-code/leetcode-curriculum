@@ -1,10 +1,8 @@
 import invariant from "invariant";
 import { ReadonlyDeep } from "type-fest";
 
-import {
-  compareStringsCaseInsensitive,
-  mapObjectValues,
-} from "@code-chronicles/util";
+import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
+import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 
 export function fillOutImportedByAndSortImports<
   T extends ReadonlyDeep<{ imports: string[]; name: string }>,

@@ -2,7 +2,7 @@ import fsPromises from "node:fs/promises";
 import process from "node:process";
 
 import { getSubmissionList } from "@code-chronicles/leetcode-api";
-import { sleep } from "@code-chronicles/util";
+import { sleep } from "@code-chronicles/util/sleep";
 
 import { getFilenameForSubmission } from "./getFilenameForSubmission";
 import { getDirnameForSubmission } from "./getDirnameForSubmission";

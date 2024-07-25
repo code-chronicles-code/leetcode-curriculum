@@ -1,8 +1,6 @@
-import {
-  compareStringsCaseInsensitive,
-  promiseAllObject,
-  sortObjectKeysRecursive,
-} from "@code-chronicles/util";
+import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
+import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
+import { sortObjectKeysRecursive } from "@code-chronicles/util/sortObjectKeysRecursive";
 
 import type { GoodiesByLanguage } from "../../app/fetchGoodies";
 import { readGoodies as readJavaGoodies } from "./java/readGoodies";

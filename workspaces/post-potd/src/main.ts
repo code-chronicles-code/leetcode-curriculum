@@ -2,7 +2,7 @@ import process from "node:process";
 
 import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
 
-import { sleep } from "@code-chronicles/util";
+import { sleep } from "@code-chronicles/util/sleep";
 
 import { getPotdMessage } from "./getPotdMessage";
 import { readScriptData, writeScriptData } from "./readScriptData";

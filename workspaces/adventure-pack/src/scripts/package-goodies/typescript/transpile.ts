@@ -7,7 +7,7 @@ import {
   transpile as originalTranspile,
 } from "typescript";
 
-import { getRandomBytes } from "@code-chronicles/util";
+import { getRandomBytes } from "@code-chronicles/util/getRandomBytes";
 
 import { formatCode } from "./formatCode";
 import { removeUninitializedPropertyDeclarations } from "./removeUninitializedPropertyDeclarations";

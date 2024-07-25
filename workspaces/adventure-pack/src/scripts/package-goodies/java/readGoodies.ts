@@ -1,7 +1,7 @@
 import invariant from "invariant";
 import fsPromises from "node:fs/promises";
 
-import { setIfNotHasOwnOrThrow } from "@code-chronicles/util";
+import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
 import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
 import { GOODIES_DIRECTORY } from "./constants";

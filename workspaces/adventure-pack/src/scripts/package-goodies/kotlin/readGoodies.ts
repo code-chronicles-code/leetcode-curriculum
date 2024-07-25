@@ -1,7 +1,7 @@
 import invariant from "invariant";
 import fsPromises from "node:fs/promises";
 
-import { setIfNotHasOwnOrThrow } from "@code-chronicles/util";
+import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
 import type { KotlinGoody } from "../../../app/parsers/kotlinGoodyParser";
 import { GOODIES_DIRECTORY } from "./constants";

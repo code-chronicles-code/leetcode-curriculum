@@ -1,4 +1,5 @@
-import { getLines, isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util";
+import { getLines } from "@code-chronicles/util/getLines";
+import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
 
 export function extractJavaesqueImports(code: string): {
   codeWithoutImports: string;

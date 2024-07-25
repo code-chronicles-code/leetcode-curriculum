@@ -1,6 +1,6 @@
 import fsPromises from "node:fs/promises";
 
-import { createTemporaryFile } from "./createTemporaryFile";
+import { createTemporaryFile } from "@code-chronicles/util/createTemporaryFile";
 
 export async function writeToTemporaryFile(
   data: Parameters<typeof fsPromises.writeFile>[1],

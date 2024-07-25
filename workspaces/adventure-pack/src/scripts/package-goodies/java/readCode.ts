@@ -1,7 +1,7 @@
 import fsPromises from "node:fs/promises";
 import path from "node:path";
 
-import { only } from "@code-chronicles/util";
+import { only } from "@code-chronicles/util/only";
 
 import { GOODIES_DIRECTORY } from "./constants";
 

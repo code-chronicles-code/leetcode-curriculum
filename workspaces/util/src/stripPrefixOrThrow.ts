@@ -1,6 +1,6 @@
 import invariant from "invariant";
 
-import { stripPrefix } from "./stripPrefix";
+import { stripPrefix } from "@code-chronicles/util/stripPrefix";
 
 export function stripPrefixOrThrow(s: string, prefix: string): string {
   const res = stripPrefix(s, prefix);

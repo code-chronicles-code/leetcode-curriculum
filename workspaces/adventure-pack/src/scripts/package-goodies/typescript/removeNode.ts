@@ -1,6 +1,6 @@
 import { Node as TSNode } from "ts-morph";
 
-import { stripSuffixOrThrow } from "@code-chronicles/util";
+import { stripSuffixOrThrow } from "@code-chronicles/util/stripSuffixOrThrow";
 
 export function removeNode(
   node: TSNode,

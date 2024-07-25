@@ -1,6 +1,6 @@
 import invariant from "invariant";
 
-import { stripSuffix } from "./stripSuffix";
+import { stripSuffix } from "@code-chronicles/util/stripSuffix";
 
 export function stripSuffixOrThrow(s: string, suffix: string): string {
   const res = stripSuffix(s, suffix);

@@ -1,7 +1,7 @@
 import { constants } from "node:fs";
 import { open as openFile, type FileHandle } from "node:fs/promises";
 
-import { getRandomBytes } from "./getRandomBytes";
+import { getRandomBytes } from "@code-chronicles/util/getRandomBytes";
 
 export async function createTemporaryFile(
   prefix: string = "",

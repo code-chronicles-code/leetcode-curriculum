@@ -1,11 +1,9 @@
 import invariant from "invariant";
 
-import {
-  compareStringsCaseInsensitive,
-  getLines,
-  isStringEmptyOrWhitespaceOnly,
-  mapObjectValues,
-} from "@code-chronicles/util";
+import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
+import { getLines } from "@code-chronicles/util/getLines";
+import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
+import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 
 const CLASSES_TO_IGNORE: ReadonlySet<string> = new Set(["TreeNode"]);
 

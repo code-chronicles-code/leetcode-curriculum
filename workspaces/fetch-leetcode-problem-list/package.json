@@ -18,7 +18,7 @@
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "start": "ts-node src/main.ts",
-    "typecheck": "tsc --project ."
+    "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
     "@code-chronicles/leetcode-api": "0.0.1",

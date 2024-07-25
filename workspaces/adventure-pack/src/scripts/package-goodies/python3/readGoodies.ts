@@ -1,6 +1,7 @@
-import { setIfNotHasOwnOrThrow } from "@code-chronicles/util";
 import invariant from "invariant";
 import fsPromises from "node:fs/promises";
+
+import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
 import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";

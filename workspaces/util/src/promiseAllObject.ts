@@ -1,4 +1,4 @@
-import { mapObjectValuesAsync } from "./mapObjectValuesAsync";
+import { mapObjectValuesAsync } from "@code-chronicles/util/mapObjectValuesAsync";
 
 export function promiseAllObject<TObj extends Record<string, Promise<unknown>>>(
   obj: TObj,
