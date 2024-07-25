@@ -818,6 +818,29 @@ iteratorPrototype.sum = function () {
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.take 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.take ??= function (limit) {
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new RangeError(\`Limit must be a non-negative integer, got \${limit}\`);
+  }
+  if (limit === 0) {
+    return [].values();
+  }
+  return function* () {
+    let index = 0;
+    for (const value of this.toIterable()) {
+      yield value;
+      if (++index >= limit) {
+        return;
+      }
+    }
+  }.call(this);
+};"
+`;
+
 exports[`App can render goody: JavaScript Iterator.prototype.toArray 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -1644,6 +1667,41 @@ iteratorPrototype.sum = function (this: Iterator<number>): number {
     res += element;
   }
   return res;
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.take 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    take(this: Iterator<T>, limit: number): IterableIterator<T>;
+  }
+}
+
+iteratorPrototype.take ??= function <T>(
+  this: Iterator<T>,
+  limit: number,
+): IterableIterator<T> {
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new RangeError(\`Limit must be a non-negative integer, got \${limit}\`);
+  }
+
+  if (limit === 0) {
+    return [].values();
+  }
+
+  return function* (this: Iterator<T>) {
+    let index = 0;
+
+    for (const value of this.toIterable()) {
+      yield value;
+      if (++index >= limit) {
+        return;
+      }
+    }
+  }.call(this);
 };"
 `;
 
