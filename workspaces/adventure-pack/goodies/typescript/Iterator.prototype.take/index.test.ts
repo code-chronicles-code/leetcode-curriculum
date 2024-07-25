@@ -8,22 +8,22 @@ import "./index";
 describe("Iterator.prototype.take", () => {
   it("takes the specified number of elements from the iterator", () => {
     const result = Array.from([1, 12, 3, 42, 5].values().take(4));
-    expect(result).toEqual([1, 12, 3, 42]);
+    expect(result).toStrictEqual([1, 12, 3, 42]);
   });
 
   it("takes all elements if the specified number is greater than the iterator length", () => {
     const result = Array.from([1, 2, 3].values().take(5));
-    expect(result).toEqual([1, 2, 3]);
+    expect(result).toStrictEqual([1, 2, 3]);
   });
 
   it("returns an empty iterator if the specified number is 0", () => {
     const result = Array.from([1, 2, 3, 4, 5].values().take(0));
-    expect(result).toEqual([]);
+    expect(result).toStrictEqual([]);
   });
 
   it("returns an empty iterator for an empty iterator", () => {
     const result = Array.from([].values().take(3));
-    expect(result).toEqual([]);
+    expect(result).toStrictEqual([]);
   });
 
   it("handles taking elements from an infinite iterator", () => {
@@ -34,7 +34,7 @@ describe("Iterator.prototype.take", () => {
       }
     }
     const result = Array.from(infiniteNumbers().take(5));
-    expect(result).toEqual([0, 1, 2, 3, 4]);
+    expect(result).toStrictEqual([0, 1, 2, 3, 4]);
   });
 
   it("throws when taking 5 elements from an iterator that errors", () => {

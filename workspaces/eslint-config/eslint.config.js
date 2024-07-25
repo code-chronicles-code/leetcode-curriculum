@@ -1,3 +1,4 @@
+const jestPlugin = require("eslint-plugin-jest");
 const stylisticPluginJs = require("@stylistic/eslint-plugin-js");
 const stylisticPluginTs = require("@stylistic/eslint-plugin-ts");
 const typescriptEslintPlugin = require("@typescript-eslint/eslint-plugin");
@@ -170,6 +171,24 @@ const vanilla = {
   },
 };
 
+const jest = {
+  // Default pattern from https://jestjs.io/docs/configuration#testmatch-arraystring
+  files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+  languageOptions: {
+    globals: globals.node,
+    parser: typeScriptEslintParser,
+  },
+  plugins: {
+    jest: jestPlugin,
+  },
+  rules: {
+    // TODO: see what other rules from https://www.npmjs.com/package/eslint-plugin-jest are interesting
+    "jest/expect-expect": "warn",
+    "jest/no-export": "error",
+    "jest/prefer-strict-equal": "error",
+  },
+};
+
 const typescript = {
   ...vanilla,
   files: ["**/*.ts", "**/*.tsx"],
@@ -200,4 +219,4 @@ const typescript = {
   },
 };
 
-module.exports = [vanilla, typescript];
+module.exports = [vanilla, typescript, jest];

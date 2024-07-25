@@ -22,6 +22,7 @@
     "@stylistic/eslint-plugin-ts": "2.3.0",
     "@typescript-eslint/eslint-plugin": "7.17.0",
     "@typescript-eslint/parser": "7.17.0",
+    "eslint-plugin-jest": "28.6.0",
     "globals": "15.8.0"
   },
   "devDependencies": {
