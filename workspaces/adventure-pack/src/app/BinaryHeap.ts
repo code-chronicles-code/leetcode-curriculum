@@ -10,7 +10,7 @@ export class BinaryHeap<T> {
 
   push(item: T): void {
     this.items.push(item);
-    this.bubbleUp(this.items.length - 1);
+    this.bubbleUp(this.size - 1);
   }
 
   peek(): T | undefined {
@@ -22,7 +22,7 @@ export class BinaryHeap<T> {
       return undefined;
     }
 
-    swap(this.items, 0, this.items.length - 1);
+    swap(this.items, 0, this.size - 1);
     const res = this.items.pop();
     this.bubbleDown(0);
     return res;
@@ -63,7 +63,7 @@ export class BinaryHeap<T> {
     let bestIndex = index;
     for (const childIndex of BinaryHeap.getChildIndexes(index)) {
       if (
-        childIndex < this.items.length &&
+        childIndex < this.size &&
         this.compareFn(this.items[childIndex], this.items[bestIndex]) < 0
       ) {
         bestIndex = childIndex;
