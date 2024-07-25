@@ -1,8 +1,8 @@
-export function objectFromKeys<T>(
-  keys: readonly string[],
-  valueFactory: () => T,
-): Record<string, T> {
-  const res = {} as Record<string, T>;
+export function objectFromKeys<TKey extends PropertyKey, TVal>(
+  keys: readonly TKey[],
+  valueFactory: () => TVal,
+): Record<TKey, TVal> {
+  const res = {} as Record<TKey, TVal>;
   for (const key of keys) {
     res[key] = valueFactory();
   }

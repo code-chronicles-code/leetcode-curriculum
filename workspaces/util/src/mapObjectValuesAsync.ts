@@ -1,3 +1,5 @@
+// TODO: maybe improve the typing here
+
 export async function mapObjectValuesAsync<TIn, TOut>(
   obj: Readonly<Record<string, TIn>>,
   mapFn: (value: TIn, key: string) => Promise<TOut>,

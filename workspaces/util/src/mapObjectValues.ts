@@ -1,3 +1,5 @@
+// TODO: maybe improve the typing here
+
 export function mapObjectValues<TIn, TOut>(
   obj: Readonly<Record<string, TIn>>,
   mapFn: (value: TIn, key: string) => TOut,
