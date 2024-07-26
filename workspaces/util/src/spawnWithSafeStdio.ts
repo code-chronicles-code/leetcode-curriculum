@@ -1,3 +1,4 @@
+import process from "node:process";
 import { spawn, type SpawnOptions } from "node:child_process";
 
 export function spawnWithSafeStdio(

@@ -36,7 +36,7 @@ jobs:
         uses: ./.github/workflows/set-up-everything
 
       - name: Build app
-        run: (cd workspaces/adventure-pack && yarn build-app)
+        run: yarn workspace @code-chronicles/adventure-pack build-app
         env:
           NODE_ENV: production
 

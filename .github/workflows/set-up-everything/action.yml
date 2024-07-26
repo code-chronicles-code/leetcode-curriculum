@@ -11,8 +11,8 @@ runs:
         java-version: 21
         cache: gradle
         cache-dependency-path: |
-          workspaces/adventure-pack/goodies/java/build.gradle.kts
-          workspaces/adventure-pack/goodies/kotlin/build.gradle.kts
+          ./workspaces/adventure-pack/goodies/java/build.gradle.kts
+          ./workspaces/adventure-pack/goodies/kotlin/build.gradle.kts
 
     - name: Set up Node
       uses: actions/setup-node@v4
@@ -20,7 +20,7 @@ runs:
         # For some reason Node 22 was causing some problems with installing dependencies.
         node-version: 20
         cache: yarn
-        cache-dependency-path: yarn.lock
+        cache-dependency-path: ./yarn.lock
 
     - name: Set up Python
       uses: actions/setup-python@v5

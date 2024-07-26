@@ -28,8 +28,13 @@ jobs:
       - name: Set up everything
         uses: ./.github/workflows/set-up-everything
 
+      - name: Build script
+        run: yarn workspace @code-chronicles/generate-health-report build
+        env:
+          NODE_ENV: production
+
       - name: Generate health report and post it on PR
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: "require('.github/workflows/generate-health-report.js')({context, github, os: '${{ matrix.os }}'})"
+          script: "require('./workspaces/generate-health-report/dist/generate-health-report.js').default({context, github, os: '${{ matrix.os }}'})"
