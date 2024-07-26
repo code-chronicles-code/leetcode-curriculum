@@ -1,7 +1,7 @@
 import { spawn, type SpawnOptions } from "node:child_process";
-import type { Readable } from "node:stream";
 
 import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
+import { slurpReadable } from "@code-chronicles/util/slurpReadable";
 
 type ExecWithArgsResult = {
   exitCode: number | null;
@@ -33,9 +33,4 @@ export function execWithArgs(
       resolve({ exitCode, signal, ...(await output) }),
     );
   });
-}
-
-async function slurpReadable(readable: Readable): Promise<string> {
-  const data = await readable.toArray();
-  return Buffer.concat(data.map(Buffer.from)).toString("utf8");
 }
