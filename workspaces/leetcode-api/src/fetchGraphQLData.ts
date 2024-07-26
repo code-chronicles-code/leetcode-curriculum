@@ -7,7 +7,7 @@ const parser = z.object({
 
 export type GraphQLData = z.infer<typeof parser>;
 
-export async function getGraphQLData(
+export async function fetchGraphQLData(
   query: string,
   variables: Record<string, unknown> = {},
 ): Promise<GraphQLData> {

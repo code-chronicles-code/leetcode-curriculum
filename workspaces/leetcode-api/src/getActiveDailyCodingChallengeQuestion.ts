@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { sleep } from "@code-chronicles/util/sleep";
 
-import { getGraphQLData } from "./getGraphQLData";
+import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionDifficultyParser } from "./parsers/questionDifficultyParser";
 import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
@@ -50,7 +50,7 @@ export type ActiveDailyCodingChallengeQuestion = z.infer<
 >;
 
 export async function getActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
-  const { data } = await getGraphQLData(QUERY);
+  const { data } = await fetchGraphQLData(QUERY);
   return activeDailyCodingChallengeQuestionParser.parse(data);
 }
 

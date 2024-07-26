@@ -6,6 +6,7 @@ export {
 
 export {
   getQuestionList,
+  CategorySlug,
   type QuestionList,
   type QuestionListQuestion,
 } from "./getQuestionList";
@@ -16,11 +17,12 @@ export {
 } from "./getRecentAcSubmissionList";
 
 export {
+  PAGE_SIZE as SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE,
   SUBMISSION_STATUS_TO_ABBREVIATION,
   SUBMISSION_STATUS_TO_DISPLAY_TEXT,
-  getSubmissionList,
+  fetchSubmissionList,
   type Submission,
   type SubmissionList,
-} from "./getSubmissionList";
+} from "./fetchSubmissionList";
 
 export type { QuestionDifficulty } from "./parsers/questionDifficultyParser";
