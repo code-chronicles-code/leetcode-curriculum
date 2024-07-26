@@ -1,7 +1,10 @@
 import fsPromises from "node:fs/promises";
 import process from "node:process";
 
-import { getSubmissionList } from "@code-chronicles/leetcode-api";
+import {
+  fetchSubmissionList,
+  SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE,
+} from "@code-chronicles/leetcode-api";
 import { sleep } from "@code-chronicles/util/sleep";
 
 import { getFilenameForSubmission } from "./getFilenameForSubmission";
@@ -22,7 +25,7 @@ async function main(): Promise<void> {
   const submissionsMap = new Map<string, TransformedSubmission>();
 
   const priorSubmissionsMap: Map<string, TransformedSubmission> =
-    await fsPromises.readFile(METADATA_FILE, { encoding: "utf8" }).then(
+    await fsPromises.readFile(METADATA_FILE, "utf8").then(
       (data) => {
         const map = new Map<string, TransformedSubmission>();
         for (const [line] of data.matchAll(/[^\n]+/g)) {
@@ -91,10 +94,11 @@ async function main(): Promise<void> {
       try {
         console.error("Fetching...");
         // eslint-disable-next-line no-await-in-loop
-        data = await getSubmissionList({
+        data = await fetchSubmissionList({
           session: leetcodeSessionCookie,
-          // TODO: Don't hardcode the 20, export the constant from the API library.
-          page: Math.floor(submissionsMap.size / 20),
+          page: Math.floor(
+            submissionsMap.size / SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE,
+          ),
         });
       } catch (e) {
         // eslint-disable-next-line no-await-in-loop

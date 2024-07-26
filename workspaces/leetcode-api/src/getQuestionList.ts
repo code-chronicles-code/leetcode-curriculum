@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { getGraphQLData } from "./getGraphQLData";
+import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionDifficultyParser } from "./parsers/questionDifficultyParser";
 import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
@@ -54,18 +54,30 @@ const questionListParser = z
 
 export type QuestionList = z.infer<typeof questionListParser>;
 
+// TODO: see if there's a way we can fetch these...
+export enum CategorySlug {
+  ALL_TOPICS = "all-code-essentials",
+  ALGORITHMS = "algorithms",
+  DATABASE = "database",
+  SHELL = "shell",
+  CONCURRENCY = "concurrency",
+  JAVASCRIPT = "javascript",
+  PANDAS = "pandas",
+}
+
 export async function getQuestionList({
-  categorySlug = "all-code-essentials",
+  categorySlug = CategorySlug.ALL_TOPICS,
   filters = {},
   limit,
   skip,
 }: {
-  categorySlug?: string;
+  categorySlug?: CategorySlug;
+  // TODO: more specific type if possible
   filters?: Record<string, unknown>;
   limit?: number;
   skip?: number;
 } = {}): Promise<QuestionList> {
-  const { data } = await getGraphQLData(QUERY, {
+  const { data } = await fetchGraphQLData(QUERY, {
     categorySlug,
     filters,
     limit,

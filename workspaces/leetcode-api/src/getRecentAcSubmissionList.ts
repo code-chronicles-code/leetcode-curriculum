@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { getGraphQLData } from "./getGraphQLData";
+import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
 const QUERY = `
@@ -45,6 +45,6 @@ export async function getRecentAcSubmissionList({
   limit?: number;
   username: string;
 }): Promise<RecentAcSubmission[]> {
-  const { data } = await getGraphQLData(QUERY, { username, limit });
+  const { data } = await fetchGraphQLData(QUERY, { username, limit });
   return recentAcSubmissionListParser.parse(data);
 }

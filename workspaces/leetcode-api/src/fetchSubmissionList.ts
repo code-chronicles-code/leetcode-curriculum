@@ -102,9 +102,9 @@ const submissionListParser = z.object({
 
 export type SubmissionList = z.infer<typeof submissionListParser>;
 
-const PAGE_SIZE = 20;
+export const PAGE_SIZE = 20;
 
-export async function getSubmissionList({
+export async function fetchSubmissionList({
   // Note: Even if you specify a higher limit it seems LeetCode caps this to the page size.
   limit = PAGE_SIZE,
   page = 0,
