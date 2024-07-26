@@ -1,7 +1,7 @@
 import nullthrows from "nullthrows";
 
 import { SUBMISSION_STATUS_TO_ABBREVIATION } from "@code-chronicles/leetcode-api";
-import { timestampToYearMonthDay } from "@code-chronicles/util";
+import { timestampToYearMonthDay } from "@code-chronicles/util/timestampToYearMonthDay";
 
 import { LANGUAGE_TO_FILE_EXTENSION } from "./constants";
 import type { TransformedSubmission } from "./transformSubmission";

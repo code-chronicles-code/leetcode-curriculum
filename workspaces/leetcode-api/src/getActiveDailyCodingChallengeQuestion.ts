@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { sleep } from "@code-chronicles/util";
+import { sleep } from "@code-chronicles/util/sleep";
 
 import { getGraphQLData } from "./getGraphQLData";
 import { questionDifficultyParser } from "./parsers/questionDifficultyParser";

@@ -12,11 +12,13 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
-  "main": "src/index.ts",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "typecheck": "tsc --project ."
+    "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
     "invariant": "2.2.4",

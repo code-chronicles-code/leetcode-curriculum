@@ -6,7 +6,7 @@ import {
   getQuestionList,
   type QuestionListQuestion,
 } from "@code-chronicles/leetcode-api";
-import { sleep } from "@code-chronicles/util";
+import { sleep } from "@code-chronicles/util/sleep";
 
 const FILENAME = "problems.jsonl";
 

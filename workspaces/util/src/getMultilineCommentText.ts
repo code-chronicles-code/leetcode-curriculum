@@ -1,4 +1,4 @@
-import { getLines } from "./getLines";
+import { getLines } from "@code-chronicles/util/getLines";
 
 export function getMultilineCommentText(text: string): string {
   const lines = Array.from(getLines(text.trim()));

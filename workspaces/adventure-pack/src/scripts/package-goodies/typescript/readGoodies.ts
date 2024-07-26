@@ -1,10 +1,8 @@
 import invariant from "invariant";
 import fsPromises from "node:fs/promises";
 
-import {
-  mapObjectValuesAsync,
-  setIfNotHasOwnOrThrow,
-} from "@code-chronicles/util";
+import { mapObjectValuesAsync } from "@code-chronicles/util/mapObjectValuesAsync";
+import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
 import type { JavaScriptGoody } from "../../../app/parsers/javaScriptGoodyParser";
 import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";

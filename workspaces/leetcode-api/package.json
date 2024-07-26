@@ -16,7 +16,7 @@
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "typecheck": "tsc --project ."
+    "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
     "@code-chronicles/util": "0.0.1",

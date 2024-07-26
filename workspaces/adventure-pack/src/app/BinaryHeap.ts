@@ -1,5 +1,4 @@
-// TODO: split util by type of util so importing the main package doesn't pull in node:fs
-import { swap } from "@code-chronicles/util/src/swap";
+import { swap } from "@code-chronicles/util/swap";
 
 // TODO: find a way to keep the code in sync with the BinaryHeap goody
 

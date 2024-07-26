@@ -1,8 +1,8 @@
 import type { JsonObject, JsonValue } from "type-fest";
 
-import { isObject } from "./isObject";
-import { mapObjectValues } from "./mapObjectValues";
-import { sortObjectKeys } from "./sortObjectKeys";
+import { isObject } from "@code-chronicles/util/isObject";
+import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
+import { sortObjectKeys } from "@code-chronicles/util/sortObjectKeys";
 
 export function sortObjectKeysRecursive<TObj extends JsonValue>(
   obj: TObj,
