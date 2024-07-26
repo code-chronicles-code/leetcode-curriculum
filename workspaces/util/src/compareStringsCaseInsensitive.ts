@@ -1,13 +1,8 @@
-export function compareStringsCaseInsensitive(
-  a: PropertyKey,
-  b: PropertyKey,
-): number {
-  const aStr = String(a);
-  const bStr = String(b);
+import { compareStrings } from "@code-chronicles/util/compareStrings";
 
+export function compareStringsCaseInsensitive(a: string, b: string): number {
   // Fall back to case-sensitive if the strings are case-insensitively equivalent.
   return (
-    aStr.toLowerCase().localeCompare(bStr.toLowerCase()) ||
-    aStr.localeCompare(bStr)
+    compareStrings(a.toLowerCase(), b.toLowerCase()) || compareStrings(a, b)
   );
 }
