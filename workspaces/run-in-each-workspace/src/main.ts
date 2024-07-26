@@ -15,7 +15,7 @@ function isCommand(value: string): value is Command {
   return COMMANDS.has(value as Command);
 }
 
-const SKIP: Record<string, ReadonlySet<Command>> = {
+const SKIP: Readonly<Record<string, ReadonlySet<Command>>> = {
   "download-submissions": new Set(["test"]),
   "eslint-config": new Set(["test", "typecheck"]),
   "fetch-leetcode-problem-list": new Set(["test"]),
@@ -24,7 +24,7 @@ const SKIP: Record<string, ReadonlySet<Command>> = {
   "post-potd": new Set(["test"]),
   "run-in-each-workspace": new Set(["test"]),
   util: new Set(["test"]),
-} as const;
+};
 
 async function main() {
   if (process.argv.length < 3) {
