@@ -4,7 +4,7 @@ import { spawn, type SpawnOptions } from "node:child_process";
 export function spawnWithSafeStdio(
   command: string,
   args: readonly string[],
-  options?: SpawnOptions,
+  options?: Omit<SpawnOptions, "stdio">,
 ): Promise<void> {
   return new Promise((resolve, reject) => {
     const childProcess = spawn(command, args, {

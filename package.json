@@ -14,7 +14,7 @@
       "workspaces/get-recent-submissions",
       "workspaces/leetcode-api",
       "workspaces/post-potd",
-      "workspaces/run-in-each-workspace",
+      "workspaces/repository-scripts",
       "workspaces/util"
     ],
     "nohoist": [
@@ -23,10 +23,10 @@
     ]
   },
   "scripts": {
-    "format": "prettier --color --write . && yarn --silent workspace @code-chronicles/run-in-each-workspace start format",
-    "lint": "eslint --color --max-warnings=0 . && yarn --silent workspace @code-chronicles/run-in-each-workspace start lint",
-    "test": "yarn --silent workspace @code-chronicles/run-in-each-workspace start test",
-    "typecheck": "yarn --silent workspace @code-chronicles/run-in-each-workspace start typecheck"
+    "format": "yarn --silent workspace @code-chronicles/repository-scripts start format",
+    "lint": "yarn --silent workspace @code-chronicles/repository-scripts start lint",
+    "test": "yarn --silent workspace @code-chronicles/repository-scripts start test",
+    "typecheck": "yarn --silent workspace @code-chronicles/repository-scripts start typecheck"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
