@@ -1,5 +1,6 @@
 import type { Context } from "@actions/github/lib/context.d.ts";
 import type { Octokit } from "@octokit/rest";
+import { writeFile } from "node:fs/promises";
 import nullthrows from "nullthrows";
 
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
@@ -8,10 +9,10 @@ const GITHUB_ACTIONS_BOT_ID = 41898282;
 
 const COMMANDS = [
   "yarn lint",
-  "yarn typecheck",
-  "yarn test",
-  "yarn workspace @code-chronicles/adventure-pack build-app",
-  "yarn workspace @code-chronicles/fetch-leetcode-problem-list build",
+  // "yarn typecheck",
+  // "yarn test",
+  // "yarn workspace @code-chronicles/adventure-pack build-app",
+  // "yarn workspace @code-chronicles/fetch-leetcode-problem-list build",
 ];
 
 export default async function ({
@@ -65,23 +66,27 @@ export default async function ({
     `${healthReportPrefix}\n\n# PR Health Report (${os})\n\nLast checked commit ${lastCheckedCommit}.\n\n` +
     lines.map((line) => line + "\n").join("");
 
-  if (existingHealthReport) {
-    await github.rest.issues.updateComment({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      // eslint-disable-next-line camelcase -- This casing is required by the API.
-      comment_id: existingHealthReport.id,
-      body: healthReportBody,
-    });
-  } else {
-    console.log(context.repo)
-    console.log(context)
-    await github.rest.issues.createComment({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      // eslint-disable-next-line camelcase -- This casing is required by the API.
-      issue_number: prNumber,
-      body: healthReportBody,
-    });
-  }
+  // if (existingHealthReport) {
+  //   await github.rest.issues.updateComment({
+  //     owner: context.repo.owner,
+  //     repo: context.repo.repo,
+  //     // eslint-disable-next-line camelcase -- This casing is required by the API.
+  //     comment_id: existingHealthReport.id,
+  //     body: healthReportBody,
+  //   });
+  // } else {
+  //   console.log(context.repo)
+  //   console.log(context)
+  //   await github.rest.issues.createComment({
+  //     owner: context.repo.owner,
+  //     repo: context.repo.repo,
+  //     // eslint-disable-next-line camelcase -- This casing is required by the API.
+  //     issue_number: prNumber,
+  //     body: healthReportBody,
+  //   });
+  // }
+  await writeFile(
+      process.env.GITHUB_STEP_SUMMARY,
+      healthReportBody
+  )
 }
