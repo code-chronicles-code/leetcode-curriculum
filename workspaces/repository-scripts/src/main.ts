@@ -27,7 +27,11 @@ async function main() {
     throw new Error(`Invalid script: ${script}`);
   }
 
-  const errors: { command: string; args: readonly string[] }[] = [];
+  const failedCommands: {
+    command: string;
+    args: readonly string[];
+    error: unknown;
+  }[] = [];
   const run = async (
     command: string,
     args: readonly string[],
@@ -42,9 +46,9 @@ async function main() {
         // GitHub Actions for some reason. Maybe a PATH issue?
         shell: "bash",
       });
-    } catch (err) {
-      errors.push({ command, args: combinedArgs });
-      console.error(err);
+    } catch (error) {
+      failedCommands.push({ command, args: combinedArgs, error });
+      console.error(error);
     }
   };
 
@@ -87,12 +91,12 @@ async function main() {
     1,
   );
 
-  if (errors.length > 0) {
+  if (failedCommands.length > 0) {
     console.error("Some commands did not complete successfully:");
-    for (const error of errors) {
-      console.error(error);
+    for (const { command, args } of failedCommands) {
+      console.error({ command, args });
     }
-    throw new Error();
+    throw new AggregateError(failedCommands.map(({ error }) => error));
   }
 }
 

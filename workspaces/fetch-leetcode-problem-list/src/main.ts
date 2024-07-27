@@ -38,7 +38,7 @@ async function main(): Promise<void> {
     }
 
     console.error(
-      `Fetched data on ${[problemsMap.size]} / ${totalCount} problems so far.`,
+      `Fetched data on ${problemsMap.size} / ${totalCount} problems so far.`,
     );
 
     if (problemsMap.size === totalCount) {

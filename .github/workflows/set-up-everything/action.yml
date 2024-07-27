@@ -17,8 +17,7 @@ runs:
     - name: Set up Node
       uses: actions/setup-node@v4
       with:
-        # For some reason Node 22 was causing some problems with installing dependencies.
-        node-version: 20
+        node-version: 22
         cache: yarn
         cache-dependency-path: ./yarn.lock
 
@@ -29,5 +28,5 @@ runs:
 
     - name: Install dependencies
       # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
-      run: yarn --production=false --frozen-lockfile --verbose
+      run: yarn --production=false --frozen-lockfile
       shell: bash

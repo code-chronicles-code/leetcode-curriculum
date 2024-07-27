@@ -10,6 +10,7 @@ export async function promiseAllLimitingConcurrency<
     -readonly [P in keyof T]: Awaited<ReturnType<T[P]>>;
   };
 
+  // TODO: might be cool to use some kind of queueing system!
   for (const chunk of chunkBySize(factories, concurrencyLimit)) {
     // eslint-disable-next-line no-await-in-loop -- Intentional await in loop to limit concurrency!
     res.push(...(await Promise.all(chunk.map((factory) => factory()))));

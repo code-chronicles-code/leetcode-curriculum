@@ -1,6 +1,8 @@
 import invariant from "invariant";
 
+import { isString } from "@code-chronicles/util/isString";
+
 export function assertIsString(value: unknown): string {
-  invariant(typeof value === "string", "Got non-string!");
+  invariant(isString(value), "Got non-string!");
   return value;
 }
