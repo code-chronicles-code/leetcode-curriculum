@@ -789,6 +789,23 @@ iteratorPrototype.min = function (
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.product 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.product = function () {
+  let res = 1;
+  let isEmpty = true;
+
+  for (const element of this.toIterable()) {
+    isEmpty = false;
+    res *= element;
+  }
+
+  return isEmpty ? 0 : res;
+};"
+`;
+
 exports[`App can render goody: JavaScript Iterator.prototype.some 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -1620,6 +1637,29 @@ iteratorPrototype.min = function <T>(
   }
 
   return res;
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.product 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    product(this: Iterator<number>): number;
+  }
+}
+
+iteratorPrototype.product = function (this: Iterator<number>): number {
+  let res = 1;
+  let isEmpty = true;
+
+  for (const element of this.toIterable()) {
+    isEmpty = false;
+    res *= element;
+  }
+
+  return isEmpty ? 0 : res;
 };"
 `;
 

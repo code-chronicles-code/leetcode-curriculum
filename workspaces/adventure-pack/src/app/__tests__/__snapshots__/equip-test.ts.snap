@@ -1284,6 +1284,39 @@ iteratorPrototype.min = function (
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Iterator.prototype.product 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.product = function () {
+  let res = 1;
+  let isEmpty = true;
+
+  for (const element of this.toIterable()) {
+    isEmpty = false;
+    res *= element;
+  }
+
+  return isEmpty ? 0 : res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Iterator.prototype.some 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2788,6 +2821,54 @@ iteratorPrototype.min = function <T>(
   }
 
   return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.product 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    product(this: Iterator<number>): number;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.product = function (this: Iterator<number>): number {
+  let res = 1;
+  let isEmpty = true;
+
+  for (const element of this.toIterable()) {
+    isEmpty = false;
+    res *= element;
+  }
+
+  return isEmpty ? 0 : res;
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
