@@ -86,7 +86,7 @@ export default async function ({
   //   });
   // }
   await writeFile(
-      process.env.GITHUB_STEP_SUMMARY,
+      nullthrows(process.env.GITHUB_STEP_SUMMARY),
       healthReportBody
   )
 }
