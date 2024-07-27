@@ -10,12 +10,9 @@ declare global {
 
 iteratorPrototype.product = function (this: Iterator<number>): number {
   let res = 1;
-  let isEmpty = true;
-
   for (const element of this.toIterable()) {
-    isEmpty = false;
     res *= element;
   }
 
-  return isEmpty ? 0 : res;
+  return res;
 };
