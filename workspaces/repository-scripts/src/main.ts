@@ -2,6 +2,7 @@ import type { SpawnOptions } from "node:child_process";
 import process from "node:process";
 
 import { getCurrentGitRepositoryRoot } from "@code-chronicles/util/getCurrentGitRepositoryRoot";
+import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 import { readWorkspaces } from "@code-chronicles/util/readWorkspaces";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
@@ -47,33 +48,44 @@ async function main() {
     }
   };
 
-  const rootCommand = REPOSITORY_ROOT_COMMANDS[script];
-  if (rootCommand) {
-    const currentGitRepositoryRoot = await getCurrentGitRepositoryRoot();
+  const commands = [
+    async () => {
+      const rootCommand = REPOSITORY_ROOT_COMMANDS[script];
+      if (rootCommand) {
+        const currentGitRepositoryRoot = await getCurrentGitRepositoryRoot();
 
-    console.error(`Running script ${script} for repository root!`);
-    await run.apply(null, [...rootCommand, { cwd: currentGitRepositoryRoot }]);
-  }
+        console.error(`Running script ${script} for repository root!`);
+        await run.apply(null, [
+          ...rootCommand,
+          { cwd: currentGitRepositoryRoot },
+        ]);
+      }
+    },
 
-  const workspaces = await readWorkspaces();
-  for (const workspace of workspaces) {
-    const workspaceShortName = stripPrefixOrThrow(
-      workspace,
-      "@code-chronicles/",
-    );
-    if (SCRIPTS_TO_SKIP_BY_WORKSPACE[workspaceShortName]?.has(script)) {
-      console.error(
-        `Skipping script ${script} for workspace: ${workspaceShortName}`,
+    ...(await readWorkspaces()).map((workspace) => async () => {
+      const workspaceShortName = stripPrefixOrThrow(
+        workspace,
+        "@code-chronicles/",
       );
-      continue;
-    }
+      if (SCRIPTS_TO_SKIP_BY_WORKSPACE[workspaceShortName]?.has(script)) {
+        console.error(
+          `Skipping script ${script} for workspace: ${workspaceShortName}`,
+        );
+        return;
+      }
 
-    console.error(
-      `Running script ${script} for workspace: ${workspaceShortName}`,
-    );
-    // eslint-disable-next-line no-await-in-loop
-    await run("yarn", ["workspace", workspace, script]);
-  }
+      console.error(
+        `Running script ${script} for workspace: ${workspaceShortName}`,
+      );
+      await run("yarn", ["workspace", workspace, script]);
+    }),
+  ];
+
+  await promiseAllLimitingConcurrency(
+    commands,
+    // TODO: support parallelization in GitHub Actions
+    1,
+  );
 
   if (errors.length > 0) {
     console.error("Some commands did not complete successfully:");
