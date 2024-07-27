@@ -10,8 +10,8 @@ const COMMANDS = [
   "yarn lint",
   "yarn typecheck",
   "yarn test",
-  "(cd workspaces/adventure-pack && yarn build-app)",
-  "(cd workspaces/fetch-leetcode-problem-list && yarn build)",
+  "yarn workspace @code-chronicles/adventure-pack build-app",
+  "yarn workspace @code-chronicles/fetch-leetcode-problem-list build",
 ];
 
 export default async function ({

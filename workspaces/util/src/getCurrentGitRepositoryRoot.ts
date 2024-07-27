@@ -3,13 +3,16 @@ import invariant from "invariant";
 import { execWithArgs } from "@code-chronicles/util/execWithArgs";
 
 export async function getCurrentGitRepositoryRoot(): Promise<string> {
-  const result = await execWithArgs("git", ["rev-parse", "--show-toplevel"]);
+  const gitCommandResult = await execWithArgs("git", [
+    "rev-parse",
+    "--show-toplevel",
+  ]);
 
-  if (result.exitCode !== 0) {
-    throw new Error(result.stderr.trim() || "Non-zero exit code!");
+  if (gitCommandResult.exitCode !== 0) {
+    throw new Error(gitCommandResult.stderr.trim() || "Non-zero exit code!");
   }
 
-  const repositoryRoot = result.stdout.trim();
+  const repositoryRoot = gitCommandResult.stdout.trim();
   invariant(repositoryRoot.length > 0, "Expected non-empty repository root!");
   return repositoryRoot;
 }

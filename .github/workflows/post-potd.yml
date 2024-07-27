@@ -48,4 +48,4 @@ jobs:
           key: post-potd-script-data-${{ github.run_id }}
 
       - name: Post problem of the day
-        run: (cd workspaces/post-potd && yarn start)
+        run: yarn workspace @code-chronicles/post-potd start

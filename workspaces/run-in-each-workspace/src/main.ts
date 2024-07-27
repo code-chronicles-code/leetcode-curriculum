@@ -1,7 +1,6 @@
 import process from "node:process";
 import type { IterableElement } from "type-fest";
 
-import { getCurrentGitRepositoryRoot } from "@code-chronicles/util/getCurrentGitRepositoryRoot";
 import { readWorkspaces } from "@code-chronicles/util/readWorkspaces";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
@@ -45,26 +44,28 @@ async function main() {
     throw new Error(`Invalid command: ${command}`);
   }
 
-  process.chdir(await getCurrentGitRepositoryRoot());
-
-  const workspaceDirectories = await readWorkspaces("package.json");
+  const workspaces = await readWorkspaces();
 
   let hasError = false;
-  for (const workspaceDirectory of workspaceDirectories) {
-    const workspaceName = stripPrefixOrThrow(workspaceDirectory, "workspaces/");
-    if (SKIP[workspaceName]?.has(command)) {
+  for (const workspace of workspaces) {
+    const workspaceShortName = stripPrefixOrThrow(
+      workspace,
+      "@code-chronicles/",
+    );
+    if (SKIP[workspaceShortName]?.has(command)) {
       console.error(
-        `Skipping command ${command} for workspace ${workspaceName}`,
+        `Skipping command ${command} for workspace ${workspaceShortName}`,
       );
       continue;
     }
 
     try {
       // eslint-disable-next-line no-await-in-loop
-      await spawnWithSafeStdio("yarn", [command], {
-        cwd: workspaceDirectory,
-        shell: "bash",
+      await spawnWithSafeStdio("yarn", ["workspace", workspace, command], {
         env: { ...process.env, FORCE_COLOR: "1" },
+        // Without a shell specified, the command fails to spawn in Windows
+        // GitHub Actions for some reason.
+        shell: "bash",
       });
     } catch (err) {
       hasError = true;

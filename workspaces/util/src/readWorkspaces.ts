@@ -1,16 +1,22 @@
-import fsPromises from "node:fs/promises";
-
-import { assertIsArray } from "@code-chronicles/util/assertIsArray";
 import { assertIsObject } from "@code-chronicles/util/assertIsObject";
-import { assertIsString } from "@code-chronicles/util/assertIsString";
+import { execWithArgs } from "@code-chronicles/util/execWithArgs";
 
-export async function readWorkspaces(path: string): Promise<string[]> {
-  const packageJson = assertIsObject(
-    JSON.parse(await fsPromises.readFile(path, "utf8")),
+export async function readWorkspaces(): Promise<string[]> {
+  const yarnCommandResult = await execWithArgs(
+    "yarn",
+    ["--silent", "workspaces", "info"],
+    {
+      // Without a shell specified, the command fails to spawn in Windows
+      // GitHub Actions for some reason.
+      shell: "bash",
+    },
   );
-  const workspaces = assertIsObject(packageJson.workspaces);
-  const packages = assertIsArray(workspaces.packages);
-  return packages.map(assertIsString);
-}
 
-// TODO: use output of `yarn workspaces` instead
+  if (yarnCommandResult.exitCode !== 0) {
+    throw new Error(yarnCommandResult.stderr.trim() || "Non-zero exit code!");
+  }
+
+  return Object.keys(
+    assertIsObject(JSON.parse(yarnCommandResult.stdout)),
+  ).sort();
+}
