@@ -36,6 +36,7 @@ export default {
   externalsType: "commonjs",
   externals: {
     "node:child_process": "node:child_process",
+    "node:fs/promises": "node:fs/promises",
     "node:process": "node:process",
   },
 };
