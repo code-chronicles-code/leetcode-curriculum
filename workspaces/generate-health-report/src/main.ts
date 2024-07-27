@@ -1,4 +1,8 @@
-const { spawn } = require("node:child_process");
+import type { Context } from "@actions/github/lib/context.d.ts";
+import type { Octokit } from "@octokit/rest";
+import nullthrows from "nullthrows";
+
+import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 
 const GITHUB_ACTIONS_BOT_ID = 41898282;
 
@@ -10,43 +14,30 @@ const COMMANDS = [
   "(cd workspaces/fetch-leetcode-problem-list && yarn build)",
 ];
 
-// TODO: reusable utility!
-function runOrThrow(command, args, options = {}) {
-  return new Promise((resolve, reject) => {
-    const childProcess = spawn(command, args, {
-      ...options,
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-
-    childProcess.stdout.pipe(process.stdout);
-    childProcess.stderr.pipe(process.stderr);
-
-    childProcess.on("error", reject);
-    childProcess.on("exit", (exitCode) => {
-      if (exitCode) {
-        reject(new Error(`Non-zero exit code ${exitCode}.`));
-      } else {
-        resolve();
-      }
-    });
-  });
-}
-
-module.exports = async ({ context, github, os }) => {
-  const prNumber = context.payload.pull_request.number;
+export default async function ({
+  context,
+  github,
+  os,
+}: {
+  context: Context;
+  github: Octokit;
+  os: string;
+}): Promise<void> {
+  const pullRequest = nullthrows(context.payload.pull_request);
+  const prNumber = pullRequest.number;
   const healthReportPrefix = `<!-- HEALTH REPORT: ${os} -->`;
 
   const lines = [];
   for (const command of COMMANDS) {
     // eslint-disable-next-line no-await-in-loop
-    await runOrThrow("git", ["reset", "--hard", "HEAD"]);
+    await spawnWithSafeStdio("git", ["reset", "--hard", "HEAD"]);
     // eslint-disable-next-line no-await-in-loop
-    await runOrThrow("git", ["clean", "-fd"]);
+    await spawnWithSafeStdio("git", ["clean", "-fd"]);
 
     console.error("Running: " + command);
     try {
       // eslint-disable-next-line no-await-in-loop
-      await runOrThrow("bash", ["-c", command + " 1>&2"]);
+      await spawnWithSafeStdio("bash", ["-c", command + " 1>&2"]);
       lines.push(` * \`${command}\`: ✅`);
     } catch (err) {
       console.error(err);
@@ -64,12 +55,12 @@ module.exports = async ({ context, github, os }) => {
     .then(({ data }) =>
       data.find(
         (c) =>
-          c.user.id === GITHUB_ACTIONS_BOT_ID &&
-          c.body.startsWith(healthReportPrefix),
+          nullthrows(c?.user).id === GITHUB_ACTIONS_BOT_ID &&
+          nullthrows(c?.body).startsWith(healthReportPrefix),
       ),
     );
 
-  const lastCheckedCommit = context.payload.pull_request.head.sha;
+  const lastCheckedCommit = pullRequest.head.sha;
   const healthReportBody =
     `${healthReportPrefix}\n\n# PR Health Report (${os})\n\nLast checked commit ${lastCheckedCommit}.\n\n` +
     lines.map((line) => line + "\n").join("");
@@ -91,4 +82,4 @@ module.exports = async ({ context, github, os }) => {
       body: healthReportBody,
     });
   }
-};
+}

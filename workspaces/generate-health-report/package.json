@@ -1,0 +1,40 @@
+{
+  "name": "@code-chronicles/generate-health-report",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
+    "directory": "workspaces/generate-health-report"
+  },
+  "author": {
+    "name": "Miorel-Lucian Palii",
+    "url": "https://github.com/miorel"
+  },
+  "scripts": {
+    "build": "webpack",
+    "format": "prettier --color --write .",
+    "lint": "eslint --color --max-warnings=0 .",
+    "postinstall": "patch-package",
+    "typecheck": "tsc --pretty --project ."
+  },
+  "dependencies": {
+    "@code-chronicles/util": "0.0.1",
+    "nullthrows": "1.1.1"
+  },
+  "devDependencies": {
+    "@actions/github": "6.0.0",
+    "@code-chronicles/eslint-config": "0.0.1",
+    "@octokit/rest": "21.0.1",
+    "@types/node": "20.14.12",
+    "eslint": "9.7.0",
+    "patch-package": "8.0.0",
+    "postinstall-postinstall": "2.1.0",
+    "prettier": "3.3.3",
+    "ts-loader": "9.5.1",
+    "typescript": "5.5.4",
+    "webpack": "5.93.0",
+    "webpack-cli": "5.1.4"
+  }
+}

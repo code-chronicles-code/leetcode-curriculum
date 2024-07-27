@@ -4,17 +4,24 @@
     "type": "git",
     "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git"
   },
-  "workspaces": [
-    "workspaces/adventure-pack",
-    "workspaces/download-submissions",
-    "workspaces/eslint-config",
-    "workspaces/fetch-leetcode-problem-list",
-    "workspaces/get-recent-submissions",
-    "workspaces/leetcode-api",
-    "workspaces/post-potd",
-    "workspaces/run-in-each-workspace",
-    "workspaces/util"
-  ],
+  "workspaces": {
+    "packages": [
+      "workspaces/adventure-pack",
+      "workspaces/download-submissions",
+      "workspaces/eslint-config",
+      "workspaces/fetch-leetcode-problem-list",
+      "workspaces/generate-health-report",
+      "workspaces/get-recent-submissions",
+      "workspaces/leetcode-api",
+      "workspaces/post-potd",
+      "workspaces/run-in-each-workspace",
+      "workspaces/util"
+    ],
+    "nohoist": [
+      "**/@octokit/rest",
+      "**/patch-package"
+    ]
+  },
   "scripts": {
     "format": "prettier --color --write . && yarn --silent workspace @code-chronicles/run-in-each-workspace start format",
     "lint": "eslint --color --max-warnings=0 . && yarn --silent workspace @code-chronicles/run-in-each-workspace start lint",

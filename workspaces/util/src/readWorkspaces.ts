@@ -8,6 +8,9 @@ export async function readWorkspaces(path: string): Promise<string[]> {
   const packageJson = assertIsObject(
     JSON.parse(await fsPromises.readFile(path, "utf8")),
   );
-  const workspaces = assertIsArray(packageJson.workspaces);
-  return workspaces.map(assertIsString);
+  const workspaces = assertIsObject(packageJson.workspaces);
+  const packages = assertIsArray(workspaces.packages);
+  return packages.map(assertIsString);
 }
+
+// TODO: use output of `yarn workspaces` instead

@@ -15,10 +15,12 @@ function isCommand(value: string): value is Command {
   return COMMANDS.has(value as Command);
 }
 
+// TODO: this should probably be some kind of config outside this workspace
 const SKIP: Readonly<Record<string, ReadonlySet<Command>>> = {
   "download-submissions": new Set(["test"]),
   "eslint-config": new Set(["test", "typecheck"]),
   "fetch-leetcode-problem-list": new Set(["test"]),
+  "generate-health-report": new Set(["test"]),
   "get-recent-submissions": new Set(["test"]),
   "leetcode-api": new Set(["test"]),
   "post-potd": new Set(["test"]),
