@@ -74,6 +74,8 @@ export default async function ({
       body: healthReportBody,
     });
   } else {
+    console.log(context.repo)
+    console.log(context)
     await github.rest.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
