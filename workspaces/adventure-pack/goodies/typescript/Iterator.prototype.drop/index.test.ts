@@ -2,6 +2,7 @@ import { describe, expect, it } from "@jest/globals";
 
 import { iteratorPrototype } from "../Iterator.prototype";
 delete (iteratorPrototype as unknown as Record<string, unknown>).drop;
+import "../Iterator.prototype.take";
 
 import "./index";
 
@@ -35,11 +36,7 @@ describe("Iterator.prototype.drop", () => {
     }
     // Drop the first 2 elements, then take the next 5 to avoid infinte loop
     const iterator = infiniteNumbers().drop(2).take(5);
-    const result = [];
-
-    for (const num of iterator) {
-      result.push(num);
-    }
+    const result = [...iterator];
 
     expect(result).toStrictEqual([2, 3, 4, 5, 6]);
   });
@@ -56,13 +53,13 @@ describe("Iterator.prototype.drop", () => {
   });
 
   it("doesn't reach errors in the underlying iterator that happen before the drop limit", () => {
-    function* generateNumbers() {
+    function* generateValues() {
       yield "Maine coon";
       throw new Error();
     }
 
     expect(() => {
-      Array.from(generateNumbers().drop(5));
+      Array.from(generateValues().drop(5));
     }).toThrow();
   });
 
