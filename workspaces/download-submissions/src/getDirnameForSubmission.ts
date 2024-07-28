@@ -1,3 +1,5 @@
+import path from "node:path";
+
 import type { TransformedSubmission } from "./transformSubmission";
 
 const PROBLEMS_PER_GROUP = 100;
@@ -14,9 +16,9 @@ export function getDirnameForSubmission(
     questionFrontendId - (questionFrontendId % PROBLEMS_PER_GROUP) + 1;
   const end = start - 1 + PROBLEMS_PER_GROUP;
 
-  return [
+  return path.join(
     "submissions",
     `${padProblemNumber(start)}-${padProblemNumber(end)}`,
     `${padProblemNumber(questionFrontendId)}-${titleSlug}`,
-  ].join("/");
+  );
 }
