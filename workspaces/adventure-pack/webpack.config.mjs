@@ -1,14 +1,14 @@
-const { execSync } = require("node:child_process");
-const path = require("node:path");
-const webpack = require("webpack");
+import { execSync } from "node:child_process";
+import path from "node:path";
+import webpack from "webpack";
 
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
-module.exports = {
+export default {
   entry: "./src/app/main.tsx",
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(import.meta.dirname, "dist"),
   },
 
   module: {

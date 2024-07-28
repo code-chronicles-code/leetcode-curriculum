@@ -1,11 +1,11 @@
-const path = require("node:path");
-const webpack = require("webpack");
+import path from "node:path";
+import webpack from "webpack";
 
-module.exports = {
+export default {
   entry: "./src/main.ts",
   output: {
     filename: "fetch-leetcode-problem-list.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(import.meta.dirname, "dist"),
   },
 
   module: {
