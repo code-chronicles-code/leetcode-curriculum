@@ -4,24 +4,18 @@
     "type": "git",
     "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git"
   },
-  "workspaces": {
-    "packages": [
-      "workspaces/adventure-pack",
-      "workspaces/download-submissions",
-      "workspaces/eslint-config",
-      "workspaces/fetch-leetcode-problem-list",
-      "workspaces/generate-health-report",
-      "workspaces/get-recent-submissions",
-      "workspaces/leetcode-api",
-      "workspaces/post-potd",
-      "workspaces/repository-scripts",
-      "workspaces/util"
-    ],
-    "nohoist": [
-      "**/@octokit/rest",
-      "**/patch-package"
-    ]
-  },
+  "workspaces": [
+    "workspaces/adventure-pack",
+    "workspaces/download-submissions",
+    "workspaces/eslint-config",
+    "workspaces/fetch-leetcode-problem-list",
+    "workspaces/generate-health-report",
+    "workspaces/get-recent-submissions",
+    "workspaces/leetcode-api",
+    "workspaces/post-potd",
+    "workspaces/repository-scripts",
+    "workspaces/util"
+  ],
   "scripts": {
     "format": "yarn --silent workspace @code-chronicles/repository-scripts start format",
     "lint": "yarn --silent workspace @code-chronicles/repository-scripts start lint",
@@ -30,7 +24,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
-    "eslint": "9.7.0",
+    "eslint": "9.8.0",
     "prettier": "3.3.3"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
