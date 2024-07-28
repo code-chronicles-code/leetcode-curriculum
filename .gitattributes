@@ -1,3 +1,5 @@
 * text=auto eol=lf
 
 yarn.lock linguist-generated
+
+tsconfig-base.json linguist-language=jsonc
