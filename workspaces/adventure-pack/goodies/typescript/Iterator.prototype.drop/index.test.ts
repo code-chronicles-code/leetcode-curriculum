@@ -28,11 +28,11 @@ describe("Iterator.prototype.drop", () => {
 
   it("drops the specified number of elements from an infinite iterator", () => {
     function* infiniteNumbers() {
+      let i = -1;
       while (true) {
-        yield Math.floor(Math.random() * 100);
+        yield ++i;
       }
     }
-
     // Drop the first 2 elements, then take the next 5 to avoid infinte loop
     const iterator = infiniteNumbers().drop(2).take(5);
     const result = [];
@@ -41,8 +41,7 @@ describe("Iterator.prototype.drop", () => {
       result.push(num);
     }
 
-    expect(result.length).toBe(5);
-    expect(result.every((num) => typeof num === "number")).toBe(true);
+    expect(result).toStrictEqual([2, 3, 4, 5, 6]);
   });
 
   it("throws when dropping elements from an iterator that errors before the drop limit", () => {
