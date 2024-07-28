@@ -7,8 +7,11 @@ import {
   type QuestionListQuestion,
 } from "@code-chronicles/leetcode-api";
 import { sleep } from "@code-chronicles/util/sleep";
+import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
 const FILENAME = "problems.jsonl";
+
+const LIMIT = 500;
 
 async function main(): Promise<void> {
   // TODO: warn early if the file already exists
@@ -17,19 +20,9 @@ async function main(): Promise<void> {
   const problemsMap = new Map<number, QuestionListQuestion>();
   let skip = 0;
 
-  while (problemsMap.size !== totalCount) {
-    if (totalCount != null) {
-      console.error("Sleeping...");
-      // eslint-disable-next-line no-await-in-loop
-      await sleep(5000);
-    }
-
+  await whileReturnsTrueAsync(async () => {
     console.error("Fetching...");
-    // eslint-disable-next-line no-await-in-loop
-    const data = await getQuestionList({
-      skip,
-      limit: 500,
-    });
+    const data = await getQuestionList({ skip, limit: LIMIT });
     totalCount = data.totalNum;
 
     for (const question of data.questions) {
@@ -38,6 +31,7 @@ async function main(): Promise<void> {
 
     if (data.questions.length === 0) {
       console.error("Experienced a pagination error, resetting offset.");
+      // eslint-disable-next-line require-atomic-updates -- Resetting to zero is a safe reaction to a surprising pagination result.
       skip = 0;
     } else {
       skip += data.questions.length;
@@ -46,7 +40,16 @@ async function main(): Promise<void> {
     console.error(
       `Fetched data on ${[problemsMap.size]} / ${totalCount} problems so far.`,
     );
-  }
+
+    if (problemsMap.size === totalCount) {
+      return false;
+    }
+
+    console.error("Sleeping...");
+    // TODO: constant-ize the various hard-coded sleeps
+    await sleep(5000);
+    return true;
+  });
 
   const problems = [...problemsMap.values()].sort(
     (a, b) => a.questionFrontendId - b.questionFrontendId,

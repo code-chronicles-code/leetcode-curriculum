@@ -8,6 +8,7 @@ import {
 } from "@code-chronicles/leetcode-api";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 import { sleep } from "@code-chronicles/util/sleep";
+import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
 import { CONCURRENCY_LIMIT } from "./constants";
 import { getFilenameForSubmission } from "./getFilenameForSubmission";
@@ -51,11 +52,10 @@ async function main(): Promise<void> {
   };
 
   try {
-    while (true) {
+    await whileReturnsTrueAsync(async () => {
       let data;
       try {
         console.error("Fetching...");
-        // eslint-disable-next-line no-await-in-loop
         data = await fetchSubmissionList({
           session: leetcodeSessionCookie,
           page: Math.floor(
@@ -63,12 +63,11 @@ async function main(): Promise<void> {
           ),
         });
       } catch (e) {
-        // eslint-disable-next-line no-await-in-loop
         await maybeWriteSubmissionsMetadataAndHashes();
+
         console.error("Sleeping because of an error:", e);
-        // eslint-disable-next-line no-await-in-loop
         await sleep(60000);
-        continue;
+        return true;
       }
 
       const writes = [];
@@ -100,7 +99,6 @@ async function main(): Promise<void> {
         });
       }
 
-      // eslint-disable-next-line no-await-in-loop
       await promiseAllLimitingConcurrency(writes, CONCURRENCY_LIMIT);
 
       console.error(
@@ -108,19 +106,18 @@ async function main(): Promise<void> {
       );
 
       if (!data.has_next) {
-        break;
+        return false;
       }
 
       // TODO: make a constant
       if (Math.random() < 0.1) {
-        // eslint-disable-next-line no-await-in-loop
         await maybeWriteSubmissionsMetadataAndHashes();
       }
 
       console.error("Sleeping...");
-      // eslint-disable-next-line no-await-in-loop
       await sleep(3000);
-    }
+      return true;
+    });
   } finally {
     await maybeWriteSubmissionsMetadataAndHashes();
   }
