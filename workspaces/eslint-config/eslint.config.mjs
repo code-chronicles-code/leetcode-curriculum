@@ -1,9 +1,9 @@
-const jestPlugin = require("eslint-plugin-jest");
-const stylisticPluginJs = require("@stylistic/eslint-plugin-js");
-const stylisticPluginTs = require("@stylistic/eslint-plugin-ts");
-const typescriptEslintPlugin = require("@typescript-eslint/eslint-plugin");
-const typeScriptEslintParser = require("@typescript-eslint/parser");
-const globals = require("globals");
+import jestPlugin from "eslint-plugin-jest";
+import stylisticPluginJs from "@stylistic/eslint-plugin-js";
+import stylisticPluginTs from "@stylistic/eslint-plugin-ts";
+import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+import typeScriptEslintParser from "@typescript-eslint/parser";
+import globals from "globals";
 
 // TODO: see if we can get typechecking
 
@@ -219,4 +219,4 @@ const typescript = {
   },
 };
 
-module.exports = [vanilla, typescript, jest];
+export default [vanilla, typescript, jest];
