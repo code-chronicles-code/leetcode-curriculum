@@ -12,7 +12,7 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
-  "main": "eslint.config.js",
+  "main": "eslint.config.mjs",
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 ."
