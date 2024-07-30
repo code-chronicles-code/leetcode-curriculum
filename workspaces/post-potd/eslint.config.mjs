@@ -1,2 +1,2 @@
-import config from "@code-chronicles/eslint-config/eslint.config.mjs";
+import config from "@code-chronicles/eslint-config";
 export default config;

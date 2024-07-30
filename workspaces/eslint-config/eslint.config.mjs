@@ -1,3 +1,4 @@
+import importPlugin from "eslint-plugin-import-x";
 import jestPlugin from "eslint-plugin-jest";
 import stylisticPluginJs from "@stylistic/eslint-plugin-js";
 import stylisticPluginTs from "@stylistic/eslint-plugin-ts";
@@ -14,6 +15,7 @@ const vanilla = {
     parser: typeScriptEslintParser,
   },
   plugins: {
+    "import-x": importPlugin,
     "@stylistic/js": stylisticPluginJs,
   },
   rules: {
@@ -28,6 +30,28 @@ const vanilla = {
         ignoreStringLiterals: true,
       },
     ],
+
+    "import-x/exports-last": "off",
+    "import-x/first": "error",
+    "import-x/newline-after-import": [
+      "warn",
+      { count: 1, exactCount: true, considerComments: true },
+    ],
+    "import-x/no-amd": "error",
+    "import-x/no-commonjs": [
+      "error",
+      {
+        allowRequire: false,
+        allowConditionalRequire: false,
+        allowPrimitiveModules: false,
+      },
+    ],
+    "import-x/no-import-module-exports": "error",
+    "import-x/no-nodejs-modules": "off",
+    "import-x/no-useless-path-segments": "warn",
+    "import-x/no-webpack-loader-syntax": "error",
+    "import-x/order": ["warn", { groups: ["builtin"] }],
+    "import-x/unambiguous": "error",
 
     "accessor-pairs": [
       "error",
@@ -168,6 +192,12 @@ const vanilla = {
       { enforceForSwitchCase: true, enforceForIndexOf: true },
     ],
     "valid-typeof": ["error", { requireStringLiterals: true }],
+  },
+  settings: {
+    "import-x/resolver": {
+      node: true,
+      typescript: true,
+    },
   },
 };
 

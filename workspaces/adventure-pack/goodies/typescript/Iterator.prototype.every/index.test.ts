@@ -2,7 +2,7 @@ import { describe, expect, it, jest } from "@jest/globals";
 
 import { iteratorPrototype } from "../Iterator.prototype";
 delete (iteratorPrototype as unknown as Record<string, unknown>).every;
-
+// eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
 import "./index";
 
 describe("Iterator.prototype.every", () => {
