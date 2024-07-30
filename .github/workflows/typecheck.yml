@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  check-formatting:
+  typecheck:
     runs-on: ubuntu-latest
 
     steps:
