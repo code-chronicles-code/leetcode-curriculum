@@ -1,4 +1,5 @@
 import fsPromises from "node:fs/promises";
+
 import { z } from "zod";
 
 const DATA_FILE = "data.json";

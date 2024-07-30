@@ -1,5 +1,6 @@
-import invariant from "invariant";
 import fsPromises from "node:fs/promises";
+
+import invariant from "invariant";
 
 import { mapObjectValuesAsync } from "@code-chronicles/util/mapObjectValuesAsync";
 import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";

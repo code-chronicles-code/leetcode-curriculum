@@ -1,6 +1,7 @@
 import { writeFile } from "node:fs/promises";
-import nullthrows from "nullthrows";
 import process from "node:process";
+
+import nullthrows from "nullthrows";
 
 import { assertIsCi } from "@code-chronicles/util/assertIsCi";
 import { getCurrentGitRepositoryRoot } from "@code-chronicles/util/getCurrentGitRepositoryRoot";
