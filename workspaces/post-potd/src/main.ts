@@ -9,7 +9,7 @@ import { readScriptData, writeScriptData } from "./readScriptData";
 import { readSecrets } from "./readSecrets";
 import { sendDiscordMessage } from "./sendDiscordMessage";
 
-async function main(): Promise<string> {
+async function main(): Promise<void> {
   // TODO: maybe create the file from a template if it doesn't exist
   const secrets = await readSecrets();
 
