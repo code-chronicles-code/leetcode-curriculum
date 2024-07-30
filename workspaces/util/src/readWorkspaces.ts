@@ -1,8 +1,8 @@
 import { assertIsObject } from "@code-chronicles/util/assertIsObject";
-import { execWithArgs } from "@code-chronicles/util/execWithArgs";
+import { execWithArgsOrThrowOnNzec } from "@code-chronicles/util/execWithArgsOrThrowOnNzec";
 
 export async function readWorkspaces(): Promise<string[]> {
-  const yarnCommandResult = await execWithArgs(
+  const yarnCommandResult = await execWithArgsOrThrowOnNzec(
     "yarn",
     ["--silent", "workspaces", "info"],
     {
@@ -11,10 +11,6 @@ export async function readWorkspaces(): Promise<string[]> {
       shell: "bash",
     },
   );
-
-  if (yarnCommandResult.exitCode !== 0) {
-    throw new Error(yarnCommandResult.stderr.trim() || "Non-zero exit code!");
-  }
 
   return Object.keys(
     assertIsObject(JSON.parse(yarnCommandResult.stdout)),

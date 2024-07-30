@@ -3,7 +3,7 @@ import { spawn, type SpawnOptions } from "node:child_process";
 import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
 import { slurpReadable } from "@code-chronicles/util/slurpReadable";
 
-type ExecWithArgsResult = {
+export type ExecWithArgsResult = {
   exitCode: number | null;
   signal: NodeJS.Signals | null;
   stdout: string;
