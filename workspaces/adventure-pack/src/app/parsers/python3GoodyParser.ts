@@ -1,4 +1,4 @@
-import { ReadonlyDeep } from "type-fest";
+import type { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
 import { goodyBaseParser } from "./goodyBaseParser";

@@ -1,5 +1,5 @@
 import invariant from "invariant";
-import { ReadonlyDeep } from "type-fest";
+import type { ReadonlyDeep } from "type-fest";
 
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";

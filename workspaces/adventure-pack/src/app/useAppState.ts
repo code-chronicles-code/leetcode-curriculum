@@ -1,5 +1,9 @@
+// eslint-disable-next-line import-x/newline-after-import -- Recursive effect of disabling the "no-duplicate-imports" rule below.
 import immutableUpdate from "immutability-helper";
-import React, { useReducer } from "react";
+// eslint-disable-next-line import-x/newline-after-import -- Recursive effect of disabling the "no-duplicate-imports" rule below.
+import { useReducer } from "react";
+// eslint-disable-next-line no-duplicate-imports -- Unavoidable duplicate import, due to needing a type import.
+import type React from "react";
 
 import type { GoodiesByLanguage } from "./fetchGoodies";
 import type { Language } from "./Language";

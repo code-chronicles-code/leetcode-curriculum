@@ -1,5 +1,4 @@
-// TODO: force type imports where possible
-import { WritableDeep } from "type-fest";
+import type { WritableDeep } from "type-fest";
 
 import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
 import { readCode } from "./readCode";

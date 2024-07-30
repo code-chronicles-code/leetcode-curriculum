@@ -1,4 +1,4 @@
-import { Node as TSNode } from "ts-morph";
+import type { Node as TSNode } from "ts-morph";
 
 export function getTrailingTriviaRange(node: TSNode): [number, number] {
   return [
