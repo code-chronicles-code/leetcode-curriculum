@@ -4,8 +4,6 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-# TODO: maybe cancel ongoing runs for this PR so we don't generate the same annotations multiple times?
-
 jobs:
   check-formatting:
     runs-on: ubuntu-latest
