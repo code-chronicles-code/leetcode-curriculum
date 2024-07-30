@@ -803,6 +803,35 @@ iteratorPrototype.product = function () {
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.reduce 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.reduce ??= function (callbackFn, initialValue) {
+  let iterator = this.toIterable()[Symbol.iterator]();
+  let index = 0;
+  let accumulator;
+
+  if (initialValue === undefined) {
+    const firstResult = iterator.next();
+    if (firstResult.done) {
+      throw new TypeError("Reduce of empty iterator with no initial value");
+    }
+    accumulator = firstResult.value;
+    ++index;
+  } else {
+    accumulator = initialValue;
+  }
+
+  for (let res = iterator.next(); !res.done; res = iterator.next()) {
+    accumulator = callbackFn(accumulator, res.value, index);
+    ++index;
+  }
+
+  return accumulator;
+};"
+`;
+
 exports[`App can render goody: JavaScript Iterator.prototype.some 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -1654,6 +1683,49 @@ iteratorPrototype.product = function (this: Iterator<number>): number {
   }
 
   return res;
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.reduce 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    reduce(
+      this: Iterator<T>,
+      callbackFn: (accumulator: T, value: T, index: number) => T,
+      initialValue?: T,
+    ): T;
+  }
+}
+
+iteratorPrototype.reduce ??= function <T>(
+  this: Iterator<T>,
+  callbackFn: (accumulator: T, value: T, index: number) => T,
+  initialValue?: T,
+): T {
+  let iterator = this.toIterable()[Symbol.iterator]();
+  let index = 0;
+  let accumulator: T;
+
+  if (initialValue === undefined) {
+    const firstResult = iterator.next();
+    if (firstResult.done) {
+      throw new TypeError("Reduce of empty iterator with no initial value");
+    }
+    accumulator = firstResult.value;
+    ++index;
+  } else {
+    accumulator = initialValue;
+  }
+
+  for (let res = iterator.next(); !res.done; res = iterator.next()) {
+    accumulator = callbackFn(accumulator, res.value, index);
+    ++index;
+  }
+
+  return accumulator;
 };"
 `;
 
