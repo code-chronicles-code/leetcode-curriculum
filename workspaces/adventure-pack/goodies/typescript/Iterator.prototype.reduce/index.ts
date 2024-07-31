@@ -25,7 +25,7 @@ iteratorPrototype.reduce ??= function <T extends U, U>(
     if (firstResult.done) {
       throw new TypeError("Reduce of empty iterator with no initial value");
     }
-    accumulator = firstResult.value as unknown as U;
+    accumulator = firstResult.value;
     ++index;
   } else {
     accumulator = initialValue;
