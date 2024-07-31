@@ -17,22 +17,21 @@ iteratorPrototype.reduce ??= function <T extends U, U>(
   initialValue?: U,
 ): U {
   let index = 0;
-  let accumulator: U;
-
-  if (initialValue === undefined) {
-    const firstResult = this.next();
-    if (firstResult.done) {
-      throw new TypeError("Reduce of empty iterator with no initial value");
-    }
-    accumulator = firstResult.value;
-    ++index;
-  } else {
-    accumulator = initialValue;
-  }
+  let accumulator: U = initialValue!;
+  let accumulatorInitialized = arguments.length > 1;
 
   for (const element of this.toIterable()) {
-    accumulator = callbackFn(accumulator, element, index);
+    if (!accumulatorInitialized) {
+      accumulator = element;
+      accumulatorInitialized = true;
+    } else {
+      accumulator = callbackFn(accumulator, element, index);
+    }
     ++index;
+  }
+
+  if (!accumulatorInitialized) {
+    throw new TypeError("Reduce of empty iterator with no initial value");
   }
 
   return accumulator;
