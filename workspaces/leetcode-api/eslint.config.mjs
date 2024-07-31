@@ -1,2 +1,1 @@
-import config from "@code-chronicles/eslint-config";
-export default config;
+export { default } from "@code-chronicles/eslint-config";
