@@ -1314,6 +1314,49 @@ iteratorPrototype.product = function () {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Iterator.prototype.reduce 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.reduce ??= function (callbackFn, initialValue) {
+  let index = 0;
+  let accumulator = initialValue;
+  let isAccumulatorInitialized = arguments.length > 1;
+
+  for (const element of this.toIterable()) {
+    if (!isAccumulatorInitialized) {
+      accumulator = element;
+      isAccumulatorInitialized = true;
+    } else {
+      accumulator = callbackFn(accumulator, element, index);
+    }
+    ++index;
+  }
+
+  if (!isAccumulatorInitialized) {
+    throw new TypeError("Reduce of empty iterator with no initial value");
+  }
+
+  return accumulator;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Iterator.prototype.some 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2863,6 +2906,72 @@ iteratorPrototype.product = function (this: Iterator<number>): number {
   }
 
   return res;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.reduce 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    reduce<U>(
+      this: Iterator<T>,
+      callbackFn: (accumulator: U, value: T, index: number) => U,
+      initialValue?: U,
+    ): U;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.reduce ??= function <T extends U, U>(
+  this: Iterator<T>,
+  callbackFn: (accumulator: U, value: T, index: number) => T,
+  initialValue?: U,
+): U {
+  let index = 0;
+  let accumulator: U = initialValue!;
+  let isAccumulatorInitialized = arguments.length > 1;
+
+  for (const element of this.toIterable()) {
+    if (!isAccumulatorInitialized) {
+      accumulator = element;
+      isAccumulatorInitialized = true;
+    } else {
+      accumulator = callbackFn(accumulator, element, index);
+    }
+    ++index;
+  }
+
+  if (!isAccumulatorInitialized) {
+    throw new TypeError("Reduce of empty iterator with no initial value");
+  }
+
+  return accumulator;
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
