@@ -18,19 +18,19 @@ iteratorPrototype.reduce ??= function <T extends U, U>(
 ): U {
   let index = 0;
   let accumulator: U = initialValue!;
-  let accumulatorInitialized = arguments.length > 1;
+  let isAccumulatorInitialized = arguments.length > 1;
 
   for (const element of this.toIterable()) {
-    if (!accumulatorInitialized) {
+    if (!isAccumulatorInitialized) {
       accumulator = element;
-      accumulatorInitialized = true;
+      isAccumulatorInitialized = true;
     } else {
       accumulator = callbackFn(accumulator, element, index);
     }
     ++index;
   }
 
-  if (!accumulatorInitialized) {
+  if (!isAccumulatorInitialized) {
     throw new TypeError("Reduce of empty iterator with no initial value");
   }
 
