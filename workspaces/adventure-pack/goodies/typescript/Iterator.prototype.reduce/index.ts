@@ -16,12 +16,11 @@ iteratorPrototype.reduce ??= function <T extends U, U>(
   callbackFn: (accumulator: U, value: T, index: number) => T,
   initialValue?: U,
 ): U {
-  const iterator = this.toIterable()[Symbol.iterator]();
   let index = 0;
   let accumulator: U;
 
   if (initialValue === undefined) {
-    const firstResult = iterator.next();
+    const firstResult = this.next();
     if (firstResult.done) {
       throw new TypeError("Reduce of empty iterator with no initial value");
     }
@@ -31,8 +30,8 @@ iteratorPrototype.reduce ??= function <T extends U, U>(
     accumulator = initialValue;
   }
 
-  for (let res = iterator.next(); !res.done; res = iterator.next()) {
-    accumulator = callbackFn(accumulator, res.value, index);
+  for (const element of this.toIterable()) {
+    accumulator = callbackFn(accumulator, element, index);
     ++index;
   }
 
