@@ -11,6 +11,7 @@ describe("Iterator.prototype.reduce", () => {
     const array = [2, -4, 6, -8, 10];
     expect(array.values().reduce((a: number, b) => a + b)).toBe(6);
   });
+
   it("can reduce an iterator to a Map", () => {
     expect(
       ["ice cream", "chocolate", "banana", "cherry"]
@@ -28,6 +29,7 @@ describe("Iterator.prototype.reduce", () => {
       ]),
     );
   });
+
   it("can reduce an iterator to a Set", () => {
     expect(
       [2, 2, -3, -3, 4, -5, 5, -6, 6, -6]
@@ -35,6 +37,7 @@ describe("Iterator.prototype.reduce", () => {
         .reduce((set, num) => set.add(num), new Set()),
     ).toStrictEqual(new Set([2, -3, 4, -5, 5, -6, 6]));
   });
+
   it("can reduce an iterator to an Object", () => {
     const generator = function* (): Generator<number, void, undefined> {
       yield 2;
@@ -52,10 +55,11 @@ describe("Iterator.prototype.reduce", () => {
       }, {}),
     ).toStrictEqual({ "2": 2, "-4": 2, "6": 3 });
   });
-  it.each([[].values(), "".chars(), new Set([]).values(), new Map([]).keys()])(
-    "throws if the iterator contains no elements and initialValue is not provided.",
+
+  it.each([[].values(), "".chars(), new Set().values(), new Map().keys()])(
+    "throws if the iterator contains no elements and initialValue is not provided",
     (iter: Iterator<unknown>) => {
-      expect(() => (iter as Iterator<[]>).reduce((a, _) => a)).toThrow();
+      expect(() => iter.reduce((a, _) => a)).toThrow();
     },
   );
 });
