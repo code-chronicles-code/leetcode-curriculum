@@ -9,7 +9,14 @@ import "./index";
 describe("Iterator.prototype.reduce", () => {
   it("can reduce an iterator without an initial value", () => {
     const array = [2, -4, 6, -8, 10];
-    expect(array.values().reduce((a: number, b) => a + b)).toBe(6);
+    expect(array.values().reduce((a, b) => a + b)).toBe(6);
+  });
+
+  it("", () => {
+    const array = [2, -4, 6, -8, 10];
+    let set = new Set();
+    // @ts-expect-error
+    set = array.values().reduce((a, b) => a + b);
   });
 
   it("can reduce an iterator to a Map", () => {
