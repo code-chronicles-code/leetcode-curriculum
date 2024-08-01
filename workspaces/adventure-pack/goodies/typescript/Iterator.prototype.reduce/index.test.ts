@@ -12,11 +12,11 @@ describe("Iterator.prototype.reduce", () => {
     expect(array.values().reduce((a, b) => a + b)).toBe(6);
   });
 
-  it("should throw TypeScript error for incorrect types", () => {
+  it("has a TypeScript error for incorrect types, but doesn't throw", () => {
     const array = [2, -4, 6, -8, 10];
 
     // @ts-expect-error Incorrect accumulator type
-    array.values().reduce((a: string, b) => a + b);
+    expect(() => array.values().reduce((a: string, b) => a + b)).not.toThrow();
   });
 
   it("can reduce an iterator to a Map", () => {
