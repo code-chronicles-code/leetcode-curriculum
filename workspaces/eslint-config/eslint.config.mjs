@@ -1,10 +1,13 @@
+import fs from "node:fs";
+import process from "node:process";
+
+import globals from "globals";
 import importPlugin from "eslint-plugin-import-x";
 import jestPlugin from "eslint-plugin-jest";
 import stylisticPluginJs from "@stylistic/eslint-plugin-js";
 import stylisticPluginTs from "@stylistic/eslint-plugin-ts";
-import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 import typeScriptEslintParser from "@typescript-eslint/parser";
-import globals from "globals";
+import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 
 // TODO: see if we can get typechecking
 
@@ -13,6 +16,17 @@ const vanilla = {
   languageOptions: {
     globals: globals.node,
     parser: typeScriptEslintParser,
+    parserOptions: {
+      get project() {
+        const project = "./tsconfig.json";
+        if (!fs.existsSync(project)) {
+          throw new Error(
+            `No file ${project} exists in directory ${process.cwd()}`,
+          );
+        }
+        return project;
+      },
+    },
   },
   plugins: {
     "import-x": importPlugin,
@@ -234,6 +248,15 @@ const typescript = {
     "@stylistic/js/quotes": "off",
     "@stylistic/ts/quotes": vanilla.rules["@stylistic/js/quotes"],
 
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        prefer: "type-imports",
+        fixStyle: "inline-type-imports",
+        disallowTypeAnnotations: true,
+      },
+    ],
+
     // In TypeScript files, TypeScript itself should take care of this.
     "no-undef": "off",
 
@@ -246,6 +269,20 @@ const typescript = {
     // TODO: configure the additional options
     "@typescript-eslint/no-use-before-define":
       vanilla.rules["no-use-before-define"],
+
+    // TODO: enable
+    "@typescript-eslint/promise-function-async": [
+      "off",
+      {
+        allowAny: false,
+        checkArrowFunctions: true,
+        checkFunctionDeclarations: true,
+        checkFunctionExpressions: true,
+        checkMethodDeclarations: true,
+      },
+    ],
+    "@typescript-eslint/require-array-sort-compare": "error",
+    "@typescript-eslint/return-await": ["error", "always"],
   },
 };
 

@@ -6,7 +6,7 @@ import { HighlightedCode } from "./HighlightedCode";
 import { fetchGoodies } from "../fetchGoodies";
 import { useMergedCode } from "../useMergedCode";
 import { useAppState } from "../useAppState";
-import { Goody } from "../Goody";
+import type { Goody } from "../Goody";
 import { LanguageSelector } from "./LanguageSelector";
 
 function Column({

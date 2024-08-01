@@ -1,4 +1,4 @@
-import { WritableDeep } from "type-fest";
+import type { WritableDeep } from "type-fest";
 
 import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
 import { extractJavaesqueImports } from "../extractJavaesqueImports";

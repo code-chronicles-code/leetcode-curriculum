@@ -1,4 +1,4 @@
-import { SourceFile as TSSourceFile } from "ts-morph";
+import type { SourceFile as TSSourceFile } from "ts-morph";
 
 import { getCodeAt } from "./getCodeAt";
 import { getLeadingTriviaRange } from "./getLeadingTriviaRange";

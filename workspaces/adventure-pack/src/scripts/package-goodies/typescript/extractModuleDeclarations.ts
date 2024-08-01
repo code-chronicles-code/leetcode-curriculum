@@ -1,4 +1,4 @@
-import { SourceFile as TSSourceFile, SyntaxKind } from "ts-morph";
+import { type SourceFile as TSSourceFile, SyntaxKind } from "ts-morph";
 
 import { sortTypeScriptModuleAndInterfaceDeclarations } from "../../../app/sortTypeScriptModuleAndInterfaceDeclarations";
 import { removeNode } from "./removeNode";
