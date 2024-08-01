@@ -9,7 +9,14 @@ import "./index";
 describe("Iterator.prototype.reduce", () => {
   it("can reduce an iterator without an initial value", () => {
     const array = [2, -4, 6, -8, 10];
-    expect(array.values().reduce((a: number, b) => a + b)).toBe(6);
+    expect(array.values().reduce((a, b) => a + b)).toBe(6);
+  });
+
+  it("has a TypeScript error for incorrect types, but doesn't throw", () => {
+    const array = [2, -4, 6, -8, 10];
+
+    // @ts-expect-error Incorrect accumulator type
+    expect(() => array.values().reduce((a: string, b) => a + b)).not.toThrow();
   });
 
   it("can reduce an iterator to a Map", () => {

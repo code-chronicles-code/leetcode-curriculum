@@ -3,17 +3,26 @@ import { iteratorPrototype } from "../Iterator.prototype";
 
 declare global {
   interface Iterator<T> {
+    reduce(
+      this: Iterator<T>,
+      callbackFn: (accumulator: T, value: T, index: number) => T,
+    ): T;
+    reduce(
+      this: Iterator<T>,
+      callbackFn: (accumulator: T, value: T, index: number) => T,
+      initialValue: T,
+    ): T;
     reduce<U>(
       this: Iterator<T>,
       callbackFn: (accumulator: U, value: T, index: number) => U,
-      initialValue?: U,
+      initialValue: U,
     ): U;
   }
 }
 
-iteratorPrototype.reduce ??= function <T extends U, U>(
+iteratorPrototype.reduce ??= function <T, U>(
   this: Iterator<T>,
-  callbackFn: (accumulator: U, value: T, index: number) => T,
+  callbackFn: (accumulator: U, value: T, index: number) => U,
   initialValue?: U,
 ): U {
   let index = 0;
@@ -22,7 +31,7 @@ iteratorPrototype.reduce ??= function <T extends U, U>(
 
   for (const element of this.toIterable()) {
     if (!isAccumulatorInitialized) {
-      accumulator = element;
+      accumulator = element as unknown as U;
       isAccumulatorInitialized = true;
     } else {
       accumulator = callbackFn(accumulator, element, index);
