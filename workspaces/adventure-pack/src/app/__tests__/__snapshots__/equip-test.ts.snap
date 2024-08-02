@@ -2084,6 +2084,8 @@ class UnionFind:
 
         return True
 
+    # TODO: add are_connected function
+
 ########################### END ADVENTURE PACK CODE ############################"
 `;
 
