@@ -1,15 +1,66 @@
-import type { IterableElement } from "type-fest";
+import { getCurrentGitRepositoryStatusPaths } from "@code-chronicles/util/getCurrentGitRepositoryStatusPaths";
+import { isCi } from "@code-chronicles/util/isCi";
+import { only } from "@code-chronicles/util/only";
 
-function readonlySet<T extends string>(...values: T[]): ReadonlySet<T> {
-  return new Set(values);
-}
+type ScriptData = {
+  run?: (mainAction: () => Promise<void>) => Promise<void>;
+  repositoryRootCommand: readonly [string, readonly string[]];
+};
 
-export const SCRIPTS = readonlySet("format", "lint", "test", "typecheck");
+export const SCRIPTS = {
+  format: {
+    async run(mainAction: () => Promise<void>): Promise<void> {
+      if (!isCi()) {
+        return await mainAction();
+      }
 
-export type Script = IterableElement<typeof SCRIPTS>;
+      const errors: unknown[] = await mainAction().then(
+        () => [],
+        (error) => [error],      );
+
+      try {
+        let modifiedFileCount = 0;
+        for await (const modifiedFile of getCurrentGitRepositoryStatusPaths()) {
+          ++modifiedFileCount;
+          // TODO: Also write up a job summary per https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
+          console.log(
+            `::error file=${modifiedFile},title=Formatting error::This file does not respect the repository's formatting rules.%0ARun \`yarn format\` in the repository root to auto-fix it.`,
+          );
+        }
+
+        if (modifiedFileCount > 0) {
+          errors.push(
+            new Error(
+              `${modifiedFileCount === 1 ? "1 file doesn't" : modifiedFileCount + " files don't"} respect the repository's formatting rules.`,
+            ),
+          );
+        }
+      } catch (error) {
+        errors.push(error);
+      }
+
+      if (errors.length > 0) {
+        // TODO: turn this into a utility, perhaps
+        throw errors.length === 1 ? only(errors) : new AggregateError(errors);
+      }
+    },
+
+    repositoryRootCommand: ["prettier", [" --color", "--write", "."]],
+  } as ScriptData,
+
+  lint: {
+    repositoryRootCommand: ["eslint", ["--color", "--max-warnings=0", "."]],
+  } as ScriptData,
+
+  test: null,
+
+  typecheck: null,
+} as const;
+
+export type Script = keyof typeof SCRIPTS;
 
 export function isScript(value: string): value is Script {
-  return SCRIPTS.has(value as Script);
+  return Object.hasOwn(SCRIPTS, value);
 }
 
 // TODO: maybe read this from the package.json of each workspace
@@ -25,13 +76,4 @@ export const SCRIPTS_TO_SKIP_BY_WORKSPACE: Readonly<
   "post-potd": new Set(["test"]),
   "repository-scripts": new Set(["test"]),
   util: new Set(["test"]),
-};
-
-export const REPOSITORY_ROOT_COMMANDS: Readonly<
-  Record<Script, readonly [string, readonly string[]] | null>
-> = {
-  format: ["prettier", [" --color", "--write", "."]],
-  lint: ["eslint", ["--color", "--max-warnings=0", "."]],
-  test: null,
-  typecheck: null,
 };
