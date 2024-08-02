@@ -1,27 +1,26 @@
 # @code-chronicles/leetcode-api
 
-![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+Read data from the LeetCode API in TypeScript!
 
-## Overview
+Example usage:
 
-This package is a TypeScript library for reading data from LeetCode! It's part of the larger [Code Chronicles Leetcode ecosystem](https://github.com/code-chronicles-code/leetcode-curriculum) and it's used to power sibling packages like:
+```ts
+import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
 
-- [`@code-chronicles/download-submissions`](https://github.com/code-chronicles-code/leetcode-curriculum/workspaces/download-submissions/), which downloads the logged-in user's LeetCode submissions
-- [`@code-chronicles/fetch-leetcode-problem-list`](https://github.com/code-chronicles-code/leetcode-curriculum/workspaces/fetch-leetcode-problem-list/), which fetches the metadata of all LeetCode problems
-- [`@code-chronicles/post-potd`](https://github.com/code-chronicles-code/leetcode-curriculum/workspaces/post-potd/), which queries LeetCode's problem of the day and posts about it in a Discord channel
+const potd = await getPotd();
+console.log(potd);
+```
 
-## `package.json` Scripts
+Used to power sibling packages like:
 
-The following scripts are available for this package:
+- [`@code-chronicles/download-submissions`](../download-submissions/), which downloads the logged-in user's LeetCode submissions
+- [`@code-chronicles/fetch-leetcode-problem-list`](../fetch-leetcode-problem-list/), which fetches the metadata of all LeetCode problems
+- [`@code-chronicles/post-potd`](../post-potd/), which queries LeetCode's problem of the day and posts about it in a Discord channel
 
-### `yarn format`
+## Development
 
-Makes sure all files in this package are properly formatted, rewriting them if necessary using Prettier.
+Like the rest of the [Code Chronicles Leetcode ecosystem](../../), this package is structured as a Node module, using [classic Yarn](https://classic.yarnpkg.com/) as the package manager.
 
-### `yarn lint`
+You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format`, `yarn lint`, and `yarn typecheck` scripts are available to aid in development and occasionally to annoy.
 
-Lints package files using ESLint.
-
-### `yarn typecheck`
-
-Checks the type correctness of the package code, using the TypeScript compiler.
+See also the repository's general [development guide](../../DEVELOPMENT.md).

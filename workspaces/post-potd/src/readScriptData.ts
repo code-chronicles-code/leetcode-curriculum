@@ -19,7 +19,7 @@ export async function readScriptData(): Promise<Data> {
       JSON.parse(await fsPromises.readFile(DATA_FILE, "utf8")),
     );
   } catch (err) {
-    if ((err as Record<string, unknown>)["code"] === "ENOENT") {
+    if ((err as Record<string, unknown>).code === "ENOENT") {
       return {};
     }
 
