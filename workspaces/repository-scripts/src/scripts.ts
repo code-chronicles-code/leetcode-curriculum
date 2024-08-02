@@ -11,7 +11,8 @@ export const SCRIPTS = {
   format: {
     async run(mainAction: () => Promise<void>): Promise<void> {
       if (!isCi()) {
-        return await mainAction();
+        await mainAction();
+        return;
       }
 
       const errors: unknown[] = await mainAction().then(
@@ -23,10 +24,13 @@ export const SCRIPTS = {
         let modifiedFileCount = 0;
         for await (const modifiedFile of getCurrentGitRepositoryStatusPaths()) {
           ++modifiedFileCount;
-          // TODO: Also write up a job summary per https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
+
+          // Documentation: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-error-message
           console.log(
             `::error file=${modifiedFile},title=Formatting error::This file does not respect the repository's formatting rules.%0ARun \`yarn format\` in the repository root to auto-fix it.`,
           );
+
+          // TODO: Also write up a job summary per https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
         }
 
         if (modifiedFileCount > 0) {

@@ -1,7 +1,5 @@
 import process from "node:process";
 
-import { identity } from "@code-chronicles/util/identity";
-
 import { runCommands } from "./runCommands";
 import { SCRIPTS, isScript } from "./scripts";
 
@@ -19,9 +17,9 @@ async function main() {
   }
 
   const action = async () => await runCommands(script, scriptArgs);
-  const actionWrapper = SCRIPTS[script]?.run ?? identity;
+  const actionWrapper = SCRIPTS[script]?.run;
 
-  await actionWrapper(action);
+  await (actionWrapper ? actionWrapper(action) : action());
 }
 
 main().catch((err) => {
