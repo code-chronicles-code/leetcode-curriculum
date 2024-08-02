@@ -83,11 +83,12 @@ export async function runCommands(
 
   if (failedCommands.length > 0) {
     console.error("Some commands did not complete successfully:");
-    for (const { command, args } of failedCommands) {      console.error({ command, args });
+    for (const { command, args } of failedCommands) {
+      console.error({ command, args });
     }
 
     // TODO: turn this into a utility, perhaps
     const errors = failedCommands.map(({ error }) => error);
-    throw (errors.length === 1 ? only(errors) : new AggregateError(errors));
+    throw errors.length === 1 ? only(errors) : new AggregateError(errors);
   }
 }

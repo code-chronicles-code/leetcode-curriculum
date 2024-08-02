@@ -13,7 +13,8 @@ async function main() {
     );
   }
 
-  const [script, ...scriptArgs] = process.argv.slice(2);  if (!isScript(script)) {
+  const [script, ...scriptArgs] = process.argv.slice(2);
+  if (!isScript(script)) {
     throw new Error(`Invalid script: ${script}`);
   }
 

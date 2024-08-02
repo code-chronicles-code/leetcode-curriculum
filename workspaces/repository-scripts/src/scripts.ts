@@ -16,7 +16,8 @@ export const SCRIPTS = {
 
       const errors: unknown[] = await mainAction().then(
         () => [],
-        (error) => [error],      );
+        (error) => [error],
+      );
 
       try {
         let modifiedFileCount = 0;
@@ -29,10 +30,8 @@ export const SCRIPTS = {
         }
 
         if (modifiedFileCount > 0) {
-          errors.push(
-            new Error(
-              `${modifiedFileCount === 1 ? "1 file doesn't" : modifiedFileCount + " files don't"} respect the repository's formatting rules.`,
-            ),
+          throw new Error(
+            `${modifiedFileCount === 1 ? "1 file doesn't" : modifiedFileCount + " files don't"} respect the repository's formatting rules.`,
           );
         }
       } catch (error) {
