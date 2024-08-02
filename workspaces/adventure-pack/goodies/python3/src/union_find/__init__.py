@@ -25,3 +25,5 @@ class UnionFind:
         self.components -= 1
 
         return True
+
+    # TODO: add are_connected function

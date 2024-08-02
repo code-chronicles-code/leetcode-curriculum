@@ -1225,7 +1225,9 @@ exports[`App can render goody: Python 3 UnionFind 1`] = `
         self.component_size[parent1] += self.component_size[parent2]
         self.components -= 1
 
-        return True"
+        return True
+
+    # TODO: add are_connected function"
 `;
 
 exports[`App can render goody: Python 3 int.digits 1`] = `
