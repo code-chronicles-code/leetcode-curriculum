@@ -3,17 +3,17 @@ import { swap } from "@code-chronicles/util/swap";
 // TODO: find a way to keep the code in sync with the BinaryHeap goody
 
 export class BinaryHeap<T> {
-  private readonly items: T[] = [];
+  private readonly elements: T[] = [];
 
   constructor(private readonly compareFn: (a: T, b: T) => number) {}
 
-  push(item: T): void {
-    this.items.push(item);
+  push(element: T): void {
+    this.elements.push(element);
     this.bubbleUp(this.size - 1);
   }
 
   peek(): T | undefined {
-    return this.items[0];
+    return this.elements[0];
   }
 
   pop(): T | undefined {
@@ -21,14 +21,14 @@ export class BinaryHeap<T> {
       return undefined;
     }
 
-    swap(this.items, 0, this.size - 1);
-    const res = this.items.pop();
+    swap(this.elements, 0, this.size - 1);
+    const res = this.elements.pop();
     this.bubbleDown(0);
     return res;
   }
 
   get size(): number {
-    return this.items.length;
+    return this.elements.length;
   }
 
   isEmpty(): boolean {
@@ -52,8 +52,8 @@ export class BinaryHeap<T> {
     }
 
     const parentIndex = BinaryHeap.getParentIndex(index);
-    if (this.compareFn(this.items[index], this.items[parentIndex]) < 0) {
-      swap(this.items, index, parentIndex);
+    if (this.compareFn(this.elements[index], this.elements[parentIndex]) < 0) {
+      swap(this.elements, index, parentIndex);
       this.bubbleUp(parentIndex);
     }
   }
@@ -63,14 +63,14 @@ export class BinaryHeap<T> {
     for (const childIndex of BinaryHeap.getChildIndexes(index)) {
       if (
         childIndex < this.size &&
-        this.compareFn(this.items[childIndex], this.items[bestIndex]) < 0
+        this.compareFn(this.elements[childIndex], this.elements[bestIndex]) < 0
       ) {
         bestIndex = childIndex;
       }
     }
 
     if (bestIndex !== index) {
-      swap(this.items, index, bestIndex);
+      swap(this.elements, index, bestIndex);
       this.bubbleDown(bestIndex);
     }
   }
