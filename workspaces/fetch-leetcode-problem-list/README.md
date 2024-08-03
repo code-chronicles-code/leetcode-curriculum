@@ -53,7 +53,7 @@ Each line of the output is JSON metadata for a problem, for example:
 ```
 <!-- prettier-ignore-end -->
 
-This repository includes [a Github Actions workflow](../../.github/workflows/post-potd.yml) for saving the problems metadata every week.
+This repository includes [a Github Actions workflow](../../.github/workflows/post-leetcode-potd-to-discord.yml) for saving the problems metadata every week.
 
 ## Development
 

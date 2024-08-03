@@ -12,7 +12,7 @@
     "workspaces/generate-health-report",
     "workspaces/get-recent-submissions",
     "workspaces/leetcode-api",
-    "workspaces/post-potd",
+    "workspaces/post-leetcode-potd-to-discord",
     "workspaces/repository-scripts",
     "workspaces/util"
   ],
