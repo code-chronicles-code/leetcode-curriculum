@@ -2,13 +2,27 @@
 
 Read data from the LeetCode API in TypeScript!
 
-Example usage:
+For example, run:
 
 ```ts
 import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
 
 const potd = await getPotd();
-console.log(potd);
+console.log(JSON.stringify(potd, null, 2));
+```
+
+The output may look something like:
+
+```json
+{
+  "date": "2024-08-03",
+  "question": {
+    "difficulty": "Easy",
+    "questionFrontendId": 1460,
+    "title": "Make Two Arrays Equal by Reversing Subarrays",
+    "titleSlug": "make-two-arrays-equal-by-reversing-subarrays"
+  }
+}
 ```
 
 Used to power sibling packages like:

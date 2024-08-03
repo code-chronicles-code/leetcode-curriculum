@@ -31,6 +31,11 @@ yarn start
 
 3. (optional) **Schedule daily script runs.** See, for example, [the Github Actions workflow](../../.github/workflows/post-potd.yml) in this repository.
 
+Example message:
+
+> ✨ New LeetCode problem of the day: [1460. Make Two Arrays Equal by Reversing Subarrays](https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/) ✨
+> It's marked easy, so don't overthink it!
+
 ## Idempotence
 
 The script records the date of the last problem it posted in a file named `data.json`. On subsequent runs, it checks this file, to avoid duplicate posts.
