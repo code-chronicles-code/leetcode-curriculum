@@ -33,8 +33,11 @@ yarn start
 
 Example message:
 
-> ✨ New LeetCode problem of the day: [1460. Make Two Arrays Equal by Reversing Subarrays](https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/) ✨
+<!-- prettier-ignore-start -->
+<!-- The two spaces at the end of the next line are intentional and necessary for rendering a single line break. -->
+> ✨ New LeetCode problem of the day: [1460. Make Two Arrays Equal by Reversing Subarrays](https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/) ✨  
 > It's marked easy, so don't overthink it!
+<!-- prettier-ignore-end -->
 
 ## Idempotence
 
