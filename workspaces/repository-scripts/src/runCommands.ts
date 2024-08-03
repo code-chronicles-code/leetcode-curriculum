@@ -2,7 +2,7 @@ import type { SpawnOptions } from "node:child_process";
 import process from "node:process";
 
 import { getCurrentGitRepositoryRoot } from "@code-chronicles/util/getCurrentGitRepositoryRoot";
-import { only } from "@code-chronicles/util/only";
+import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 import { readWorkspaces } from "@code-chronicles/util/readWorkspaces";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
@@ -87,8 +87,6 @@ export async function runCommands(
       console.error({ command, args });
     }
 
-    // TODO: turn this into a utility, perhaps
-    const errors = failedCommands.map(({ error }) => error);
-    throw errors.length === 1 ? only(errors) : new AggregateError(errors);
+    maybeThrow(failedCommands.map(({ error }) => error));
   }
 }
