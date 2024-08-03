@@ -16,6 +16,4 @@ jobs:
         uses: ./.github/workflows/set-up-everything
 
       - name: Check formatting
-        # TODO: Maybe turn this into a Node script, since Perl tends to be write-only...
-        run: yarn format && git status --porcelain | perl -ple 's/^.. // or die; $_ = "::error file=$_,title=Formatting error::This file does not respect the repository".chr(39)."s formatting rules.%0ARun `yarn format` in the repository root to auto-fix it."; END { die if $. }'
-        # TODO: Also write up a job summary per https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
+        run: yarn format
