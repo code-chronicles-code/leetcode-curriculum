@@ -1,9 +1,10 @@
 import { describe, expect, it } from "@jest/globals";
 
 import { iteratorPrototype } from "../Iterator.prototype";
-delete (iteratorPrototype as unknown as Record<string, unknown>).drop;
 import "../Iterator.prototype.take";
 
+delete (iteratorPrototype as unknown as Record<string, unknown>).drop;
+// eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
 import "./index";
 
 describe("Iterator.prototype.drop", () => {
@@ -41,26 +42,123 @@ describe("Iterator.prototype.drop", () => {
     expect(result).toStrictEqual([2, 3, 4, 5, 6]);
   });
 
-  it("throws when dropping elements from an iterator that errors before the drop limit", () => {
-    function* generateNumbers() {
-      yield 35;
-      throw new Error();
-    }
+  it("can drop characters from a string", () => {
+    const s = "Hello Universe";
 
-    expect(() => {
-      Array.from(generateNumbers().drop(1));
-    }).toThrow();
+    const result = [...s[Symbol.iterator]().drop(6)].join("");
+    expect(result).toStrictEqual("Universe");
   });
 
-  it("doesn't reach errors in the underlying iterator that happen before the drop limit", () => {
+  it("correctly drops the first limit entries from the animal map", () => {
+    const animalMap = new Map([
+      ["lion", "big cat"],
+      ["elephant", "large mammal"],
+      ["eagle", "bird of prey"],
+      ["dolphin", "marine mammal"],
+      ["panda", "bear"],
+      ["koala", "marsupial"],
+      ["kangaroo", "hopping marsupial"],
+      ["penguin", "flightless bird"],
+      ["shark", "ocean predator"],
+      ["giraffe", "tall mammal"],
+      ["zebra", "striped mammal"],
+      ["owl", "nocturnal bird"],
+      ["wolf", "pack animal"],
+      ["tiger", "striped big cat"],
+      ["crocodile", "reptile predator"],
+      ["otter", "intelligent and cute"],
+    ]);
+
+    const entriesIterator = animalMap.entries();
+    const result = [...entriesIterator.drop(5)];
+    expect(result).toStrictEqual([
+      ["koala", "marsupial"],
+      ["kangaroo", "hopping marsupial"],
+      ["penguin", "flightless bird"],
+      ["shark", "ocean predator"],
+      ["giraffe", "tall mammal"],
+      ["zebra", "striped mammal"],
+      ["owl", "nocturnal bird"],
+      ["wolf", "pack animal"],
+      ["tiger", "striped big cat"],
+      ["crocodile", "reptile predator"],
+      ["otter", "intelligent and cute"],
+    ]);
+  });
+
+  it("correctly drops the first limit entries from the animal set", () => {
+    const animalList = [
+      "lion",
+      "elephant",
+      "eagle",
+      "dolphin",
+      "panda",
+      "koala",
+      "kangaroo",
+      "penguin",
+      "shark",
+      "giraffe",
+      "zebra",
+      "owl",
+      "wolf",
+      "tiger",
+      "crocodile",
+      "otter",
+      "elephant",
+      "lion",
+      "panda",
+      "tiger",
+    ];
+
+    const animalSet = new Set(animalList);
+    console.log(animalSet);
+
+    const valuesIterator = animalSet.values();
+    const result = [...valuesIterator.drop(4)];
+
+    expect(result).toStrictEqual([
+      "panda",
+      "koala",
+      "kangaroo",
+      "penguin",
+      "shark",
+      "giraffe",
+      "zebra",
+      "owl",
+      "wolf",
+      "tiger",
+      "crocodile",
+      "otter",
+    ]);
+  });
+
+  it.each([1, 0, 7, 2, 100])(
+    "throws an error after attempting to drop %p elements from an iterator that errors",
+    (value) => {
+      function* generateValues() {
+        yield "Maine coon";
+        throw new Error("An error occurred");
+      }
+
+      expect(() => {
+        [...generateValues().drop(value)];
+      }).toThrow("An error occurred");
+    },
+  );
+
+  it("skips over caught errors in the underlying iterator and continues yielding values", () => {
     function* generateValues() {
       yield "Maine coon";
-      throw new Error();
-    }
+      try {
+        throw new Error("An error occurred");
+      } catch (e) {
+        console.error(e);
+      }
 
-    expect(() => {
-      Array.from(generateValues().drop(5));
-    }).toThrow();
+      yield "Savannah cat";
+    }
+    const result = [...generateValues().drop(1)];
+    expect(result).toStrictEqual(["Savannah cat"]);
   });
 
   it.each([NaN, -1, 0.5, -0.5, Infinity, -Infinity])(
