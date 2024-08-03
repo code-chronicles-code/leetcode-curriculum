@@ -899,19 +899,19 @@ Array.prototype.swap = function (i, j) {
 };
 
 class BinaryHeap {
-  items = [];
+  elements = [];
 
   constructor(compareFn) {
     this.compareFn = compareFn;
   }
 
-  push(item) {
-    this.items.push(item);
+  push(element) {
+    this.elements.push(element);
     this.bubbleUp(this.size - 1);
   }
 
   peek() {
-    return this.items[0];
+    return this.elements[0];
   }
 
   pop() {
@@ -919,14 +919,14 @@ class BinaryHeap {
       return undefined;
     }
 
-    this.items.swap(0, this.size - 1);
-    const res = this.items.pop();
+    this.elements.swap(0, this.size - 1);
+    const res = this.elements.pop();
     this.bubbleDown(0);
     return res;
   }
 
   get size() {
-    return this.items.length;
+    return this.elements.length;
   }
 
   isEmpty() {
@@ -950,8 +950,8 @@ class BinaryHeap {
     }
 
     const parentIndex = BinaryHeap.getParentIndex(index);
-    if (this.compareFn(this.items[index], this.items[parentIndex]) < 0) {
-      this.items.swap(index, parentIndex);
+    if (this.compareFn(this.elements[index], this.elements[parentIndex]) < 0) {
+      this.elements.swap(index, parentIndex);
       this.bubbleUp(parentIndex);
     }
   }
@@ -961,14 +961,14 @@ class BinaryHeap {
     for (const childIndex of BinaryHeap.getChildIndexes(index)) {
       if (
         childIndex < this.size &&
-        this.compareFn(this.items[childIndex], this.items[bestIndex]) < 0
+        this.compareFn(this.elements[childIndex], this.elements[bestIndex]) < 0
       ) {
         bestIndex = childIndex;
       }
     }
 
     if (bestIndex !== index) {
-      this.items.swap(index, bestIndex);
+      this.elements.swap(index, bestIndex);
       this.bubbleDown(bestIndex);
     }
   }
@@ -2370,17 +2370,17 @@ Array.prototype.swap = function <T>(this: T[], i: number, j: number): void {
 };
 
 class BinaryHeap<T> {
-  private readonly items: T[] = [];
+  private readonly elements: T[] = [];
 
   constructor(private readonly compareFn: (a: T, b: T) => number) {}
 
-  push(item: T): void {
-    this.items.push(item);
+  push(element: T): void {
+    this.elements.push(element);
     this.bubbleUp(this.size - 1);
   }
 
   peek(): T | undefined {
-    return this.items[0];
+    return this.elements[0];
   }
 
   pop(): T | undefined {
@@ -2388,14 +2388,14 @@ class BinaryHeap<T> {
       return undefined;
     }
 
-    this.items.swap(0, this.size - 1);
-    const res = this.items.pop();
+    this.elements.swap(0, this.size - 1);
+    const res = this.elements.pop();
     this.bubbleDown(0);
     return res;
   }
 
   get size(): number {
-    return this.items.length;
+    return this.elements.length;
   }
 
   isEmpty(): boolean {
@@ -2419,8 +2419,8 @@ class BinaryHeap<T> {
     }
 
     const parentIndex = BinaryHeap.getParentIndex(index);
-    if (this.compareFn(this.items[index], this.items[parentIndex]) < 0) {
-      this.items.swap(index, parentIndex);
+    if (this.compareFn(this.elements[index], this.elements[parentIndex]) < 0) {
+      this.elements.swap(index, parentIndex);
       this.bubbleUp(parentIndex);
     }
   }
@@ -2430,14 +2430,14 @@ class BinaryHeap<T> {
     for (const childIndex of BinaryHeap.getChildIndexes(index)) {
       if (
         childIndex < this.size &&
-        this.compareFn(this.items[childIndex], this.items[bestIndex]) < 0
+        this.compareFn(this.elements[childIndex], this.elements[bestIndex]) < 0
       ) {
         bestIndex = childIndex;
       }
     }
 
     if (bestIndex !== index) {
-      this.items.swap(index, bestIndex);
+      this.elements.swap(index, bestIndex);
       this.bubbleDown(bestIndex);
     }
   }

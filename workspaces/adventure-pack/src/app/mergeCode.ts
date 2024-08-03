@@ -1,9 +1,9 @@
 import invariant from "invariant";
 import type { ReadonlyDeep } from "type-fest";
 
+import { BinaryHeap } from "@code-chronicles/util/BinaryHeap";
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 
-import { BinaryHeap } from "./BinaryHeap";
 import { centerTextInComment } from "./centerTextInComment";
 import type { Goody } from "./Goody";
 import type { Language } from "./Language";
