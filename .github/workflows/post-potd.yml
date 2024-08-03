@@ -17,13 +17,13 @@ on:
 # in-progress and latest queued. However, do NOT cancel in-progress runs as we
 # want to allow them to complete.
 concurrency:
-  group: post-potd
+  group: post-leetcode-potd-to-discord
   cancel-in-progress: false
 
 jobs:
-  post-potd:
+  post-leetcode-potd-to-discord:
     environment:
-      name: post-potd
+      name: post-leetcode-potd-to-discord
 
     runs-on: ubuntu-latest
 
@@ -47,5 +47,5 @@ jobs:
           # TODO: maybe label with the date instead of the run ID?
           key: post-potd-script-data-${{ github.run_id }}
 
-      - name: Post problem of the day
+      - name: Query problem of the day and post to Discord
         run: yarn workspace @code-chronicles/post-potd start
