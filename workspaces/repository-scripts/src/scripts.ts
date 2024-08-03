@@ -1,6 +1,6 @@
 import { getCurrentGitRepositoryStatusPaths } from "@code-chronicles/util/getCurrentGitRepositoryStatusPaths";
-import { isCi } from "@code-chronicles/util/isCi";
-import { only } from "@code-chronicles/util/only";
+import { isRunningInCI } from "@code-chronicles/util/isRunningInCI";
+import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 
 type ScriptData = {
   run?: (mainAction: () => Promise<void>) => Promise<void>;
@@ -10,7 +10,7 @@ type ScriptData = {
 export const SCRIPTS = {
   format: {
     async run(mainAction: () => Promise<void>): Promise<void> {
-      if (!isCi()) {
+      if (!isRunningInCI()) {
         await mainAction();
         return;
       }
@@ -42,10 +42,7 @@ export const SCRIPTS = {
         errors.push(error);
       }
 
-      if (errors.length > 0) {
-        // TODO: turn this into a utility, perhaps
-        throw errors.length === 1 ? only(errors) : new AggregateError(errors);
-      }
+      maybeThrow(errors);
     },
 
     repositoryRootCommand: ["prettier", [" --color", "--write", "."]],
