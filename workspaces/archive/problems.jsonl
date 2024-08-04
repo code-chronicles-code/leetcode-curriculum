@@ -3227,3 +3227,19 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3227,"title":"Vowels Game in a String","titleSlug":"vowels-game-in-a-string"}
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3228,"title":"Maximum Number of Operations to Move Ones to the End","titleSlug":"maximum-number-of-operations-to-move-ones-to-the-end"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3229,"title":"Minimum Operations to Make Array Equal to Target","titleSlug":"minimum-operations-to-make-array-equal-to-target"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3230,"title":"Customer Purchasing Behavior Analysis","titleSlug":"customer-purchasing-behavior-analysis"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3231,"title":"Minimum Number of Increasing Subsequence to Be Removed","titleSlug":"minimum-number-of-increasing-subsequence-to-be-removed"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3232,"title":"Find if Digit Game Can Be Won","titleSlug":"find-if-digit-game-can-be-won"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3233,"title":"Find the Count of Numbers Which Are Not Special","titleSlug":"find-the-count-of-numbers-which-are-not-special"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3234,"title":"Count the Number of Substrings With Dominant Ones","titleSlug":"count-the-number-of-substrings-with-dominant-ones"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3235,"title":"Check if the Rectangle Corner Is Reachable","titleSlug":"check-if-the-rectangle-corner-is-reachable"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3236,"title":"CEO Subordinate Hierarchy","titleSlug":"ceo-subordinate-hierarchy"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3237,"title":"Alt and Tab Simulation","titleSlug":"alt-and-tab-simulation"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3238,"title":"Find the Number of Winning Players","titleSlug":"find-the-number-of-winning-players"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3239,"title":"Minimum Number of Flips to Make Binary Grid Palindromic I","titleSlug":"minimum-number-of-flips-to-make-binary-grid-palindromic-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3240,"title":"Minimum Number of Flips to Make Binary Grid Palindromic II","titleSlug":"minimum-number-of-flips-to-make-binary-grid-palindromic-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3241,"title":"Time Taken to Mark All Nodes","titleSlug":"time-taken-to-mark-all-nodes"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3242,"title":"Design Neighbor Sum Service","titleSlug":"design-neighbor-sum-service"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3243,"title":"Shortest Distance After Road Addition Queries I","titleSlug":"shortest-distance-after-road-addition-queries-i"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3244,"title":"Shortest Distance After Road Addition Queries II","titleSlug":"shortest-distance-after-road-addition-queries-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3245,"title":"Alternating Groups III","titleSlug":"alternating-groups-iii"}
