@@ -2123,6 +2123,24 @@ del set_up_adventure_pack
 ########################### END ADVENTURE PACK CODE ############################"
 `;
 
+exports[`App can equip single goody: Python 3 is_palindrome 1`] = `
+"########################## BEGIN ADVENTURE PACK CODE ###########################
+# Adventure Pack commit fake-commit-hash
+# Running at: https://example.com/
+
+def is_palindrome(arr: list | str) -> bool:
+    left: int = 0
+    right: int = len(arr) - 1
+    while left < right:
+        if arr[left] != arr[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+########################### END ADVENTURE PACK CODE ############################"
+`;
+
 exports[`App can equip single goody: TypeScript Array.prototype.slidingWindows 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
