@@ -36,3 +36,13 @@ def test_union_no_work() -> None:
 def test_find() -> None:
     uf = UnionFind(5)
     assert all(uf.find(component) == component for component in range(5))
+
+
+def test_are_connected() -> None:
+    uf = UnionFind(8)
+    uf.union(2, 3)
+    uf.union(3, 4)
+
+    assert not uf.are_connected(1, 3)
+    assert uf.are_connected(2, 3)
+    assert uf.are_connected(2, 4)
