@@ -5,6 +5,7 @@ import webpack from "webpack";
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
 export default {
+  target: "web",
   entry: "./src/app/main.tsx",
   output: {
     filename: "[name].js",

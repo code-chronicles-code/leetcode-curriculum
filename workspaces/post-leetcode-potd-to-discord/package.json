@@ -22,9 +22,11 @@
   "dependencies": {
     "@code-chronicles/leetcode-api": "0.0.1",
     "@code-chronicles/util": "0.0.1",
+    "bufferutil": "4.0.8",
     "discord.js": "14.15.3",
     "invariant": "2.2.4",
     "ts-node": "10.9.2",
+    "utf-8-validate": "6.0.4",
     "ws": "8.18.0",
     "zod": "3.23.8"
   },
