@@ -13,6 +13,7 @@
     "url": "https://github.com/miorel"
   },
   "scripts": {
+    "build": "webpack && chmod +x dist/post-leetcode-potd-to-discord.js",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "start": "ts-node src/main.ts",
@@ -24,6 +25,7 @@
     "discord.js": "14.15.3",
     "invariant": "2.2.4",
     "ts-node": "10.9.2",
+    "ws": "8.18.0",
     "zod": "3.23.8"
   },
   "devDependencies": {
@@ -32,6 +34,8 @@
     "@types/node": "22.0.2",
     "eslint": "9.8.0",
     "prettier": "3.3.3",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "webpack": "5.93.0",
+    "webpack-cli": "5.1.4"
   }
 }
