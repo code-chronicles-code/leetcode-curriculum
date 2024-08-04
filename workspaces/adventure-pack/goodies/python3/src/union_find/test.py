@@ -40,6 +40,8 @@ def test_find() -> None:
 
 def test_are_connected() -> None:
     uf = UnionFind(8)
+
+    assert not uf.are_connected(2, 3)
     uf.union(2, 3)
     uf.union(3, 4)
 
