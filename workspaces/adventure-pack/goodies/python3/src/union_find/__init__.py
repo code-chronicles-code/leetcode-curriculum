@@ -26,4 +26,5 @@ class UnionFind:
 
         return True
 
-    # TODO: add are_connected function
+    def are_connected(self, c1: int, c2: int) -> bool:
+        return self.find(c1) == self.find(c2)
