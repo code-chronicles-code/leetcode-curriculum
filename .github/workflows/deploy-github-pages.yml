@@ -14,11 +14,13 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# Cancel runs in progress as well, since the latest one likely supersedes previous ones.
+# Allow only one concurrent run, skipping runs queued between the run
+# in-progress and latest queued. However, don't cancel in-progress runs as it's
+# fine to let them complete, and this way we have fewer reports of canceled
+# runs.
 concurrency:
   group: deploy-github-pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy-github-pages:

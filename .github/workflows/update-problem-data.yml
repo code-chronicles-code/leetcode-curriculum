@@ -10,8 +10,8 @@ on:
   # Allows running this workflow manually from the repository's Actions tab.
   workflow_dispatch:
 
-# Allow only one concurrent run, skipping runs queued between the run
-# Cancel runs in progress as well, since the latest one likely supersedes previous ones.
+# Allow only one concurrent run. Queueing additional runs should cancel any
+# in-progress run so that the latest run is the one that gets priority.
 concurrency:
   group: update-problem-data
   cancel-in-progress: true
