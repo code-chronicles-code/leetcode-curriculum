@@ -13,12 +13,11 @@ on:
   # Allows running this workflow manually from the repository's Actions tab.
   workflow_dispatch:
 
-# Allow only one concurrent run, skipping runs queued between the run
-# in-progress and latest queued. However, do NOT cancel in-progress runs as we
-# want to allow them to complete.
+# Allow only one concurrent run. Queueing additional runs should cancel any
+# in-progress run so that the latest run is the one that gets priority.
 concurrency:
   group: post-leetcode-potd-to-discord
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   post-leetcode-potd-to-discord:
@@ -43,10 +42,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: workspaces/post-leetcode-potd-to-discord/data.json
-          # TODO: remove "post-potd-script-data-" once the rename is pushed and the new key is cached
-          restore-keys: |
-            post-potd-script-data-
-            post-leetcode-potd-to-discord-script-data-
+          restore-keys: post-leetcode-potd-to-discord-script-data-
           # TODO: maybe label with the date instead of the run ID?
           key: post-leetcode-potd-to-discord-script-data-${{ github.run_id }}
           # TODO: maybe add `fail-on-cache-miss` when the job runs due to a cron

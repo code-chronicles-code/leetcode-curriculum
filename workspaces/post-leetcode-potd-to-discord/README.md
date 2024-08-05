@@ -1,6 +1,6 @@
-# @code-chronicles/post-potd
+# @code-chronicles/post-leetcode-potd-to-discord
 
-![Status of the GitHub Actions workflow that posts the LeetCode problem of the day to the Code Chronicles Discord](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/post-potd.yml/badge.svg)
+![Status of the GitHub Actions workflow that posts the LeetCode problem of the day to the Code Chronicles Discord](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/post-leetcode-potd-to-discord.yml/badge.svg)
 
 Announce LeetCode's problem of the day in a Discord channel!
 
@@ -10,34 +10,61 @@ To use:
 
 1. **Prepare the necessary secrets.** You will need a token from the Discord API and the ID of the Discord channel in which to post.
 
-```sh
-# The file name is scary so you don't accidentally leak the secrets:
-cp secrets_TEMPLATE.json secrets_DO_NOT_COMMIT_OR_SHARE.json
+   ```sh
+   # Navigate to the package's directory:
+   cd workspaces/post-leetcode-potd-to-discord
 
-# ...then modify the new file using your favorite editor, e.g.:
-nano secrets_DO_NOT_COMMIT_OR_SHARE.json
-```
+   # The file name is scary so you don't accidentally leak the secrets:
+   cp secrets_TEMPLATE.json secrets_DO_NOT_COMMIT_OR_SHARE.json
 
-2. **Run the script!** Assumes you've already installed dependencies, by running `yarn`.
+   # ...then modify the new file using your favorite editor, e.g.:
+   nano secrets_DO_NOT_COMMIT_OR_SHARE.json
+   ```
 
-```sh
-# This command should work from any directory in the repository:
-yarn workspace @code-chronicles/post-potd start
+2. **Run the script!** You can run a development version:
 
-# Alternatively, make sure you're in the package's directory:
-cd workspaces/post-potd
-yarn start
-```
+   ```sh
+   # Install dependencies, if you haven't already:
+   yarn
 
-3. (optional) **Schedule daily script runs.** See, for example, [the Github Actions workflow](../../.github/workflows/post-potd.yml) in this repository.
+   # This command should work from any directory in the repository:
+   yarn workspace @code-chronicles/post-leetcode-potd-to-discord start
 
-Example message:
+   # Alternatively, make sure you're in the package's directory:
+   cd workspaces/post-leetcode-potd-to-discord
+   yarn start
+   ```
 
-<!-- prettier-ignore-start -->
-<!-- The two spaces at the end of the next line are intentional and necessary for rendering a single line break. -->
-> ✨ New LeetCode problem of the day: [1460. Make Two Arrays Equal by Reversing Subarrays](https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/) ✨  
-> It's marked easy, so don't overthink it!
-<!-- prettier-ignore-end -->
+   Or, build and run a distribution version:
+
+   ```sh
+   # It's easiest to do this from the package's directory:
+   cd workspaces/post-leetcode-potd-to-discord
+
+   # Install dependencies, if you haven't already:
+   yarn
+
+   # Package the script into an executable:
+   yarn build
+
+   # Run it with Node!
+   node dist/post-leetcode-potd-to-discord.js
+
+   # Or if your system can handle executable files, try running it directly:
+   ./dist/post-leetcode-potd-to-discord.js
+   ```
+
+   Here's an example message:
+
+   <!-- prettier-ignore-start -->
+   <!-- The two spaces at the end of the next line are intentional and necessary for rendering a single line break. -->
+
+   > ✨ New LeetCode problem of the day: [1460. Make Two Arrays Equal by Reversing Subarrays](https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/) ✨  
+   > It's marked easy, so don't overthink it!
+
+   <!-- prettier-ignore-end -->
+
+3. (optional) **Schedule daily script runs.** See, for example, [the Github Actions workflow](../../.github/workflows/post-leetcode-potd-to-discord.yml) in this repository.
 
 ## Idempotence
 
@@ -49,6 +76,10 @@ The script also checks that the problem date reported by the LeetCode API matche
 
 Like the rest of the [Code Chronicles Leetcode ecosystem](../../), this package is structured as a Node module, using [classic Yarn](https://classic.yarnpkg.com/) as the package manager.
 
-You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format`, `yarn lint`, and `yarn typecheck` scripts are available to aid in development and occasionally to annoy.
+You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format`, `yarn lint`, and `yarn typecheck` scripts are available to aid in development and occasionally to annoy. Read more in the repository's general [development guide](../../DEVELOPMENT.md).
 
-See also the repository's general [development guide](../../DEVELOPMENT.md).
+This package supports an additional `package.json` script:
+
+### `yarn build`
+
+Builds a distribution version of this package, in a `dist` directory within the package's workspace.

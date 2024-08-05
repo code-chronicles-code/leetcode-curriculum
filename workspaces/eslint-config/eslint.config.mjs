@@ -21,7 +21,7 @@ const vanilla = {
         const project = "./tsconfig.json";
         if (!fs.existsSync(project)) {
           throw new Error(
-            `No file ${project} exists in directory ${process.cwd()}`,
+            `No file ${project} exists in directory: ${process.cwd()}`,
           );
         }
         return project;
