@@ -11,7 +11,7 @@ import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
 import { SCRIPTS, SCRIPTS_TO_SKIP_BY_WORKSPACE, type Script } from "./scripts";
 
-type FailedCommand = {  
+type FailedCommand = {
   command: string;
   args: readonly string[];
   error: unknown;
