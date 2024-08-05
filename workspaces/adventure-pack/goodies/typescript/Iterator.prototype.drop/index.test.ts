@@ -1,31 +1,31 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { iteratorPrototype } from "../Iterator.prototype";
 import "../Iterator.prototype.take";
 
+import { iteratorPrototype } from "../Iterator.prototype";
 delete (iteratorPrototype as unknown as Record<string, unknown>).drop;
 // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
 import "./index";
 
 describe("Iterator.prototype.drop", () => {
   it("drops the specified number of elements from the iterator", () => {
-    const result = Array.from([10, 22, 33, 47, 58].values().drop(3));
-    expect(result).toStrictEqual([47, 58]);
+    const iterator = [10, 22, 33, 47, 58].values().drop(3);
+    expect([...iterator]).toStrictEqual([47, 58]);
   });
 
-  it("returns an empty iterator if the specified number is greater than the iterator length", () => {
-    const result = Array.from([10, 22, 33].values().drop(5));
-    expect(result).toStrictEqual([]);
+  it("returns an empty iterator if the limit is greater than the iterator length", () => {
+    const iterator = [10, 22, 33].values().drop(5);
+    expect([...iterator]).toStrictEqual([]);
   });
 
-  it("returns the full iterator if the specified number is 0", () => {
-    const result = Array.from(["cat", "dog", "otter", "bear"].values().drop(0));
-    expect(result).toStrictEqual(["cat", "dog", "otter", "bear"]);
+  it("returns the full iterator if the limit is 0", () => {
+    const iterator = ["cat", "dog", "otter", "bear"].values().drop(0);
+    expect([...iterator]).toStrictEqual(["cat", "dog", "otter", "bear"]);
   });
 
   it("returns an empty iterator for an empty iterator", () => {
-    const result = Array.from([].values().drop(3));
-    expect(result).toStrictEqual([]);
+    const iterator = [].values().drop(3);
+    expect([...iterator]).toStrictEqual([]);
   });
 
   it("drops the specified number of elements from an infinite iterator", () => {
@@ -35,22 +35,19 @@ describe("Iterator.prototype.drop", () => {
         yield ++i;
       }
     }
-    // Drop the first 2 elements, then take the next 5 to avoid infinte loop
-    const iterator = infiniteNumbers().drop(2).take(5);
-    const result = [...iterator];
 
-    expect(result).toStrictEqual([2, 3, 4, 5, 6]);
+    // Drop the first 2 elements, then take the next 5 to avoid infinte loop.
+    const iterator = infiniteNumbers().drop(2).take(5);
+    expect([...iterator]).toStrictEqual([2, 3, 4, 5, 6]);
   });
 
   it("can drop characters from a string", () => {
-    const s = "Hello Universe";
-
-    const result = [...s[Symbol.iterator]().drop(6)].join("");
-    expect(result).toStrictEqual("Universe");
+    const iterator = "Hello Universe"[Symbol.iterator]().drop(6);
+    expect([...iterator]).toStrictEqual("Universe".split(""));
   });
 
-  it("correctly drops the first limit entries from the animal map", () => {
-    const animalMap = new Map([
+  it("correctly drops the first limit entries from a map", () => {
+    const iterator = new Map([
       ["lion", "big cat"],
       ["elephant", "large mammal"],
       ["eagle", "bird of prey"],
@@ -67,11 +64,11 @@ describe("Iterator.prototype.drop", () => {
       ["tiger", "striped big cat"],
       ["crocodile", "reptile predator"],
       ["otter", "intelligent and cute"],
-    ]);
+    ])
+      .entries()
+      .drop(5);
 
-    const entriesIterator = animalMap.entries();
-    const result = [...entriesIterator.drop(5)];
-    expect(result).toStrictEqual([
+    expect([...iterator]).toStrictEqual([
       ["koala", "marsupial"],
       ["kangaroo", "hopping marsupial"],
       ["penguin", "flightless bird"],
@@ -86,8 +83,8 @@ describe("Iterator.prototype.drop", () => {
     ]);
   });
 
-  it("correctly drops the first limit entries from the animal set", () => {
-    const animalList = [
+  it("correctly drops the first limit entries from a set", () => {
+    const iterator = new Set([
       "lion",
       "elephant",
       "eagle",
@@ -105,18 +102,15 @@ describe("Iterator.prototype.drop", () => {
       "crocodile",
       "otter",
       "elephant",
+      "duck",
       "lion",
       "panda",
       "tiger",
-    ];
+    ])
+      .values()
+      .drop(4);
 
-    const animalSet = new Set(animalList);
-    console.log(animalSet);
-
-    const valuesIterator = animalSet.values();
-    const result = [...valuesIterator.drop(4)];
-
-    expect(result).toStrictEqual([
+    expect([...iterator]).toStrictEqual([
       "panda",
       "koala",
       "kangaroo",
@@ -129,44 +123,40 @@ describe("Iterator.prototype.drop", () => {
       "tiger",
       "crocodile",
       "otter",
+      "duck",
     ]);
   });
 
   it.each([1, 0, 7, 2, 100])(
-    "throws an error after attempting to drop %p elements from an iterator that errors",
+    "throws an error after attempting to drop %p element(s) from an iterator that errors",
     (value) => {
-      function* generateValues() {
+      const iterator = (function* () {
         yield "Maine coon";
         throw new Error("An error occurred");
-      }
+      })().drop(value);
 
-      expect(() => {
-        [...generateValues().drop(value)];
-      }).toThrow("An error occurred");
+      expect(() => [...iterator]).toThrow({ message: "An error occurred" });
     },
   );
 
   it("skips over caught errors in the underlying iterator and continues yielding values", () => {
-    function* generateValues() {
+    const iterator = (function* () {
       yield "Maine coon";
       try {
         throw new Error("An error occurred");
-      } catch (e) {
-        console.error(e);
-      }
+      } catch {}
 
       yield "Savannah cat";
-    }
-    const result = [...generateValues().drop(1)];
-    expect(result).toStrictEqual(["Savannah cat"]);
+    })().drop(1);
+
+    expect([...iterator]).toStrictEqual(["Savannah cat"]);
   });
 
   it.each([NaN, -1, 0.5, -0.5, Infinity, -Infinity])(
     "throws a RangeError when limit is %p",
     (value) => {
-      expect(() => {
-        [].values().drop(value);
-      }).toThrow(RangeError);
+      const iterator = [].values();
+      expect(() => iterator.drop(value)).toThrow(RangeError);
     },
   );
 });

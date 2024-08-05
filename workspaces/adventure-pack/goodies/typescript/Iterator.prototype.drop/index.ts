@@ -18,7 +18,7 @@ iteratorPrototype.drop ??= function <T>(
   return function* (this: Iterator<T>) {
     let index = 0;
 
-    // Skip the first 'limit' elements
+    // Skip the first `limit` elements.
     for (const value of this.toIterable()) {
       if (index++ < limit) {
         continue;
