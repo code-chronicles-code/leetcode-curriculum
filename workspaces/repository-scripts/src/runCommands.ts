@@ -5,6 +5,7 @@ import { getCurrentGitRepositoryRoot } from "@code-chronicles/util/getCurrentGit
 import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 import { readWorkspaces } from "@code-chronicles/util/readWorkspaces";
+import { runWithLogGroupAsync } from "@code-chronicles/util/runWithLogGroupAsync";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
@@ -48,11 +49,14 @@ export async function runCommands(
       if (rootCommand != null) {
         const currentGitRepositoryRoot = await getCurrentGitRepositoryRoot();
 
-        console.error(`Running script ${script} for repository root!`);
-        await run.apply(null, [
-          ...rootCommand,
-          { cwd: currentGitRepositoryRoot },
-        ]);
+        await runWithLogGroupAsync(
+          `Running script ${script} for repository root!`,
+          async () =>
+            await run.apply(null, [
+              ...rootCommand,
+              { cwd: currentGitRepositoryRoot },
+            ]),
+        );
       }
     },
 
@@ -68,10 +72,10 @@ export async function runCommands(
         return;
       }
 
-      console.error(
+      await runWithLogGroupAsync(
         `Running script ${script} for workspace: ${workspaceShortName}`,
+        async () => await run("yarn", ["workspace", workspace, script]),
       );
-      await run("yarn", ["workspace", workspace, script]);
     }),
   ];
 

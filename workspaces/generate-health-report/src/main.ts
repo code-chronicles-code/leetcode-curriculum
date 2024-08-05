@@ -4,6 +4,7 @@ import process from "node:process";
 import nullthrows from "nullthrows";
 
 import { assertIsRunningInCI } from "@code-chronicles/util/assertIsRunningInCI";
+import { runWithLogGroupAsync } from "@code-chronicles/util/runWithLogGroupAsync";
 import { getCurrentGitRepositoryRoot } from "@code-chronicles/util/getCurrentGitRepositoryRoot";
 import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
@@ -37,16 +38,17 @@ async function main(): Promise<void> {
     // eslint-disable-next-line no-await-in-loop
     await spawnWithSafeStdio("git", ["clean", "-fd"]);
 
-    console.error("Running: " + command);
-    try {
-      // eslint-disable-next-line no-await-in-loop
-      await spawnWithSafeStdio("bash", ["-c", command + " 1>&2"]);
-      summary.push(` * \`${command}\`: ✅\n`);
-    } catch (err) {
-      console.error(err);
-      errors.push(err);
-      summary.push(` * \`${command}\`: ❌\n`);
-    }
+    // eslint-disable-next-line no-await-in-loop
+    await runWithLogGroupAsync(`Running: ${command}`, async () => {
+      try {
+        await spawnWithSafeStdio("bash", ["-c", command + " 1>&2"]);
+        summary.push(` * \`${command}\`: ✅\n`);
+      } catch (err) {
+        console.error(err);
+        errors.push(err);
+        summary.push(` * \`${command}\`: ❌\n`);
+      }
+    });
   }
 
   await writeFile(outputPath, summary.join(""));
