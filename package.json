@@ -6,7 +6,7 @@
   },
   "workspaces": [
     "workspaces/adventure-pack",
-    "workspaces/download-submissions",
+    "workspaces/download-leetcode-submissions",
     "workspaces/eslint-config",
     "workspaces/fetch-leetcode-problem-list",
     "workspaces/generate-health-report",
