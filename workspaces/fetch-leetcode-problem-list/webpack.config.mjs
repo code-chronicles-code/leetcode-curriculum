@@ -1,3 +1,4 @@
+import { builtinModules } from "node:module";
 import path from "node:path";
 
 import webpack from "webpack";
@@ -34,12 +35,11 @@ export default {
   },
 
   externalsType: "commonjs",
-  externals: {
-    "node:crypto": "node:crypto",
-    "node:fs": "node:fs",
-    "node:fs/promises": "node:fs/promises",
-    "node:process": "node:process",
-  },
+  externals: async ({ request }) =>
+    builtinModules.includes(request) ||
+    builtinModules.includes(request.replace(/^node:/, ""))
+      ? request
+      : undefined,
 
   plugins: [
     new webpack.BannerPlugin({
