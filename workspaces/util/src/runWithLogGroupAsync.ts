@@ -7,7 +7,7 @@ export async function runWithLogGroupAsync(
   // Per https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#grouping-log-lines
   console.error(isRunningInGitHubActions() ? "::group::" + message : message);
 
-  try {
+  try {  
     await action();
   } finally {
     isRunningInGitHubActions() && console.error("::endgroup::");
