@@ -1001,6 +1001,43 @@ const iteratorPrototype = Object.getPrototypeOf(
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Iterator.prototype.drop 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+iteratorPrototype.drop ??= function (limit) {
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new RangeError(\`Limit must be a non-negative integer, got \${limit}\`);
+  }
+  return function* () {
+    let index = 0;
+    // Skip the first \`limit\` elements.
+    for (const value of this.toIterable()) {
+      if (index++ < limit) {
+        continue;
+      }
+      yield value;
+    }
+  }.call(this);
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Iterator.prototype.every 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2473,6 +2510,63 @@ exports[`App can equip single goody: TypeScript Iterator.prototype 1`] = `
 const iteratorPrototype = Object.getPrototypeOf(
   Object.getPrototypeOf([].values()),
 ) as Iterator<unknown, unknown, unknown>;
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.prototype.drop 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    drop(this: Iterator<T>, limit: number): IterableIterator<T>;
+
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+iteratorPrototype.drop ??= function <T>(
+  this: Iterator<T>,
+  limit: number,
+): IterableIterator<T> {
+  if (!Number.isInteger(limit) || limit < 0) {
+    throw new RangeError(\`Limit must be a non-negative integer, got \${limit}\`);
+  }
+
+  return function* (this: Iterator<T>) {
+    let index = 0;
+
+    // Skip the first \`limit\` elements.
+    for (const value of this.toIterable()) {
+      if (index++ < limit) {
+        continue;
+      }
+      yield value;
+    }
+  }.call(this);
+};
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
