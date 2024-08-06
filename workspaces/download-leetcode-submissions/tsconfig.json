@@ -1,3 +1,5 @@
+// TODO: ignore submissions directory
+
 {
   "extends": "../../tsconfig-base.json"
 }

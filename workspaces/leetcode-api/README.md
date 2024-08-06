@@ -27,7 +27,7 @@ The output may look something like:
 
 Used to power sibling packages like:
 
-- [`@code-chronicles/download-submissions`](../download-submissions/), which downloads the logged-in user's LeetCode submissions
+- [`@code-chronicles/download-leetcode-submissions`](../download-leetcode-submissions/), which downloads the logged-in user's LeetCode submissions
 - [`@code-chronicles/fetch-leetcode-problem-list`](../fetch-leetcode-problem-list/), which fetches the metadata of all LeetCode problems
 - [`@code-chronicles/post-leetcode-potd-to-discord`](../post-leetcode-potd-to-discord/), which queries LeetCode's problem of the day and posts about it in a Discord channel
 
