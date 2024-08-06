@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
+
 import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionDifficultyParser } from "./parsers/questionDifficultyParser";
 import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
@@ -29,11 +31,7 @@ const QUERY = `
 const questionParser = z.object({
   difficulty: questionDifficultyParser,
   isPaidOnly: z.boolean(),
-  questionFrontendId: z
-    .string()
-    .trim()
-    .regex(/^[1-9][0-9]*$/)
-    .transform((value) => parseInt(value, 10)),
+  questionFrontendId: numericIdAsNumberZodType,
   title: z.string().trim().min(1),
   titleSlug: questionTitleSlugParser,
 });
