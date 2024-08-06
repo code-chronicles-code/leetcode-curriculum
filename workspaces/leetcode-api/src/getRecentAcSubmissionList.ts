@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
+
 import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
@@ -17,12 +19,11 @@ const QUERY = `
   .replace(/\s+/g, " ");
 
 const submissionParser = z.object({
-  id: z
-    .string()
-    .trim()
-    .regex(/^[1-9][0-9]*$/),
+  id: numericIdAsStringZodType,
   title: z.string().trim().min(1),
   titleSlug: questionTitleSlugParser,
+
+  // TODO: reusable ZodType for timestamps as well
   timestamp: z
     .string()
     .trim()

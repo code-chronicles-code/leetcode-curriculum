@@ -1,4 +1,8 @@
 import { z } from "zod";
+
+import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
+import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
+
 import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
 
 export const SUBMISSION_STATUS_TO_DISPLAY_TEXT: ReadonlyMap<number, string> =
@@ -26,15 +30,14 @@ export const SUBMISSION_STATUS_TO_ABBREVIATION = {
 
 const submissionParser = (() => {
   const int = z.number().int();
-  const positiveInt = int.positive();
   const trimmedNonEmptyString = z.string().trim().min(1);
   const untrimmedNonEmptyString = z.string().min(1);
 
   return z
     .object({
-      id: positiveInt.transform(String),
+      id: numericIdAsStringZodType,
       // eslint-disable-next-line camelcase
-      question_id: positiveInt,
+      question_id: numericIdAsNumberZodType,
       lang: trimmedNonEmptyString,
       // eslint-disable-next-line camelcase
       lang_name: trimmedNonEmptyString,
