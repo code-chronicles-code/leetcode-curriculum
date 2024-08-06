@@ -3,7 +3,7 @@ import { z } from "zod";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
 
-import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
+import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
 
 export const SUBMISSION_STATUS_TO_DISPLAY_TEXT: ReadonlyMap<number, string> =
   new Map([
@@ -28,7 +28,7 @@ export const SUBMISSION_STATUS_TO_ABBREVIATION = {
   "Compile Error": "CE",
 } as const;
 
-const submissionParser = (() => {
+const submissionZodType = (() => {
   const int = z.number().int();
   const trimmedNonEmptyString = z.string().trim().min(1);
   const untrimmedNonEmptyString = z.string().min(1);
@@ -65,7 +65,7 @@ const submissionParser = (() => {
         .transform((value) => Array.from(value).map((c) => c === "1"))
         .nullable(),
       // eslint-disable-next-line camelcase
-      title_slug: questionTitleSlugParser,
+      title_slug: questionTitleSlugZodType,
       // eslint-disable-next-line camelcase
       has_notes: z.boolean(),
       // eslint-disable-next-line camelcase
@@ -92,18 +92,18 @@ const submissionParser = (() => {
     );
 })();
 
-export type Submission = z.infer<typeof submissionParser>;
+export type Submission = z.infer<typeof submissionZodType>;
 
-const submissionListParser = z.object({
+const submissionListZodType = z.object({
   // eslint-disable-next-line camelcase
-  submissions_dump: z.array(submissionParser),
+  submissions_dump: z.array(submissionZodType),
   // eslint-disable-next-line camelcase
   has_next: z.boolean(),
   // eslint-disable-next-line camelcase
   last_key: z.string(),
 });
 
-export type SubmissionList = z.infer<typeof submissionListParser>;
+export type SubmissionList = z.infer<typeof submissionListZodType>;
 
 export const PAGE_SIZE = 20;
 
@@ -135,5 +135,5 @@ export async function fetchSubmissionList({
     throw new Error(`Got status ${response.status} from server!`);
   }
 
-  return submissionListParser.parse(await response.json());
+  return submissionListZodType.parse(await response.json());
 }

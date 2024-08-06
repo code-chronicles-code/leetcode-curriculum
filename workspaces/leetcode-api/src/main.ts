@@ -30,4 +30,4 @@ export {
   type SubmissionList,
 } from "./fetchSubmissionList";
 
-export type { QuestionDifficulty } from "./parsers/questionDifficultyParser";
+export type { QuestionDifficulty } from "./zod-types/questionDifficultyZodType";

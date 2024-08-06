@@ -1,21 +1,21 @@
 import type { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
-import { javaGoodyParser } from "./parsers/javaGoodyParser";
-import { javaScriptGoodyParser } from "./parsers/javaScriptGoodyParser";
-import { kotlinGoodyParser } from "./parsers/kotlinGoodyParser";
-import { python3GoodyParser } from "./parsers/python3GoodyParser";
-import { typeScriptGoodyParser } from "./parsers/typeScriptGoodyParser";
+import { javaGoodyZodType } from "./zod-types/javaGoodyZodType";
+import { javaScriptGoodyZodType } from "./zod-types/javaScriptGoodyZodType";
+import { kotlinGoodyZodType } from "./zod-types/kotlinGoodyZodType";
+import { python3GoodyZodType } from "./zod-types/python3GoodyZodType";
+import { typeScriptGoodyZodType } from "./zod-types/typeScriptGoodyZodType";
 
-const parser = z.object({
-  java: z.record(z.string(), javaGoodyParser),
-  javascript: z.record(z.string(), javaScriptGoodyParser),
-  kotlin: z.record(z.string(), kotlinGoodyParser),
-  python3: z.record(z.string(), python3GoodyParser),
-  typescript: z.record(z.string(), typeScriptGoodyParser),
+const goodiesByLanguage = z.object({
+  java: z.record(z.string(), javaGoodyZodType),
+  javascript: z.record(z.string(), javaScriptGoodyZodType),
+  kotlin: z.record(z.string(), kotlinGoodyZodType),
+  python3: z.record(z.string(), python3GoodyZodType),
+  typescript: z.record(z.string(), typeScriptGoodyZodType),
 });
 
-export type GoodiesByLanguage = ReadonlyDeep<z.infer<typeof parser>>;
+export type GoodiesByLanguage = ReadonlyDeep<z.infer<typeof goodiesByLanguage>>;
 
 export async function fetchGoodies(): Promise<GoodiesByLanguage> {
   const response = await fetch("goodies.json");
@@ -24,5 +24,5 @@ export async function fetchGoodies(): Promise<GoodiesByLanguage> {
     throw new Error(`Got status ${response.status} from server!`);
   }
 
-  return parser.parse(await response.json());
+  return goodiesByLanguage.parse(await response.json());
 }

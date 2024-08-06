@@ -1,6 +1,6 @@
 import type { WritableDeep } from "type-fest";
 
-import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
+import type { Python3Goody } from "../../../app/zod-types/python3GoodyZodType";
 import { readCode } from "./readCode";
 import { readMetadata } from "./readMetadata";
 

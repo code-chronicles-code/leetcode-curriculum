@@ -4,7 +4,7 @@ import invariant from "invariant";
 
 import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
-import type { KotlinGoody } from "../../../app/parsers/kotlinGoodyParser";
+import type { KotlinGoody } from "../../../app/zod-types/kotlinGoodyZodType";
 import { GOODIES_DIRECTORY } from "./constants";
 import { type KotlinGoodyBase, readBaseGoody } from "./readBaseGoody";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";

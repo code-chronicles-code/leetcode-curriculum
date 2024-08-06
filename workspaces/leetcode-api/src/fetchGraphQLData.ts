@@ -1,11 +1,11 @@
 import { z } from "zod";
 
-const parser = z.object({
+const graphqlDataZodType = z.object({
   data: z.unknown(),
   errors: z.array(z.unknown()).optional(),
 });
 
-export type GraphQLData = z.infer<typeof parser>;
+export type GraphQLData = z.infer<typeof graphqlDataZodType>;
 
 export async function fetchGraphQLData(
   query: string,
@@ -23,9 +23,9 @@ export async function fetchGraphQLData(
     throw new Error(`Got status ${response.status} from server!`);
   }
 
-  const graphqlResult = parser.parse(await response.json());
+  const graphqlResult = graphqlDataZodType.parse(await response.json());
   if (graphqlResult.data == null && graphqlResult.errors != null) {
-    throw new Error(JSON.stringify(graphqlResult.errors, null, 2));
+    throw new AggregateError(graphqlResult.errors);
   }
 
   return graphqlResult;

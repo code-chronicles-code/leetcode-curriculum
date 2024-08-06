@@ -47,7 +47,7 @@ const QUERY = `
   .trim()
   .replace(/\s+/g, " ");
 
-const kindParser = z.enum([
+const kindZodType = z.enum([
   "ENUM",
   "INPUT_OBJECT",
   "INTERFACE",
@@ -58,24 +58,24 @@ const kindParser = z.enum([
   "UNION",
 ]);
 
-const innerTypeParserBase = z.strictObject({
+const innerTypeZodTypeBase = z.strictObject({
   name: z.string().nullable(),
-  kind: kindParser,
+  kind: kindZodType,
 });
 
 type InnerType = OptionalInsteadOfNullishValues<
-  z.infer<typeof innerTypeParserBase>
+  z.infer<typeof innerTypeZodTypeBase>
 > & {
   ofType?: InnerType;
 };
 
-const innerTypeParser = innerTypeParserBase
+const innerTypeZodType = innerTypeZodTypeBase
   .extend({
-    ofType: z.lazy(() => innerTypeParser.nullable()),
+    ofType: z.lazy(() => innerTypeZodType.nullable()),
   })
   .transform(removeNullishValues) as z.ZodType<InnerType>;
 
-const nameAndDescriptionParser = z.strictObject({
+const nameAndDescriptionZodType = z.strictObject({
   name: z.string(),
   description: z.string().nullable(),
 });
@@ -84,32 +84,32 @@ function sortByName<T extends { name: string }>(arr: readonly T[]): T[] {
   return [...arr].sort((a, b) => compareStringsCaseInsensitive(a.name, b.name));
 }
 
-const typeParser = z
+const graphqlTypeZodType = z
   .strictObject({
-    __type: nameAndDescriptionParser
+    __type: nameAndDescriptionZodType
       .extend({
-        kind: kindParser,
+        kind: kindZodType,
         enumValues: z
-          .array(nameAndDescriptionParser.transform(removeNullishValues))
+          .array(nameAndDescriptionZodType.transform(removeNullishValues))
           .nullable(),
         fields: z
           .array(
-            nameAndDescriptionParser
+            nameAndDescriptionZodType
               .extend({
                 isDeprecated: z.boolean(),
                 deprecationReason: z.string().nullable(),
                 args: z
                   .array(
-                    nameAndDescriptionParser
+                    nameAndDescriptionZodType
                       .extend({
-                        type: innerTypeParser,
+                        type: innerTypeZodType,
                       })
                       .transform(removeNullishValues),
                   )
                   .transform((args) =>
                     args.length > 0 ? sortByName(args) : null,
                   ),
-                type: innerTypeParser,
+                type: innerTypeZodType,
               })
               .transform(removeNullishValues),
           )
@@ -119,11 +119,11 @@ const typeParser = z
   })
   .transform((data) => data.__type);
 
-export type LeetCodeGraphQLType = z.infer<typeof typeParser>;
+export type LeetCodeGraphQLType = z.infer<typeof graphqlTypeZodType>;
 
 export async function getGraphQLTypeInformation(
   typeName: string,
 ): Promise<LeetCodeGraphQLType> {
   const { data } = await fetchGraphQLData(QUERY, { typeName });
-  return typeParser.parse(data);
+  return graphqlTypeZodType.parse(data);
 }

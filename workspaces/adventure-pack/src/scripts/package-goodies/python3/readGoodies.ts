@@ -4,7 +4,7 @@ import invariant from "invariant";
 
 import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
-import type { Python3Goody } from "../../../app/parsers/python3GoodyParser";
+import type { Python3Goody } from "../../../app/zod-types/python3GoodyZodType";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
 import { GOODIES_DIRECTORY } from "./constants";
 import { type Python3GoodyBase, readBaseGoody } from "./readBaseGoody";

@@ -1,7 +1,7 @@
 import invariant from "invariant";
 import type { ReadonlyDeep } from "type-fest";
 
-import type { JavaGoody } from "./parsers/javaGoodyParser";
+import type { JavaGoody } from "./zod-types/javaGoodyZodType";
 
 const ADVENTURE_PACK_CLASS_NAME = "AP";
 

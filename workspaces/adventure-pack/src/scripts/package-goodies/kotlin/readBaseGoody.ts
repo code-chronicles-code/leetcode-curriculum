@@ -1,6 +1,6 @@
 import type { WritableDeep } from "type-fest";
 
-import type { KotlinGoody } from "../../../app/parsers/kotlinGoodyParser";
+import type { KotlinGoody } from "../../../app/zod-types/kotlinGoodyZodType";
 import { extractJavaesqueImports } from "../extractJavaesqueImports";
 import { readCode } from "./readCode";
 import { readMetadata } from "./readMetadata";
