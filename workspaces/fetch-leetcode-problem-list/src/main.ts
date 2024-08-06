@@ -3,7 +3,7 @@ import fsPromises from "node:fs/promises";
 import process from "node:process";
 
 import {
-  getQuestionList,
+  fetchQuestionList,
   type QuestionListQuestion,
 } from "@code-chronicles/leetcode-api";
 import { sleep } from "@code-chronicles/util/sleep";
@@ -22,7 +22,7 @@ async function main(): Promise<void> {
 
   await whileReturnsTrueAsync(async () => {
     console.error("Fetching...");
-    const data = await getQuestionList({ skip, limit: LIMIT });
+    const data = await fetchQuestionList({ skip, limit: LIMIT });
     totalCount = data.totalNum;
 
     for (const question of data.questions) {

@@ -1,6 +1,7 @@
 import process from "node:process";
 
-import { getActiveDailyCodingChallengeQuestionWithDateValidation as getPotd } from "@code-chronicles/leetcode-api";
+import { fetchActiveDailyCodingChallengeQuestionWithDateValidation as fetchPotd } from "@code-chronicles/leetcode-api";
+import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
 import { sleep } from "@code-chronicles/util/sleep";
 
 import { getPotdMessage } from "./getPotdMessage";
@@ -13,17 +14,23 @@ async function main(): Promise<void> {
   const secrets = await readSecrets();
 
   while (true) {
-    // eslint-disable-next-line no-await-in-loop
-    const { date, question: potd } = await getPotd();
-    // eslint-disable-next-line no-await-in-loop
-    const scriptData = await readScriptData();
+    const {
+      scriptData,
+      potd: { date, question: potd },
+    } =
+      // eslint-disable-next-line no-await-in-loop
+      await promiseAllObject({
+        potd: fetchPotd(),
+        scriptData: readScriptData(),
+      });
 
-    console.log({ scriptData });
+    console.error({ scriptData });
 
     if (
       scriptData.lastPostedDate != null &&
       date === scriptData.lastPostedDate
     ) {
+      // TODO: utility
       const nextDayInSeconds = (() => {
         const d = new Date(0);
         const [year, month, day] = date.split("-").map(Number);
@@ -35,8 +42,8 @@ async function main(): Promise<void> {
         60,
         Math.floor(nextDayInSeconds - Date.now() / 1000),
       );
-      console.log(
-        `Already posted the problem for ${date}, will sleep ${secondsToSleep} seconds until the next day.`,
+      console.error(
+        `Already posted the problem for ${date}, will sleep ${secondsToSleep} seconds until the next UTC day.`,
       );
       // eslint-disable-next-line no-await-in-loop
       await sleep(secondsToSleep * 1000);
@@ -48,7 +55,7 @@ async function main(): Promise<void> {
     await sendDiscordMessage(secrets, message);
     // eslint-disable-next-line no-await-in-loop
     await writeScriptData({ ...scriptData, lastPostedDate: date });
-    console.log(message);
+    console.error(message);
     break;
   }
 }

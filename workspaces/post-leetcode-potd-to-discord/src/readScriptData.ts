@@ -29,6 +29,7 @@ export async function readScriptData(): Promise<Data> {
   }
 }
 
+// TODO: move to another file?
 export async function writeScriptData(data: Data): Promise<void> {
   await fsPromises.writeFile(DATA_FILE, JSON.stringify(data), {
     encoding: "utf8",

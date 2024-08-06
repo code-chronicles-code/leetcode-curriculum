@@ -5,6 +5,7 @@ import { nonBlankStringZodType } from "@code-chronicles/util/nonBlankStringZodTy
 
 import { goodyBaseZodType } from "./goodyBaseZodType";
 
+// TODO: find a way to enforce the strict-ness across all these files
 export const typeScriptGoodyZodType = goodyBaseZodType
   .extend({
     code: nonBlankStringZodType,

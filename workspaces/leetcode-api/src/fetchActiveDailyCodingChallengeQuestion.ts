@@ -46,12 +46,12 @@ export type ActiveDailyCodingChallengeQuestion = z.infer<
   typeof activeDailyCodingChallengeQuestionZodType
 >;
 
-export async function getActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
+export async function fetchActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
   const { data } = await fetchGraphQLData(QUERY);
   return activeDailyCodingChallengeQuestionZodType.parse(data);
 }
 
-export async function getActiveDailyCodingChallengeQuestionWithDateValidation({
+export async function fetchActiveDailyCodingChallengeQuestionWithDateValidation({
   wrongDateRetries = 3,
 }: {
   wrongDateRetries?: number;
@@ -59,9 +59,10 @@ export async function getActiveDailyCodingChallengeQuestionWithDateValidation({
   for (let retry = 0; retry <= wrongDateRetries; ++retry) {
     const res =
       // eslint-disable-next-line no-await-in-loop
-      await getActiveDailyCodingChallengeQuestionWithoutDateValidation();
+      await fetchActiveDailyCodingChallengeQuestionWithoutDateValidation();
 
     const now = new Date();
+    // TODO: utility
     const today = [
       now.getUTCFullYear(),
       (now.getUTCMonth() + 1).toString().padStart(2, "0"),

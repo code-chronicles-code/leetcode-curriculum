@@ -16,7 +16,7 @@ export type OptionalInsteadOfNullishValues<T extends Record<string, unknown>> =
     }>
   >;
 
-export function removeNullishValues<T extends Record<string, unknown>>(
+export function removeKeysWithNullishValues<T extends Record<string, unknown>>(
   obj: T,
 ): Writable<OptionalInsteadOfNullishValues<T>> {
   return Object.fromEntries(

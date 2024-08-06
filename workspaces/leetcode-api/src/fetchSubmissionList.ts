@@ -131,6 +131,7 @@ export async function fetchSubmissionList({
     },
   });
 
+  // TODO: utility for `fetch` with checking response
   if (!response.ok) {
     throw new Error(`Got status ${response.status} from server!`);
   }
