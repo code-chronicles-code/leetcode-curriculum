@@ -1,0 +1,7686 @@
+{
+  "name": "Query",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "achievement",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "AchievementNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "achievements",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "AchievementNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "activeDailyCodingChallengeQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "DailyChallengeNodeV2",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "activeDiscountEvent",
+      "isDeprecated": false,
+      "type": {
+        "name": "DiscountEventNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "advertisementByLocation",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "adLocation",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "AdLocationEnum",
+              "kind": "ENUM"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "AdvertisementNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "allComments",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "endDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "ip",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "CommentSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "reported",
+          "type": {
+            "name": "ReportedStatus",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "reportType",
+          "type": {
+            "name": "ReportTypeEnum",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "status",
+          "type": {
+            "name": "PostStatus",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "submissionCount",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "usernames",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "wordListType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedCommentNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "allContests",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ContestNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allContributions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "category",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "company",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "page",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionCategory",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "status",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "title",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "user",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedContributionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "allLeetcodePlaygroundTemplates",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundTemplateNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allPinnedComplexitys",
+      "description": "query a list of common complexities",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ComplexityInfoNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "allPlaygroundCodes",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "uuid",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundCodeNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allPlaygroundDatasets",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundDatasetNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allPlaygroundFolders",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundFolderNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allPlaygrounds",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allPlaygroundSnippets",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "langSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "query",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundSnippetNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allPrivateContests",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ContestNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "allProgress",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "allQuestions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "containContest",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "containExplore",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "containMain",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "QuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allQuestionsCount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionCountByDifficultyNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "allQuestionsRaw",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "containContest",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "containExplore",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "containMain",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "RawQuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allSchoolInfoUrl",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "allTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "endDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "ip",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "reported",
+          "type": {
+            "name": "ReportedStatus",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "reportType",
+          "type": {
+            "name": "ReportTypeEnum",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "status",
+          "type": {
+            "name": "PostStatus",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "submissionCount",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "usernames",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "wordListType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedTopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "allUserPlaygroundTemplates",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundTemplateNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allUsers",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "avatarStatus",
+          "type": {
+            "name": "AvatarStatusEnum",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "endDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "isAvatarCheck",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedUserNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "allVirtualContestScores",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "VirtualContestScoreNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "allVirtualContestScoresPagified",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PagifiedVirtualContestScoreNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "announcements",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DiscussAnnouncementNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "application",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ApplicationNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "applications",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ApplicationNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "archivedUsers",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ArchivedUserNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "article",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "slug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ArticleNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "blacklist",
+      "isDeprecated": false,
+      "type": {
+        "name": "BlacklistNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "brightTitle",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "btsReferral",
+      "isDeprecated": false,
+      "type": {
+        "name": "BTSReferralNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "cachedTrendingCategoryTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "TopicNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "canSeeOtherSubmissionHistory",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "userSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "card",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "cardSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CardNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "cards",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CardNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "cardsWithStats",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CardNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "categories",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CategoryNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "categoryTopicList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "categories",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "query",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "tags",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "cfTurnstileAppearance",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "cfTurnstileKey",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "challenges",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "fromDate",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "includeFuture",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "includePast",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "toDate",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "CodingChallengeNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "channels",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ChannelNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "chapter",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "cardSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "chapterId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ChapterNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "chapters",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "cardSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ChapterNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "chinaHost",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "codeWithMemory",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "lang",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "memory",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "questionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "SampleCodeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "codeWithRuntime",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "lang",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "questionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "runtime",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "SampleCodeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "comment",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CommentNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "commentContext",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "commentId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "topicId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "commentReplies",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "commentId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "CommentNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "commonKeyword",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "CommonKeywordNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "companies",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "CompanyNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "companyTag",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CompanyTagNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "companyTags",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "CompanyTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "contest",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "titleSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ContestNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "contestDetail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ContestDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "contestQuestion",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ContestQuestionDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "contestQuestionSubmissionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "lang",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "status",
+          "description": "提交结果",
+          "type": {
+            "name": "SubmissionStatusEnum",
+            "kind": "ENUM"
+          }
+        }
+      ],
+      "type": {
+        "name": "ContestSubmissionListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "contestRatingHistogram",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ContestRatingHistogramBarNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "contestReportApproveSummary",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "reportIds",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "kind": "LIST",
+              "ofType": {
+                "name": "String",
+                "kind": "SCALAR"
+              }
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ContestReportSummaryNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "contestReports",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ContestReportNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "contestReportsLccn",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ContestReportLCCNNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "contestRootBanners",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ContestRootBannerNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "contestTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestTitleSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedTopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "contribution",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ContributionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "contributions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ContributionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "createdPublicFavoriteList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "userSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FavoriteDetailListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "currentContestAnnouncements",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ContestAnnouncementNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "currentDailyCodingChallenge",
+      "isDeprecated": false,
+      "type": {
+        "name": "CodingChallengeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "currentSubscriptionInfo",
+      "isDeprecated": false,
+      "type": {
+        "name": "CurrentSubscriptionInfo",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "currentTimestamp",
+      "isDeprecated": false,
+      "type": {
+        "name": "Float",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "dailyChallengeMedal",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "month",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "year",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "MedalNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "dailyCodingChallenge",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "month",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "year",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CodingChallengeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "dailyCodingChallengeV2",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "month",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "year",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CodingChallengeNodeV2",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "dashboardItem",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ItemNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "dccSubmissionInfo",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "submissionId",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CodingChallengeSubmissionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "dccSubmissionPolling",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "submissionId",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CodingChallengePollingNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "dccSubmissionPollingV2",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "challengeQuestionId",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "submissionId",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CodingChallengePollingNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "debuggerLanguageFeatures",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "DebuggerLanguageFeatureNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "defaultSubscriptionPricing",
+      "isDeprecated": false,
+      "type": {
+        "name": "SubscriptionsNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "deleteUserRequests",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "input",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DeleteUserRequestInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DeleteUserRequestListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "didCompleteUpc",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "discussCategory",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slugs",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "DiscussCategoryNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "discussQuestionTopicTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "numTags",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "selectedTags",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "tagType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DiscussTopicTagNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "educationRecordList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "EducationRecordNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "emailEvent",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "EmailEventNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "emailEvents",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "EmailEventNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "emailSendSession",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "EmailSendSessionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "emailSendSessions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "EmailSendSessionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "emailTemplate",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "EmailTemplateNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "emailTemplates",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "EmailTemplateNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "enableIdeDynamicLayoutFeature",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "favorite",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "FavoriteNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "favoriteCards",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CardNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "favoriteDetailV2",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "FavoriteDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "favoriteQuestionAcStatus",
+      "description": "ac, notac, or null",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "titleSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "favoriteQuestionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "filter",
+          "type": {
+            "name": "FavoriteQuestionFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FavoriteQuestionListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "favoritesLists",
+      "isDeprecated": false,
+      "type": {
+        "name": "FavoritesNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "favoriteSubmitAcProgress",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "FavoriteSubmitACProgressNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "favoriteUserQuestionProgressV2",
+      "description": "user progress of a favorite, either his own or collected ones",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserQuestionProgressNodeV2",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "feature",
+      "isDeprecated": false,
+      "type": {
+        "name": "FeatureNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "featuredContests",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ContestNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "featuredQuestionLists",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "FeaturedQuestionListNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "feedbackMetaInfoBySlug",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "FeedBackMetaNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "filterableCategories",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CategoryType",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "filteredSubmissions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "inputFilters",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "FilteredSubmissionOverviewNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "flagReasons",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "FlagReasonNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "flagResourceType",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ResourceTypeEnum",
+              "kind": "ENUM"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "ResourceTypeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "frontendQuestionSubmissionResults",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "submissionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "FrontendQuestionResultNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "globalRanking",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "page",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "GlobalRankingNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "growthbookTest",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "featureKey",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasAccessToFavorite",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "AccessToFavoriteNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "hasFavoriteSessionReset",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasTakenCancelSurvey",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "hasTakenSubscriptionSurvey",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "historyCards",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CardNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "htmlArticle",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "HtmlArticleNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "ideDynamicLayouts",
+      "description": "user preference dynamic layouts",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "IDEDynamicLayoutNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "intentionTags",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "IntentionTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "internalContestAwardedUsers",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "internalContestFeedbackEmail",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "internalContestRegisterEmail",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "internalStoreItems",
+      "description": "Used for stuff to create orders manually",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "StoreItemNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "interviewAllSessions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "InterviewSessionConnection",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "interviewCardList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "InterviewCardNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "interviewCurrentSession",
+      "isDeprecated": false,
+      "type": {
+        "name": "InterviewSessionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "interviewed",
+      "isDeprecated": false,
+      "type": {
+        "name": "InterviewSurveyNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "interviewGlobalStats",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "InterviewGlobalStatsNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "interviewIncompleteCards",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "interviewScoreProgress",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "InterviewScoreProgressNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "interviewSession",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "InterviewSessionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "interviewSubmissions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "sessionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "InterviewSubmissionConnection",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "isCurrentUserAuthenticated",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isEasterEggCollected",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isMyCollectedFavorite",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isMyCreatedFavorite",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isPremium",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isProgressCalculated",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isSolutionTopic",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "item",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ItemNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "items",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "chapterSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ItemNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "languageList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "LanguageNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "lastAcSubmission",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "questionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "SubmissionDetailsNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "learningContext",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "currentQuestionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "envType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "needQuestion",
+          "description": "whether to fetch prev/next question",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "LearningContextNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "learningContextV2",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "childFavoriteSlug",
+          "description": "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "currentQuestionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "envId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "envType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "favoriteFilters",
+          "description": "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效",
+          "type": {
+            "name": "FavoriteQuestionFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        },
+        {
+          "name": "filters",
+          "type": {
+            "name": "QuestionListFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        },
+        {
+          "name": "needQuestion",
+          "description": "是否需要上下题信息",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "version",
+          "description": "版本号, 默认为空, 新版企业题单需要传版本号v2",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "LearningContextNodeV3",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "libraryActivity",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "QuestionActivityNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "libraryActivityTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LibraryActivityType",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "libraryCategories",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "libraryDefaultTemplate",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "metadata",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "LibraryTemplate",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "libraryDifficulties",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LibraryDifficulty",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "libraryLangList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LibraryLanguage",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "libraryMatchTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LibraryMatchType",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "libraryQuestion",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "LibraryQuestionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "libraryQuestions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "param",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LibraryQuestionsInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "LibraryQuestionConnection",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "libraryQuestionTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LibraryQuestionType",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "librarySolutionStatus",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LibrarySolutionStatus",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "localRanking",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "page",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "LocalRankingNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "locationDict",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "locations",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "LocationAutocomplete",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "loginSocial",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "SocialLoginNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "loginUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "managementCompanyQuestionOptions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "companyTagId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "CompanyQuestionOptionsNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementCompanyQuestions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "managementCompanyQuestionsInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementCompanyQuestionListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementCompanyQuestionV2",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "managementCompanyQuestionsV2Input",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "CompanyQuestionListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementCompanyTags",
+      "description": "Company Tag List",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ManagementCompanyTagsInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementCompanyTagNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementIncVoteLogs",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "managementIncVoteLogsInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementIncVoteLogListNone",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementQuestionAdminVoteOptions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "QuestionAdminVoteOptionsNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementRoles",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ManagementRoleNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "managementTagAdminLogs",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "tagId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementTagAdminLogListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementTagCategories",
+      "description": "Tag Category List",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ManagementTagCategoriesInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "TagCategoryNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "managementTagGroups",
+      "description": "Tag Group List",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "TagGroupNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "managementTags",
+      "description": "Tag List",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ManagementTagsInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementTagNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "managementTeamMembers",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ManagementTeamMembersInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementTeamMemberListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "matchedUser",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "username",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "UserNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "matchedUsers",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "namePrefix",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "topicId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "UserNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "medal",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "MedalNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "mostRecentCard",
+      "isDeprecated": false,
+      "type": {
+        "name": "CardNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "myCollectedFavoriteList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FavoriteBriefListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "myContests",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedUserContestStatNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "myCreatedFavoriteList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "currentQuestionSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FavoriteBriefListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "myOrders",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "StoreOrderNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "myPlaygroundState",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PlaygroundStateNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "newFeatureAnnouncements",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "NewFeatureAnnouncementNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "nextChallengePairs",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "titleSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "nextSolution",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "filters",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionSolutionsFilterInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        },
+        {
+          "name": "topicId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "notification",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "NotificationNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "notificationCategories",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "NotificationCategoryNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "notifications",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "NotificationConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "notificationStatus",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "notificationTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "NotificationTypeNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "occupationRecordList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "OccupationRecordNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "officialIdeDynamicLayout",
+      "description": "official IDE dynamic layout",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "OfficialIDELayoutNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "officialSolutionFeedbacks",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "filters",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "OfficialSolutionFeedbackFilterInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedOfficialSolutionFeedbackDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "ongoingVirtualContest",
+      "isDeprecated": false,
+      "type": {
+        "name": "ContestNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "orderDetails",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "orderId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "StoreOrderNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "panelQuestionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "currentQuestionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "envId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "envType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "filters",
+          "type": {
+            "name": "QuestionListFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      ],
+      "type": {
+        "name": "PanelQuestionListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "pastContests",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PagifiedContestNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "planCompletedPlans",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "PlanStudyPlanNodeWithGroup",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "planGroupCatalogs",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "PlanCatalogNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "planGroupDetail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "PlanDetailPlanGroupNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "planGroupsByCatalog",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "catalogSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PlanGroupListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "planGroupsByTag",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "tagSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PlanGroupListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "planOngoingProgresses",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "PlanBriefProgressNodeWithPlan",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "planProgressDetail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "PlanProgressNodeWithPlan",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "playground",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "uuid",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PlaygroundNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "playgroundCode",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "langSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "uuid",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PlaygroundCodeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "playgroundSnippet",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "functionName",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "langSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PlaygroundSnippetNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "playgroundTemplate",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "templateId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PlaygroundTemplateNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "pointList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "page",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PointListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "pollInterval",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "post",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PostNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "premiumBetaFeatures",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "PremiumBetaFeatureNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "prevSolution",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "filters",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionSolutionsFilterInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        },
+        {
+          "name": "topicId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "privateContestAllParticipants",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UserNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "privateContestPastParticipants",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "PrivateContestUserNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "privateContestRegisteredUserIds",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "contestSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "problemsetLearningContext",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "filters",
+          "type": {
+            "name": "QuestionListFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        },
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "LearningContextNodeV2",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "question",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "titleSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "QuestionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionCompanyTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "CompanyTagConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionDiscussionTopic",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "questionSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionFeedback",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categories",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "endDate",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "hasComment",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionSlugs",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "reasons",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedQuestionFeedbackNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionFeedbackReasons",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionFeedbackReason",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "questionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "filters",
+          "type": {
+            "name": "QuestionListFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        },
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedQuestionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionSatisfactionSurvey",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "QuestionSatisfactionSurveyNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "questionSolutions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "filters",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionSolutionsFilterInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "QuestionSolutionsNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "questionSubmissionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "lang",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "lastKey",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "status",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "withNotes",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "SubmissionListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionTag",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "tagId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "QuestionTagNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionTagsAdmin",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "tagType",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "TagTypeEnum",
+              "kind": "ENUM"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "QuestionTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "questionTagsSuggest",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "questionTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "query",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedTopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionTopicsList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "query",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "tags",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionTopicTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicTagConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "randomPanelQuestion",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "childFavoriteSlug",
+          "description": "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "currentQuestionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "envId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "envType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "favoriteFilters",
+          "description": "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效",
+          "type": {
+            "name": "FavoriteQuestionFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        },
+        {
+          "name": "filters",
+          "type": {
+            "name": "QuestionListFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        },
+        {
+          "name": "version",
+          "description": "版本号, 默认为空, 新版企业题单需要传版本号v2",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "randomQuestion",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "filters",
+          "type": {
+            "name": "QuestionListFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      ],
+      "type": {
+        "name": "QuestionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "recaptchaKey",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "recaptchaKeyV2",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "recentAcSubmissionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "username",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "SubmissionDumpNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "recentSubmissionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "username",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "SubmissionDumpNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "recommendSolutionTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "questionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "SolutionTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "redeemedTimeTravelTicketCount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "relatedSolutions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "topicId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "TopicNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "rewindData",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "year",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "RewindNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "rootCategory",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DiscussCategoryNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "schools",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "SchoolNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "scripts",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ScriptNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "scriptTaskResult",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "taskId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "sessions",
+      "isDeprecated": false,
+      "type": {
+        "name": "DebugSessionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "showAnnualModalOnQd",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "submissionId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "MedalNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "siteAnnouncements",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "SiteAnnouncementNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "siteRegion",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "sitewideAnnouncement",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "skillTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "SkillTagNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "solutionLanguageTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "questionSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "SolutionTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "solutionTopicTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "questionSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "SolutionTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "solvedQuestionsInfo",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "filters",
+          "type": {
+            "name": "ProgressListFilterInput",
+            "kind": "INPUT_OBJECT"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PagifiedQuestionLastSolveNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "spamModerationPosts",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "endDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "ip",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "reported",
+          "type": {
+            "name": "ReportedStatus",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "reportType",
+          "type": {
+            "name": "ReportTypeEnum",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "status",
+          "type": {
+            "name": "PostStatus",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "submissionCount",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "usernames",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "wordListType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedPostNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "statusList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "SubmissionStatusNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "storeItems",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "StoreItemNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "storeOrderOperationLogs",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "orderId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "OrderOperationLogNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "streakCounter",
+      "isDeprecated": false,
+      "type": {
+        "name": "StreakCounterNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "stripePublicKey",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "studyPlanMedalPolling",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "submissionId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "StudyPlanMedalPollingNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "studyPlansV2AdFeature",
+      "description": "get advertisement study plans of feature on playground",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "StudyPlanFeatureNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "studyPlansV2AdQuestionPage",
+      "description": "get advertisement study plans on questions page",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "StudyPlanBriefNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "studyPlansV2ByCatalog",
+      "description": "get study plans by catalog",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "catalogSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "limit",
+          "description": "default value is 6",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "StudyPlanListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "studyPlansV2ByTag",
+      "description": "get study plans by tag",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "description": "default value is 6",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "tagSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "StudyPlanListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "studyPlansV2ByUpc",
+      "description": "get study plans by upc",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "StudyPlanBriefNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "studyPlansV2ForHomepage",
+      "description": "get study plans for homepage",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "StudyPlanWithProgressNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "studyPlanV2Catalogs",
+      "description": "get all enabled study plan catalogs",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "StudyPlanCatalogNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "studyPlanV2CompletedStatus",
+      "description": "Poll this API after submission get AC.",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "planSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "submissionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "PlanCompletedStatusNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "studyPlanV2Detail",
+      "description": "get a study plan detail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "planSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "StudyPlanDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "studyPlanV2ProgressDetail",
+      "description": "get a user progress detail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "description": "user progress ID",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "planSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "PlanUserProgressDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "studyPlanV2RankingBoard",
+      "description": "get the ranking board of a study plan",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "description": "default value is 10",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "planSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserRankInfoList",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "studyPlanV2RecentCompletedProgress",
+      "description": "get the most recent user completed progress detail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "planSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "PlanUserProgressDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "studyPlanV2UserHideRank",
+      "description": "whether the current user hide on the rank board",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "studyPlanV2UserProgresses",
+      "description": "user on going study plans",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "description": "default 6, no more than100",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "progressType",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "PlanUserProgressTypeEnum",
+              "kind": "ENUM"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "PlanUserProgressListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "studyPlanV2UserRank",
+      "description": "get current user rank in a plan",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "planSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "UserRankInfoNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "studyPlanV2WeeklyTaskRecords",
+      "description": "get weekly task records by year and month",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "month",
+          "description": "records of the month",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "planSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "progressId",
+          "description": "user progress obfuscated id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "year",
+          "description": "records of the year",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "UserWeeklyTaskRecordListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "submissionComplexity",
+      "description": "query submission complexity",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "submissionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "SubmissionComplexityNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "submissionDetails",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "submissionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "SubmissionDetailsNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "submissionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "lastKey",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "SubmissionListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "submittableLanguageList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "LanguageNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "subscribeUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "subscriptionPricing",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "code",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "SubscriptionsNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "subscriptionReferral",
+      "isDeprecated": false,
+      "type": {
+        "name": "SubscriptionReferralNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "survey",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "surveyId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "SurveyNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "surveyStatus",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "surveyType",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "SurveyType",
+              "kind": "ENUM"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "SurveyStatusNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "surveyV2",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "surveyKwargs",
+          "type": {
+            "name": "JSONString",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "surveySlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "SurveyV2Node",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "surveyV2WithoutCheckFunc",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "surveySlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "SurveyV2Node",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "syncedCode",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "lang",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "questionId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "SyncedCodeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "tagTopicList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "query",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "tag",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "tags",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "topic",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "topicComments",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "topicId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedCommentNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "topicTag",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "slug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicTagNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "topicTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "categorySlugs",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "numTags",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "query",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "selectedTags",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "tagType",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DiscussTopicTagNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "topicTagsSuggest",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "search",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DiscussTopicTagNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "topicUsers",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "prefix",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "topicId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "UserNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "topTwoContests",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "ContestNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "upcomingContests",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ContestNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "upcV2InterestTags",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UpcV2TagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "user",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userAccountFrozenInfo",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserAccountFrozenInfoNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userCategoryTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "username",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userContestRanking",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "username",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "UserContestRankingNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userContestRankingHistory",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "username",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UserContestRankingHistoryNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "userCountryCode",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "userManagementCreditCards",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "userId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "ManagementCreditCardNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "userManagementIpList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "UserManagementIpListInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementIpListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userManagementOperationHistory",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "UserManagementOperationHistoryInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementOperationHistoryNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userManagementPremiumTrialRecordDetail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "TrialRecordNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userManagementPremiumTrialRecords",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "PremiumTrialRecordsInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "TrialRecordListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userManagementScoreHistory",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "UserManagementScoreHistoryInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementScoreListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userManagementSearch",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "dimension",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "SearchDimensionType",
+              "kind": "ENUM"
+            }
+          }
+        },
+        {
+          "name": "keyword",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "limit",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Int",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "ManagementUserListNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userManagementStoreOrders",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "UserManagementStoreOrdersInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementStoreOrderListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userManagementStripeCharges",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "UserManagementStripeChargesInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementStripeChargeListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userManagementUserBanTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "UserBanTypeNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "userManagementUserDetail",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "userId",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "ManagementUserDetailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userManagementVac",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "VacRecordsInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "VacRecordListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userOfficialSolutionFeedback",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "questionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "OfficialSolutionFeedbackBriefNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userProfileUserQuestionProgressV2",
+      "description": "获取用户当前 session 的做题进展，新版接口",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "userSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserQuestionProgressNodeV2",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userRecentTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "limit",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "username",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "TopicNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "userReports",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "endDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "handled",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "name": "DateTime",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "PagifiedUserReportNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "users",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "usernamePrefix",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "UserNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userSolutionTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "TopicSortingOption",
+            "kind": "ENUM"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "username",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "TopicConnection",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userStatus",
+      "isDeprecated": false,
+      "type": {
+        "name": "MeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "userToManage",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "usernameOrEmail",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "UserNodeAdminOnly",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "validTimeTravelTicketCount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "video",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "VideoNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "votes",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "topicId",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "webPage",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "WebPageNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "websocketUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "wordListTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "WordListTypeNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "worldCities",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "country",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "subcountry",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "worldCountries",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "worldSubcountries",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "country",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "yearlyMedalsQualified",
+      "description": "list of yearly medals which are qualified to acquire",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "excludeAcquired",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "MedalBriefNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    }
+  ]
+}

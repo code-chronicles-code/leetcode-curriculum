@@ -5,6 +5,11 @@ export {
 } from "./getActiveDailyCodingChallengeQuestion";
 
 export {
+  getGraphQLTypeInformation,
+  type LeetCodeGraphQLType,
+} from "./getGraphQLTypeInformation";
+
+export {
   getQuestionList,
   CategorySlug,
   type QuestionList,
