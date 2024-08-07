@@ -5,8 +5,8 @@ import invariant from "invariant";
 import { mapObjectValuesAsync } from "@code-chronicles/util/mapObjectValuesAsync";
 import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
-import type { JavaScriptGoody } from "../../../app/parsers/javaScriptGoodyParser";
-import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";
+import type { JavaScriptGoody } from "../../../app/zod-types/javaScriptGoodyZodType";
+import type { TypeScriptGoody } from "../../../app/zod-types/typeScriptGoodyZodType";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
 import {
   GOODIES_DIRECTORY,

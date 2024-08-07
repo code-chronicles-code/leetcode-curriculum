@@ -3,7 +3,7 @@ import { z } from "zod";
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
-import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
+import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
 
 const QUERY = `
   query ($username: String!, $limit: Int!) {
@@ -18,10 +18,10 @@ const QUERY = `
   .trim()
   .replace(/\s+/g, " ");
 
-const submissionParser = z.object({
+const submissionZodType = z.object({
   id: numericIdAsStringZodType,
   title: z.string().trim().min(1),
-  titleSlug: questionTitleSlugParser,
+  titleSlug: questionTitleSlugZodType,
 
   // TODO: reusable ZodType for timestamps as well
   timestamp: z
@@ -31,11 +31,11 @@ const submissionParser = z.object({
     .transform((value) => parseInt(value, 10)),
 });
 
-export type RecentAcSubmission = z.infer<typeof submissionParser>;
+export type RecentAcSubmission = z.infer<typeof submissionZodType>;
 
-const recentAcSubmissionListParser = z
+const recentAcSubmissionListZodType = z
   .object({
-    recentAcSubmissionList: z.array(submissionParser),
+    recentAcSubmissionList: z.array(submissionZodType),
   })
   .transform((data) => data.recentAcSubmissionList);
 
@@ -47,5 +47,5 @@ export async function getRecentAcSubmissionList({
   username: string;
 }): Promise<RecentAcSubmission[]> {
   const { data } = await fetchGraphQLData(QUERY, { username, limit });
-  return recentAcSubmissionListParser.parse(data);
+  return recentAcSubmissionListZodType.parse(data);
 }

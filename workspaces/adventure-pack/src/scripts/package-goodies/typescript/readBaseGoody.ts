@@ -5,7 +5,7 @@ import type { WritableDeep } from "type-fest";
 
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
-import type { TypeScriptGoody } from "../../../app/parsers/typeScriptGoodyParser";
+import type { TypeScriptGoody } from "../../../app/zod-types/typeScriptGoodyZodType";
 import { createSourceFile } from "./createSourceFile";
 import { extractImports } from "./extractImports";
 import { extractModuleDeclarations } from "./extractModuleDeclarations";

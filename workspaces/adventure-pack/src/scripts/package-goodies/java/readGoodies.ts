@@ -4,7 +4,7 @@ import invariant from "invariant";
 
 import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
-import type { JavaGoody } from "../../../app/parsers/javaGoodyParser";
+import type { JavaGoody } from "../../../app/zod-types/javaGoodyZodType";
 import { GOODIES_DIRECTORY } from "./constants";
 import { type JavaGoodyBase, readBaseGoody } from "./readBaseGoody";
 import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";

@@ -4,8 +4,8 @@ import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumbe
 import { sleep } from "@code-chronicles/util/sleep";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
-import { questionDifficultyParser } from "./parsers/questionDifficultyParser";
-import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
+import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType";
+import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
 
 const QUERY = `
   query {
@@ -23,32 +23,32 @@ const QUERY = `
   .trim()
   .replace(/\s+/g, " ");
 
-const questionParser = z.object({
-  difficulty: questionDifficultyParser,
+const questionZodType = z.object({
+  difficulty: questionDifficultyZodType,
   questionFrontendId: numericIdAsNumberZodType,
   title: z.string().trim().min(1),
-  titleSlug: questionTitleSlugParser,
+  titleSlug: questionTitleSlugZodType,
 });
 
-const activeDailyCodingChallengeQuestionParser = z
+const activeDailyCodingChallengeQuestionZodType = z
   .object({
     activeDailyCodingChallengeQuestion: z.object({
       date: z
         .string()
         .trim()
         .regex(/^\d{4}-\d{2}-\d{2}$/),
-      question: questionParser,
+      question: questionZodType,
     }),
   })
   .transform((data) => data.activeDailyCodingChallengeQuestion);
 
 export type ActiveDailyCodingChallengeQuestion = z.infer<
-  typeof activeDailyCodingChallengeQuestionParser
+  typeof activeDailyCodingChallengeQuestionZodType
 >;
 
 export async function getActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
   const { data } = await fetchGraphQLData(QUERY);
-  return activeDailyCodingChallengeQuestionParser.parse(data);
+  return activeDailyCodingChallengeQuestionZodType.parse(data);
 }
 
 export async function getActiveDailyCodingChallengeQuestionWithDateValidation({

@@ -8,7 +8,7 @@ import { centerTextInComment } from "./centerTextInComment";
 import type { Goody } from "./Goody";
 import type { Language } from "./Language";
 import { mergeJavaCode } from "./mergeJavaCode";
-import type { JavaGoody } from "./parsers/javaGoodyParser";
+import type { JavaGoody } from "./zod-types/javaGoodyZodType";
 import { sortTypeScriptModuleAndInterfaceDeclarations } from "./sortTypeScriptModuleAndInterfaceDeclarations";
 import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
 

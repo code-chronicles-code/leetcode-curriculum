@@ -3,8 +3,8 @@ import { z } from "zod";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
-import { questionDifficultyParser } from "./parsers/questionDifficultyParser";
-import { questionTitleSlugParser } from "./parsers/questionTitleSlugParser";
+import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType";
+import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
 
 const QUERY = `
   query ($categorySlug: String!, $limit: Int, $skip: Int, $filters: QuestionListFilterInput!) {
@@ -28,20 +28,20 @@ const QUERY = `
   .trim()
   .replace(/\s+/g, " ");
 
-const questionParser = z.object({
-  difficulty: questionDifficultyParser,
+const questionZodType = z.object({
+  difficulty: questionDifficultyZodType,
   isPaidOnly: z.boolean(),
   questionFrontendId: numericIdAsNumberZodType,
   title: z.string().trim().min(1),
-  titleSlug: questionTitleSlugParser,
+  titleSlug: questionTitleSlugZodType,
 });
 
-export type QuestionListQuestion = z.infer<typeof questionParser>;
+export type QuestionListQuestion = z.infer<typeof questionZodType>;
 
-const questionListParser = z
+const questionListZodType = z
   .object({
     questionList: z.object({
-      data: z.array(questionParser),
+      data: z.array(questionZodType),
       totalNum: z.number().int().nonnegative(),
     }),
   })
@@ -50,7 +50,7 @@ const questionListParser = z
     totalNum,
   }));
 
-export type QuestionList = z.infer<typeof questionListParser>;
+export type QuestionList = z.infer<typeof questionListZodType>;
 
 // TODO: see if there's a way we can fetch these...
 export enum CategorySlug {
@@ -81,5 +81,5 @@ export async function getQuestionList({
     limit,
     skip,
   });
-  return questionListParser.parse(data);
+  return questionListZodType.parse(data);
 }

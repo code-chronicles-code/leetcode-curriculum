@@ -1,21 +1,22 @@
 import type { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
-import { goodyBaseParser } from "./goodyBaseParser";
-import { nonBlankStringParser } from "./nonBlankStringParser";
+import { nonBlankStringZodType } from "@code-chronicles/util/nonBlankStringZodType";
 
-export const javaGoodyParser = goodyBaseParser
+import { goodyBaseZodType } from "./goodyBaseZodType";
+
+export const javaGoodyZodType = goodyBaseZodType
   .extend({
     codeByClass: z.record(
-      nonBlankStringParser,
+      nonBlankStringZodType,
       z
         .object({
           code: z.string(),
-          declaration: nonBlankStringParser,
+          declaration: nonBlankStringZodType,
         })
         .strict(),
     ),
-    coreImports: z.array(nonBlankStringParser),
+    coreImports: z.array(nonBlankStringZodType),
     importsCode: z.string(),
     language: z.literal("java"),
     packageName: z
@@ -26,4 +27,4 @@ export const javaGoodyParser = goodyBaseParser
   })
   .strict();
 
-export type JavaGoody = ReadonlyDeep<z.infer<typeof javaGoodyParser>>;
+export type JavaGoody = ReadonlyDeep<z.infer<typeof javaGoodyZodType>>;

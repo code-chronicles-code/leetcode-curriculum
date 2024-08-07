@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const questionTitleSlugParser = z
+export const questionTitleSlugZodType = z
   .string()
   .trim()
   .regex(/^[a-z0-9\-]+$/);
