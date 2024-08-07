@@ -14,6 +14,10 @@ Makes sure all files are properly formatted, rewriting them if necessary. Usuall
 
 Lints files! Currently ESLint is the only linter, but it would be nice to have more. Perhaps you'd like to [add another one](CONTRIBUTING.md)?
 
+### `yarn test`
+
+For the packages that have tests, runs those tests!
+
 ### `yarn typecheck`
 
 Checks the type correctness of the code. Currently only TypeScript files are checked, using the TypeScript compiler. Java and Kotlin code in the [Adventure Pack](workspaces/adventure-pack/) is checked indirectly, when we attempt to compile it.

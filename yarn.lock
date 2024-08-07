@@ -3903,6 +3903,21 @@ ts-jest@29.2.3:
     semver "^7.5.3"
     yargs-parser "^21.0.1"
 
+ts-jest@29.2.4:
+  version "29.2.4"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.2.4.tgz#38ccf487407d7a63054a72689f6f99b075e296e5"
+  integrity sha512-3d6tgDyhCI29HlpwIq87sNuI+3Q6GLTTCeYRHCs7vDz+/3GCMwEtV9jezLyl4ZtnBgx00I7hm8PCP8cTksMGrw==
+  dependencies:
+    bs-logger "0.x"
+    ejs "^3.1.10"
+    fast-json-stable-stringify "2.x"
+    jest-util "^29.0.0"
+    json5 "^2.2.3"
+    lodash.memoize "4.x"
+    make-error "1.x"
+    semver "^7.5.3"
+    yargs-parser "^21.0.1"
+
 ts-loader@9.5.1:
   version "9.5.1"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-9.5.1.tgz#63d5912a86312f1fbe32cef0859fb8b2193d9b89"

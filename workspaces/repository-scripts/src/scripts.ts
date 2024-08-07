@@ -25,6 +25,7 @@ export const SCRIPTS = {
         for await (const modifiedFile of getCurrentGitRepositoryStatusPaths()) {
           ++modifiedFileCount;
 
+          // TODO: utility
           // Documentation: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-error-message
           console.log(
             `::error file=${modifiedFile},title=Formatting error::This file does not respect the repository's formatting rules.%0ARun \`yarn format\` in the repository root to auto-fix it.`,
@@ -75,5 +76,4 @@ export const SCRIPTS_TO_SKIP_BY_WORKSPACE: Readonly<
   "leetcode-api": new Set(["test"]),
   "post-leetcode-potd-to-discord": new Set(["test"]),
   "repository-scripts": new Set(["test"]),
-  util: new Set(["test"]),
 };
