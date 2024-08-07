@@ -1,9 +1,9 @@
 import process from "node:process";
 
-import { getRecentAcSubmissionList } from "@code-chronicles/leetcode-api";
+import { fetchRecentAcSubmissionList } from "@code-chronicles/leetcode-api";
 
 async function main(): Promise<void> {
-  const recentAcSubmissionList = await getRecentAcSubmissionList({
+  const recentAcSubmissionList = await fetchRecentAcSubmissionList({
     username: "VehicleOfPuzzle",
   });
 

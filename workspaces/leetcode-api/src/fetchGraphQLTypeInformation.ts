@@ -1,12 +1,13 @@
 import { z } from "zod";
 
-import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
+import { graphqlKindTypeZodType } from "@code-chronicles/util/graphqlKindTypeZodType";
 import {
   type OptionalInsteadOfNullishValues,
-  removeNullishValues,
-} from "@code-chronicles/util/removeNullishValues";
+  removeKeysWithNullishValues,
+} from "@code-chronicles/util/removeKeysWithNullishValues";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
+import { sortByName } from "./sortByName";
 
 function getTypeFields(depth: number): string {
   const base = "name kind";
@@ -47,20 +48,9 @@ const QUERY = `
   .trim()
   .replace(/\s+/g, " ");
 
-const kindZodType = z.enum([
-  "ENUM",
-  "INPUT_OBJECT",
-  "INTERFACE",
-  "LIST",
-  "NON_NULL",
-  "OBJECT",
-  "SCALAR",
-  "UNION",
-]);
-
 const innerTypeZodTypeBase = z.strictObject({
   name: z.string().nullable(),
-  kind: kindZodType,
+  kind: graphqlKindTypeZodType,
 });
 
 type InnerType = OptionalInsteadOfNullishValues<
@@ -73,24 +63,22 @@ const innerTypeZodType = innerTypeZodTypeBase
   .extend({
     ofType: z.lazy(() => innerTypeZodType.nullable()),
   })
-  .transform(removeNullishValues) as z.ZodType<InnerType>;
+  .transform(removeKeysWithNullishValues) as z.ZodType<InnerType>;
 
 const nameAndDescriptionZodType = z.strictObject({
   name: z.string(),
   description: z.string().nullable(),
 });
 
-function sortByName<T extends { name: string }>(arr: readonly T[]): T[] {
-  return [...arr].sort((a, b) => compareStringsCaseInsensitive(a.name, b.name));
-}
-
 const graphqlTypeZodType = z
   .strictObject({
     __type: nameAndDescriptionZodType
       .extend({
-        kind: kindZodType,
+        kind: graphqlKindTypeZodType,
         enumValues: z
-          .array(nameAndDescriptionZodType.transform(removeNullishValues))
+          .array(
+            nameAndDescriptionZodType.transform(removeKeysWithNullishValues),
+          )
           .nullable(),
         fields: z
           .array(
@@ -104,24 +92,24 @@ const graphqlTypeZodType = z
                       .extend({
                         type: innerTypeZodType,
                       })
-                      .transform(removeNullishValues),
+                      .transform(removeKeysWithNullishValues),
                   )
                   .transform((args) =>
                     args.length > 0 ? sortByName(args) : null,
                   ),
                 type: innerTypeZodType,
               })
-              .transform(removeNullishValues),
+              .transform(removeKeysWithNullishValues),
           )
           .transform(sortByName),
       })
-      .transform(removeNullishValues),
+      .transform(removeKeysWithNullishValues),
   })
   .transform((data) => data.__type);
 
 export type LeetCodeGraphQLType = z.infer<typeof graphqlTypeZodType>;
 
-export async function getGraphQLTypeInformation(
+export async function fetchGraphQLTypeInformation(
   typeName: string,
 ): Promise<LeetCodeGraphQLType> {
   const { data } = await fetchGraphQLData(QUERY, { typeName });

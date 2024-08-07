@@ -39,7 +39,7 @@ const recentAcSubmissionListZodType = z
   })
   .transform((data) => data.recentAcSubmissionList);
 
-export async function getRecentAcSubmissionList({
+export async function fetchRecentAcSubmissionList({
   limit = 50,
   username,
 }: {

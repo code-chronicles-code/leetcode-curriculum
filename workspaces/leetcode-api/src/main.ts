@@ -1,25 +1,25 @@
 export {
-  getActiveDailyCodingChallengeQuestionWithDateValidation,
-  getActiveDailyCodingChallengeQuestionWithoutDateValidation,
+  fetchActiveDailyCodingChallengeQuestionWithDateValidation,
+  fetchActiveDailyCodingChallengeQuestionWithoutDateValidation,
   type ActiveDailyCodingChallengeQuestion,
-} from "./getActiveDailyCodingChallengeQuestion";
+} from "./fetchActiveDailyCodingChallengeQuestion";
 
 export {
-  getGraphQLTypeInformation,
+  fetchGraphQLTypeInformation,
   type LeetCodeGraphQLType,
-} from "./getGraphQLTypeInformation";
+} from "./fetchGraphQLTypeInformation";
 
 export {
-  getQuestionList,
+  fetchQuestionList,
   CategorySlug,
   type QuestionList,
   type QuestionListQuestion,
-} from "./getQuestionList";
+} from "./fetchQuestionList";
 
 export {
-  getRecentAcSubmissionList,
+  fetchRecentAcSubmissionList,
   type RecentAcSubmission,
-} from "./getRecentAcSubmissionList";
+} from "./fetchRecentAcSubmissionList";
 
 export {
   PAGE_SIZE as SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE,

@@ -63,7 +63,7 @@ export enum CategorySlug {
   PANDAS = "pandas",
 }
 
-export async function getQuestionList({
+export async function fetchQuestionList({
   categorySlug = CategorySlug.ALL_TOPICS,
   filters = {},
   limit,
