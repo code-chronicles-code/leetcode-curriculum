@@ -1,12 +1,12 @@
 {
-  "name": "@code-chronicles/get-recent-submissions",
+  "name": "@code-chronicles/fetch-recent-accepted-leetcode-submissions",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
-    "directory": "workspaces/get-recent-submissions"
+    "directory": "workspaces/fetch-recent-accepted-leetcode-submissions"
   },
   "author": {
     "name": "Miorel-Lucian Palii",
