@@ -26,6 +26,24 @@ runs:
       with:
         python-version: 3.12.4
 
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        # For some reason Node 22 was causing some problems with installing dependencies.
+        node-version: 20
+        cache: yarn
+        cache-dependency-path: tools/yarn.lock
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.12.4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2
+
     - name: Install dependencies
       # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
       run: yarn --production=false --frozen-lockfile
