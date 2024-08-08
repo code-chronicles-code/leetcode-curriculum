@@ -18,10 +18,6 @@ iteratorPrototype.flatMap ??= function* <TIn, TOut>(
     throw new TypeError("flatMap called on non-object");
   }
 
-  if (typeof callbackFn !== "function") {
-    throw new TypeError("flatMap callback must be a function");
-  }
-
   let index = 0;
   for (const element of this.toIterable()) {
     const mapped = callbackFn(element, index).toIterable();
