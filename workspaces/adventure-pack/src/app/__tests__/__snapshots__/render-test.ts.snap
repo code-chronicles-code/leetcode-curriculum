@@ -822,6 +822,35 @@ iteratorPrototype.find ??= function (callbackFn) {
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.flatMap 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.flatMap ??= function* (callbackFn) {
+  if (typeof this !== "object") {
+    throw new TypeError("flatMap called on non-object");
+  }
+
+  if (typeof callbackFn !== "function") {
+    throw new TypeError("flatMap callback must be a function");
+  }
+
+  let index = 0;
+  for (const element of this.toIterable()) {
+    const mapped = callbackFn(element, index).toIterable();
+    if (typeof mapped[Symbol.iterator] !== "function") {
+      throw new TypeError(
+        "flatMap callback must return an iterator or iterable",
+      );
+    }
+    for (const innerElement of mapped) {
+      yield innerElement;
+    }
+    ++index;
+  }
+};"
+`;
+
 exports[`App can render goody: JavaScript Iterator.prototype.forEach 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -1883,6 +1912,47 @@ iteratorPrototype.find ??= function <T>(
     ++index;
   }
   return undefined;
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.flatMap 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    flatMap<TOut>(
+      this: Iterator<T>,
+      callbackFn: (element: T, index: number) => Iterator<TOut>,
+    ): Generator<TOut, void, void>;
+  }
+}
+
+iteratorPrototype.flatMap ??= function* <TIn, TOut>(
+  this: Iterator<TIn>,
+  callbackFn: (element: TIn, index: number) => Iterator<TOut>,
+): Generator<TOut, void, void> {
+  if (typeof this !== "object") {
+    throw new TypeError("flatMap called on non-object");
+  }
+
+  if (typeof callbackFn !== "function") {
+    throw new TypeError("flatMap callback must be a function");
+  }
+
+  let index = 0;
+  for (const element of this.toIterable()) {
+    const mapped = callbackFn(element, index).toIterable();
+    if (typeof mapped[Symbol.iterator] !== "function") {
+      throw new TypeError(
+        "flatMap callback must return an iterator or iterable",
+      );
+    }
+    for (const innerElement of mapped) {
+      yield innerElement;
+    }
+    ++index;
+  }
 };"
 `;
 
