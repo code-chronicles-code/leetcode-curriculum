@@ -1,7 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 import { stripSuffix } from "../stripSuffix";
 
-
 describe("stripSuffix", () => {
   it("removes the suffix if it exists", () => {
     expect(stripSuffix("hello world", "world")).toBe("hello ");
@@ -16,7 +15,9 @@ describe("stripSuffix", () => {
   });
 
   it("returns an unmodified string if the suffix is in the middle of the string", () => {
-    expect(stripSuffix("hello world, how are you", "world")).toBe("hello world, how are you");
+    expect(stripSuffix("hello world, how are you", "world")).toBe(
+      "hello world, how are you",
+    );
   });
 
   it("returns an empty string if the entire string is the suffix", () => {
