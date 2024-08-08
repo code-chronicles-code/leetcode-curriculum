@@ -7,9 +7,6 @@ import java.util.Stack;
 import pair.Pair;
 import simple_iterator.SimpleIterator;
 
-/**
- * Post-order binary tree traversal implementation.
- */
 public final class AP {
 
   /**
@@ -29,7 +26,7 @@ public final class AP {
       SimpleIterator.toIterator(() -> {
         while (!stack.isEmpty()) {
           Pair<TreeNode, Boolean> peek = stack.pop();
-          TreeNode<T> node = peek.first();
+          TreeNode node = peek.first();
           boolean didTraverseChildren = peek.second();
           if (node == null) continue;
           if (didTraverseChildren) {
@@ -45,10 +42,9 @@ public final class AP {
   }
 }
 
-/**
- * Class representing the a single node in the binary tree.
- */
 class TreeNode {
+
+  // Class representing a single node in the binary tree.
 
   int val;
   TreeNode left;
