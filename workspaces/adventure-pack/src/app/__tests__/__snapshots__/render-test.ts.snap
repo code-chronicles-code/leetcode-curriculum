@@ -495,7 +495,6 @@ import iterable_stream.IterableStream;
 import pair.Pair;
 import simple_iterator.SimpleIterator;
 
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
@@ -523,11 +522,11 @@ final class AP {
           boolean didTraverseChildren = peek.second();
           if (node == null) continue;
           if (didTraverseChildren) {
-            return node.val;
+            return node;
           }
-          stack.push(new Pair(node, true));
-          stack.push(new Pair(node.right, false));
-          stack.push(new Pair(node.left, false));
+          stack.push(new Pair<>(node, true));
+          stack.push(new Pair<>(node.right, false));
+          stack.push(new Pair<>(node.left, false));
         }
         throw new NoSuchElementException();
       })

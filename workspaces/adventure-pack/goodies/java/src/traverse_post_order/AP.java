@@ -1,7 +1,6 @@
 package traverse_post_order;
 
 import iterable_stream.IterableStream;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 import pair.Pair;
@@ -32,9 +31,9 @@ public final class AP {
           if (didTraverseChildren) {
             return node;
           }
-          stack.push(new Pair(node, true));
-          stack.push(new Pair(node.right, false));
-          stack.push(new Pair(node.left, false));
+          stack.push(new Pair<>(node, true));
+          stack.push(new Pair<>(node.right, false));
+          stack.push(new Pair<>(node.left, false));
         }
         throw new NoSuchElementException();
       })
