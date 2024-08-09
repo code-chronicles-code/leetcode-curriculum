@@ -30,7 +30,7 @@ public final class AP {
           boolean didTraverseChildren = peek.second();
           if (node == null) continue;
           if (didTraverseChildren) {
-            return node.val;
+            return node;
           }
           stack.push(new Pair(node, true));
           stack.push(new Pair(node.right, false));
