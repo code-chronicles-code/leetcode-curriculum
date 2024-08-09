@@ -2,6 +2,8 @@ import fsPromises from "node:fs/promises";
 
 import { z } from "zod";
 
+import { isSystemError } from "@code-chronicles/util/isSystemError";
+
 const DATA_FILE = "data.json";
 
 const dataZodType = z.object({
@@ -19,8 +21,7 @@ export async function readScriptData(): Promise<Data> {
       JSON.parse(await fsPromises.readFile(DATA_FILE, "utf8")),
     );
   } catch (err) {
-    // TODO: utility for this
-    if ((err as Record<string, unknown>).code === "ENOENT") {
+    if (isSystemError(err) && err.code === "ENOENT") {
       return {};
     }
 
