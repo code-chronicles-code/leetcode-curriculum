@@ -488,6 +488,57 @@ final class AP {
 }"
 `;
 
+exports[`App can render goody: Java traversePostOrder() 1`] = `
+"package traverse_post_order;
+
+import iterable_stream.IterableStream;
+import pair.Pair;
+import simple_iterator.SimpleIterator;
+
+import java.util.NoSuchElementException;
+import java.util.Stack;
+
+final class AP {
+  private AP() {}
+
+  /**
+   * Get an {@link IterableStream iterable stream} of all the {@link TreeNode nodes} in the binary
+   * tree in post-order.
+   * @param root Binary tree root {@link TreeNode node}.
+   * @return The {@link IterableStream iterable stream} in post-order.
+   */
+  public static IterableStream<TreeNode> traversePostOrder(
+    final TreeNode root
+  ) {
+    final var stack = new Stack<Pair<TreeNode, Boolean>>();
+    stack.push(new Pair<>(root, false));
+
+    return IterableStream.from(
+      SimpleIterator.toIterator(() -> {
+        while (!stack.isEmpty()) {
+          var nodeAndDidTraverseChildren = stack.pop();
+
+          var node = nodeAndDidTraverseChildren.first();
+          if (node == null) {
+            continue;
+          }
+
+          if (nodeAndDidTraverseChildren.second()) {
+            return node;
+          }
+
+          stack.push(new Pair<>(node, true));
+          stack.push(new Pair<>(node.right, false));
+          stack.push(new Pair<>(node.left, false));
+        }
+
+        throw new NoSuchElementException();
+      })
+    );
+  }
+}"
+`;
+
 exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
 "import "ArraySlice";
 
