@@ -13,11 +13,13 @@ class TreeNode:
         self.right = right
 
 
-def traverse_preorder(root: Optional[TreeNode]) -> Generator[int, None, None]:
+def traverse_preorder(
+    root: Optional[TreeNode],
+) -> Generator[TreeNode, None, None]:
     stack = [root] if root else []
     while stack:
         node = stack.pop()
-        yield node.val
+        yield node
 
         if node.right:
             stack.append(node.right)

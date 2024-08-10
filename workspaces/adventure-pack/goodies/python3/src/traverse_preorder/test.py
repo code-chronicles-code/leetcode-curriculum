@@ -7,19 +7,19 @@ def test_empty_tree() -> None:
 
 def test_root_only() -> None:
     root = TreeNode(10)
-    assert list(traverse_preorder(root)) == [10]
+    assert [node.val for node in traverse_preorder(root)] == [10]
 
 
 def test_left_child_only() -> None:
     root = TreeNode(10)
     root.left = TreeNode(4)
-    assert list(traverse_preorder(root)) == [10, 4]
+    assert [node.val for node in traverse_preorder(root)] == [10, 4]
 
 
 def test_right_child_only() -> None:
     root = TreeNode(10)
     root.right = TreeNode(6)
-    assert list(traverse_preorder(root)) == [10, 6]
+    assert [node.val for node in traverse_preorder(root)] == [10, 6]
 
 
 def test_unbalanced_tree() -> None:
@@ -30,7 +30,7 @@ def test_unbalanced_tree() -> None:
     root.left.right = TreeNode(8)
     root.left.left.left = TreeNode(10)
 
-    assert list(traverse_preorder(root)) == [2, 4, 7, 10, 8, 5]
+    assert [node.val for node in traverse_preorder(root)] == [2, 4, 7, 10, 8, 5]
 
 
 def test_large_tree() -> None:
@@ -46,7 +46,19 @@ def test_large_tree() -> None:
     root.left.right.left = TreeNode(10)
     root.left.right.right = TreeNode(11)
 
-    assert list(traverse_preorder(root)) == [1, 2, 4, 8, 9, 5, 10, 11, 3, 6, 7]
+    assert [node.val for node in traverse_preorder(root)] == [
+        1,
+        2,
+        4,
+        8,
+        9,
+        5,
+        10,
+        11,
+        3,
+        6,
+        7,
+    ]
 
 
 def test_traverse_generator() -> None:
@@ -56,7 +68,7 @@ def test_traverse_generator() -> None:
     root.left.left = TreeNode(4)
 
     traverse = traverse_preorder(root)
-    assert next(traverse) == 1
-    assert next(traverse) == 2
-    assert next(traverse) == 4
-    assert next(traverse) == 3
+    assert next(traverse).val == 1
+    assert next(traverse).val == 2
+    assert next(traverse).val == 4
+    assert next(traverse).val == 3
