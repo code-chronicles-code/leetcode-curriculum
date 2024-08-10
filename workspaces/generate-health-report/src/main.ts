@@ -14,6 +14,7 @@ const COMMANDS = [
   "yarn test",
   "yarn workspace @code-chronicles/adventure-pack build-app",
   "yarn workspace @code-chronicles/fetch-leetcode-problem-list build",
+  "yarn workspace @code-chronicles/fetch-recent-accepted-leetcode-submissions build",
   "yarn workspace @code-chronicles/post-leetcode-potd-to-discord build",
 ];
 
