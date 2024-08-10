@@ -1,4 +1,3 @@
-from collections import deque
 from typing import Generator, Optional
 
 
@@ -15,11 +14,12 @@ class TreeNode:
 
 
 def traverse_preorder(root: Optional[TreeNode]) -> Generator[int, None, None]:
-    stack = [root]
+    stack = [root] if root else []
     while stack:
         node = stack.pop()
+        yield node.val
 
-        if node:
-            yield node.val
+        if node.right:
             stack.append(node.right)
+        if node.left:
             stack.append(node.left)

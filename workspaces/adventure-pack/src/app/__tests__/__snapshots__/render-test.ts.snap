@@ -1219,34 +1219,6 @@ import gcd_int_int.gcd
 public fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b"
 `;
 
-exports[`App can render goody: Python 3 TraversePreorder 1`] = `
-"from collections import deque
-from typing import Generator, Optional
-
-
-class TreeNode:
-    def __init__(
-        self,
-        val: int = 0,
-        left: Optional["TreeNode"] = None,
-        right: Optional["TreeNode"] = None,
-    ):
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-def traverse_preorder(root: Optional[TreeNode]) -> Generator[int, None, None]:
-    stack = [root]
-    while stack:
-        node = stack.pop()
-
-        if node:
-            yield node.val
-            stack.append(node.right)
-            stack.append(node.left)"
-`;
-
 exports[`App can render goody: Python 3 UnionFind 1`] = `
 "class UnionFind:
 
@@ -1318,6 +1290,34 @@ exports[`App can render goody: Python 3 is_palindrome 1`] = `
         left += 1
         right -= 1
     return True"
+`;
+
+exports[`App can render goody: Python 3 traverse_preorder 1`] = `
+"from typing import Generator, Optional
+
+
+class TreeNode:
+    def __init__(
+        self,
+        val: int = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def traverse_preorder(root: Optional[TreeNode]) -> Generator[int, None, None]:
+    stack = [root] if root else []
+    while stack:
+        node = stack.pop()
+        yield node.val
+
+        if node.right:
+            stack.append(node.right)
+        if node.left:
+            stack.append(node.left)"
 `;
 
 exports[`App can render goody: TypeScript Array.prototype.slidingWindows 1`] = `
