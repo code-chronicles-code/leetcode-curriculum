@@ -1,4 +1,65 @@
 {
   "name": "UserManagementScoreHistoryInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "userId",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "scoreType",
+      "type": {
+        "name": "ScoreTypeEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "startedAt",
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "endedAt",
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "category",
+      "type": {
+        "name": "UmScoreCategoryEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "skip",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "limit",
+      "defaultValue": "10",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
 }

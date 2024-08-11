@@ -1,4 +1,53 @@
 {
   "name": "ManagementAddInterviewedStatVoteInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "questionId",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "tagId",
+      "description": "company tag id",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "positionTagSlug",
+      "description": "position tag id",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "votedNum",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "timeOption",
+      "defaultValue": "0",
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
 }

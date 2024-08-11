@@ -1,4 +1,81 @@
 {
   "name": "QuestionListFilterInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "orderBy",
+      "type": {
+        "name": "QuestionOrderByEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "sortOrder",
+      "type": {
+        "name": "SortingOrderEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "difficulty",
+      "type": {
+        "name": "DifficultyEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "tags",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "name": "UserQuestionStatus",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "searchKeywords",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "listId",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "premiumOnly",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "companies",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    }
+  ]
 }

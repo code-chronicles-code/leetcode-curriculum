@@ -1,6 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
 
+import invariant from "invariant";
 import nullthrows from "nullthrows";
 
 import { sleep } from "@code-chronicles/util/sleep";
@@ -44,10 +45,15 @@ async function main(): Promise<void> {
     const typeName = nullthrows(stack.pop());
     console.log(`Fetching ${typeName}, ${stack.length} to go`);
 
-    const graphqlTypeInfo = nullthrows(
-      // eslint-disable-next-line no-await-in-loop
-      await fetchGraphQLTypeInformation(typeName),
-    );
+    // eslint-disable-next-line no-await-in-loop
+    const graphqlTypeInfo = await fetchGraphQLTypeInformation(typeName);
+    if (graphqlTypeInfo == null) {
+      invariant(
+        typeName === "Subscription",
+        "Subscription is the only type we currently expect to not be defined.",
+      );
+      continue;
+    }
 
     // eslint-disable-next-line no-await-in-loop
     await writeFile(
@@ -60,6 +66,18 @@ async function main(): Promise<void> {
       for (const arg of field.args ?? []) {
         pushType(arg.type);
       }
+    }
+
+    for (const inputField of graphqlTypeInfo.inputFields ?? []) {
+      pushType(inputField.type);
+    }
+
+    for (const iface of graphqlTypeInfo.interfaces ?? []) {
+      pushType(iface);
+    }
+
+    for (const possibleType of graphqlTypeInfo.possibleTypes ?? []) {
+      pushType(possibleType);
     }
 
     // eslint-disable-next-line no-await-in-loop

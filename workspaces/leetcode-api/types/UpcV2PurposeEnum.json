@@ -1,0 +1,19 @@
+{
+  "name": "UpcV2PurposeEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "INTERVIEW",
+      "description": "INTERVIEW"
+    },
+    {
+      "name": "STUDY",
+      "description": "STUDY"
+    },
+    {
+      "name": "ALL",
+      "description": "ALL"
+    }
+  ]
+}

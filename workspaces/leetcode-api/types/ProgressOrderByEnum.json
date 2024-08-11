@@ -1,0 +1,21 @@
+{
+  "name": "ProgressOrderByEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "FRONTEND_ID"
+    },
+    {
+      "name": "DIFFICULTY"
+    },
+    {
+      "name": "LAST_SOLVED"
+    },
+    {
+      "name": "WRONG_ATTEMPTS"
+    },
+    {
+      "name": "TOTAL_SOLVES"
+    }
+  ]
+}

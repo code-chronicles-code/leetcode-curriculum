@@ -1,0 +1,12 @@
+{
+  "name": "CompanyQuestionKeywordType",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "NAME"
+    },
+    {
+      "name": "ID"
+    }
+  ]
+}
