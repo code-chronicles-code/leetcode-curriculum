@@ -61,6 +61,7 @@ def test_large_tree() -> None:
     ]
 
 
+# TODO: delete test case once types are enforced for python goodies
 def test_traverse_generator() -> None:
     root = TreeNode(1)
     root.left = TreeNode(2)
