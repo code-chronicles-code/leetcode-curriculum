@@ -8,7 +8,14 @@ describe("stripPrefix", () => {
   });
 
   it("returns an unmodified string if the prefix doesn't exist", () => {
-    expect(stripPrefix("hello world", "goodbye")).toBe("hello world");
+    expect(stripPrefix("hello world", "mundo")).toBe("hello world");
+  });
+
+  it("returns an unmodified string if the prefix is not at the start of the string", () => {
+    expect(stripPrefix("hello world", "world")).toBe("hello world");
+    expect(stripPrefix("hello world, how are you", "world")).toBe(
+      "hello world, how are you",
+    );
   });
 
   it("returns an empty string if the entire string is the prefix", () => {
@@ -25,6 +32,7 @@ describe("stripPrefix", () => {
 
   it("respects case", () => {
     expect(stripPrefix("Hello World", "hello")).toBe("Hello World");
+    expect(stripPrefix("Hello World", "Hello")).toBe(" World");
   });
 
   it("tolerates prefixes that are longer than the string", () => {
@@ -38,7 +46,8 @@ describe("stripPrefix", () => {
   });
 
   it("only removes the prefix once", () => {
-    expect(stripPrefix("hahaha", "ha")).toBe("haha");
+    expect(stripPrefix("alfalfa", "alf")).toBe("alfa");
+    expect(stripPrefix("couscous", "cous")).toBe("cous");
   });
 
   it("works with emojis", () => {

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
+
 import { stripSuffix } from "../stripSuffix";
 
 describe("stripSuffix", () => {
@@ -12,9 +13,6 @@ describe("stripSuffix", () => {
 
   it("returns an unmodified string if the suffix is not at the end of the string", () => {
     expect(stripSuffix("hello world", "hello")).toBe("hello world");
-  });
-
-  it("returns an unmodified string if the suffix is in the middle of the string", () => {
     expect(stripSuffix("hello world, how are you", "world")).toBe(
       "hello world, how are you",
     );
@@ -33,7 +31,8 @@ describe("stripSuffix", () => {
   });
 
   it("respects case", () => {
-    expect(stripSuffix("Hello World", "hello")).toBe("Hello World");
+    expect(stripSuffix("Hello World", "world")).toBe("Hello World");
+    expect(stripSuffix("Hello World", "World")).toBe("Hello ");
   });
 
   it("tolerates suffixes that are longer than the string", () => {
@@ -48,6 +47,7 @@ describe("stripSuffix", () => {
 
   it("only removes the suffix once", () => {
     expect(stripSuffix("banana", "na")).toBe("bana");
+    expect(stripSuffix("couscous", "cous")).toBe("cous");
   });
 
   it("works with emojis", () => {
