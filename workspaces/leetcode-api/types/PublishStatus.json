@@ -1,0 +1,15 @@
+{
+  "name": "PublishStatus",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "UNPUBLISHED"
+    },
+    {
+      "name": "PUBLISHED"
+    },
+    {
+      "name": "UNKNOWN"
+    }
+  ]
+}

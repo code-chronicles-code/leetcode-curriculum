@@ -1,0 +1,25 @@
+{
+  "name": "PointListNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "hasNext",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "points",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ScoreNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "CompanyQuestionTimeOptionEnumV2",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "THIRTY_DAY",
+      "description": "Recent 30 days"
+    },
+    {
+      "name": "THREE_MONTH",
+      "description": "Recent 3 months"
+    },
+    {
+      "name": "SIX_MONTH",
+      "description": "Recent 6 months"
+    },
+    {
+      "name": "MORE_THAN_SIX_MONTH",
+      "description": "More than 6 months"
+    },
+    {
+      "name": "ALL",
+      "description": "All"
+    }
+  ]
+}

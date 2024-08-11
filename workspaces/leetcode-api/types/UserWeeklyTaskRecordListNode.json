@@ -1,0 +1,39 @@
+{
+  "name": "UserWeeklyTaskRecordListNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "planFinishDate",
+      "isDeprecated": false,
+      "type": {
+        "name": "Date",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "planWeeklyTaskSetDate",
+      "isDeprecated": false,
+      "type": {
+        "name": "Date",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "userWeeklyTaskRecords",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "UserWeeklyTaskRecordNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

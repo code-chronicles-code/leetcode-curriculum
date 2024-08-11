@@ -1,0 +1,28 @@
+{
+  "name": "TopicEdge",
+  "description": "A Relay edge containing a `Topic` and its cursor.",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "cursor",
+      "description": "A cursor for use in pagination",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "node",
+      "description": "The item at the end of the edge",
+      "isDeprecated": false,
+      "type": {
+        "name": "TopicRelayNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

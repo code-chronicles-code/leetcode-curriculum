@@ -1,0 +1,33 @@
+{
+  "name": "SubmissionComplexityNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "isLimited",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "memoryComplexity",
+      "isDeprecated": false,
+      "type": {
+        "name": "ComplexityInfoNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "timeComplexity",
+      "isDeprecated": false,
+      "type": {
+        "name": "ComplexityInfoNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

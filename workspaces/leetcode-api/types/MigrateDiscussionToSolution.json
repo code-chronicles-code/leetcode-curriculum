@@ -1,0 +1,22 @@
+{
+  "name": "MigrateDiscussionToSolution",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "topic",
+      "isDeprecated": false,
+      "type": {
+        "name": "TopicNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

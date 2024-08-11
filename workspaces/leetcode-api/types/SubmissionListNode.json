@@ -1,0 +1,33 @@
+{
+  "name": "SubmissionListNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "hasNext",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "lastKey",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "submissions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "SubmissionDumpNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

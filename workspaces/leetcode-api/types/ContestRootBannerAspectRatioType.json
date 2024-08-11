@@ -1,0 +1,19 @@
+{
+  "name": "ContestRootBannerAspectRatioType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_0",
+      "description": "SM Breakpoint Image"
+    },
+    {
+      "name": "A_1",
+      "description": "MD Breakpoint Image"
+    },
+    {
+      "name": "A_2",
+      "description": "LG Breakpoint Image"
+    }
+  ]
+}

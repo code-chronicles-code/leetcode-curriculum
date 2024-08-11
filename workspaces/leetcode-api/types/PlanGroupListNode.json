@@ -1,0 +1,36 @@
+{
+  "name": "PlanGroupListNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "data",
+      "description": "List of Plan Groups",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "PlanGroupNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "total",
+      "description": "Number of Plan Groups",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

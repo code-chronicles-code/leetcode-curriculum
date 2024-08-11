@@ -1,0 +1,28 @@
+{
+  "name": "LatestIncVoteNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "incVotedAt",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "incVotedNum",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

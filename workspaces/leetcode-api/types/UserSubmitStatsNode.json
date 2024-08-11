@@ -1,0 +1,40 @@
+{
+  "name": "UserSubmitStatsNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "acSubmissionNum",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "SubmissionCountNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "totalSubmissionNum",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "SubmissionCountNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

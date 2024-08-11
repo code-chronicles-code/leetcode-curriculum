@@ -1,0 +1,10 @@
+{
+  "name": "SurveyType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "MOCK_INTERVIEW"
+    }
+  ]
+}

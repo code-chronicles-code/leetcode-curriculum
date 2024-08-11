@@ -1,0 +1,58 @@
+{
+  "name": "PlanUserProgressDetailNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "finishedQuestionNum",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "status",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PlanUserProgressStatusEnum",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "studyPlanDetail",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "StudyPlanDetailNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "weeklyTaskScheduleResettable",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

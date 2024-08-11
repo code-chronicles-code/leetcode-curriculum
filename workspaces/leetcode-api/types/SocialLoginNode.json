@@ -1,0 +1,22 @@
+{
+  "name": "SocialLoginNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "loginUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ScoreTypeEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ALL",
+      "description": "All"
+    },
+    {
+      "name": "MISSION_REWARD",
+      "description": "Mission Reward"
+    },
+    {
+      "name": "ADMIN_REWARD",
+      "description": "Admin Reward"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "UserOperationEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "LOGIN",
+      "description": "Login"
+    },
+    {
+      "name": "ACCOUNT_CREATED",
+      "description": "Account Created"
+    },
+    {
+      "name": "ACCOUNT_BANNED",
+      "description": "Account Banned"
+    },
+    {
+      "name": "EMAIL_ADDED",
+      "description": "Email Added"
+    },
+    {
+      "name": "EMAIL_REMOVED",
+      "description": "Email Removed"
+    },
+    {
+      "name": "EMAIL_VERIFIED",
+      "description": "Email Verified"
+    },
+    {
+      "name": "EMAIL_PRIMARY_UPDATED",
+      "description": "Email Primary Updated"
+    },
+    {
+      "name": "USERNAME_UPDATED",
+      "description": "Username Updated"
+    },
+    {
+      "name": "REALNAME_UPDATED",
+      "description": "Realname Updated"
+    },
+    {
+      "name": "AVATAR_UPDATED",
+      "description": "Avatar Updated"
+    },
+    {
+      "name": "PASSWORD_UPDATED",
+      "description": "Passward Updated"
+    },
+    {
+      "name": "OAUTH_CONNECTED",
+      "description": "Oauth Connected"
+    },
+    {
+      "name": "OAUTH_REMOVED",
+      "description": "Oauth Removed"
+    },
+    {
+      "name": "ACCOUNT_DELETED",
+      "description": "Account Deleted"
+    }
+  ]
+}

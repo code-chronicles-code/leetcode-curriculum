@@ -1,0 +1,55 @@
+{
+  "name": "CommonTagNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "imgUrl",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "name",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "nameTranslated",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "slug",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "tagType",
+      "isDeprecated": false,
+      "type": {
+        "name": "TagTypeEnum",
+        "kind": "ENUM"
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "AdLocationEnum",
+  "description": "advertisement location enums",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "HOME_AD",
+      "description": "Home Ad"
+    },
+    {
+      "name": "PROBLEMSET_AD",
+      "description": "Problemset Ad Sidebar"
+    },
+    {
+      "name": "PROBLEMSET_AD_PRIMARY",
+      "description": "Problemset Ad Primary"
+    },
+    {
+      "name": "PROBLEMSET_AD_SECONDARY",
+      "description": "Problemset Ad Secondary"
+    },
+    {
+      "name": "DISCUSS_AD",
+      "description": "Discuss Ad"
+    },
+    {
+      "name": "STUDY_PLAN_AD",
+      "description": "Study Plan Ad"
+    },
+    {
+      "name": "HOME_FEED",
+      "description": "home feed"
+    },
+    {
+      "name": "DISCUSS_LIST",
+      "description": "discuss list"
+    },
+    {
+      "name": "DISCUSS_DETAIL",
+      "description": "discuss detail"
+    },
+    {
+      "name": "QD_DESCRIPTION",
+      "description": "qd description"
+    },
+    {
+      "name": "QD_SOLUTION_LIST",
+      "description": "qd solution list"
+    },
+    {
+      "name": "QD_SOLUTION_DETAIL",
+      "description": "qd solution detail"
+    }
+  ]
+}

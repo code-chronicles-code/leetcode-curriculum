@@ -1,0 +1,49 @@
+{
+  "name": "ToggleFavorite",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "card",
+      "isDeprecated": false,
+      "type": {
+        "name": "CardNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "errors",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isCurrentUserAuthenticated",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "newFavoriteCards",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CardNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

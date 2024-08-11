@@ -1,0 +1,25 @@
+{
+  "name": "ContestReportBannedNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "banDuration",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "user",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

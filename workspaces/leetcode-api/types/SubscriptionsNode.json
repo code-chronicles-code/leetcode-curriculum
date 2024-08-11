@@ -1,0 +1,28 @@
+{
+  "name": "SubscriptionsNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "monthlyPrice",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "SubscriptionPricingNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "yearlyPrice",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "SubscriptionPricingNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

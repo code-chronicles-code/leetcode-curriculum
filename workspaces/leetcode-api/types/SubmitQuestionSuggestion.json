@@ -1,0 +1,14 @@
+{
+  "name": "SubmitQuestionSuggestion",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "msg",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "SendAccountRecoveryEmail",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "message",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

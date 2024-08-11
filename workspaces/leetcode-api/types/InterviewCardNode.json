@@ -1,0 +1,70 @@
+{
+  "name": "InterviewCardNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "company",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "InterviewCompanyNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "hasNewInterview",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "numInterview",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "numParticipants",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "numPass",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "stage",
+      "isDeprecated": false,
+      "type": {
+        "name": "CompanyStage",
+        "kind": "ENUM"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "MigrateSolutionToDiscussion",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "comment",
+      "isDeprecated": false,
+      "type": {
+        "name": "CommentNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

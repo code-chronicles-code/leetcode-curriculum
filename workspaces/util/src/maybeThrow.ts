@@ -5,5 +5,6 @@ export function maybeThrow(errors: unknown[]): void {
     return;
   }
 
+  // TODO: wrap errors[0] in an Error object if it's not an error already
   throw errors.length === 1 ? errors[0] : new AggregateError(errors);
 }

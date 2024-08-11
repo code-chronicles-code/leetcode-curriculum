@@ -1,0 +1,42 @@
+{
+  "name": "OrderOperationLogNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "action",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "createdAt",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "operator",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PrivateContestUserNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

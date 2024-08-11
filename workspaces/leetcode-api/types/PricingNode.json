@@ -1,0 +1,22 @@
+{
+  "name": "PricingNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "originalPrice",
+      "isDeprecated": false,
+      "type": {
+        "name": "Float",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "price",
+      "isDeprecated": false,
+      "type": {
+        "name": "Float",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

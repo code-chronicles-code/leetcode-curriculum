@@ -53,7 +53,7 @@ const innerTypeZodTypeBase = z.strictObject({
   kind: graphqlKindTypeZodType,
 });
 
-type InnerType = OptionalInsteadOfNullishValues<
+export type InnerType = OptionalInsteadOfNullishValues<
   z.infer<typeof innerTypeZodTypeBase>
 > & {
   ofType?: InnerType;
@@ -101,9 +101,11 @@ const graphqlTypeZodType = z
               })
               .transform(removeKeysWithNullishValues),
           )
-          .transform(sortByName),
+          .transform(sortByName)
+          .nullable(),
       })
-      .transform(removeKeysWithNullishValues),
+      .transform(removeKeysWithNullishValues)
+      .nullable(),
   })
   .transform((data) => data.__type);
 

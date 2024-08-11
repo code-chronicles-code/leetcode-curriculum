@@ -1,0 +1,62 @@
+{
+  "name": "LibraryTestcase",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "expectedOutput",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "inputFormatted",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "inputRaw",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "jsonBlob",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "JSONString",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "question",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "LibraryQuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

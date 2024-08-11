@@ -1,0 +1,130 @@
+{
+  "name": "__Type",
+  "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "description",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "enumValues",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "includeDeprecated",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "__EnumValue",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "fields",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "includeDeprecated",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "__Field",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "inputFields",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "__InputValue",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "interfaces",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "__Type",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "kind",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "__TypeKind",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ofType",
+      "isDeprecated": false,
+      "type": {
+        "name": "__Type",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "possibleTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "__Type",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    }
+  ]
+}

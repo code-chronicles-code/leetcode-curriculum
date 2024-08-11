@@ -1,0 +1,5 @@
+{
+  "name": "Boolean",
+  "description": "The `Boolean` scalar type represents `true` or `false`.",
+  "kind": "SCALAR"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Category",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "BASIC"
+    },
+    {
+      "name": "EDGE"
+    },
+    {
+      "name": "PERFORMANCE"
+    }
+  ]
+}

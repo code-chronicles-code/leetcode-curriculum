@@ -1,0 +1,55 @@
+{
+  "name": "ManagementIncVoteLogNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "createdAt",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "createdBy",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "positionTag",
+      "isDeprecated": false,
+      "type": {
+        "name": "CommonTagNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "votedDate",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "votedNum",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

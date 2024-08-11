@@ -1,0 +1,58 @@
+{
+  "name": "ManagementStripeChargeNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "amount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "created",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "invoiceId",
+      "isDeprecated": false,
+      "type": {
+        "name": "ID",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "status",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "StripeChargeStatusEnum",
+          "kind": "ENUM"
+        }
+      }
+    }
+  ]
+}

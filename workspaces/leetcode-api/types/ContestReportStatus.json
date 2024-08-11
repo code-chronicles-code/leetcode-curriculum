@@ -1,0 +1,19 @@
+{
+  "name": "ContestReportStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_0",
+      "description": "UNPROCESSED"
+    },
+    {
+      "name": "A_1",
+      "description": "CANCELED"
+    },
+    {
+      "name": "A_2",
+      "description": "ACCEPTED"
+    }
+  ]
+}

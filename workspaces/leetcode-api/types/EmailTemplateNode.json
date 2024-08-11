@@ -1,0 +1,98 @@
+{
+  "name": "EmailTemplateNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "content",
+      "description": "Resolves the following template variables automatically:<ul><li>blocks</li><li>current_year</li><li>next_contest_title_slug</li><li>unsubscribe_url</li><li>next_contest_time_by_timezone</li><li>next_biweekly_contest_time_by_timezone</li><li>next_contest_url</li><li>next_contest_title</li><li>next_biweekly_contest_time_url</li><li>site_base_url</li><li>next_javascript_dcc_day</li><li>q_difficulty_mandarin</li><li>next_contest_formatted_date</li><li>suggested_q_title</li><li>suggested_q_slug</li><li>next_contest_time_url</li><li>next_biweekly_contest_url</li><li>q_description</li><li>q_difficulty_w_article</li><li>next_biweekly_contest_formatted_date</li><li>real_name</li><li>next_biweekly_contest_title</li><li>next_biweekly_contest_title_slug</li><li>storage_base_url</li><li>q_num_ac_subs</li><li>next_javascript_dcc_editorial_link</li><li>username</li><li>next_javascript_dcc_link</li></ul>",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "conversionTargetUrlTemplates",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "emaileventSet",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "EmailEventNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "emailsendsessionSet",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "EmailSendSessionNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "emailSubject",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "title",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

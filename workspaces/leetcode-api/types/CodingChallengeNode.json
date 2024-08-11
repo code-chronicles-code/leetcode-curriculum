@@ -1,0 +1,86 @@
+{
+  "name": "CodingChallengeNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "canApplyTimeTravelTicket",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "card",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "CardNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "challenges",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DailyChallengeNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "containsPremium",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "questionOfToday",
+      "isDeprecated": false,
+      "type": {
+        "name": "DailyChallengeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "startDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "SocialAccountNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "accountProvider",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "profileLink",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

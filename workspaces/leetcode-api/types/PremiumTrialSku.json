@@ -1,0 +1,15 @@
+{
+  "name": "PremiumTrialSku",
+  "description": "enum value means trial days",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "MONTHLY",
+      "description": "Monthly Premium Subscription"
+    },
+    {
+      "name": "ANNUAL",
+      "description": "Annual Premium Subscription"
+    }
+  ]
+}

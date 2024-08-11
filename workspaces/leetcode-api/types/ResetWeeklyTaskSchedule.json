@@ -1,0 +1,28 @@
+{
+  "name": "ResetWeeklyTaskSchedule",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "progressId",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

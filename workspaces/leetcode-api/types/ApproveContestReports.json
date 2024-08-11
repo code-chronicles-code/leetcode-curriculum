@@ -1,0 +1,23 @@
+{
+  "name": "ApproveContestReports",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "approvedReports",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ContestReportNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

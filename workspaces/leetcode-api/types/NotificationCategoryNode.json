@@ -1,0 +1,33 @@
+{
+  "name": "NotificationCategoryNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "configurableNotificationTypes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "NotificationTypeNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "slug",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "title",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

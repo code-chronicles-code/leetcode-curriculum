@@ -1,0 +1,55 @@
+{
+  "name": "SearchMetaNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "commentAuthor",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "content",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "contentType",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "SearchMetaContentType",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "highlights",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "replyAuthor",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

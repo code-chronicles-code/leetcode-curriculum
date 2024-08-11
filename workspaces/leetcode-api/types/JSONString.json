@@ -1,0 +1,5 @@
+{
+  "name": "JSONString",
+  "description": "Allows use of a JSON String for input / output from the GraphQL schema.\n\nUse of this type is *not recommended* as you lose the benefits of having a defined, static\nschema (one of the key benefits of GraphQL).",
+  "kind": "SCALAR"
+}

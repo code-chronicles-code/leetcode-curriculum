@@ -1,0 +1,28 @@
+{
+  "name": "StudyPlanAwardNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "badge",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserBadgeNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "medal",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "MedalNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

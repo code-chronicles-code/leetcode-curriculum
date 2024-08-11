@@ -1,0 +1,17 @@
+{
+  "name": "LibraryGenerateSampleTestcase",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "content",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

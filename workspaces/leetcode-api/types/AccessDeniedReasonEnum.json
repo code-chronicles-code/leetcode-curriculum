@@ -1,0 +1,19 @@
+{
+  "name": "AccessDeniedReasonEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "NO_SUCH_LIST",
+      "description": "no such list"
+    },
+    {
+      "name": "LIST_IS_PRIVATE",
+      "description": "list is private"
+    },
+    {
+      "name": "COMPANY_LIST_NOT_AVAILABLE",
+      "description": "company list not available"
+    }
+  ]
+}

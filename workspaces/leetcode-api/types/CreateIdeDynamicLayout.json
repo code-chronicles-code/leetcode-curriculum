@@ -1,0 +1,33 @@
+{
+  "name": "CreateIdeDynamicLayout",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "layout",
+      "isDeprecated": false,
+      "type": {
+        "name": "IDEDynamicLayoutNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

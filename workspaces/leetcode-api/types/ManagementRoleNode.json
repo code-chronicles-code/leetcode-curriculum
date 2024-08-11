@@ -1,0 +1,25 @@
+{
+  "name": "ManagementRoleNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "permissions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "roleName",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

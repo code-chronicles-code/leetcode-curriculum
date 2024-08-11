@@ -1,0 +1,38 @@
+{
+  "name": "CreateComment",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "comment",
+      "isDeprecated": false,
+      "type": {
+        "name": "CommentNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "commentId",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

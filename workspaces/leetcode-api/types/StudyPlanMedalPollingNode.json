@@ -1,0 +1,28 @@
+{
+  "name": "StudyPlanMedalPollingNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "awards",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "StudyPlanAwardNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "keepPolling",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

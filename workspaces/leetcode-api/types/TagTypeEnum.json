@@ -1,0 +1,15 @@
+{
+  "name": "TagTypeEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "COMPANY"
+    },
+    {
+      "name": "TOPIC"
+    },
+    {
+      "name": "SKILL"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "PlanQuestionSolutionInfoNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "solutionSlug",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "solutionTopicId",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

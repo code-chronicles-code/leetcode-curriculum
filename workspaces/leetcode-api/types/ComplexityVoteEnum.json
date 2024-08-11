@@ -1,0 +1,15 @@
+{
+  "name": "ComplexityVoteEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "THUMBS_DOWN",
+      "description": "Thumbs Down"
+    },
+    {
+      "name": "UPVOTE",
+      "description": "Upvote"
+    }
+  ]
+}

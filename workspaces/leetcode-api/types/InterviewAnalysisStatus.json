@@ -1,0 +1,21 @@
+{
+  "name": "InterviewAnalysisStatus",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "SKIPPED"
+    },
+    {
+      "name": "PROCESSING"
+    },
+    {
+      "name": "COMPLETED"
+    },
+    {
+      "name": "DELAYED"
+    },
+    {
+      "name": "NEEDS_DATA"
+    }
+  ]
+}

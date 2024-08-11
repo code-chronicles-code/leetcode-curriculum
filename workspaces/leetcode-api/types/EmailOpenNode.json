@@ -1,0 +1,56 @@
+{
+  "name": "EmailOpenNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "email",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "extraInfo",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "session",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "EmailSendSessionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "time",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

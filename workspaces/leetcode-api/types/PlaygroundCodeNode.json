@@ -1,0 +1,50 @@
+{
+  "name": "PlaygroundCodeNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "code",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "lang",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PlaygroundCodeLang",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "langSlug",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "playground",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PlaygroundNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

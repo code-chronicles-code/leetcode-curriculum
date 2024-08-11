@@ -1,0 +1,12 @@
+{
+  "name": "ChallengeQuestionTypeEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "DAILY"
+    },
+    {
+      "name": "WEEKLY"
+    }
+  ]
+}

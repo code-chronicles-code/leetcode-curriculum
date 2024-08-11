@@ -1,0 +1,30 @@
+{
+  "name": "CreateEmail",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "email",
+      "isDeprecated": false,
+      "type": {
+        "name": "EmailNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

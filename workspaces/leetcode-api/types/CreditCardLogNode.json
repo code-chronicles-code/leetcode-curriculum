@@ -1,0 +1,40 @@
+{
+  "name": "CreditCardLogNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "action",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "operator",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ManagementUserSimpleNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "timestamp",
+      "description": "In seconds",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

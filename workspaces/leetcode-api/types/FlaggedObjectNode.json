@@ -1,0 +1,64 @@
+{
+  "name": "FlaggedObjectNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "firstFlaggedTime",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "flaggedCount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "flagResult",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FlagResultNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "reasons",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "FlagReasonNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "summary",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

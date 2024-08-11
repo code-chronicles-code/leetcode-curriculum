@@ -1,0 +1,15 @@
+{
+  "name": "QuestionEditorTypeEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "CKEDITOR",
+      "description": "CKEditor"
+    },
+    {
+      "name": "MARKDOWN",
+      "description": "Markdown"
+    }
+  ]
+}
