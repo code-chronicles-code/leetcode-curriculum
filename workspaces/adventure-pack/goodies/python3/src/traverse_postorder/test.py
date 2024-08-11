@@ -2,24 +2,24 @@ from . import *
 
 
 def test_empty_tree() -> None:
-    assert list(traverse_preorder(None)) == []
+    assert list(traverse_postorder(None)) == []
 
 
 def test_root_only() -> None:
     root = TreeNode(10)
-    assert [node.val for node in traverse_preorder(root)] == [10]
+    assert [node.val for node in traverse_postorder(root)] == [10]
 
 
 def test_left_child_only() -> None:
     root = TreeNode(10)
     root.left = TreeNode(4)
-    assert [node.val for node in traverse_preorder(root)] == [10, 4]
+    assert [node.val for node in traverse_postorder(root)] == [4, 10]
 
 
 def test_right_child_only() -> None:
     root = TreeNode(10)
     root.right = TreeNode(6)
-    assert [node.val for node in traverse_preorder(root)] == [10, 6]
+    assert [node.val for node in traverse_postorder(root)] == [6, 10]
 
 
 def test_unbalanced_tree() -> None:
@@ -30,7 +30,14 @@ def test_unbalanced_tree() -> None:
     root.left.right = TreeNode(8)
     root.left.left.left = TreeNode(10)
 
-    assert [node.val for node in traverse_preorder(root)] == [2, 4, 7, 10, 8, 5]
+    assert [node.val for node in traverse_postorder(root)] == [
+        10,
+        7,
+        8,
+        4,
+        5,
+        2,
+    ]
 
 
 def test_large_tree() -> None:
@@ -46,18 +53,18 @@ def test_large_tree() -> None:
     root.left.right.left = TreeNode(10)
     root.left.right.right = TreeNode(11)
 
-    assert [node.val for node in traverse_preorder(root)] == [
-        1,
-        2,
-        4,
+    assert [node.val for node in traverse_postorder(root)] == [
         8,
         9,
-        5,
+        4,
         10,
         11,
-        3,
+        5,
+        2,
         6,
         7,
+        3,
+        1,
     ]
 
 
@@ -68,8 +75,8 @@ def test_traverse_generator() -> None:
     root.right = TreeNode(3)
     root.left.left = TreeNode(4)
 
-    traverse = traverse_preorder(root)
-    assert next(traverse).val == 1
-    assert next(traverse).val == 2
+    traverse = traverse_postorder(root)
     assert next(traverse).val == 4
+    assert next(traverse).val == 2
     assert next(traverse).val == 3
+    assert next(traverse).val == 1
