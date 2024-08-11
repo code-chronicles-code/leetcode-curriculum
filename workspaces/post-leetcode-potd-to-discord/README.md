@@ -1,6 +1,6 @@
 # @code-chronicles/post-leetcode-potd-to-discord
 
-![Status of the GitHub Actions workflow that posts the LeetCode problem of the day to the Code Chronicles Discord](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/post-leetcode-potd-to-discord.yml/badge.svg)
+[![Status of the GitHub Actions workflow that posts the LeetCode problem of the day to the Code Chronicles Discord](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/post-leetcode-potd-to-discord.yml/badge.svg)](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/post-leetcode-potd-to-discord.yml)
 
 Announce LeetCode's problem of the day in a Discord channel!
 
