@@ -15,6 +15,7 @@
   "main": "src/main.ts",
   "scripts": {
     "format": "prettier --color --write .",
+    "generate-graphql-schema": "ts-node src/scripts/generateGraphQLSchema.ts",
     "lint": "eslint --color --max-warnings=0 .",
     "scrape-graphql-types": "ts-node src/scripts/scrapeGraphQLTypes.ts",
     "typecheck": "tsc --pretty --project ."
