@@ -1,0 +1,14 @@
+{
+  "name": "UnpublishContestAnnouncement",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

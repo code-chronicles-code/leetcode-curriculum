@@ -1,0 +1,84 @@
+{
+  "name": "TagGroupNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "creationDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "slug",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "tagcategorySet",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "TagCategoryNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "updationDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

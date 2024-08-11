@@ -1,0 +1,14 @@
+{
+  "name": "StartProgress",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "progress",
+      "isDeprecated": false,
+      "type": {
+        "name": "PlanProgressNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

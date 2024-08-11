@@ -1,0 +1,64 @@
+{
+  "name": "LibraryMultiTestcase",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "category",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Category",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "expectedOutput",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "inputRaw",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "question",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "LibraryQuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

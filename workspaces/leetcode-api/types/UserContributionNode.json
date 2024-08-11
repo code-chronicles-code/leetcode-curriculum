@@ -1,0 +1,39 @@
+{
+  "name": "UserContributionNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "points",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "questionCount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "testcaseCount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

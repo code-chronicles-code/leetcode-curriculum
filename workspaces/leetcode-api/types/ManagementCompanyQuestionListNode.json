@@ -1,0 +1,45 @@
+{
+  "name": "ManagementCompanyQuestionListNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "maxFreq",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "questions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "CompanyQuestionDetailNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "totalNum",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "HitResource",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "count",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

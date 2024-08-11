@@ -1,0 +1,76 @@
+{
+  "name": "ContestReportLCCNNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "contest",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ContestNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "date",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "description",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "reportingUser",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "submissionId",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

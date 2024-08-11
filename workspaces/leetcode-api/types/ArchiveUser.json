@@ -1,0 +1,23 @@
+{
+  "name": "ArchiveUser",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "allArchivedUsers",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ArchivedUserNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

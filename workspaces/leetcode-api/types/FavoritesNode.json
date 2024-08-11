@@ -1,0 +1,61 @@
+{
+  "name": "FavoritesNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "allFavorites",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "FavoriteNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "officialFavorites",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "FavoriteNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "privateFavorites",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "FavoriteNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "publicFavorites",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "FavoriteNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "watchedFavorites",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "FavoriteNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

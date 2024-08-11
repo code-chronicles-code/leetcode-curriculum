@@ -1,0 +1,11 @@
+{
+  "name": "TopicTagTagType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_0",
+      "description": "Company"
+    }
+  ]
+}

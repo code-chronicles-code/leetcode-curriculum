@@ -1,0 +1,16 @@
+{
+  "name": "ReportedStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ALL"
+    },
+    {
+      "name": "REPORTED_UNHANDLED"
+    },
+    {
+      "name": "REPORTED_HANDLED"
+    }
+  ]
+}

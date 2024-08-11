@@ -1,0 +1,38 @@
+{
+  "name": "GetOrCreateExploreSession",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "cardId",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "errors",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "progress",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

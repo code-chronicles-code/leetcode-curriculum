@@ -1,0 +1,16 @@
+{
+  "name": "UmStoreOrderStatusEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "Canceled"
+    },
+    {
+      "name": "Processing"
+    },
+    {
+      "name": "Shipped"
+    }
+  ]
+}

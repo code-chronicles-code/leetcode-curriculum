@@ -1,0 +1,28 @@
+{
+  "name": "LibrarySolutionSave",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "question",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "LibraryQuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "solutionId",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

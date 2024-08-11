@@ -1,0 +1,69 @@
+{
+  "name": "UserContestRankingNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "attendedContestsCount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "badge",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserBadgeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "globalRanking",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "rating",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "topPercentage",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "totalParticipants",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

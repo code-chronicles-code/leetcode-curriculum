@@ -1,0 +1,49 @@
+{
+  "name": "VacRecordNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "chargeAmount",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "chargeAmountRefunded",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "chargeTime",
+      "isDeprecated": false,
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "completionPercentage",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "vacName",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

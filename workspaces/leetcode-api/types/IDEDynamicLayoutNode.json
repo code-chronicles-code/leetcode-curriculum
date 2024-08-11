@@ -1,0 +1,39 @@
+{
+  "name": "IDEDynamicLayoutNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "layoutId",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "layoutJson",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "JSONString",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "layoutName",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

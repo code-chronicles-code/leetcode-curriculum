@@ -1,0 +1,99 @@
+{
+  "name": "SubscriptionPricingNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "canPurchaseCredit",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "couponCode",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "discount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "discountedPrice",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "discountPercent",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isEligibleForIndiaDiscount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isValidCode",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "originalPrice",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "proration",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

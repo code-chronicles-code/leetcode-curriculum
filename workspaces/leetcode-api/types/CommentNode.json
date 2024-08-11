@@ -1,0 +1,173 @@
+{
+  "name": "CommentNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "children",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "CommentNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "index",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "intentionTag",
+      "isDeprecated": false,
+      "type": {
+        "name": "IntentionTagNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "lastComment",
+      "isDeprecated": false,
+      "type": {
+        "name": "TopicNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "nodebbPid",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "numChildren",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "pageNum",
+      "description": "Ineffective field: Don't query this field in a list",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "orderBy",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "parent",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "CommentNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "parentId",
+      "isDeprecated": false,
+      "type": {
+        "name": "ID",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "pinned",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "pinnedAt",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "pinnedBy",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "post",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PostNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "topic",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "TopicNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "QuestionAdminVoteOptionsNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "positionOptions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CommonTagNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "timeOptions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "InterviewTimeOption",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "FilteredSubmissionOverviewNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "pages",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "submissions",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "inputFilters",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "numPerPage",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "pageNo",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "FilteredSubmissionNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

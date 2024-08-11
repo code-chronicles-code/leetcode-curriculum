@@ -1,0 +1,35 @@
+{
+  "name": "SearchDimensionType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ALL",
+      "description": "all"
+    },
+    {
+      "name": "USER_NAME",
+      "description": "user_name"
+    },
+    {
+      "name": "USER_ID",
+      "description": "user_id"
+    },
+    {
+      "name": "EMAIL",
+      "description": "email"
+    },
+    {
+      "name": "STRIPE_ID",
+      "description": "stripe_id"
+    },
+    {
+      "name": "PREVIOUS_EMAIL",
+      "description": "previous email"
+    },
+    {
+      "name": "PREVIOUS_USERNAME",
+      "description": "previous username"
+    }
+  ]
+}

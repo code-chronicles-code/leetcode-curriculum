@@ -1,0 +1,171 @@
+{
+  "name": "DiscountEventNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "banners",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "DiscountEventBannerNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "couponCode",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "creationDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "description",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "discounteventbannerSet",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DiscountEventBannerNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "duration",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "ogImage",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "seoDescription",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "seoTitle",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "startTime",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "superuserPreview",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "updationDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

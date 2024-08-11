@@ -1,0 +1,62 @@
+{
+  "name": "CompletionLikeNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "completion",
+      "isDeprecated": false,
+      "type": {
+        "name": "CompletionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "creationDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isLike",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "updationDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

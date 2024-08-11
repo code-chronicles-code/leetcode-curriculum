@@ -1,0 +1,22 @@
+{
+  "name": "RewardPost",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "post",
+      "isDeprecated": false,
+      "type": {
+        "name": "PostNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

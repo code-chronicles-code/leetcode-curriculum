@@ -1,0 +1,15 @@
+{
+  "name": "AvatarStatusEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ALL"
+    },
+    {
+      "name": "VIEWED"
+    },
+    {
+      "name": "UNVIEWED"
+    }
+  ]
+}

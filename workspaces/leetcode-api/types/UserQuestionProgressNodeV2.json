@@ -1,0 +1,75 @@
+{
+  "name": "UserQuestionProgressNodeV2",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "numAcceptedQuestions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionCountNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "numFailedQuestions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionCountNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "numUntouchedQuestions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionCountNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "userSessionBeatsPercentage",
+      "description": "用户击败其他用户的题目百分比",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "LevelBeatPercentageMixin",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

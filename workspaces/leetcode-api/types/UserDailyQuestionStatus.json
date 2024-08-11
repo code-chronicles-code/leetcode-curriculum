@@ -1,0 +1,12 @@
+{
+  "name": "UserDailyQuestionStatus",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "NotStart"
+    },
+    {
+      "name": "Finish"
+    }
+  ]
+}

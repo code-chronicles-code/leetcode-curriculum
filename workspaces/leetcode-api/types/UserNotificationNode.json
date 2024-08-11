@@ -1,0 +1,22 @@
+{
+  "name": "UserNotificationNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "lastModified",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "numUnread",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

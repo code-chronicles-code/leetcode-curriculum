@@ -1,0 +1,15 @@
+{
+  "name": "TrendingDirectionEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "UP"
+    },
+    {
+      "name": "DOWN"
+    },
+    {
+      "name": "NONE"
+    }
+  ]
+}

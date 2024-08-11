@@ -1,0 +1,23 @@
+{
+  "name": "FlagStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "FLAGGED",
+      "description": "flagged"
+    },
+    {
+      "name": "APPROVED",
+      "description": "approved"
+    },
+    {
+      "name": "EDIT_REQUESTED",
+      "description": "edit requested"
+    },
+    {
+      "name": "REMOVED",
+      "description": "removed"
+    }
+  ]
+}

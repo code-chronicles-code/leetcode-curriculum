@@ -1,0 +1,39 @@
+{
+  "name": "OMFavoriteLogNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "createdAt",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "operation",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "operator",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FavoriteBriefUserNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

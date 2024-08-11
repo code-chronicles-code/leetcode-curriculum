@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { maybeThrow } from "@code-chronicles/util/maybeThrow";
+
 const graphqlDataZodType = z.object({
   data: z.unknown(),
   errors: z.array(z.unknown()).optional(),
@@ -25,7 +27,7 @@ export async function fetchGraphQLData(
 
   const graphqlResult = graphqlDataZodType.parse(await response.json());
   if (graphqlResult.data == null && graphqlResult.errors != null) {
-    throw new AggregateError(graphqlResult.errors);
+    maybeThrow(graphqlResult.errors);
   }
 
   return graphqlResult;

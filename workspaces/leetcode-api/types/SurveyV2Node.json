@@ -1,0 +1,36 @@
+{
+  "name": "SurveyV2Node",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "leetcoinAmount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "showSurvey",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "surveyJson",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

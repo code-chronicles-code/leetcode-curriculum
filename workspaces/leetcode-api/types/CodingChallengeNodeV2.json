@@ -1,0 +1,64 @@
+{
+  "name": "CodingChallengeNodeV2",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "challenges",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DailyChallengeNodeV2",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "startDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Date",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "weeklyChallenges",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "DailyChallengeNodeV2",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

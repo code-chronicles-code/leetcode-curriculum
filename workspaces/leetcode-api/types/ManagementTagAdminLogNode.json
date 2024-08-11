@@ -1,0 +1,47 @@
+{
+  "name": "ManagementTagAdminLogNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "creationDate",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "operateUser",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "operationContent",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "operationType",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "TagAdminOperationType",
+          "kind": "ENUM"
+        }
+      }
+    }
+  ]
+}

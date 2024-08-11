@@ -1,0 +1,44 @@
+{
+  "name": "LearningContextNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "backLink",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "nextQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "QuestionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "previousQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "QuestionNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

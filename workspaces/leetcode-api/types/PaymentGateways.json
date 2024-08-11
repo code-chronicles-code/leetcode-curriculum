@@ -1,0 +1,16 @@
+{
+  "name": "PaymentGateways",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "STRIPE"
+    },
+    {
+      "name": "PAYPAL"
+    },
+    {
+      "name": "LEETPAY"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "FeedBackMetaNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "maxScore",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "options",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "FeedBackOptionNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "questionContent",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

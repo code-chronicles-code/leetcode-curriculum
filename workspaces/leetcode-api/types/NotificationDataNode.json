@@ -1,0 +1,95 @@
+{
+  "name": "NotificationDataNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "content",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "metadata",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "notificationSet",
+      "description": "",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "NotificationNodeConnection",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "type",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

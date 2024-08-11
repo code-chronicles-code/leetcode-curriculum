@@ -1,0 +1,25 @@
+{
+  "name": "LevelBeatPercentageMixin",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "difficulty",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DifficultyDescribedEnum",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "percentage",
+      "isDeprecated": false,
+      "type": {
+        "name": "Float",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

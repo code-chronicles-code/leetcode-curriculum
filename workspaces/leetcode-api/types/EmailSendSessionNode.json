@@ -1,0 +1,160 @@
+{
+  "name": "EmailSendSessionNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "clicksPerLink",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "conversionData",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "emailsLeft",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "event",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "EmailEventNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "eventTitle",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "groupName",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "numClicks",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "numOpens",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "numOpensPerHour",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "numSent",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "opens",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "EmailOpenNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "overallClickThroughRate",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "startTime",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "template",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "EmailTemplateNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "totalSent",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

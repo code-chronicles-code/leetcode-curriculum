@@ -1,0 +1,41 @@
+{
+  "name": "NotificationConnection",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "edges",
+      "description": "Contains the nodes in this connection.",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "NotificationEdge",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "pageInfo",
+      "description": "Pagination data for this connection.",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PageInfo",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

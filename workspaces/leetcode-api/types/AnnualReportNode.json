@@ -1,0 +1,42 @@
+{
+  "name": "AnnualReportNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "badge",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserBadgeNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "content",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "showPopup",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

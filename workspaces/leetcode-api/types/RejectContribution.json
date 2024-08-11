@@ -1,0 +1,39 @@
+{
+  "name": "RejectContribution",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "contribution",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "id",
+          "type": {
+            "name": "ID",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ContributionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

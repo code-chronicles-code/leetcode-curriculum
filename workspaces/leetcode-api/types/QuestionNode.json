@@ -1,0 +1,706 @@
+{
+  "name": "QuestionNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "acRate",
+      "isDeprecated": false,
+      "type": {
+        "name": "Float",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "adminUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "allowDiscuss",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "article",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "articleTopicId",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "attachments",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionAttachmentNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "boundTopicId",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "canSeeQuestion",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "categoryTitle",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "challengeQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "ChallengeQuestionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "challengeQuestionsV2",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ChallengeQuestionNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "codeDefinition",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "codeSnippets",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CodeSnippetNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "companyTags",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "CompanyTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "companyTagStats",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "companyTagStatsV2",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "content",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "contributors",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "ContributorNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "dataSchemas",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "difficulty",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "discussionCount",
+      "description": "discussion count for one question, 0 if no question exist",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "dislikes",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "enableDebugger",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "enableRunCode",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "enableSubmit",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "enableTestMode",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "envInfo",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "exampleTestcaseList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "exampleTestcases",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "freqBar",
+      "isDeprecated": false,
+      "type": {
+        "name": "Float",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "frequency",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "frontendPreviews",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "hasFrontendPreview",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasSolution",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasVideoSolution",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hide",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "hideLastTestcases",
+      "isDeprecated": false,
+      "type": {
+        "name": "HideLastTestcasesNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "hints",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "infoVerified",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "interpretUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isFavor",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "isLiked",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isPaidOnly",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "judgerAvailable",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "judgeType",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "langToValidPlayground",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "libraryUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "likes",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "metaData",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "mysqlSchemas",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "nextChallengePairs",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "questionId",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "nextChallenges",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "QuestionNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "note",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "questionDetailUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "questionFrontendId",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "questionId",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "questionTitle",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "questionTitleSlug",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "questionType",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "randomQuestionUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "sampleTestCase",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "sessionId",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "similarQuestionList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "QuestionNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "similarQuestions",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "solution",
+      "isDeprecated": false,
+      "type": {
+        "name": "ArticleNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "solutionNum",
+      "description": "solution for one question, 0 if no question exist",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "stats",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "status",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "submitUrl",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "title",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "titleSlug",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "topicTags",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "TopicTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "translatedContent",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "translatedTitle",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "urlManager",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

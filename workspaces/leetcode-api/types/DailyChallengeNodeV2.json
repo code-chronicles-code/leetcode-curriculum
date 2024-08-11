@@ -1,0 +1,61 @@
+{
+  "name": "DailyChallengeNodeV2",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "date",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "link",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "question",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "QuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "userStatus",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserDailyQuestionStatusV2",
+          "kind": "ENUM"
+        }
+      }
+    }
+  ]
+}

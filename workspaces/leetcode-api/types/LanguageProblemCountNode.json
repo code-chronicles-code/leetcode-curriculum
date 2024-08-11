@@ -1,0 +1,28 @@
+{
+  "name": "LanguageProblemCountNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "languageName",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "problemsSolved",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

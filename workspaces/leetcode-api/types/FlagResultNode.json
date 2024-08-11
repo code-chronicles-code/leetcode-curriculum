@@ -1,0 +1,51 @@
+{
+  "name": "FlagResultNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "created",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "modified",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "reviewer",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "PrivateContestUserNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "status",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FlagResultStatus",
+          "kind": "ENUM"
+        }
+      }
+    }
+  ]
+}

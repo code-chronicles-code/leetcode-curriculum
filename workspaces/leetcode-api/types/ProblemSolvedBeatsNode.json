@@ -1,0 +1,25 @@
+{
+  "name": "ProblemSolvedBeatsNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "difficulty",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "percentage",
+      "isDeprecated": false,
+      "type": {
+        "name": "Float",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

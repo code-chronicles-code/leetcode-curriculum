@@ -1,0 +1,28 @@
+{
+  "name": "LibrarySolutionsOutput",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "lang",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "solutionId",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

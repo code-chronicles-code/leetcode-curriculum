@@ -1,0 +1,27 @@
+{
+  "name": "SurveyQuestionQuestionType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_0",
+      "description": "Yes/No"
+    },
+    {
+      "name": "A_1",
+      "description": "Radio"
+    },
+    {
+      "name": "A_2",
+      "description": "Written Response"
+    },
+    {
+      "name": "A_3",
+      "description": "Numeric Response"
+    },
+    {
+      "name": "A_4",
+      "description": "Checkbox"
+    }
+  ]
+}

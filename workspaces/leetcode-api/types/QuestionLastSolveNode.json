@@ -1,0 +1,39 @@
+{
+  "name": "QuestionLastSolveNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "lastAcSession",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "QuestionSolveSessionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "question",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "QuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "totalSolves",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

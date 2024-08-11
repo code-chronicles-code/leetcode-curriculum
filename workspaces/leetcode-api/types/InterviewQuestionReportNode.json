@@ -1,0 +1,84 @@
+{
+  "name": "InterviewQuestionReportNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "content",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "questionId",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "submission",
+      "isDeprecated": false,
+      "type": {
+        "name": "InterviewSubmissionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "submissionHistory",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "skip",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "InterviewSubmissionConnection",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "FavoriteFavoriteType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_1",
+      "description": "normal"
+    },
+    {
+      "name": "A_2",
+      "description": "company favorite"
+    },
+    {
+      "name": "A_3",
+      "description": "smart list official"
+    }
+  ]
+}

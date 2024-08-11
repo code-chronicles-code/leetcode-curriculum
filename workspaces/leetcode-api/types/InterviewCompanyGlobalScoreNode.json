@@ -1,0 +1,28 @@
+{
+  "name": "InterviewCompanyGlobalScoreNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "companyName",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "score",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

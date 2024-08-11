@@ -1,0 +1,30 @@
+{
+  "name": "Like",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "likeResult",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

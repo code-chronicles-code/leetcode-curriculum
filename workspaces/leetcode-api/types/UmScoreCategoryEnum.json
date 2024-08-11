@@ -1,0 +1,139 @@
+{
+  "name": "UmScoreCategoryEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ADD_QUESTION"
+    },
+    {
+      "name": "ADD_TESTCASE"
+    },
+    {
+      "name": "TOP_IN_CONTEST"
+    },
+    {
+      "name": "JOIN_CONTEST"
+    },
+    {
+      "name": "JOIN_CONTEST_FIRST_TIME"
+    },
+    {
+      "name": "SOCIAL_ACCOUNT_BINDING"
+    },
+    {
+      "name": "DAILY_LOGIN"
+    },
+    {
+      "name": "SEVEN_DAY_LOGIN"
+    },
+    {
+      "name": "THIRTY_DAY_LOGIN"
+    },
+    {
+      "name": "CREATE_QUESTION_TRANSLATION"
+    },
+    {
+      "name": "QUESTION_TRANSLATION_ACCEPTED"
+    },
+    {
+      "name": "REDEEM"
+    },
+    {
+      "name": "ACCOUNT_TRANSFER"
+    },
+    {
+      "name": "BASIC_INFO_PROVIDED"
+    },
+    {
+      "name": "AVATAR_PROVIDED"
+    },
+    {
+      "name": "EXPERIENCE_PROVIDED"
+    },
+    {
+      "name": "PHONE_BINDING"
+    },
+    {
+      "name": "POST_TOPIC"
+    },
+    {
+      "name": "EMAIL_CONFIRMED"
+    },
+    {
+      "name": "JOIN_INTERNAL_CONTEST"
+    },
+    {
+      "name": "FESTIVAL"
+    },
+    {
+      "name": "SURVEY_COMPLETED"
+    },
+    {
+      "name": "JOIN_BOTH_CONTESTS_SAME_WEEK"
+    },
+    {
+      "name": "THIRTY_DAY_CHALLENGE_DAILY_COMPLETE"
+    },
+    {
+      "name": "THIRTY_DAY_CHALLENGE_25_COMPLETE"
+    },
+    {
+      "name": "THIRTY_DAY_CHALLENGE_30_COMPLETE"
+    },
+    {
+      "name": "LEETCODING_CHALLENGE_DAILY"
+    },
+    {
+      "name": "LEETCODING_CHALLENGE_MID"
+    },
+    {
+      "name": "LEETCODING_CHALLENGE_ALL"
+    },
+    {
+      "name": "LEETCODING_CHALLENGE_PREM"
+    },
+    {
+      "name": "EXPLORE_CARD_COMPLETED"
+    },
+    {
+      "name": "DISCUSS_FIRST_POST"
+    },
+    {
+      "name": "CONTEST_REPORT_APPROVED"
+    },
+    {
+      "name": "DAILY_SUBMIT_ACCEPTED_SOLUTIONS"
+    },
+    {
+      "name": "CONTEST_EASTER_EGG"
+    },
+    {
+      "name": "CUSTOM"
+    },
+    {
+      "name": "QUESTION_DETAIL_SATISFACTION_SURVEY"
+    },
+    {
+      "name": "JAVASCRIPT_PROBLEM_SURVEY"
+    },
+    {
+      "name": "PANDAS_PROBLEM_SURVEY"
+    },
+    {
+      "name": "QD_DYNAMIC_SURVEY"
+    },
+    {
+      "name": "PANDAS_INTRO_STUDY_PLAN_SURVEY"
+    },
+    {
+      "name": "IDE_BACK_QD3_SURVEY"
+    },
+    {
+      "name": "NEW_STUDY_PLAN_SURVEY"
+    },
+    {
+      "name": "CONTEST_DYNAMIC_SURVEY"
+    }
+  ]
+}

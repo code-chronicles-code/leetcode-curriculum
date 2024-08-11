@@ -1,0 +1,45 @@
+{
+  "name": "RuleNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "difficultyNames",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "knowledgeNames",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "languageName",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "IPStatusEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "Banned",
+      "description": "Banned"
+    },
+    {
+      "name": "Monitored",
+      "description": "Monitored"
+    },
+    {
+      "name": "Normal",
+      "description": "Normal"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "CategoryNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "cards",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "num",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "CardNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "description",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "order",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "slug",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "title",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

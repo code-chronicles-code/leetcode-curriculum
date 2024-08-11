@@ -1,0 +1,110 @@
+{
+  "name": "DiscussTopicTagNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "numTopics",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "otherTag",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "order",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "slug",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "tagFk",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "TagNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "tagType",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "TopicTagTagType",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "topicSet",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "TopicNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

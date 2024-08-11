@@ -1,0 +1,30 @@
+{
+  "name": "CodeSnippetNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "code",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "lang",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "langSlug",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

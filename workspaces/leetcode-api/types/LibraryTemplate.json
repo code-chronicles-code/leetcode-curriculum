@@ -1,0 +1,39 @@
+{
+  "name": "LibraryTemplate",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "codeDefinitions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "JSONString",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "drivers",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "JSONString",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "frontendPreviews",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "JSONString",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

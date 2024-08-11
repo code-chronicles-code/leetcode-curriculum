@@ -1,0 +1,33 @@
+{
+  "name": "StoreOrderSave",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "storeOrder",
+      "isDeprecated": false,
+      "type": {
+        "name": "StoreOrderNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "success",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

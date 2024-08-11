@@ -1,0 +1,49 @@
+{
+  "name": "PageInfo",
+  "description": "The Relay compliant `PageInfo` type, containing data necessary to paginate this connection.",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "endCursor",
+      "description": "When paginating forwards, the cursor to continue.",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "hasNextPage",
+      "description": "When paginating forwards, are there more items?",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasPreviousPage",
+      "description": "When paginating backwards, are there more items?",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "startCursor",
+      "description": "When paginating backwards, the cursor to continue.",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

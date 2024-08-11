@@ -1,0 +1,17 @@
+{
+  "name": "LibraryTestcaseSave",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "question",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "LibraryQuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

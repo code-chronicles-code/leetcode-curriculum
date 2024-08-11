@@ -1,0 +1,38 @@
+{
+  "name": "VotePost",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "post",
+      "isDeprecated": false,
+      "type": {
+        "name": "PostNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "value",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

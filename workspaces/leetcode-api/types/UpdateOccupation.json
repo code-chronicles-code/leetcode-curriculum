@@ -1,0 +1,30 @@
+{
+  "name": "UpdateOccupation",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "record",
+      "isDeprecated": false,
+      "type": {
+        "name": "OccupationRecordNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

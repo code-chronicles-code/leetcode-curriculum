@@ -1,0 +1,28 @@
+{
+  "name": "LibrarySolutionsSave",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "question",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "LibraryQuestionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "solutions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "LibrarySolutionsOutput",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

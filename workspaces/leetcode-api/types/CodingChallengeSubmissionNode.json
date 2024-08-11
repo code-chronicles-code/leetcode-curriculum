@@ -1,0 +1,52 @@
+{
+  "name": "CodingChallengeSubmissionNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "dailyChallengeMedal",
+      "isDeprecated": false,
+      "type": {
+        "name": "MedalNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "discussLink",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "showCompleteModal",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "showTttModal",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "streakCounter",
+      "isDeprecated": false,
+      "type": {
+        "name": "StreakCounterNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

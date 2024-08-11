@@ -1,0 +1,10 @@
+{
+  "name": "EntityType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "DUMMY"
+    }
+  ]
+}

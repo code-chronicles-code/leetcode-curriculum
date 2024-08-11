@@ -1,0 +1,28 @@
+{
+  "name": "RunDebuggerCommand",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "session",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DebugSessionNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "taskId",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "ManagementTeamMemberNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "avatar",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "lastLoginTime",
+      "isDeprecated": false,
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "managementRoles",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "note",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "realName",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "username",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

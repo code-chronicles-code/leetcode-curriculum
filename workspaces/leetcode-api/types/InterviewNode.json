@@ -1,0 +1,147 @@
+{
+  "name": "InterviewNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "company",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "InterviewCompanyNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "createTime",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "disabled",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "premiumOnly",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "questions",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "QuestionNode",
+              "kind": "OBJECT"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "sessionSet",
+      "description": "",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "after",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "before",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "first",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "last",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "offset",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "InterviewSessionNodeConnection",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "timeConstraint",
+      "description": "in seconds",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "updateTime",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

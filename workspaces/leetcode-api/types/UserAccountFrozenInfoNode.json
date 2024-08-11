@@ -1,0 +1,36 @@
+{
+  "name": "UserAccountFrozenInfoNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "notEligibleToDeleteAccountReasons",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "planDeleteDate",
+      "isDeprecated": false,
+      "type": {
+        "name": "Date",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "userFrozenStatus",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "AccountFrozenStatus",
+          "kind": "ENUM"
+        }
+      }
+    }
+  ]
+}

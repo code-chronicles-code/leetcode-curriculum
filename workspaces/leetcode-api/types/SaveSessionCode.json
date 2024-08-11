@@ -1,0 +1,14 @@
+{
+  "name": "SaveSessionCode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "session",
+      "isDeprecated": false,
+      "type": {
+        "name": "InterviewSessionNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

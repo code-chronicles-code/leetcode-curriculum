@@ -1,0 +1,39 @@
+{
+  "name": "ProfileUpdateErrorEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "INVALID_GITHUB_URL"
+    },
+    {
+      "name": "INVALID_LINKEDIN_URL"
+    },
+    {
+      "name": "INVALID_WEBSITE"
+    },
+    {
+      "name": "INVALID_SKILL_TAGS"
+    },
+    {
+      "name": "INVALID_REAL_NAME"
+    },
+    {
+      "name": "INVALID_BIRTHDAY"
+    },
+    {
+      "name": "INVALID_ABOUT_ME"
+    },
+    {
+      "name": "INVALID_LOCATION"
+    },
+    {
+      "name": "INVALID_COMPANY"
+    },
+    {
+      "name": "INVALID_SCHOOL"
+    },
+    {
+      "name": "INVALID_JOB_TITLE"
+    }
+  ]
+}

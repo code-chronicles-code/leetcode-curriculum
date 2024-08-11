@@ -1,0 +1,27 @@
+{
+  "name": "StripeChargeStatusEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ALL",
+      "description": "All"
+    },
+    {
+      "name": "NO_PAID",
+      "description": "NoPaid"
+    },
+    {
+      "name": "PAID",
+      "description": "Paid"
+    },
+    {
+      "name": "DISPUTED",
+      "description": "Disputed"
+    },
+    {
+      "name": "REFUNDED",
+      "description": "Refunded"
+    }
+  ]
+}

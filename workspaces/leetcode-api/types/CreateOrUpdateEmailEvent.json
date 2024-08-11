@@ -1,0 +1,38 @@
+{
+  "name": "CreateOrUpdateEmailEvent",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "emailEvent",
+      "isDeprecated": false,
+      "type": {
+        "name": "EmailEventNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "errors",
+      "isDeprecated": false,
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "wasCreated",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}
