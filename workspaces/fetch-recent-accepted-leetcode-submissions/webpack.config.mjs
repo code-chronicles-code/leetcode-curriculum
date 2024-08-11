@@ -7,7 +7,7 @@ export default {
   target: "node",
   entry: "./src/main.ts",
   output: {
-    filename: "post-leetcode-potd-to-discord.js",
+    filename: "fetch-recent-accepted-leetcode-submissions.js",
     path: path.resolve(import.meta.dirname, "dist"),
   },
 
@@ -35,18 +35,11 @@ export default {
   },
 
   externalsType: "commonjs",
-  externals: [
-    async ({ request }) =>
-      builtinModules.includes(request) ||
-      builtinModules.includes(request.replace(/^node:/, ""))
-        ? request
-        : undefined,
-
-    {
-      // TODO: see if we can use asset/inline for this library
-      "zlib-sync": "zlib-sync",
-    },
-  ],
+  externals: async ({ request }) =>
+    builtinModules.includes(request) ||
+    builtinModules.includes(request.replace(/^node:/, ""))
+      ? request
+      : undefined,
 
   plugins: [
     new webpack.BannerPlugin({

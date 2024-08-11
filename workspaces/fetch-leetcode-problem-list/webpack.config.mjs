@@ -43,7 +43,7 @@ export default {
 
   plugins: [
     new webpack.BannerPlugin({
-      banner: "#!node\n",
+      banner: "#!/usr/bin/env node\n",
       raw: true,
       entryOnly: true,
     }),
