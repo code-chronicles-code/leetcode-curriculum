@@ -1,4 +1,99 @@
 {
   "name": "ManagementTagsInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "tagGroupId",
+      "description": "Group ID",
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "tagCategoryId",
+      "description": "Category ID",
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isTagEnabled",
+      "description": "Filter by Enabled Tags",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isStandardTag",
+      "description": "Filter by Standard Tags",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isUserSelectable",
+      "description": "Filter by User Selectable Tags",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isSimilarTag",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "keyword",
+      "description": "Search Keyword",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "slug",
+      "description": "Filter by Tag Slug startswith",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "offset",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "limit",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "excludeTagCategoryIds",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
 }

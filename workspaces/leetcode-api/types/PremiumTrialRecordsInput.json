@@ -1,4 +1,41 @@
 {
   "name": "PremiumTrialRecordsInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "searchKeyword",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "searchBy",
+      "type": {
+        "name": "SearchUserType",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "skip",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "limit",
+      "defaultValue": "10",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
 }

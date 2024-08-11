@@ -1,4 +1,46 @@
 {
   "name": "BatchReviewFlaggedObjectsInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "flagResultIds",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "operation",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FlagStatus",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "reasonId",
+      "type": {
+        "name": "ID",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "description",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
 }

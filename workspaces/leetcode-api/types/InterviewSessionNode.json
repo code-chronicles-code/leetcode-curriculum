@@ -120,5 +120,11 @@
         }
       }
     }
+  ],
+  "interfaces": [
+    {
+      "name": "Node",
+      "kind": "INTERFACE"
+    }
   ]
 }

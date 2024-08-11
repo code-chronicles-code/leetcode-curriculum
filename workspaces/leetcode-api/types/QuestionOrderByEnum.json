@@ -1,0 +1,21 @@
+{
+  "name": "QuestionOrderByEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "FRONTEND_ID"
+    },
+    {
+      "name": "SOLUTION_NUM"
+    },
+    {
+      "name": "AC_RATE"
+    },
+    {
+      "name": "FREQUENCY"
+    },
+    {
+      "name": "DIFFICULTY"
+    }
+  ]
+}

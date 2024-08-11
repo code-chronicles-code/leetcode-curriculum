@@ -1,4 +1,47 @@
 {
   "name": "ProgressListFilterInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "orderBy",
+      "type": {
+        "name": "ProgressOrderByEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "sortOrder",
+      "type": {
+        "name": "SortingOrderEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "difficulty",
+      "type": {
+        "name": "DifficultyEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "tags",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    },
+    {
+      "name": "searchKeywords",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
 }

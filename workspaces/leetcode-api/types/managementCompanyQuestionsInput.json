@@ -1,4 +1,58 @@
 {
   "name": "managementCompanyQuestionsInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "tagId",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "keyword",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "keywordType",
+      "type": {
+        "name": "CompanyQuestionKeywordType",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "timeOption",
+      "defaultValue": "0",
+      "type": {
+        "name": "CompanyQuestionTimeOptionEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "offset",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "limit",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
 }

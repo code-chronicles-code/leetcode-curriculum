@@ -73,5 +73,11 @@
         "kind": "OBJECT"
       }
     }
+  ],
+  "interfaces": [
+    {
+      "name": "Node",
+      "kind": "INTERFACE"
+    }
   ]
 }

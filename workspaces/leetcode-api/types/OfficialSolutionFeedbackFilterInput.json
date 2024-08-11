@@ -1,4 +1,83 @@
 {
   "name": "OfficialSolutionFeedbackFilterInput",
-  "kind": "INPUT_OBJECT"
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "startDate",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "endDate",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "questionSlugs",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "reasons",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasComment",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "categories",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "authors",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "orderBy",
+      "defaultValue": "1",
+      "type": {
+        "name": "FeedbackOrderByEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "sortOrder",
+      "defaultValue": "2",
+      "type": {
+        "name": "SortingEnum",
+        "kind": "ENUM"
+      }
+    }
+  ]
 }
