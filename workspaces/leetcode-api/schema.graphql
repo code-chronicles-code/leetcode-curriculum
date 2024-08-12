@@ -1,0 +1,1952 @@
+"The `Boolean` scalar type represents `true` or `false`."
+scalar Boolean
+
+"""
+The `Date` scalar type represents a Date
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar Date
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
+
+"The `Decimal` scalar type represents a python Decimal."
+scalar Decimal
+
+"The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). "
+scalar Float
+
+"""
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+"""
+scalar ID
+
+"The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31 - 1) and 2^31 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point)."
+scalar Int
+
+"""
+Allows use of a JSON String for input / output from the GraphQL schema.
+
+Use of this type is *not recommended* as you lose the benefits of having a defined, static
+schema (one of the key benefits of GraphQL).
+"""
+scalar JSONString
+
+"The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+scalar String
+
+"""
+Leverages the internal Python implmeentation of UUID (uuid.UUID) to provide native UUID objects
+in fields, resolvers and input.
+"""
+scalar UUID
+
+enum AccessDeniedReasonEnum {
+  "no such list"
+  NO_SUCH_LIST
+  "list is private"
+  LIST_IS_PRIVATE
+  "company list not available"
+  COMPANY_LIST_NOT_AVAILABLE
+}
+
+enum AccountFrozenStatus {
+  "qualified to frozen"
+  QUALIFIED_TO_FROZEN
+  "not qualified to frozen"
+  NOT_QUALIFIED_TO_FROZEN
+  "already frozen"
+  ALREADY_FROZEN
+  "inactive"
+  INACTIVE
+}
+
+enum AccountStatus {
+  "frozen"
+  FROZEN
+  "deleted"
+  DELETED
+}
+
+enum AdLocationEnum {
+  "Home Ad"
+  HOME_AD
+  "Problemset Ad Sidebar"
+  PROBLEMSET_AD
+  "Problemset Ad Primary"
+  PROBLEMSET_AD_PRIMARY
+  "Problemset Ad Secondary"
+  PROBLEMSET_AD_SECONDARY
+  "Discuss Ad"
+  DISCUSS_AD
+  "Study Plan Ad"
+  STUDY_PLAN_AD
+  "home feed"
+  HOME_FEED
+  "discuss list"
+  DISCUSS_LIST
+  "discuss detail"
+  DISCUSS_DETAIL
+  "qd description"
+  QD_DESCRIPTION
+  "qd solution list"
+  QD_SOLUTION_LIST
+  "qd solution detail"
+  QD_SOLUTION_DETAIL
+}
+
+enum AdSourceEnum {
+  "Internal Ad"
+  INTERNAL_AD
+  "AdSense"
+  ADSENSE
+}
+
+enum AllPermission {
+  contest_see_private
+  contest_private_access_dashboard
+  contest_see_private_ranking
+  contest_see_private_without_registration
+  contest_see_all
+  common_change_tag
+  authentication_ignore_beta_user_flow
+  authentication_see_user_id
+  authentication_see_user_email
+  authentication_update_school_info
+  authentication_see_user_management
+  authentication_query_archived_users
+  authentication_query_user_info
+  authentication_mutate_user_management
+  authentication_mutate_archive_user
+  authentication_mock_user
+  authentication_account_recovery
+  authentication_mutate_team_member
+  authentication_query_team_member
+  authentication_mutate_ip_management
+  authentication_query_ip_management
+  score_see_admin_panel
+  score_mutate_give_leetcoin
+  library_see_all_problems
+  library_see_all_fields
+  library_change_question
+  library_change_question_category
+  library_content_editor
+  library_content_access
+  contribution_see_dashboard
+  contribution_accept_reject
+  debugger_beta_access
+  discuss_pin_topic
+  discuss_see_unpublished_post
+  discuss_review_post
+  discuss_change_post
+  discuss_delete_post
+  discuss_hide_post
+  discuss_see_hidden_post
+  discuss_pin_contest_topic
+  discuss_see_contest_unpublished_post
+  discuss_review_contest_post
+  discuss_change_contest_post
+  discuss_delete_contest_post
+  discuss_get_all_posts
+  discuss_mark_spammer
+  email_batch
+  email_batch_send_custom
+  email_batch_create_event
+  manage
+  manage_blacklisted_words
+  manage_discuss
+  manage_tag_groups
+  manage_tag_categories
+  manage_tags
+  manage_official_solution_feedback
+  manage_company_tags
+  manage_company_questions
+  submission_see_details
+  submission_access_diff_tool
+  danger_zone_view_admin
+  problemset_use_test_mode
+  problemset_view_draft_category
+}
+
+enum AvatarStatusEnum {
+  ALL
+  VIEWED
+  UNVIEWED
+}
+
+enum BadgeBadge {
+  "Guardian"
+  A_1
+  "Knight"
+  A_2
+  "Daily Coding Challenge"
+  A_3
+  "Annual Daily Coding Challenge"
+  A_4
+  "Study Plan Award"
+  A_5
+  "Annual Badge"
+  A_6
+  "Study Plan V2 Award"
+  A_7
+}
+
+enum BadgeCategoryEnum {
+  COMPETITION
+  DCC
+  ANNUAL
+  STUDY_PLAN
+}
+
+enum Category {
+  BASIC
+  EDGE
+  PERFORMANCE
+}
+
+enum ChallengeQuestionStatusEnum {
+  "not started"
+  NOT_STARTED
+  "finished"
+  FINISHED
+}
+
+enum ChallengeQuestionTypeEnum {
+  DAILY
+  WEEKLY
+}
+
+enum CommentSortingOption {
+  hot
+  best
+  oldest_to_newest
+  newest_to_oldest
+  most_votes
+  most_relevant
+}
+
+enum CompanyQuestionKeywordType {
+  NAME
+  ID
+}
+
+enum CompanyQuestionTimeOptionEnum {
+  "Six Month"
+  SIX_MONTH
+  "One Year"
+  ONE_YEAR
+  "Two Year"
+  TWO_YEAR
+  "All"
+  ALL
+}
+
+enum CompanyQuestionTimeOptionEnumV2 {
+  "Recent 30 days"
+  THIRTY_DAY
+  "Recent 3 months"
+  THREE_MONTH
+  "Recent 6 months"
+  SIX_MONTH
+  "More than 6 months"
+  MORE_THAN_SIX_MONTH
+  "All"
+  ALL
+}
+
+enum CompanyStage {
+  ONLINE_ASSESSMENT
+  PHONE_INTERVIEW
+  ONSITE_INTERVIEW
+}
+
+enum ComplexityTypeEnum {
+  "time_complexity"
+  TIME_COMPLEXITY
+  "memory_complexity"
+  MEMORY_COMPLEXITY
+}
+
+enum ComplexityVoteEnum {
+  "Thumbs Down"
+  THUMBS_DOWN
+  "Upvote"
+  UPVOTE
+}
+
+enum ContestReportStatus {
+  "UNPROCESSED"
+  A_0
+  "CANCELED"
+  A_1
+  "ACCEPTED"
+  A_2
+}
+
+enum ContestRootBannerAspectRatioType {
+  "SM Breakpoint Image"
+  A_0
+  "MD Breakpoint Image"
+  A_1
+  "LG Breakpoint Image"
+  A_2
+}
+
+enum CreditCardStatus {
+  "alive"
+  ALIVE
+  "deleted"
+  DELETED
+}
+
+enum DeleteAccountReason {
+  "Moving to another LeetCode account"
+  EXTRA_ACCOUNT
+  "Not using LeetCode anymore"
+  NO_LONGER_NEEDED
+  "Security and privacy concerns"
+  SECURITY_CONCERN
+  "Want to start over with a new account"
+  START_OVER
+  "Other"
+  OTHER
+}
+
+enum DifficultyDescribedEnum {
+  "Easy"
+  EASY
+  "Medium"
+  MEDIUM
+  "Hard"
+  HARD
+}
+
+enum DifficultyEnum {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum DiscountEventBannerAspectRatioType {
+  "SM Breakpoint Image"
+  A_0
+  "MD Breakpoint Image"
+  A_1
+  "LG Breakpoint Image"
+  A_2
+}
+
+enum EntityType {
+  DUMMY
+}
+
+enum FavoriteFavoriteType {
+  "normal"
+  A_1
+  "company favorite"
+  A_2
+  "smart list official"
+  A_3
+}
+
+enum FavoriteLockStatusEnum {
+  "user can unlock"
+  USER_CAN_UNLOCK
+  "user cannot unlock"
+  USER_CANNOT_UNLOCK
+  "user already unlocked"
+  USER_ALREADY_UNLOCKED
+  "no need to unlock"
+  NO_NEED_TO_UNLOCK
+}
+
+enum FavoriteQuestionStatusEnum {
+  "to do"
+  TO_DO
+  "solved"
+  SOLVED
+  "attempted"
+  ATTEMPTED
+}
+
+enum FavoriteTypeEnum {
+  "normal"
+  NORMAL
+  "company favorite"
+  COMPANY_FAVORITE
+  "smart list official"
+  SMART_LIST_OFFICIAL
+}
+
+enum FeatureGuideType {
+  OTHER
+  QUESTION_DETAIL_TOUR
+  CODE_AUTOCOMPLETE_TOUR
+  QUESTION_DETAIL_TOUR_WITH_AUTOCOMPLETE
+  NEW_QD_DETAIL_TOUR
+  NEW_IDE_DYNAMIC_LAYOUT
+  NEW_IDE_DYNAMIC_LAYOUT_V2
+}
+
+enum FeedbackOrderByEnum {
+  "creation_date"
+  CREATION_DATE
+  "rate"
+  RATE
+}
+
+enum FlagResultStatus {
+  "flagged"
+  A_0
+  "approved"
+  A_1
+  "edit requested"
+  A_2
+  "removed"
+  A_3
+}
+
+enum FlagStatus {
+  "flagged"
+  FLAGGED
+  "approved"
+  APPROVED
+  "edit requested"
+  EDIT_REQUESTED
+  "removed"
+  REMOVED
+}
+
+enum FlaggedObjectListOrderByEnum {
+  FIRST_FLAGGED_TIME
+  FLAGGED_COUNT
+}
+
+enum Group {
+  everyone
+  discuss_admin
+  contest_discuss_admin
+  library_admin
+  internal_contest_organizer
+  internal_contest_participant
+}
+
+enum IPStatusEnum {
+  "Banned"
+  Banned
+  "Monitored"
+  Monitored
+  "Normal"
+  Normal
+}
+
+enum InterviewAnalysisStatus {
+  SKIPPED
+  PROCESSING
+  COMPLETED
+  DELAYED
+  NEEDS_DATA
+}
+
+enum ManagementRoleEnum {
+  "Admin"
+  ADMIN
+  "Support"
+  CUSTOMER_SUPPORT
+  "Moderator"
+  MODERATORS
+  "Email"
+  EMAIL_BATCH_SENDER
+  "Redeem"
+  REDEEM_ORDER_MANAGEMENT
+  "Contest"
+  INTERNAL_CONTEST_ORGANIZER
+  "Content"
+  CONTENT_OPERATION
+}
+
+enum OMFavoriteSearchFieldEnum {
+  "name"
+  NAME
+  "id"
+  ID
+  "slug"
+  SLUG
+  "author"
+  AUTHOR
+}
+
+enum OMFavoriteSortFieldEnum {
+  "default"
+  DEFAULT
+  "view_count"
+  VIEW_COUNT
+  "save_count"
+  SAVE_COUNT
+  "fork_count"
+  FORK_COUNT
+}
+
+enum PanelQuestionStatusEnum {
+  "to do"
+  TO_DO
+  "solved"
+  SOLVED
+  "attempted"
+  ATTEMPTED
+}
+
+enum PasswordErrorEnum {
+  INCORRECT_PASSWORD
+  PASSWORD_TOO_SHORT
+  PASSWORD_TOO_LONG
+  MISSING_ALPHA_OR_NUMERIC
+  PASSWORD_TOO_COMMON
+}
+
+enum PaymentGateways {
+  STRIPE
+  PAYPAL
+  LEETPAY
+}
+
+enum PlanQuestionStatusEnum {
+  "to do"
+  TO_DO
+  "solved"
+  SOLVED
+  "past solved"
+  PAST_SOLVED
+  "attempted"
+  ATTEMPTED
+}
+
+enum PlanUserProgressStatusEnum {
+  "on going"
+  ON_GOING
+  "completed"
+  COMPLETED
+  "quitted"
+  QUITTED
+  "deleted"
+  DELETED
+}
+
+enum PlanUserProgressTypeEnum {
+  "on going"
+  ON_GOING
+  "history"
+  HISTORY
+}
+
+enum PlaygroundCodeLang {
+  "cpp"
+  A_0
+  "java"
+  A_1
+  "python"
+  A_2
+  "python3"
+  A_11
+  "mysql"
+  A_3
+  "mssql"
+  A_14
+  "oraclesql"
+  A_15
+  "c"
+  A_4
+  "csharp"
+  A_5
+  "javascript"
+  A_6
+  "typescript"
+  A_20
+  "bash"
+  A_8
+  "php"
+  A_19
+  "swift"
+  A_9
+  "kotlin"
+  A_13
+  "dart"
+  A_24
+  "golang"
+  A_10
+  "ruby"
+  A_7
+  "scala"
+  A_12
+  "html"
+  A_16
+  "pythonml"
+  A_17
+  "rust"
+  A_18
+  "racket"
+  A_21
+  "erlang"
+  A_22
+  "elixir"
+  A_23
+  "pythondata"
+  A_25
+  "react"
+  A_26
+  "vanillajs"
+  A_27
+  "postgresql"
+  A_28
+  "cangjie"
+  A_29
+}
+
+enum PlaygroundSelectedLang {
+  "cpp"
+  A_0
+  "java"
+  A_1
+  "python"
+  A_2
+  "python3"
+  A_11
+  "mysql"
+  A_3
+  "mssql"
+  A_14
+  "oraclesql"
+  A_15
+  "c"
+  A_4
+  "csharp"
+  A_5
+  "javascript"
+  A_6
+  "typescript"
+  A_20
+  "bash"
+  A_8
+  "php"
+  A_19
+  "swift"
+  A_9
+  "kotlin"
+  A_13
+  "dart"
+  A_24
+  "golang"
+  A_10
+  "ruby"
+  A_7
+  "scala"
+  A_12
+  "html"
+  A_16
+  "pythonml"
+  A_17
+  "rust"
+  A_18
+  "racket"
+  A_21
+  "erlang"
+  A_22
+  "elixir"
+  A_23
+  "pythondata"
+  A_25
+  "react"
+  A_26
+  "vanillajs"
+  A_27
+  "postgresql"
+  A_28
+  "cangjie"
+  A_29
+}
+
+enum PlaygroundSnippetsLang {
+  "cpp"
+  A_0
+  "java"
+  A_1
+  "python"
+  A_2
+  "python3"
+  A_11
+  "mysql"
+  A_3
+  "mssql"
+  A_14
+  "oraclesql"
+  A_15
+  "c"
+  A_4
+  "csharp"
+  A_5
+  "javascript"
+  A_6
+  "typescript"
+  A_20
+  "bash"
+  A_8
+  "php"
+  A_19
+  "swift"
+  A_9
+  "kotlin"
+  A_13
+  "dart"
+  A_24
+  "golang"
+  A_10
+  "ruby"
+  A_7
+  "scala"
+  A_12
+  "html"
+  A_16
+  "pythonml"
+  A_17
+  "rust"
+  A_18
+  "racket"
+  A_21
+  "erlang"
+  A_22
+  "elixir"
+  A_23
+  "pythondata"
+  A_25
+  "react"
+  A_26
+  "vanillajs"
+  A_27
+  "postgresql"
+  A_28
+  "cangjie"
+  A_29
+}
+
+enum PlaygroundTemplateCodeLang {
+  "cpp"
+  A_0
+  "java"
+  A_1
+  "python"
+  A_2
+  "python3"
+  A_11
+  "mysql"
+  A_3
+  "mssql"
+  A_14
+  "oraclesql"
+  A_15
+  "c"
+  A_4
+  "csharp"
+  A_5
+  "javascript"
+  A_6
+  "typescript"
+  A_20
+  "bash"
+  A_8
+  "php"
+  A_19
+  "swift"
+  A_9
+  "kotlin"
+  A_13
+  "dart"
+  A_24
+  "golang"
+  A_10
+  "ruby"
+  A_7
+  "scala"
+  A_12
+  "html"
+  A_16
+  "pythonml"
+  A_17
+  "rust"
+  A_18
+  "racket"
+  A_21
+  "erlang"
+  A_22
+  "elixir"
+  A_23
+  "pythondata"
+  A_25
+  "react"
+  A_26
+  "vanillajs"
+  A_27
+  "postgresql"
+  A_28
+  "cangjie"
+  A_29
+}
+
+enum PostStatus {
+  PENDING
+  OPEN
+  REVIEWED
+  DELETED
+  NEED_UPDATE
+  HIDDEN
+  ALL
+}
+
+enum PremiumBetaFeatureType {
+  "Beta User Flow"
+  A_1
+  "New Problemlist Page"
+  A_2
+  "New Profile Page"
+  A_3
+  "New Problem Detail Page"
+  A_4
+  "New Study Plan Access"
+  A_5
+  "Ai Helper"
+  A_6
+  "New Subscribe Page"
+  A_7
+  "New Plan Rank Board Access"
+  A_8
+  "Lc Ide"
+  A_9
+  "Lc Ide V2"
+  A_10
+  "Frontend Category"
+  A_11
+  "New Stripe Invoice"
+  A_12
+  "Contest Dl"
+  A_13
+}
+
+enum PremiumTrialApplyStatus {
+  "Pending"
+  PENDING
+  "Approved"
+  APPROVED
+  "Rejected"
+  REJECTED
+}
+
+enum PremiumTrialSku {
+  "Monthly Premium Subscription"
+  MONTHLY
+  "Annual Premium Subscription"
+  ANNUAL
+}
+
+enum ProfileUpdateErrorEnum {
+  INVALID_GITHUB_URL
+  INVALID_LINKEDIN_URL
+  INVALID_WEBSITE
+  INVALID_SKILL_TAGS
+  INVALID_REAL_NAME
+  INVALID_BIRTHDAY
+  INVALID_ABOUT_ME
+  INVALID_LOCATION
+  INVALID_COMPANY
+  INVALID_SCHOOL
+  INVALID_JOB_TITLE
+}
+
+enum ProgressOrderByEnum {
+  FRONTEND_ID
+  DIFFICULTY
+  LAST_SOLVED
+  WRONG_ATTEMPTS
+  TOTAL_SOLVES
+}
+
+enum ProgressStatus {
+  UNATTEMPTED
+  ATTEMPTED
+  ACCEPTED
+}
+
+enum PublishStatus {
+  UNPUBLISHED
+  PUBLISHED
+  UNKNOWN
+}
+
+enum QuestionEditorTypeEnum {
+  "CKEditor"
+  CKEDITOR
+  "Markdown"
+  MARKDOWN
+}
+
+enum QuestionOrderByEnum {
+  FRONTEND_ID
+  SOLUTION_NUM
+  AC_RATE
+  FREQUENCY
+  DIFFICULTY
+}
+
+enum QuestionSortFieldEnum {
+  LAST_CREATE
+  LAST_MODIFIED
+}
+
+enum ReportTypeEnum {
+  ADVERTISING
+  SEXUAL
+  VIOLENT
+  TERRORISM
+  POLITICS
+  FAKE
+  ILLEGAL
+  ABUSE
+  NON_ENGLISH
+  OTHER
+  ALL
+}
+
+enum ReportedStatus {
+  ALL
+  REPORTED_UNHANDLED
+  REPORTED_HANDLED
+}
+
+enum ResourceTypeEnum {
+  DUMMY
+}
+
+enum ScoreCategory {
+  "ADD_QUESTION"
+  A_0
+  "ADD_TESTCASE"
+  A_1
+  "TOP_IN_CONTEST"
+  A_2
+  "JOIN_CONTEST"
+  A_3
+  "JOIN_CONTEST_FIRST_TIME"
+  A_17
+  "SOCIAL_ACCOUNT_BINDING"
+  A_4
+  "DAILY_LOGIN"
+  A_5
+  "SEVEN_DAY_LOGIN"
+  A_6
+  "THIRTY_DAY_LOGIN"
+  A_7
+  "CREATE_QUESTION_TRANSLATION"
+  A_9
+  "QUESTION_TRANSLATION_ACCEPTED"
+  A_10
+  "REDEEM"
+  A_8
+  "ACCOUNT_TRANSFER"
+  A_11
+  "BASIC_INFO_PROVIDED"
+  A_12
+  "AVATAR_PROVIDED"
+  A_13
+  "EXPERIENCE_PROVIDED"
+  A_14
+  "PHONE_BINDING"
+  A_15
+  "POST_TOPIC"
+  A_16
+  "EMAIL_CONFIRMED"
+  A_18
+  "JOIN_INTERNAL_CONTEST"
+  A_19
+  "FESTIVAL"
+  A_20
+  "SURVEY_COMPLETED"
+  A_21
+  "JOIN_BOTH_CONTESTS_SAME_WEEK"
+  A_22
+  "THIRTY_DAY_CHALLENGE_DAILY_COMPLETE"
+  A_23
+  "THIRTY_DAY_CHALLENGE_25_COMPLETE"
+  A_24
+  "THIRTY_DAY_CHALLENGE_30_COMPLETE"
+  A_25
+  "LEETCODING_CHALLENGE_DAILY"
+  A_30
+  "LEETCODING_CHALLENGE_MID"
+  A_31
+  "LEETCODING_CHALLENGE_ALL"
+  A_32
+  "LEETCODING_CHALLENGE_PREM"
+  A_33
+  "EXPLORE_CARD_COMPLETED"
+  A_26
+  "DISCUSS_FIRST_POST"
+  A_27
+  "CONTEST_REPORT_APPROVED"
+  A_28
+  "DAILY_SUBMIT_ACCEPTED_SOLUTIONS"
+  A_29
+  "CONTEST_EASTER_EGG"
+  A_34
+  "CUSTOM"
+  A_100
+  "QUESTION_DETAIL_SATISFACTION_SURVEY"
+  A_35
+  "JAVASCRIPT_PROBLEM_SURVEY"
+  A_37
+  "PANDAS_PROBLEM_SURVEY"
+  A_38
+  "QD_DYNAMIC_SURVEY"
+  A_39
+  "PANDAS_INTRO_STUDY_PLAN_SURVEY"
+  A_40
+  "IDE_BACK_QD3_SURVEY"
+  A_41
+  "NEW_STUDY_PLAN_SURVEY"
+  A_36
+  "CONTEST_DYNAMIC_SURVEY"
+  A_42
+}
+
+enum ScoreTypeEnum {
+  "All"
+  ALL
+  "Mission Reward"
+  MISSION_REWARD
+  "Admin Reward"
+  ADMIN_REWARD
+}
+
+enum SearchDimensionType {
+  "all"
+  ALL
+  "user_name"
+  USER_NAME
+  "user_id"
+  USER_ID
+  "email"
+  EMAIL
+  "stripe_id"
+  STRIPE_ID
+  "previous email"
+  PREVIOUS_EMAIL
+  "previous username"
+  PREVIOUS_USERNAME
+}
+
+enum SearchMetaContentType {
+  TITLE
+  BODY
+  COMMENT
+  REPLY
+}
+
+enum SearchUserType {
+  "user_name"
+  USER_NAME
+  "user_id"
+  USER_ID
+}
+
+enum SessionStatus {
+  STARTED
+  EXITED
+  TIMEOUT
+  ACCEPTED
+}
+
+enum SortingEnum {
+  "ascending"
+  ASCENDING
+  "descending"
+  DESCENDING
+}
+
+enum SortingOrderEnum {
+  ASCENDING
+  DESCENDING
+}
+
+enum StripeChargeStatusEnum {
+  "All"
+  ALL
+  "NoPaid"
+  NO_PAID
+  "Paid"
+  PAID
+  "Disputed"
+  DISPUTED
+  "Refunded"
+  REFUNDED
+}
+
+enum SubmissionFlagTypeEnum {
+  "white, not marked"
+  WHITE
+  "blue"
+  BLUE
+  "orange"
+  ORANGE
+  "green"
+  GREEN
+  "purple"
+  PURPLE
+  "red"
+  RED
+}
+
+enum SubmissionMemoryComplexity {
+  "O(1)"
+  A_1
+  "O(log n)"
+  A_2
+  "O(n)"
+  A_3
+  "O(n log n)"
+  A_4
+  "O(n²)"
+  A_5
+  "O(n³)"
+  A_6
+  "O(n⁴)"
+  A_7
+  "O(n⁵)"
+  A_8
+  "O(n⁶)"
+  A_9
+  "O(2ⁿ)"
+  A_10
+  "O(n!)"
+  A_11
+}
+
+enum SubmissionStatusEnum {
+  "Accepted"
+  AC
+  "Wrong Answer"
+  WA
+  "Memory Limit Exceeded"
+  MLE
+  "Output Limit Exceeded"
+  OLE
+  "Time Limit Exceeded"
+  TLE
+  "Runtime Error"
+  RE
+  "Internal Error"
+  IE
+  "Compile Error"
+  CE
+  "Timeout"
+  TO
+}
+
+enum SubmissionTimeComplexity {
+  "O(1)"
+  A_1
+  "O(log n)"
+  A_2
+  "O(n)"
+  A_3
+  "O(n log n)"
+  A_4
+  "O(n²)"
+  A_5
+  "O(n³)"
+  A_6
+  "O(n⁴)"
+  A_7
+  "O(n⁵)"
+  A_8
+  "O(n⁶)"
+  A_9
+  "O(2ⁿ)"
+  A_10
+  "O(n!)"
+  A_11
+}
+
+enum SurveyQuestionQuestionType {
+  "Yes/No"
+  A_0
+  "Radio"
+  A_1
+  "Written Response"
+  A_2
+  "Numeric Response"
+  A_3
+  "Checkbox"
+  A_4
+}
+
+enum SurveyType {
+  MOCK_INTERVIEW
+}
+
+enum TagAdminOperationType {
+  "Create"
+  CREATE
+  "Map"
+  MAP
+  "Edit"
+  EDIT
+  "Enable"
+  ENABLED
+  "Not Disable"
+  NOT_ENABLED
+  "Selectable"
+  SELECTABLE
+  "Not Selectable"
+  NOT_SELECTABLE
+  "Standard"
+  STANDARD
+  "Not Standard"
+  NOT_STANDARD
+}
+
+enum TagTypeEnum {
+  COMPANY
+  TOPIC
+  SKILL
+}
+
+enum TopicSortingOption {
+  hot
+  oldest_to_newest
+  recent_activity
+  newest_to_oldest
+  most_votes
+  most_posts
+  most_relevant
+}
+
+enum TopicTagTagType {
+  "Company"
+  A_0
+}
+
+enum TrendingDirectionEnum {
+  UP
+  DOWN
+  NONE
+}
+
+enum Type {
+  BETA_USER_FLOW
+  NEW_PROBLEMLIST_PAGE
+  NEW_PROFILE_PAGE
+  NEW_PROBLEM_DETAIL_PAGE
+  NEW_STUDY_PLAN_ACCESS
+  AI_HELPER
+  NEW_SUBSCRIBE_PAGE
+  NEW_PLAN_RANK_BOARD_ACCESS
+  LC_IDE
+  LC_IDE_V2
+  FRONTEND_CATEGORY
+  NEW_STRIPE_INVOICE
+  CONTEST_DL
+}
+
+enum UPCResponseType {
+  BASIC_INFO
+  DESIRED_JOB
+  INTERVIEW_PREP_TIME
+}
+
+enum UmScoreCategoryEnum {
+  ADD_QUESTION
+  ADD_TESTCASE
+  TOP_IN_CONTEST
+  JOIN_CONTEST
+  JOIN_CONTEST_FIRST_TIME
+  SOCIAL_ACCOUNT_BINDING
+  DAILY_LOGIN
+  SEVEN_DAY_LOGIN
+  THIRTY_DAY_LOGIN
+  CREATE_QUESTION_TRANSLATION
+  QUESTION_TRANSLATION_ACCEPTED
+  REDEEM
+  ACCOUNT_TRANSFER
+  BASIC_INFO_PROVIDED
+  AVATAR_PROVIDED
+  EXPERIENCE_PROVIDED
+  PHONE_BINDING
+  POST_TOPIC
+  EMAIL_CONFIRMED
+  JOIN_INTERNAL_CONTEST
+  FESTIVAL
+  SURVEY_COMPLETED
+  JOIN_BOTH_CONTESTS_SAME_WEEK
+  THIRTY_DAY_CHALLENGE_DAILY_COMPLETE
+  THIRTY_DAY_CHALLENGE_25_COMPLETE
+  THIRTY_DAY_CHALLENGE_30_COMPLETE
+  LEETCODING_CHALLENGE_DAILY
+  LEETCODING_CHALLENGE_MID
+  LEETCODING_CHALLENGE_ALL
+  LEETCODING_CHALLENGE_PREM
+  EXPLORE_CARD_COMPLETED
+  DISCUSS_FIRST_POST
+  CONTEST_REPORT_APPROVED
+  DAILY_SUBMIT_ACCEPTED_SOLUTIONS
+  CONTEST_EASTER_EGG
+  CUSTOM
+  QUESTION_DETAIL_SATISFACTION_SURVEY
+  JAVASCRIPT_PROBLEM_SURVEY
+  PANDAS_PROBLEM_SURVEY
+  QD_DYNAMIC_SURVEY
+  PANDAS_INTRO_STUDY_PLAN_SURVEY
+  IDE_BACK_QD3_SURVEY
+  NEW_STUDY_PLAN_SURVEY
+  CONTEST_DYNAMIC_SURVEY
+}
+
+enum UmStoreOrderStatusEnum {
+  Canceled
+  Processing
+  Shipped
+}
+
+enum UpcV2CodingLevelEnum {
+  "BEGINNER"
+  BEGINNER
+  "INTERMEDIATE"
+  INTERMEDIATE
+  "ADVANCED"
+  ADVANCED
+  "EXPERT"
+  EXPERT
+}
+
+enum UpcV2PurposeEnum {
+  "INTERVIEW"
+  INTERVIEW
+  "STUDY"
+  STUDY
+  "ALL"
+  ALL
+}
+
+enum UserDailyQuestionStatus {
+  NotStart
+  Finish
+}
+
+enum UserDailyQuestionStatusV2 {
+  NotStart
+  Finish
+}
+
+enum UserOperationEnum {
+  "Login"
+  LOGIN
+  "Account Created"
+  ACCOUNT_CREATED
+  "Account Banned"
+  ACCOUNT_BANNED
+  "Email Added"
+  EMAIL_ADDED
+  "Email Removed"
+  EMAIL_REMOVED
+  "Email Verified"
+  EMAIL_VERIFIED
+  "Email Primary Updated"
+  EMAIL_PRIMARY_UPDATED
+  "Username Updated"
+  USERNAME_UPDATED
+  "Realname Updated"
+  REALNAME_UPDATED
+  "Avatar Updated"
+  AVATAR_UPDATED
+  "Passward Updated"
+  PASSWORD_UPDATED
+  "Oauth Connected"
+  OAUTH_CONNECTED
+  "Oauth Removed"
+  OAUTH_REMOVED
+  "Account Deleted"
+  ACCOUNT_DELETED
+}
+
+enum UserProfileCountry {
+  "Afghanistan"
+  AF
+  "Åland Islands"
+  AX
+  "Albania"
+  AL
+  "Algeria"
+  DZ
+  "American Samoa"
+  AS
+  "Andorra"
+  AD
+  "Angola"
+  AO
+  "Anguilla"
+  AI
+  "Antarctica"
+  AQ
+  "Antigua and Barbuda"
+  AG
+  "Argentina"
+  AR
+  "Armenia"
+  AM
+  "Aruba"
+  AW
+  "Australia"
+  AU
+  "Austria"
+  AT
+  "Azerbaijan"
+  AZ
+  "Bahamas"
+  BS
+  "Bahrain"
+  BH
+  "Bangladesh"
+  BD
+  "Barbados"
+  BB
+  "Belarus"
+  BY
+  "Belgium"
+  BE
+  "Belize"
+  BZ
+  "Benin"
+  BJ
+  "Bermuda"
+  BM
+  "Bhutan"
+  BT
+  "Bolivia"
+  BO
+  "Bonaire, Sint Eustatius and Saba"
+  BQ
+  "Bosnia and Herzegovina"
+  BA
+  "Botswana"
+  BW
+  "Bouvet Island"
+  BV
+  "Brazil"
+  BR
+  "British Indian Ocean Territory"
+  IO
+  "Brunei"
+  BN
+  "Bulgaria"
+  BG
+  "Burkina Faso"
+  BF
+  "Burundi"
+  BI
+  "Cabo Verde"
+  CV
+  "Cambodia"
+  KH
+  "Cameroon"
+  CM
+  "Canada"
+  CA
+  "Cayman Islands"
+  KY
+  "Central African Republic"
+  CF
+  "Chad"
+  TD
+  "Chile"
+  CL
+  "China"
+  CN
+  "Christmas Island"
+  CX
+  "Cocos (Keeling) Islands"
+  CC
+  "Colombia"
+  CO
+  "Comoros"
+  KM
+  "Congo"
+  CG
+  "Congo (the Democratic Republic of the)"
+  CD
+  "Cook Islands"
+  CK
+  "Costa Rica"
+  CR
+  "Côte d'Ivoire"
+  CI
+  "Croatia"
+  HR
+  "Cuba"
+  CU
+  "Curaçao"
+  CW
+  "Cyprus"
+  CY
+  "Czechia"
+  CZ
+  "Denmark"
+  DK
+  "Djibouti"
+  DJ
+  "Dominica"
+  DM
+  "Dominican Republic"
+  DO
+  "Ecuador"
+  EC
+  "Egypt"
+  EG
+  "El Salvador"
+  SV
+  "Equatorial Guinea"
+  GQ
+  "Eritrea"
+  ER
+  "Estonia"
+  EE
+  "Eswatini"
+  SZ
+  "Ethiopia"
+  ET
+  "Falkland Islands (Malvinas)"
+  FK
+  "Faroe Islands"
+  FO
+  "Fiji"
+  FJ
+  "Finland"
+  FI
+  "France"
+  FR
+  "French Guiana"
+  GF
+  "French Polynesia"
+  PF
+  "French Southern Territories"
+  TF
+  "Gabon"
+  GA
+  "Gambia"
+  GM
+  "Georgia"
+  GE
+  "Germany"
+  DE
+  "Ghana"
+  GH
+  "Gibraltar"
+  GI
+  "Greece"
+  GR
+  "Greenland"
+  GL
+  "Grenada"
+  GD
+  "Guadeloupe"
+  GP
+  "Guam"
+  GU
+  "Guatemala"
+  GT
+  "Guernsey"
+  GG
+  "Guinea"
+  GN
+  "Guinea-Bissau"
+  GW
+  "Guyana"
+  GY
+  "Haiti"
+  HT
+  "Heard Island and McDonald Islands"
+  HM
+  "Holy See"
+  VA
+  "Honduras"
+  HN
+  "Hong Kong"
+  HK
+  "Hungary"
+  HU
+  "Iceland"
+  IS
+  "India"
+  IN
+  "Indonesia"
+  ID
+  "Iran"
+  IR
+  "Iraq"
+  IQ
+  "Ireland"
+  IE
+  "Isle of Man"
+  IM
+  "Israel"
+  IL
+  "Italy"
+  IT
+  "Jamaica"
+  JM
+  "Japan"
+  JP
+  "Jersey"
+  JE
+  "Jordan"
+  JO
+  "Kazakhstan"
+  KZ
+  "Kenya"
+  KE
+  "Kiribati"
+  KI
+  "Kuwait"
+  KW
+  "Kyrgyzstan"
+  KG
+  "Laos"
+  LA
+  "Latvia"
+  LV
+  "Lebanon"
+  LB
+  "Lesotho"
+  LS
+  "Liberia"
+  LR
+  "Libya"
+  LY
+  "Liechtenstein"
+  LI
+  "Lithuania"
+  LT
+  "Luxembourg"
+  LU
+  "Macao"
+  MO
+  "Madagascar"
+  MG
+  "Malawi"
+  MW
+  "Malaysia"
+  MY
+  "Maldives"
+  MV
+  "Mali"
+  ML
+  "Malta"
+  MT
+  "Marshall Islands"
+  MH
+  "Martinique"
+  MQ
+  "Mauritania"
+  MR
+  "Mauritius"
+  MU
+  "Mayotte"
+  YT
+  "Mexico"
+  MX
+  "Micronesia (Federated States of)"
+  FM
+  "Moldova"
+  MD
+  "Monaco"
+  MC
+  "Mongolia"
+  MN
+  "Montenegro"
+  ME
+  "Montserrat"
+  MS
+  "Morocco"
+  MA
+  "Mozambique"
+  MZ
+  "Myanmar"
+  MM
+  "Namibia"
+  NA
+  "Nauru"
+  NR
+  "Nepal"
+  NP
+  "Netherlands"
+  NL
+  "New Caledonia"
+  NC
+  "New Zealand"
+  NZ
+  "Nicaragua"
+  NI
+  "Niger"
+  NE
+  "Nigeria"
+  NG
+  "Niue"
+  NU
+  "Norfolk Island"
+  NF
+  "North Korea"
+  KP
+  "North Macedonia"
+  MK
+  "Northern Mariana Islands"
+  MP
+  "Norway"
+  NO
+  "Oman"
+  OM
+  "Pakistan"
+  PK
+  "Palau"
+  PW
+  "Palestine, State of"
+  PS
+  "Panama"
+  PA
+  "Papua New Guinea"
+  PG
+  "Paraguay"
+  PY
+  "Peru"
+  PE
+  "Philippines"
+  PH
+  "Pitcairn"
+  PN
+  "Poland"
+  PL
+  "Portugal"
+  PT
+  "Puerto Rico"
+  PR
+  "Qatar"
+  QA
+  "Réunion"
+  RE
+  "Romania"
+  RO
+  "Russia"
+  RU
+  "Rwanda"
+  RW
+  "Saint Barthélemy"
+  BL
+  "Saint Helena, Ascension and Tristan da Cunha"
+  SH
+  "Saint Kitts and Nevis"
+  KN
+  "Saint Lucia"
+  LC
+  "Saint Martin (French part)"
+  MF
+  "Saint Pierre and Miquelon"
+  PM
+  "Saint Vincent and the Grenadines"
+  VC
+  "Samoa"
+  WS
+  "San Marino"
+  SM
+  "Sao Tome and Principe"
+  ST
+  "Saudi Arabia"
+  SA
+  "Senegal"
+  SN
+  "Serbia"
+  RS
+  "Seychelles"
+  SC
+  "Sierra Leone"
+  SL
+  "Singapore"
+  SG
+  "Sint Maarten (Dutch part)"
+  SX
+  "Slovakia"
+  SK
+  "Slovenia"
+  SI
+  "Solomon Islands"
+  SB
+  "Somalia"
+  SO
+  "South Africa"
+  ZA
+  "South Georgia and the South Sandwich Islands"
+  GS
+  "South Korea"
+  KR
+  "South Sudan"
+  SS
+  "Spain"
+  ES
+  "Sri Lanka"
+  LK
+  "Sudan"
+  SD
+  "Suriname"
+  SR
+  "Svalbard and Jan Mayen"
+  SJ
+  "Sweden"
+  SE
+  "Switzerland"
+  CH
+  "Syria"
+  SY
+  "Taiwan"
+  TW
+  "Tajikistan"
+  TJ
+  "Tanzania"
+  TZ
+  "Thailand"
+  TH
+  "Timor-Leste"
+  TL
+  "Togo"
+  TG
+  "Tokelau"
+  TK
+  "Tonga"
+  TO
+  "Trinidad and Tobago"
+  TT
+  "Tunisia"
+  TN
+  "Türkiye"
+  TR
+  "Turkmenistan"
+  TM
+  "Turks and Caicos Islands"
+  TC
+  "Tuvalu"
+  TV
+  "Uganda"
+  UG
+  "Ukraine"
+  UA
+  "United Arab Emirates"
+  AE
+  "United Kingdom"
+  GB
+  "United States Minor Outlying Islands"
+  UM
+  "United States of America"
+  US
+  "Uruguay"
+  UY
+  "Uzbekistan"
+  UZ
+  "Vanuatu"
+  VU
+  "Venezuela"
+  VE
+  "Vietnam"
+  VN
+  "Virgin Islands (British)"
+  VG
+  "Virgin Islands (U.S.)"
+  VI
+  "Wallis and Futuna"
+  WF
+  "Western Sahara"
+  EH
+  "Yemen"
+  YE
+  "Zambia"
+  ZM
+  "Zimbabwe"
+  ZW
+}
+
+enum UserProfileOccupation {
+  "Student"
+  A_1
+  "Professional"
+  A_2
+}
+
+enum UserQuestionStatus {
+  NOT_STARTED
+  AC
+  TRIED
+}
+
+enum __DirectiveLocation {
+  "Location adjacent to a query operation."
+  QUERY
+  "Location adjacent to a mutation operation."
+  MUTATION
+  "Location adjacent to a subscription operation."
+  SUBSCRIPTION
+  "Location adjacent to a field."
+  FIELD
+  "Location adjacent to a fragment definition."
+  FRAGMENT_DEFINITION
+  "Location adjacent to a fragment spread."
+  FRAGMENT_SPREAD
+  "Location adjacent to an inline fragment."
+  INLINE_FRAGMENT
+  "Location adjacent to a schema definition."
+  SCHEMA
+  "Location adjacent to a scalar definition."
+  SCALAR
+  "Location adjacent to an object definition."
+  OBJECT
+  "Location adjacent to a field definition."
+  FIELD_DEFINITION
+  "Location adjacent to an argument definition."
+  ARGUMENT_DEFINITION
+  "Location adjacent to an interface definition."
+  INTERFACE
+  "Location adjacent to a union definition."
+  UNION
+  "Location adjacent to an enum definition."
+  ENUM
+  "Location adjacent to an enum value definition."
+  ENUM_VALUE
+  "Location adjacent to an input object definition."
+  INPUT_OBJECT
+  "Location adjacent to an input object field definition."
+  INPUT_FIELD_DEFINITION
+}
+
+enum __TypeKind {
+  "Indicates this type is a scalar."
+  SCALAR
+  "Indicates this type is an object. `fields` and `interfaces` are valid fields."
+  OBJECT
+  "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields."
+  INTERFACE
+  "Indicates this type is a union. `possibleTypes` is a valid field."
+  UNION
+  "Indicates this type is an enum. `enumValues` is a valid field."
+  ENUM
+  "Indicates this type is an input object. `inputFields` is a valid field."
+  INPUT_OBJECT
+  "Indicates this type is a list. `ofType` is a valid field."
+  LIST
+  "Indicates this type is a non-null. `ofType` is a valid field."
+  NON_NULL
+}
