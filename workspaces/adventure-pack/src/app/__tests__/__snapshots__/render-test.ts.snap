@@ -991,6 +991,20 @@ iteratorPrototype.toObject = function () {
 };"
 `;
 
+exports[`App can render goody: JavaScript Math.gcd 1`] = `
+"Math.gcd = function (a, b) {
+  a = Math.abs(a);
+  b = Math.abs(b);
+
+  while (b !== 0) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+};"
+`;
+
 exports[`App can render goody: JavaScript Math.primes 1`] = `
 "Math.primes = function* () {
   yield 2;
@@ -2109,6 +2123,26 @@ iteratorPrototype.toObject = function (this: Iterator<unknown>) {
   return Object.fromEntries(
     this.toIterable() as unknown as Iterable<[unknown, unknown]>,
   );
+};"
+`;
+
+exports[`App can render goody: TypeScript Math.gcd 1`] = `
+"declare global {
+  interface Math {
+    gcd(a: number, b: number): number;
+  }
+}
+
+Math.gcd = function (a: number, b: number): number {
+  a = Math.abs(a);
+  b = Math.abs(b);
+
+  while (b !== 0) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
 };"
 `;
 
