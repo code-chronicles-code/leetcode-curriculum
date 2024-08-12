@@ -6,29 +6,21 @@ declare global {
     flatMap<TOut>(
       this: Iterator<T>,
       callbackFn: (element: T, index: number) => Iterator<TOut>,
-    ): Generator<TOut, void, void>;
+    ): Generator<TOut, void, undefined>;
   }
 }
 
 iteratorPrototype.flatMap ??= function* <TIn, TOut>(
   this: Iterator<TIn>,
   callbackFn: (element: TIn, index: number) => Iterator<TOut>,
-): Generator<TOut, void, void> {
-  if (typeof this !== "object") {
-    throw new TypeError("flatMap called on non-object");
-  }
-
+): Generator<TOut, void, undefined> {
   let index = 0;
   for (const element of this.toIterable()) {
-    const mapped = callbackFn(element, index).toIterable();
-    if (typeof mapped[Symbol.iterator] !== "function") {
-      throw new TypeError(
-        "flatMap callback must return an iterator or iterable",
-      );
+    const res = callbackFn(element, index);
+    if (!(Symbol.iterator in res || typeof res.next === "function")) {
+      throw new TypeError("Callback must return an iterable or iterator");
     }
-    for (const innerElement of mapped) {
-      yield innerElement;
-    }
+    yield* res.toIterable();
     ++index;
   }
 };
