@@ -1,15 +1,16 @@
 import { execSync } from "node:child_process";
 import path from "node:path";
-import webpack from "webpack";
+
+import webpack, { type Configuration } from "webpack";
 
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
-export default {
+const config: Configuration = {
   target: "web",
   entry: "./src/app/main.tsx",
   output: {
     filename: "[name].js",
-    path: path.resolve(import.meta.dirname, "dist"),
+    path: path.resolve(__dirname, "dist"),
   },
 
   module: {
@@ -53,3 +54,5 @@ export default {
     },
   },
 };
+
+export default config;

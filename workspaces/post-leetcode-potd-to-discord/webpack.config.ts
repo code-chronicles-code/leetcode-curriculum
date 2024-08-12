@@ -1,14 +1,22 @@
 import { builtinModules } from "node:module";
 import path from "node:path";
 
-import webpack from "webpack";
+import webpack, {
+  type Configuration,
+  type ExternalItemFunctionData,
+} from "webpack";
 
-export default {
+import { stripPrefix } from "@code-chronicles/util/stripPrefix";
+import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
+
+import packageJson from "./package.json";
+
+const config: Configuration = {
   target: "node",
-  entry: "./src/main.ts",
+  entry: path.resolve(__dirname, packageJson.main),
   output: {
-    filename: "post-leetcode-potd-to-discord.js",
-    path: path.resolve(import.meta.dirname, "dist"),
+    filename: stripPrefixOrThrow(packageJson.name, "@code-chronicles/") + ".js",
+    path: path.resolve(__dirname, "dist"),
   },
 
   module: {
@@ -36,12 +44,14 @@ export default {
 
   externalsType: "commonjs",
   externals: [
-    async ({ request }) =>
-      builtinModules.includes(request) ||
-      builtinModules.includes(request.replace(/^node:/, ""))
-        ? request
-        : undefined,
-
+    ({ request }: ExternalItemFunctionData) =>
+      Promise.resolve(
+        request != null &&
+          (builtinModules.includes(request) ||
+            builtinModules.includes(stripPrefix(request, "node:")))
+          ? request
+          : undefined,
+      ),
     {
       // TODO: see if we can use asset/inline for this library
       "zlib-sync": "zlib-sync",
@@ -56,3 +66,5 @@ export default {
     }),
   ],
 };
+
+export default config;
