@@ -3,6 +3,7 @@ import process from "node:process";
 import { fetchActiveDailyCodingChallengeQuestionWithDateValidation as fetchPotd } from "@code-chronicles/leetcode-api";
 import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
 import { sleep } from "@code-chronicles/util/sleep";
+import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
 import { getPotdMessage } from "./getPotdMessage";
 import { readScriptData, writeScriptData } from "./readScriptData";
@@ -13,16 +14,14 @@ async function main(): Promise<void> {
   // TODO: maybe create the file from a template if it doesn't exist
   const secrets = await readSecrets();
 
-  while (true) {
+  await whileReturnsTrueAsync(async () => {
     const {
       scriptData,
       potd: { date, question: potd },
-    } =
-      // eslint-disable-next-line no-await-in-loop
-      await promiseAllObject({
-        potd: fetchPotd(),
-        scriptData: readScriptData(),
-      });
+    } = await promiseAllObject({
+      potd: fetchPotd(),
+      scriptData: readScriptData(),
+    });
 
     console.error({ scriptData });
 
@@ -45,19 +44,20 @@ async function main(): Promise<void> {
       console.error(
         `Already posted the problem for ${date}, will sleep ${secondsToSleep} seconds until the next UTC day.`,
       );
-      // eslint-disable-next-line no-await-in-loop
+
       await sleep(secondsToSleep * 1000);
-      continue;
+      return true;
     }
 
     const message = getPotdMessage(potd);
-    // eslint-disable-next-line no-await-in-loop
     await sendDiscordMessage(secrets, message);
-    // eslint-disable-next-line no-await-in-loop
+
     await writeScriptData({ ...scriptData, lastPostedDate: date });
+
     console.error(message);
-    break;
-  }
+
+    return false;
+  });
 }
 
 main().catch((err) => {
