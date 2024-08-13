@@ -96,7 +96,7 @@ describe("Iterator.prototype.flatMap", () => {
   });
 
   it("can map a Generator object", () => {
-    const factory = function* (): Generator<string, void, undefined> {
+    const factory = function* (): Generator<string, void, void> {
       yield "o";
       yield "t";
       yield "t";
