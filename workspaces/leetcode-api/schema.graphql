@@ -46,6 +46,7 @@ in fields, resolvers and input.
 """
 scalar UUID
 
+"An enumeration."
 enum AccessDeniedReasonEnum {
   "no such list"
   NO_SUCH_LIST
@@ -55,6 +56,7 @@ enum AccessDeniedReasonEnum {
   COMPANY_LIST_NOT_AVAILABLE
 }
 
+"An enumeration."
 enum AccountFrozenStatus {
   "qualified to frozen"
   QUALIFIED_TO_FROZEN
@@ -66,6 +68,7 @@ enum AccountFrozenStatus {
   INACTIVE
 }
 
+"An enumeration."
 enum AccountStatus {
   "frozen"
   FROZEN
@@ -73,6 +76,7 @@ enum AccountStatus {
   DELETED
 }
 
+"advertisement location enums"
 enum AdLocationEnum {
   "Home Ad"
   HOME_AD
@@ -100,6 +104,7 @@ enum AdLocationEnum {
   QD_SOLUTION_DETAIL
 }
 
+"advertisement source enums"
 enum AdSourceEnum {
   "Internal Ad"
   INTERNAL_AD
@@ -107,6 +112,7 @@ enum AdSourceEnum {
   ADSENSE
 }
 
+"An enumeration."
 enum AllPermission {
   contest_see_private
   contest_private_access_dashboard
@@ -179,6 +185,7 @@ enum AvatarStatusEnum {
   UNVIEWED
 }
 
+"An enumeration."
 enum BadgeBadge {
   "Guardian"
   A_1
@@ -203,12 +210,14 @@ enum BadgeCategoryEnum {
   STUDY_PLAN
 }
 
+"An enumeration."
 enum Category {
   BASIC
   EDGE
   PERFORMANCE
 }
 
+"challenge question status enums"
 enum ChallengeQuestionStatusEnum {
   "not started"
   NOT_STARTED
@@ -221,6 +230,7 @@ enum ChallengeQuestionTypeEnum {
   WEEKLY
 }
 
+"An enumeration."
 enum CommentSortingOption {
   hot
   best
@@ -235,6 +245,7 @@ enum CompanyQuestionKeywordType {
   ID
 }
 
+"An enumeration."
 enum CompanyQuestionTimeOptionEnum {
   "Six Month"
   SIX_MONTH
@@ -246,6 +257,7 @@ enum CompanyQuestionTimeOptionEnum {
   ALL
 }
 
+"An enumeration."
 enum CompanyQuestionTimeOptionEnumV2 {
   "Recent 30 days"
   THIRTY_DAY
@@ -259,12 +271,14 @@ enum CompanyQuestionTimeOptionEnumV2 {
   ALL
 }
 
+"An enumeration."
 enum CompanyStage {
   ONLINE_ASSESSMENT
   PHONE_INTERVIEW
   ONSITE_INTERVIEW
 }
 
+"An enumeration."
 enum ComplexityTypeEnum {
   "time_complexity"
   TIME_COMPLEXITY
@@ -272,6 +286,7 @@ enum ComplexityTypeEnum {
   MEMORY_COMPLEXITY
 }
 
+"An enumeration."
 enum ComplexityVoteEnum {
   "Thumbs Down"
   THUMBS_DOWN
@@ -279,6 +294,7 @@ enum ComplexityVoteEnum {
   UPVOTE
 }
 
+"An enumeration."
 enum ContestReportStatus {
   "UNPROCESSED"
   A_0
@@ -288,6 +304,7 @@ enum ContestReportStatus {
   A_2
 }
 
+"An enumeration."
 enum ContestRootBannerAspectRatioType {
   "SM Breakpoint Image"
   A_0
@@ -297,6 +314,7 @@ enum ContestRootBannerAspectRatioType {
   A_2
 }
 
+"An enumeration."
 enum CreditCardStatus {
   "alive"
   ALIVE
@@ -304,6 +322,7 @@ enum CreditCardStatus {
   DELETED
 }
 
+"An enumeration."
 enum DeleteAccountReason {
   "Moving to another LeetCode account"
   EXTRA_ACCOUNT
@@ -317,6 +336,7 @@ enum DeleteAccountReason {
   OTHER
 }
 
+"An enumeration."
 enum DifficultyDescribedEnum {
   "Easy"
   EASY
@@ -332,6 +352,7 @@ enum DifficultyEnum {
   HARD
 }
 
+"An enumeration."
 enum DiscountEventBannerAspectRatioType {
   "SM Breakpoint Image"
   A_0
@@ -341,10 +362,12 @@ enum DiscountEventBannerAspectRatioType {
   A_2
 }
 
+"An enumeration."
 enum EntityType {
   DUMMY
 }
 
+"An enumeration."
 enum FavoriteFavoriteType {
   "normal"
   A_1
@@ -354,6 +377,7 @@ enum FavoriteFavoriteType {
   A_3
 }
 
+"An enumeration."
 enum FavoriteLockStatusEnum {
   "user can unlock"
   USER_CAN_UNLOCK
@@ -365,6 +389,7 @@ enum FavoriteLockStatusEnum {
   NO_NEED_TO_UNLOCK
 }
 
+"An enumeration."
 enum FavoriteQuestionStatusEnum {
   "to do"
   TO_DO
@@ -374,6 +399,7 @@ enum FavoriteQuestionStatusEnum {
   ATTEMPTED
 }
 
+"An enumeration."
 enum FavoriteTypeEnum {
   "normal"
   NORMAL
@@ -383,6 +409,7 @@ enum FavoriteTypeEnum {
   SMART_LIST_OFFICIAL
 }
 
+"An enumeration."
 enum FeatureGuideType {
   OTHER
   QUESTION_DETAIL_TOUR
@@ -393,6 +420,7 @@ enum FeatureGuideType {
   NEW_IDE_DYNAMIC_LAYOUT_V2
 }
 
+"An enumeration."
 enum FeedbackOrderByEnum {
   "creation_date"
   CREATION_DATE
@@ -400,6 +428,7 @@ enum FeedbackOrderByEnum {
   RATE
 }
 
+"An enumeration."
 enum FlagResultStatus {
   "flagged"
   A_0
@@ -411,6 +440,7 @@ enum FlagResultStatus {
   A_3
 }
 
+"An enumeration."
 enum FlagStatus {
   "flagged"
   FLAGGED
@@ -427,6 +457,7 @@ enum FlaggedObjectListOrderByEnum {
   FLAGGED_COUNT
 }
 
+"An enumeration."
 enum Group {
   everyone
   discuss_admin
@@ -436,6 +467,7 @@ enum Group {
   internal_contest_participant
 }
 
+"An enumeration."
 enum IPStatusEnum {
   "Banned"
   Banned
@@ -453,6 +485,7 @@ enum InterviewAnalysisStatus {
   NEEDS_DATA
 }
 
+"An enumeration."
 enum ManagementRoleEnum {
   "Admin"
   ADMIN
@@ -470,6 +503,7 @@ enum ManagementRoleEnum {
   CONTENT_OPERATION
 }
 
+"An enumeration."
 enum OMFavoriteSearchFieldEnum {
   "name"
   NAME
@@ -481,6 +515,7 @@ enum OMFavoriteSearchFieldEnum {
   AUTHOR
 }
 
+"An enumeration."
 enum OMFavoriteSortFieldEnum {
   "default"
   DEFAULT
@@ -492,6 +527,7 @@ enum OMFavoriteSortFieldEnum {
   FORK_COUNT
 }
 
+"An enumeration."
 enum PanelQuestionStatusEnum {
   "to do"
   TO_DO
@@ -509,12 +545,14 @@ enum PasswordErrorEnum {
   PASSWORD_TOO_COMMON
 }
 
+"An enumeration."
 enum PaymentGateways {
   STRIPE
   PAYPAL
   LEETPAY
 }
 
+"An enumeration."
 enum PlanQuestionStatusEnum {
   "to do"
   TO_DO
@@ -526,6 +564,7 @@ enum PlanQuestionStatusEnum {
   ATTEMPTED
 }
 
+"An enumeration."
 enum PlanUserProgressStatusEnum {
   "on going"
   ON_GOING
@@ -537,6 +576,7 @@ enum PlanUserProgressStatusEnum {
   DELETED
 }
 
+"An enumeration."
 enum PlanUserProgressTypeEnum {
   "on going"
   ON_GOING
@@ -544,6 +584,7 @@ enum PlanUserProgressTypeEnum {
   HISTORY
 }
 
+"An enumeration."
 enum PlaygroundCodeLang {
   "cpp"
   A_0
@@ -607,6 +648,7 @@ enum PlaygroundCodeLang {
   A_29
 }
 
+"An enumeration."
 enum PlaygroundSelectedLang {
   "cpp"
   A_0
@@ -670,6 +712,7 @@ enum PlaygroundSelectedLang {
   A_29
 }
 
+"An enumeration."
 enum PlaygroundSnippetsLang {
   "cpp"
   A_0
@@ -733,6 +776,7 @@ enum PlaygroundSnippetsLang {
   A_29
 }
 
+"An enumeration."
 enum PlaygroundTemplateCodeLang {
   "cpp"
   A_0
@@ -796,6 +840,7 @@ enum PlaygroundTemplateCodeLang {
   A_29
 }
 
+"An enumeration."
 enum PostStatus {
   PENDING
   OPEN
@@ -806,6 +851,7 @@ enum PostStatus {
   ALL
 }
 
+"An enumeration."
 enum PremiumBetaFeatureType {
   "Beta User Flow"
   A_1
@@ -835,6 +881,7 @@ enum PremiumBetaFeatureType {
   A_13
 }
 
+"An enumeration."
 enum PremiumTrialApplyStatus {
   "Pending"
   PENDING
@@ -844,6 +891,7 @@ enum PremiumTrialApplyStatus {
   REJECTED
 }
 
+"enum value means trial days"
 enum PremiumTrialSku {
   "Monthly Premium Subscription"
   MONTHLY
@@ -873,6 +921,7 @@ enum ProgressOrderByEnum {
   TOTAL_SOLVES
 }
 
+"An enumeration."
 enum ProgressStatus {
   UNATTEMPTED
   ATTEMPTED
@@ -885,6 +934,7 @@ enum PublishStatus {
   UNKNOWN
 }
 
+"An enumeration."
 enum QuestionEditorTypeEnum {
   "CKEditor"
   CKEDITOR
@@ -919,6 +969,7 @@ enum ReportTypeEnum {
   ALL
 }
 
+"An enumeration."
 enum ReportedStatus {
   ALL
   REPORTED_UNHANDLED
@@ -929,6 +980,7 @@ enum ResourceTypeEnum {
   DUMMY
 }
 
+"An enumeration."
 enum ScoreCategory {
   "ADD_QUESTION"
   A_0
@@ -1020,6 +1072,7 @@ enum ScoreCategory {
   A_42
 }
 
+"An enumeration."
 enum ScoreTypeEnum {
   "All"
   ALL
@@ -1029,6 +1082,7 @@ enum ScoreTypeEnum {
   ADMIN_REWARD
 }
 
+"An enumeration."
 enum SearchDimensionType {
   "all"
   ALL
@@ -1053,6 +1107,7 @@ enum SearchMetaContentType {
   REPLY
 }
 
+"An enumeration."
 enum SearchUserType {
   "user_name"
   USER_NAME
@@ -1060,6 +1115,7 @@ enum SearchUserType {
   USER_ID
 }
 
+"An enumeration."
 enum SessionStatus {
   STARTED
   EXITED
@@ -1067,6 +1123,7 @@ enum SessionStatus {
   ACCEPTED
 }
 
+"An enumeration."
 enum SortingEnum {
   "ascending"
   ASCENDING
@@ -1079,6 +1136,7 @@ enum SortingOrderEnum {
   DESCENDING
 }
 
+"An enumeration."
 enum StripeChargeStatusEnum {
   "All"
   ALL
@@ -1092,6 +1150,7 @@ enum StripeChargeStatusEnum {
   REFUNDED
 }
 
+"An enumeration."
 enum SubmissionFlagTypeEnum {
   "white, not marked"
   WHITE
@@ -1107,6 +1166,7 @@ enum SubmissionFlagTypeEnum {
   RED
 }
 
+"An enumeration."
 enum SubmissionMemoryComplexity {
   "O(1)"
   A_1
@@ -1132,6 +1192,7 @@ enum SubmissionMemoryComplexity {
   A_11
 }
 
+"An enumeration."
 enum SubmissionStatusEnum {
   "Accepted"
   AC
@@ -1153,6 +1214,7 @@ enum SubmissionStatusEnum {
   TO
 }
 
+"An enumeration."
 enum SubmissionTimeComplexity {
   "O(1)"
   A_1
@@ -1178,6 +1240,7 @@ enum SubmissionTimeComplexity {
   A_11
 }
 
+"An enumeration."
 enum SurveyQuestionQuestionType {
   "Yes/No"
   A_0
@@ -1191,10 +1254,12 @@ enum SurveyQuestionQuestionType {
   A_4
 }
 
+"An enumeration."
 enum SurveyType {
   MOCK_INTERVIEW
 }
 
+"An enumeration."
 enum TagAdminOperationType {
   "Create"
   CREATE
@@ -1222,6 +1287,7 @@ enum TagTypeEnum {
   SKILL
 }
 
+"An enumeration."
 enum TopicSortingOption {
   hot
   oldest_to_newest
@@ -1232,6 +1298,7 @@ enum TopicSortingOption {
   most_relevant
 }
 
+"An enumeration."
 enum TopicTagTagType {
   "Company"
   A_0
@@ -1243,6 +1310,7 @@ enum TrendingDirectionEnum {
   NONE
 }
 
+"An enumeration."
 enum Type {
   BETA_USER_FLOW
   NEW_PROBLEMLIST_PAGE
@@ -1259,12 +1327,14 @@ enum Type {
   CONTEST_DL
 }
 
+"An enumeration."
 enum UPCResponseType {
   BASIC_INFO
   DESIRED_JOB
   INTERVIEW_PREP_TIME
 }
 
+"An enumeration."
 enum UmScoreCategoryEnum {
   ADD_QUESTION
   ADD_TESTCASE
@@ -1312,12 +1382,14 @@ enum UmScoreCategoryEnum {
   CONTEST_DYNAMIC_SURVEY
 }
 
+"An enumeration."
 enum UmStoreOrderStatusEnum {
   Canceled
   Processing
   Shipped
 }
 
+"An enumeration."
 enum UpcV2CodingLevelEnum {
   "BEGINNER"
   BEGINNER
@@ -1329,6 +1401,7 @@ enum UpcV2CodingLevelEnum {
   EXPERT
 }
 
+"An enumeration."
 enum UpcV2PurposeEnum {
   "INTERVIEW"
   INTERVIEW
@@ -1348,6 +1421,7 @@ enum UserDailyQuestionStatusV2 {
   Finish
 }
 
+"An enumeration."
 enum UserOperationEnum {
   "Login"
   LOGIN
@@ -1379,6 +1453,7 @@ enum UserOperationEnum {
   ACCOUNT_DELETED
 }
 
+"An enumeration."
 enum UserProfileCountry {
   "Afghanistan"
   AF
@@ -1880,6 +1955,7 @@ enum UserProfileCountry {
   ZW
 }
 
+"An enumeration."
 enum UserProfileOccupation {
   "Student"
   A_1
@@ -1893,6 +1969,7 @@ enum UserQuestionStatus {
   TRIED
 }
 
+"A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies."
 enum __DirectiveLocation {
   "Location adjacent to a query operation."
   QUERY
@@ -1932,6 +2009,7 @@ enum __DirectiveLocation {
   INPUT_FIELD_DEFINITION
 }
 
+"An enum describing what kind of type a given `__Type` is"
 enum __TypeKind {
   "Indicates this type is a scalar."
   SCALAR
@@ -1949,4 +2027,5703 @@ enum __TypeKind {
   LIST
   "Indicates this type is a non-null. `ofType` is a valid field."
   NON_NULL
+}
+
+"An object with an ID"
+interface Node {
+  "The ID of the object."
+  id: ID!
+}
+
+type AcStatsNode {
+  acQuestionCount: Int
+  acRate: Int
+  acSubmissionCount: Int
+  totalSubmissionCount: Int
+}
+
+type AcceptAchievementReward {
+  error: String
+  ok: Boolean
+}
+
+type AcceptContribution {
+  contribution: ContributionNode
+  error: String
+  ok: Boolean
+}
+
+type AccessToFavoriteNode {
+  hasAccess: Boolean!
+  questionCount: Int
+  rejectReason: AccessDeniedReasonEnum
+}
+
+type AchievementNode {
+  achievementDescription: String
+  achievementName: String
+  created: DateTime!
+  idHash: String
+  isRewardAccepted: Boolean!
+}
+
+type AddFavoriteToMyCollectionV2 {
+  error: String
+  ok: Boolean!
+}
+
+type AddOrUpdateCodeInPlayground {
+  error: String
+  ok: Boolean
+}
+
+type AddQuestionToDefaultFavoriteV2 {
+  error: String
+  ok: Boolean!
+}
+
+type AddQuestionToFavorite {
+  error: String
+  favoriteIdHash: String
+  ok: Boolean
+  questionId: String
+  userName: String
+}
+
+type AddQuestionToFavoriteV2 {
+  error: String
+  ok: Boolean!
+}
+
+type AddQuestionToNewFavorite {
+  error: String
+  favoriteIdHash: String
+  isPublicFavorite: Boolean
+  name: String
+  ok: Boolean
+  questionId: String
+  userName: String
+}
+
+type AddQuestionToNewFavoriteV2 {
+  error: String
+  ok: Boolean
+  slug: String
+}
+
+type AddUserToInternalContest {
+  error: String
+  user: UserNode
+}
+
+type AdvertisementNode {
+  "the ad slot of google adsense, None for internal ads"
+  adSlot: String
+  adSource: AdSourceEnum!
+  bannerUrl: String
+  displayTitle: String
+  "the height of google adsense, None for internal ads"
+  height: Int
+  targetUrl: String
+  title: String!
+  "the width of google adsense, None for internal ads"
+  width: Int
+}
+
+type AnnualReportNode {
+  badge: UserBadgeNode!
+  content: [String]!
+  showPopup: Boolean!
+}
+
+type ApplicationNode {
+  anonymous: Boolean!
+  background: String
+  date: Int
+  description: String!
+  id: ID!
+  solutions: String
+  status: String
+  tags: [String]
+  testcases: String
+  title: String!
+  topic: TopicNode
+  type: String
+  user: PrivateContestUserNode!
+}
+
+type ApplyTimeTravelTicket {
+  error: String
+  ok: Boolean
+}
+
+type ApplyTimeTravelTicketV2 {
+  error: String
+  ok: Boolean
+  streakCounter: StreakCounterNode
+}
+
+type ApproveComment {
+  error: String
+  ok: Boolean
+  post: PostNode
+}
+
+type ApproveComments {
+  error: String
+  ok: Boolean
+}
+
+type ApproveContestReports {
+  approvedReports: [ContestReportNode!]!
+}
+
+type ApproveReportedPost {
+  error: String
+  ok: Boolean
+}
+
+type ApproveTopic {
+  error: String
+  ok: Boolean
+}
+
+type ApproveTopics {
+  error: String
+  ok: Boolean
+}
+
+type ArchiveUser {
+  allArchivedUsers: [ArchivedUserNode!]!
+}
+
+type ArchivedUserNode {
+  archiveDate: String
+  archiveReason: String
+  createDate: DateTime!
+  extraInfo: String!
+  id: ID!
+  originalPrimaryEmail: String!
+  originalUsername: String!
+  user: PrivateContestUserNode
+}
+
+type ArticleNode {
+  body: String
+  canSeeDetail: Boolean
+  content: String
+  contentTypeId: ID
+  hasVideoSolution: Boolean
+  id: ID!
+  paidOnly: Boolean
+  paidOnlyVideo: Boolean
+  rating: RatingNode
+  "The name of the page as it will appear in URLs e.g http://domain.com/blog/[my-slug]/"
+  slug: String!
+  "The page title as you'd like it to be seen by the public"
+  title: String!
+  titleSlug: String
+  topic: TopicNode
+  topicId: Int
+  url: String
+}
+
+"取消注销账户请求"
+type AuthCancelDeleteAccount {
+  ok: Boolean!
+}
+
+type AwardInternalContestCoin {
+  internalContestAwardedUsers: [Int]
+  ok: Boolean
+}
+
+type BTSEventNotification {
+  error: String
+  ok: Boolean
+}
+
+type BTSReferralNode {
+  link: String!
+  referredCount: Int!
+}
+
+type BTSReferralRegister {
+  error: String
+  ok: Boolean
+}
+
+type BanIP {
+  error: String
+  ok: Boolean
+}
+
+type BanInfoNode {
+  banTypeName: String
+  banTypeSlug: String
+  endDate: DateTime
+  reason: String
+  startDate: DateTime
+}
+
+type BanUser {
+  error: String
+  ok: Boolean
+  user: UserNodeAdminOnly!
+}
+
+type BatchReviewFlaggedObjects {
+  error: String
+  ok: Boolean!
+}
+
+type BlacklistNode {
+  words: String!
+}
+
+type CalendarBadgeNode {
+  badge: UserBadgeNode!
+  timestamp: Int!
+}
+
+type CardNode {
+  banner: String
+  bannerBackground: String
+  categorySlug: String
+  categoryTitle: String
+  chapters: [ChapterNode!]!
+  codingChallengeInfo: CodingChallengeNode
+  createdAt: DateTime!
+  description: String
+  discussCategory: DiscussCategoryNode
+  id: ID!
+  img: String
+  introduction: String
+  introText: String
+  isFavorite: Boolean
+  isFeatured: Boolean
+  isPreview: Boolean
+  items: [ItemNode]
+  lastModified: DateTime!
+  numChapters: Int
+  numItems: Int
+  numUsersCompleted: Int
+  numUsersStarted: Int
+  paidOnly: Boolean!
+  popularity: Int
+  prevCompleteLinkInfo: JSONString
+  progress: JSONString
+  published: Boolean!
+  sequentialOnly: Boolean!
+  shareEvent: ShareEventNode
+  slug: String!
+  title: String!
+  users: JSONString
+  valueAddedContent: ValueAddedContentNode
+}
+
+type CategoryNode {
+  cards: [CardNode]
+  description: String
+  id: ID!
+  order: Int!
+  slug: String!
+  title: String!
+}
+
+type CategoryToSlugNode {
+  categoryName: String!
+  displayName: String!
+  favoriteSlug: String!
+}
+
+type CategoryType {
+  id: ID!
+  isDebuggable: Boolean!
+  questionSet: [QuestionNode!]!
+  title: String!
+  titleSlug: String!
+}
+
+type ChallengeQuestionNode {
+  date: Date!
+  id: ID!
+  incompleteChallengeCount: Int!
+  status: ChallengeQuestionStatusEnum!
+  streakCount: Int!
+  type: ChallengeQuestionTypeEnum
+}
+
+type ChannelNode {
+  identifier: String
+  name: String
+  shortName: String
+}
+
+type ChapterNode {
+  description: String
+  descriptionText: String
+  id: ID!
+  isLocked: Boolean
+  items: [ItemNode]
+  paidOnly: Boolean!
+  shareEvent: ShareEventNode
+  slug: String!
+  title: String!
+}
+
+type Checkin {
+  checkedIn: Boolean
+  error: String
+  ok: Boolean
+}
+
+type CodeSnippetNode {
+  code: String
+  lang: String
+  langSlug: String
+}
+
+type CodingChallengeNode {
+  canApplyTimeTravelTicket: Boolean!
+  card: CardNode
+  challenges: [DailyChallengeNode!]!
+  containsPremium: Boolean!
+  id: ID!
+  questionOfToday: DailyChallengeNode
+  startDate: DateTime!
+}
+
+type CodingChallengeNodeV2 {
+  challenges: [DailyChallengeNodeV2!]!
+  id: ID!
+  startDate: Date!
+  weeklyChallenges: [DailyChallengeNodeV2!]!
+}
+
+type CodingChallengePollingNode {
+  dccSubmissionInfo: CodingChallengeSubmissionNode
+  keepPolling: Boolean!
+}
+
+type CodingChallengeSubmissionNode {
+  dailyChallengeMedal: MedalNode
+  discussLink: String
+  showCompleteModal: Boolean!
+  showTttModal: Boolean!
+  streakCounter: StreakCounterNode
+}
+
+type CollectContestEasterEgg {
+  ok: Boolean
+}
+
+type CommentContribution {
+  error: String
+  ok: Boolean
+}
+
+type CommentNode {
+  children: [CommentNode!]!
+  id: Int!
+  index: Int
+  intentionTag: IntentionTagNode
+  lastComment: TopicNode
+  nodebbPid: Int!
+  numChildren: Int!
+  "Ineffective field: Don't query this field in a list"
+  pageNum: Int
+  parent: CommentNode
+  parentId: ID
+  pinned: Boolean
+  pinnedAt: DateTime
+  pinnedBy: UserNode
+  post: PostNode!
+  topic: TopicNode!
+}
+
+type CommonKeywordNode {
+  content: String!
+  title: String!
+  titleSlug: String!
+}
+
+type CommonTagNode {
+  imgUrl: String
+  name: String!
+  nameTranslated: String
+  slug: String!
+  tagType: TagTypeEnum
+}
+
+type CompanyNode {
+  id: ID!
+  name: String!
+  slug: String!
+}
+
+type CompanyQuestionDetailNode {
+  companyQuestion: CompanyQuestionNode
+  frequency: Float!
+  incVotedTotalNum: Int
+  latestIncVote: LatestIncVoteNode
+  periodVotedNum: Int
+}
+
+type CompanyQuestionListNode {
+  questions: [CompanyQuestionNodeV2!]!
+  total: Int!
+}
+
+type CompanyQuestionNode {
+  frontendId: String
+  id: Int
+  title: String
+  titleSlug: String
+}
+
+type CompanyQuestionNodeV2 {
+  adminVotedNum: Int
+  frequency: Float!
+  frontendQuestionId: String!
+  id: Int
+  title: String!
+  titleCn: String
+  titleSlug: String!
+  userVotedNum: Int
+}
+
+type CompanyQuestionOptionsNode {
+  positionOptions: [CommonTagNode]
+  timeOptions: [CompanyQuestionTimeOptionsNode]
+}
+
+type CompanyQuestionTimeOptionsNode {
+  name: String
+  "时间选项"
+  option: CompanyQuestionTimeOptionEnumV2!
+}
+
+type CompanyTagConnection {
+  "Contains the nodes in this connection."
+  edges: [CompanyTagEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `CompanyTag` and its cursor."
+type CompanyTagEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: CompanyTagNode
+}
+
+type CompanyTagNode {
+  companySet: [InterviewCompanyNode!]!
+  createdAt: DateTime!
+  discussTopicTag: [DiscussTopicTagNode!]!
+  favorites: [FeaturedQuestionListNode!]!
+  favoriteSet: [FeaturedQuestionListNode!]!
+  frequencies: String
+  hotScore: Int
+  "The ID of the object."
+  id: ID!
+  imgUrl: String
+  interviewTagsCategories: [InterviewTagsCategoryNode!]!
+  "Deprecated in Tag System. Still used by old products."
+  isEnabled: Boolean!
+  "Whether this is a standard tag or not"
+  isStandard: Boolean!
+  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
+  isTagEnabled: Boolean!
+  "Whether user can select this tag or not"
+  isUserSelectable: Boolean!
+  keywords: JSONString!
+  name: String!
+  order: Int
+  questionapplicationSet: [ApplicationNode!]!
+  questionCount: Int
+  questionIds: [Int]
+  questions: [QuestionNode!]
+  slug: String!
+  tagCategories: [TagCategoryNode!]!
+  tagId: Int!
+  "Deprecated in Tag System. Still used by old products."
+  tagType: TagTypeNode
+  translatedName: String
+}
+
+type CompleteFeatureGuide {
+  error: String
+  ok: Boolean
+  userStatus: MeNode
+}
+
+type CompleteSurvey {
+  error: String
+}
+
+type CompletionLikeNode {
+  completion: CompletionNode
+  creationDate: DateTime!
+  id: ID!
+  isLike: Boolean!
+  updationDate: DateTime!
+}
+
+type CompletionNode {
+  aiResponse: String!
+  completionlikeSet: [CompletionLikeNode!]!
+  creationDate: DateTime!
+  id: ID!
+  updationDate: DateTime!
+}
+
+type ComplexityInfoNode {
+  complexity: String!
+  displayName: String
+  funcStr: String
+  vote: ComplexityVoteEnum
+}
+
+type ConfirmSchoolLogo {
+  error: String
+  ok: Boolean!
+}
+
+type ContestAnnouncementNode {
+  content: String!
+  currentlyVisible: Boolean
+  expiryTime: DateTime!
+  id: ID!
+  pubDate: DateTime!
+}
+
+type ContestDetailNode {
+  duration: Int
+  enableContestDynamicLayout: Boolean
+  failCount: Int
+  hasCompletedContest: Boolean
+  isDynamicLayout: Boolean
+  isVirtualContest: Boolean
+  startTime: DateTime
+  titleSlug: String
+}
+
+type ContestNode {
+  cardImg: String
+  company: SponsorNode
+  containsPremium: Boolean
+  description: String!
+  "in seconds"
+  duration: Int!
+  isVirtual: Boolean
+  originStartTime: Int
+  questions: [ContestQuestionNode]
+  rankingUpdated: Boolean!
+  sponsors: [SponsorNode]!
+  startTime: Int!
+  title: String!
+  titleSlug: String
+  unrated: Boolean!
+}
+
+type ContestQuestionDetailNode {
+  languageList: [LanguageNode]
+  question: ContestQuestionNodeV2
+  statusList: [SubmissionStatusNode]
+  submittableLanguageList: [LanguageNode]
+  totalAc: Int
+  totalAcUser: Int
+  totalSubmission: Int
+  totalTriedUser: Int
+}
+
+type ContestQuestionNode {
+  credit: Int!
+  questionId: String
+  title: String
+  titleSlug: String
+}
+
+type ContestQuestionNodeV2 {
+  canSeeQuestion: Boolean
+  categoryTitle: String
+  codeSnippets: [CodeSnippetNode]
+  content: String
+  contentType: QuestionEditorTypeEnum!
+  contestQuestionNumber: Int
+  difficulty: String
+  enableRunCode: Boolean
+  enableSubmit: Boolean
+  enableTestMode: Boolean
+  envInfo: String
+  exampleTestcaseList: [String!]!
+  metaData: String
+  questionFrontendId: String
+  questionId: String
+  score: Int
+  status: String
+  title: String
+  titleSlug: String
+  translatedContent: String
+  translatedTitle: String
+}
+
+type ContestRatingHistogramBarNode {
+  ratingEnd: Int!
+  ratingStart: Int!
+  topPercentage: Float!
+  userCount: Int!
+}
+
+type ContestReportBannedNode {
+  banDuration: Int
+  user: UserNode!
+}
+
+type ContestReportLCCNNode {
+  contest: ContestNode!
+  date: DateTime!
+  description: String!
+  id: ID!
+  reportingUser: UserNode!
+  submissionId: Int!
+}
+
+type ContestReportNode {
+  contest: ContestNode!
+  date: DateTime!
+  description: String!
+  id: ID!
+  reportedUser: UserNode!
+  reportingUser: UserNode!
+  status: ContestReportStatus!
+  submissionId: Int!
+}
+
+type ContestReportRewardNode {
+  rewardAmount: Int!
+  user: UserNode!
+}
+
+type ContestReportSummaryNode {
+  bannedUsers: [ContestReportBannedNode!]!
+  contest: ContestNode!
+  rewardedUsers: [ContestReportRewardNode!]!
+}
+
+type ContestRootBannerNode {
+  aspectRatioType: ContestRootBannerAspectRatioType!
+  backgroundColor: String!
+  banner: String!
+  targetUrl: String!
+  title: String!
+}
+
+type ContestSubmissionListNode {
+  hasNext: Boolean
+  lastKey: String
+  submissions: [ContestSubmissionNodeV2]
+}
+
+type ContestSubmissionNodeV2 {
+  flagType: SubmissionFlagTypeEnum
+  hasNotes: Boolean
+  id: ID
+  isPending: String
+  lang: String
+  langName: String
+  langVerboseName: String
+  memory: String
+  notes: String
+  penalty: Int
+  runtime: String
+  status: Int
+  statusDisplay: String
+  time: String
+  timestamp: String
+  title: String
+  titleSlug: String
+  topicTags: [TopicTagNode]
+  url: String
+}
+
+type ContributionNode {
+  application: ApplicationNode
+  applyDate: DateTime!
+  category: String
+  date: Int
+  id: ID!
+  lastModified: DateTime!
+  library: Int
+  payload: JSONString
+  status: String
+  topic: TopicNode
+  user: PrivateContestUserNode!
+}
+
+type ContributorNode {
+  avatarUrl: String
+  profileUrl: String
+  username: String
+}
+
+type CreateCodeErrorHint {
+  completion: CompletionNode
+  error: String
+  ok: Boolean!
+}
+
+type CreateComment {
+  comment: CommentNode
+  commentId: Int
+  error: String
+  ok: Boolean
+}
+
+type CreateCompletionLike {
+  completionLike: CompletionLikeNode
+  error: String
+  ok: Boolean!
+}
+
+type CreateContribution {
+  error: String
+  ok: Boolean
+}
+
+type CreateEmail {
+  email: EmailNode
+  error: String
+  ok: Boolean
+}
+
+type CreateIdeDynamicLayout {
+  error: String
+  layout: IDEDynamicLayoutNode
+  ok: Boolean!
+}
+
+type CreateOrUpdateEditorialFeedback {
+  error: String
+  ok: Boolean!
+}
+
+type CreateOrUpdateEmailEvent {
+  emailEvent: EmailEventNode
+  errors: JSONString
+  ok: Boolean
+  wasCreated: Boolean
+}
+
+"obtain the new annual medals"
+type CreateOrUpdateUserYearlyMedals {
+  error: String
+  ok: Boolean!
+}
+
+type CreatePlayground {
+  error: String
+  ok: Boolean
+  uuid: String
+}
+
+type CreatePlaygroundFolder {
+  error: String
+  ok: Boolean
+}
+
+type CreateTopic {
+  error: String
+  id: Int
+  ok: Boolean
+}
+
+type CreateTopicForContest {
+  error: String
+  topic: TopicNode
+}
+
+type CreateTopicForQuestion {
+  error: String
+  topic: TopicNode
+}
+
+type CreateTopicWithCategory {
+  error: String
+  topic: TopicNode
+}
+
+type CreditCardLogNode {
+  action: String!
+  operator: ManagementUserSimpleNode!
+  "In seconds"
+  timestamp: Int!
+}
+
+type CurrentSubscriptionInfo {
+  billingEmail: String
+  cardCountryCode: String
+  creditAmount: Float
+  currentPeriodEnd: String
+  currentPlan: String
+  hasStudentPlan: Boolean
+  paymentMethod: String
+}
+
+type DailyChallengeNode {
+  date: DateTime!
+  item: ItemNode!
+  link: String!
+  question: QuestionNode!
+  userStatus: UserDailyQuestionStatus!
+}
+
+type DailyChallengeNodeV2 {
+  date: DateTime!
+  id: ID!
+  link: String!
+  question: QuestionNode!
+  userStatus: UserDailyQuestionStatusV2!
+}
+
+type DebugSessionNode {
+  crashed: Boolean!
+  endTime: DateTime!
+  isActive: Boolean!
+  startTime: DateTime!
+  updateTime: DateTime!
+  user: PrivateContestUserNode!
+  uuid: String!
+}
+
+type DebuggerLanguageFeatureNode {
+  id: ID!
+  lang: LibraryLanguage!
+  supportsDebugging: Boolean!
+  supportsDisablingBreakpoints: Boolean!
+  supportsExpressions: Boolean!
+}
+
+"user apply to delete account, account gets frozen after success"
+type DeleteAccount {
+  ok: Boolean!
+  planDeleteDate: Date
+}
+
+type DeleteCodeFromPlayground {
+  error: String
+  ok: Boolean
+}
+
+type DeleteComment {
+  error: String
+  ok: Boolean
+  post: PostNode
+}
+
+type DeleteComments {
+  error: String
+  ok: Boolean
+}
+
+type DeleteEducation {
+  error: String
+  ok: Boolean
+}
+
+type DeleteEmail {
+  error: String
+  ok: Boolean
+}
+
+type DeleteFavoriteV2 {
+  error: String
+  ok: Boolean!
+}
+
+type DeleteIdeDynamicLayout {
+  error: String
+  ok: Boolean!
+}
+
+type DeleteNote {
+  error: String
+  ok: Boolean
+}
+
+type DeleteOccupation {
+  error: String
+  ok: Boolean
+}
+
+type DeletePlayground {
+  error: String
+  ok: Boolean
+}
+
+type DeletePlaygroundFolder {
+  error: String
+  ok: Boolean
+}
+
+type DeleteReportedPost {
+  error: String
+  ok: Boolean
+}
+
+type DeleteSocial {
+  error: String
+  ok: Boolean
+}
+
+type DeleteTeamMember {
+  error: String
+  ok: Boolean
+}
+
+type DeleteTopic {
+  error: String
+  ok: Boolean
+}
+
+type DeleteTopics {
+  error: String
+  ok: Boolean
+}
+
+type DeleteUserRequestListNode {
+  deletedUsers: [DeleteUserRequestNode!]!
+  hasMore: Boolean!
+  totalNum: Int!
+}
+
+type DeleteUserRequestNode {
+  avatar: String
+  deactivatedAt: DateTime
+  frozenAt: DateTime
+  otherReason: String
+  primaryEmail: String!
+  realName: String
+  reason: DeleteAccountReason
+  status: AccountStatus
+  userId: ID!
+  username: String!
+}
+
+type DiscountEventBannerNode {
+  aspectRatioType: DiscountEventBannerAspectRatioType!
+  backgroundColor: String!
+  banner: String!
+  creationDate: DateTime!
+  event: DiscountEventNode!
+  id: ID!
+  targetUrl: String!
+  title: String!
+  updationDate: DateTime!
+}
+
+type DiscountEventNode {
+  banners: [DiscountEventBannerNode]
+  couponCode: String
+  creationDate: DateTime!
+  description: String!
+  discounteventbannerSet: [DiscountEventBannerNode!]!
+  duration: Int!
+  id: ID!
+  name: String!
+  ogImage: String
+  seoDescription: String!
+  seoTitle: String!
+  startTime: DateTime!
+  superuserPreview: Boolean!
+  updationDate: DateTime!
+}
+
+type DiscountEventRegister {
+  error: String
+  ok: Boolean
+}
+
+type DiscussAnnouncementNode {
+  content: String!
+  dateCreated: DateTime!
+  dateUpdated: DateTime!
+  display: Boolean!
+  id: ID!
+}
+
+type DiscussCategoryNode {
+  announcement: String
+  anonymousEnabled: Boolean!
+  canModerate: Boolean!
+  canRewardPosts: Boolean!
+  description: String
+  id: Int!
+  numTopics: Int!
+  path: String!
+  rootCategory: DiscussCategoryNode!
+  slug: String!
+  subcategories: [DiscussCategoryNode!]!
+  title: String!
+  titleLink: String
+}
+
+type DiscussTopicTagNode {
+  id: ID!
+  name: String!
+  numTopics: Int!
+  order: Int!
+  slug: String!
+  tagFk: TagNode
+  tagType: TopicTagTagType
+  topicSet: [TopicNode!]!
+}
+
+type EducationRecordNode {
+  degree: String
+  endTime: String
+  id: ID!
+  startTime: String
+  toPresent: Boolean!
+  unverifiedOrganizationName: String
+  user: PrivateContestUserNode!
+}
+
+type EmailEventNode {
+  emailsendsessionSet: [EmailSendSessionNode!]!
+  id: ID!
+  minInterval: Int
+  notificationIdentifier: String
+  slug: String!
+  sqlQuery: String
+  template: EmailTemplateNode
+  templateId: Int
+  title: String!
+  truncatedUsers: [UserNode]
+  userFilter: JSONString
+}
+
+type EmailNode {
+  email: String!
+  primary: Boolean!
+  verified: Boolean!
+}
+
+type EmailOpenNode {
+  email: String!
+  extraInfo: String
+  id: ID!
+  session: EmailSendSessionNode
+  time: DateTime
+}
+
+type EmailSendSessionNode {
+  clicksPerLink: JSONString
+  conversionData: JSONString
+  emailsLeft: Int
+  event: EmailEventNode!
+  eventTitle: String
+  groupName: String
+  id: ID!
+  numClicks: Int
+  numOpens: Int
+  numOpensPerHour: JSONString
+  numSent: Int!
+  opens: [EmailOpenNode!]!
+  overallClickThroughRate: Int
+  startTime: String
+  template: EmailTemplateNode!
+  totalSent: Int
+}
+
+type EmailTemplateNode {
+  "Resolves the following template variables automatically:<ul><li>blocks</li><li>next_contest_title</li><li>next_biweekly_contest_time_by_timezone</li><li>next_contest_title_slug</li><li>next_biweekly_contest_title_slug</li><li>next_javascript_dcc_link</li><li>next_biweekly_contest_formatted_date</li><li>q_difficulty_mandarin</li><li>suggested_q_slug</li><li>username</li><li>q_description</li><li>next_javascript_dcc_day</li><li>next_contest_url</li><li>q_num_ac_subs</li><li>next_biweekly_contest_title</li><li>unsubscribe_url</li><li>storage_base_url</li><li>next_contest_time_url</li><li>next_contest_formatted_date</li><li>next_biweekly_contest_time_url</li><li>next_contest_time_by_timezone</li><li>next_javascript_dcc_editorial_link</li><li>current_year</li><li>suggested_q_title</li><li>real_name</li><li>next_biweekly_contest_url</li><li>site_base_url</li><li>q_difficulty_w_article</li></ul>"
+  content: String!
+  conversionTargetUrlTemplates: String
+  emaileventSet: [EmailEventNode!]!
+  emailsendsessionSet: [EmailSendSessionNode!]!
+  emailSubject: String!
+  id: ID!
+  title: String!
+}
+
+type EndSession {
+  session: DebugSessionNode
+}
+
+type ExecuteScript {
+  taskId: String!
+}
+
+type FavoriteBriefListNode {
+  favorites: [FavoriteBriefNode!]!
+  hasMore: Boolean!
+  totalLength: Int!
+}
+
+type FavoriteBriefNode {
+  coverBackgroundColor: String
+  coverEmoji: String
+  coverUrl: String
+  favoriteType: FavoriteTypeEnum
+  generatedFavoritesInfo: GeneratedFavoritesInfoNode
+  generateFromFavoriteSlug: String
+  hasCurrentQuestion: Boolean
+  isPublicFavorite: Boolean!
+  lastQuestionAddedAt: DateTime
+  name: String!
+  slug: String!
+  viewCount: Int
+}
+
+type FavoriteBriefUserNode {
+  realName: String!
+  userAvatar: String!
+  userName: String
+  userSlug: String!
+}
+
+type FavoriteDetailListNode {
+  favorites: [FavoriteDetailNode!]!
+  hasMore: Boolean!
+  totalLength: Int!
+}
+
+type FavoriteDetailNode {
+  collectCount: Int!
+  "only for C.N. side"
+  companyLegalName: String
+  companyVerified: Boolean!
+  coverBackgroundColor: String
+  coverEmoji: String
+  coverUrl: String
+  creator: FavoriteBriefUserNode!
+  description: String!
+  "user unlock favorite status"
+  favoriteLockStatus: FavoriteLockStatusEnum
+  favoriteType: FavoriteTypeEnum
+  "only for C.N. side"
+  financingStageDisplay: String
+  generatedFavoritesInfo: GeneratedFavoritesInfoNode
+  generateFromFavoriteSlug: String
+  hasCurrentQuestion: Boolean
+  "only for C.N. side"
+  industryDisplay: String
+  isDefaultList: Boolean!
+  isPublicFavorite: Boolean!
+  "for smart list"
+  languageTagSlug: String
+  lastModified: DateTime!
+  lastQuestionAddedAt: DateTime
+  name: String!
+  positionRoleTags: [CommonTagNode!]
+  questionNumber: Int!
+  "only for C.N. side"
+  scaleDisplay: String
+  slug: String!
+  viewCount: Int
+  "only for C.N. side"
+  website: String
+}
+
+type FavoriteNode {
+  acStats: [QuestionCountByDifficultyNode!]!
+  children: [FeaturedQuestionListNode!]!
+  companyTag: TagNode
+  coverUrl: String
+  created: DateTime!
+  creator: String!
+  description: String!
+  extraInfo: String
+  favoriteType: FavoriteFavoriteType
+  forkFrom: FeaturedQuestionListNode
+  generatedFavorites: [FeaturedQuestionListNode!]!
+  generatedFrom: FeaturedQuestionListNode
+  id: ID!
+  idHash: String!
+  isPublicFavorite: Boolean!
+  isWatched: Boolean!
+  lastModified: DateTime!
+  lastQuestionAddedAt: DateTime
+  name: String!
+  order: Int!
+  publicId: String!
+  questionCount: Int!
+  questions: [QuestionNode!]!
+  slug: String
+  tags: [CommonTagNode]!
+  uuid: UUID!
+  viewCount: Int!
+}
+
+type FavoriteQuestionListNode {
+  hasMore: Boolean
+  questions: [FavoriteQuestionNode!]!
+  totalLength: Int
+}
+
+type FavoriteQuestionNode {
+  difficulty: DifficultyDescribedEnum!
+  "出题频率，企业题单专用字段"
+  frequency: Float
+  id: ID!
+  "whether the question is in the user's favorites"
+  isInMyFavorites: Boolean!
+  paidOnly: Boolean!
+  questionFrontendId: String!
+  status: FavoriteQuestionStatusEnum
+  title: String!
+  titleSlug: String!
+  topicTags: [CommonTagNode!]
+  translatedTitle: String
+}
+
+type FavoriteSubmitACProgressNode {
+  totalAcCount: Int!
+  totalSubmitCount: Int!
+}
+
+type FavoritesNode {
+  allFavorites: [FavoriteNode]
+  officialFavorites: [FavoriteNode]
+  privateFavorites: [FavoriteNode]
+  publicFavorites: [FavoriteNode]
+  watchedFavorites: [FavoriteNode]
+}
+
+type FeatureNode {
+  autocompleteLanguages: JSONString
+  chinaProblemDiscuss: Boolean
+  cnJobs: Boolean
+  contest: Boolean
+  dangerZone: Boolean
+  discuss: Boolean
+  enableAiHelper: Boolean
+  enableAllQuestionsRaw: Boolean
+  enableAutocomplete: Boolean
+  enableAutocompletePremium: Boolean
+  enableCfTurnstile: Boolean
+  enableChannels: Boolean
+  enableCodingChallengeV2: Boolean
+  enableDebugger: Boolean
+  enableDebuggerPremium: Boolean
+  enableFrontendCategory: Boolean
+  enableIndiaPricing: Boolean
+  enableLcIde: Boolean
+  enableLegacyStudyPlanEntry: Boolean
+  enableNewPlanRankBoardAccess: Boolean
+  enableNewProfile: Boolean
+  enableNewQdPage: Boolean
+  enableNewStudyPlan: Boolean
+  enableRecaptchaV3: Boolean
+  enableReferralDiscount: Boolean
+  enableSharedWorker: Boolean
+  enableStoreShippingForm: Boolean
+  interview: Boolean
+  maxTimeTravelTicketCount: Int
+  mockInterview: Boolean
+  questionTranslation: Boolean
+  signUp: Boolean
+  socialProviders: JSONString
+  store: Boolean
+  studentFooter: Boolean
+  subscription: Boolean
+}
+
+type FeaturedQuestionListNode {
+  acStats: [QuestionCountByDifficultyNode!]!
+  children: [FeaturedQuestionListNode!]!
+  companyTag: TagNode
+  coverUrl: String
+  created: DateTime!
+  creator: String!
+  description: String!
+  extraInfo: String
+  favoriteType: FavoriteFavoriteType
+  forkFrom: FeaturedQuestionListNode
+  generatedFavorites: [FeaturedQuestionListNode!]!
+  generatedFrom: FeaturedQuestionListNode
+  id: ID!
+  idHash: String!
+  isPaidOnly: Boolean!
+  isPublicFavorite: Boolean!
+  isWatched: Boolean!
+  lastModified: DateTime!
+  lastQuestionAddedAt: DateTime
+  name: String!
+  order: Int!
+  publicId: String!
+  questionCount: Int!
+  questions: [QuestionNode!]!
+  slug: String
+  tags: [CommonTagNode]!
+  uuid: UUID!
+  viewCount: Int!
+}
+
+type FeedBackMetaNode {
+  maxScore: Int!
+  name: String!
+  options: [FeedBackOptionNode!]
+  questionContent: String
+}
+
+type FeedBackOptionNode {
+  optionId: Int!
+  optionName: String!
+  optionSlug: String!
+}
+
+type FilteredSubmissionNode {
+  code: String!
+  codeOutput: String
+  compareResult: String
+  contest: ContestNode
+  date: DateTime!
+  id: ID!
+  lang: String
+  memoryComplexity: SubmissionMemoryComplexity
+  question: QuestionNode!
+  runtime: Int
+  status: String
+  timeComplexity: SubmissionTimeComplexity
+  totalCorrect: Int
+  user: PrivateContestUserNode!
+}
+
+type FilteredSubmissionOverviewNode {
+  pages: Int
+  submissions: [FilteredSubmissionNode]
+}
+
+type FlagNode {
+  description: String!
+  reason: FlagReasonNode
+  reporter: PrivateContestUserNode!
+}
+
+type FlagPost {
+  error: String
+  ok: Boolean
+}
+
+type FlagReasonNode {
+  id: ID!
+  name: String!
+}
+
+type FlagResultNode {
+  created: DateTime!
+  modified: DateTime!
+  reviewer: PrivateContestUserNode
+  status: FlagResultStatus!
+}
+
+type FlagSetContentStatus {
+  error: String
+  ok: Boolean!
+}
+
+type FlagSomething {
+  error: String
+  flag: FlagNode
+  ok: Boolean!
+}
+
+type FlaggedObjectConnection {
+  "Contains the nodes in this connection."
+  edges: [FlaggedObjectEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `FlaggedObject` and its cursor."
+type FlaggedObjectEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: FlaggedObjectNode
+}
+
+type FlaggedObjectNode {
+  firstFlaggedTime: DateTime!
+  flaggedCount: Int!
+  flagResult: FlagResultNode!
+  reasons: [FlagReasonNode!]
+  summary: String!
+}
+
+type ForkFavoriteV2 {
+  error: String
+  ok: Boolean!
+  slug: String
+}
+
+type FrontendQuestionResultNode {
+  actual: String
+  codePreview: String
+  errorMessage: String
+  expected: String
+  failingLine: Int
+  passed: Boolean!
+  shortError: String
+  showDiff: Boolean
+  stdout: String
+  testFn: String
+  title: String!
+}
+
+type GeneratedFavoritesInfoNode {
+  categoriesToSlugs: [CategoryToSlugNode!]
+  defaultFavoriteSlug: String
+}
+
+type GetOrCreateExploreSession {
+  cardId: String
+  errors: JSONString
+  ok: Boolean
+  progress: JSONString
+}
+
+type GlobalRankingNode {
+  myRank: RankingNode
+  page: Int
+  rankingNodes: [RankingNode]
+  totalUsers: Int
+  userPerPage: Int
+}
+
+type HandleUserReports {
+  error: String
+  ok: Boolean
+}
+
+type HideComments {
+  error: String
+  ok: Boolean
+}
+
+type HideLastTestcasesNode {
+  count: Int!
+  id: ID!
+  question: QuestionNode!
+}
+
+type HidePost {
+  error: String
+  ok: Boolean
+  post: PostNode
+}
+
+type HideTopicFromTrending {
+  ok: Boolean
+  topic: TopicNode
+}
+
+type HideTopics {
+  error: String
+  ok: Boolean
+}
+
+type HitResource {
+  count: Int
+  error: String
+  ok: Boolean!
+}
+
+type HtmlArticleNode {
+  editLink: String
+  html: String!
+  id: ID!
+  originalLink: String
+  paidOnly: Boolean!
+}
+
+type IDEDynamicLayoutNode {
+  layoutId: String!
+  layoutJson: JSONString!
+  layoutName: String!
+}
+
+type IntentionTagNode {
+  name: String!
+  slug: String!
+}
+
+type InterviewCardNode {
+  company: InterviewCompanyNode
+  hasNewInterview: Boolean
+  id: ID!
+  numInterview: Int
+  numParticipants: Int
+  numPass: Int
+  stage: CompanyStage
+}
+
+type InterviewCompanyGlobalScoreNode {
+  companyName: String!
+  score: Float!
+}
+
+type InterviewCompanyNode {
+  id: ID!
+  imgUrl: String
+  name: String!
+  stage: CompanyStage!
+}
+
+type InterviewCompanyOption {
+  id: Int
+  keywords: [String!]!
+  name: String
+  slug: String
+}
+
+type InterviewEnd {
+  session: InterviewSessionNode
+}
+
+type InterviewGlobalStatsNode {
+  averageCompanyScores: [InterviewCompanyGlobalScoreNode!]!
+  categories: [InterviewTagsCategoryNode!]!
+}
+
+type InterviewNode {
+  company: InterviewCompanyNode!
+  createTime: DateTime
+  disabled: Boolean!
+  id: ID!
+  premiumOnly: Boolean!
+  questions: [QuestionNode!]!
+  sessionSet: InterviewSessionNodeConnection!
+  "in seconds"
+  timeConstraint: Int
+  updateTime: DateTime
+}
+
+type InterviewProgressNode {
+  id: ID!
+  lastSavedCode: String
+  questionId: ID!
+  status: ProgressStatus!
+}
+
+type InterviewQuestionReportNode {
+  content: String!
+  questionId: String!
+  submission: InterviewSubmissionNode
+  submissionHistory: InterviewSubmissionConnection!
+}
+
+type InterviewReportNode {
+  analysisStatus: InterviewAnalysisStatus!
+  distribution: [[Int]!]
+  hasRequestedEmail: Boolean!
+  isDuplicateAttempt: Boolean!
+  percentile: Float
+  questions: [InterviewQuestionReportNode!]!
+  score: Float
+}
+
+type InterviewScoreProgressNode {
+  score: Float!
+  session: InterviewSessionNode!
+}
+
+type InterviewSessionConnection {
+  "Contains the nodes in this connection."
+  edges: [InterviewSessionEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `InterviewSession` and its cursor."
+type InterviewSessionEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: InterviewSessionNode
+}
+
+type InterviewSessionNode {
+  card: InterviewCardNode!
+  endTime: Int!
+  expiredTime: Int!
+  "The ID of the object."
+  id: ID!
+  interview: InterviewNode!
+  progress: [InterviewProgressNode!]!
+  remainingTime: Int!
+  report: InterviewReportNode!
+  startTime: Int!
+  status: SessionStatus!
+}
+
+type InterviewSessionNodeConnection {
+  "Contains the nodes in this connection."
+  edges: [InterviewSessionNodeEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+}
+
+"A Relay edge containing a `InterviewSessionNode` and its cursor."
+type InterviewSessionNodeEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: InterviewSessionNode
+}
+
+type InterviewStageOption {
+  id: Int
+  name: String
+}
+
+type InterviewStart {
+  session: InterviewSessionNode
+}
+
+type InterviewSubmissionConnection {
+  "Contains the nodes in this connection."
+  edges: [InterviewSubmissionEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `InterviewSubmission` and its cursor."
+type InterviewSubmissionEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: InterviewSubmissionNode
+}
+
+type InterviewSubmissionNode {
+  code: String
+  "The ID of the object."
+  id: ID!
+  isPending: String
+  lang: String
+  memory: String
+  numCorrect: Int
+  runtime: String
+  statusDisplay: String
+  timestamp: Int
+  total: Int
+}
+
+type InterviewSurveyNode {
+  companies: [InterviewCompanyOption]
+  interviewedUrl: String
+  popularCompanies: [InterviewCompanyOption]
+  positions: [CommonTagNode!]
+  stageOptions: [InterviewStageOption]
+  timeOptions: [InterviewTimeOption]
+}
+
+type InterviewTagsCategoryNode {
+  description: String
+  exploreCards: [CardNode!]!
+  id: ID!
+  name: String!
+  score: InterviewTagsCategoryScoreNode
+  suggestedQuestions: [QuestionNode!]!
+}
+
+type InterviewTagsCategoryScoreNode {
+  category: InterviewTagsCategoryNode!
+  creationDate: DateTime!
+  distribution: [[Int]!]
+  id: ID!
+  percentile: Float!
+  score: Float!
+  updationDate: DateTime!
+  user: PrivateContestUserNode!
+}
+
+type InterviewTimeOption {
+  id: Int
+  name: String
+}
+
+type InterviewedStatsPost {
+  error: String
+  interviewedStatsId: Int
+  ok: Boolean
+}
+
+type ItemBaseNode {
+  article: ArticleNode
+  cardTitle: String
+  chapter: ChapterNode!
+  chapterId: Int
+  chapterTitle: String
+  completedWithTimeTravelTicket: Boolean
+  hasAppliedTimeTravelTicket: Boolean
+  htmlArticle: HtmlArticleNode
+  id: ID!
+  info: String
+  isComplete: Boolean
+  isEligibleForCompletion: Boolean!
+  lang: String
+  numUsersCompleted: Int
+  numUsersStarted: Int
+  paidOnly: Boolean
+  question: QuestionNode
+  type: Int
+  users: JSONString
+  verboseLang: String
+  video: VideoNode
+  webPage: WebPageNode
+}
+
+type ItemNode {
+  article: ArticleNode
+  cardTitle: String
+  chapter: ChapterNode!
+  chapterId: Int
+  chapterTitle: String
+  completedWithTimeTravelTicket: Boolean
+  hasAppliedTimeTravelTicket: Boolean
+  htmlArticle: HtmlArticleNode
+  id: ID!
+  info: String
+  isComplete: Boolean
+  isEligibleForCompletion: Boolean!
+  isLocked: Boolean!
+  lang: String
+  numUsersCompleted: Int
+  numUsersStarted: Int
+  paidOnly: Boolean
+  prerequisites: [ItemBaseNode!]
+  question: QuestionNode
+  title: String!
+  type: Int
+  users: JSONString
+  verboseLang: String
+  video: VideoNode
+  webPage: WebPageNode
+}
+
+"join a study plan"
+type JoinStudyPlan {
+  ok: Boolean!
+  progressId: String!
+}
+
+type LanguageNode {
+  id: Int
+  name: String
+  verboseName: String
+}
+
+type LanguageProblemCountNode {
+  languageName: String!
+  problemsSolved: Int!
+}
+
+type LatestIncVoteNode {
+  incVotedAt: DateTime!
+  incVotedNum: Int!
+}
+
+type LearningContextNode {
+  backLink: String!
+  name: String!
+  nextQuestion: QuestionNode
+  previousQuestion: QuestionNode
+}
+
+type LearningContextNodeV2 {
+  name: String!
+  nextQuestion: QuestionNode
+  previousQuestion: QuestionNode
+}
+
+type LearningContextNodeV3 {
+  backLink: String!
+  name: String!
+  nextQuestion: PanelQuestionNode
+  previousQuestion: PanelQuestionNode
+}
+
+type LevelBeatPercentageMixin {
+  difficulty: DifficultyDescribedEnum!
+  percentage: Float
+}
+
+type LibraryActivityConnection {
+  "Contains the nodes in this connection."
+  edges: [LibraryActivityEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `LibraryActivity` and its cursor."
+type LibraryActivityEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: QuestionActivityNode
+}
+
+type LibraryActivityType {
+  id: Int!
+  name: String!
+}
+
+type LibraryCodeDefinition {
+  content: String!
+  id: ID!
+  lang: LibraryLanguage!
+  question: LibraryQuestionNode!
+}
+
+type LibraryDefinitionSave {
+  question: LibraryQuestionNode!
+}
+
+type LibraryDifficulty {
+  id: Int!
+  name: String!
+}
+
+type LibraryDraftDelete {
+  deleted: Boolean!
+}
+
+type LibraryDriver {
+  content: String!
+  id: ID!
+  lang: LibraryLanguage!
+  question: LibraryQuestionNode!
+}
+
+type LibraryFrontendPreview {
+  content: String!
+  id: ID!
+  lang: LibraryLanguage!
+  question: LibraryQuestionNode!
+}
+
+type LibraryFrontendQuestionIdChange {
+  question: LibraryQuestionNode!
+}
+
+type LibraryGenerateSampleTestcase {
+  content: String!
+}
+
+type LibraryHideLastTestcases {
+  count: Int!
+  id: ID!
+  question: LibraryQuestionNode!
+}
+
+type LibraryLanguage {
+  displayName: String!
+  environmentInfo: String!
+  fileExtension: String!
+  name: String!
+}
+
+type LibraryMatchType {
+  id: Int!
+  name: String!
+}
+
+type LibraryMultiTestcase {
+  category: Category!
+  expectedOutput: String!
+  inputRaw: String!
+  name: String!
+  question: LibraryQuestionNode!
+}
+
+type LibraryMultiTestcaseSave {
+  question: LibraryQuestionNode!
+}
+
+type LibraryQuestionAttachmentNode {
+  content: String!
+  extension: String!
+  id: ID!
+  name: String!
+}
+
+type LibraryQuestionConnection {
+  "Contains the nodes in this connection."
+  edges: [LibraryQuestionEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `LibraryQuestion` and its cursor."
+type LibraryQuestionEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: LibraryQuestionNode
+}
+
+type LibraryQuestionNode {
+  activities: LibraryActivityConnection!
+  attachments: [LibraryQuestionAttachmentNode!]
+  canEdit: Boolean!
+  codeDefinitions: [LibraryCodeDefinition]!
+  codedefinitionSet: [LibraryCodeDefinition!]!
+  content: String!
+  contribution: ContributionNode
+  contributors: [PrivateContestUserNode!]!
+  contributorSet: [ContributorNode!]!
+  createDate: DateTime!
+  createdBy: PrivateContestUserNode
+  customLimits: JSONString
+  customMatcher: String!
+  defaultCustomMatchers: JSONString!
+  defaultValidator: LibraryValidator!
+  difficulty: LibraryDifficulty!
+  drivers: [LibraryDriver!]!
+  driverSet: [LibraryDriver!]!
+  followup: String!
+  frontendPreviews: [LibraryFrontendPreview!]!
+  frontendpreviewSet: [LibraryFrontendPreview!]!
+  frontendQuestionId: ID
+  hasFrontendPreview: Boolean
+  hideLastTestcases: LibraryHideLastTestcases
+  hidelasttestcases: LibraryHideLastTestcases
+  id: ID!
+  includeHeaders: String!
+  inputCpp: String!
+  isCustom: Boolean
+  isMultitestsQuestion: Boolean
+  isPrivate: Boolean!
+  isSystemDesign: Boolean
+  lastModified: DateTime!
+  latestActivity: QuestionActivityNode
+  libraryactivitySet: QuestionActivityNodeConnection!
+  matchType: LibraryMatchType!
+  mergedContent: String!
+  metadata: String!
+  multiTestcases: [LibraryMultiTestcase!]!
+  multitestcaseSet: [LibraryMultiTestcase!]!
+  note: String!
+  prodQuestion: QuestionNode
+  prodTestcase: ProdTestcase
+  publishedRevisionId: Int!
+  publishError: Boolean!
+  publishStatus: PublishStatus!
+  questionapplicationSet: [ApplicationNode!]!
+  questionattachmentSet: [LibraryQuestionAttachmentNode!]!
+  questionTypes: [LibraryQuestionType!]!
+  revisionId: Int!
+  sampleTestcase: String!
+  solutions: [LibrarySolution!]!
+  solutionSet: [LibrarySolution!]!
+  syncCategories: [String!]!
+  testcase: LibraryTestcase!
+  title: String!
+  validator: LibraryValidator!
+}
+
+type LibraryQuestionNodeConnection {
+  "Contains the nodes in this connection."
+  edges: [LibraryQuestionNodeEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+}
+
+"A Relay edge containing a `LibraryQuestionNode` and its cursor."
+type LibraryQuestionNodeEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: LibraryQuestionNode
+}
+
+type LibraryQuestionType {
+  id: Int!
+  name: String!
+}
+
+type LibrarySetHide {
+  question: LibraryQuestionNode!
+}
+
+type LibrarySetPerm {
+  question: LibraryQuestionNode!
+}
+
+type LibrarySolution {
+  code: String!
+  complexity: String!
+  expectedStatus: LibrarySolutionStatus!
+  fileName: String!
+  id: ID!
+  isModelSolution: Boolean!
+  lang: LibraryLanguage!
+  name: String
+  order: Int!
+  question: LibraryQuestionNode!
+}
+
+type LibrarySolutionDelete {
+  question: LibraryQuestionNode!
+}
+
+type LibrarySolutionSave {
+  question: LibraryQuestionNode!
+  solutionId: ID!
+}
+
+type LibrarySolutionStatus {
+  id: Int!
+  name: String!
+}
+
+type LibrarySolutionsOrderSave {
+  question: LibraryQuestionNode!
+}
+
+type LibrarySolutionsOutput {
+  lang: String!
+  solutionId: ID!
+}
+
+type LibrarySolutionsSave {
+  question: LibraryQuestionNode!
+  solutions: [LibrarySolutionsOutput]
+}
+
+type LibraryStatementSave {
+  question: LibraryQuestionNode!
+}
+
+type LibraryTemplate {
+  codeDefinitions: JSONString!
+  drivers: JSONString!
+  frontendPreviews: JSONString!
+}
+
+type LibraryTestcase {
+  expectedOutput: String!
+  inputFormatted: String!
+  inputRaw: String!
+  jsonBlob: JSONString!
+  question: LibraryQuestionNode!
+}
+
+type LibraryTestcaseSave {
+  question: LibraryQuestionNode!
+}
+
+type LibraryValidator {
+  code: String!
+  driver: String!
+}
+
+type LibraryValidatorSave {
+  question: LibraryQuestionNode!
+}
+
+type Like {
+  error: String
+  likeResult: Boolean
+  ok: Boolean
+}
+
+type LocalRankingNode {
+  myRank: RankingNode
+  page: Int
+  rankingNodes: [RankingNode]
+  totalUsers: Int
+  userPerPage: Int
+}
+
+type LocationAutocomplete {
+  id: String!
+  name: String!
+}
+
+type ManagementAddInterviewedStatVote {
+  ok: Boolean!
+}
+
+type ManagementAddOrEditTag {
+  ok: Boolean!
+}
+
+type ManagementAddOrEditTagCategory {
+  ok: Boolean!
+}
+
+type ManagementCompanyQuestionListNode {
+  maxFreq: Float!
+  questions: [CompanyQuestionDetailNode!]!
+  totalNum: Int!
+}
+
+type ManagementCompanyTagNode {
+  tags: [CompanyTagNode]!
+  totalCount: Int
+}
+
+type ManagementCreditCardNode {
+  cardLast4: String!
+  id: ID!
+  operationLog: [CreditCardLogNode!]!
+  status: CreditCardStatus!
+}
+
+type ManagementIncVoteLogListNone {
+  nodes: [ManagementIncVoteLogNode]!
+  totalNum: Int
+}
+
+type ManagementIncVoteLogNode {
+  createdAt: DateTime!
+  createdBy: UserNode
+  positionTag: CommonTagNode
+  votedDate: DateTime!
+  votedNum: Int!
+}
+
+type ManagementIpListNode {
+  nodes: [ManagementIpNode!]!
+  totalNum: Int!
+}
+
+type ManagementIpNode {
+  address: String!
+  firstAccessed: DateTime!
+  id: ID!
+  ip: String!
+  lastAccessed: DateTime!
+  sharingUsers: [ManagementUserSimpleNode]!
+  status: IPStatusEnum!
+}
+
+type ManagementOperationHistoryNode {
+  nodes: [ManagementOperationLogNode!]!
+  totalNum: Int!
+}
+
+type ManagementOperationLogNode {
+  address: String!
+  browser: String!
+  description: String!
+  ip: String!
+  operation: UserOperationEnum!
+  operationTime: DateTime!
+  os: String!
+}
+
+type ManagementRemoveTagCategoryToTag {
+  ok: Boolean!
+}
+
+type ManagementRoleNode {
+  permissions: [String]
+  roleName: String
+}
+
+type ManagementScoreListNode {
+  nodes: [ManagementScoreNode!]!
+  totalNum: Int!
+}
+
+type ManagementScoreNode {
+  category: UmScoreCategoryEnum!
+  date: DateTime!
+  description: String!
+  extraInfo: String
+  id: ID!
+  score: Int!
+  scoreType: ScoreTypeEnum!
+}
+
+type ManagementSetNonofficialTagSimilar {
+  ok: Boolean!
+}
+
+type ManagementStoreOrderListNode {
+  nodes: [ManagementStoreOrderNode!]!
+  totalNum: Int!
+}
+
+type ManagementStoreOrderNode {
+  address: StoreAddressNode
+  buckydropPackageCode: String
+  buckydropShopOrderId: String
+  createDate: DateTime!
+  details: JSONString
+  id: ID!
+  items: String
+  note: String
+  orderId: String!
+  status: UmStoreOrderStatusEnum!
+  trackingId: String
+  user: ManagementUserSimpleNode
+}
+
+type ManagementStripeChargeListNode {
+  nodes: [ManagementStripeChargeNode!]!
+  totalNum: Int!
+}
+
+type ManagementStripeChargeNode {
+  amount: Int!
+  created: DateTime!
+  id: ID!
+  invoiceId: ID
+  status: StripeChargeStatusEnum!
+}
+
+type ManagementTagAdminLogListNode {
+  nodes: [ManagementTagAdminLogNode]!
+  totalNum: Int
+}
+
+type ManagementTagAdminLogNode {
+  creationDate: DateTime!
+  operateUser: UserNode!
+  operationContent: String
+  operationType: TagAdminOperationType!
+}
+
+type ManagementTagNode {
+  tags: [TagNode]!
+  totalCount: Int
+}
+
+type ManagementTeamMemberListNode {
+  nodes: [ManagementTeamMemberNode!]!
+  totalNum: Int!
+}
+
+type ManagementTeamMemberNode {
+  avatar: String
+  id: ID!
+  lastLoginTime: DateTime
+  managementRoles: [String]!
+  note: String
+  realName: String
+  username: String!
+}
+
+type ManagementUserDetailNode {
+  avatar: String
+  banInfo: BanInfoNode
+  contestBan: BanInfoNode
+  dateJoined: DateTime!
+  discussBanned: Boolean
+  emails: [EmailNode]
+  id: ID!
+  isBanned: Boolean
+  isDeleted: Boolean
+  isInactive: Boolean
+  isSpammer: Boolean
+  isStaff: Boolean
+  isSuperuser: Boolean
+  lastLoginTime: DateTime
+  managementRoles: [String]!
+  otherRoles: [String]!
+  premiumInfos: [PremiumInfoNode]
+  realName: String
+  socialAccounts: [SocialAccountNode!]!
+  stripeCredit: Int
+  stripeCustomeId: ID
+  totalScore: Int!
+  username: String!
+}
+
+type ManagementUserListNode {
+  nodes: [ManagementUserNode!]!
+  totalNum: Int!
+}
+
+type ManagementUserNode {
+  avatar: String
+  dateJoined: DateTime!
+  emails: [EmailNode]
+  id: ID!
+  lastLoginTime: DateTime
+  premiumInfos: [PremiumInfoNode]
+  realName: String
+  stripeCustomeId: ID
+  username: String!
+}
+
+type ManagementUserSimpleNode {
+  avatar: String
+  email: String
+  id: ID!
+  realName: String
+  username: String!
+}
+
+type MarkItemComplete {
+  cardId: String
+  errors: JSONString
+  newProgress: JSONString
+  ok: Boolean
+}
+
+type MarkItemIncomplete {
+  cardId: String
+  errors: JSONString
+  newProgress: JSONString
+  ok: Boolean
+}
+
+type MarkSolvedQuestion {
+  ok: Boolean!
+  progressDetail: PlanUserProgressDetailNode!
+}
+
+type MarkSpammers {
+  error: String
+  ok: Boolean
+}
+
+type MeNode {
+  activeSessionId: Int
+  annualReport: AnnualReportNode
+  avatar: String
+  checkedInToday: Boolean
+  completedFeatureGuides: [FeatureGuideType]
+  groups: [Group]
+  isAdmin: Boolean
+  isMockUser: Boolean!
+  isPremium: Boolean
+  isSignedIn: Boolean
+  isStaff: Boolean
+  isSuperuser: Boolean
+  isTranslator: Boolean
+  isVerified: Boolean
+  notificationStatus: UserNotificationNode
+  optedIn: Boolean
+  permissions: [AllPermission]
+  realName: String
+  region: String
+  requestRegion: String
+  socketToken: String
+  userId: Int
+  username: String
+  userSlug: String
+}
+
+type MedalBriefNode {
+  awardDescription: String!
+  config: MedalConfigNode!
+  name: String!
+  obtainDescription: String!
+  slug: String!
+}
+
+type MedalConfigNode {
+  "The original image URL of the medal"
+  icon: String
+  "GIF URL of the medal"
+  iconGif: String
+  "GIF background URL of the medal"
+  iconGifBackground: String
+  "URL of the medal wearing picture"
+  iconWearing: String
+}
+
+type MedalNode {
+  awardDescription: String!
+  config: MedalConfigNode!
+  name: String!
+  obtainDescription: String!
+  shortName: String
+  slug: String!
+}
+
+type MigrateDiscussionToSolution {
+  ok: Boolean
+  topic: TopicNode
+}
+
+type MigrateSolutionToDiscussion {
+  comment: CommentNode
+  ok: Boolean
+}
+
+type MockUser {
+  ok: Boolean
+}
+
+type ModifyIdeDynamicLayout {
+  error: String
+  layout: IDEDynamicLayoutNode
+  ok: Boolean!
+}
+
+type MoveTopic {
+  categorySlugs: [String!]
+  topic: TopicNode
+}
+
+type Mutation {
+  acceptAchievementReward: AcceptAchievementReward
+  acceptContribution: AcceptContribution
+  addFavoriteToMyCollectionV2: AddFavoriteToMyCollectionV2
+  addOrUpdateCodeInPlayground: AddOrUpdateCodeInPlayground
+  addQuestionToDefaultFavoriteV2: AddQuestionToDefaultFavoriteV2
+  addQuestionToFavorite: AddQuestionToFavorite
+  addQuestionToFavoriteV2: AddQuestionToFavoriteV2
+  addQuestionToNewFavorite: AddQuestionToNewFavorite
+  addQuestionToNewFavoriteV2: AddQuestionToNewFavoriteV2
+  addUserToInternalContest: AddUserToInternalContest
+  applyTimeTravelTicket: ApplyTimeTravelTicket
+  applyTimeTravelTicketV2: ApplyTimeTravelTicketV2
+  approveComment: ApproveComment
+  approveComments: ApproveComments
+  approveContestReports: ApproveContestReports
+  approveReportedPosts: ApproveReportedPost
+  approveTopic: ApproveTopic
+  approveTopics: ApproveTopics
+  archiveUser: ArchiveUser
+  awardInternalContestCoin: AwardInternalContestCoin
+  banIp: BanIP
+  banUser: BanUser
+  batchReviewFlaggedObjects: BatchReviewFlaggedObjects
+  btsEventNotification: BTSEventNotification
+  btsReferralRegister: BTSReferralRegister
+  "取消注销账户请求"
+  cancelDeleteAccount: AuthCancelDeleteAccount
+  checkin: Checkin
+  collectContestEasterEgg: CollectContestEasterEgg
+  commentContribution: CommentContribution
+  completeFeatureGuide: CompleteFeatureGuide
+  completeSurvey: CompleteSurvey
+  confirmSchoolLogo: ConfirmSchoolLogo
+  createCodeErrorHint: CreateCodeErrorHint
+  createComment: CreateComment
+  createCompletionLike: CreateCompletionLike
+  createContribution: CreateContribution
+  createEmail: CreateEmail
+  createIdeDynamicLayout: CreateIdeDynamicLayout
+  createOrUpdateEmailEvent: CreateOrUpdateEmailEvent
+  createOrUpdateOfficialSolutionFeedback: CreateOrUpdateEditorialFeedback
+  "obtain the new annual medals"
+  createOrUpdateUserYearlyMedals: CreateOrUpdateUserYearlyMedals
+  createPlayground: CreatePlayground
+  createPlaygroundFolder: CreatePlaygroundFolder
+  createTopic: CreateTopic
+  createTopicForContest: CreateTopicForContest
+  createTopicForQuestion: CreateTopicForQuestion
+  createTopicWithCategory: CreateTopicWithCategory
+  "user apply to delete account, account gets frozen after success"
+  deleteAccount: DeleteAccount
+  deleteCodeFromPlayground: DeleteCodeFromPlayground
+  deleteComment: DeleteComment
+  deleteComments: DeleteComments
+  deleteEducation: DeleteEducation
+  deleteEmail: DeleteEmail
+  deleteFavoriteV2: DeleteFavoriteV2
+  deleteIdeDynamicLayout: DeleteIdeDynamicLayout
+  deleteNote: DeleteNote
+  deleteOccupation: DeleteOccupation
+  deletePlayground: DeletePlayground
+  deletePlaygroundFolder: DeletePlaygroundFolder
+  deleteReportedPosts: DeleteReportedPost
+  deleteSocial: DeleteSocial
+  deleteTeamMember: DeleteTeamMember
+  deleteTopic: DeleteTopic
+  deleteTopics: DeleteTopics
+  discountEventRegister: DiscountEventRegister
+  endDebuggerSession: EndSession
+  executeScript: ExecuteScript
+  flagPost: FlagPost
+  flagSetContentStatus: FlagSetContentStatus
+  flagSomething: FlagSomething
+  forkFavoriteV2: ForkFavoriteV2
+  getOrCreateExploreSession: GetOrCreateExploreSession
+  handleUserReports: HandleUserReports
+  hideComments: HideComments
+  hidePost: HidePost
+  hideTopicFromTrending: HideTopicFromTrending
+  hideTopics: HideTopics
+  hitResource: HitResource
+  interviewedStatsPost: InterviewedStatsPost
+  interviewEnd: InterviewEnd
+  interviewStart: InterviewStart
+  "join a study plan"
+  joinStudyPlan: JoinStudyPlan
+  libraryDefinitionSave: LibraryDefinitionSave
+  libraryDraftDelete: LibraryDraftDelete
+  libraryFrontendQuestionIdChange: LibraryFrontendQuestionIdChange
+  libraryGenerateSampleTestcase: LibraryGenerateSampleTestcase
+  libraryMultiTestcaseSave: LibraryMultiTestcaseSave
+  librarySetHide: LibrarySetHide
+  librarySetPerm: LibrarySetPerm
+  librarySolutionDelete: LibrarySolutionDelete
+  librarySolutionSave: LibrarySolutionSave
+  librarySolutionsOrderSave: LibrarySolutionsOrderSave
+  librarySolutionsSave: LibrarySolutionsSave
+  libraryStatementSave: LibraryStatementSave
+  libraryTestcaseSave: LibraryTestcaseSave
+  libraryValidatorSave: LibraryValidatorSave
+  like: Like
+  managementAddInterviewedStatVote: ManagementAddInterviewedStatVote
+  managementAddOrEditTag: ManagementAddOrEditTag
+  managementAddOrEditTagCategory: ManagementAddOrEditTagCategory
+  managementRemoveTagCategoryToTag: ManagementRemoveTagCategoryToTag
+  managementSetNonofficialTagSimilar: ManagementSetNonofficialTagSimilar
+  markItemComplete: MarkItemComplete
+  markItemIncomplete: MarkItemIncomplete
+  markSolvedQuestion: MarkSolvedQuestion
+  markSpammers: MarkSpammers
+  migrateDiscussionToSolution: MigrateDiscussionToSolution
+  migrateSolutionToDiscussion: MigrateSolutionToDiscussion
+  mockUser: MockUser
+  modifyIdeDynamicLayout: ModifyIdeDynamicLayout
+  moveTopic: MoveTopic
+  "online management generate favorite"
+  omGenerateFavorite: OMGenerateFavorite
+  "online management remove question from favorite"
+  omRemoveQuestionFromFavorite: OMRemoveQuestionFromFavorite
+  "online management update favorite"
+  omUpdateFavorite: OMUpdateFavorite
+  openNotifications: OpenNotifications
+  optInOrOutDynamicLayoutFeature: OptInOrOutDynamicLayoutFeature
+  optInOrOutOfPremiumFeature: OptInOrOutPremiumFeature
+  performNotificationAction: PerformNotificationAction
+  planStartProgress: StartProgress
+  publishContestAnnouncement: PublishContestAnnouncement
+  publishSolution: PublishSolution
+  "quit a study plan"
+  quitStudyPlan: QuitStudyPlan
+  rateArticle: RateArticle
+  recordAbExperimentEvent: RecordABExperimentEvent
+  rejectContestReports: RejectContestReports
+  rejectContribution: RejectContribution
+  removeFavoriteFromMyCollectionV2: RemoveFavoriteFromMyCollectionV2
+  removeQuestionFromFavorite: RemoveQuestionFromFavorite
+  removeQuestionFromFavoriteV2: RemoveQuestionFromFavoriteV2
+  removeUsersFromInternalContest: RemoveUsersFromInternalContest
+  reorderFavoriteQuestionV2: ReorderFavoriteQuestionV2
+  reportUser: ReportUser
+  requestAnalysisEmail: RequestAnalysisEmail
+  requestUpdateToReportedPosts: RequestUpdateToReportedPost
+  resetFavoriteSessionV2: ResetFavoriteSessionV2
+  resetWeeklyTaskSchedule: ResetWeeklyTaskSchedule
+  rewardPostCoins: RewardPost
+  runDebuggerCommand: RunDebuggerCommand
+  saveSessionCode: SaveSessionCode
+  sendAccountRecoveryEmail: SendAccountRecoveryEmail
+  sendInternalContestEmail: SendInternalContestEmail
+  sendVerificationEmail: SendVerificationEmail
+  setBlacklist: SetBlacklistWords
+  setItemStartTime: SetItemStartTime
+  setNotificationSetting: SetNotificationSetting
+  "whether hide current user rank info on rank boards"
+  setVisibleOnPlanRank: SetVisibleOnPlanRank
+  startDebuggerSession: StartSession
+  storeAdminCreateOrder: StoreAdminCreateOrder
+  storeOrderEdit: StoreOrderEdit
+  storeOrderSave: StoreOrderSave
+  "comment submission complexity"
+  submissionNoteComplexity: SubmissionNoteComplexity
+  "vote submission complexity"
+  submissionVoteComplexity: SubmissionVoteComplexity
+  submitCancelSurvey: SubmitCancelSurvey
+  submitQuestionSatisfactionSurvey: SubmitQuestionSatisfactionSurvey
+  submitQuestionSuggestion: SubmitQuestionSuggestion
+  submitSubscriptionSurvey: SubmitSubscriptionSurvey
+  submitSurveyV2: SubmitSurveyV2
+  subscribeTopic: SubscribeTopic
+  subscriptionViewCountIncrement: SubscriptionViewCountIncrement
+  tagSearchHit: TagSearchHit
+  toggleContestDynamicLayout: ToggleContestDynamicLayout
+  toggleFavorite: ToggleFavorite
+  toggleFavoriteSolution: ToggleFavoriteSolution
+  togglePinComment: TogglePinComment
+  togglePinTopic: TogglePinTopic
+  unlockFavorite: UnlockFavorite
+  unlockShareEvent: UnlockShareEvent
+  unpublishContestAnnouncement: UnpublishContestAnnouncement
+  upcSubmitResponse: UPCSubmitResponse
+  upcV2SubmitSurvey: UpcV2SubmitSurvey
+  updateAnnualReportViewStatus: UpdateAnnualReportViewStatus
+  updateAvatarStatus: UpdateUserAvatarStatus
+  updateBetaParticipation: UpdateBetaParticipation
+  updateComment: UpdateComment
+  updateContribution: UpdateContribution
+  updateEducation: UpdateEducation
+  updateEmailPrimary: UpdateEmailPrimary
+  updateFavoriteEmojiBackgroundV2: UpdateFavoriteEmojiBackgroundV2
+  updateFavoriteIsPublicV2: UpdateFavoriteIsPublicV2
+  updateFavoriteNameDescriptionV2: UpdateFavoriteNameDescriptionV2
+  updateInvalidUsername: UpdateInvalidUsername
+  updateNote: UpdateNote
+  updateOccupation: UpdateOccupation
+  updatePassword: UpdatePassword
+  updatePlayground: UpdatePlayground
+  updatePlaygroundFolder: UpdatePlaygroundFolder
+  updateProblematicPost: UpdateProblematicPost
+  updateProfile: UpdateProfile
+  updateProfileV3: UpdateProfileV3
+  updatePublicBadge: UpdatePublicBadge
+  updateSolution: UpdateSolution
+  updateSubmissionNote: UpdateSubmissionNote
+  updateSyncedCode: UpdateSyncedCode
+  updateTeamMember: UpdateTeamMember
+  updateTopic: UpdateTopic
+  updateTopicWithCategory: UpdateTopicWithCategory
+  updateUsername: UpdateUsername
+  userManagementApplyForPremiumTrial: UmApplyForPremiumTrial
+  userManagementBanIp: UmBanIP
+  userManagementBanUser: UmBanUser
+  userManagementCreateScore: UmCreateScore
+  userManagementDeleteUserCreditCard: UmDeleteUserCreditCard
+  userManagementEditIpStatus: UmEditIPStatus
+  userManagementSendVerificationEmail: UmSendVerificationEmail
+  userManagementSetEmailPrimary: UmSetEmailPrimary
+  userUploadSchoolLogo: UserUploadSchoolLogo
+  votePost: VotePost
+}
+
+type NewFeatureAnnouncementNode {
+  id: ID!
+  isShown: Boolean!
+  link: String!
+  text: String!
+}
+
+type NotificationCategoryNode {
+  configurableNotificationTypes: [NotificationTypeNode]
+  slug: String
+  title: String
+}
+
+type NotificationConnection {
+  "Contains the nodes in this connection."
+  edges: [NotificationEdge]!
+  id: String
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+}
+
+type NotificationDataNode {
+  content: String!
+  id: ID!
+  metadata: JSONString
+  notificationSet: NotificationNodeConnection!
+  type: String
+}
+
+"A Relay edge containing a `Notification` and its cursor."
+type NotificationEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: NotificationNode
+}
+
+type NotificationNode {
+  actioned: Boolean!
+  creationDate: Int
+  "The ID of the object."
+  id: ID!
+  modifiedDate: Int!
+  notificationData: NotificationDataNode!
+  notificationId: Int
+  user: UserNode
+}
+
+type NotificationNodeConnection {
+  "Contains the nodes in this connection."
+  edges: [NotificationNodeEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+}
+
+"A Relay edge containing a `NotificationNode` and its cursor."
+type NotificationNodeEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: NotificationNode
+}
+
+type NotificationTypeNode {
+  channelSettings: JSONString
+  description: String
+  identifier: String
+  name: String
+}
+
+type OMFavoriteBriefNode {
+  author: FavoriteBriefUserNode!
+  collectCount: Int!
+  coverBackgroundColor: String
+  coverEmoji: String
+  coverUrl: String
+  created: DateTime!
+  description: String!
+  favoriteType: FavoriteTypeEnum
+  forkCount: Int!
+  generatedFavoritesInfo: GeneratedFavoritesInfoNode
+  generateFromFavoriteSlug: String
+  hasCurrentQuestion: Boolean
+  isDefaultList: Boolean!
+  isPublicFavorite: Boolean!
+  lastModified: DateTime!
+  lastQuestionAddedAt: DateTime
+  name: String!
+  questionNumber: Int!
+  rule: RuleNode
+  slug: String!
+  viewCount: Int
+}
+
+type OMFavoriteListNode {
+  favorites: [OMFavoriteBriefNode!]!
+  totalNum: Int!
+}
+
+type OMFavoriteLogNode {
+  createdAt: DateTime!
+  operation: String!
+  operator: FavoriteBriefUserNode!
+}
+
+type OMFavoriteQuestionListNode {
+  questions: [OMFavoriteQuestionNode!]!
+  totalNum: Int!
+}
+
+type OMFavoriteQuestionNode {
+  createdAt: DateTime
+  difficulty: DifficultyDescribedEnum!
+  "出题频率，企业题单专用字段"
+  frequency: Float
+  id: ID!
+  "whether the question is in the user's favorites"
+  isInMyFavorites: Boolean!
+  paidOnly: Boolean!
+  questionFrontendId: String!
+  questionStats: JSONString
+  status: FavoriteQuestionStatusEnum
+  submissionNumFromFav: Int!
+  title: String!
+  titleSlug: String!
+  topicTags: [CommonTagNode!]
+  translatedTitle: String
+}
+
+type OMGenerateFavorite {
+  error: String
+  ok: Boolean!
+}
+
+type OMRemoveQuestionFromFavorite {
+  error: String
+  ok: Boolean!
+}
+
+type OMUpdateFavorite {
+  error: String
+  ok: Boolean!
+}
+
+type OccupationRecordNode {
+  endTime: String
+  id: ID!
+  jobTitle: String
+  startTime: String
+  toPresent: Boolean!
+  unverifiedOrganizationName: String
+  user: PrivateContestUserNode!
+}
+
+type OfficialIDELayoutNode {
+  layoutJson: JSONString!
+  slug: String!
+}
+
+type OfficialSolutionFeedbackBriefNode {
+  additionalComment: String
+  createdAt: DateTime!
+  metaInfo: FeedBackMetaNode!
+  rateScore: Int!
+  reasonTagIds: [Int!]!
+}
+
+type OfficialSolutionFeedbackDetailNode {
+  additionalComment: String
+  authorName: String!
+  createdAt: DateTime!
+  feedbackUser: String!
+  metaInfo: FeedBackMetaNode!
+  questionInfo: QuestionNode
+  rateScore: Int!
+  reasonTagIds: [Int!]!
+}
+
+type OpenNotifications {
+  error: String
+  ok: Boolean
+}
+
+type OptInOrOutDynamicLayoutFeature {
+  error: String
+  ok: Boolean!
+  optInResult: Boolean
+}
+
+type OptInOrOutPremiumFeature {
+  error: String
+  success: Boolean
+}
+
+type OrderOperationLogNode {
+  action: String!
+  createdAt: DateTime!
+  operator: PrivateContestUserNode!
+}
+
+"The Relay compliant `PageInfo` type, containing data necessary to paginate this connection."
+type PageInfo {
+  "When paginating forwards, the cursor to continue."
+  endCursor: String
+  "When paginating forwards, are there more items?"
+  hasNextPage: Boolean!
+  "When paginating backwards, are there more items?"
+  hasPreviousPage: Boolean!
+  "When paginating backwards, the cursor to continue."
+  startCursor: String
+}
+
+type PagifiedCommentNode {
+  currentPage: Int!
+  data: [CommentNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedContestNode {
+  currentPage: Int!
+  data: [ContestNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedContributionNode {
+  currentPage: Int!
+  data: [ContributionNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedOfficialSolutionFeedbackDetailNode {
+  currentPage: Int!
+  data: [OfficialSolutionFeedbackDetailNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedPostNode {
+  currentPage: Int!
+  data: [PostNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedQuestionFeedbackNode {
+  currentPage: Int!
+  data: [QuestionFeedbackNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedQuestionLastSolveNode {
+  currentPage: Int!
+  data: [QuestionLastSolveNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedQuestionNode {
+  currentPage: Int!
+  data: [QuestionNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedTopicNode {
+  currentPage: Int!
+  data: [TopicNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedUserContestStatNode {
+  currentPage: Int!
+  data: [UserContestStatNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedUserNode {
+  currentPage: Int!
+  data: [UserNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedUserReportNode {
+  currentPage: Int!
+  data: [UserReportNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PagifiedVirtualContestScoreNode {
+  currentPage: Int!
+  data: [VirtualContestScoreNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
+}
+
+type PanelQuestionListNode {
+  finishedLength: Int
+  hasViewPermission: Boolean!
+  panelName: String!
+  questions: [PanelQuestionNode!]!
+  totalLength: Int
+}
+
+type PanelQuestionNode {
+  difficulty: DifficultyDescribedEnum!
+  id: ID!
+  paidOnly: Boolean!
+  questionFrontendId: String!
+  questionNumber: Int
+  score: Int
+  status: PanelQuestionStatusEnum
+  title: String!
+  titleSlug: String!
+  topicTags: [CommonTagNode!]
+  translatedTitle: String
+}
+
+type PerformNotificationAction {
+  error: String
+  notification: NotificationNode
+  ok: Boolean
+}
+
+type PlanBriefPlanGroupNode {
+  cover: String!
+  dailyQuestionNum: String!
+  days: String!
+  hidden: Boolean!
+  name: String!
+  slug: String!
+}
+
+type PlanBriefProgressNodeWithPlan {
+  completedNum: Int!
+  daysPassed: Int!
+  endAt: Date!
+  hasCompleted: Boolean!
+  id: ID!
+  isAborted: Boolean!
+  "Study Plan"
+  plan: PlanBriefStudyPlanNodeWithGroup!
+  questionNum: Int!
+  startedAt: Date!
+}
+
+type PlanBriefStudyPlanNode {
+  "Whether to get reward"
+  awarded: Boolean!
+  "Period (number of days)"
+  days: Int!
+  "Medal corresponding to the plan"
+  medal: MedalNode!
+  name: String!
+  slug: String!
+}
+
+type PlanBriefStudyPlanNodeWithGroup {
+  "Whether to get reward"
+  awarded: Boolean!
+  "Period (number of days)"
+  days: Int!
+  "Study Plan Group"
+  group: PlanBriefPlanGroupNode!
+  "Medal corresponding to the plan"
+  medal: MedalNode!
+  name: String!
+  slug: String!
+}
+
+type PlanBriefUserNode {
+  realName: String!
+  userAvatar: String!
+  userName: String
+  userSlug: String!
+}
+
+type PlanCatalogNode {
+  name: String!
+  ordering: Int!
+  slug: String!
+}
+
+type PlanCompletedStatusNode {
+  "If null, keep polling"
+  completedStudyPlan: Boolean
+  "Whether user joined this plan"
+  joinedStudyPlan: Boolean!
+  planProgressDetail: PlanUserProgressDetailNode
+}
+
+"Used to describe PlanGroup details"
+type PlanDetailPlanGroupNode {
+  cover: String!
+  creator: UserNode
+  dailyQuestionNum: String!
+  days: String!
+  desc: String!
+  hidden: Boolean!
+  name: String!
+  ongoingProgress: PlanProgressNode
+  "All study plans of the planning group"
+  plans: [PlanStudyPlanNode!]!
+  slug: String!
+  tags: [CommonTagNode!]!
+}
+
+type PlanDetailStudyPlanNode {
+  allowedLanguages: JSONString!
+  "Whether to get reward"
+  awarded: Boolean!
+  dailyQuestionNum: String!
+  "Period (number of days)"
+  days: Int!
+  "Number of easy questions"
+  easy: Int!
+  "Number of hard questions"
+  hard: Int!
+  hasPremiumQuestion: Boolean!
+  hint: String!
+  "Medal corresponding to the plan"
+  medal: MedalNode!
+  "Number of medium questions"
+  medium: Int!
+  name: String!
+  "Plan ordering in the study group"
+  ordering: Int!
+  premiumOnly: Boolean!
+  slug: String!
+  "Tasks of the study plan"
+  tasks: [PlanTaskNode!]!
+}
+
+type PlanGroupListNode {
+  "List of Plan Groups"
+  data: [PlanGroupNode!]!
+  "Number of Plan Groups"
+  total: Int!
+}
+
+type PlanGroupNode {
+  cover: String!
+  dailyQuestionNum: String!
+  days: String!
+  hidden: Boolean!
+  name: String!
+  ongoingProgress: PlanProgressNode
+  "All study plans of the planning group"
+  plans: [PlanBriefStudyPlanNode!]!
+  slug: String!
+}
+
+type PlanNextQuestionNode {
+  inPremiumSubgroup: Boolean!
+  nextQuestion: PlanQuestionBriefNode
+}
+
+type PlanProgressNode {
+  completedNum: Int!
+  daysPassed: Int!
+  endAt: Date!
+  hasCompleted: Boolean!
+  id: ID!
+  isAborted: Boolean!
+  questionNum: Int!
+  startedAt: Date!
+}
+
+type PlanProgressNodeWithPlan {
+  completedNum: Int!
+  "Difficulty distribution of completed questions"
+  completedQuestionsDifficultyDistribution: JSONString!
+  daysPassed: Int!
+  endAt: Date!
+  hasCompleted: Boolean!
+  id: ID!
+  isAborted: Boolean!
+  "Study Plan"
+  plan: PlanDetailStudyPlanNode!
+  startedAt: Date!
+}
+
+type PlanQuestionBriefNode {
+  id: ID!
+  questionFrontendId: String!
+  title: String!
+  titleSlug: String!
+  translatedTitle: String
+}
+
+type PlanQuestionLightNode {
+  difficulty: DifficultyDescribedEnum!
+  hasOfficialSolution: Boolean!
+  id: ID!
+  paidOnly: Boolean!
+  questionFrontendId: String!
+  solutionInfo: PlanQuestionSolutionInfoNode
+  status: PlanQuestionStatusEnum
+  title: String!
+  titleSlug: String!
+  topicTags: [CommonTagNode!]!
+  translatedTitle: String
+}
+
+type PlanQuestionSolutionInfoNode {
+  solutionSlug: String
+  solutionTopicId: Int
+}
+
+type PlanStudyPlanNode {
+  allowedLanguages: JSONString!
+  "Whether to get reward"
+  awarded: Boolean!
+  dailyQuestionNum: String!
+  "Period (number of days)"
+  days: Int!
+  "Number of easy questions"
+  easy: Int!
+  "Number of hard questions"
+  hard: Int!
+  hasPremiumQuestion: Boolean!
+  hint: String!
+  "Medal corresponding to the plan"
+  medal: MedalNode!
+  "Number of medium questions"
+  medium: Int!
+  name: String!
+  "Plan ordering in the study group"
+  ordering: Int!
+  premiumOnly: Boolean!
+  slug: String!
+}
+
+type PlanStudyPlanNodeWithGroup {
+  allowedLanguages: JSONString!
+  "Whether to get reward"
+  awarded: Boolean!
+  dailyQuestionNum: String!
+  "Period (number of days)"
+  days: Int!
+  "Number of easy questions"
+  easy: Int!
+  "Study Plan Group"
+  group: PlanBriefPlanGroupNode!
+  "Number of hard questions"
+  hard: Int!
+  hasPremiumQuestion: Boolean!
+  hint: String!
+  "Medal corresponding to the plan"
+  medal: MedalNode!
+  "Number of medium questions"
+  medium: Int!
+  name: String!
+  "Plan ordering in the study group"
+  ordering: Int!
+  premiumOnly: Boolean!
+  slug: String!
+}
+
+type PlanSubGroupInfoNode {
+  name: String!
+  premiumOnly: Boolean!
+  questionNum: Int!
+  questions: [PlanQuestionLightNode!]!
+  slug: String!
+}
+
+type PlanTaskNode {
+  "Whether the user can complete this task or not"
+  canComplete: Boolean!
+  "Day that task will become available for completion"
+  day: Int!
+  desc: String!
+  "Whether the task has been completed"
+  hasComplete: Boolean!
+  "Sequence of questions in study plan"
+  ordering: Int!
+  question: QuestionNode!
+}
+
+type PlanUserProgressBriefNode {
+  allCompletedAt: DateTime
+  finishedQuestionNum: Int!
+  id: ID!
+  latestSubmissionAt: DateTime!
+  nextQuestionInfo: PlanNextQuestionNode
+  plan: StudyPlanBriefNode!
+  quittedAt: DateTime
+  startedAt: DateTime!
+}
+
+type PlanUserProgressDetailNode {
+  finishedQuestionNum: Int!
+  id: ID!
+  status: PlanUserProgressStatusEnum!
+  studyPlanDetail: StudyPlanDetailNode!
+  weeklyTaskScheduleResettable: Boolean
+}
+
+type PlanUserProgressListNode {
+  hasMore: Boolean!
+  planUserProgresses: [PlanUserProgressBriefNode!]!
+  total: Int!
+}
+
+type PlaygroundCodeNode {
+  code: String!
+  lang: PlaygroundCodeLang!
+  langSlug: String
+  playground: PlaygroundNode!
+}
+
+type PlaygroundDatasetNode {
+  description: String!
+  name: String!
+  slug: String!
+}
+
+type PlaygroundFolderNode {
+  name: String!
+  playgroundSet: [PlaygroundNode!]!
+  user: PrivateContestUserNode!
+}
+
+type PlaygroundNode {
+  folder: PlaygroundFolderNode
+  isLive: Boolean
+  isShared: Boolean
+  isUserOwner: Boolean
+  modifiedDate: DateTime!
+  name: String!
+  playgroundcodeSet: [PlaygroundCodeNode!]!
+  selectedLang: PlaygroundSelectedLang
+  selectedLangSlug: String
+  showOpenInPlayground: Boolean
+  showRunCode: Boolean
+  testcaseInput: String!
+  uuid: String!
+}
+
+type PlaygroundSnippetNode {
+  dependencies: [PlaygroundSnippetNode!]!
+  description: String!
+  foldingPositions: [Int]
+  fullSnippetWithDependencies: String
+  functionName: String!
+  hasDependencies: Boolean
+  hidden: Boolean!
+  lang: PlaygroundSnippetsLang!
+  langSlug: String
+  playgroundsnippetsSet: [PlaygroundSnippetNode!]!
+  snippet: String!
+}
+
+type PlaygroundStateNode {
+  createdNum: Int!
+  upperLimitToCreate: Int!
+}
+
+type PlaygroundTemplateCodeNode {
+  foldingPositions: [Int]
+  lang: PlaygroundTemplateCodeLang!
+  langSlug: String
+  templateCode: String!
+}
+
+type PlaygroundTemplateNode {
+  codes: [PlaygroundTemplateCodeNode]
+  name: String!
+  nameSlug: String!
+  templateId: String
+  testcaseInput: String!
+  user: PrivateContestUserNode!
+}
+
+type PointListNode {
+  hasNext: Boolean
+  points: [ScoreNode]
+}
+
+type PostMentionedUser {
+  key: String!
+  nickName: String!
+  username: String!
+  userSlug: String!
+}
+
+type PostNode {
+  anonymous: Boolean!
+  asTopic: Boolean
+  author: UserNode
+  authorAdminOnly: UserNodeAdminOnly
+  authorIsModerator: Boolean
+  coinRewards: [ScoreNode!]!
+  comment: CommentNode
+  commentId: Int
+  content: String!
+  contentPreview: String
+  creationDate: Int
+  id: Int!
+  isHidden: Boolean
+  isOwnPost: Boolean
+  isReported: Boolean
+  mentionedUsers: [PostMentionedUser]
+  nodebbPid: Int!
+  originalContent: String!
+  peek: String
+  reports: [ReportInfoNode]
+  searchScore: Float!
+  status: String
+  topic: TopicNode
+  topicId: Int
+  topicTitle: String
+  updationDate: Int
+  voteCount: Int!
+  voteSet: [VoteNode!]!
+  voteStatus: Int
+  voteUpCount: Int!
+}
+
+type PremiumBetaFeatureNode {
+  creationDate: DateTime!
+  description: String!
+  endsAt: DateTime
+  featureId: Int!
+  featureUrl: String
+  feedbackUrl: String
+  "Indicates whether a user has access to this feature."
+  hasAccess: Boolean
+  id: ID!
+  imageHeight: Int
+  imageUrl: String!
+  isEnabled: Boolean!
+  "Indicates whether a user has opted in for this feature."
+  optedIn: Boolean
+  order: Int
+  startsAt: DateTime
+  title: String!
+  type: PremiumBetaFeatureType!
+  updationDate: DateTime!
+}
+
+type PremiumInfoNode {
+  gateway: PaymentGateways!
+  periodEnd: DateTime!
+  periodStart: DateTime!
+}
+
+type PricingNode {
+  originalPrice: Float
+  price: Float
+}
+
+type PrivateContestUserNode {
+  achievementSet: [AchievementNode!]!
+  activeBadge: UserBadgeNode
+  archiveduserSet: [ArchivedUserNode!]!
+  articlepageSet: [ArticleNode!]!
+  badges: [UserBadgeNode!]!
+  badgeSet: [UserBadgeNode!]!
+  categoryscoreSet: [InterviewTagsCategoryScoreNode!]!
+  commentSet: [CommentNode!]!
+  companySet: [SponsorNode!]!
+  completionSet: [CompletionNode!]!
+  contestBadge: UserBadgeNode
+  contestreportlccnSet: [ContestReportLCCNNode!]!
+  contestreportSet: [ContestReportNode!]!
+  contributions: UserContributionNode!
+  contributionSet: [ContributionNode!]!
+  contributorSet: [ContributorNode!]!
+  createdBy: LibraryQuestionNodeConnection!
+  dateJoined: DateTime!
+  debugSession: [DebugSessionNode!]!
+  educationrecordSet: [EducationRecordNode!]!
+  email: String
+  emailaddressSet: [EmailNode!]!
+  emails: [EmailNode]
+  favoriteSet: [FeaturedQuestionListNode!]!
+  firstName: String!
+  flagresultSet: [FlagResultNode!]!
+  flagSet: [FlagNode!]!
+  githubUrl: String
+  hasChangedUsernameRecently: Boolean
+  hasUsablePassword: Boolean
+  id: ID
+  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+  isActive: Boolean!
+  isCurrentUserPremium: Boolean
+  isCurrentUserVerified: Boolean
+  isDiscussAdmin: Boolean
+  isDiscussStaff: Boolean
+  "Designates whether the user can log into this admin site."
+  isStaff: Boolean!
+  "Designates that this user has all permissions without explicitly assigning them."
+  isSuperuser: Boolean!
+  joinedTimestamp: Int!
+  languageProblemCount: [LanguageProblemCountNode!]
+  lastLogin: DateTime
+  lastName: String!
+  lastParticipatedContest: ContestNode
+  libraryactivitySet: QuestionActivityNodeConnection!
+  linkedinUrl: String
+  nameColor: String
+  notificationSet: NotificationNodeConnection!
+  occupationrecordSet: [OccupationRecordNode!]!
+  participatedTimes: Int!
+  password: String!
+  phone: String
+  playgroundfolderSet: [PlaygroundFolderNode!]!
+  playgroundSet: [PlaygroundNode!]!
+  playgroundtemplateSet: [PlaygroundTemplateNode!]!
+  postReport: [ReportInfoNode!]!
+  postSet: [PostNode!]!
+  problemsSolvedBeatsStats: [ProblemSolvedBeatsNode!]!
+  profile: UserProfileNode!
+  questionapplicationSet: [ApplicationNode!]!
+  questionlastsolveSet: [QuestionLastSolveNode!]!
+  questionSet: LibraryQuestionNodeConnection!
+  questionsolvesessionSet: [QuestionSolveSessionNode!]!
+  questionsuggestionSet: [QuestionFeedbackNode!]!
+  reportee: [UserReportNode!]!
+  reporter: [UserReportNode!]!
+  scoreUser: [ManagementScoreNode!]!
+  sessionSet: InterviewSessionNodeConnection!
+  socialAccounts: [String!]
+  storeaddressSet: [StoreAddressNode!]!
+  storeorderoperationlogSet: [OrderOperationLogNode!]!
+  storeorderSet: [StoreOrderNode!]!
+  submissionCalendar: JSONString!
+  submissionSet: [FilteredSubmissionNode!]!
+  submitStats: UserSubmitStatsNode!
+  submitStatsGlobal: UserSubmitStatsNode!
+  tagProblemCounts: TagProblemCountsCategoryNode!
+  twitterUrl: String
+  upcomingBadges: [UpcomingBadgeNode!]!
+  userCalendar: UserCalendarNode!
+  useripSet: [UserIPNode!]!
+  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+  username: String!
+  userratingSet: [UserRatingNode!]!
+  userskilltagSet: [UserSkillTagNode!]!
+  usersyncedcodeSet: [SyncedCodeNode!]!
+  virtualcontestscoreSet: [VirtualContestScoreNode!]!
+  voteSet: [VoteNode!]!
+  yearJoined: Int!
+}
+
+type ProblemSolvedBeatsNode {
+  difficulty: String!
+  percentage: Float
+}
+
+type ProdTestcase {
+  expectedOutput: [String]!
+  inputFormatted: [String]!
+  inputRaw: [String]!
+}
+
+type PublishContestAnnouncement {
+  ok: Boolean
+}
+
+type PublishSolution {
+  error: String
+  ok: Boolean
+  topic: TopicNode
+}
+
+type Query {
+  achievement: AchievementNode
+  achievements: [AchievementNode]
+  activeDailyCodingChallengeQuestion: DailyChallengeNodeV2
+  activeDiscountEvent: DiscountEventNode
+  advertisementByLocation: [AdvertisementNode!]!
+  allComments: PagifiedCommentNode
+  allContests: [ContestNode]
+  allContributions: PagifiedContributionNode
+  allLeetcodePlaygroundTemplates: [PlaygroundTemplateNode]
+  "query a list of common complexities"
+  allPinnedComplexitys: [ComplexityInfoNode!]
+  allPlaygroundCodes: [PlaygroundCodeNode]
+  allPlaygroundDatasets: [PlaygroundDatasetNode]
+  allPlaygroundFolders: [PlaygroundFolderNode]
+  allPlaygrounds: [PlaygroundNode]
+  allPlaygroundSnippets: [PlaygroundSnippetNode]
+  allPrivateContests: [ContestNode!]
+  allProgress: JSONString
+  allQuestions: [QuestionNode]
+  allQuestionsCount: [QuestionCountByDifficultyNode!]!
+  allQuestionsRaw: [RawQuestionNode]
+  allSchoolInfoUrl: String!
+  allTopics: PagifiedTopicNode
+  allUserPlaygroundTemplates: [PlaygroundTemplateNode]
+  allUsers: PagifiedUserNode
+  allVirtualContestScores: [VirtualContestScoreNode]
+  allVirtualContestScoresPagified: PagifiedVirtualContestScoreNode!
+  announcements: [DiscussAnnouncementNode!]!
+  application: ApplicationNode
+  applications: [ApplicationNode]
+  archivedUsers: [ArchivedUserNode!]!
+  article: ArticleNode
+  blacklist: BlacklistNode
+  brightTitle: Boolean
+  btsReferral: BTSReferralNode
+  cachedTrendingCategoryTopics: [TopicNode]
+  canSeeOtherSubmissionHistory: Boolean!
+  card: CardNode
+  cards: [CardNode]
+  cardsWithStats: [CardNode]
+  categories: [CategoryNode]
+  categoryTopicList: TopicConnection
+  cfTurnstileAppearance: String
+  cfTurnstileKey: String
+  challenges: [CodingChallengeNode!]!
+  channels: [ChannelNode]
+  chapter: ChapterNode
+  chapters: [ChapterNode]
+  chinaHost: String
+  codeWithMemory: SampleCodeNode
+  codeWithRuntime: SampleCodeNode
+  comment: CommentNode
+  commentContext: JSONString
+  commentReplies: [CommentNode!]
+  commonKeyword: CommonKeywordNode
+  companies: [CompanyNode!]!
+  companyTag: CompanyTagNode
+  companyTags: [CompanyTagNode!]
+  contest: ContestNode
+  contestDetail: ContestDetailNode
+  contestQuestion: ContestQuestionDetailNode
+  contestQuestionSubmissionList: ContestSubmissionListNode
+  contestRatingHistogram: [ContestRatingHistogramBarNode!]!
+  contestReportApproveSummary: ContestReportSummaryNode!
+  contestReports: [ContestReportNode!]!
+  contestReportsLccn: [ContestReportLCCNNode!]!
+  contestRootBanners: [ContestRootBannerNode!]!
+  contestTopics: PagifiedTopicNode
+  contribution: ContributionNode
+  contributions: [ContributionNode]
+  createdPublicFavoriteList: FavoriteDetailListNode!
+  currentContestAnnouncements: [ContestAnnouncementNode]
+  currentDailyCodingChallenge: CodingChallengeNode
+  currentSubscriptionInfo: CurrentSubscriptionInfo
+  currentTimestamp: Float
+  dailyChallengeMedal: MedalNode
+  dailyCodingChallenge: CodingChallengeNode
+  dailyCodingChallengeV2: CodingChallengeNodeV2
+  dashboardItem: ItemNode
+  dccSubmissionInfo: CodingChallengeSubmissionNode
+  dccSubmissionPolling: CodingChallengePollingNode
+  dccSubmissionPollingV2: CodingChallengePollingNode
+  debuggerLanguageFeatures: [DebuggerLanguageFeatureNode!]
+  defaultSubscriptionPricing: SubscriptionsNode
+  deleteUserRequests: DeleteUserRequestListNode!
+  didCompleteUpc: Boolean!
+  discussCategory: DiscussCategoryNode
+  discussQuestionTopicTags: [DiscussTopicTagNode!]!
+  educationRecordList: [EducationRecordNode]
+  emailEvent: EmailEventNode
+  emailEvents: [EmailEventNode]
+  emailSendSession: EmailSendSessionNode
+  emailSendSessions: [EmailSendSessionNode]
+  emailTemplate: EmailTemplateNode
+  emailTemplates: [EmailTemplateNode]
+  enableIdeDynamicLayoutFeature: Boolean!
+  favorite: FavoriteNode
+  favoriteCards: [CardNode]
+  favoriteDetailV2: FavoriteDetailNode
+  "ac, notac, or null"
+  favoriteQuestionAcStatus: String
+  favoriteQuestionList: FavoriteQuestionListNode!
+  favoritesLists: FavoritesNode
+  favoriteSubmitAcProgress: FavoriteSubmitACProgressNode
+  "user progress of a favorite, either his own or collected ones"
+  favoriteUserQuestionProgressV2: UserQuestionProgressNodeV2!
+  feature: FeatureNode
+  featuredContests: [ContestNode!]!
+  featuredQuestionLists: [FeaturedQuestionListNode!]!
+  feedbackMetaInfoBySlug: FeedBackMetaNode
+  filterableCategories: [CategoryType]
+  filteredSubmissions: FilteredSubmissionOverviewNode
+  flagReasons: [FlagReasonNode!]!
+  flagResourceType: ResourceTypeNode
+  frontendQuestionSubmissionResults: [FrontendQuestionResultNode]!
+  globalRanking: GlobalRankingNode
+  growthbookTest: String!
+  hasAccessToFavorite: AccessToFavoriteNode!
+  hasFavoriteSessionReset: Boolean!
+  hasTakenCancelSurvey: Boolean
+  hasTakenSubscriptionSurvey: Boolean
+  historyCards: [CardNode]
+  htmlArticle: HtmlArticleNode
+  "user preference dynamic layouts"
+  ideDynamicLayouts: [IDEDynamicLayoutNode!]!
+  intentionTags: [IntentionTagNode]!
+  internalContestAwardedUsers: [Int]
+  internalContestFeedbackEmail: String
+  internalContestRegisterEmail: String
+  "Used for stuff to create orders manually"
+  internalStoreItems: [StoreItemNode!]!
+  interviewAllSessions: InterviewSessionConnection!
+  interviewCardList: [InterviewCardNode!]
+  interviewCurrentSession: InterviewSessionNode
+  interviewed: InterviewSurveyNode
+  interviewGlobalStats: InterviewGlobalStatsNode!
+  interviewIncompleteCards: [ID!]!
+  interviewScoreProgress: [InterviewScoreProgressNode!]!
+  interviewSession: InterviewSessionNode
+  interviewSubmissions: InterviewSubmissionConnection!
+  isCurrentUserAuthenticated: Boolean
+  isEasterEggCollected: Boolean!
+  isMyCollectedFavorite: Boolean!
+  isMyCreatedFavorite: Boolean!
+  isPremium: Boolean
+  isProgressCalculated: Boolean!
+  isSolutionTopic: Boolean!
+  item: ItemNode
+  items: [ItemNode]
+  languageList: [LanguageNode]
+  lastAcSubmission: SubmissionDetailsNode
+  learningContext: LearningContextNode
+  learningContextV2: LearningContextNodeV3
+  libraryActivity: QuestionActivityNode
+  libraryActivityTypes: [LibraryActivityType!]!
+  libraryCategories: [String!]!
+  libraryDefaultTemplate: LibraryTemplate
+  libraryDifficulties: [LibraryDifficulty!]!
+  libraryLangList: [LibraryLanguage!]!
+  libraryMatchTypes: [LibraryMatchType!]!
+  libraryQuestion: LibraryQuestionNode
+  libraryQuestions: LibraryQuestionConnection!
+  libraryQuestionTypes: [LibraryQuestionType!]!
+  librarySolutionStatus: [LibrarySolutionStatus!]!
+  localRanking: LocalRankingNode
+  locationDict: JSONString
+  locations: [LocationAutocomplete]!
+  loginSocial: [SocialLoginNode]
+  loginUrl: String
+  managementCompanyQuestionOptions: CompanyQuestionOptionsNode!
+  managementCompanyQuestions: ManagementCompanyQuestionListNode!
+  managementCompanyQuestionV2: CompanyQuestionListNode!
+  "Company Tag List"
+  managementCompanyTags: ManagementCompanyTagNode!
+  managementIncVoteLogs: ManagementIncVoteLogListNone!
+  managementQuestionAdminVoteOptions: QuestionAdminVoteOptionsNode!
+  managementRoles: [ManagementRoleNode!]!
+  managementTagAdminLogs: ManagementTagAdminLogListNode!
+  "Tag Category List"
+  managementTagCategories: [TagCategoryNode]!
+  "Tag Group List"
+  managementTagGroups: [TagGroupNode]!
+  "Tag List"
+  managementTags: ManagementTagNode!
+  managementTeamMembers: ManagementTeamMemberListNode!
+  matchedUser: UserNode
+  matchedUsers: [UserNode]
+  medal: MedalNode
+  mostRecentCard: CardNode
+  myCollectedFavoriteList: FavoriteBriefListNode!
+  myContests: PagifiedUserContestStatNode
+  myCreatedFavoriteList: FavoriteBriefListNode!
+  myOrders: [StoreOrderNode!]
+  myPlaygroundState: PlaygroundStateNode!
+  newFeatureAnnouncements: [NewFeatureAnnouncementNode!]
+  nextChallengePairs: JSONString
+  nextSolution: TopicNode
+  notification: NotificationNode
+  notificationCategories: [NotificationCategoryNode]
+  notifications: NotificationConnection
+  notificationStatus: JSONString
+  notificationTypes: [NotificationTypeNode]
+  occupationRecordList: [OccupationRecordNode]
+  "official IDE dynamic layout"
+  officialIdeDynamicLayout: [OfficialIDELayoutNode!]!
+  officialSolutionFeedbacks: PagifiedOfficialSolutionFeedbackDetailNode
+  omFavoriteList: OMFavoriteListNode!
+  omFavoriteLogs: [OMFavoriteLogNode]!
+  omFavoriteQuestionList: OMFavoriteQuestionListNode!
+  ongoingVirtualContest: ContestNode
+  orderDetails: StoreOrderNode
+  panelQuestionList: PanelQuestionListNode
+  pastContests: PagifiedContestNode!
+  planCompletedPlans: [PlanStudyPlanNodeWithGroup!]!
+  planGroupCatalogs: [PlanCatalogNode!]!
+  planGroupDetail: PlanDetailPlanGroupNode
+  planGroupsByCatalog: PlanGroupListNode!
+  planGroupsByTag: PlanGroupListNode!
+  planOngoingProgresses: [PlanBriefProgressNodeWithPlan!]!
+  planProgressDetail: PlanProgressNodeWithPlan
+  playground: PlaygroundNode
+  playgroundCode: PlaygroundCodeNode
+  playgroundSnippet: PlaygroundSnippetNode
+  playgroundTemplate: PlaygroundTemplateNode
+  pointList: PointListNode
+  pollInterval: Int
+  post: PostNode
+  premiumBetaFeatures: [PremiumBetaFeatureNode!]!
+  prevSolution: TopicNode
+  privateContestAllParticipants: [UserNode!]
+  privateContestPastParticipants: [PrivateContestUserNode!]
+  privateContestRegisteredUserIds: [ID]
+  problemsetLearningContext: LearningContextNodeV2
+  question: QuestionNode
+  questionCompanyTags: CompanyTagConnection
+  questionDiscussionTopic: TopicNode
+  questionFeedback: PagifiedQuestionFeedbackNode
+  questionFeedbackReasons: [QuestionFeedbackReason!]!
+  questionList: PagifiedQuestionNode
+  questionNumByTags: Int!
+  questionSatisfactionSurvey: QuestionSatisfactionSurveyNode!
+  questionSolutions: QuestionSolutionsNode!
+  questionSubmissionList: SubmissionListNode
+  questionTag: QuestionTagNode
+  questionTagsAdmin: [QuestionTagNode!]
+  questionTagsSuggest: [String]
+  questionTopics: PagifiedTopicNode
+  questionTopicsList: TopicConnection
+  questionTopicTags: TopicTagConnection
+  randomPanelQuestion: String
+  randomQuestion: QuestionNode
+  recaptchaKey: String
+  recaptchaKeyV2: String
+  recentAcSubmissionList: [SubmissionDumpNode!]
+  recentSubmissionList: [SubmissionDumpNode!]
+  recommendSolutionTags: [SolutionTagNode]!
+  redeemedTimeTravelTicketCount: Int!
+  relatedSolutions: [TopicNode]!
+  rewindData: RewindNode
+  rootCategory: [DiscussCategoryNode!]!
+  schools: [SchoolNode!]!
+  scripts: [ScriptNode!]
+  scriptTaskResult: JSONString
+  sessions: DebugSessionNode
+  showAnnualModalOnQd: MedalNode
+  siteAnnouncements: [SiteAnnouncementNode]
+  siteRegion: String
+  sitewideAnnouncement: String
+  skillTags: [SkillTagNode]
+  solutionLanguageTags: [SolutionTagNode]!
+  solutionTopicTags: [SolutionTagNode]!
+  solvedQuestionsInfo: PagifiedQuestionLastSolveNode!
+  spamModerationPosts: PagifiedPostNode
+  statusList: [SubmissionStatusNode]
+  storeItems: [StoreItemNode!]!
+  storeOrderOperationLogs: [OrderOperationLogNode!]!
+  streakCounter: StreakCounterNode
+  stripePublicKey: String!
+  studyPlanMedalPolling: StudyPlanMedalPollingNode
+  "get advertisement study plans of feature on playground"
+  studyPlansV2AdFeature: [StudyPlanFeatureNode!]!
+  "get advertisement study plans on questions page"
+  studyPlansV2AdQuestionPage: [StudyPlanBriefNode!]!
+  "get study plans by catalog"
+  studyPlansV2ByCatalog: StudyPlanListNode!
+  "get study plans by tag"
+  studyPlansV2ByTag: StudyPlanListNode!
+  "get study plans by upc"
+  studyPlansV2ByUpc: [StudyPlanBriefNode!]!
+  "get study plans for homepage"
+  studyPlansV2ForHomepage: [StudyPlanWithProgressNode!]!
+  "get all enabled study plan catalogs"
+  studyPlanV2Catalogs: [StudyPlanCatalogNode!]!
+  "Poll this API after submission get AC."
+  studyPlanV2CompletedStatus: PlanCompletedStatusNode
+  "get a study plan detail"
+  studyPlanV2Detail: StudyPlanDetailNode
+  "get a user progress detail"
+  studyPlanV2ProgressDetail: PlanUserProgressDetailNode
+  "get the ranking board of a study plan"
+  studyPlanV2RankingBoard: UserRankInfoList!
+  "get the most recent user completed progress detail"
+  studyPlanV2RecentCompletedProgress: PlanUserProgressDetailNode
+  "whether the current user hide on the rank board"
+  studyPlanV2UserHideRank: Boolean
+  "user on going study plans"
+  studyPlanV2UserProgresses: PlanUserProgressListNode
+  "get current user rank in a plan"
+  studyPlanV2UserRank: UserRankInfoNode
+  "get weekly task records by year and month"
+  studyPlanV2WeeklyTaskRecords: UserWeeklyTaskRecordListNode
+  "query submission complexity"
+  submissionComplexity: SubmissionComplexityNode
+  submissionDetails: SubmissionDetailsNode
+  submissionList: SubmissionListNode
+  submittableLanguageList: [LanguageNode]
+  subscribeUrl: String
+  subscriptionPricing: SubscriptionsNode
+  subscriptionReferral: SubscriptionReferralNode
+  survey: SurveyNode
+  surveyStatus: SurveyStatusNode!
+  surveyV2: SurveyV2Node!
+  surveyV2WithoutCheckFunc: SurveyV2Node!
+  syncedCode: SyncedCodeNode
+  tagTopicList: TopicConnection
+  topic: TopicNode
+  topicComments: PagifiedCommentNode
+  topicTag: TopicTagNode
+  topicTags: [DiscussTopicTagNode!]!
+  topicTagsSuggest: [DiscussTopicTagNode!]!
+  topicUsers: [UserNode]!
+  topTwoContests: [ContestNode]!
+  upcomingContests: [ContestNode!]
+  upcV2InterestTags: [UpcV2TagNode!]
+  user: UserNode
+  userAccountFrozenInfo: UserAccountFrozenInfoNode!
+  userCategoryTopics: TopicConnection
+  userContestRanking: UserContestRankingNode
+  userContestRankingHistory: [UserContestRankingHistoryNode!]
+  userCountryCode: String
+  userManagementCreditCards: [ManagementCreditCardNode]!
+  userManagementIpList: ManagementIpListNode!
+  userManagementOperationHistory: ManagementOperationHistoryNode!
+  userManagementPremiumTrialRecordDetail: TrialRecordNode!
+  userManagementPremiumTrialRecords: TrialRecordListNode!
+  userManagementScoreHistory: ManagementScoreListNode!
+  userManagementSearch: ManagementUserListNode
+  userManagementStoreOrders: ManagementStoreOrderListNode!
+  userManagementStripeCharges: ManagementStripeChargeListNode!
+  userManagementUserBanTypes: [UserBanTypeNode]!
+  userManagementUserDetail: ManagementUserDetailNode
+  userManagementVac: VacRecordListNode!
+  userOfficialSolutionFeedback: OfficialSolutionFeedbackBriefNode
+  "获取用户当前 session 的做题进展，新版接口"
+  userProfileUserQuestionProgressV2: UserQuestionProgressNodeV2!
+  userRecentTopics: [TopicNode!]
+  userReports: PagifiedUserReportNode
+  users: [UserNode]
+  userSolutionTopics: TopicConnection
+  userStatus: MeNode
+  userToManage: UserNodeAdminOnly
+  validTimeTravelTicketCount: Int!
+  video: VideoNode
+  votes: JSONString
+  webPage: WebPageNode
+  websocketUrl: String
+  wordListTypes: [WordListTypeNode]!
+  worldCities: [String!]
+  worldCountries: [String!]
+  worldSubcountries: [String!]
+  "list of yearly medals which are qualified to acquire"
+  yearlyMedalsQualified: [MedalBriefNode!]
+}
+
+type QuestionActivityNode {
+  activityType: LibraryActivityType!
+  dateCreated: DateTime!
+  "The ID of the object."
+  id: ID!
+  isBaseline: Boolean!
+  payload: String
+  question: LibraryQuestionNode!
+  user: PrivateContestUserNode
+}
+
+type QuestionActivityNodeConnection {
+  "Contains the nodes in this connection."
+  edges: [QuestionActivityNodeEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+}
+
+"A Relay edge containing a `QuestionActivityNode` and its cursor."
+type QuestionActivityNodeEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: QuestionActivityNode
+}
+
+type QuestionAdminVoteOptionsNode {
+  positionOptions: [CommonTagNode]
+  timeOptions: [InterviewTimeOption]
+}
+
+type QuestionAttachmentNode {
+  content: String!
+  extension: String!
+  name: String!
+}
+
+type QuestionCountByDifficultyNode {
+  count: Int!
+  difficulty: String!
+}
+
+type QuestionCountNode {
+  count: Int!
+  difficulty: DifficultyDescribedEnum!
+}
+
+type QuestionFeedbackNode {
+  createDate: DateTime!
+  extraInfo: String!
+  hasComment: Boolean
+  id: ID!
+  question: QuestionNode!
+  reasonChoices: JSONString!
+  user: PrivateContestUserNode!
+}
+
+type QuestionFeedbackReason {
+  id: Int!
+  name: String!
+}
+
+type QuestionLastSolveNode {
+  lastAcSession: QuestionSolveSessionNode
+  question: QuestionNode!
+  totalSolves: Int!
+}
+
+type QuestionNode {
+  acRate: Float
+  adminUrl: String
+  allowDiscuss: Boolean
+  article: JSONString
+  articleTopicId: String
+  attachments: [QuestionAttachmentNode!]!
+  boundTopicId: Int
+  canSeeQuestion: Boolean!
+  categoryTitle: String
+  challengeQuestion: ChallengeQuestionNode
+  challengeQuestionsV2: [ChallengeQuestionNode!]!
+  codeDefinition: JSONString
+  codeSnippets: [CodeSnippetNode]
+  companyTags: [CompanyTagNode!]
+  companyTagStats: JSONString
+  companyTagStatsV2: JSONString
+  content: String
+  contributors: [ContributorNode]
+  dataSchemas: [String]
+  difficulty: String
+  "discussion count for one question, 0 if no question exist"
+  discussionCount: Int
+  dislikes: Int
+  enableDebugger: Boolean
+  enableRunCode: Boolean
+  enableSubmit: Boolean
+  enableTestMode: Boolean
+  envInfo: String
+  exampleTestcaseList: [String]!
+  exampleTestcases: String
+  freqBar: Float
+  frequency: Float!
+  frontendPreviews: JSONString
+  hasFrontendPreview: Boolean!
+  hasSolution: Boolean!
+  hasVideoSolution: Boolean!
+  hide: Boolean
+  hideLastTestcases: HideLastTestcasesNode
+  hints: [String]
+  infoVerified: Boolean
+  interpretUrl: String
+  isFavor: Boolean!
+  isLiked: Boolean
+  isPaidOnly: Boolean
+  judgerAvailable: Boolean
+  judgeType: String
+  langToValidPlayground: JSONString
+  libraryUrl: String
+  likes: Int
+  metaData: String
+  mysqlSchemas: [String]
+  nextChallengePairs: JSONString
+  nextChallenges: [QuestionNode!]
+  note: String
+  questionDetailUrl: String
+  questionFrontendId: String
+  questionId: String
+  questionTitle: String
+  questionTitleSlug: String
+  questionType: String
+  randomQuestionUrl: String
+  sampleTestCase: String
+  sessionId: String
+  similarQuestionList: [QuestionNode]!
+  similarQuestions: JSONString
+  solution: ArticleNode
+  "solution for one question, 0 if no question exist"
+  solutionNum: Int
+  stats: JSONString
+  status: String
+  submitUrl: String
+  title: String!
+  titleSlug: String!
+  topicTags: [TopicTagNode!]
+  translatedContent: String
+  translatedTitle: String
+  urlManager: JSONString
+}
+
+type QuestionSatisfactionSurveyNode {
+  leetcoinAmount: Int!
+  showSurvey: Boolean!
+  surveyJson: JSONString
+}
+
+type QuestionSolutionsNode {
+  hasDirectResults: Boolean
+  solutions: [TopicNode]!
+  totalNum: Int
+}
+
+type QuestionSolveSessionNode {
+  question: QuestionNode!
+  time: DateTime
+  wrongAttempts: Int!
+}
+
+type QuestionTagNode {
+  createdAt: DateTime!
+  id: ID!
+  "Deprecated in Tag System. Still used by old products."
+  isEnabled: Boolean!
+  keywords: [String!]!
+  name: String!
+  questions: [QuestionTagStatsNode!]!
+  slug: String!
+}
+
+type QuestionTagStatsNode {
+  frontendId: ID!
+  id: ID!
+  interviewedCount: Int!
+  title: String!
+}
+
+"quit a study plan"
+type QuitStudyPlan {
+  "whether delete this progress record"
+  deleted: Boolean!
+  ok: Boolean!
+  progressId: String!
+}
+
+type RankingNode {
+  currentGlobalRanking: Int
+  currentRating: String
+  dataRegion: String
+  ranking: String
+  user: UserNode
+}
+
+type RateArticle {
+  error: String
+  ok: Boolean
+  scoreResult: Int
+}
+
+type RatingNode {
+  average: Decimal!
+  count: Int!
+  id: ID!
+  userRating: UserRatingNode
+}
+
+type RawQuestionNode {
+  categoryTitle: String
+  difficulty: String
+  isPaidOnly: Boolean
+  questionFrontendId: String
+  questionId: String
+  status: String
+  title: String
+  titleSlug: String
+  translatedTitle: String
+}
+
+type RecordABExperimentEvent {
+  error: String
+  ok: Boolean!
+}
+
+type RejectContestReports {
+  rejectedReports: [ContestReportNode!]!
+}
+
+type RejectContribution {
+  contribution: ContributionNode
+  error: String
+  ok: Boolean
+}
+
+type RemoveFavoriteFromMyCollectionV2 {
+  error: String
+  ok: Boolean!
+}
+
+type RemoveQuestionFromFavorite {
+  error: String
+  favoriteIdHash: String
+  ok: Boolean
+  questionId: String
+  userName: String
+}
+
+type RemoveQuestionFromFavoriteV2 {
+  error: String
+  ok: Boolean!
+}
+
+type RemoveUsersFromInternalContest {
+  ok: Boolean
+}
+
+type ReorderFavoriteQuestionV2 {
+  error: String
+  ok: Boolean!
+}
+
+type ReportInfoNode {
+  content: String!
+  id: ID!
+  isHandled: Boolean
+  reporter: PrivateContestUserNode!
+  reportType: String
+}
+
+type ReportUser {
+  error: String
+  ok: Boolean
+}
+
+type RequestAnalysisEmail {
+  sessionWithReport: InterviewSessionNode
+}
+
+type RequestUpdateToReportedPost {
+  error: String
+  ok: Boolean
+}
+
+type ResetFavoriteSessionV2 {
+  error: String
+  ok: Boolean!
+}
+
+type ResetWeeklyTaskSchedule {
+  ok: Boolean!
+  progressId: String!
+}
+
+type ResourceTypeNode {
+  flaggedObjects: FlaggedObjectConnection!
+  name: ResourceTypeEnum!
+  operations: [FlagStatus!]
+}
+
+type RewardPost {
+  error: String
+  post: PostNode
+}
+
+type RewindNode {
+  ageInDays: Int!
+  attendedContestCount: Int!
+  badges: [UserBadgeNode]
+  currentGlobalRank: Int
+  dccSolvedCount: Int!
+  easyProblemsSolved: Int!
+  givenVoteDownCount: Int!
+  givenVoteUpCount: Int!
+  hardProblemsSolved: Int!
+  highestRankedContest: ContestNode
+  highestRankedContestId: Int!
+  highestRankingInContest: Int
+  id: ID!
+  maxStreak: Int!
+  mediumProblemsSolved: Int!
+  mostAttemptedQuestion: QuestionNode
+  mostAttemptedQuestionId: Int!
+  mostSolvedTags: [String]
+  mostUsedLanguage: String!
+  mostUsedLanguageId: Int!
+  problemSolvePercentile: Float!
+  receivedVoteUpCount: Int!
+  solutionsPublished: Int!
+  tags: String!
+  totalAcSubmissions: Int!
+  totalQuestionsSolved: Int
+  totalSubmissions: Int!
+  userId: Int!
+  year: Int!
+}
+
+type RuleNode {
+  difficultyNames: [String]!
+  knowledgeNames: [String]!
+  languageName: String!
+}
+
+type RunDebuggerCommand {
+  session: DebugSessionNode!
+  taskId: String!
+}
+
+type SampleCodeNode {
+  code: String!
+  hasNext: Boolean!
+  hasPrevious: Boolean!
+}
+
+type SaveSessionCode {
+  session: InterviewSessionNode
+}
+
+type SchoolNode {
+  colloquial: String!
+  id: ID!
+  name: String!
+  slug: String!
+}
+
+type ScoreNode {
+  category: ScoreCategory!
+  date: DateTime!
+  description: String!
+  extraInfo: String
+  id: ID!
+  score: Int!
+}
+
+type ScriptNode {
+  content: String!
+  creationDate: DateTime!
+  description: String!
+  id: ID!
+  inputSample: String!
+  name: String!
+  updationDate: DateTime!
+}
+
+type SearchMetaNode {
+  commentAuthor: UserNode
+  content: String
+  contentType: SearchMetaContentType!
+  highlights: [String]!
+  replyAuthor: UserNode
+}
+
+type SendAccountRecoveryEmail {
+  message: String
+  ok: Boolean
+}
+
+type SendInternalContestEmail {
+  error: String
+  ok: Boolean
+}
+
+type SendVerificationEmail {
+  ok: Boolean
+}
+
+type SetBlacklistWords {
+  error: String
+  ok: Boolean
+}
+
+type SetItemStartTime {
+  cardId: String
+  errors: JSONString
+  newProgress: JSONString
+  ok: Boolean
+}
+
+type SetNotificationSetting {
+  error: String
+  notificationType: NotificationTypeNode
+  ok: Boolean
+}
+
+"whether hide current user rank info on rank boards"
+type SetVisibleOnPlanRank {
+  ok: Boolean!
+}
+
+type ShareEventNode {
+  endDate: Date!
+  hasUserSharedEvent: Boolean!
+  startDate: Date!
+}
+
+type SiteAnnouncementNode {
+  blacklistUrls: String
+  content: String!
+  navbarItem: String
+  title: String
+  whitelistUrls: String
+}
+
+type SkillTagNode {
+  name: String!
+}
+
+type SocialAccountNode {
+  accountProvider: String!
+  profileLink: String
+}
+
+type SocialLoginNode {
+  id: String
+  loginUrl: String
+}
+
+type SolutionTagNode {
+  count: Int!
+  name: String!
+  slug: String!
+}
+
+type SponsorNode {
+  darkLogo: String
+  description: String!
+  lightLogo: String
+  logo: String
+  name: String!
+  watermark: String
+  website: String!
+}
+
+type StartProgress {
+  progress: PlanProgressNode
+}
+
+type StartSession {
+  session: DebugSessionNode!
+  taskId: String!
+}
+
+type StoreAddressNode {
+  address: String!
+  city: String!
+  country: String!
+  createDate: DateTime!
+  creationDate: DateTime!
+  fullName: String!
+  id: ID!
+  phone: String!
+  postalCode: String!
+  province: String!
+  storeorderSet: [StoreOrderNode!]!
+  updationDate: DateTime!
+  user: PrivateContestUserNode
+}
+
+type StoreAdminCreateOrder {
+  error: String
+  ok: Boolean
+}
+
+type StoreItemNode {
+  available: Boolean!
+  buckydropConfig: String
+  creationDate: DateTime!
+  description: String!
+  disabledMsg: String
+  displayConfig: JSONString
+  fields: [String!]
+  hideIfPaid: Boolean!
+  id: ID!
+  img: String
+  imgSlug: String
+  itemSlug: String!
+  name: String!
+  needsProcessing: Boolean!
+  needsShipping: Boolean!
+  order: Int!
+  promoImg: String
+  promoImgSlug: String
+  show: Boolean
+  storeorderSet: [StoreOrderNode!]!
+  updationDate: DateTime!
+  value: Int!
+  visible: Boolean!
+}
+
+type StoreOrderEdit {
+  error: String
+  ok: Boolean
+}
+
+type StoreOrderNode {
+  address: StoreAddressNode
+  buckydropPackageCode: String
+  buckydropShopOrderId: String
+  createDate: DateTime!
+  creationDate: DateTime!
+  details: String
+  id: ID
+  items: [StoreItemNode!]!
+  note: String!
+  orderId: String!
+  status: String!
+  storeorderoperationlogSet: [OrderOperationLogNode!]!
+  trackingId: String!
+  updationDate: DateTime!
+  user: UserNode
+}
+
+type StoreOrderSave {
+  error: String
+  storeOrder: StoreOrderNode
+  success: Boolean!
+}
+
+type StreakCounterNode {
+  currentDayCompleted: Boolean!
+  daysSkipped: Int!
+  hasCompletedChallenge: Boolean!
+  streakCount: Int!
+}
+
+type StudyPlanAwardNode {
+  badge: UserBadgeNode!
+  medal: MedalNode!
+}
+
+type StudyPlanBriefNode {
+  cover: String!
+  highlight: String!
+  name: String!
+  onGoing: Boolean!
+  premiumOnly: Boolean!
+  questionNum: Int!
+  slug: String!
+}
+
+type StudyPlanCatalogNode {
+  name: String!
+  recommendedStudyPlans: [String!]
+  slug: String!
+}
+
+type StudyPlanDetailNode {
+  allowedLanguages: [String!]!
+  award: MedalNode
+  awardDescription: String!
+  colorPalette: String
+  cover: String!
+  defaultLanguage: String
+  description: String!
+  hasMedal: Boolean!
+  highlight: String!
+  name: String!
+  needShowTags: Boolean!
+  onGoing: Boolean!
+  planSubGroups: [PlanSubGroupInfoNode!]!
+  premiumOnly: Boolean!
+  questionNum: Int!
+  relatedStudyPlans: [StudyPlanBriefNode!]!
+  slug: String!
+  staticCoverPicture: String!
+  threeDimensionUrl: String
+}
+
+type StudyPlanFeatureNode {
+  cover: String!
+  coverBackgroundColor: String!
+  highlight: String!
+  name: String!
+  onGoing: Boolean!
+  premiumOnly: Boolean!
+  questionNum: Int!
+  slug: String!
+}
+
+type StudyPlanListNode {
+  hasMore: Boolean!
+  studyPlans: [StudyPlanBriefNode!]!
+  total: Int!
+}
+
+type StudyPlanMedalPollingNode {
+  awards: [StudyPlanAwardNode]
+  keepPolling: Boolean!
+}
+
+type StudyPlanWithProgressNode {
+  cover: String!
+  finishedQuestionNum: Int
+  highlight: String!
+  name: String!
+  onGoing: Boolean!
+  premiumOnly: Boolean!
+  questionNum: Int!
+  slug: String!
+}
+
+type SubmissionComplexityNode {
+  isLimited: Boolean!
+  memoryComplexity: ComplexityInfoNode
+  timeComplexity: ComplexityInfoNode
+}
+
+type SubmissionCountNode {
+  count: Int!
+  difficulty: String!
+  submissions: Int!
+}
+
+type SubmissionDetailsNode {
+  code: String!
+  codeOutput: String
+  compileError: String
+  expectedOutput: String
+  flagType: SubmissionFlagTypeEnum
+  fullCodeOutput: [String]
+  id: Int
+  lang: LanguageNode!
+  lastTestcase: String
+  memory: Int
+  memoryDisplay: String!
+  memoryDistribution: String!
+  memoryPercentile: Float
+  notes: String!
+  question: QuestionNode!
+  runtime: Int
+  runtimeDisplay: String!
+  runtimeDistribution: String!
+  runtimeError: String
+  runtimePercentile: Float
+  statusCode: Int!
+  stdOutput: String
+  testBodies: [String]
+  testDescriptions: [String]
+  testInfo: [String]
+  timestamp: Int!
+  topicTags: [TopicTagNode]!
+  totalCorrect: Int
+  totalTestcases: Int
+  user: UserNode!
+}
+
+type SubmissionDumpNode {
+  flagType: SubmissionFlagTypeEnum
+  hasNotes: Boolean
+  id: ID
+  isPending: String
+  lang: String
+  langName: String
+  langVerboseName: String
+  memory: String
+  notes: String
+  runtime: String
+  status: Int
+  statusDisplay: String
+  time: String
+  timestamp: String
+  title: String
+  titleSlug: String
+  topicTags: [TopicTagNode]
+  url: String
+}
+
+type SubmissionListNode {
+  hasNext: Boolean
+  lastKey: String
+  submissions: [SubmissionDumpNode]
+}
+
+type SubmissionNoteComplexity {
+  ok: Boolean
+}
+
+type SubmissionStatusNode {
+  id: Int
+  name: String
+}
+
+type SubmissionVoteComplexity {
+  ok: Boolean
+}
+
+type SubmitCancelSurvey {
+  error: String
+}
+
+type SubmitQuestionSatisfactionSurvey {
+  error: String
+  ok: Boolean!
+}
+
+type SubmitQuestionSuggestion {
+  msg: String
+}
+
+type SubmitSubscriptionSurvey {
+  error: String
+}
+
+type SubmitSurveyV2 {
+  error: String
+  ok: Boolean!
+}
+
+type SubscribeTopic {
+  error: String
+  ok: Boolean
+  subscribe: Boolean
+  topic: TopicNode
+}
+
+type SubscriptionPricingNode {
+  canPurchaseCredit: Boolean
+  couponCode: String
+  discount: Float!
+  discountedPrice: Float!
+  discountPercent: Float!
+  isEligibleForIndiaDiscount: Boolean!
+  isValidCode: Boolean!
+  originalPrice: Float!
+  proration: Float!
+}
+
+type SubscriptionReferralNode {
+  link: String!
+  referredCount: Int!
+}
+
+type SubscriptionViewCountIncrement {
+  error: String
+  ok: Boolean
+}
+
+type SubscriptionsNode {
+  monthlyPrice: SubscriptionPricingNode!
+  yearlyPrice: SubscriptionPricingNode!
+}
+
+type SurveyNode {
+  createDate: DateTime!
+  description: String!
+  endDate: DateTime
+  id: ID!
+  isActive: Boolean!
+  startDate: DateTime!
+  surveyQuestions: [SurveyQuestionNode!]
+  surveyquestionSet: [SurveyQuestionNode!]!
+  title: String!
+}
+
+type SurveyQuestionChoiceNode {
+  allowTextAnswer: Boolean!
+  description: String!
+  id: ID!
+  surveyQuestion: SurveyQuestionNode!
+  value: String!
+}
+
+type SurveyQuestionNode {
+  choices: [SurveyQuestionChoiceNode!]
+  description: String!
+  extra: JSONString!
+  id: ID!
+  isRequired: Boolean!
+  questionType: SurveyQuestionQuestionType!
+  survey: SurveyNode!
+  surveyquestionchoiceSet: [SurveyQuestionChoiceNode!]!
+  title: String!
+}
+
+type SurveyStatusNode {
+  lastCompleted: Int
+}
+
+type SurveyV2Node {
+  leetcoinAmount: Int!
+  showSurvey: Boolean!
+  surveyJson: JSONString
+}
+
+type SyncedCodeNode {
+  code: String!
+  timestamp: Int!
+}
+
+type TagCategoryNode {
+  creationDate: DateTime!
+  group: TagGroupNode!
+  id: ID!
+  isEnabled: Boolean!
+  name: String!
+  slug: String!
+  tags: [TagNode!]!
+  updationDate: DateTime!
+}
+
+type TagGroupNode {
+  creationDate: DateTime!
+  id: ID!
+  name: String!
+  slug: String!
+  tagcategorySet: [TagCategoryNode!]!
+  updationDate: DateTime!
+}
+
+type TagNode {
+  companySet: [InterviewCompanyNode!]!
+  createdAt: DateTime!
+  discussTopicTag: [DiscussTopicTagNode!]!
+  favorites: [FeaturedQuestionListNode!]!
+  favoriteSet: [FeaturedQuestionListNode!]!
+  hotScore: Int
+  id: ID!
+  imgUrl: String
+  interviewTagsCategories: [InterviewTagsCategoryNode!]!
+  "Deprecated in Tag System. Still used by old products."
+  isEnabled: Boolean!
+  "Whether this is a standard tag or not"
+  isStandard: Boolean!
+  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
+  isTagEnabled: Boolean!
+  "Whether user can select this tag or not"
+  isUserSelectable: Boolean!
+  keywords: JSONString!
+  name: String!
+  order: Int
+  parentTag: TagNode
+  questionapplicationSet: [ApplicationNode!]!
+  slug: String!
+  tagCategories: [TagCategoryNode!]!
+  "Deprecated in Tag System. Still used by old products."
+  tagType: TagTypeNode
+}
+
+type TagProblemCountsCategoryNode {
+  advanced: [TagProblemsCountNode!]!
+  fundamental: [TagProblemsCountNode!]!
+  intermediate: [TagProblemsCountNode!]!
+}
+
+type TagProblemsCountNode {
+  problemsSolved: Int!
+  tagName: String!
+  tagSlug: String!
+}
+
+type TagSearchHit {
+  error: String
+  ok: Boolean!
+}
+
+type TagTypeNode {
+  name: String!
+  slug: String!
+}
+
+type ToggleContestDynamicLayout {
+  error: String
+  ok: Boolean!
+}
+
+type ToggleFavorite {
+  card: CardNode
+  errors: JSONString
+  isCurrentUserAuthenticated: Boolean
+  newFavoriteCards: [CardNode]
+  ok: Boolean
+}
+
+type ToggleFavoriteSolution {
+  error: String
+  ok: Boolean
+}
+
+type TogglePinComment {
+  comment: CommentNode
+  error: String
+  ok: Boolean
+}
+
+type TogglePinTopic {
+  error: String
+  ok: Boolean
+  topic: TopicNode
+}
+
+type TopicConnection {
+  "Contains the nodes in this connection."
+  edges: [TopicEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `Topic` and its cursor."
+type TopicEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: TopicRelayNode
+}
+
+type TopicNode {
+  authors: [UserNode]
+  category: DiscussCategoryNode
+  challengequestionSet: [ChallengeQuestionNode!]!
+  commentCount: Int!
+  contestSet: [ContestNode!]!
+  favoriteCount: Int!
+  hideFromTrending: Boolean
+  id: Int!
+  index: Int
+  isFavorite: Boolean
+  lastActivity: Int
+  lastComment: CommentNode
+  nodebbTid: Int!
+  pinned: Boolean!
+  pinnedAt: DateTime
+  post: PostNode!
+  searchMeta: SearchMetaNode
+  solutionTags: [SolutionTagNode]!
+  subscribed: Boolean
+  tags: [String!]!
+  title: String!
+  topLevelCommentCount: Int!
+  viewCount: Int!
+}
+
+type TopicRelayNode {
+  challengequestionSet: [ChallengeQuestionNode!]!
+  commentCount: Int!
+  commentSet: [CommentNode!]!
+  contestSet: [ContestNode!]!
+  id: ID!
+  lastComment: CommentNode
+  nodebbTid: Int!
+  pinned: Boolean!
+  pinnedAt: DateTime
+  post: PostNode!
+  questionTitle: String
+  tags: [DiscussTopicTagNode!]!
+  title: String!
+  topLevelCommentCount: Int!
+  url: String!
+  viewCount: Int!
+}
+
+type TopicTagConnection {
+  "Contains the nodes in this connection."
+  edges: [TopicTagEdge]!
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"A Relay edge containing a `TopicTag` and its cursor."
+type TopicTagEdge {
+  "A cursor for use in pagination"
+  cursor: String!
+  "The item at the end of the edge"
+  node: TopicTagNode
+}
+
+type TopicTagNode {
+  companySet: [InterviewCompanyNode!]!
+  createdAt: DateTime!
+  discussTopicTag: [DiscussTopicTagNode!]!
+  favorites: [FeaturedQuestionListNode!]!
+  favoriteSet: [FeaturedQuestionListNode!]!
+  frequencies: String
+  hotScore: Int
+  "The ID of the object."
+  id: ID!
+  imgUrl: String
+  interviewTagsCategories: [InterviewTagsCategoryNode!]!
+  "Deprecated in Tag System. Still used by old products."
+  isEnabled: Boolean!
+  "Whether this is a standard tag or not"
+  isStandard: Boolean!
+  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
+  isTagEnabled: Boolean!
+  "Whether user can select this tag or not"
+  isUserSelectable: Boolean!
+  keywords: JSONString!
+  name: String!
+  questionapplicationSet: [ApplicationNode!]!
+  questionIds: [Int]
+  questions: [QuestionNode!]
+  slug: String!
+  tagCategories: [TagCategoryNode!]!
+  tagId: Int!
+  "Deprecated in Tag System. Still used by old products."
+  tagType: TagTypeNode
+  translatedName: String
+}
+
+type TrialRecordListNode {
+  nodes: [TrialRecordNode!]!
+  totalNum: Int!
+}
+
+type TrialRecordNode {
+  applicant: ManagementUserSimpleNode!
+  applyTime: DateTime!
+  attachments: [String!]
+  id: ID!
+  notes: String!
+  premiumInfos: [PremiumInfoNode]
+  reviewedTime: DateTime
+  sku: String!
+  status: PremiumTrialApplyStatus!
+  trialDays: Int!
+  userInfo: ManagementUserSimpleNode!
+  uuid: ID!
+}
+
+type UPCSubmitResponse {
+  ok: Boolean
+}
+
+type UmApplyForPremiumTrial {
+  error: String
+  ok: Boolean
+}
+
+type UmBanIP {
+  error: String
+  ok: Boolean
+}
+
+type UmBanUser {
+  error: String
+  ok: Boolean
+}
+
+type UmCreateScore {
+  error: String
+  ok: Boolean
+}
+
+type UmDeleteUserCreditCard {
+  error: String
+  ok: Boolean
+}
+
+type UmEditIPStatus {
+  error: String
+  ok: Boolean
+}
+
+type UmSendVerificationEmail {
+  error: String
+  ok: Boolean
+}
+
+type UmSetEmailPrimary {
+  error: String
+  ok: Boolean
+}
+
+type UnlockFavorite {
+  error: String
+  ok: Boolean!
+  unlockQuestion: FavoriteQuestionNode
+}
+
+type UnlockShareEvent {
+  error: String
+  ok: Boolean
+}
+
+type UnpublishContestAnnouncement {
+  ok: Boolean
+}
+
+type UpcV2SubmitSurvey {
+  ok: Boolean!
+}
+
+type UpcV2TagNode {
+  name: String!
+  slug: String!
+}
+
+type UpcomingBadgeNode {
+  icon: String!
+  name: String!
+  progress: Int!
+}
+
+type UpdateAnnualReportViewStatus {
+  error: String
+  ok: Boolean
+}
+
+type UpdateBetaParticipation {
+  error: String
+  ok: Boolean
+  userStatus: MeNode
+}
+
+type UpdateComment {
+  comment: CommentNode
+  error: String
+  ok: Boolean
+}
+
+type UpdateContribution {
+  contribution: ContributionNode
+  error: String
+  ok: Boolean
+}
+
+type UpdateEducation {
+  error: String
+  ok: Boolean
+  record: EducationRecordNode
+}
+
+type UpdateEmailPrimary {
+  error: String
+  ok: Boolean
+}
+
+type UpdateFavoriteEmojiBackgroundV2 {
+  error: String
+  ok: Boolean!
+}
+
+type UpdateFavoriteIsPublicV2 {
+  error: String
+  ok: Boolean!
+}
+
+type UpdateFavoriteNameDescriptionV2 {
+  error: String
+  ok: Boolean!
+}
+
+type UpdateInvalidUsername {
+  error: String
+  ok: Boolean
+}
+
+type UpdateNote {
+  error: String
+  ok: Boolean
+  question: QuestionNode
+}
+
+type UpdateOccupation {
+  error: String
+  ok: Boolean
+  record: OccupationRecordNode
+}
+
+type UpdatePassword {
+  errors: [PasswordErrorEnum]!
+  ok: Boolean
+}
+
+type UpdatePlayground {
+  error: String
+  ok: Boolean
+}
+
+type UpdatePlaygroundFolder {
+  error: String
+  ok: Boolean
+}
+
+type UpdateProblematicPost {
+  error: String
+  ok: Boolean
+}
+
+type UpdateProfile {
+  error: String
+  ok: Boolean
+}
+
+type UpdateProfileV3 {
+  errors: [ProfileUpdateErrorEnum]!
+  ok: Boolean
+}
+
+type UpdatePublicBadge {
+  activeBadge: UserBadgeNode
+}
+
+type UpdateSolution {
+  error: String
+  ok: Boolean
+  topic: TopicNode
+}
+
+type UpdateSubmissionNote {
+  error: String
+  ok: Boolean
+}
+
+type UpdateSyncedCode {
+  message: String
+  ok: Boolean
+}
+
+type UpdateTeamMember {
+  error: String
+  ok: Boolean
+}
+
+type UpdateTopic {
+  error: String
+  ok: Boolean
+  topic: TopicNode
+}
+
+type UpdateTopicWithCategory {
+  error: String
+  topic: TopicNode
+}
+
+type UpdateUserAvatarStatus {
+  error: String
+  ok: Boolean
+}
+
+type UpdateUsername {
+  error: String
+  ok: Boolean
+  username: String
+  userSlug: String
+  warning: String
+}
+
+type UserAccountFrozenInfoNode {
+  notEligibleToDeleteAccountReasons: [String]
+  planDeleteDate: Date
+  userFrozenStatus: AccountFrozenStatus!
+}
+
+type UserBadgeNode {
+  badge: BadgeBadge!
+  category: BadgeCategoryEnum
+  creationDate: String!
+  displayName: String!
+  expired: Boolean!
+  expiredDate: DateTime
+  hoverText: String
+  icon: String!
+  id: ID!
+  medal: MedalNode
+  name: String!
+  shortName: String!
+  updationDate: DateTime!
+  user: PrivateContestUserNode!
+  userCount: Int!
+}
+
+type UserBanTypeNode {
+  slug: String
+  typeName: String
+}
+
+type UserCalendarNode {
+  activeYears: [Int]!
+  dccBadges: [CalendarBadgeNode!]!
+  streak: Int!
+  submissionCalendar: JSONString!
+  totalActiveDays: Int!
+  user: UserNode!
+  year: Int!
+}
+
+type UserContestRankingHistoryNode {
+  attended: Boolean!
+  contest: ContestNode!
+  finishTimeInSeconds: Int!
+  problemsSolved: Int!
+  ranking: Int!
+  rating: Float!
+  totalProblems: Int!
+  trendDirection: TrendingDirectionEnum
+}
+
+type UserContestRankingNode {
+  attendedContestsCount: Int!
+  badge: UserBadgeNode
+  globalRanking: Int!
+  rating: Float!
+  topPercentage: Float!
+  totalParticipants: Int!
+}
+
+type UserContestStatNode {
+  afterContestRating: Int
+  contest: ContestNode
+  finishTimeInSeconds: Int!
+  penaltyCount: Int!
+  problemsSolved: Int!
+  ranking: Int
+  ratingDiff: Int
+  totalParticipants: Int
+  totalProblems: Int!
+}
+
+type UserContributionNode {
+  points: Int!
+  questionCount: Int!
+  testcaseCount: Int!
+}
+
+type UserIPNode {
+  banned: Boolean!
+  firstAccessed: DateTime!
+  id: ID!
+  ipAddress: String
+  lastAccessed: DateTime!
+  user: UserNodeAdminOnly!
+  usersCountSharingThisIp: Int!
+  usersSharingThisIp: [UserNodeAdminOnly!]!
+}
+
+type UserNode {
+  activeBadge: UserBadgeNode
+  badges: [UserBadgeNode!]!
+  contestBadge: UserBadgeNode
+  contributions: UserContributionNode!
+  email: String
+  emails: [EmailNode]
+  firstName: String!
+  githubUrl: String
+  hasChangedUsernameRecently: Boolean
+  hasUsablePassword: Boolean
+  id: ID
+  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+  isActive: Boolean!
+  isCurrentUserPremium: Boolean
+  isCurrentUserVerified: Boolean
+  isDiscussAdmin: Boolean
+  isDiscussStaff: Boolean
+  joinedTimestamp: Int!
+  languageProblemCount: [LanguageProblemCountNode!]
+  lastName: String!
+  linkedinUrl: String
+  nameColor: String
+  phone: String
+  problemsSolvedBeatsStats: [ProblemSolvedBeatsNode!]!
+  profile: UserProfileNode!
+  socialAccounts: [String!]
+  submissionCalendar: JSONString!
+  submitStats: UserSubmitStatsNode!
+  submitStatsGlobal: UserSubmitStatsNode!
+  tagProblemCounts: TagProblemCountsCategoryNode!
+  twitterUrl: String
+  upcomingBadges: [UpcomingBadgeNode!]!
+  userCalendar: UserCalendarNode!
+  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+  username: String!
+  yearJoined: Int!
+}
+
+type UserNodeAdminOnly {
+  achievementSet: [AchievementNode!]!
+  activeBadge: UserBadgeNode
+  allUsersWithSharedIps: [UserNodeAdminOnly!]!
+  archiveduserSet: [ArchivedUserNode!]!
+  articlepageSet: [ArticleNode!]!
+  badges: [UserBadgeNode!]!
+  badgeSet: [UserBadgeNode!]!
+  banned: Boolean!
+  categoryscoreSet: [InterviewTagsCategoryScoreNode!]!
+  commentSet: [CommentNode!]!
+  companySet: [SponsorNode!]!
+  completionSet: [CompletionNode!]!
+  contestBadge: UserBadgeNode
+  contestreportlccnSet: [ContestReportLCCNNode!]!
+  contestreportSet: [ContestReportNode!]!
+  contributions: UserContributionNode!
+  contributionSet: [ContributionNode!]!
+  contributorSet: [ContributorNode!]!
+  createdBy: LibraryQuestionNodeConnection!
+  dateJoined: DateTime!
+  debugSession: [DebugSessionNode!]!
+  educationrecordSet: [EducationRecordNode!]!
+  email: String
+  emailaddressSet: [EmailNode!]!
+  emails: [EmailNode]
+  favoriteSet: [FeaturedQuestionListNode!]!
+  firstName: String!
+  flagresultSet: [FlagResultNode!]!
+  flagSet: [FlagNode!]!
+  githubUrl: String
+  hasChangedUsernameRecently: Boolean
+  hasUsablePassword: Boolean
+  id: ID
+  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+  isActive: Boolean!
+  isCurrentUserPremium: Boolean
+  isCurrentUserVerified: Boolean
+  isDiscussAdmin: Boolean
+  isDiscussStaff: Boolean
+  isPremium: Boolean!
+  "Designates whether the user can log into this admin site."
+  isStaff: Boolean!
+  "Designates that this user has all permissions without explicitly assigning them."
+  isSuperuser: Boolean!
+  joinedTimestamp: Int!
+  languageProblemCount: [LanguageProblemCountNode!]
+  lastLogin: DateTime
+  lastName: String!
+  libraryactivitySet: QuestionActivityNodeConnection!
+  linkedinUrl: String
+  nameColor: String
+  notificationSet: NotificationNodeConnection!
+  occupationrecordSet: [OccupationRecordNode!]!
+  password: String!
+  phone: String
+  playgroundfolderSet: [PlaygroundFolderNode!]!
+  playgroundSet: [PlaygroundNode!]!
+  playgroundtemplateSet: [PlaygroundTemplateNode!]!
+  postReport: [ReportInfoNode!]!
+  postSet: [PostNode!]!
+  problemsSolvedBeatsStats: [ProblemSolvedBeatsNode!]!
+  profile: UserProfileNode!
+  questionapplicationSet: [ApplicationNode!]!
+  questionlastsolveSet: [QuestionLastSolveNode!]!
+  questionSet: LibraryQuestionNodeConnection!
+  questionsolvesessionSet: [QuestionSolveSessionNode!]!
+  questionsuggestionSet: [QuestionFeedbackNode!]!
+  reportee: [UserReportNode!]!
+  reporter: [UserReportNode!]!
+  scoreUser: [ManagementScoreNode!]!
+  sessionSet: InterviewSessionNodeConnection!
+  socialAccounts: [String!]
+  storeaddressSet: [StoreAddressNode!]!
+  storeorderoperationlogSet: [OrderOperationLogNode!]!
+  storeorderSet: [StoreOrderNode!]!
+  submissionCalendar: JSONString!
+  submissionSet: [FilteredSubmissionNode!]!
+  submitStats: UserSubmitStatsNode!
+  submitStatsGlobal: UserSubmitStatsNode!
+  tagProblemCounts: TagProblemCountsCategoryNode!
+  twitterUrl: String
+  upcomingBadges: [UpcomingBadgeNode!]!
+  userCalendar: UserCalendarNode!
+  userIps: [UserIPNode]!
+  useripSet: [UserIPNode!]!
+  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+  username: String!
+  userratingSet: [UserRatingNode!]!
+  userskilltagSet: [UserSkillTagNode!]!
+  usersyncedcodeSet: [SyncedCodeNode!]!
+  virtualcontestscoreSet: [VirtualContestScoreNode!]!
+  voteSet: [VoteNode!]!
+  yearJoined: Int!
+}
+
+type UserNotificationNode {
+  lastModified: Int
+  numUnread: Int
+}
+
+type UserProfileNode {
+  aboutMe: String!
+  acStats: AcStatsNode
+  age: Int
+  birthday: String
+  categoryDiscussCount: Int!
+  categoryDiscussCountDiff: Int!
+  company: String
+  contestCount: Int
+  country: UserProfileCountry
+  countryCode: String
+  countryName: String
+  displayMySubmissionHistory: Boolean
+  education: String
+  gender: String
+  globalRanking: Int
+  jobTitle: String
+  joinStudyPlanLeaderboard: Boolean
+  lastModified: DateTime!
+  location: String
+  occupation: UserProfileOccupation
+  postViewCount: Int!
+  postViewCountDiff: Int!
+  privacyContact: Boolean
+  publicBadgeType: Int!
+  ranking: Int!
+  realName: String!
+  reputation: Int!
+  reputationDiff: Int!
+  rewardStats: [String]
+  school: String
+  skillTags: [String]!
+  solutionCount: Int!
+  solutionCountDiff: Int!
+  starRating: Float!
+  userAvatar: String
+  userSlug: String!
+  websites: [String]
+  yearsOfExperience: Int
+}
+
+type UserQuestionProgressNodeV2 {
+  numAcceptedQuestions: [QuestionCountNode!]!
+  numFailedQuestions: [QuestionCountNode!]!
+  numUntouchedQuestions: [QuestionCountNode!]!
+  "用户击败其他用户的题目百分比"
+  userSessionBeatsPercentage: [LevelBeatPercentageMixin!]!
+}
+
+type UserRankInfoList {
+  hasMore: Boolean!
+  total: Int!
+  userRankInfos: [UserRankInfoNode!]!
+}
+
+type UserRankInfoNode {
+  currentRank: Int!
+  finishedQuestionNum: Int!
+  hideOnBoard: Boolean!
+  previousRank: Int!
+  userInfo: PlanBriefUserNode!
+}
+
+type UserRatingNode {
+  id: ID!
+  score: Int!
+}
+
+type UserReportNode {
+  createdAt: DateTime!
+  handled: Boolean!
+  id: ID!
+  lastModified: DateTime!
+  message: String!
+  reportee: PrivateContestUserNode!
+  reporter: PrivateContestUserNode!
+}
+
+type UserSkillTagNode {
+  id: ID!
+  name: String!
+  user: PrivateContestUserNode!
+}
+
+type UserSubmitStatsNode {
+  acSubmissionNum: [SubmissionCountNode!]!
+  totalSubmissionNum: [SubmissionCountNode!]!
+}
+
+type UserUploadSchoolLogo {
+  error: String
+  ok: Boolean!
+}
+
+type UserWeeklyTaskRecordListNode {
+  planFinishDate: Date
+  planWeeklyTaskSetDate: Date
+  userWeeklyTaskRecords: [UserWeeklyTaskRecordNode!]!
+}
+
+type UserWeeklyTaskRecordNode {
+  date: Date!
+  expectedFinishedQuestionNums: Int!
+  finishedQuestionNums: Int!
+  "Whether finish enough questions no matter user has schedule on the date"
+  hasCompletedWeeklyTask: Boolean!
+  "Whether user has weekly task schedule on the date"
+  hasWeeklyTaskSchedule: Boolean!
+}
+
+type VacRecordListNode {
+  nodes: [VacRecordNode!]!
+  totalNum: Int!
+}
+
+type VacRecordNode {
+  chargeAmount: Int
+  chargeAmountRefunded: Int
+  chargeTime: DateTime
+  completionPercentage: Int
+  vacName: String!
+}
+
+type ValueAddedContentNode {
+  creationDate: DateTime!
+  description: String!
+  hasAccess: Boolean!
+  id: ID!
+  isActive: Boolean!
+  name: String!
+  pricing: PricingNode
+  slug: String!
+  updationDate: DateTime!
+}
+
+type VideoNode {
+  "Collapsible HTML under video"
+  content: String
+  editLink: String
+  "Embedded HTML video"
+  html: String!
+  id: ID!
+  paidOnly: Boolean!
+}
+
+type VirtualContestScoreNode {
+  contest: ContestNode
+  finishTime: Int
+  ranking: Int!
+  score: Int!
+  startTime: Int
+  totalAcQuestions: Int!
+  totalQuestions: Int
+  totalScore: Int
+  totalUsers: Int
+}
+
+type VoteNode {
+  date: DateTime!
+  id: ID!
+  post: PostNode!
+  postId: Int
+  type: Int
+  user: PrivateContestUserNode!
+}
+
+type VotePost {
+  error: String
+  ok: Boolean
+  post: PostNode
+  value: Int
+}
+
+type WebPageNode {
+  editLink: String
+  html: String!
+  id: ID!
+  paidOnly: Boolean!
+}
+
+type WordListTypeNode {
+  name: String!
+  slug: String!
+}
+
+"""
+A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.
+
+In some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.
+"""
+type __Directive {
+  args: [__InputValue!]!
+  description: String
+  locations: [__DirectiveLocation!]!
+  name: String!
+  onField: Boolean!
+  onFragment: Boolean!
+  onOperation: Boolean!
+}
+
+"One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string."
+type __EnumValue {
+  deprecationReason: String
+  description: String
+  isDeprecated: Boolean!
+  name: String!
+}
+
+"Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type."
+type __Field {
+  args: [__InputValue!]!
+  deprecationReason: String
+  description: String
+  isDeprecated: Boolean!
+  name: String!
+  type: __Type!
+}
+
+"Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value."
+type __InputValue {
+  defaultValue: String
+  description: String
+  name: String!
+  type: __Type!
+}
+
+"A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations."
+type __Schema {
+  "A list of all directives supported by this server."
+  directives: [__Directive!]!
+  "If this server supports mutation, the type that mutation operations will be rooted at."
+  mutationType: __Type
+  "The type that query operations will be rooted at."
+  queryType: __Type!
+  "If this server support subscription, the type that subscription operations will be rooted at."
+  subscriptionType: __Type
+  "A list of all types supported by this server."
+  types: [__Type!]!
+}
+
+"""
+The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.
+
+Depending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.
+"""
+type __Type {
+  description: String
+  enumValues: [__EnumValue!]
+  fields: [__Field!]
+  inputFields: [__InputValue!]
+  interfaces: [__Type!]
+  kind: __TypeKind!
+  name: String
+  ofType: __Type
+  possibleTypes: [__Type!]
 }
