@@ -16,12 +16,13 @@ class TreeNode:
 def traverse_preorder(
     root: Optional[TreeNode],
 ) -> Generator[TreeNode, None, None]:
-    stack = [root] if root else []
+    stack = [root]
     while stack:
         node = stack.pop()
+        if not node:
+            continue
+
         yield node
 
-        if node.right:
-            stack.append(node.right)
-        if node.left:
-            stack.append(node.left)
+        stack.append(node.right)
+        stack.append(node.left)
