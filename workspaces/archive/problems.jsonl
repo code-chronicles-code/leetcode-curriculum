@@ -3249,3 +3249,4 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3249,"title":"Count the Number of Good Nodes","titleSlug":"count-the-number-of-good-nodes"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3250,"title":"Find the Count of Monotonic Pairs I","titleSlug":"find-the-count-of-monotonic-pairs-i"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3251,"title":"Find the Count of Monotonic Pairs II","titleSlug":"find-the-count-of-monotonic-pairs-ii"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3252,"title":"Premier League Table Ranking II","titleSlug":"premier-league-table-ranking-ii"}
