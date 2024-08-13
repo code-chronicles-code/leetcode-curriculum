@@ -4,6 +4,7 @@ import {
   fetchRecentAcSubmissionList,
   type RecentAcSubmission,
 } from "@code-chronicles/leetcode-api";
+import { distinctArray } from "@code-chronicles/util/distinctArray";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 
 async function main(): Promise<void> {
@@ -13,8 +14,7 @@ async function main(): Promise<void> {
     );
   }
 
-  // TODO: distinct utility
-  const usernames = [...new Set(process.argv.slice(2))];
+  const usernames = distinctArray(process.argv.slice(2));
 
   // TODO: some parts of the Hack library could be nice here
   const results: Record<string, RecentAcSubmission[]> = {};
