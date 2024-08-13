@@ -5,9 +5,10 @@ import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
 import { sleep } from "@code-chronicles/util/sleep";
 
 import { getPotdMessage } from "./getPotdMessage";
-import { readScriptData, writeScriptData } from "./readScriptData";
+import { readScriptData } from "./readScriptData";
 import { readSecrets } from "./readSecrets";
 import { sendDiscordMessage } from "./sendDiscordMessage";
+import { writeScriptData } from "./writeScriptData";
 
 async function main(): Promise<void> {
   // TODO: maybe create the file from a template if it doesn't exist

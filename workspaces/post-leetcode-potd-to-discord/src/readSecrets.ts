@@ -1,4 +1,4 @@
-import fsPromises from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 
 import { z } from "zod";
 
@@ -14,7 +14,5 @@ const secretsZodType = z.object({
 export type Secrets = z.infer<typeof secretsZodType>;
 
 export async function readSecrets(): Promise<Secrets> {
-  return secretsZodType.parse(
-    JSON.parse(await fsPromises.readFile(SECRETS_FILE, "utf8")),
-  );
+  return secretsZodType.parse(JSON.parse(await readFile(SECRETS_FILE, "utf8")));
 }
