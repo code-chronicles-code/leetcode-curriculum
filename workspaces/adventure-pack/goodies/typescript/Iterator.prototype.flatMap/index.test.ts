@@ -153,7 +153,7 @@ describe("Iterator.prototype.flatMap", () => {
         [Symbol.iterator]: function* () {
           yield x;
         },
-      }) as unknown as Iterator<unknown>;
+      }) as Iterable<unknown>;
     const flatMapResult = iterator.flatMap(callback);
     expect([...flatMapResult]).toStrictEqual([1, 2, 3]);
   });
