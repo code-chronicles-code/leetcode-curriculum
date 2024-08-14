@@ -2371,6 +2371,46 @@ def is_palindrome(sequence: list | str) -> bool:
 ########################### END ADVENTURE PACK CODE ############################"
 `;
 
+exports[`App can equip single goody: Python 3 traverse_inorder 1`] = `
+"########################## BEGIN ADVENTURE PACK CODE ###########################
+# Adventure Pack commit fake-commit-hash
+# Running at: https://example.com/
+
+from typing import Generator, Optional
+
+
+class TreeNode:
+    def __init__(
+        self,
+        val: int = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def traverse_inorder(
+    root: Optional[TreeNode],
+) -> Generator[TreeNode, None, None]:
+    stack = [(root, False)]
+    while stack:
+        node, did_traverse_left_child = stack.pop()
+        if not node:
+            continue
+
+        if did_traverse_left_child:
+            yield node
+            continue
+
+        stack.append((node.right, False))
+        stack.append((node, True))
+        stack.append((node.left, False))
+
+########################### END ADVENTURE PACK CODE ############################"
+`;
+
 exports[`App can equip single goody: Python 3 traverse_postorder 1`] = `
 "########################## BEGIN ADVENTURE PACK CODE ###########################
 # Adventure Pack commit fake-commit-hash
@@ -2394,18 +2434,19 @@ class TreeNode:
 def traverse_postorder(
     root: Optional[TreeNode],
 ) -> Generator[TreeNode, None, None]:
-    stack = [(root, False)] if root else []
+    stack = [(root, False)]
     while stack:
         node, did_traverse_children = stack.pop()
+        if not node:
+            continue
+
         if did_traverse_children:
             yield node
             continue
 
         stack.append((node, True))
-        if node.right:
-            stack.append((node.right, False))
-        if node.left:
-            stack.append((node.left, False))
+        stack.append((node.right, False))
+        stack.append((node.left, False))
 
 ########################### END ADVENTURE PACK CODE ############################"
 `;
@@ -2433,15 +2474,16 @@ class TreeNode:
 def traverse_preorder(
     root: Optional[TreeNode],
 ) -> Generator[TreeNode, None, None]:
-    stack = [root] if root else []
+    stack = [root]
     while stack:
         node = stack.pop()
+        if not node:
+            continue
+
         yield node
 
-        if node.right:
-            stack.append(node.right)
-        if node.left:
-            stack.append(node.left)
+        stack.append(node.right)
+        stack.append(node.left)
 
 ########################### END ADVENTURE PACK CODE ############################"
 `;

@@ -16,15 +16,16 @@ class TreeNode:
 def traverse_postorder(
     root: Optional[TreeNode],
 ) -> Generator[TreeNode, None, None]:
-    stack = [(root, False)] if root else []
+    stack = [(root, False)]
     while stack:
         node, did_traverse_children = stack.pop()
+        if not node:
+            continue
+
         if did_traverse_children:
             yield node
             continue
 
         stack.append((node, True))
-        if node.right:
-            stack.append((node.right, False))
-        if node.left:
-            stack.append((node.left, False))
+        stack.append((node.right, False))
+        stack.append((node.left, False))
