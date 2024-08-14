@@ -1,6 +1,6 @@
-export function maybeThrow(errors: [unknown, unknown[]]): never;
-export function maybeThrow(errors: unknown[]): void;
-export function maybeThrow(errors: unknown[]): void {
+export function maybeThrow(errors: readonly [unknown, unknown[]]): never;
+export function maybeThrow(errors: readonly unknown[]): void;
+export function maybeThrow(errors: readonly unknown[]): void {
   if (errors.length === 0) {
     return;
   }
