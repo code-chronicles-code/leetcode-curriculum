@@ -1,0 +1,17 @@
+{
+  "name": "ExecuteScript",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "taskId",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

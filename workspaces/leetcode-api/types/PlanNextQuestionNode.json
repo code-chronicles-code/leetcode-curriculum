@@ -1,0 +1,25 @@
+{
+  "name": "PlanNextQuestionNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "inPremiumSubgroup",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "nextQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "PlanQuestionBriefNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

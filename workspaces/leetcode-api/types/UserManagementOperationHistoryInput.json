@@ -1,0 +1,61 @@
+{
+  "name": "UserManagementOperationHistoryInput",
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "userId",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "operations",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "UserOperationEnum",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "startedAt",
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "endedAt",
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "skip",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "limit",
+      "defaultValue": "10",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

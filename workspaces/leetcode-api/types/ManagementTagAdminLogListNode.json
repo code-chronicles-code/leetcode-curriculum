@@ -1,0 +1,28 @@
+{
+  "name": "ManagementTagAdminLogListNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "nodes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "ManagementTagAdminLogNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "totalNum",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

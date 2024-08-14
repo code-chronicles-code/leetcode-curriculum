@@ -1,0 +1,33 @@
+{
+  "name": "AccessToFavoriteNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "hasAccess",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "questionCount",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "rejectReason",
+      "isDeprecated": false,
+      "type": {
+        "name": "AccessDeniedReasonEnum",
+        "kind": "ENUM"
+      }
+    }
+  ]
+}

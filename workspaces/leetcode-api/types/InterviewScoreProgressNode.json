@@ -1,0 +1,28 @@
+{
+  "name": "InterviewScoreProgressNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "score",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Float",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "session",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "InterviewSessionNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

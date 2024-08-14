@@ -1,0 +1,41 @@
+{
+  "name": "ShareEventNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "endDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Date",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasUserSharedEvent",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "startDate",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Date",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

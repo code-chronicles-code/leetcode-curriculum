@@ -1,0 +1,35 @@
+{
+  "name": "PlanCompletedStatusNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "completedStudyPlan",
+      "description": "If null, keep polling",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "joinedStudyPlan",
+      "description": "Whether user joined this plan",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "planProgressDetail",
+      "isDeprecated": false,
+      "type": {
+        "name": "PlanUserProgressDetailNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

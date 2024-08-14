@@ -3243,3 +3243,10 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3243,"title":"Shortest Distance After Road Addition Queries I","titleSlug":"shortest-distance-after-road-addition-queries-i"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3244,"title":"Shortest Distance After Road Addition Queries II","titleSlug":"shortest-distance-after-road-addition-queries-ii"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3245,"title":"Alternating Groups III","titleSlug":"alternating-groups-iii"}
+{"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3246,"title":"Premier League Table Ranking","titleSlug":"premier-league-table-ranking"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3247,"title":"Number of Subsequences with Odd Sum","titleSlug":"number-of-subsequences-with-odd-sum"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3248,"title":"Snake in Matrix","titleSlug":"snake-in-matrix"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3249,"title":"Count the Number of Good Nodes","titleSlug":"count-the-number-of-good-nodes"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3250,"title":"Find the Count of Monotonic Pairs I","titleSlug":"find-the-count-of-monotonic-pairs-i"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3251,"title":"Find the Count of Monotonic Pairs II","titleSlug":"find-the-count-of-monotonic-pairs-ii"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3252,"title":"Premier League Table Ranking II","titleSlug":"premier-league-table-ranking-ii"}

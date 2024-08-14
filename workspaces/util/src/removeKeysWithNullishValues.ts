@@ -16,12 +16,12 @@ export type OptionalInsteadOfNullishValues<T extends Record<string, unknown>> =
     }>
   >;
 
-export function removeKeysWithNullishValues<T extends Record<string, unknown>>(
-  obj: T,
-): Writable<OptionalInsteadOfNullishValues<T>> {
+export function removeKeysWithNullishValues<
+  TObj extends Record<string, unknown>,
+>(obj: TObj): Writable<OptionalInsteadOfNullishValues<TObj>> {
   return Object.fromEntries(
     Object.entries(obj).filter((entry) => entry[1] != null),
-  ) as Writable<OptionalInsteadOfNullishValues<T>>;
+  ) as Writable<OptionalInsteadOfNullishValues<TObj>>;
 }
 
 // TODO: maybe add a recursive version of this utility

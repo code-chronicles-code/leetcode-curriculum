@@ -1,0 +1,23 @@
+{
+  "name": "UpcV2CodingLevelEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "BEGINNER",
+      "description": "BEGINNER"
+    },
+    {
+      "name": "INTERMEDIATE",
+      "description": "INTERMEDIATE"
+    },
+    {
+      "name": "ADVANCED",
+      "description": "ADVANCED"
+    },
+    {
+      "name": "EXPERT",
+      "description": "EXPERT"
+    }
+  ]
+}

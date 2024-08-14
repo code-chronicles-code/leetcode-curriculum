@@ -1,0 +1,43 @@
+{
+  "name": "TagAdminOperationType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "CREATE",
+      "description": "Create"
+    },
+    {
+      "name": "MAP",
+      "description": "Map"
+    },
+    {
+      "name": "EDIT",
+      "description": "Edit"
+    },
+    {
+      "name": "ENABLED",
+      "description": "Enable"
+    },
+    {
+      "name": "NOT_ENABLED",
+      "description": "Not Disable"
+    },
+    {
+      "name": "SELECTABLE",
+      "description": "Selectable"
+    },
+    {
+      "name": "NOT_SELECTABLE",
+      "description": "Not Selectable"
+    },
+    {
+      "name": "STANDARD",
+      "description": "Standard"
+    },
+    {
+      "name": "NOT_STANDARD",
+      "description": "Not Standard"
+    }
+  ]
+}

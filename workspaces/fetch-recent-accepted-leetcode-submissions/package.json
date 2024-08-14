@@ -1,0 +1,38 @@
+{
+  "name": "@code-chronicles/fetch-recent-accepted-leetcode-submissions",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
+    "directory": "workspaces/fetch-recent-accepted-leetcode-submissions"
+  },
+  "author": {
+    "name": "Miorel-Lucian Palii",
+    "url": "https://github.com/miorel"
+  },
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "webpack && chmod +x dist/fetch-recent-accepted-leetcode-submissions.js",
+    "format": "prettier --color --write .",
+    "lint": "eslint --color --max-warnings=0 .",
+    "start": "ts-node src/main.ts",
+    "typecheck": "tsc --pretty --project ."
+  },
+  "dependencies": {
+    "@code-chronicles/leetcode-api": "0.0.1",
+    "@code-chronicles/util": "0.0.1"
+  },
+  "devDependencies": {
+    "@code-chronicles/eslint-config": "0.0.1",
+    "@types/node": "22.2.0",
+    "eslint": "9.9.0",
+    "prettier": "3.3.3",
+    "ts-loader": "9.5.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.5.4",
+    "webpack": "5.93.0",
+    "webpack-cli": "5.1.4"
+  }
+}

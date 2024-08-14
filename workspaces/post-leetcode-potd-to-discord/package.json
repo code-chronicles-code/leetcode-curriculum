@@ -12,6 +12,7 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "main": "src/main.ts",
   "scripts": {
     "build": "webpack && chmod +x dist/post-leetcode-potd-to-discord.js",
     "format": "prettier --color --write .",
@@ -25,7 +26,6 @@
     "bufferutil": "4.0.8",
     "discord.js": "14.15.3",
     "invariant": "2.2.4",
-    "ts-node": "10.9.2",
     "utf-8-validate": "6.0.4",
     "ws": "8.18.0",
     "zod": "3.23.8"
@@ -33,9 +33,10 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
     "@types/invariant": "2.2.37",
-    "@types/node": "22.1.0",
-    "eslint": "9.8.0",
+    "@types/node": "22.2.0",
+    "eslint": "9.9.0",
     "prettier": "3.3.3",
+    "ts-node": "10.9.2",
     "typescript": "5.5.4",
     "webpack": "5.93.0",
     "webpack-cli": "5.1.4"

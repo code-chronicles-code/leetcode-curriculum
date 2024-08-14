@@ -1,0 +1,15 @@
+{
+  "name": "DifficultyEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "EASY"
+    },
+    {
+      "name": "MEDIUM"
+    },
+    {
+      "name": "HARD"
+    }
+  ]
+}

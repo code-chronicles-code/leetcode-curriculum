@@ -1,0 +1,43 @@
+{
+  "name": "SubmissionStatusEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "AC",
+      "description": "Accepted"
+    },
+    {
+      "name": "WA",
+      "description": "Wrong Answer"
+    },
+    {
+      "name": "MLE",
+      "description": "Memory Limit Exceeded"
+    },
+    {
+      "name": "OLE",
+      "description": "Output Limit Exceeded"
+    },
+    {
+      "name": "TLE",
+      "description": "Time Limit Exceeded"
+    },
+    {
+      "name": "RE",
+      "description": "Runtime Error"
+    },
+    {
+      "name": "IE",
+      "description": "Internal Error"
+    },
+    {
+      "name": "CE",
+      "description": "Compile Error"
+    },
+    {
+      "name": "TO",
+      "description": "Timeout"
+    }
+  ]
+}

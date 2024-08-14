@@ -1,0 +1,22 @@
+{
+  "name": "InterviewStageOption",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "id",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "name",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

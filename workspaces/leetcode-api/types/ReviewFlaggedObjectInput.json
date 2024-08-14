@@ -1,0 +1,54 @@
+{
+  "name": "ReviewFlaggedObjectInput",
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "flagResultId",
+      "description": "Use this to locate the object. Will ignore resourceType and resourceId if this is provided.",
+      "type": {
+        "name": "ID",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "resourceType",
+      "description": "Use this together with resourceId as an alternative way to locate object.",
+      "type": {
+        "name": "ResourceTypeEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "resourceId",
+      "description": "Use this together with resourceType as an alternative way to locate object.",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "operation",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "FlagStatus",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "reasonId",
+      "type": {
+        "name": "ID",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "description",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "SessionStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "STARTED"
+    },
+    {
+      "name": "EXITED"
+    },
+    {
+      "name": "TIMEOUT"
+    },
+    {
+      "name": "ACCEPTED"
+    }
+  ]
+}

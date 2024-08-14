@@ -1,0 +1,33 @@
+{
+  "name": "UnlockFavorite",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "unlockQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "FavoriteQuestionNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

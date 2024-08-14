@@ -1,0 +1,16 @@
+{
+  "name": "ProgressStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "UNATTEMPTED"
+    },
+    {
+      "name": "ATTEMPTED"
+    },
+    {
+      "name": "ACCEPTED"
+    }
+  ]
+}

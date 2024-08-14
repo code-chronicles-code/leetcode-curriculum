@@ -1,0 +1,30 @@
+{
+  "name": "UpcV2SubmitSurveyInput",
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "purposes",
+      "type": {
+        "name": "UpcV2PurposeEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "codingLevel",
+      "type": {
+        "name": "UpcV2CodingLevelEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "interests",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "AwardInternalContestCoin",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "internalContestAwardedUsers",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

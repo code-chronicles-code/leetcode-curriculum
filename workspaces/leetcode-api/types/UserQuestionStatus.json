@@ -1,0 +1,15 @@
+{
+  "name": "UserQuestionStatus",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "NOT_STARTED"
+    },
+    {
+      "name": "AC"
+    },
+    {
+      "name": "TRIED"
+    }
+  ]
+}

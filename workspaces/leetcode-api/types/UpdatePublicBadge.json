@@ -1,0 +1,14 @@
+{
+  "name": "UpdatePublicBadge",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "activeBadge",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserBadgeNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

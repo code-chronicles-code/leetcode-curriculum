@@ -1,0 +1,82 @@
+{
+  "name": "PlaygroundTemplateNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "codes",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "langSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "PlaygroundTemplateCodeNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "nameSlug",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "templateId",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "testcaseInput",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "user",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PrivateContestUserNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

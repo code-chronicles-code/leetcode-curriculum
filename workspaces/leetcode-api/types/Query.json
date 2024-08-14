@@ -4108,6 +4108,85 @@
       }
     },
     {
+      "name": "omFavoriteList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "OMFavoriteListInput",
+              "kind": "INPUT_OBJECT"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "OMFavoriteListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "omFavoriteLogs",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "OMFavoriteLogNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "omFavoriteQuestionList",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "searchKeyword",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "OMFavoriteQuestionListNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
       "name": "ongoingVirtualContest",
       "isDeprecated": false,
       "type": {
@@ -4865,6 +4944,52 @@
       "type": {
         "name": "PagifiedQuestionNode",
         "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "questionNumByTags",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "difficultyTagSlugs",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "String",
+                "kind": "SCALAR"
+              }
+            }
+          }
+        },
+        {
+          "name": "knowledgeTagSlugs",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "String",
+                "kind": "SCALAR"
+              }
+            }
+          }
+        },
+        {
+          "name": "languageTagSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {

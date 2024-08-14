@@ -1,0 +1,83 @@
+{
+  "name": "NotificationNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "actioned",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "creationDate",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "id",
+      "description": "The ID of the object.",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "modifiedDate",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "notificationData",
+      "description": "",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "NotificationDataNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "notificationId",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "user",
+      "isDeprecated": false,
+      "type": {
+        "name": "UserNode",
+        "kind": "OBJECT"
+      }
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "Node",
+      "kind": "INTERFACE"
+    }
+  ]
+}

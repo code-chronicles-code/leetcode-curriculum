@@ -1,0 +1,63 @@
+{
+  "name": "UserWeeklyTaskRecordNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "date",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Date",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "expectedFinishedQuestionNums",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "finishedQuestionNums",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasCompletedWeeklyTask",
+      "description": "Whether finish enough questions no matter user has schedule on the date",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "hasWeeklyTaskSchedule",
+      "description": "Whether user has weekly task schedule on the date",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

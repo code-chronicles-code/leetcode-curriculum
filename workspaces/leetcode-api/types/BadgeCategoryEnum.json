@@ -1,0 +1,18 @@
+{
+  "name": "BadgeCategoryEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "COMPETITION"
+    },
+    {
+      "name": "DCC"
+    },
+    {
+      "name": "ANNUAL"
+    },
+    {
+      "name": "STUDY_PLAN"
+    }
+  ]
+}

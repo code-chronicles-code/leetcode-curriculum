@@ -1,0 +1,14 @@
+{
+  "name": "UPCSubmitResponse",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

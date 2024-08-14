@@ -1,0 +1,15 @@
+{
+  "name": "SortingEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ASCENDING",
+      "description": "ascending"
+    },
+    {
+      "name": "DESCENDING",
+      "description": "descending"
+    }
+  ]
+}

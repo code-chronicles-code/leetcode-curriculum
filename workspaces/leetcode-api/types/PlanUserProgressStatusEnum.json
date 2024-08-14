@@ -1,0 +1,23 @@
+{
+  "name": "PlanUserProgressStatusEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ON_GOING",
+      "description": "on going"
+    },
+    {
+      "name": "COMPLETED",
+      "description": "completed"
+    },
+    {
+      "name": "QUITTED",
+      "description": "quitted"
+    },
+    {
+      "name": "DELETED",
+      "description": "deleted"
+    }
+  ]
+}

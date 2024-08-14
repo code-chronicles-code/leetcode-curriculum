@@ -1,0 +1,76 @@
+{
+  "name": "PlanBriefStudyPlanNodeWithGroup",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "awarded",
+      "description": "Whether to get reward",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "days",
+      "description": "Period (number of days)",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "group",
+      "description": "Study Plan Group",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PlanBriefPlanGroupNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "medal",
+      "description": "Medal corresponding to the plan",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "MedalNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "slug",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

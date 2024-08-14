@@ -1,0 +1,19 @@
+{
+  "name": "DifficultyDescribedEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "EASY",
+      "description": "Easy"
+    },
+    {
+      "name": "MEDIUM",
+      "description": "Medium"
+    },
+    {
+      "name": "HARD",
+      "description": "Hard"
+    }
+  ]
+}

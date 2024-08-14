@@ -1,0 +1,22 @@
+{
+  "name": "UserBanTypeNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "slug",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "typeName",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "UPCResponseType",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "BASIC_INFO"
+    },
+    {
+      "name": "DESIRED_JOB"
+    },
+    {
+      "name": "INTERVIEW_PREP_TIME"
+    }
+  ]
+}

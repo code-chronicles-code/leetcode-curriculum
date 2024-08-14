@@ -1,0 +1,15 @@
+{
+  "name": "CreditCardStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ALIVE",
+      "description": "alive"
+    },
+    {
+      "name": "DELETED",
+      "description": "deleted"
+    }
+  ]
+}

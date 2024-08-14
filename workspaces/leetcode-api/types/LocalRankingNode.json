@@ -1,0 +1,49 @@
+{
+  "name": "LocalRankingNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "myRank",
+      "isDeprecated": false,
+      "type": {
+        "name": "RankingNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "page",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "rankingNodes",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "RankingNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "totalUsers",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "userPerPage",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

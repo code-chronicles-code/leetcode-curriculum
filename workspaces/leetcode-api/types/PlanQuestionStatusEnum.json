@@ -1,0 +1,23 @@
+{
+  "name": "PlanQuestionStatusEnum",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "TO_DO",
+      "description": "to do"
+    },
+    {
+      "name": "SOLVED",
+      "description": "solved"
+    },
+    {
+      "name": "PAST_SOLVED",
+      "description": "past solved"
+    },
+    {
+      "name": "ATTEMPTED",
+      "description": "attempted"
+    }
+  ]
+}

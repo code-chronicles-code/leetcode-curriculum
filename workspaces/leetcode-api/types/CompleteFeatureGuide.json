@@ -1,0 +1,30 @@
+{
+  "name": "CompleteFeatureGuide",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "userStatus",
+      "isDeprecated": false,
+      "type": {
+        "name": "MeNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

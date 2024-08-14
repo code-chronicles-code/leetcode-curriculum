@@ -1,0 +1,5 @@
+{
+  "name": "Date",
+  "description": "The `Date` scalar type represents a Date\nvalue as specified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).",
+  "kind": "SCALAR"
+}

@@ -1,6 +1,6 @@
 # @code-chronicles/fetch-leetcode-problem-list
 
-![Status of the GitHub Actions workflow that updates the LeetCode problem data in this repository](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/update-problem-data.yml/badge.svg)
+[![Status of the GitHub Actions workflow that updates the LeetCode problem data in this repository](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/update-problem-data.yml/badge.svg)](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/update-problem-data.yml)
 
 Fetch metadata of _all_ the LeetCode problems and save it in [JSON Lines](https://jsonlines.org/) format.
 

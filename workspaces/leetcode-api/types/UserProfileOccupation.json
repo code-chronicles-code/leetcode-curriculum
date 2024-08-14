@@ -1,0 +1,15 @@
+{
+  "name": "UserProfileOccupation",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_1",
+      "description": "Student"
+    },
+    {
+      "name": "A_2",
+      "description": "Professional"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "ContestQuestionDetailNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "languageList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "LanguageNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "question",
+      "isDeprecated": false,
+      "type": {
+        "name": "ContestQuestionNodeV2",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "statusList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "SubmissionStatusNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "submittableLanguageList",
+      "isDeprecated": false,
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "LanguageNode",
+          "kind": "OBJECT"
+        }
+      }
+    },
+    {
+      "name": "totalAc",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "totalAcUser",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "totalSubmission",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "totalTriedUser",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

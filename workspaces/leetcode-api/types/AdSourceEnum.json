@@ -1,0 +1,15 @@
+{
+  "name": "AdSourceEnum",
+  "description": "advertisement source enums",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "INTERNAL_AD",
+      "description": "Internal Ad"
+    },
+    {
+      "name": "ADSENSE",
+      "description": "AdSense"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "PostStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "PENDING"
+    },
+    {
+      "name": "OPEN"
+    },
+    {
+      "name": "REVIEWED"
+    },
+    {
+      "name": "DELETED"
+    },
+    {
+      "name": "NEED_UPDATE"
+    },
+    {
+      "name": "HIDDEN"
+    },
+    {
+      "name": "ALL"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Node",
+  "description": "An object with an ID",
+  "kind": "INTERFACE",
+  "fields": [
+    {
+      "name": "id",
+      "description": "The ID of the object.",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ID",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ],
+  "possibleTypes": [
+    {
+      "name": "LibraryQuestionNode",
+      "kind": "OBJECT"
+    },
+    {
+      "name": "QuestionActivityNode",
+      "kind": "OBJECT"
+    },
+    {
+      "name": "CompanyTagNode",
+      "kind": "OBJECT"
+    },
+    {
+      "name": "TopicTagNode",
+      "kind": "OBJECT"
+    },
+    {
+      "name": "NotificationNode",
+      "kind": "OBJECT"
+    },
+    {
+      "name": "InterviewSessionNode",
+      "kind": "OBJECT"
+    },
+    {
+      "name": "InterviewSubmissionNode",
+      "kind": "OBJECT"
+    },
+    {
+      "name": "TopicRelayNode",
+      "kind": "OBJECT"
+    }
+  ]
+}

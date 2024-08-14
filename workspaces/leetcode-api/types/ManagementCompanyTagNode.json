@@ -1,0 +1,28 @@
+{
+  "name": "ManagementCompanyTagNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "tags",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "kind": "LIST",
+          "ofType": {
+            "name": "CompanyTagNode",
+            "kind": "OBJECT"
+          }
+        }
+      }
+    },
+    {
+      "name": "totalCount",
+      "isDeprecated": false,
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

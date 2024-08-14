@@ -1,0 +1,50 @@
+{
+  "name": "ManagementCompanyTagsInput",
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "keyword",
+      "description": "Search Keyword",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "slug",
+      "description": "Tag Slug",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isEnabled",
+      "description": "Filter by Standard Tags",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "offset",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "limit",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

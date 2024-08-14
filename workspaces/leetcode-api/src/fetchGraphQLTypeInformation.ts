@@ -22,7 +22,7 @@ const QUERY = `
       name
       kind
       description
-      enumValues {
+      enumValues(includeDeprecated: true) {
         name
         description
       }
@@ -42,6 +42,20 @@ const QUERY = `
           ${getTypeFields(5)}
         }
       }
+      inputFields {
+        name
+        description
+        defaultValue
+        type {
+          ${getTypeFields(5)}
+        }
+      }
+      interfaces {
+        ${getTypeFields(5)}
+      }
+      possibleTypes {
+        ${getTypeFields(5)}
+      }
     }
   }
 `
@@ -53,7 +67,7 @@ const innerTypeZodTypeBase = z.strictObject({
   kind: graphqlKindTypeZodType,
 });
 
-type InnerType = OptionalInsteadOfNullishValues<
+export type InnerType = OptionalInsteadOfNullishValues<
   z.infer<typeof innerTypeZodTypeBase>
 > & {
   ofType?: InnerType;
@@ -70,7 +84,7 @@ const nameAndDescriptionZodType = z.strictObject({
   description: z.string().nullable(),
 });
 
-const graphqlTypeZodType = z
+export const graphqlTypeZodType = z
   .strictObject({
     __type: nameAndDescriptionZodType
       .extend({
@@ -101,17 +115,38 @@ const graphqlTypeZodType = z
               })
               .transform(removeKeysWithNullishValues),
           )
-          .transform(sortByName),
+          .transform(sortByName)
+          .nullable(),
+        inputFields: z
+          .array(
+            nameAndDescriptionZodType
+              .extend({
+                defaultValue: z.string().nullable(),
+                type: innerTypeZodType,
+              })
+              .transform(removeKeysWithNullishValues),
+          )
+          .nullable(),
+        interfaces: z
+          .array(innerTypeZodType)
+          .nullable()
+          .transform((interfaces) =>
+            interfaces?.length !== 0 ? interfaces : null,
+          ),
+        possibleTypes: z.array(innerTypeZodType).nullable(),
       })
-      .transform(removeKeysWithNullishValues),
+      .transform(removeKeysWithNullishValues)
+      .nullable(),
   })
   .transform((data) => data.__type);
 
-export type LeetCodeGraphQLType = z.infer<typeof graphqlTypeZodType>;
+export type LeetCodeGraphQLType = NonNullable<
+  z.infer<typeof graphqlTypeZodType>
+>;
 
 export async function fetchGraphQLTypeInformation(
   typeName: string,
-): Promise<LeetCodeGraphQLType> {
+): Promise<LeetCodeGraphQLType | null> {
   const { data } = await fetchGraphQLData(QUERY, { typeName });
   return graphqlTypeZodType.parse(data);
 }

@@ -1,0 +1,28 @@
+{
+  "name": "ContestReportRewardNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "rewardAmount",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "user",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "UserNode",
+          "kind": "OBJECT"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "LibraryMultiTestcaseInput",
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "category",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Category",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "expectedOutput",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "inputRaw",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

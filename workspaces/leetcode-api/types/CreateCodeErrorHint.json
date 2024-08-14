@@ -1,0 +1,33 @@
+{
+  "name": "CreateCodeErrorHint",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "completion",
+      "isDeprecated": false,
+      "type": {
+        "name": "CompletionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "PremiumInfoNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "gateway",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "PaymentGateways",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "periodEnd",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "periodStart",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DateTime",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

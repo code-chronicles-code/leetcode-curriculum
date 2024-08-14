@@ -1,0 +1,183 @@
+{
+  "name": "ScoreCategory",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_0",
+      "description": "ADD_QUESTION"
+    },
+    {
+      "name": "A_1",
+      "description": "ADD_TESTCASE"
+    },
+    {
+      "name": "A_2",
+      "description": "TOP_IN_CONTEST"
+    },
+    {
+      "name": "A_3",
+      "description": "JOIN_CONTEST"
+    },
+    {
+      "name": "A_17",
+      "description": "JOIN_CONTEST_FIRST_TIME"
+    },
+    {
+      "name": "A_4",
+      "description": "SOCIAL_ACCOUNT_BINDING"
+    },
+    {
+      "name": "A_5",
+      "description": "DAILY_LOGIN"
+    },
+    {
+      "name": "A_6",
+      "description": "SEVEN_DAY_LOGIN"
+    },
+    {
+      "name": "A_7",
+      "description": "THIRTY_DAY_LOGIN"
+    },
+    {
+      "name": "A_9",
+      "description": "CREATE_QUESTION_TRANSLATION"
+    },
+    {
+      "name": "A_10",
+      "description": "QUESTION_TRANSLATION_ACCEPTED"
+    },
+    {
+      "name": "A_8",
+      "description": "REDEEM"
+    },
+    {
+      "name": "A_11",
+      "description": "ACCOUNT_TRANSFER"
+    },
+    {
+      "name": "A_12",
+      "description": "BASIC_INFO_PROVIDED"
+    },
+    {
+      "name": "A_13",
+      "description": "AVATAR_PROVIDED"
+    },
+    {
+      "name": "A_14",
+      "description": "EXPERIENCE_PROVIDED"
+    },
+    {
+      "name": "A_15",
+      "description": "PHONE_BINDING"
+    },
+    {
+      "name": "A_16",
+      "description": "POST_TOPIC"
+    },
+    {
+      "name": "A_18",
+      "description": "EMAIL_CONFIRMED"
+    },
+    {
+      "name": "A_19",
+      "description": "JOIN_INTERNAL_CONTEST"
+    },
+    {
+      "name": "A_20",
+      "description": "FESTIVAL"
+    },
+    {
+      "name": "A_21",
+      "description": "SURVEY_COMPLETED"
+    },
+    {
+      "name": "A_22",
+      "description": "JOIN_BOTH_CONTESTS_SAME_WEEK"
+    },
+    {
+      "name": "A_23",
+      "description": "THIRTY_DAY_CHALLENGE_DAILY_COMPLETE"
+    },
+    {
+      "name": "A_24",
+      "description": "THIRTY_DAY_CHALLENGE_25_COMPLETE"
+    },
+    {
+      "name": "A_25",
+      "description": "THIRTY_DAY_CHALLENGE_30_COMPLETE"
+    },
+    {
+      "name": "A_30",
+      "description": "LEETCODING_CHALLENGE_DAILY"
+    },
+    {
+      "name": "A_31",
+      "description": "LEETCODING_CHALLENGE_MID"
+    },
+    {
+      "name": "A_32",
+      "description": "LEETCODING_CHALLENGE_ALL"
+    },
+    {
+      "name": "A_33",
+      "description": "LEETCODING_CHALLENGE_PREM"
+    },
+    {
+      "name": "A_26",
+      "description": "EXPLORE_CARD_COMPLETED"
+    },
+    {
+      "name": "A_27",
+      "description": "DISCUSS_FIRST_POST"
+    },
+    {
+      "name": "A_28",
+      "description": "CONTEST_REPORT_APPROVED"
+    },
+    {
+      "name": "A_29",
+      "description": "DAILY_SUBMIT_ACCEPTED_SOLUTIONS"
+    },
+    {
+      "name": "A_34",
+      "description": "CONTEST_EASTER_EGG"
+    },
+    {
+      "name": "A_100",
+      "description": "CUSTOM"
+    },
+    {
+      "name": "A_35",
+      "description": "QUESTION_DETAIL_SATISFACTION_SURVEY"
+    },
+    {
+      "name": "A_37",
+      "description": "JAVASCRIPT_PROBLEM_SURVEY"
+    },
+    {
+      "name": "A_38",
+      "description": "PANDAS_PROBLEM_SURVEY"
+    },
+    {
+      "name": "A_39",
+      "description": "QD_DYNAMIC_SURVEY"
+    },
+    {
+      "name": "A_40",
+      "description": "PANDAS_INTRO_STUDY_PLAN_SURVEY"
+    },
+    {
+      "name": "A_41",
+      "description": "IDE_BACK_QD3_SURVEY"
+    },
+    {
+      "name": "A_36",
+      "description": "NEW_STUDY_PLAN_SURVEY"
+    },
+    {
+      "name": "A_42",
+      "description": "CONTEST_DYNAMIC_SURVEY"
+    }
+  ]
+}

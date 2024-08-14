@@ -1,0 +1,35 @@
+{
+  "name": "BadgeBadge",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "A_1",
+      "description": "Guardian"
+    },
+    {
+      "name": "A_2",
+      "description": "Knight"
+    },
+    {
+      "name": "A_3",
+      "description": "Daily Coding Challenge"
+    },
+    {
+      "name": "A_4",
+      "description": "Annual Daily Coding Challenge"
+    },
+    {
+      "name": "A_5",
+      "description": "Study Plan Award"
+    },
+    {
+      "name": "A_6",
+      "description": "Annual Badge"
+    },
+    {
+      "name": "A_7",
+      "description": "Study Plan V2 Award"
+    }
+  ]
+}

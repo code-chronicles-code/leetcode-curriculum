@@ -1,0 +1,12 @@
+{
+  "name": "FlaggedObjectListOrderByEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "FIRST_FLAGGED_TIME"
+    },
+    {
+      "name": "FLAGGED_COUNT"
+    }
+  ]
+}

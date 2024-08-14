@@ -3024,6 +3024,181 @@
       }
     },
     {
+      "name": "omGenerateFavorite",
+      "description": "online management generate favorite",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "difficultyTagSlugs",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "String",
+                "kind": "SCALAR"
+              }
+            }
+          }
+        },
+        {
+          "name": "favoriteDescription",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "favoriteName",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "favoriteType",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "FavoriteTypeEnum",
+              "kind": "ENUM"
+            }
+          }
+        },
+        {
+          "name": "isPublic",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "Boolean",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "knowledgeTagSlugs",
+          "type": {
+            "kind": "LIST",
+            "ofType": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "name": "String",
+                "kind": "SCALAR"
+              }
+            }
+          }
+        },
+        {
+          "name": "languageTagSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionIdListStr",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "OMGenerateFavorite",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "omRemoveQuestionFromFavorite",
+      "description": "online management remove question from favorite",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "questionSlug",
+          "type": {
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        }
+      ],
+      "type": {
+        "name": "OMRemoveQuestionFromFavorite",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "omUpdateFavorite",
+      "description": "online management update favorite",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "favoriteDescription",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "favoriteName",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "favoriteSlug",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "isPublic",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
+        {
+          "name": "questionIdListStr",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "OMUpdateFavorite",
+        "kind": "OBJECT"
+      }
+    },
+    {
       "name": "openNotifications",
       "isDeprecated": false,
       "type": {

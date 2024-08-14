@@ -1,0 +1,38 @@
+{
+  "name": "ManagementTagCategoriesInput",
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "tagGroupId",
+      "description": "Group ID",
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "keyword",
+      "description": "Search Keyword",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "slug",
+      "description": "Category Slug",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isEnabled",
+      "description": "Filter by Category Enabled",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

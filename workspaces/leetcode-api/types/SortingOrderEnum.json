@@ -1,0 +1,12 @@
+{
+  "name": "SortingOrderEnum",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "ASCENDING"
+    },
+    {
+      "name": "DESCENDING"
+    }
+  ]
+}

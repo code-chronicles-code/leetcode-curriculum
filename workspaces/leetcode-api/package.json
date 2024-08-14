@@ -15,17 +15,23 @@
   "main": "src/main.ts",
   "scripts": {
     "format": "prettier --color --write .",
+    "generate-graphql-schema": "ts-node src/scripts/generateGraphQLSchema.ts",
     "lint": "eslint --color --max-warnings=0 .",
-    "typecheck": "tsc --pretty --project ."
+    "scrape-graphql-types": "ts-node src/scripts/scrapeGraphQLTypes.ts",
+    "typecheck": "tsc --pretty --project .",
+    "validate-graphql-schema": "ts-node src/scripts/validateGraphQLSchema.ts"
   },
   "dependencies": {
     "@code-chronicles/util": "0.0.1",
+    "invariant": "2.2.4",
+    "nullthrows": "1.1.1",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
-    "@types/node": "22.1.0",
-    "eslint": "9.8.0",
+    "@types/node": "22.2.0",
+    "eslint": "9.9.0",
+    "graphql": "16.9.0",
     "prettier": "3.3.3",
     "typescript": "5.5.4"
   }

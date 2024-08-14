@@ -1,0 +1,15 @@
+{
+  "name": "AccountStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "FROZEN",
+      "description": "frozen"
+    },
+    {
+      "name": "DELETED",
+      "description": "deleted"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "CreateCompletionLike",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "completionLike",
+      "isDeprecated": false,
+      "type": {
+        "name": "CompletionLikeNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Boolean",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

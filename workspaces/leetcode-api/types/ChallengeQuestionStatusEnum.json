@@ -1,0 +1,15 @@
+{
+  "name": "ChallengeQuestionStatusEnum",
+  "description": "challenge question status enums",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "NOT_STARTED",
+      "description": "not started"
+    },
+    {
+      "name": "FINISHED",
+      "description": "finished"
+    }
+  ]
+}

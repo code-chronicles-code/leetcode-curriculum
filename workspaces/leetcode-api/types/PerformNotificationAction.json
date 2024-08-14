@@ -1,0 +1,30 @@
+{
+  "name": "PerformNotificationAction",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "error",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "notification",
+      "isDeprecated": false,
+      "type": {
+        "name": "NotificationNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "ok",
+      "isDeprecated": false,
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}

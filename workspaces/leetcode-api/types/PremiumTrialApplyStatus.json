@@ -1,0 +1,19 @@
+{
+  "name": "PremiumTrialApplyStatus",
+  "description": "An enumeration.",
+  "kind": "ENUM",
+  "enumValues": [
+    {
+      "name": "PENDING",
+      "description": "Pending"
+    },
+    {
+      "name": "APPROVED",
+      "description": "Approved"
+    },
+    {
+      "name": "REJECTED",
+      "description": "Rejected"
+    }
+  ]
+}

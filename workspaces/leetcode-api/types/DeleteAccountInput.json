@@ -1,0 +1,34 @@
+{
+  "name": "DeleteAccountInput",
+  "kind": "INPUT_OBJECT",
+  "inputFields": [
+    {
+      "name": "reason",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "DeleteAccountReason",
+          "kind": "ENUM"
+        }
+      }
+    },
+    {
+      "name": "otherReason",
+      "defaultValue": "\"\"",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "usernameOrEmail",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "LearningContextNodeV2",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "name",
+      "isDeprecated": false,
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "nextQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "QuestionNode",
+        "kind": "OBJECT"
+      }
+    },
+    {
+      "name": "previousQuestion",
+      "isDeprecated": false,
+      "type": {
+        "name": "QuestionNode",
+        "kind": "OBJECT"
+      }
+    }
+  ]
+}

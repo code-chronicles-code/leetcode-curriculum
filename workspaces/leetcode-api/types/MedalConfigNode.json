@@ -1,0 +1,42 @@
+{
+  "name": "MedalConfigNode",
+  "kind": "OBJECT",
+  "fields": [
+    {
+      "name": "icon",
+      "description": "The original image URL of the medal",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "iconGif",
+      "description": "GIF URL of the medal",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "iconGifBackground",
+      "description": "GIF background URL of the medal",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "iconWearing",
+      "description": "URL of the medal wearing picture",
+      "isDeprecated": false,
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  ]
+}
