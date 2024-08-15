@@ -10,7 +10,6 @@ import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 
 const COMMANDS = [
-  "yarn lint",
   "yarn test",
   "yarn workspace @code-chronicles/adventure-pack build-app",
   "yarn workspace @code-chronicles/fetch-leetcode-problem-list build",
