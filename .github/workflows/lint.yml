@@ -17,5 +17,5 @@ jobs:
 
       - name: Linting
         run: yarn lint
-        # TODO: Annotations of files that fail the typecheck?
+        # TODO: Annotations of files that fail lint?
         # TODO: Maybe write up a job summary per https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
