@@ -539,6 +539,47 @@ final class AP {
 }"
 `;
 
+exports[`App can render goody: Java traversePreOrder() 1`] = `
+"package traverse_pre_order;
+
+import iterable_stream.IterableStream;
+import simple_iterator.SimpleIterator;
+
+import java.util.NoSuchElementException;
+import java.util.Stack;
+
+final class AP {
+  private AP() {}
+
+  /**
+   * Get an {@link IterableStream iterable stream} of all the {@link TreeNode nodes} in the binary
+   * tree in pre-order.
+   * @param root Binary tree root {@link TreeNode node}.
+   * @return The {@link IterableStream iterable stream} in pre-order.
+   */
+  public static IterableStream<TreeNode> traversePreOrder(final TreeNode root) {
+    final var stack = new Stack<TreeNode>();
+    stack.push(root);
+
+    return IterableStream.from(
+      SimpleIterator.toIterator(() -> {
+        while (!stack.isEmpty()) {
+          var node = stack.pop();
+
+          if (node != null) {
+            stack.push(node.right);
+            stack.push(node.left);
+            return node;
+          }
+        }
+
+        throw new NoSuchElementException();
+      })
+    );
+  }
+}"
+`;
+
 exports[`App can render goody: JavaScript Array.prototype.slidingWindows 1`] = `
 "import "ArraySlice";
 
