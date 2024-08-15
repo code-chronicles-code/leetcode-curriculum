@@ -3,6 +3,14 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
+      "name": "positionTagSlug",
+      "description": "position tag id",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
       "name": "questionId",
       "type": {
         "kind": "NON_NULL",
@@ -24,10 +32,10 @@
       }
     },
     {
-      "name": "positionTagSlug",
-      "description": "position tag id",
+      "name": "timeOption",
+      "defaultValue": "0",
       "type": {
-        "name": "String",
+        "name": "Int",
         "kind": "SCALAR"
       }
     },
@@ -39,14 +47,6 @@
           "name": "Int",
           "kind": "SCALAR"
         }
-      }
-    },
-    {
-      "name": "timeOption",
-      "defaultValue": "0",
-      "type": {
-        "name": "Int",
-        "kind": "SCALAR"
       }
     }
   ]

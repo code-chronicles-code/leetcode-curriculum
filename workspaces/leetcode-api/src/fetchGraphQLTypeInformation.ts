@@ -34,6 +34,7 @@ const QUERY = `
         args {
           name
           description
+          defaultValue
           type {
             ${getTypeFields(5)}
           }
@@ -104,6 +105,7 @@ export const graphqlTypeZodType = z
                   .array(
                     nameAndDescriptionZodType
                       .extend({
+                        defaultValue: z.string().nullable(),
                         type: innerTypeZodType,
                       })
                       .transform(removeKeysWithNullishValues),
@@ -126,6 +128,7 @@ export const graphqlTypeZodType = z
               })
               .transform(removeKeysWithNullishValues),
           )
+          .transform(sortByName)
           .nullable(),
         interfaces: z
           .array(innerTypeZodType)

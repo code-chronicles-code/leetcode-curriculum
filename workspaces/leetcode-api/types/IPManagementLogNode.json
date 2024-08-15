@@ -1,9 +1,10 @@
 {
-  "name": "QuestionAttachmentInput",
-  "kind": "INPUT_OBJECT",
-  "inputFields": [
+  "name": "IPManagementLogNode",
+  "kind": "OBJECT",
+  "fields": [
     {
-      "name": "content",
+      "name": "operation",
+      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -13,22 +14,24 @@
       }
     },
     {
-      "name": "extension",
+      "name": "operationTime",
+      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
-          "name": "String",
+          "name": "DateTime",
           "kind": "SCALAR"
         }
       }
     },
     {
-      "name": "name",
+      "name": "operator",
+      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
+          "name": "ManagementUserSimpleNode",
+          "kind": "OBJECT"
         }
       }
     }

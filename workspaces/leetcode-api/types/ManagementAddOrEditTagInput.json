@@ -3,31 +3,17 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "name",
-      "description": "Tag Name",
+      "name": "imgUrl",
+      "description": "Tag Image URL",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
+        "name": "String",
+        "kind": "SCALAR"
       }
     },
     {
-      "name": "slug",
-      "description": "Tag Slug",
+      "name": "isStandard",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "keywords",
-      "type": {
-        "name": "JSONString",
+        "name": "Boolean",
         "kind": "SCALAR"
       }
     },
@@ -50,10 +36,40 @@
       }
     },
     {
-      "name": "isStandard",
+      "name": "keywords",
       "type": {
-        "name": "Boolean",
+        "name": "JSONString",
         "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "name",
+      "description": "Tag Name",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "order",
+      "description": "排序",
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "slug",
+      "description": "Tag Slug",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -65,22 +81,6 @@
           "name": "ID",
           "kind": "SCALAR"
         }
-      }
-    },
-    {
-      "name": "imgUrl",
-      "description": "Tag Image URL",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "order",
-      "description": "排序",
-      "type": {
-        "name": "Int",
-        "kind": "SCALAR"
       }
     }
   ]

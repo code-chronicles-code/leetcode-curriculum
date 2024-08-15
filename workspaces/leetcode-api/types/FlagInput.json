@@ -3,13 +3,17 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "resourceType",
+      "name": "description",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "ResourceTypeEnum",
-          "kind": "ENUM"
-        }
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "reasonId",
+      "type": {
+        "name": "ID",
+        "kind": "SCALAR"
       }
     },
     {
@@ -23,17 +27,13 @@
       }
     },
     {
-      "name": "reasonId",
+      "name": "resourceType",
       "type": {
-        "name": "ID",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "description",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "ResourceTypeEnum",
+          "kind": "ENUM"
+        }
       }
     }
   ]

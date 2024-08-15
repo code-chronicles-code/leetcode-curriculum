@@ -17,6 +17,7 @@
       "args": [
         {
           "name": "includeDeprecated",
+          "defaultValue": "false",
           "type": {
             "name": "Boolean",
             "kind": "SCALAR"
@@ -40,6 +41,7 @@
       "args": [
         {
           "name": "includeDeprecated",
+          "defaultValue": "false",
           "type": {
             "name": "Boolean",
             "kind": "SCALAR"

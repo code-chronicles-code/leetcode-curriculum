@@ -3,6 +3,14 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
+      "name": "isEnabled",
+      "description": "Filter by Standard Tags",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
       "name": "keyword",
       "description": "Search Keyword",
       "type": {
@@ -11,19 +19,13 @@
       }
     },
     {
-      "name": "slug",
-      "description": "Tag Slug",
+      "name": "limit",
       "type": {
-        "name": "String",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "isEnabled",
-      "description": "Filter by Standard Tags",
-      "type": {
-        "name": "Boolean",
-        "kind": "SCALAR"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -37,13 +39,11 @@
       }
     },
     {
-      "name": "limit",
+      "name": "slug",
+      "description": "Tag Slug",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "String",
+        "kind": "SCALAR"
       }
     }
   ]

@@ -3,10 +3,14 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "searchKeyword",
+      "name": "limit",
+      "defaultValue": "10",
       "type": {
-        "name": "String",
-        "kind": "SCALAR"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -17,18 +21,14 @@
       }
     },
     {
-      "name": "skip",
+      "name": "searchKeyword",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "String",
+        "kind": "SCALAR"
       }
     },
     {
-      "name": "limit",
-      "defaultValue": "10",
+      "name": "skip",
       "type": {
         "kind": "NON_NULL",
         "ofType": {

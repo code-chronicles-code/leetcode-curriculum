@@ -3,17 +3,6 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "name",
-      "description": "Category Name",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
       "name": "groupId",
       "description": "Group ID for this category",
       "type": {
@@ -30,6 +19,17 @@
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "name",
+      "description": "Category Name",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
       }
     }
   ]

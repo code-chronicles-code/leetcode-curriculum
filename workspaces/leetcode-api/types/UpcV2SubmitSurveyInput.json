@@ -3,13 +3,6 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "purposes",
-      "type": {
-        "name": "UpcV2PurposeEnum",
-        "kind": "ENUM"
-      }
-    },
-    {
       "name": "codingLevel",
       "type": {
         "name": "UpcV2CodingLevelEnum",
@@ -24,6 +17,13 @@
           "name": "String",
           "kind": "SCALAR"
         }
+      }
+    },
+    {
+      "name": "purposes",
+      "type": {
+        "name": "UpcV2PurposeEnum",
+        "kind": "ENUM"
       }
     }
   ]

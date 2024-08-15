@@ -3,26 +3,17 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "flagResultId",
-      "description": "Use this to locate the object. Will ignore resourceType and resourceId if this is provided.",
+      "name": "description",
       "type": {
-        "name": "ID",
+        "name": "String",
         "kind": "SCALAR"
       }
     },
     {
-      "name": "resourceType",
-      "description": "Use this together with resourceId as an alternative way to locate object.",
+      "name": "flagResultId",
+      "description": "Use this to locate the object. Will ignore resourceType and resourceId if this is provided.",
       "type": {
-        "name": "ResourceTypeEnum",
-        "kind": "ENUM"
-      }
-    },
-    {
-      "name": "resourceId",
-      "description": "Use this together with resourceType as an alternative way to locate object.",
-      "type": {
-        "name": "String",
+        "name": "ID",
         "kind": "SCALAR"
       }
     },
@@ -44,10 +35,19 @@
       }
     },
     {
-      "name": "description",
+      "name": "resourceId",
+      "description": "Use this together with resourceType as an alternative way to locate object.",
       "type": {
         "name": "String",
         "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "resourceType",
+      "description": "Use this together with resourceId as an alternative way to locate object.",
+      "type": {
+        "name": "ResourceTypeEnum",
+        "kind": "ENUM"
       }
     }
   ]

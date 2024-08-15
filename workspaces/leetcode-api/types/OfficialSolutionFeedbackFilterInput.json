@@ -3,10 +3,23 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "startDate",
+      "name": "authors",
       "type": {
-        "name": "String",
-        "kind": "SCALAR"
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "categories",
+      "type": {
+        "kind": "LIST",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -14,6 +27,21 @@
       "type": {
         "name": "String",
         "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "hasComment",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "orderBy",
+      "defaultValue": "1",
+      "type": {
+        "name": "FeedbackOrderByEnum",
+        "kind": "ENUM"
       }
     },
     {
@@ -37,46 +65,18 @@
       }
     },
     {
-      "name": "hasComment",
-      "type": {
-        "name": "Boolean",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "categories",
-      "type": {
-        "kind": "LIST",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "authors",
-      "type": {
-        "kind": "LIST",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "orderBy",
-      "defaultValue": "1",
-      "type": {
-        "name": "FeedbackOrderByEnum",
-        "kind": "ENUM"
-      }
-    },
-    {
       "name": "sortOrder",
       "defaultValue": "2",
       "type": {
         "name": "SortingEnum",
         "kind": "ENUM"
+      }
+    },
+    {
+      "name": "startDate",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
       }
     }
   ]

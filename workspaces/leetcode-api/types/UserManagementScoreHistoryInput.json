@@ -3,27 +3,10 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "userId",
+      "name": "category",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "ID",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "scoreType",
-      "type": {
-        "name": "ScoreTypeEnum",
+        "name": "UmScoreCategoryEnum",
         "kind": "ENUM"
-      }
-    },
-    {
-      "name": "startedAt",
-      "type": {
-        "name": "DateTime",
-        "kind": "SCALAR"
       }
     },
     {
@@ -34,9 +17,20 @@
       }
     },
     {
-      "name": "category",
+      "name": "limit",
+      "defaultValue": "10",
       "type": {
-        "name": "UmScoreCategoryEnum",
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "scoreType",
+      "type": {
+        "name": "ScoreTypeEnum",
         "kind": "ENUM"
       }
     },
@@ -51,12 +45,18 @@
       }
     },
     {
-      "name": "limit",
-      "defaultValue": "10",
+      "name": "startedAt",
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "userId",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
-          "name": "Int",
+          "name": "ID",
           "kind": "SCALAR"
         }
       }

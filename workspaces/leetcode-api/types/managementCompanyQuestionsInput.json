@@ -3,16 +3,6 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "tagId",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
       "name": "keyword",
       "type": {
         "name": "String",
@@ -27,11 +17,13 @@
       }
     },
     {
-      "name": "timeOption",
-      "defaultValue": "0",
+      "name": "limit",
       "type": {
-        "name": "CompanyQuestionTimeOptionEnum",
-        "kind": "ENUM"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -45,13 +37,21 @@
       }
     },
     {
-      "name": "limit",
+      "name": "tagId",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
           "name": "Int",
           "kind": "SCALAR"
         }
+      }
+    },
+    {
+      "name": "timeOption",
+      "defaultValue": "0",
+      "type": {
+        "name": "CompanyQuestionTimeOptionEnum",
+        "kind": "ENUM"
       }
     }
   ]

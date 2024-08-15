@@ -3,11 +3,12 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "userId",
+      "name": "limit",
+      "defaultValue": "10",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
-          "name": "ID",
+          "name": "Int",
           "kind": "SCALAR"
         }
       }
@@ -31,12 +32,11 @@
       }
     },
     {
-      "name": "limit",
-      "defaultValue": "10",
+      "name": "userId",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
-          "name": "Int",
+          "name": "ID",
           "kind": "SCALAR"
         }
       }

@@ -3,6 +3,13 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
+      "name": "difficulty",
+      "type": {
+        "name": "DifficultyEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
       "name": "orderBy",
       "type": {
         "name": "ProgressOrderByEnum",
@@ -10,16 +17,16 @@
       }
     },
     {
-      "name": "sortOrder",
+      "name": "searchKeywords",
       "type": {
-        "name": "SortingOrderEnum",
-        "kind": "ENUM"
+        "name": "String",
+        "kind": "SCALAR"
       }
     },
     {
-      "name": "difficulty",
+      "name": "sortOrder",
       "type": {
-        "name": "DifficultyEnum",
+        "name": "SortingOrderEnum",
         "kind": "ENUM"
       }
     },
@@ -34,13 +41,6 @@
             "kind": "SCALAR"
           }
         }
-      }
-    },
-    {
-      "name": "searchKeywords",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
       }
     }
   ]

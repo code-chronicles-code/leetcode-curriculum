@@ -3,28 +3,7 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "orderBy",
-      "type": {
-        "name": "QuestionOrderByEnum",
-        "kind": "ENUM"
-      }
-    },
-    {
-      "name": "sortOrder",
-      "type": {
-        "name": "SortingOrderEnum",
-        "kind": "ENUM"
-      }
-    },
-    {
-      "name": "difficulty",
-      "type": {
-        "name": "DifficultyEnum",
-        "kind": "ENUM"
-      }
-    },
-    {
-      "name": "tags",
+      "name": "companies",
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -37,17 +16,10 @@
       }
     },
     {
-      "name": "status",
+      "name": "difficulty",
       "type": {
-        "name": "UserQuestionStatus",
+        "name": "DifficultyEnum",
         "kind": "ENUM"
-      }
-    },
-    {
-      "name": "searchKeywords",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
       }
     },
     {
@@ -58,6 +30,13 @@
       }
     },
     {
+      "name": "orderBy",
+      "type": {
+        "name": "QuestionOrderByEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
       "name": "premiumOnly",
       "type": {
         "name": "Boolean",
@@ -65,7 +44,28 @@
       }
     },
     {
-      "name": "companies",
+      "name": "searchKeywords",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "sortOrder",
+      "type": {
+        "name": "SortingOrderEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "name": "UserQuestionStatus",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "tags",
       "type": {
         "kind": "LIST",
         "ofType": {

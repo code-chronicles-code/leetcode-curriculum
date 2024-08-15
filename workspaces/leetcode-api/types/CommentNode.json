@@ -85,6 +85,7 @@
       "args": [
         {
           "name": "numPerPage",
+          "defaultValue": "10",
           "type": {
             "name": "Int",
             "kind": "SCALAR"
@@ -92,6 +93,7 @@
         },
         {
           "name": "orderBy",
+          "defaultValue": "\"\"",
           "type": {
             "name": "String",
             "kind": "SCALAR"

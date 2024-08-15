@@ -3,13 +3,10 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "userId",
+      "name": "endedAt",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "ID",
-          "kind": "SCALAR"
-        }
+        "name": "DateTime",
+        "kind": "SCALAR"
       }
     },
     {
@@ -20,24 +17,14 @@
       }
     },
     {
-      "name": "startedAt",
+      "name": "limit",
+      "defaultValue": "10",
       "type": {
-        "name": "DateTime",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "endedAt",
-      "type": {
-        "name": "DateTime",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "status",
-      "type": {
-        "name": "StripeChargeStatusEnum",
-        "kind": "ENUM"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -51,12 +38,25 @@
       }
     },
     {
-      "name": "limit",
-      "defaultValue": "10",
+      "name": "startedAt",
+      "type": {
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "name": "StripeChargeStatusEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "userId",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
-          "name": "Int",
+          "name": "ID",
           "kind": "SCALAR"
         }
       }

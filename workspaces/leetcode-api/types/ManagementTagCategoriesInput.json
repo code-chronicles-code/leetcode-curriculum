@@ -3,10 +3,10 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "tagGroupId",
-      "description": "Group ID",
+      "name": "isEnabled",
+      "description": "Filter by Category Enabled",
       "type": {
-        "name": "Int",
+        "name": "Boolean",
         "kind": "SCALAR"
       }
     },
@@ -27,10 +27,10 @@
       }
     },
     {
-      "name": "isEnabled",
-      "description": "Filter by Category Enabled",
+      "name": "tagGroupId",
+      "description": "Group ID",
       "type": {
-        "name": "Boolean",
+        "name": "Int",
         "kind": "SCALAR"
       }
     }
