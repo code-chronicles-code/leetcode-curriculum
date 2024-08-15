@@ -1,5 +1,4 @@
-from collections import deque
-from typing import Generator, Optional
+from typing import Generator, Optional, List
 
 
 class TreeNode:
@@ -16,15 +15,14 @@ class TreeNode:
 
 def traverse_level_order(
     root: Optional[TreeNode],
-) -> Generator[TreeNode, None, None]:
-    queue = deque([root])
-    while queue:
-        level_len = len(queue)
-        for _ in range(level_len):
-            node = queue.popleft()
-            if not node:
-                continue
+) -> Generator[List[TreeNode], None, None]:
+    level = [root] if root else []
+    while level:
+        yield level
 
-            yield node
-            queue.append(node.left)
-            queue.append(node.right)
+        level = [
+            child
+            for node in level
+            for child in [node.left, node.right]
+            if child is not None
+        ]
