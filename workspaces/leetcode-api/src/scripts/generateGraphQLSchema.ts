@@ -39,6 +39,7 @@ async function main(): Promise<void> {
 
   const scalars: string[] = [];
   const enums: string[] = [];
+  const inputObjects: string[] = [];
   const interfaces: string[] = [];
   const objects: string[] = [];
 
@@ -63,17 +64,39 @@ async function main(): Promise<void> {
         );
         break;
       }
+      case "INPUT_OBJECT":
       case "INTERFACE":
       case "OBJECT": {
-        const decl =
-          graphqlTypeInfo.kind === "INTERFACE" ? "interface" : "type";
-        const fields = nullthrows(graphqlTypeInfo.fields).map(
-          (field) =>
-            `${formatDescription(field.description)}${field.name}: ${stringifyType(field.type)}\n`,
-        );
+        const decl = {
+          INPUT_OBJECT: "input",
+          INTERFACE: "interface",
+          OBJECT: "type",
+        }[graphqlTypeInfo.kind];
+        const fields = [
+          ...(graphqlTypeInfo.fields ?? []),
+          ...(graphqlTypeInfo.inputFields ?? []),
+        ].map((field) => {
+          // TODO: add field argument default values
+          const args =
+            "args" in field && field.args && field.args.length > 0
+              ? "(\n" +
+                field.args
+                  .map(
+                    (arg) =>
+                      `${formatDescription(arg.description)}${arg.name}: ${stringifyType(arg.type)}`,
+                  )
+                  .join("\n") +
+                "\n)"
+              : "";
+          return `${formatDescription(field.description)}${field.name}${args}: ${stringifyType(field.type)}\n`;
+        });
 
-        // TODO: also include field arguments
-        (graphqlTypeInfo.kind === "INTERFACE" ? interfaces : objects).push(
+        const destination = {
+          INPUT_OBJECT: inputObjects,
+          INTERFACE: interfaces,
+          OBJECT: objects,
+        }[graphqlTypeInfo.kind];
+        destination.push(
           `${formatDescription(graphqlTypeInfo.description)}${decl} ${graphqlTypeInfo.name} {\n${fields.join("")}}\n`,
         );
         break;
@@ -87,7 +110,11 @@ async function main(): Promise<void> {
     }
   }
 
-  console.log([...scalars, ...enums, ...interfaces, ...objects].join("\n"));
+  console.log(
+    [...scalars, ...enums, ...interfaces, ...inputObjects, ...objects].join(
+      "\n",
+    ),
+  );
 }
 
 main().catch((err) => {

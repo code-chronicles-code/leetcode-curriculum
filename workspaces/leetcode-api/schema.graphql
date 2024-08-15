@@ -2035,6 +2035,346 @@ interface Node {
   id: ID!
 }
 
+input BatchReviewFlaggedObjectsInput {
+  flagResultIds: [ID!]!
+  operation: FlagStatus!
+  reasonId: ID
+  description: String
+}
+
+input DeleteAccountInput {
+  reason: DeleteAccountReason!
+  otherReason: String
+  usernameOrEmail: String!
+}
+
+input DeleteUserRequestInput {
+  userId: String
+  username: String
+  userEmail: String
+  skip: Int!
+  limit: Int!
+  startDate: DateTime
+  endDate: DateTime
+}
+
+input FavoriteQuestionFilterInput {
+  positionRoleTagSlug: String
+  difficultyList: [DifficultyDescribedEnum]
+  questionStatusList: [FavoriteQuestionStatusEnum]
+}
+
+input FlagInput {
+  resourceType: ResourceTypeEnum!
+  resourceId: String!
+  reasonId: ID
+  description: String
+}
+
+input InterviewedStatsInput {
+  companyId: Int
+  companyName: String
+  interviewedStatsId: Int!
+  isInterviewed: Boolean
+  questionId: String!
+  stageOption: Int
+  timeOption: Int
+  positionTagSlug: String
+}
+
+input LibraryMultiTestcaseInput {
+  category: Category!
+  expectedOutput: String!
+  inputRaw: String!
+  name: String!
+}
+
+input LibraryQuestionsInput {
+  "Question Type"
+  quesType: String
+  isNew: Boolean
+  isCustom: Boolean
+  isSystemDesign: Boolean
+  isUnpublished: Boolean
+  canEdit: Boolean
+  "Search Keyword"
+  keyword: String
+  sortField: QuestionSortFieldEnum!
+}
+
+input LibrarySolutionsInput {
+  code: String!
+  lang: String!
+  solutionId: ID
+}
+
+input ManagementAddInterviewedStatVoteInput {
+  questionId: ID!
+  "company tag id"
+  tagId: ID!
+  "position tag id"
+  positionTagSlug: String
+  votedNum: Int!
+  timeOption: Int
+}
+
+input ManagementAddOrEditTagCategoryInput {
+  "Category Name"
+  name: String!
+  "Group ID for this category"
+  groupId: ID!
+  "Category is enabled or not"
+  isEnabled: Boolean
+}
+
+input ManagementAddOrEditTagInput {
+  "Tag Name"
+  name: String!
+  "Tag Slug"
+  slug: String!
+  keywords: JSONString
+  "Whether the tag is enabled (if not enabled, it's not shown to the users"
+  isTagEnabled: Boolean!
+  isUserSelectable: Boolean
+  isStandard: Boolean
+  "Category List IDs"
+  tagCategoryIds: [ID]
+  "Tag Image URL"
+  imgUrl: String
+  "排序"
+  order: Int
+}
+
+input ManagementCompanyTagsInput {
+  "Search Keyword"
+  keyword: String
+  "Tag Slug"
+  slug: String
+  "Filter by Standard Tags"
+  isEnabled: Boolean
+  offset: Int!
+  limit: Int!
+}
+
+input ManagementTagCategoriesInput {
+  "Group ID"
+  tagGroupId: Int
+  "Search Keyword"
+  keyword: String
+  "Category Slug"
+  slug: String
+  "Filter by Category Enabled"
+  isEnabled: Boolean
+}
+
+input ManagementTagsInput {
+  "Group ID"
+  tagGroupId: Int
+  "Category ID"
+  tagCategoryId: Int
+  "Filter by Enabled Tags"
+  isTagEnabled: Boolean
+  "Filter by Standard Tags"
+  isStandardTag: Boolean
+  "Filter by User Selectable Tags"
+  isUserSelectable: Boolean
+  isSimilarTag: Boolean
+  "Search Keyword"
+  keyword: String
+  "Filter by Tag Slug startswith"
+  slug: String
+  offset: Int!
+  limit: Int!
+  excludeTagCategoryIds: [Int]
+}
+
+input ManagementTeamMembersInput {
+  roleGroup: ManagementRoleEnum
+  username: String
+  skip: Int!
+  limit: Int!
+}
+
+input OMFavoriteListInput {
+  skip: Int!
+  limit: Int!
+  searchFieldEnum: OMFavoriteSearchFieldEnum
+  searchKeyword: String
+  favoriteType: FavoriteTypeEnum
+  sortBy: OMFavoriteSortFieldEnum
+  "sort descending or ascending"
+  sortDsc: Boolean
+}
+
+input OfficialSolutionFeedbackFilterInput {
+  startDate: String
+  endDate: String
+  questionSlugs: [String]
+  reasons: [Int]
+  hasComment: Boolean
+  categories: [String]
+  authors: [String]
+  orderBy: FeedbackOrderByEnum
+  sortOrder: SortingEnum
+}
+
+input PremiumTrialRecordsInput {
+  searchKeyword: String
+  searchBy: SearchUserType
+  skip: Int!
+  limit: Int!
+}
+
+input ProgressListFilterInput {
+  orderBy: ProgressOrderByEnum
+  sortOrder: SortingOrderEnum
+  difficulty: DifficultyEnum
+  tags: [String!]
+  searchKeywords: String
+}
+
+input QuestionAttachmentInput {
+  name: String!
+  content: String!
+  extension: String!
+}
+
+input QuestionListFilterInput {
+  orderBy: QuestionOrderByEnum
+  sortOrder: SortingOrderEnum
+  difficulty: DifficultyEnum
+  tags: [String!]
+  status: UserQuestionStatus
+  searchKeywords: String
+  listId: String
+  premiumOnly: Boolean
+  companies: [String!]
+}
+
+input QuestionSolutionsFilterInput {
+  questionSlug: String!
+  orderBy: TopicSortingOption
+  query: String
+  languageTags: [String]
+  topicTags: [String]
+  skip: Int!
+  first: Int!
+}
+
+input ReviewFlaggedObjectInput {
+  "Use this to locate the object. Will ignore resourceType and resourceId if this is provided."
+  flagResultId: ID
+  "Use this together with resourceId as an alternative way to locate object."
+  resourceType: ResourceTypeEnum
+  "Use this together with resourceType as an alternative way to locate object."
+  resourceId: String
+  operation: FlagStatus!
+  reasonId: ID
+  description: String
+}
+
+input StoreAdminCreateOrderInput {
+  itemSlug: String!
+  username: String!
+  details: JSONString
+  country: String!
+  recipient: String!
+  address: String!
+  city: String!
+  state: String!
+  zipCode: String!
+  phone: String!
+  note: String
+}
+
+input UpcV2SubmitSurveyInput {
+  purposes: UpcV2PurposeEnum
+  codingLevel: UpcV2CodingLevelEnum
+  interests: [String]
+}
+
+input UserManagementIpListInput {
+  userName: String
+  ip: String
+  startedAt: DateTime
+  endedAt: DateTime
+  status: IPStatusEnum
+  skip: Int!
+  limit: Int!
+}
+
+input UserManagementOperationHistoryInput {
+  userId: ID!
+  operations: [UserOperationEnum]
+  startedAt: DateTime
+  endedAt: DateTime
+  skip: Int!
+  limit: Int!
+}
+
+input UserManagementScoreHistoryInput {
+  userId: ID!
+  scoreType: ScoreTypeEnum
+  startedAt: DateTime
+  endedAt: DateTime
+  category: UmScoreCategoryEnum
+  skip: Int!
+  limit: Int!
+}
+
+input UserManagementStoreOrdersInput {
+  userId: ID
+  keywords: String
+  startedAt: DateTime
+  endedAt: DateTime
+  status: UmStoreOrderStatusEnum
+  skip: Int!
+  limit: Int!
+}
+
+input UserManagementStripeChargesInput {
+  userId: ID!
+  keywords: String
+  startedAt: DateTime
+  endedAt: DateTime
+  status: StripeChargeStatusEnum
+  skip: Int!
+  limit: Int!
+}
+
+input VacRecordsInput {
+  userId: ID!
+  "vac name to search"
+  searchKeyword: String
+  skip: Int!
+  limit: Int!
+}
+
+input managementCompanyQuestionsInput {
+  tagId: Int!
+  keyword: String
+  keywordType: CompanyQuestionKeywordType
+  timeOption: CompanyQuestionTimeOptionEnum
+  offset: Int!
+  limit: Int!
+}
+
+input managementCompanyQuestionsV2Input {
+  companyTagId: Int!
+  positionTagSlug: String
+  keyword: String
+  timeOption: CompanyQuestionTimeOptionEnumV2
+  offset: Int!
+  limit: Int!
+}
+
+input managementIncVoteLogsInput {
+  tagId: Int!
+  questionId: Int!
+  offset: Int!
+  limit: Int!
+}
+
 type AcStatsNode {
   acQuestionCount: Int
   acRate: Int
@@ -2048,7 +2388,7 @@ type AcceptAchievementReward {
 }
 
 type AcceptContribution {
-  contribution: ContributionNode
+  contribution(id: ID): ContributionNode
   error: String
   ok: Boolean
 }
@@ -2323,7 +2663,7 @@ type CardNode {
 }
 
 type CategoryNode {
-  cards: [CardNode]
+  cards(num: Int): [CardNode]
   description: String
   id: ID!
   order: Int!
@@ -2432,7 +2772,7 @@ type CommentNode {
   nodebbPid: Int!
   numChildren: Int!
   "Ineffective field: Don't query this field in a list"
-  pageNum: Int
+  pageNum(numPerPage: Int, orderBy: String): Int
   parent: CommentNode
   parentId: ID
   pinned: Boolean
@@ -3075,7 +3415,7 @@ type DiscussCategoryNode {
 type DiscussTopicTagNode {
   id: ID!
   name: String!
-  numTopics: Int!
+  numTopics(otherTag: Int): Int!
   order: Int!
   slug: String!
   tagFk: TagNode
@@ -3397,7 +3737,11 @@ type FilteredSubmissionNode {
 
 type FilteredSubmissionOverviewNode {
   pages: Int
-  submissions: [FilteredSubmissionNode]
+  submissions(
+    inputFilters: String
+    numPerPage: Int
+    pageNo: Int
+  ): [FilteredSubmissionNode]
 }
 
 type FlagNode {
@@ -3600,7 +3944,13 @@ type InterviewNode {
   id: ID!
   premiumOnly: Boolean!
   questions: [QuestionNode!]!
-  sessionSet: InterviewSessionNodeConnection!
+  sessionSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): InterviewSessionNodeConnection!
   "in seconds"
   timeConstraint: Int
   updateTime: DateTime
@@ -3617,7 +3967,13 @@ type InterviewQuestionReportNode {
   content: String!
   questionId: String!
   submission: InterviewSubmissionNode
-  submissionHistory: InterviewSubmissionConnection!
+  submissionHistory(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    skip: Int
+  ): InterviewSubmissionConnection!
 }
 
 type InterviewReportNode {
@@ -3976,7 +4332,13 @@ type LibraryQuestionEdge {
 }
 
 type LibraryQuestionNode {
-  activities: LibraryActivityConnection!
+  activities(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    skip: Int
+  ): LibraryActivityConnection!
   attachments: [LibraryQuestionAttachmentNode!]
   canEdit: Boolean!
   codeDefinitions: [LibraryCodeDefinition]!
@@ -4010,7 +4372,13 @@ type LibraryQuestionNode {
   isSystemDesign: Boolean
   lastModified: DateTime!
   latestActivity: QuestionActivityNode
-  libraryactivitySet: QuestionActivityNodeConnection!
+  libraryactivitySet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): QuestionActivityNodeConnection!
   matchType: LibraryMatchType!
   mergedContent: String!
   metadata: String!
@@ -4476,224 +4844,640 @@ type MoveTopic {
 }
 
 type Mutation {
-  acceptAchievementReward: AcceptAchievementReward
-  acceptContribution: AcceptContribution
-  addFavoriteToMyCollectionV2: AddFavoriteToMyCollectionV2
-  addOrUpdateCodeInPlayground: AddOrUpdateCodeInPlayground
-  addQuestionToDefaultFavoriteV2: AddQuestionToDefaultFavoriteV2
-  addQuestionToFavorite: AddQuestionToFavorite
-  addQuestionToFavoriteV2: AddQuestionToFavoriteV2
-  addQuestionToNewFavorite: AddQuestionToNewFavorite
-  addQuestionToNewFavoriteV2: AddQuestionToNewFavoriteV2
-  addUserToInternalContest: AddUserToInternalContest
-  applyTimeTravelTicket: ApplyTimeTravelTicket
-  applyTimeTravelTicketV2: ApplyTimeTravelTicketV2
-  approveComment: ApproveComment
-  approveComments: ApproveComments
-  approveContestReports: ApproveContestReports
-  approveReportedPosts: ApproveReportedPost
-  approveTopic: ApproveTopic
-  approveTopics: ApproveTopics
-  archiveUser: ArchiveUser
-  awardInternalContestCoin: AwardInternalContestCoin
-  banIp: BanIP
-  banUser: BanUser
-  batchReviewFlaggedObjects: BatchReviewFlaggedObjects
-  btsEventNotification: BTSEventNotification
-  btsReferralRegister: BTSReferralRegister
+  acceptAchievementReward(achievementName: String!): AcceptAchievementReward
+  acceptContribution(comment: String, contributionId: ID): AcceptContribution
+  addFavoriteToMyCollectionV2(
+    favoriteSlug: String!
+  ): AddFavoriteToMyCollectionV2
+  addOrUpdateCodeInPlayground(
+    code: String
+    langSlug: String
+    uuid: String
+  ): AddOrUpdateCodeInPlayground
+  addQuestionToDefaultFavoriteV2(
+    questionSlug: String!
+  ): AddQuestionToDefaultFavoriteV2
+  addQuestionToFavorite(
+    favoriteIdHash: String
+    questionId: String
+  ): AddQuestionToFavorite
+  addQuestionToFavoriteV2(
+    favoriteSlug: String!
+    questionSlug: String!
+  ): AddQuestionToFavoriteV2
+  addQuestionToNewFavorite(
+    isPublicFavorite: Boolean
+    name: String
+    questionId: String
+  ): AddQuestionToNewFavorite
+  addQuestionToNewFavoriteV2(
+    isPublicFavorite: Boolean!
+    name: String!
+    questionSlug: String!
+  ): AddQuestionToNewFavoriteV2
+  addUserToInternalContest(userInput: String): AddUserToInternalContest
+  applyTimeTravelTicket(itemId: String): ApplyTimeTravelTicket
+  applyTimeTravelTicketV2(
+    challengeQuestionId: ID!
+    submissionId: ID
+  ): ApplyTimeTravelTicketV2
+  approveComment(id: Int): ApproveComment
+  approveComments(ids: [Int]): ApproveComments
+  approveContestReports(reportIds: [String]!): ApproveContestReports
+  approveReportedPosts(postIds: [Int]!): ApproveReportedPost
+  approveTopic(id: Int): ApproveTopic
+  approveTopics(ids: [Int]): ApproveTopics
+  archiveUser(reason: String, username: String!): ArchiveUser
+  awardInternalContestCoin(
+    coins: Int
+    contestSlug: String
+    userId: Int
+  ): AwardInternalContestCoin
+  banIp(banTypeSlug: String!, ipAddress: String!): BanIP
+  banUser(banTypeSlug: String!, username: String!): BanUser
+  batchReviewFlaggedObjects(
+    data: BatchReviewFlaggedObjectsInput!
+  ): BatchReviewFlaggedObjects
+  btsEventNotification(enable: Boolean!): BTSEventNotification
+  btsReferralRegister(refer: String!): BTSReferralRegister
   "取消注销账户请求"
   cancelDeleteAccount: AuthCancelDeleteAccount
   checkin: Checkin
   collectContestEasterEgg: CollectContestEasterEgg
-  commentContribution: CommentContribution
-  completeFeatureGuide: CompleteFeatureGuide
-  completeSurvey: CompleteSurvey
-  confirmSchoolLogo: ConfirmSchoolLogo
-  createCodeErrorHint: CreateCodeErrorHint
-  createComment: CreateComment
-  createCompletionLike: CreateCompletionLike
-  createContribution: CreateContribution
-  createEmail: CreateEmail
-  createIdeDynamicLayout: CreateIdeDynamicLayout
-  createOrUpdateEmailEvent: CreateOrUpdateEmailEvent
-  createOrUpdateOfficialSolutionFeedback: CreateOrUpdateEditorialFeedback
+  commentContribution(comment: String, contributionId: ID): CommentContribution
+  completeFeatureGuide(guideType: FeatureGuideType!): CompleteFeatureGuide
+  completeSurvey(response: JSONString, surveyType: SurveyType!): CompleteSurvey
+  confirmSchoolLogo(schoolId: Int!): ConfirmSchoolLogo
+  createCodeErrorHint(
+    code: String!
+    codeOutput: String!
+    lang: String!
+    questionSlug: String!
+    status: Int!
+  ): CreateCodeErrorHint
+  createComment(
+    content: String
+    intentionTagSlug: String
+    mentionedUserSlugs: [String!]
+    parentCommentId: Int
+    topicId: Int
+  ): CreateComment
+  createCompletionLike(
+    completionId: ID!
+    isLike: Boolean!
+  ): CreateCompletionLike
+  createContribution(
+    contributionType: String
+    payload: JSONString
+  ): CreateContribution
+  createEmail(email: String): CreateEmail
+  createIdeDynamicLayout(
+    layoutJson: String!
+    layoutName: String!
+  ): CreateIdeDynamicLayout
+  createOrUpdateEmailEvent(data: String, eventId: Int): CreateOrUpdateEmailEvent
+  createOrUpdateOfficialSolutionFeedback(
+    additionalComment: String
+    optionIds: [Int]!
+    questionSlug: String!
+    score: Int!
+  ): CreateOrUpdateEditorialFeedback
   "obtain the new annual medals"
-  createOrUpdateUserYearlyMedals: CreateOrUpdateUserYearlyMedals
-  createPlayground: CreatePlayground
-  createPlaygroundFolder: CreatePlaygroundFolder
-  createTopic: CreateTopic
-  createTopicForContest: CreateTopicForContest
-  createTopicForQuestion: CreateTopicForQuestion
-  createTopicWithCategory: CreateTopicWithCategory
+  createOrUpdateUserYearlyMedals(
+    medalSlugs: [String]!
+  ): CreateOrUpdateUserYearlyMedals
+  createPlayground(
+    name: String
+    selectedLang: String
+    testcaseInput: String
+  ): CreatePlayground
+  createPlaygroundFolder(folderName: String): CreatePlaygroundFolder
+  createTopic(content: String, title: String): CreateTopic
+  createTopicForContest(
+    content: String
+    contestTitleSlug: String
+    title: String
+  ): CreateTopicForContest
+  createTopicForQuestion(
+    content: String
+    questionId: Int
+    tags: [String]
+    title: String
+  ): CreateTopicForQuestion
+  createTopicWithCategory(
+    anonymous: Boolean
+    categorySlugs: [String]
+    content: String
+    tags: [String]
+    title: String
+  ): CreateTopicWithCategory
   "user apply to delete account, account gets frozen after success"
-  deleteAccount: DeleteAccount
-  deleteCodeFromPlayground: DeleteCodeFromPlayground
-  deleteComment: DeleteComment
-  deleteComments: DeleteComments
-  deleteEducation: DeleteEducation
-  deleteEmail: DeleteEmail
-  deleteFavoriteV2: DeleteFavoriteV2
-  deleteIdeDynamicLayout: DeleteIdeDynamicLayout
-  deleteNote: DeleteNote
-  deleteOccupation: DeleteOccupation
-  deletePlayground: DeletePlayground
-  deletePlaygroundFolder: DeletePlaygroundFolder
-  deleteReportedPosts: DeleteReportedPost
-  deleteSocial: DeleteSocial
-  deleteTeamMember: DeleteTeamMember
-  deleteTopic: DeleteTopic
-  deleteTopics: DeleteTopics
-  discountEventRegister: DiscountEventRegister
-  endDebuggerSession: EndSession
-  executeScript: ExecuteScript
-  flagPost: FlagPost
-  flagSetContentStatus: FlagSetContentStatus
-  flagSomething: FlagSomething
-  forkFavoriteV2: ForkFavoriteV2
-  getOrCreateExploreSession: GetOrCreateExploreSession
-  handleUserReports: HandleUserReports
-  hideComments: HideComments
-  hidePost: HidePost
-  hideTopicFromTrending: HideTopicFromTrending
-  hideTopics: HideTopics
-  hitResource: HitResource
-  interviewedStatsPost: InterviewedStatsPost
+  deleteAccount(data: DeleteAccountInput!): DeleteAccount
+  deleteCodeFromPlayground(
+    langSlug: String
+    uuid: String
+  ): DeleteCodeFromPlayground
+  deleteComment(id: Int): DeleteComment
+  deleteComments(ids: [Int]): DeleteComments
+  deleteEducation(id: Int): DeleteEducation
+  deleteEmail(email: String): DeleteEmail
+  deleteFavoriteV2(favoriteSlug: String!): DeleteFavoriteV2
+  deleteIdeDynamicLayout(layoutId: String!): DeleteIdeDynamicLayout
+  deleteNote(titleSlug: String!): DeleteNote
+  deleteOccupation(id: Int): DeleteOccupation
+  deletePlayground(uuid: String): DeletePlayground
+  deletePlaygroundFolder(folder: String): DeletePlaygroundFolder
+  deleteReportedPosts(postIds: [Int]!): DeleteReportedPost
+  deleteSocial(provider: String): DeleteSocial
+  deleteTeamMember(username: String!): DeleteTeamMember
+  deleteTopic(id: Int): DeleteTopic
+  deleteTopics(ids: [Int]): DeleteTopics
+  discountEventRegister(discountEventReferral: String!): DiscountEventRegister
+  endDebuggerSession(sessionUuid: String!): EndSession
+  executeScript(id: Int!, inputJson: String!): ExecuteScript
+  flagPost(content: String, flagType: ReportTypeEnum!, postId: Int!): FlagPost
+  flagSetContentStatus(data: ReviewFlaggedObjectInput!): FlagSetContentStatus
+  flagSomething(data: FlagInput!): FlagSomething
+  forkFavoriteV2(favoriteSlug: String!): ForkFavoriteV2
+  getOrCreateExploreSession(cardSlug: String): GetOrCreateExploreSession
+  handleUserReports(
+    resetAvatar: Boolean
+    resetUsername: Boolean
+    userSlug: String
+    userSlugs: [String]
+  ): HandleUserReports
+  hideComments(ids: [Int]): HideComments
+  hidePost(hide: Boolean!, postId: Int!): HidePost
+  hideTopicFromTrending(hide: Boolean!, topicId: Int!): HideTopicFromTrending
+  hideTopics(ids: [Int]): HideTopics
+  hitResource(entityId: ID!, entityType: EntityType!): HitResource
+  interviewedStatsPost(
+    interviewedStats: InterviewedStatsInput!
+  ): InterviewedStatsPost
   interviewEnd: InterviewEnd
-  interviewStart: InterviewStart
+  interviewStart(cardId: ID!): InterviewStart
   "join a study plan"
-  joinStudyPlan: JoinStudyPlan
-  libraryDefinitionSave: LibraryDefinitionSave
-  libraryDraftDelete: LibraryDraftDelete
-  libraryFrontendQuestionIdChange: LibraryFrontendQuestionIdChange
-  libraryGenerateSampleTestcase: LibraryGenerateSampleTestcase
-  libraryMultiTestcaseSave: LibraryMultiTestcaseSave
-  librarySetHide: LibrarySetHide
-  librarySetPerm: LibrarySetPerm
-  librarySolutionDelete: LibrarySolutionDelete
-  librarySolutionSave: LibrarySolutionSave
-  librarySolutionsOrderSave: LibrarySolutionsOrderSave
-  librarySolutionsSave: LibrarySolutionsSave
-  libraryStatementSave: LibraryStatementSave
-  libraryTestcaseSave: LibraryTestcaseSave
-  libraryValidatorSave: LibraryValidatorSave
-  like: Like
-  managementAddInterviewedStatVote: ManagementAddInterviewedStatVote
-  managementAddOrEditTag: ManagementAddOrEditTag
-  managementAddOrEditTagCategory: ManagementAddOrEditTagCategory
-  managementRemoveTagCategoryToTag: ManagementRemoveTagCategoryToTag
-  managementSetNonofficialTagSimilar: ManagementSetNonofficialTagSimilar
-  markItemComplete: MarkItemComplete
-  markItemIncomplete: MarkItemIncomplete
-  markSolvedQuestion: MarkSolvedQuestion
-  markSpammers: MarkSpammers
-  migrateDiscussionToSolution: MigrateDiscussionToSolution
-  migrateSolutionToDiscussion: MigrateSolutionToDiscussion
-  mockUser: MockUser
-  modifyIdeDynamicLayout: ModifyIdeDynamicLayout
-  moveTopic: MoveTopic
+  joinStudyPlan(
+    planSlug: String!
+    "e.g. [1,0,0,1,1,1,0], length should be 7"
+    weeklyTaskSchedule: [Int!]
+  ): JoinStudyPlan
+  libraryDefinitionSave(
+    codeDefinitions: JSONString
+    customLimits: JSONString
+    customMatcher: String
+    drivers: JSONString
+    frontendPreviews: JSONString
+    hasFrontendPreview: Boolean
+    matchType: Int
+    metadata: String
+    questionId: ID!
+  ): LibraryDefinitionSave
+  libraryDraftDelete(questionId: ID!): LibraryDraftDelete
+  libraryFrontendQuestionIdChange(
+    frontendQuestionId: ID!
+    questionId: ID!
+  ): LibraryFrontendQuestionIdChange
+  libraryGenerateSampleTestcase(
+    count: Int!
+    expectedOutput: String!
+    inputRaw: String!
+    questionId: ID!
+  ): LibraryGenerateSampleTestcase
+  libraryMultiTestcaseSave(
+    questionId: ID!
+    sampleTestcase: String!
+    testcaseList: [LibraryMultiTestcaseInput!]!
+  ): LibraryMultiTestcaseSave
+  librarySetHide(hide: Boolean!, questionId: ID!): LibrarySetHide
+  librarySetPerm(canEdit: Boolean!, questionId: ID!): LibrarySetPerm
+  librarySolutionDelete(questionId: ID!, solutionId: ID!): LibrarySolutionDelete
+  librarySolutionSave(
+    code: String!
+    complexity: String!
+    expectedStatus: Int!
+    isModelSolution: Boolean
+    lang: String!
+    name: String
+    questionId: ID!
+    solutionId: ID
+  ): LibrarySolutionSave
+  librarySolutionsOrderSave(
+    questionId: ID!
+    solutions: [ID!]
+  ): LibrarySolutionsOrderSave
+  librarySolutionsSave(
+    questionId: ID!
+    solutionsInput: [LibrarySolutionsInput]
+  ): LibrarySolutionsSave
+  libraryStatementSave(
+    attachments: [QuestionAttachmentInput!]
+    content: String!
+    difficulty: Int!
+    followup: String!
+    questionId: ID
+    questionTypes: [Int!]
+    title: String!
+  ): LibraryStatementSave
+  libraryTestcaseSave(
+    expectedOutput: String!
+    inputRaw: String!
+    questionId: ID!
+    sampleTestcase: String!
+  ): LibraryTestcaseSave
+  libraryValidatorSave(
+    code: String!
+    driver: String!
+    note: String!
+    questionId: ID!
+  ): LibraryValidatorSave
+  like(isLike: Boolean, titleSlug: String): Like
+  managementAddInterviewedStatVote(
+    "Add Vote Info"
+    data: ManagementAddInterviewedStatVoteInput!
+  ): ManagementAddInterviewedStatVote
+  managementAddOrEditTag(
+    "Tag Data"
+    data: ManagementAddOrEditTagInput!
+    "Tag ID if updating existing tag"
+    id: ID
+  ): ManagementAddOrEditTag
+  managementAddOrEditTagCategory(
+    "Tag Category Data"
+    data: ManagementAddOrEditTagCategoryInput!
+    "Existing Tag Category ID for updation"
+    id: ID
+  ): ManagementAddOrEditTagCategory
+  managementRemoveTagCategoryToTag(
+    tagCategoryId: ID!
+    tagId: ID!
+  ): ManagementRemoveTagCategoryToTag
+  managementSetNonofficialTagSimilar(
+    "Child Tag / Non-Standard Tag"
+    childId: ID!
+    "Parent Tag / Standard Tag"
+    parentId: ID!
+  ): ManagementSetNonofficialTagSimilar
+  markItemComplete(itemId: String, submissionId: Int): MarkItemComplete
+  markItemIncomplete(itemId: String): MarkItemIncomplete
+  markSolvedQuestion(planSlug: String!, titleSlug: String!): MarkSolvedQuestion
+  markSpammers(isSpammer: Boolean!, usernames: [String]!): MarkSpammers
+  migrateDiscussionToSolution(
+    commentId: Int!
+    title: String!
+  ): MigrateDiscussionToSolution
+  migrateSolutionToDiscussion(topicId: Int!): MigrateSolutionToDiscussion
+  mockUser(usernameToMock: String): MockUser
+  modifyIdeDynamicLayout(
+    layoutId: String!
+    layoutJson: String
+    layoutName: String
+  ): ModifyIdeDynamicLayout
+  moveTopic(categoryId: Int!, topicId: Int!): MoveTopic
   "online management generate favorite"
-  omGenerateFavorite: OMGenerateFavorite
+  omGenerateFavorite(
+    difficultyTagSlugs: [String!]
+    favoriteDescription: String
+    favoriteName: String!
+    favoriteSlug: String!
+    favoriteType: FavoriteTypeEnum!
+    isPublic: Boolean!
+    knowledgeTagSlugs: [String!]
+    languageTagSlug: String
+    questionIdListStr: String
+  ): OMGenerateFavorite
   "online management remove question from favorite"
-  omRemoveQuestionFromFavorite: OMRemoveQuestionFromFavorite
+  omRemoveQuestionFromFavorite(
+    favoriteSlug: String!
+    questionSlug: String!
+  ): OMRemoveQuestionFromFavorite
   "online management update favorite"
-  omUpdateFavorite: OMUpdateFavorite
+  omUpdateFavorite(
+    favoriteDescription: String
+    favoriteName: String
+    favoriteSlug: String
+    isPublic: Boolean
+    questionIdListStr: String
+  ): OMUpdateFavorite
   openNotifications: OpenNotifications
-  optInOrOutDynamicLayoutFeature: OptInOrOutDynamicLayoutFeature
-  optInOrOutOfPremiumFeature: OptInOrOutPremiumFeature
-  performNotificationAction: PerformNotificationAction
-  planStartProgress: StartProgress
-  publishContestAnnouncement: PublishContestAnnouncement
-  publishSolution: PublishSolution
+  optInOrOutDynamicLayoutFeature(
+    optIn: Boolean!
+  ): OptInOrOutDynamicLayoutFeature
+  optInOrOutOfPremiumFeature(
+    featureId: Int!
+    optIn: Boolean!
+  ): OptInOrOutPremiumFeature
+  performNotificationAction(id: Int): PerformNotificationAction
+  planStartProgress(planSlug: String!): StartProgress
+  publishContestAnnouncement(content: String): PublishContestAnnouncement
+  publishSolution(
+    content: String!
+    questionSlug: String!
+    tags: [String]!
+    title: String!
+  ): PublishSolution
   "quit a study plan"
-  quitStudyPlan: QuitStudyPlan
-  rateArticle: RateArticle
-  recordAbExperimentEvent: RecordABExperimentEvent
-  rejectContestReports: RejectContestReports
-  rejectContribution: RejectContribution
-  removeFavoriteFromMyCollectionV2: RemoveFavoriteFromMyCollectionV2
-  removeQuestionFromFavorite: RemoveQuestionFromFavorite
-  removeQuestionFromFavoriteV2: RemoveQuestionFromFavoriteV2
-  removeUsersFromInternalContest: RemoveUsersFromInternalContest
-  reorderFavoriteQuestionV2: ReorderFavoriteQuestionV2
-  reportUser: ReportUser
-  requestAnalysisEmail: RequestAnalysisEmail
-  requestUpdateToReportedPosts: RequestUpdateToReportedPost
-  resetFavoriteSessionV2: ResetFavoriteSessionV2
-  resetWeeklyTaskSchedule: ResetWeeklyTaskSchedule
-  rewardPostCoins: RewardPost
-  runDebuggerCommand: RunDebuggerCommand
-  saveSessionCode: SaveSessionCode
-  sendAccountRecoveryEmail: SendAccountRecoveryEmail
-  sendInternalContestEmail: SendInternalContestEmail
-  sendVerificationEmail: SendVerificationEmail
-  setBlacklist: SetBlacklistWords
-  setItemStartTime: SetItemStartTime
-  setNotificationSetting: SetNotificationSetting
+  quitStudyPlan(planSlug: String!): QuitStudyPlan
+  rateArticle(contentTypeId: ID!, objectId: ID!, score: Int!): RateArticle
+  recordAbExperimentEvent(
+    experimentKey: String!
+    featureId: String!
+    identifierType: String!
+    identifierValue: String
+    variationId: Int!
+    variationValue: String!
+  ): RecordABExperimentEvent
+  rejectContestReports(reportIds: [String]!): RejectContestReports
+  rejectContribution(comment: String, contributionId: ID): RejectContribution
+  removeFavoriteFromMyCollectionV2(
+    favoriteSlug: String!
+  ): RemoveFavoriteFromMyCollectionV2
+  removeQuestionFromFavorite(
+    favoriteIdHash: String
+    questionId: String
+  ): RemoveQuestionFromFavorite
+  removeQuestionFromFavoriteV2(
+    favoriteSlug: String!
+    questionSlug: String!
+  ): RemoveQuestionFromFavoriteV2
+  removeUsersFromInternalContest(userIds: [ID]): RemoveUsersFromInternalContest
+  reorderFavoriteQuestionV2(
+    favoriteSlug: String!
+    moveToBottom: Boolean
+    moveToTop: Boolean
+    questionSlug: String!
+    reorderNewIndex: Int
+  ): ReorderFavoriteQuestionV2
+  reportUser(message: String, userSlug: String!): ReportUser
+  requestAnalysisEmail(sessionId: ID!): RequestAnalysisEmail
+  requestUpdateToReportedPosts(postIds: [Int]!): RequestUpdateToReportedPost
+  resetFavoriteSessionV2(favoriteSlug: String!): ResetFavoriteSessionV2
+  resetWeeklyTaskSchedule(
+    planSlug: String!
+    "e.g. [1,0,0,1,1,1,0], length should be 7"
+    weeklyTaskSchedule: [Int!]!
+  ): ResetWeeklyTaskSchedule
+  rewardPostCoins(id: Int, numCoins: Int, reason: String): RewardPost
+  runDebuggerCommand(
+    command: JSONString!
+    sessionUuid: String!
+  ): RunDebuggerCommand
+  saveSessionCode(code: String!, questionId: ID!): SaveSessionCode
+  sendAccountRecoveryEmail(
+    email: String
+    userId: String
+  ): SendAccountRecoveryEmail
+  sendInternalContestEmail(
+    content: String
+    userIds: [ID]
+  ): SendInternalContestEmail
+  sendVerificationEmail(email: String): SendVerificationEmail
+  setBlacklist(words: String): SetBlacklistWords
+  setItemStartTime(itemId: String): SetItemStartTime
+  setNotificationSetting(
+    channelIdentifier: String
+    notificationIdentifier: String
+    status: Boolean
+  ): SetNotificationSetting
   "whether hide current user rank info on rank boards"
-  setVisibleOnPlanRank: SetVisibleOnPlanRank
-  startDebuggerSession: StartSession
-  storeAdminCreateOrder: StoreAdminCreateOrder
-  storeOrderEdit: StoreOrderEdit
-  storeOrderSave: StoreOrderSave
+  setVisibleOnPlanRank(hideOnBoard: Boolean!): SetVisibleOnPlanRank
+  startDebuggerSession(
+    commands: [JSONString]!
+    language: String!
+    questionId: String!
+    queueName: String
+    testcaseInput: String!
+    testMode: Boolean
+    typedCode: String!
+  ): StartSession
+  storeAdminCreateOrder(
+    input: StoreAdminCreateOrderInput!
+  ): StoreAdminCreateOrder
+  storeOrderEdit(
+    id: ID!
+    note: String
+    status: UmStoreOrderStatusEnum
+    trackingId: String
+  ): StoreOrderEdit
+  storeOrderSave(
+    address: String
+    city: String
+    country: String
+    details: JSONString
+    fullName: String
+    item: String!
+    note: String
+    phone: String
+    postalCode: String
+    province: String
+    shirtSize: String
+  ): StoreOrderSave
   "comment submission complexity"
-  submissionNoteComplexity: SubmissionNoteComplexity
+  submissionNoteComplexity(
+    complexityType: ComplexityTypeEnum!
+    note: String!
+    submissionId: ID!
+  ): SubmissionNoteComplexity
   "vote submission complexity"
-  submissionVoteComplexity: SubmissionVoteComplexity
-  submitCancelSurvey: SubmitCancelSurvey
-  submitQuestionSatisfactionSurvey: SubmitQuestionSatisfactionSurvey
-  submitQuestionSuggestion: SubmitQuestionSuggestion
-  submitSubscriptionSurvey: SubmitSubscriptionSurvey
-  submitSurveyV2: SubmitSurveyV2
-  subscribeTopic: SubscribeTopic
-  subscriptionViewCountIncrement: SubscriptionViewCountIncrement
-  tagSearchHit: TagSearchHit
-  toggleContestDynamicLayout: ToggleContestDynamicLayout
-  toggleFavorite: ToggleFavorite
-  toggleFavoriteSolution: ToggleFavoriteSolution
-  togglePinComment: TogglePinComment
-  togglePinTopic: TogglePinTopic
-  unlockFavorite: UnlockFavorite
-  unlockShareEvent: UnlockShareEvent
-  unpublishContestAnnouncement: UnpublishContestAnnouncement
-  upcSubmitResponse: UPCSubmitResponse
-  upcV2SubmitSurvey: UpcV2SubmitSurvey
-  updateAnnualReportViewStatus: UpdateAnnualReportViewStatus
-  updateAvatarStatus: UpdateUserAvatarStatus
-  updateBetaParticipation: UpdateBetaParticipation
-  updateComment: UpdateComment
-  updateContribution: UpdateContribution
-  updateEducation: UpdateEducation
-  updateEmailPrimary: UpdateEmailPrimary
-  updateFavoriteEmojiBackgroundV2: UpdateFavoriteEmojiBackgroundV2
-  updateFavoriteIsPublicV2: UpdateFavoriteIsPublicV2
-  updateFavoriteNameDescriptionV2: UpdateFavoriteNameDescriptionV2
-  updateInvalidUsername: UpdateInvalidUsername
-  updateNote: UpdateNote
-  updateOccupation: UpdateOccupation
-  updatePassword: UpdatePassword
-  updatePlayground: UpdatePlayground
-  updatePlaygroundFolder: UpdatePlaygroundFolder
-  updateProblematicPost: UpdateProblematicPost
-  updateProfile: UpdateProfile
-  updateProfileV3: UpdateProfileV3
-  updatePublicBadge: UpdatePublicBadge
-  updateSolution: UpdateSolution
-  updateSubmissionNote: UpdateSubmissionNote
-  updateSyncedCode: UpdateSyncedCode
-  updateTeamMember: UpdateTeamMember
-  updateTopic: UpdateTopic
-  updateTopicWithCategory: UpdateTopicWithCategory
-  updateUsername: UpdateUsername
-  userManagementApplyForPremiumTrial: UmApplyForPremiumTrial
-  userManagementBanIp: UmBanIP
-  userManagementBanUser: UmBanUser
-  userManagementCreateScore: UmCreateScore
-  userManagementDeleteUserCreditCard: UmDeleteUserCreditCard
-  userManagementEditIpStatus: UmEditIPStatus
-  userManagementSendVerificationEmail: UmSendVerificationEmail
-  userManagementSetEmailPrimary: UmSetEmailPrimary
-  userUploadSchoolLogo: UserUploadSchoolLogo
-  votePost: VotePost
+  submissionVoteComplexity(
+    complexityType: ComplexityTypeEnum!
+    submissionId: ID!
+    vote: ComplexityVoteEnum!
+  ): SubmissionVoteComplexity
+  submitCancelSurvey(answers: [JSONString!]): SubmitCancelSurvey
+  submitQuestionSatisfactionSurvey(
+    cancelled: Boolean!
+    completedAllQuestions: Boolean!
+    completedRequiredQuestions: Boolean!
+    surveyResponse: JSONString!
+  ): SubmitQuestionSatisfactionSurvey
+  submitQuestionSuggestion(
+    checkedDictStr: String!
+    comment: String
+    questionId: Int!
+  ): SubmitQuestionSuggestion
+  submitSubscriptionSurvey(answers: [JSONString!]): SubmitSubscriptionSurvey
+  submitSurveyV2(
+    cancelled: Boolean!
+    completedAllQuestions: Boolean!
+    completedRequiredQuestions: Boolean!
+    surveyResponse: JSONString!
+    surveySlug: String!
+  ): SubmitSurveyV2
+  subscribeTopic(subscribe: Boolean, topicId: Int): SubscribeTopic
+  subscriptionViewCountIncrement(
+    ref: String
+    source: String
+  ): SubscriptionViewCountIncrement
+  tagSearchHit(tagSlug: String!): TagSearchHit
+  toggleContestDynamicLayout(enable: Boolean): ToggleContestDynamicLayout
+  toggleFavorite(cardSlug: String): ToggleFavorite
+  toggleFavoriteSolution(
+    isFavorite: Boolean!
+    topicId: Int!
+  ): ToggleFavoriteSolution
+  togglePinComment(commentId: Int, pinned: Boolean): TogglePinComment
+  togglePinTopic(pinned: Boolean, topicId: Int): TogglePinTopic
+  unlockFavorite(favoriteSlug: String!): UnlockFavorite
+  unlockShareEvent(cardSlug: String): UnlockShareEvent
+  unpublishContestAnnouncement(id: Int): UnpublishContestAnnouncement
+  upcSubmitResponse(
+    response: JSONString
+    type: UPCResponseType!
+  ): UPCSubmitResponse
+  upcV2SubmitSurvey(data: UpcV2SubmitSurveyInput!): UpcV2SubmitSurvey
+  updateAnnualReportViewStatus(viewed: Boolean!): UpdateAnnualReportViewStatus
+  updateAvatarStatus(viewedSlugs: [String]): UpdateUserAvatarStatus
+  updateBetaParticipation(
+    optIn: Boolean!
+    participationType: Type
+  ): UpdateBetaParticipation
+  updateComment(content: String, id: Int): UpdateComment
+  updateContribution(
+    applicationId: ID
+    contributionId: ID
+    contributionType: String
+    payload: JSONString
+  ): UpdateContribution
+  updateEducation(
+    degree: String
+    endTime: String
+    id: Int
+    schoolName: String
+    startTime: String
+    toPresent: Boolean
+  ): UpdateEducation
+  updateEmailPrimary(email: String, password: String): UpdateEmailPrimary
+  updateFavoriteEmojiBackgroundV2(
+    backgroundColor: String
+    emoji: String
+    favoriteSlug: String!
+  ): UpdateFavoriteEmojiBackgroundV2
+  updateFavoriteIsPublicV2(
+    favoriteSlug: String!
+    isPublic: Boolean!
+  ): UpdateFavoriteIsPublicV2
+  updateFavoriteNameDescriptionV2(
+    description: String
+    favoriteSlug: String!
+    name: String!
+  ): UpdateFavoriteNameDescriptionV2
+  updateInvalidUsername(username: String): UpdateInvalidUsername
+  updateNote(content: String!, titleSlug: String!): UpdateNote
+  updateOccupation(
+    companyName: String
+    endTime: String
+    id: Int
+    jobTitle: String
+    startTime: String
+    toPresent: Boolean
+  ): UpdateOccupation
+  updatePassword(newPassword: String!, oldPassword: String!): UpdatePassword
+  updatePlayground(
+    codeSnippetMode: Boolean
+    folder: String
+    isLive: Boolean
+    isShared: Boolean
+    name: String
+    selectedLang: String
+    testcaseInput: String
+    uuid: String
+  ): UpdatePlayground
+  updatePlaygroundFolder(
+    newFolderName: String
+    oldFolderName: String
+  ): UpdatePlaygroundFolder
+  updateProblematicPost(
+    content: String
+    id: Int
+    title: String
+  ): UpdateProblematicPost
+  updateProfile(fieldName: String, value: String): UpdateProfile
+  updateProfileV3(
+    aboutMe: String
+    birthday: String
+    company: String
+    githubUrl: String
+    jobTitle: String
+    linkedinUrl: String
+    locationId: String
+    locationName: String
+    realName: String
+    school: String
+    skillTags: [String]
+    website: String
+  ): UpdateProfileV3
+  updatePublicBadge(badgeId: ID): UpdatePublicBadge
+  updateSolution(
+    content: String!
+    tags: [String]!
+    title: String!
+    topicId: Int
+  ): UpdateSolution
+  updateSubmissionNote(
+    flagType: SubmissionFlagTypeEnum
+    note: String
+    submissionId: ID!
+    tagIds: [Int]
+  ): UpdateSubmissionNote
+  updateSyncedCode(
+    code: String!
+    lang: Int!
+    questionId: Int!
+  ): UpdateSyncedCode
+  updateTeamMember(
+    note: String
+    roleGroups: [String]!
+    username: String!
+  ): UpdateTeamMember
+  updateTopic(
+    content: String
+    id: Int
+    tags: [String]
+    title: String
+  ): UpdateTopic
+  updateTopicWithCategory(
+    categorySlugs: [String]
+    content: String
+    id: Int
+    tags: [String]
+    title: String
+  ): UpdateTopicWithCategory
+  updateUsername(username: String): UpdateUsername
+  userManagementApplyForPremiumTrial(
+    "urls of the images"
+    attachments: [String!]
+    notes: String
+    sku: PremiumTrialSku!
+    userId: ID
+    username: String
+  ): UmApplyForPremiumTrial
+  userManagementBanIp(
+    banTypeSlug: String
+    days: Int!
+    ip: String!
+    reason: String
+  ): UmBanIP
+  userManagementBanUser(
+    banTypeSlug: String
+    days: Int!
+    reason: String
+    userId: ID!
+  ): UmBanUser
+  userManagementCreateScore(
+    description: String!
+    score: Int!
+    userId: ID!
+  ): UmCreateScore
+  userManagementDeleteUserCreditCard(id: ID!): UmDeleteUserCreditCard
+  userManagementEditIpStatus(ip: String!, status: IPStatusEnum!): UmEditIPStatus
+  userManagementSendVerificationEmail(
+    email: String!
+    userId: ID!
+  ): UmSendVerificationEmail
+  userManagementSetEmailPrimary(email: String!, userId: ID!): UmSetEmailPrimary
+  userUploadSchoolLogo(schoolId: Int!, url: String!): UserUploadSchoolLogo
+  votePost(postId: Int, value: Int): VotePost
 }
 
 type NewFeatureAnnouncementNode {
@@ -4721,7 +5505,13 @@ type NotificationDataNode {
   content: String!
   id: ID!
   metadata: JSONString
-  notificationSet: NotificationNodeConnection!
+  notificationSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): NotificationNodeConnection!
   type: String
 }
 
@@ -5383,7 +6173,7 @@ type PlaygroundTemplateCodeNode {
 }
 
 type PlaygroundTemplateNode {
-  codes: [PlaygroundTemplateCodeNode]
+  codes(langSlug: String): [PlaygroundTemplateCodeNode]
   name: String!
   nameSlug: String!
   templateId: String
@@ -5486,7 +6276,13 @@ type PrivateContestUserNode {
   contributions: UserContributionNode!
   contributionSet: [ContributionNode!]!
   contributorSet: [ContributorNode!]!
-  createdBy: LibraryQuestionNodeConnection!
+  createdBy(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): LibraryQuestionNodeConnection!
   dateJoined: DateTime!
   debugSession: [DebugSessionNode!]!
   educationrecordSet: [EducationRecordNode!]!
@@ -5516,10 +6312,22 @@ type PrivateContestUserNode {
   lastLogin: DateTime
   lastName: String!
   lastParticipatedContest: ContestNode
-  libraryactivitySet: QuestionActivityNodeConnection!
+  libraryactivitySet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): QuestionActivityNodeConnection!
   linkedinUrl: String
   nameColor: String
-  notificationSet: NotificationNodeConnection!
+  notificationSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): NotificationNodeConnection!
   occupationrecordSet: [OccupationRecordNode!]!
   participatedTimes: Int!
   password: String!
@@ -5533,13 +6341,25 @@ type PrivateContestUserNode {
   profile: UserProfileNode!
   questionapplicationSet: [ApplicationNode!]!
   questionlastsolveSet: [QuestionLastSolveNode!]!
-  questionSet: LibraryQuestionNodeConnection!
+  questionSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): LibraryQuestionNodeConnection!
   questionsolvesessionSet: [QuestionSolveSessionNode!]!
   questionsuggestionSet: [QuestionFeedbackNode!]!
   reportee: [UserReportNode!]!
   reporter: [UserReportNode!]!
   scoreUser: [ManagementScoreNode!]!
-  sessionSet: InterviewSessionNodeConnection!
+  sessionSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): InterviewSessionNodeConnection!
   socialAccounts: [String!]
   storeaddressSet: [StoreAddressNode!]!
   storeorderoperationlogSet: [OrderOperationLogNode!]!
@@ -5551,7 +6371,7 @@ type PrivateContestUserNode {
   tagProblemCounts: TagProblemCountsCategoryNode!
   twitterUrl: String
   upcomingBadges: [UpcomingBadgeNode!]!
-  userCalendar: UserCalendarNode!
+  userCalendar(year: Int): UserCalendarNode!
   useripSet: [UserIPNode!]!
   "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
   username: String!
@@ -5585,293 +6405,609 @@ type PublishSolution {
 }
 
 type Query {
-  achievement: AchievementNode
+  achievement(name: String!): AchievementNode
   achievements: [AchievementNode]
   activeDailyCodingChallengeQuestion: DailyChallengeNodeV2
   activeDiscountEvent: DiscountEventNode
-  advertisementByLocation: [AdvertisementNode!]!
-  allComments: PagifiedCommentNode
+  advertisementByLocation(adLocation: AdLocationEnum!): [AdvertisementNode!]!
+  allComments(
+    endDate: DateTime
+    ip: String
+    numPerPage: Int
+    orderBy: CommentSortingOption
+    pageNo: Int
+    reported: ReportedStatus
+    reportType: ReportTypeEnum
+    search: String
+    startDate: DateTime
+    status: PostStatus
+    submissionCount: Int
+    usernames: String
+    wordListType: String
+  ): PagifiedCommentNode
   allContests: [ContestNode]
-  allContributions: PagifiedContributionNode
+  allContributions(
+    category: String
+    company: Boolean
+    numPerPage: Int
+    page: Int
+    questionCategory: String
+    status: String
+    title: String
+    user: String
+  ): PagifiedContributionNode
   allLeetcodePlaygroundTemplates: [PlaygroundTemplateNode]
   "query a list of common complexities"
   allPinnedComplexitys: [ComplexityInfoNode!]
-  allPlaygroundCodes: [PlaygroundCodeNode]
+  allPlaygroundCodes(uuid: String): [PlaygroundCodeNode]
   allPlaygroundDatasets: [PlaygroundDatasetNode]
   allPlaygroundFolders: [PlaygroundFolderNode]
   allPlaygrounds: [PlaygroundNode]
-  allPlaygroundSnippets: [PlaygroundSnippetNode]
+  allPlaygroundSnippets(
+    langSlug: String
+    query: String
+  ): [PlaygroundSnippetNode]
   allPrivateContests: [ContestNode!]
   allProgress: JSONString
-  allQuestions: [QuestionNode]
+  allQuestions(
+    containContest: Boolean
+    containExplore: Boolean
+    containMain: Boolean
+  ): [QuestionNode]
   allQuestionsCount: [QuestionCountByDifficultyNode!]!
-  allQuestionsRaw: [RawQuestionNode]
+  allQuestionsRaw(
+    containContest: Boolean
+    containExplore: Boolean
+    containMain: Boolean
+  ): [RawQuestionNode]
   allSchoolInfoUrl: String!
-  allTopics: PagifiedTopicNode
+  allTopics(
+    endDate: DateTime
+    ip: String
+    numPerPage: Int
+    orderBy: TopicSortingOption
+    pageNo: Int
+    reported: ReportedStatus
+    reportType: ReportTypeEnum
+    search: String
+    startDate: DateTime
+    status: PostStatus
+    submissionCount: Int
+    usernames: String
+    wordListType: String
+  ): PagifiedTopicNode
   allUserPlaygroundTemplates: [PlaygroundTemplateNode]
-  allUsers: PagifiedUserNode
+  allUsers(
+    avatarStatus: AvatarStatusEnum
+    endDate: DateTime
+    isAvatarCheck: Boolean
+    numPerPage: Int
+    pageNo: Int
+    startDate: DateTime
+  ): PagifiedUserNode
   allVirtualContestScores: [VirtualContestScoreNode]
-  allVirtualContestScoresPagified: PagifiedVirtualContestScoreNode!
+  allVirtualContestScoresPagified(
+    numPerPage: Int
+    pageNo: Int
+  ): PagifiedVirtualContestScoreNode!
   announcements: [DiscussAnnouncementNode!]!
-  application: ApplicationNode
+  application(id: ID): ApplicationNode
   applications: [ApplicationNode]
   archivedUsers: [ArchivedUserNode!]!
-  article: ArticleNode
+  article(id: String, slug: String): ArticleNode
   blacklist: BlacklistNode
   brightTitle: Boolean
   btsReferral: BTSReferralNode
-  cachedTrendingCategoryTopics: [TopicNode]
-  canSeeOtherSubmissionHistory: Boolean!
-  card: CardNode
-  cards: [CardNode]
+  cachedTrendingCategoryTopics(first: Int): [TopicNode]
+  canSeeOtherSubmissionHistory(userSlug: String!): Boolean!
+  card(cardSlug: String): CardNode
+  cards(categorySlug: String): [CardNode]
   cardsWithStats: [CardNode]
-  categories: [CategoryNode]
-  categoryTopicList: TopicConnection
+  categories(slug: String): [CategoryNode]
+  categoryTopicList(
+    after: String
+    before: String
+    categories: [String]
+    first: Int
+    last: Int
+    orderBy: TopicSortingOption
+    query: String
+    skip: Int
+    tags: [String]
+  ): TopicConnection
   cfTurnstileAppearance: String
   cfTurnstileKey: String
-  challenges: [CodingChallengeNode!]!
+  challenges(
+    fromDate: String
+    includeFuture: Boolean
+    includePast: Boolean
+    toDate: String
+  ): [CodingChallengeNode!]!
   channels: [ChannelNode]
-  chapter: ChapterNode
-  chapters: [ChapterNode]
+  chapter(cardSlug: String, chapterId: String): ChapterNode
+  chapters(cardSlug: String): [ChapterNode]
   chinaHost: String
-  codeWithMemory: SampleCodeNode
-  codeWithRuntime: SampleCodeNode
-  comment: CommentNode
-  commentContext: JSONString
-  commentReplies: [CommentNode!]
-  commonKeyword: CommonKeywordNode
-  companies: [CompanyNode!]!
-  companyTag: CompanyTagNode
+  codeWithMemory(
+    lang: String!
+    memory: Int!
+    questionId: Int!
+    skip: Int!
+  ): SampleCodeNode
+  codeWithRuntime(
+    lang: String!
+    questionId: Int!
+    runtime: Int!
+    skip: Int!
+  ): SampleCodeNode
+  comment(id: Int): CommentNode
+  commentContext(
+    commentId: Int
+    numPerPage: Int
+    orderBy: String
+    topicId: Int
+  ): JSONString
+  commentReplies(commentId: Int): [CommentNode!]
+  commonKeyword(slug: String!): CommonKeywordNode
+  companies(search: String): [CompanyNode!]!
+  companyTag(slug: String): CompanyTagNode
   companyTags: [CompanyTagNode!]
-  contest: ContestNode
-  contestDetail: ContestDetailNode
-  contestQuestion: ContestQuestionDetailNode
-  contestQuestionSubmissionList: ContestSubmissionListNode
+  contest(titleSlug: String): ContestNode
+  contestDetail(contestSlug: String): ContestDetailNode
+  contestQuestion(
+    contestSlug: String
+    questionSlug: String
+  ): ContestQuestionDetailNode
+  contestQuestionSubmissionList(
+    contestSlug: String!
+    lang: String
+    limit: Int
+    offset: Int
+    questionSlug: String!
+    "提交结果"
+    status: SubmissionStatusEnum
+  ): ContestSubmissionListNode
   contestRatingHistogram: [ContestRatingHistogramBarNode!]!
-  contestReportApproveSummary: ContestReportSummaryNode!
-  contestReports: [ContestReportNode!]!
-  contestReportsLccn: [ContestReportLCCNNode!]!
+  contestReportApproveSummary(reportIds: [String]!): ContestReportSummaryNode!
+  contestReports(contestSlug: String!): [ContestReportNode!]!
+  contestReportsLccn(contestSlug: String!): [ContestReportLCCNNode!]!
   contestRootBanners: [ContestRootBannerNode!]!
-  contestTopics: PagifiedTopicNode
-  contribution: ContributionNode
+  contestTopics(
+    contestTitleSlug: String
+    numPerPage: Int
+    orderBy: TopicSortingOption
+    pageNo: Int
+  ): PagifiedTopicNode
+  contribution(id: ID): ContributionNode
   contributions: [ContributionNode]
-  createdPublicFavoriteList: FavoriteDetailListNode!
+  createdPublicFavoriteList(userSlug: String!): FavoriteDetailListNode!
   currentContestAnnouncements: [ContestAnnouncementNode]
   currentDailyCodingChallenge: CodingChallengeNode
   currentSubscriptionInfo: CurrentSubscriptionInfo
   currentTimestamp: Float
-  dailyChallengeMedal: MedalNode
-  dailyCodingChallenge: CodingChallengeNode
-  dailyCodingChallengeV2: CodingChallengeNodeV2
-  dashboardItem: ItemNode
-  dccSubmissionInfo: CodingChallengeSubmissionNode
-  dccSubmissionPolling: CodingChallengePollingNode
-  dccSubmissionPollingV2: CodingChallengePollingNode
+  dailyChallengeMedal(month: Int, year: Int): MedalNode
+  dailyCodingChallenge(month: Int, year: Int): CodingChallengeNode
+  dailyCodingChallengeV2(month: Int, year: Int): CodingChallengeNodeV2
+  dashboardItem(id: String): ItemNode
+  dccSubmissionInfo(submissionId: ID): CodingChallengeSubmissionNode
+  dccSubmissionPolling(submissionId: ID): CodingChallengePollingNode
+  dccSubmissionPollingV2(
+    challengeQuestionId: ID
+    submissionId: ID
+  ): CodingChallengePollingNode
   debuggerLanguageFeatures: [DebuggerLanguageFeatureNode!]
   defaultSubscriptionPricing: SubscriptionsNode
-  deleteUserRequests: DeleteUserRequestListNode!
+  deleteUserRequests(input: DeleteUserRequestInput!): DeleteUserRequestListNode!
   didCompleteUpc: Boolean!
-  discussCategory: DiscussCategoryNode
-  discussQuestionTopicTags: [DiscussTopicTagNode!]!
+  discussCategory(slugs: [String]): DiscussCategoryNode
+  discussQuestionTopicTags(
+    numTags: Int
+    questionId: String
+    selectedTags: [String]
+    tagType: String
+  ): [DiscussTopicTagNode!]!
   educationRecordList: [EducationRecordNode]
-  emailEvent: EmailEventNode
+  emailEvent(id: Int): EmailEventNode
   emailEvents: [EmailEventNode]
-  emailSendSession: EmailSendSessionNode
+  emailSendSession(id: Int): EmailSendSessionNode
   emailSendSessions: [EmailSendSessionNode]
-  emailTemplate: EmailTemplateNode
+  emailTemplate(id: Int): EmailTemplateNode
   emailTemplates: [EmailTemplateNode]
   enableIdeDynamicLayoutFeature: Boolean!
-  favorite: FavoriteNode
+  favorite(name: String!): FavoriteNode
   favoriteCards: [CardNode]
-  favoriteDetailV2: FavoriteDetailNode
+  favoriteDetailV2(favoriteSlug: String!): FavoriteDetailNode
   "ac, notac, or null"
-  favoriteQuestionAcStatus: String
-  favoriteQuestionList: FavoriteQuestionListNode!
+  favoriteQuestionAcStatus(favoriteSlug: String!, titleSlug: String!): String
+  favoriteQuestionList(
+    favoriteSlug: String!
+    filter: FavoriteQuestionFilterInput
+  ): FavoriteQuestionListNode!
   favoritesLists: FavoritesNode
-  favoriteSubmitAcProgress: FavoriteSubmitACProgressNode
+  favoriteSubmitAcProgress(favoriteSlug: String!): FavoriteSubmitACProgressNode
   "user progress of a favorite, either his own or collected ones"
-  favoriteUserQuestionProgressV2: UserQuestionProgressNodeV2!
+  favoriteUserQuestionProgressV2(
+    favoriteSlug: String!
+  ): UserQuestionProgressNodeV2!
   feature: FeatureNode
   featuredContests: [ContestNode!]!
   featuredQuestionLists: [FeaturedQuestionListNode!]!
-  feedbackMetaInfoBySlug: FeedBackMetaNode
+  feedbackMetaInfoBySlug(slug: String!): FeedBackMetaNode
   filterableCategories: [CategoryType]
-  filteredSubmissions: FilteredSubmissionOverviewNode
+  filteredSubmissions(
+    inputFilters: String
+    numPerPage: Int
+    pageNo: Int
+  ): FilteredSubmissionOverviewNode
   flagReasons: [FlagReasonNode!]!
-  flagResourceType: ResourceTypeNode
-  frontendQuestionSubmissionResults: [FrontendQuestionResultNode]!
-  globalRanking: GlobalRankingNode
-  growthbookTest: String!
-  hasAccessToFavorite: AccessToFavoriteNode!
-  hasFavoriteSessionReset: Boolean!
+  flagResourceType(name: ResourceTypeEnum!): ResourceTypeNode
+  frontendQuestionSubmissionResults(
+    submissionId: String!
+  ): [FrontendQuestionResultNode]!
+  globalRanking(page: Int): GlobalRankingNode
+  growthbookTest(featureKey: String!): String!
+  hasAccessToFavorite(favoriteSlug: String!): AccessToFavoriteNode!
+  hasFavoriteSessionReset(favoriteSlug: String!): Boolean!
   hasTakenCancelSurvey: Boolean
   hasTakenSubscriptionSurvey: Boolean
   historyCards: [CardNode]
-  htmlArticle: HtmlArticleNode
+  htmlArticle(id: String): HtmlArticleNode
   "user preference dynamic layouts"
   ideDynamicLayouts: [IDEDynamicLayoutNode!]!
   intentionTags: [IntentionTagNode]!
-  internalContestAwardedUsers: [Int]
+  internalContestAwardedUsers(contestSlug: String): [Int]
   internalContestFeedbackEmail: String
   internalContestRegisterEmail: String
   "Used for stuff to create orders manually"
   internalStoreItems: [StoreItemNode!]!
-  interviewAllSessions: InterviewSessionConnection!
+  interviewAllSessions(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    skip: Int
+  ): InterviewSessionConnection!
   interviewCardList: [InterviewCardNode!]
   interviewCurrentSession: InterviewSessionNode
   interviewed: InterviewSurveyNode
   interviewGlobalStats: InterviewGlobalStatsNode!
   interviewIncompleteCards: [ID!]!
   interviewScoreProgress: [InterviewScoreProgressNode!]!
-  interviewSession: InterviewSessionNode
-  interviewSubmissions: InterviewSubmissionConnection!
+  interviewSession(id: ID!): InterviewSessionNode
+  interviewSubmissions(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    questionId: ID!
+    sessionId: ID!
+    skip: Int
+  ): InterviewSubmissionConnection!
   isCurrentUserAuthenticated: Boolean
   isEasterEggCollected: Boolean!
-  isMyCollectedFavorite: Boolean!
-  isMyCreatedFavorite: Boolean!
+  isMyCollectedFavorite(favoriteSlug: String!): Boolean!
+  isMyCreatedFavorite(favoriteSlug: String!): Boolean!
   isPremium: Boolean
   isProgressCalculated: Boolean!
-  isSolutionTopic: Boolean!
-  item: ItemNode
-  items: [ItemNode]
+  isSolutionTopic(id: Int!): Boolean!
+  item(id: String): ItemNode
+  items(chapterSlug: String): [ItemNode]
   languageList: [LanguageNode]
-  lastAcSubmission: SubmissionDetailsNode
-  learningContext: LearningContextNode
-  learningContextV2: LearningContextNodeV3
-  libraryActivity: QuestionActivityNode
+  lastAcSubmission(questionSlug: String!): SubmissionDetailsNode
+  learningContext(
+    currentQuestionSlug: String!
+    envType: String
+    id: String
+    "whether to fetch prev/next question"
+    needQuestion: Boolean
+  ): LearningContextNode
+  learningContextV2(
+    categorySlug: String
+    "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
+    childFavoriteSlug: String
+    currentQuestionSlug: String!
+    envId: String
+    envType: String
+    "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
+    favoriteFilters: FavoriteQuestionFilterInput
+    filters: QuestionListFilterInput
+    "是否需要上下题信息"
+    needQuestion: Boolean
+    "版本号, 默认为空, 新版企业题单需要传版本号v2"
+    version: String
+  ): LearningContextNodeV3
+  libraryActivity(id: String!): QuestionActivityNode
   libraryActivityTypes: [LibraryActivityType!]!
   libraryCategories: [String!]!
-  libraryDefaultTemplate: LibraryTemplate
+  libraryDefaultTemplate(metadata: String!): LibraryTemplate
   libraryDifficulties: [LibraryDifficulty!]!
   libraryLangList: [LibraryLanguage!]!
   libraryMatchTypes: [LibraryMatchType!]!
-  libraryQuestion: LibraryQuestionNode
-  libraryQuestions: LibraryQuestionConnection!
+  libraryQuestion(id: ID!): LibraryQuestionNode
+  libraryQuestions(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    param: LibraryQuestionsInput!
+    skip: Int
+  ): LibraryQuestionConnection!
   libraryQuestionTypes: [LibraryQuestionType!]!
   librarySolutionStatus: [LibrarySolutionStatus!]!
-  localRanking: LocalRankingNode
+  localRanking(page: Int): LocalRankingNode
   locationDict: JSONString
-  locations: [LocationAutocomplete]!
+  locations(search: String): [LocationAutocomplete]!
   loginSocial: [SocialLoginNode]
   loginUrl: String
-  managementCompanyQuestionOptions: CompanyQuestionOptionsNode!
-  managementCompanyQuestions: ManagementCompanyQuestionListNode!
-  managementCompanyQuestionV2: CompanyQuestionListNode!
+  managementCompanyQuestionOptions(
+    companyTagId: Int!
+  ): CompanyQuestionOptionsNode!
+  managementCompanyQuestions(
+    data: managementCompanyQuestionsInput!
+  ): ManagementCompanyQuestionListNode!
+  managementCompanyQuestionV2(
+    data: managementCompanyQuestionsV2Input!
+  ): CompanyQuestionListNode!
   "Company Tag List"
-  managementCompanyTags: ManagementCompanyTagNode!
-  managementIncVoteLogs: ManagementIncVoteLogListNone!
+  managementCompanyTags(
+    data: ManagementCompanyTagsInput!
+  ): ManagementCompanyTagNode!
+  managementIncVoteLogs(
+    data: managementIncVoteLogsInput!
+  ): ManagementIncVoteLogListNone!
   managementQuestionAdminVoteOptions: QuestionAdminVoteOptionsNode!
   managementRoles: [ManagementRoleNode!]!
-  managementTagAdminLogs: ManagementTagAdminLogListNode!
+  managementTagAdminLogs(
+    limit: Int!
+    offset: Int!
+    tagId: Int!
+  ): ManagementTagAdminLogListNode!
   "Tag Category List"
-  managementTagCategories: [TagCategoryNode]!
+  managementTagCategories(
+    data: ManagementTagCategoriesInput!
+  ): [TagCategoryNode]!
   "Tag Group List"
   managementTagGroups: [TagGroupNode]!
   "Tag List"
-  managementTags: ManagementTagNode!
-  managementTeamMembers: ManagementTeamMemberListNode!
-  matchedUser: UserNode
-  matchedUsers: [UserNode]
-  medal: MedalNode
+  managementTags(data: ManagementTagsInput!): ManagementTagNode!
+  managementTeamMembers(
+    data: ManagementTeamMembersInput!
+  ): ManagementTeamMemberListNode!
+  matchedUser(username: String!): UserNode
+  matchedUsers(limit: Int, namePrefix: String!, topicId: Int): [UserNode]
+  medal(slug: String): MedalNode
   mostRecentCard: CardNode
   myCollectedFavoriteList: FavoriteBriefListNode!
-  myContests: PagifiedUserContestStatNode
-  myCreatedFavoriteList: FavoriteBriefListNode!
+  myContests(numPerPage: Int, pageNo: Int): PagifiedUserContestStatNode
+  myCreatedFavoriteList(currentQuestionSlug: String): FavoriteBriefListNode!
   myOrders: [StoreOrderNode!]
   myPlaygroundState: PlaygroundStateNode!
   newFeatureAnnouncements: [NewFeatureAnnouncementNode!]
-  nextChallengePairs: JSONString
-  nextSolution: TopicNode
-  notification: NotificationNode
+  nextChallengePairs(titleSlug: String): JSONString
+  nextSolution(filters: QuestionSolutionsFilterInput!, topicId: Int!): TopicNode
+  notification(id: Int): NotificationNode
   notificationCategories: [NotificationCategoryNode]
-  notifications: NotificationConnection
+  notifications(
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): NotificationConnection
   notificationStatus: JSONString
   notificationTypes: [NotificationTypeNode]
   occupationRecordList: [OccupationRecordNode]
   "official IDE dynamic layout"
   officialIdeDynamicLayout: [OfficialIDELayoutNode!]!
-  officialSolutionFeedbacks: PagifiedOfficialSolutionFeedbackDetailNode
-  omFavoriteList: OMFavoriteListNode!
-  omFavoriteLogs: [OMFavoriteLogNode]!
-  omFavoriteQuestionList: OMFavoriteQuestionListNode!
+  officialSolutionFeedbacks(
+    filters: OfficialSolutionFeedbackFilterInput!
+    numPerPage: Int
+    pageNo: Int
+  ): PagifiedOfficialSolutionFeedbackDetailNode
+  omFavoriteList(data: OMFavoriteListInput!): OMFavoriteListNode!
+  omFavoriteLogs(favoriteSlug: String!): [OMFavoriteLogNode]!
+  omFavoriteQuestionList(
+    favoriteSlug: String!
+    searchKeyword: String
+  ): OMFavoriteQuestionListNode!
   ongoingVirtualContest: ContestNode
-  orderDetails: StoreOrderNode
-  panelQuestionList: PanelQuestionListNode
-  pastContests: PagifiedContestNode!
+  orderDetails(orderId: String!): StoreOrderNode
+  panelQuestionList(
+    categorySlug: String
+    currentQuestionSlug: String!
+    envId: String
+    envType: String
+    filters: QuestionListFilterInput
+  ): PanelQuestionListNode
+  pastContests(numPerPage: Int, pageNo: Int): PagifiedContestNode!
   planCompletedPlans: [PlanStudyPlanNodeWithGroup!]!
   planGroupCatalogs: [PlanCatalogNode!]!
-  planGroupDetail: PlanDetailPlanGroupNode
-  planGroupsByCatalog: PlanGroupListNode!
-  planGroupsByTag: PlanGroupListNode!
-  planOngoingProgresses: [PlanBriefProgressNodeWithPlan!]!
-  planProgressDetail: PlanProgressNodeWithPlan
-  playground: PlaygroundNode
-  playgroundCode: PlaygroundCodeNode
-  playgroundSnippet: PlaygroundSnippetNode
-  playgroundTemplate: PlaygroundTemplateNode
-  pointList: PointListNode
+  planGroupDetail(slug: String!): PlanDetailPlanGroupNode
+  planGroupsByCatalog(
+    catalogSlug: String!
+    limit: Int
+    skip: Int
+  ): PlanGroupListNode!
+  planGroupsByTag(limit: Int, skip: Int, tagSlug: String!): PlanGroupListNode!
+  planOngoingProgresses(
+    limit: Int
+    skip: Int
+  ): [PlanBriefProgressNodeWithPlan!]!
+  planProgressDetail(id: ID!): PlanProgressNodeWithPlan
+  playground(uuid: String): PlaygroundNode
+  playgroundCode(langSlug: String, uuid: String): PlaygroundCodeNode
+  playgroundSnippet(
+    functionName: String
+    langSlug: String
+  ): PlaygroundSnippetNode
+  playgroundTemplate(templateId: String): PlaygroundTemplateNode
+  pointList(page: Int): PointListNode
   pollInterval: Int
-  post: PostNode
+  post(id: Int): PostNode
   premiumBetaFeatures: [PremiumBetaFeatureNode!]!
-  prevSolution: TopicNode
+  prevSolution(filters: QuestionSolutionsFilterInput!, topicId: Int!): TopicNode
   privateContestAllParticipants: [UserNode!]
   privateContestPastParticipants: [PrivateContestUserNode!]
-  privateContestRegisteredUserIds: [ID]
-  problemsetLearningContext: LearningContextNodeV2
-  question: QuestionNode
-  questionCompanyTags: CompanyTagConnection
-  questionDiscussionTopic: TopicNode
-  questionFeedback: PagifiedQuestionFeedbackNode
+  privateContestRegisteredUserIds(contestSlug: String): [ID]
+  problemsetLearningContext(
+    categorySlug: String
+    filters: QuestionListFilterInput
+    limit: Int
+    questionSlug: String!
+    skip: Int
+  ): LearningContextNodeV2
+  question(titleSlug: String): QuestionNode
+  questionCompanyTags(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    skip: Int
+  ): CompanyTagConnection
+  questionDiscussionTopic(questionSlug: String): TopicNode
+  questionFeedback(
+    categories: [String]
+    endDate: String
+    hasComment: Boolean
+    numPerPage: Int
+    pageNo: Int
+    questionSlugs: [String]
+    reasons: [Int]
+    startDate: String
+  ): PagifiedQuestionFeedbackNode
   questionFeedbackReasons: [QuestionFeedbackReason!]!
-  questionList: PagifiedQuestionNode
-  questionNumByTags: Int!
+  questionList(
+    categorySlug: String
+    filters: QuestionListFilterInput
+    limit: Int
+    skip: Int
+  ): PagifiedQuestionNode
+  questionNumByTags(
+    difficultyTagSlugs: [String!]
+    knowledgeTagSlugs: [String!]
+    languageTagSlug: String
+  ): Int!
   questionSatisfactionSurvey: QuestionSatisfactionSurveyNode!
-  questionSolutions: QuestionSolutionsNode!
-  questionSubmissionList: SubmissionListNode
-  questionTag: QuestionTagNode
-  questionTagsAdmin: [QuestionTagNode!]
-  questionTagsSuggest: [String]
-  questionTopics: PagifiedTopicNode
-  questionTopicsList: TopicConnection
-  questionTopicTags: TopicTagConnection
-  randomPanelQuestion: String
-  randomQuestion: QuestionNode
+  questionSolutions(
+    filters: QuestionSolutionsFilterInput!
+  ): QuestionSolutionsNode!
+  questionSubmissionList(
+    lang: Int
+    lastKey: String
+    limit: Int
+    offset: Int
+    questionSlug: String!
+    status: Int
+    withNotes: Boolean
+  ): SubmissionListNode
+  questionTag(tagId: ID!): QuestionTagNode
+  questionTagsAdmin(tagType: TagTypeEnum!): [QuestionTagNode!]
+  questionTagsSuggest(search: String): [String]
+  questionTopics(
+    numPerPage: Int
+    orderBy: TopicSortingOption
+    pageNo: Int
+    query: String
+    questionId: Int
+  ): PagifiedTopicNode
+  questionTopicsList(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    orderBy: TopicSortingOption
+    query: String
+    questionId: String
+    questionSlug: String
+    skip: Int
+    tags: [String]
+  ): TopicConnection
+  questionTopicTags(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    skip: Int
+  ): TopicTagConnection
+  randomPanelQuestion(
+    categorySlug: String
+    "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
+    childFavoriteSlug: String
+    currentQuestionSlug: String!
+    envId: String
+    envType: String
+    "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
+    favoriteFilters: FavoriteQuestionFilterInput
+    filters: QuestionListFilterInput
+    "版本号, 默认为空, 新版企业题单需要传版本号v2"
+    version: String
+  ): String
+  randomQuestion(
+    categorySlug: String
+    filters: QuestionListFilterInput
+  ): QuestionNode
   recaptchaKey: String
   recaptchaKeyV2: String
-  recentAcSubmissionList: [SubmissionDumpNode!]
-  recentSubmissionList: [SubmissionDumpNode!]
-  recommendSolutionTags: [SolutionTagNode]!
+  recentAcSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]
+  recentSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]
+  recommendSolutionTags(questionSlug: String!): [SolutionTagNode]!
   redeemedTimeTravelTicketCount: Int!
-  relatedSolutions: [TopicNode]!
-  rewindData: RewindNode
+  relatedSolutions(topicId: Int!): [TopicNode]!
+  rewindData(year: Int): RewindNode
   rootCategory: [DiscussCategoryNode!]!
-  schools: [SchoolNode!]!
+  schools(search: String): [SchoolNode!]!
   scripts: [ScriptNode!]
-  scriptTaskResult: JSONString
+  scriptTaskResult(taskId: String!): JSONString
   sessions: DebugSessionNode
-  showAnnualModalOnQd: MedalNode
+  showAnnualModalOnQd(submissionId: Int): MedalNode
   siteAnnouncements: [SiteAnnouncementNode]
   siteRegion: String
   sitewideAnnouncement: String
-  skillTags: [SkillTagNode]
-  solutionLanguageTags: [SolutionTagNode]!
-  solutionTopicTags: [SolutionTagNode]!
-  solvedQuestionsInfo: PagifiedQuestionLastSolveNode!
-  spamModerationPosts: PagifiedPostNode
+  skillTags(search: String): [SkillTagNode]
+  solutionLanguageTags(questionSlug: String): [SolutionTagNode]!
+  solutionTopicTags(questionSlug: String): [SolutionTagNode]!
+  solvedQuestionsInfo(
+    filters: ProgressListFilterInput
+    numPerPage: Int
+    pageNo: Int
+  ): PagifiedQuestionLastSolveNode!
+  spamModerationPosts(
+    endDate: DateTime
+    ip: String
+    numPerPage: Int
+    orderBy: String
+    pageNo: Int
+    reported: ReportedStatus
+    reportType: ReportTypeEnum
+    search: String
+    startDate: DateTime
+    status: PostStatus
+    submissionCount: Int
+    usernames: String
+    wordListType: String
+  ): PagifiedPostNode
   statusList: [SubmissionStatusNode]
   storeItems: [StoreItemNode!]!
-  storeOrderOperationLogs: [OrderOperationLogNode!]!
+  storeOrderOperationLogs(orderId: ID!): [OrderOperationLogNode!]!
   streakCounter: StreakCounterNode
   stripePublicKey: String!
-  studyPlanMedalPolling: StudyPlanMedalPollingNode
+  studyPlanMedalPolling(submissionId: Int): StudyPlanMedalPollingNode
   "get advertisement study plans of feature on playground"
   studyPlansV2AdFeature: [StudyPlanFeatureNode!]!
   "get advertisement study plans on questions page"
   studyPlansV2AdQuestionPage: [StudyPlanBriefNode!]!
   "get study plans by catalog"
-  studyPlansV2ByCatalog: StudyPlanListNode!
+  studyPlansV2ByCatalog(
+    catalogSlug: String!
+    "default value is 6"
+    limit: Int
+    offset: Int
+  ): StudyPlanListNode!
   "get study plans by tag"
-  studyPlansV2ByTag: StudyPlanListNode!
+  studyPlansV2ByTag(
+    "default value is 6"
+    limit: Int
+    offset: Int
+    tagSlug: String!
+  ): StudyPlanListNode!
   "get study plans by upc"
   studyPlansV2ByUpc: [StudyPlanBriefNode!]!
   "get study plans for homepage"
@@ -5879,84 +7015,178 @@ type Query {
   "get all enabled study plan catalogs"
   studyPlanV2Catalogs: [StudyPlanCatalogNode!]!
   "Poll this API after submission get AC."
-  studyPlanV2CompletedStatus: PlanCompletedStatusNode
+  studyPlanV2CompletedStatus(
+    planSlug: String!
+    submissionId: ID!
+  ): PlanCompletedStatusNode
   "get a study plan detail"
-  studyPlanV2Detail: StudyPlanDetailNode
+  studyPlanV2Detail(planSlug: String!): StudyPlanDetailNode
   "get a user progress detail"
-  studyPlanV2ProgressDetail: PlanUserProgressDetailNode
+  studyPlanV2ProgressDetail(
+    "user progress ID"
+    id: ID
+    planSlug: String!
+  ): PlanUserProgressDetailNode
   "get the ranking board of a study plan"
-  studyPlanV2RankingBoard: UserRankInfoList!
+  studyPlanV2RankingBoard(
+    "default value is 10"
+    limit: Int
+    offset: Int
+    planSlug: String!
+  ): UserRankInfoList!
   "get the most recent user completed progress detail"
-  studyPlanV2RecentCompletedProgress: PlanUserProgressDetailNode
+  studyPlanV2RecentCompletedProgress(
+    planSlug: String!
+  ): PlanUserProgressDetailNode
   "whether the current user hide on the rank board"
   studyPlanV2UserHideRank: Boolean
   "user on going study plans"
-  studyPlanV2UserProgresses: PlanUserProgressListNode
+  studyPlanV2UserProgresses(
+    "default 6, no more than100"
+    limit: Int
+    offset: Int
+    progressType: PlanUserProgressTypeEnum!
+  ): PlanUserProgressListNode
   "get current user rank in a plan"
-  studyPlanV2UserRank: UserRankInfoNode
+  studyPlanV2UserRank(planSlug: String!): UserRankInfoNode
   "get weekly task records by year and month"
-  studyPlanV2WeeklyTaskRecords: UserWeeklyTaskRecordListNode
+  studyPlanV2WeeklyTaskRecords(
+    "records of the month"
+    month: Int!
+    planSlug: String!
+    "user progress obfuscated id"
+    progressId: String
+    "records of the year"
+    year: Int!
+  ): UserWeeklyTaskRecordListNode
   "query submission complexity"
-  submissionComplexity: SubmissionComplexityNode
-  submissionDetails: SubmissionDetailsNode
-  submissionList: SubmissionListNode
+  submissionComplexity(submissionId: ID!): SubmissionComplexityNode
+  submissionDetails(submissionId: Int!): SubmissionDetailsNode
+  submissionList(
+    lastKey: String
+    limit: Int
+    offset: Int
+    questionSlug: String
+  ): SubmissionListNode
   submittableLanguageList: [LanguageNode]
   subscribeUrl: String
-  subscriptionPricing: SubscriptionsNode
+  subscriptionPricing(code: String): SubscriptionsNode
   subscriptionReferral: SubscriptionReferralNode
-  survey: SurveyNode
-  surveyStatus: SurveyStatusNode!
-  surveyV2: SurveyV2Node!
-  surveyV2WithoutCheckFunc: SurveyV2Node!
-  syncedCode: SyncedCodeNode
-  tagTopicList: TopicConnection
-  topic: TopicNode
-  topicComments: PagifiedCommentNode
-  topicTag: TopicTagNode
-  topicTags: [DiscussTopicTagNode!]!
-  topicTagsSuggest: [DiscussTopicTagNode!]!
-  topicUsers: [UserNode]!
+  survey(surveyId: ID!): SurveyNode
+  surveyStatus(surveyType: SurveyType!): SurveyStatusNode!
+  surveyV2(surveyKwargs: JSONString, surveySlug: String!): SurveyV2Node!
+  surveyV2WithoutCheckFunc(surveySlug: String!): SurveyV2Node!
+  syncedCode(lang: Int!, questionId: Int!): SyncedCodeNode
+  tagTopicList(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    orderBy: TopicSortingOption
+    query: String
+    skip: Int
+    tag: String!
+    tags: [String]
+  ): TopicConnection
+  topic(id: Int): TopicNode
+  topicComments(
+    numPerPage: Int
+    orderBy: String
+    pageNo: Int
+    topicId: Int!
+  ): PagifiedCommentNode
+  topicTag(slug: String): TopicTagNode
+  topicTags(
+    categorySlugs: [String]
+    numTags: Int
+    query: String
+    selectedTags: [String]
+    tagType: String
+  ): [DiscussTopicTagNode!]!
+  topicTagsSuggest(search: String): [DiscussTopicTagNode!]!
+  topicUsers(prefix: String, topicId: Int): [UserNode]!
   topTwoContests: [ContestNode]!
   upcomingContests: [ContestNode!]
   upcV2InterestTags: [UpcV2TagNode!]
   user: UserNode
   userAccountFrozenInfo: UserAccountFrozenInfoNode!
-  userCategoryTopics: TopicConnection
-  userContestRanking: UserContestRankingNode
-  userContestRankingHistory: [UserContestRankingHistoryNode!]
+  userCategoryTopics(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    orderBy: TopicSortingOption
+    skip: Int
+    username: String
+  ): TopicConnection
+  userContestRanking(username: String): UserContestRankingNode
+  userContestRankingHistory(username: String): [UserContestRankingHistoryNode!]
   userCountryCode: String
-  userManagementCreditCards: [ManagementCreditCardNode]!
-  userManagementIpList: ManagementIpListNode!
-  userManagementOperationHistory: ManagementOperationHistoryNode!
-  userManagementPremiumTrialRecordDetail: TrialRecordNode!
-  userManagementPremiumTrialRecords: TrialRecordListNode!
-  userManagementScoreHistory: ManagementScoreListNode!
-  userManagementSearch: ManagementUserListNode
-  userManagementStoreOrders: ManagementStoreOrderListNode!
-  userManagementStripeCharges: ManagementStripeChargeListNode!
+  userManagementCreditCards(userId: ID!): [ManagementCreditCardNode]!
+  userManagementIpList(data: UserManagementIpListInput!): ManagementIpListNode!
+  userManagementOperationHistory(
+    data: UserManagementOperationHistoryInput!
+  ): ManagementOperationHistoryNode!
+  userManagementPremiumTrialRecordDetail(id: ID!): TrialRecordNode!
+  userManagementPremiumTrialRecords(
+    data: PremiumTrialRecordsInput!
+  ): TrialRecordListNode!
+  userManagementScoreHistory(
+    data: UserManagementScoreHistoryInput!
+  ): ManagementScoreListNode!
+  userManagementSearch(
+    dimension: SearchDimensionType!
+    keyword: String!
+    limit: Int!
+    skip: Int!
+  ): ManagementUserListNode
+  userManagementStoreOrders(
+    data: UserManagementStoreOrdersInput!
+  ): ManagementStoreOrderListNode!
+  userManagementStripeCharges(
+    data: UserManagementStripeChargesInput!
+  ): ManagementStripeChargeListNode!
   userManagementUserBanTypes: [UserBanTypeNode]!
-  userManagementUserDetail: ManagementUserDetailNode
-  userManagementVac: VacRecordListNode!
-  userOfficialSolutionFeedback: OfficialSolutionFeedbackBriefNode
+  userManagementUserDetail(userId: ID!): ManagementUserDetailNode
+  userManagementVac(data: VacRecordsInput!): VacRecordListNode!
+  userOfficialSolutionFeedback(
+    questionSlug: String!
+  ): OfficialSolutionFeedbackBriefNode
   "获取用户当前 session 的做题进展，新版接口"
-  userProfileUserQuestionProgressV2: UserQuestionProgressNodeV2!
-  userRecentTopics: [TopicNode!]
-  userReports: PagifiedUserReportNode
-  users: [UserNode]
-  userSolutionTopics: TopicConnection
+  userProfileUserQuestionProgressV2(
+    userSlug: String!
+  ): UserQuestionProgressNodeV2!
+  userRecentTopics(limit: Int, username: String): [TopicNode!]
+  userReports(
+    endDate: DateTime
+    handled: Boolean
+    numPerPage: Int
+    pageNo: Int
+    startDate: DateTime
+  ): PagifiedUserReportNode
+  users(usernamePrefix: String): [UserNode]
+  userSolutionTopics(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    orderBy: TopicSortingOption
+    skip: Int
+    username: String
+  ): TopicConnection
   userStatus: MeNode
-  userToManage: UserNodeAdminOnly
+  userToManage(usernameOrEmail: String): UserNodeAdminOnly
   validTimeTravelTicketCount: Int!
-  video: VideoNode
-  votes: JSONString
-  webPage: WebPageNode
+  video(id: String): VideoNode
+  votes(topicId: Int): JSONString
+  webPage(id: String): WebPageNode
   websocketUrl: String
   wordListTypes: [WordListTypeNode]!
-  worldCities: [String!]
+  worldCities(country: String, subcountry: String): [String!]
   worldCountries: [String!]
-  worldSubcountries: [String!]
+  worldSubcountries(country: String): [String!]
   "list of yearly medals which are qualified to acquire"
-  yearlyMedalsQualified: [MedalBriefNode!]
+  yearlyMedalsQualified(excludeAcquired: Boolean): [MedalBriefNode!]
 }
 
 type QuestionActivityNode {
@@ -6079,7 +7309,7 @@ type QuestionNode {
   likes: Int
   metaData: String
   mysqlSchemas: [String]
-  nextChallengePairs: JSONString
+  nextChallengePairs(questionId: String): JSONString
   nextChallenges: [QuestionNode!]
   note: String
   questionDetailUrl: String
@@ -6194,7 +7424,7 @@ type RejectContestReports {
 }
 
 type RejectContribution {
-  contribution: ContributionNode
+  contribution(id: ID): ContributionNode
   error: String
   ok: Boolean
 }
@@ -6259,7 +7489,16 @@ type ResetWeeklyTaskSchedule {
 }
 
 type ResourceTypeNode {
-  flaggedObjects: FlaggedObjectConnection!
+  flaggedObjects(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    order: SortingOrderEnum
+    orderBy: FlaggedObjectListOrderByEnum
+    skip: Int
+    status: FlagStatus
+  ): FlaggedObjectConnection!
   name: ResourceTypeEnum!
   operations: [FlagStatus!]
 }
@@ -7116,7 +8355,7 @@ type UpdateComment {
 }
 
 type UpdateContribution {
-  contribution: ContributionNode
+  contribution(id: ID): ContributionNode
   error: String
   ok: Boolean
 }
@@ -7364,7 +8603,7 @@ type UserNode {
   tagProblemCounts: TagProblemCountsCategoryNode!
   twitterUrl: String
   upcomingBadges: [UpcomingBadgeNode!]!
-  userCalendar: UserCalendarNode!
+  userCalendar(year: Int): UserCalendarNode!
   "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
   username: String!
   yearJoined: Int!
@@ -7389,7 +8628,13 @@ type UserNodeAdminOnly {
   contributions: UserContributionNode!
   contributionSet: [ContributionNode!]!
   contributorSet: [ContributorNode!]!
-  createdBy: LibraryQuestionNodeConnection!
+  createdBy(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): LibraryQuestionNodeConnection!
   dateJoined: DateTime!
   debugSession: [DebugSessionNode!]!
   educationrecordSet: [EducationRecordNode!]!
@@ -7419,10 +8664,22 @@ type UserNodeAdminOnly {
   languageProblemCount: [LanguageProblemCountNode!]
   lastLogin: DateTime
   lastName: String!
-  libraryactivitySet: QuestionActivityNodeConnection!
+  libraryactivitySet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): QuestionActivityNodeConnection!
   linkedinUrl: String
   nameColor: String
-  notificationSet: NotificationNodeConnection!
+  notificationSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): NotificationNodeConnection!
   occupationrecordSet: [OccupationRecordNode!]!
   password: String!
   phone: String
@@ -7435,13 +8692,25 @@ type UserNodeAdminOnly {
   profile: UserProfileNode!
   questionapplicationSet: [ApplicationNode!]!
   questionlastsolveSet: [QuestionLastSolveNode!]!
-  questionSet: LibraryQuestionNodeConnection!
+  questionSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): LibraryQuestionNodeConnection!
   questionsolvesessionSet: [QuestionSolveSessionNode!]!
   questionsuggestionSet: [QuestionFeedbackNode!]!
   reportee: [UserReportNode!]!
   reporter: [UserReportNode!]!
   scoreUser: [ManagementScoreNode!]!
-  sessionSet: InterviewSessionNodeConnection!
+  sessionSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): InterviewSessionNodeConnection!
   socialAccounts: [String!]
   storeaddressSet: [StoreAddressNode!]!
   storeorderoperationlogSet: [OrderOperationLogNode!]!
@@ -7453,7 +8722,7 @@ type UserNodeAdminOnly {
   tagProblemCounts: TagProblemCountsCategoryNode!
   twitterUrl: String
   upcomingBadges: [UpcomingBadgeNode!]!
-  userCalendar: UserCalendarNode!
+  userCalendar(year: Int): UserCalendarNode!
   userIps: [UserIPNode]!
   useripSet: [UserIPNode!]!
   "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
@@ -7718,8 +8987,8 @@ Depending on the kind of a type, certain fields describe information about that 
 """
 type __Type {
   description: String
-  enumValues: [__EnumValue!]
-  fields: [__Field!]
+  enumValues(includeDeprecated: Boolean): [__EnumValue!]
+  fields(includeDeprecated: Boolean): [__Field!]
   inputFields: [__InputValue!]
   interfaces: [__Type!]
   kind: __TypeKind!
