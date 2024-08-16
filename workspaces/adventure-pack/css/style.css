@@ -21,3 +21,24 @@ body,
   font-weight: 400;
   font-style: normal;
 }
+
+.highlighted-code {
+  position: relative;
+}
+
+.copy-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.highlighted-code:hover .copy-button {
+  opacity: 1;
+}
