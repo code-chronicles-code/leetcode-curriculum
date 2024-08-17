@@ -126,7 +126,7 @@ describe("Iterator.prototype.flatMap", () => {
   });
 
   it("returns an empty iterator when called on an empty iterator", () => {
-    const generator = function* (p: unknown): Generator<unknown, void, void> {
+    const generator = function* <T>(p: T): Generator<T, void, void> {
       yield p;
     };
 
@@ -138,29 +138,37 @@ describe("Iterator.prototype.flatMap", () => {
 
   it("callback returns an iterator but not an iterable", () => {
     const iterator = [1, 2, 3].values();
-    const callback = (x: unknown) =>
-      ({
-        next: () => ({ value: x, done: true }),
-      }) as Iterator<unknown>;
+    const callback = <T>(x: T): Iterator<T> => {
+      let count = 0;
+      return Object.assign(Object.create(iteratorPrototype), {
+        next: () => {
+          if (count === 0) {
+            count++;
+            return { value: x };
+          }
+          return { done: true };
+        },
+      });
+    };
+
     const flatMapResult = iterator.flatMap(callback);
     expect([...flatMapResult]).toStrictEqual([1, 2, 3]);
   });
 
   it("callback returns an iterable but not an iterator", () => {
     const iterator = [1, 2, 3].values();
-    const callback = (x: unknown) =>
-      ({
-        [Symbol.iterator]: function* () {
-          yield x;
-        },
-      }) as Iterable<unknown>;
+    const callback = <T>(x: T): Iterable<T> => ({
+      [Symbol.iterator]: function* () {
+        yield x;
+      },
+    });
     const flatMapResult = iterator.flatMap(callback);
     expect([...flatMapResult]).toStrictEqual([1, 2, 3]);
   });
 
   it("callback returns both an iterable and an iterator", () => {
     const iterator = [1, 2, 3].values();
-    const callback = function* (x: unknown) {
+    const callback = function* <T>(x: T) {
       yield x;
     };
     const flatMapResult = iterator.flatMap(callback);
@@ -169,7 +177,7 @@ describe("Iterator.prototype.flatMap", () => {
 
   it("throws a TypeError when the callback does not return an iterator or iterable", () => {
     const iterator = [1, 2, 3].values();
-    const invalidCallback = (x: unknown) => x;
+    const invalidCallback = <T>(x: T): T => x;
     // @ts-expect-error Incorrect callback return type
     expect(() => iterator.flatMap(invalidCallback).next()).toThrow(TypeError);
   });
