@@ -2036,39 +2036,39 @@ interface Node {
 }
 
 input BatchReviewFlaggedObjectsInput {
+  description: String
   flagResultIds: [ID!]!
   operation: FlagStatus!
   reasonId: ID
-  description: String
 }
 
 input DeleteAccountInput {
-  reason: DeleteAccountReason!
   otherReason: String
+  reason: DeleteAccountReason!
   usernameOrEmail: String!
 }
 
 input DeleteUserRequestInput {
+  endDate: DateTime
+  limit: Int!
+  skip: Int!
+  startDate: DateTime
+  userEmail: String
   userId: String
   username: String
-  userEmail: String
-  skip: Int!
-  limit: Int!
-  startDate: DateTime
-  endDate: DateTime
 }
 
 input FavoriteQuestionFilterInput {
-  positionRoleTagSlug: String
   difficultyList: [DifficultyDescribedEnum]
+  positionRoleTagSlug: String
   questionStatusList: [FavoriteQuestionStatusEnum]
 }
 
 input FlagInput {
-  resourceType: ResourceTypeEnum!
-  resourceId: String!
-  reasonId: ID
   description: String
+  reasonId: ID
+  resourceId: String!
+  resourceType: ResourceTypeEnum!
 }
 
 input InterviewedStatsInput {
@@ -2076,10 +2076,10 @@ input InterviewedStatsInput {
   companyName: String
   interviewedStatsId: Int!
   isInterviewed: Boolean
+  positionTagSlug: String
   questionId: String!
   stageOption: Int
   timeOption: Int
-  positionTagSlug: String
 }
 
 input LibraryMultiTestcaseInput {
@@ -2090,15 +2090,15 @@ input LibraryMultiTestcaseInput {
 }
 
 input LibraryQuestionsInput {
-  "Question Type"
-  quesType: String
-  isNew: Boolean
+  canEdit: Boolean
   isCustom: Boolean
+  isNew: Boolean
   isSystemDesign: Boolean
   isUnpublished: Boolean
-  canEdit: Boolean
   "Search Keyword"
   keyword: String
+  "Question Type"
+  quesType: String
   sortField: QuestionSortFieldEnum!
 }
 
@@ -2109,270 +2109,270 @@ input LibrarySolutionsInput {
 }
 
 input ManagementAddInterviewedStatVoteInput {
+  "position tag id"
+  positionTagSlug: String
   questionId: ID!
   "company tag id"
   tagId: ID!
-  "position tag id"
-  positionTagSlug: String
-  votedNum: Int!
   timeOption: Int
+  votedNum: Int!
 }
 
 input ManagementAddOrEditTagCategoryInput {
-  "Category Name"
-  name: String!
   "Group ID for this category"
   groupId: ID!
   "Category is enabled or not"
   isEnabled: Boolean
+  "Category Name"
+  name: String!
 }
 
 input ManagementAddOrEditTagInput {
-  "Tag Name"
-  name: String!
-  "Tag Slug"
-  slug: String!
-  keywords: JSONString
+  "Tag Image URL"
+  imgUrl: String
+  isStandard: Boolean
   "Whether the tag is enabled (if not enabled, it's not shown to the users"
   isTagEnabled: Boolean!
   isUserSelectable: Boolean
-  isStandard: Boolean
-  "Category List IDs"
-  tagCategoryIds: [ID]
-  "Tag Image URL"
-  imgUrl: String
+  keywords: JSONString
+  "Tag Name"
+  name: String!
   "排序"
   order: Int
+  "Tag Slug"
+  slug: String!
+  "Category List IDs"
+  tagCategoryIds: [ID]
 }
 
 input ManagementCompanyTagsInput {
-  "Search Keyword"
-  keyword: String
-  "Tag Slug"
-  slug: String
   "Filter by Standard Tags"
   isEnabled: Boolean
-  offset: Int!
+  "Search Keyword"
+  keyword: String
   limit: Int!
+  offset: Int!
+  "Tag Slug"
+  slug: String
 }
 
 input ManagementTagCategoriesInput {
-  "Group ID"
-  tagGroupId: Int
+  "Filter by Category Enabled"
+  isEnabled: Boolean
   "Search Keyword"
   keyword: String
   "Category Slug"
   slug: String
-  "Filter by Category Enabled"
-  isEnabled: Boolean
+  "Group ID"
+  tagGroupId: Int
 }
 
 input ManagementTagsInput {
-  "Group ID"
-  tagGroupId: Int
-  "Category ID"
-  tagCategoryId: Int
-  "Filter by Enabled Tags"
-  isTagEnabled: Boolean
+  excludeTagCategoryIds: [Int]
+  isSimilarTag: Boolean
   "Filter by Standard Tags"
   isStandardTag: Boolean
+  "Filter by Enabled Tags"
+  isTagEnabled: Boolean
   "Filter by User Selectable Tags"
   isUserSelectable: Boolean
-  isSimilarTag: Boolean
   "Search Keyword"
   keyword: String
+  limit: Int!
+  offset: Int!
   "Filter by Tag Slug startswith"
   slug: String
-  offset: Int!
-  limit: Int!
-  excludeTagCategoryIds: [Int]
+  "Category ID"
+  tagCategoryId: Int
+  "Group ID"
+  tagGroupId: Int
 }
 
 input ManagementTeamMembersInput {
-  roleGroup: ManagementRoleEnum
-  username: String
-  skip: Int!
   limit: Int!
+  roleGroup: ManagementRoleEnum
+  skip: Int!
+  username: String
 }
 
 input OMFavoriteListInput {
-  skip: Int!
+  favoriteType: FavoriteTypeEnum
   limit: Int!
   searchFieldEnum: OMFavoriteSearchFieldEnum
   searchKeyword: String
-  favoriteType: FavoriteTypeEnum
+  skip: Int!
   sortBy: OMFavoriteSortFieldEnum
   "sort descending or ascending"
   sortDsc: Boolean
 }
 
 input OfficialSolutionFeedbackFilterInput {
-  startDate: String
+  authors: [String]
+  categories: [String]
   endDate: String
+  hasComment: Boolean
+  orderBy: FeedbackOrderByEnum
   questionSlugs: [String]
   reasons: [Int]
-  hasComment: Boolean
-  categories: [String]
-  authors: [String]
-  orderBy: FeedbackOrderByEnum
   sortOrder: SortingEnum
+  startDate: String
 }
 
 input PremiumTrialRecordsInput {
-  searchKeyword: String
-  searchBy: SearchUserType
-  skip: Int!
   limit: Int!
+  searchBy: SearchUserType
+  searchKeyword: String
+  skip: Int!
 }
 
 input ProgressListFilterInput {
-  orderBy: ProgressOrderByEnum
-  sortOrder: SortingOrderEnum
   difficulty: DifficultyEnum
-  tags: [String!]
+  orderBy: ProgressOrderByEnum
   searchKeywords: String
+  sortOrder: SortingOrderEnum
+  tags: [String!]
 }
 
 input QuestionAttachmentInput {
-  name: String!
   content: String!
   extension: String!
+  name: String!
 }
 
 input QuestionListFilterInput {
-  orderBy: QuestionOrderByEnum
-  sortOrder: SortingOrderEnum
-  difficulty: DifficultyEnum
-  tags: [String!]
-  status: UserQuestionStatus
-  searchKeywords: String
-  listId: String
-  premiumOnly: Boolean
   companies: [String!]
+  difficulty: DifficultyEnum
+  listId: String
+  orderBy: QuestionOrderByEnum
+  premiumOnly: Boolean
+  searchKeywords: String
+  sortOrder: SortingOrderEnum
+  status: UserQuestionStatus
+  tags: [String!]
 }
 
 input QuestionSolutionsFilterInput {
-  questionSlug: String!
+  first: Int!
+  languageTags: [String]
   orderBy: TopicSortingOption
   query: String
-  languageTags: [String]
-  topicTags: [String]
+  questionSlug: String!
   skip: Int!
-  first: Int!
+  topicTags: [String]
 }
 
 input ReviewFlaggedObjectInput {
+  description: String
   "Use this to locate the object. Will ignore resourceType and resourceId if this is provided."
   flagResultId: ID
-  "Use this together with resourceId as an alternative way to locate object."
-  resourceType: ResourceTypeEnum
-  "Use this together with resourceType as an alternative way to locate object."
-  resourceId: String
   operation: FlagStatus!
   reasonId: ID
-  description: String
+  "Use this together with resourceType as an alternative way to locate object."
+  resourceId: String
+  "Use this together with resourceId as an alternative way to locate object."
+  resourceType: ResourceTypeEnum
 }
 
 input StoreAdminCreateOrderInput {
-  itemSlug: String!
-  username: String!
-  details: JSONString
-  country: String!
-  recipient: String!
   address: String!
   city: String!
-  state: String!
-  zipCode: String!
-  phone: String!
+  country: String!
+  details: JSONString
+  itemSlug: String!
   note: String
+  phone: String!
+  recipient: String!
+  state: String!
+  username: String!
+  zipCode: String!
 }
 
 input UpcV2SubmitSurveyInput {
-  purposes: UpcV2PurposeEnum
   codingLevel: UpcV2CodingLevelEnum
   interests: [String]
+  purposes: UpcV2PurposeEnum
 }
 
 input UserManagementIpListInput {
-  userName: String
-  ip: String
-  startedAt: DateTime
   endedAt: DateTime
-  status: IPStatusEnum
-  skip: Int!
+  ip: String
   limit: Int!
+  skip: Int!
+  startedAt: DateTime
+  status: IPStatusEnum
+  userName: String
 }
 
 input UserManagementOperationHistoryInput {
-  userId: ID!
-  operations: [UserOperationEnum]
-  startedAt: DateTime
   endedAt: DateTime
-  skip: Int!
   limit: Int!
+  operations: [UserOperationEnum]
+  skip: Int!
+  startedAt: DateTime
+  userId: ID!
 }
 
 input UserManagementScoreHistoryInput {
-  userId: ID!
-  scoreType: ScoreTypeEnum
-  startedAt: DateTime
-  endedAt: DateTime
   category: UmScoreCategoryEnum
-  skip: Int!
+  endedAt: DateTime
   limit: Int!
+  scoreType: ScoreTypeEnum
+  skip: Int!
+  startedAt: DateTime
+  userId: ID!
 }
 
 input UserManagementStoreOrdersInput {
-  userId: ID
-  keywords: String
-  startedAt: DateTime
   endedAt: DateTime
-  status: UmStoreOrderStatusEnum
-  skip: Int!
+  keywords: String
   limit: Int!
+  skip: Int!
+  startedAt: DateTime
+  status: UmStoreOrderStatusEnum
+  userId: ID
 }
 
 input UserManagementStripeChargesInput {
-  userId: ID!
-  keywords: String
-  startedAt: DateTime
   endedAt: DateTime
-  status: StripeChargeStatusEnum
-  skip: Int!
+  keywords: String
   limit: Int!
+  skip: Int!
+  startedAt: DateTime
+  status: StripeChargeStatusEnum
+  userId: ID!
 }
 
 input VacRecordsInput {
-  userId: ID!
+  limit: Int!
   "vac name to search"
   searchKeyword: String
   skip: Int!
-  limit: Int!
+  userId: ID!
 }
 
 input managementCompanyQuestionsInput {
-  tagId: Int!
   keyword: String
   keywordType: CompanyQuestionKeywordType
-  timeOption: CompanyQuestionTimeOptionEnum
-  offset: Int!
   limit: Int!
+  offset: Int!
+  tagId: Int!
+  timeOption: CompanyQuestionTimeOptionEnum
 }
 
 input managementCompanyQuestionsV2Input {
   companyTagId: Int!
-  positionTagSlug: String
   keyword: String
-  timeOption: CompanyQuestionTimeOptionEnumV2
-  offset: Int!
   limit: Int!
+  offset: Int!
+  positionTagSlug: String
+  timeOption: CompanyQuestionTimeOptionEnumV2
 }
 
 input managementIncVoteLogsInput {
-  tagId: Int!
-  questionId: Int!
-  offset: Int!
   limit: Int!
+  offset: Int!
+  questionId: Int!
+  tagId: Int!
 }
 
 type AcStatsNode {
@@ -2772,7 +2772,7 @@ type CommentNode {
   nodebbPid: Int!
   numChildren: Int!
   "Ineffective field: Don't query this field in a list"
-  pageNum(numPerPage: Int, orderBy: String): Int
+  pageNum(numPerPage: Int = 10, orderBy: String = ""): Int
   parent: CommentNode
   parentId: ID
   pinned: Boolean
@@ -3481,7 +3481,7 @@ type EmailSendSessionNode {
 }
 
 type EmailTemplateNode {
-  "Resolves the following template variables automatically:<ul><li>blocks</li><li>next_contest_title</li><li>next_biweekly_contest_time_by_timezone</li><li>next_contest_title_slug</li><li>next_biweekly_contest_title_slug</li><li>next_javascript_dcc_link</li><li>next_biweekly_contest_formatted_date</li><li>q_difficulty_mandarin</li><li>suggested_q_slug</li><li>username</li><li>q_description</li><li>next_javascript_dcc_day</li><li>next_contest_url</li><li>q_num_ac_subs</li><li>next_biweekly_contest_title</li><li>unsubscribe_url</li><li>storage_base_url</li><li>next_contest_time_url</li><li>next_contest_formatted_date</li><li>next_biweekly_contest_time_url</li><li>next_contest_time_by_timezone</li><li>next_javascript_dcc_editorial_link</li><li>current_year</li><li>suggested_q_title</li><li>real_name</li><li>next_biweekly_contest_url</li><li>site_base_url</li><li>q_difficulty_w_article</li></ul>"
+  "Resolves the following template variables automatically:<ul><li>blocks</li><li>storage_base_url</li><li>next_biweekly_contest_time_url</li><li>real_name</li><li>q_description</li><li>next_biweekly_contest_url</li><li>next_biweekly_contest_formatted_date</li><li>unsubscribe_url</li><li>next_contest_url</li><li>next_biweekly_contest_title_slug</li><li>username</li><li>next_javascript_dcc_day</li><li>site_base_url</li><li>suggested_q_slug</li><li>q_difficulty_mandarin</li><li>next_contest_title_slug</li><li>next_javascript_dcc_editorial_link</li><li>current_year</li><li>next_contest_time_by_timezone</li><li>next_contest_title</li><li>next_javascript_dcc_link</li><li>next_biweekly_contest_time_by_timezone</li><li>q_difficulty_w_article</li><li>suggested_q_title</li><li>next_biweekly_contest_title</li><li>next_contest_time_url</li><li>next_contest_formatted_date</li><li>q_num_ac_subs</li></ul>"
   content: String!
   conversionTargetUrlTemplates: String
   emaileventSet: [EmailEventNode!]!
@@ -3738,9 +3738,9 @@ type FilteredSubmissionNode {
 type FilteredSubmissionOverviewNode {
   pages: Int
   submissions(
-    inputFilters: String
-    numPerPage: Int
-    pageNo: Int
+    inputFilters: String = ""
+    numPerPage: Int = 20
+    pageNo: Int = 1
   ): [FilteredSubmissionNode]
 }
 
@@ -3892,6 +3892,12 @@ type IDEDynamicLayoutNode {
   layoutId: String!
   layoutJson: JSONString!
   layoutName: String!
+}
+
+type IPManagementLogNode {
+  operation: String!
+  operationTime: DateTime!
+  operator: ManagementUserSimpleNode!
 }
 
 type IntentionTagNode {
@@ -4917,9 +4923,9 @@ type Mutation {
   ): CreateCodeErrorHint
   createComment(
     content: String
-    intentionTagSlug: String
+    intentionTagSlug: String = ""
     mentionedUserSlugs: [String!]
-    parentCommentId: Int
+    parentCommentId: Int = 0
     topicId: Int
   ): CreateComment
   createCompletionLike(
@@ -5001,8 +5007,8 @@ type Mutation {
   forkFavoriteV2(favoriteSlug: String!): ForkFavoriteV2
   getOrCreateExploreSession(cardSlug: String): GetOrCreateExploreSession
   handleUserReports(
-    resetAvatar: Boolean
-    resetUsername: Boolean
+    resetAvatar: Boolean = false
+    resetUsername: Boolean = false
     userSlug: String
     userSlugs: [String]
   ): HandleUserReports
@@ -5208,10 +5214,13 @@ type Mutation {
     questionSlug: String!
     reorderNewIndex: Int
   ): ReorderFavoriteQuestionV2
-  reportUser(message: String, userSlug: String!): ReportUser
+  reportUser(message: String = "", userSlug: String!): ReportUser
   requestAnalysisEmail(sessionId: ID!): RequestAnalysisEmail
   requestUpdateToReportedPosts(postIds: [Int]!): RequestUpdateToReportedPost
-  resetFavoriteSessionV2(favoriteSlug: String!): ResetFavoriteSessionV2
+  resetFavoriteSessionV2(
+    deleteSyncedCode: Boolean = false
+    favoriteSlug: String!
+  ): ResetFavoriteSessionV2
   resetWeeklyTaskSchedule(
     planSlug: String!
     "e.g. [1,0,0,1,1,1,0], length should be 7"
@@ -5311,6 +5320,9 @@ type Mutation {
   ): SubscriptionViewCountIncrement
   tagSearchHit(tagSlug: String!): TagSearchHit
   toggleContestDynamicLayout(enable: Boolean): ToggleContestDynamicLayout
+  toggleContestRankingDynamicLayout(
+    enable: Boolean
+  ): ToggleContestRankingDynamicLayout
   toggleFavorite(cardSlug: String): ToggleFavorite
   toggleFavoriteSolution(
     isFavorite: Boolean!
@@ -5330,7 +5342,7 @@ type Mutation {
   updateAvatarStatus(viewedSlugs: [String]): UpdateUserAvatarStatus
   updateBetaParticipation(
     optIn: Boolean!
-    participationType: Type
+    participationType: Type = 1
   ): UpdateBetaParticipation
   updateComment(content: String, id: Int): UpdateComment
   updateContribution(
@@ -5456,12 +5468,12 @@ type Mutation {
     banTypeSlug: String
     days: Int!
     ip: String!
-    reason: String
+    reason: String = ""
   ): UmBanIP
   userManagementBanUser(
     banTypeSlug: String
     days: Int!
-    reason: String
+    reason: String = ""
     userId: ID!
   ): UmBanUser
   userManagementCreateScore(
@@ -6173,7 +6185,7 @@ type PlaygroundTemplateCodeNode {
 }
 
 type PlaygroundTemplateNode {
-  codes(langSlug: String): [PlaygroundTemplateCodeNode]
+  codes(langSlug: String = ""): [PlaygroundTemplateCodeNode]
   name: String!
   nameSlug: String!
   templateId: String
@@ -6413,28 +6425,28 @@ type Query {
   allComments(
     endDate: DateTime
     ip: String
-    numPerPage: Int
+    numPerPage: Int = 20
     orderBy: CommentSortingOption
-    pageNo: Int
-    reported: ReportedStatus
-    reportType: ReportTypeEnum
+    pageNo: Int = 1
+    reported: ReportedStatus = "ALL"
+    reportType: ReportTypeEnum = 200
     search: String
     startDate: DateTime
-    status: PostStatus
+    status: PostStatus = 1000
     submissionCount: Int
     usernames: String
     wordListType: String
   ): PagifiedCommentNode
   allContests: [ContestNode]
   allContributions(
-    category: String
-    company: Boolean
-    numPerPage: Int
-    page: Int
-    questionCategory: String
-    status: String
-    title: String
-    user: String
+    category: String = ""
+    company: Boolean = false
+    numPerPage: Int = 20
+    page: Int = 1
+    questionCategory: String = ""
+    status: String = ""
+    title: String = ""
+    user: String = ""
   ): PagifiedContributionNode
   allLeetcodePlaygroundTemplates: [PlaygroundTemplateNode]
   "query a list of common complexities"
@@ -6450,51 +6462,51 @@ type Query {
   allPrivateContests: [ContestNode!]
   allProgress: JSONString
   allQuestions(
-    containContest: Boolean
-    containExplore: Boolean
-    containMain: Boolean
+    containContest: Boolean = false
+    containExplore: Boolean = false
+    containMain: Boolean = true
   ): [QuestionNode]
   allQuestionsCount: [QuestionCountByDifficultyNode!]!
   allQuestionsRaw(
-    containContest: Boolean
-    containExplore: Boolean
-    containMain: Boolean
+    containContest: Boolean = false
+    containExplore: Boolean = false
+    containMain: Boolean = true
   ): [RawQuestionNode]
   allSchoolInfoUrl: String!
   allTopics(
     endDate: DateTime
     ip: String
-    numPerPage: Int
+    numPerPage: Int = 20
     orderBy: TopicSortingOption
-    pageNo: Int
-    reported: ReportedStatus
-    reportType: ReportTypeEnum
+    pageNo: Int = 1
+    reported: ReportedStatus = "ALL"
+    reportType: ReportTypeEnum = 200
     search: String
     startDate: DateTime
-    status: PostStatus
+    status: PostStatus = 1000
     submissionCount: Int
     usernames: String
     wordListType: String
   ): PagifiedTopicNode
   allUserPlaygroundTemplates: [PlaygroundTemplateNode]
   allUsers(
-    avatarStatus: AvatarStatusEnum
+    avatarStatus: AvatarStatusEnum = 1
     endDate: DateTime
-    isAvatarCheck: Boolean
-    numPerPage: Int
-    pageNo: Int
+    isAvatarCheck: Boolean = false
+    numPerPage: Int = 20
+    pageNo: Int = 1
     startDate: DateTime
   ): PagifiedUserNode
   allVirtualContestScores: [VirtualContestScoreNode]
   allVirtualContestScoresPagified(
-    numPerPage: Int
-    pageNo: Int
+    numPerPage: Int = 10
+    pageNo: Int = 1
   ): PagifiedVirtualContestScoreNode!
   announcements: [DiscussAnnouncementNode!]!
   application(id: ID): ApplicationNode
   applications: [ApplicationNode]
   archivedUsers: [ArchivedUserNode!]!
-  article(id: String, slug: String): ArticleNode
+  article(id: String = "", slug: String = ""): ArticleNode
   blacklist: BlacklistNode
   brightTitle: Boolean
   btsReferral: BTSReferralNode
@@ -6510,8 +6522,8 @@ type Query {
     categories: [String]
     first: Int
     last: Int
-    orderBy: TopicSortingOption
-    query: String
+    orderBy: TopicSortingOption = ""
+    query: String = ""
     skip: Int
     tags: [String]
   ): TopicConnection
@@ -6531,19 +6543,19 @@ type Query {
     lang: String!
     memory: Int!
     questionId: Int!
-    skip: Int!
+    skip: Int! = 0
   ): SampleCodeNode
   codeWithRuntime(
     lang: String!
     questionId: Int!
     runtime: Int!
-    skip: Int!
+    skip: Int! = 0
   ): SampleCodeNode
   comment(id: Int): CommentNode
   commentContext(
     commentId: Int
-    numPerPage: Int
-    orderBy: String
+    numPerPage: Int = 10
+    orderBy: String = ""
     topicId: Int
   ): JSONString
   commentReplies(commentId: Int): [CommentNode!]
@@ -6572,10 +6584,10 @@ type Query {
   contestReportsLccn(contestSlug: String!): [ContestReportLCCNNode!]!
   contestRootBanners: [ContestRootBannerNode!]!
   contestTopics(
-    contestTitleSlug: String
-    numPerPage: Int
+    contestTitleSlug: String = ""
+    numPerPage: Int = 10
     orderBy: TopicSortingOption
-    pageNo: Int
+    pageNo: Int = 1
   ): PagifiedTopicNode
   contribution(id: ID): ContributionNode
   contributions: [ContributionNode]
@@ -6612,6 +6624,7 @@ type Query {
   emailSendSessions: [EmailSendSessionNode]
   emailTemplate(id: Int): EmailTemplateNode
   emailTemplates: [EmailTemplateNode]
+  enableContestRankingDynamicLayout: Boolean!
   enableIdeDynamicLayoutFeature: Boolean!
   favorite(name: String!): FavoriteNode
   favoriteCards: [CardNode]
@@ -6620,7 +6633,7 @@ type Query {
   favoriteQuestionAcStatus(favoriteSlug: String!, titleSlug: String!): String
   favoriteQuestionList(
     favoriteSlug: String!
-    filter: FavoriteQuestionFilterInput
+    filter: FavoriteQuestionFilterInput = {}
   ): FavoriteQuestionListNode!
   favoritesLists: FavoritesNode
   favoriteSubmitAcProgress(favoriteSlug: String!): FavoriteSubmitACProgressNode
@@ -6634,16 +6647,16 @@ type Query {
   feedbackMetaInfoBySlug(slug: String!): FeedBackMetaNode
   filterableCategories: [CategoryType]
   filteredSubmissions(
-    inputFilters: String
-    numPerPage: Int
-    pageNo: Int
+    inputFilters: String = ""
+    numPerPage: Int = 20
+    pageNo: Int = 1
   ): FilteredSubmissionOverviewNode
   flagReasons: [FlagReasonNode!]!
   flagResourceType(name: ResourceTypeEnum!): ResourceTypeNode
   frontendQuestionSubmissionResults(
     submissionId: String!
   ): [FrontendQuestionResultNode]!
-  globalRanking(page: Int): GlobalRankingNode
+  globalRanking(page: Int = 1): GlobalRankingNode
   growthbookTest(featureKey: String!): String!
   hasAccessToFavorite(favoriteSlug: String!): AccessToFavoriteNode!
   hasFavoriteSessionReset(favoriteSlug: String!): Boolean!
@@ -6698,22 +6711,22 @@ type Query {
     envType: String
     id: String
     "whether to fetch prev/next question"
-    needQuestion: Boolean
+    needQuestion: Boolean = true
   ): LearningContextNode
   learningContextV2(
-    categorySlug: String
+    categorySlug: String = ""
     "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
-    childFavoriteSlug: String
+    childFavoriteSlug: String = ""
     currentQuestionSlug: String!
-    envId: String
-    envType: String
+    envId: String = ""
+    envType: String = ""
     "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
-    favoriteFilters: FavoriteQuestionFilterInput
-    filters: QuestionListFilterInput
+    favoriteFilters: FavoriteQuestionFilterInput = {}
+    filters: QuestionListFilterInput = {}
     "是否需要上下题信息"
-    needQuestion: Boolean
+    needQuestion: Boolean = true
     "版本号, 默认为空, 新版企业题单需要传版本号v2"
-    version: String
+    version: String = ""
   ): LearningContextNodeV3
   libraryActivity(id: String!): QuestionActivityNode
   libraryActivityTypes: [LibraryActivityType!]!
@@ -6733,7 +6746,7 @@ type Query {
   ): LibraryQuestionConnection!
   libraryQuestionTypes: [LibraryQuestionType!]!
   librarySolutionStatus: [LibrarySolutionStatus!]!
-  localRanking(page: Int): LocalRankingNode
+  localRanking(page: Int = 1): LocalRankingNode
   locationDict: JSONString
   locations(search: String): [LocationAutocomplete]!
   loginSocial: [SocialLoginNode]
@@ -6773,11 +6786,11 @@ type Query {
     data: ManagementTeamMembersInput!
   ): ManagementTeamMemberListNode!
   matchedUser(username: String!): UserNode
-  matchedUsers(limit: Int, namePrefix: String!, topicId: Int): [UserNode]
+  matchedUsers(limit: Int = 10, namePrefix: String!, topicId: Int): [UserNode]
   medal(slug: String): MedalNode
   mostRecentCard: CardNode
   myCollectedFavoriteList: FavoriteBriefListNode!
-  myContests(numPerPage: Int, pageNo: Int): PagifiedUserContestStatNode
+  myContests(numPerPage: Int = 10, pageNo: Int = 1): PagifiedUserContestStatNode
   myCreatedFavoriteList(currentQuestionSlug: String): FavoriteBriefListNode!
   myOrders: [StoreOrderNode!]
   myPlaygroundState: PlaygroundStateNode!
@@ -6802,7 +6815,9 @@ type Query {
     numPerPage: Int
     pageNo: Int
   ): PagifiedOfficialSolutionFeedbackDetailNode
-  omFavoriteList(data: OMFavoriteListInput!): OMFavoriteListNode!
+  omFavoriteList(
+    data: OMFavoriteListInput! = { skip: 0, limit: 20, sort_dsc: true }
+  ): OMFavoriteListNode!
   omFavoriteLogs(favoriteSlug: String!): [OMFavoriteLogNode]!
   omFavoriteQuestionList(
     favoriteSlug: String!
@@ -6811,25 +6826,29 @@ type Query {
   ongoingVirtualContest: ContestNode
   orderDetails(orderId: String!): StoreOrderNode
   panelQuestionList(
-    categorySlug: String
+    categorySlug: String = ""
     currentQuestionSlug: String!
-    envId: String
-    envType: String
-    filters: QuestionListFilterInput
+    envId: String = ""
+    envType: String = ""
+    filters: QuestionListFilterInput = {}
   ): PanelQuestionListNode
-  pastContests(numPerPage: Int, pageNo: Int): PagifiedContestNode!
+  pastContests(numPerPage: Int = 10, pageNo: Int = 1): PagifiedContestNode!
   planCompletedPlans: [PlanStudyPlanNodeWithGroup!]!
   planGroupCatalogs: [PlanCatalogNode!]!
   planGroupDetail(slug: String!): PlanDetailPlanGroupNode
   planGroupsByCatalog(
     catalogSlug: String!
-    limit: Int
-    skip: Int
+    limit: Int = 5
+    skip: Int = 0
   ): PlanGroupListNode!
-  planGroupsByTag(limit: Int, skip: Int, tagSlug: String!): PlanGroupListNode!
+  planGroupsByTag(
+    limit: Int = 5
+    skip: Int = 0
+    tagSlug: String!
+  ): PlanGroupListNode!
   planOngoingProgresses(
-    limit: Int
-    skip: Int
+    limit: Int = 5
+    skip: Int = 0
   ): [PlanBriefProgressNodeWithPlan!]!
   planProgressDetail(id: ID!): PlanProgressNodeWithPlan
   playground(uuid: String): PlaygroundNode
@@ -6848,11 +6867,11 @@ type Query {
   privateContestPastParticipants: [PrivateContestUserNode!]
   privateContestRegisteredUserIds(contestSlug: String): [ID]
   problemsetLearningContext(
-    categorySlug: String
-    filters: QuestionListFilterInput
-    limit: Int
+    categorySlug: String = ""
+    filters: QuestionListFilterInput = {}
+    limit: Int = 50
     questionSlug: String!
-    skip: Int
+    skip: Int = 0
   ): LearningContextNodeV2
   question(titleSlug: String): QuestionNode
   questionCompanyTags(
@@ -6877,8 +6896,8 @@ type Query {
   questionList(
     categorySlug: String
     filters: QuestionListFilterInput
-    limit: Int
-    skip: Int
+    limit: Int = 50
+    skip: Int = 0
   ): PagifiedQuestionNode
   questionNumByTags(
     difficultyTagSlugs: [String!]
@@ -6900,18 +6919,18 @@ type Query {
   ): SubmissionListNode
   questionTag(tagId: ID!): QuestionTagNode
   questionTagsAdmin(tagType: TagTypeEnum!): [QuestionTagNode!]
-  questionTagsSuggest(search: String): [String]
+  questionTagsSuggest(search: String = ""): [String]
   questionTopics(
-    numPerPage: Int
+    numPerPage: Int = 10
     orderBy: TopicSortingOption
-    pageNo: Int
-    query: String
-    questionId: Int
+    pageNo: Int = 1
+    query: String = ""
+    questionId: Int = -1
   ): PagifiedTopicNode
   questionTopicsList(
     after: String
     before: String
-    first: Int
+    first: Int = 0
     last: Int
     orderBy: TopicSortingOption
     query: String
@@ -6928,17 +6947,17 @@ type Query {
     skip: Int
   ): TopicTagConnection
   randomPanelQuestion(
-    categorySlug: String
+    categorySlug: String = ""
     "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
-    childFavoriteSlug: String
+    childFavoriteSlug: String = ""
     currentQuestionSlug: String!
-    envId: String
-    envType: String
+    envId: String = ""
+    envType: String = ""
     "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
-    favoriteFilters: FavoriteQuestionFilterInput
-    filters: QuestionListFilterInput
+    favoriteFilters: FavoriteQuestionFilterInput = {}
+    filters: QuestionListFilterInput = {}
     "版本号, 默认为空, 新版企业题单需要传版本号v2"
-    version: String
+    version: String = ""
   ): String
   randomQuestion(
     categorySlug: String
@@ -6966,20 +6985,20 @@ type Query {
   solutionTopicTags(questionSlug: String): [SolutionTagNode]!
   solvedQuestionsInfo(
     filters: ProgressListFilterInput
-    numPerPage: Int
-    pageNo: Int
+    numPerPage: Int = 10
+    pageNo: Int = 1
   ): PagifiedQuestionLastSolveNode!
   spamModerationPosts(
     endDate: DateTime
     ip: String
-    numPerPage: Int
+    numPerPage: Int = 20
     orderBy: String
-    pageNo: Int
-    reported: ReportedStatus
-    reportType: ReportTypeEnum
+    pageNo: Int = 1
+    reported: ReportedStatus = "ALL"
+    reportType: ReportTypeEnum = 200
     search: String
     startDate: DateTime
-    status: PostStatus
+    status: PostStatus = 1000
     submissionCount: Int
     usernames: String
     wordListType: String
@@ -6998,14 +7017,14 @@ type Query {
   studyPlansV2ByCatalog(
     catalogSlug: String!
     "default value is 6"
-    limit: Int
-    offset: Int
+    limit: Int = 6
+    offset: Int = 0
   ): StudyPlanListNode!
   "get study plans by tag"
   studyPlansV2ByTag(
     "default value is 6"
-    limit: Int
-    offset: Int
+    limit: Int = 6
+    offset: Int = 0
     tagSlug: String!
   ): StudyPlanListNode!
   "get study plans by upc"
@@ -7024,14 +7043,14 @@ type Query {
   "get a user progress detail"
   studyPlanV2ProgressDetail(
     "user progress ID"
-    id: ID
+    id: ID = ""
     planSlug: String!
   ): PlanUserProgressDetailNode
   "get the ranking board of a study plan"
   studyPlanV2RankingBoard(
     "default value is 10"
-    limit: Int
-    offset: Int
+    limit: Int = 10
+    offset: Int = 0
     planSlug: String!
   ): UserRankInfoList!
   "get the most recent user completed progress detail"
@@ -7043,8 +7062,8 @@ type Query {
   "user on going study plans"
   studyPlanV2UserProgresses(
     "default 6, no more than100"
-    limit: Int
-    offset: Int
+    limit: Int = 6
+    offset: Int = 0
     progressType: PlanUserProgressTypeEnum!
   ): PlanUserProgressListNode
   "get current user rank in a plan"
@@ -7082,28 +7101,28 @@ type Query {
     before: String
     first: Int
     last: Int
-    orderBy: TopicSortingOption
-    query: String
+    orderBy: TopicSortingOption = ""
+    query: String = ""
     skip: Int
     tag: String!
     tags: [String]
   ): TopicConnection
   topic(id: Int): TopicNode
   topicComments(
-    numPerPage: Int
+    numPerPage: Int = 10
     orderBy: String
-    pageNo: Int
+    pageNo: Int = 1
     topicId: Int!
   ): PagifiedCommentNode
   topicTag(slug: String): TopicTagNode
   topicTags(
     categorySlugs: [String]
     numTags: Int
-    query: String
+    query: String = ""
     selectedTags: [String]
     tagType: String
   ): [DiscussTopicTagNode!]!
-  topicTagsSuggest(search: String): [DiscussTopicTagNode!]!
+  topicTagsSuggest(search: String = ""): [DiscussTopicTagNode!]!
   topicUsers(prefix: String, topicId: Int): [UserNode]!
   topTwoContests: [ContestNode]!
   upcomingContests: [ContestNode!]
@@ -7115,7 +7134,7 @@ type Query {
     before: String
     first: Int
     last: Int
-    orderBy: TopicSortingOption
+    orderBy: TopicSortingOption = ""
     skip: Int
     username: String
   ): TopicConnection
@@ -7124,6 +7143,8 @@ type Query {
   userCountryCode: String
   userManagementCreditCards(userId: ID!): [ManagementCreditCardNode]!
   userManagementIpList(data: UserManagementIpListInput!): ManagementIpListNode!
+  userManagementIpManagementLogs(ipAddress: String!): [IPManagementLogNode!]
+  userManagementLogsByManager(userSlug: String!): [UserManagementLogNode!]
   userManagementOperationHistory(
     data: UserManagementOperationHistoryInput!
   ): ManagementOperationHistoryNode!
@@ -7137,7 +7158,7 @@ type Query {
   userManagementSearch(
     dimension: SearchDimensionType!
     keyword: String!
-    limit: Int!
+    limit: Int! = 10
     skip: Int!
   ): ManagementUserListNode
   userManagementStoreOrders(
@@ -7160,8 +7181,8 @@ type Query {
   userReports(
     endDate: DateTime
     handled: Boolean
-    numPerPage: Int
-    pageNo: Int
+    numPerPage: Int = 20
+    pageNo: Int = 1
     startDate: DateTime
   ): PagifiedUserReportNode
   users(usernamePrefix: String): [UserNode]
@@ -7170,7 +7191,7 @@ type Query {
     before: String
     first: Int
     last: Int
-    orderBy: TopicSortingOption
+    orderBy: TopicSortingOption = ""
     skip: Int
     username: String
   ): TopicConnection
@@ -7186,7 +7207,7 @@ type Query {
   worldCountries: [String!]
   worldSubcountries(country: String): [String!]
   "list of yearly medals which are qualified to acquire"
-  yearlyMedalsQualified(excludeAcquired: Boolean): [MedalBriefNode!]
+  yearlyMedalsQualified(excludeAcquired: Boolean = true): [MedalBriefNode!]
 }
 
 type QuestionActivityNode {
@@ -8108,6 +8129,11 @@ type ToggleContestDynamicLayout {
   ok: Boolean!
 }
 
+type ToggleContestRankingDynamicLayout {
+  error: String
+  ok: Boolean!
+}
+
 type ToggleFavorite {
   card: CardNode
   errors: JSONString
@@ -8570,6 +8596,12 @@ type UserIPNode {
   usersSharingThisIp: [UserNodeAdminOnly!]!
 }
 
+type UserManagementLogNode {
+  operation: String!
+  operationTime: DateTime!
+  operator: ManagementUserSimpleNode!
+}
+
 type UserNode {
   activeBadge: UserBadgeNode
   badges: [UserBadgeNode!]!
@@ -8987,8 +9019,8 @@ Depending on the kind of a type, certain fields describe information about that 
 """
 type __Type {
   description: String
-  enumValues(includeDeprecated: Boolean): [__EnumValue!]
-  fields(includeDeprecated: Boolean): [__Field!]
+  enumValues(includeDeprecated: Boolean = false): [__EnumValue!]
+  fields(includeDeprecated: Boolean = false): [__Field!]
   inputFields: [__InputValue!]
   interfaces: [__Type!]
   kind: __TypeKind!

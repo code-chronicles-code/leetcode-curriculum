@@ -3,6 +3,7 @@ import path from "node:path";
 
 import nullthrows from "nullthrows";
 
+import { invariantViolation } from "@code-chronicles/util/invariantViolation";
 import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
 
 import type {
@@ -53,7 +54,6 @@ async function main(): Promise<void> {
       await readFile(path.join("types", entry.name), "utf8"),
     ) as LeetCodeGraphQLType;
 
-    // TODO: handle all the kind types
     switch (graphqlTypeInfo.kind) {
       case "ENUM": {
         const enumValues = nullthrows(graphqlTypeInfo.enumValues).map(
@@ -76,14 +76,16 @@ async function main(): Promise<void> {
           ...(graphqlTypeInfo.fields ?? []),
           ...(graphqlTypeInfo.inputFields ?? []),
         ].map((field) => {
-          // TODO: add field argument default values
           const args =
             "args" in field && field.args && field.args.length > 0
               ? "(\n" +
                 field.args
                   .map(
                     (arg) =>
-                      `${formatDescription(arg.description)}${arg.name}: ${stringifyType(arg.type)}`,
+                      `${formatDescription(arg.description)}${arg.name}: ${stringifyType(arg.type)}` +
+                      (arg.defaultValue != null
+                        ? " = " + arg.defaultValue
+                        : ""),
                   )
                   .join("\n") +
                 "\n)"
@@ -106,6 +108,12 @@ async function main(): Promise<void> {
           `${formatDescription(graphqlTypeInfo.description)}scalar ${graphqlTypeInfo.name}\n`,
         );
         break;
+      }
+      case "LIST":
+      case "UNION":
+      case "NON_NULL":
+      default: {
+        invariantViolation(`Unexpected kind: ${graphqlTypeInfo.kind}`);
       }
     }
   }

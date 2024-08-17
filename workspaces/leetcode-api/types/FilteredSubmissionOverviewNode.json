@@ -16,6 +16,7 @@
       "args": [
         {
           "name": "inputFilters",
+          "defaultValue": "\"\"",
           "type": {
             "name": "String",
             "kind": "SCALAR"
@@ -23,6 +24,7 @@
         },
         {
           "name": "numPerPage",
+          "defaultValue": "20",
           "type": {
             "name": "Int",
             "kind": "SCALAR"
@@ -30,6 +32,7 @@
         },
         {
           "name": "pageNo",
+          "defaultValue": "1",
           "type": {
             "name": "Int",
             "kind": "SCALAR"

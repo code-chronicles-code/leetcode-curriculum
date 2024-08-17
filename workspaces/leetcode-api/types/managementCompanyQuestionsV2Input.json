@@ -13,13 +13,6 @@
       }
     },
     {
-      "name": "positionTagSlug",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
-      }
-    },
-    {
       "name": "keyword",
       "type": {
         "name": "String",
@@ -27,11 +20,13 @@
       }
     },
     {
-      "name": "timeOption",
-      "defaultValue": "4",
+      "name": "limit",
       "type": {
-        "name": "CompanyQuestionTimeOptionEnumV2",
-        "kind": "ENUM"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -45,13 +40,18 @@
       }
     },
     {
-      "name": "limit",
+      "name": "positionTagSlug",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "timeOption",
+      "defaultValue": "4",
+      "type": {
+        "name": "CompanyQuestionTimeOptionEnumV2",
+        "kind": "ENUM"
       }
     }
   ]

@@ -35,6 +35,13 @@
       }
     },
     {
+      "name": "positionTagSlug",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
       "name": "questionId",
       "type": {
         "kind": "NON_NULL",
@@ -55,13 +62,6 @@
       "name": "timeOption",
       "type": {
         "name": "Int",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "positionTagSlug",
-      "type": {
-        "name": "String",
         "kind": "SCALAR"
       }
     }

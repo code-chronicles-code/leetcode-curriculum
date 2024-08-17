@@ -3,24 +3,17 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "tagGroupId",
-      "description": "Group ID",
+      "name": "excludeTagCategoryIds",
       "type": {
-        "name": "Int",
-        "kind": "SCALAR"
+        "kind": "LIST",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
-      "name": "tagCategoryId",
-      "description": "Category ID",
-      "type": {
-        "name": "Int",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "isTagEnabled",
-      "description": "Filter by Enabled Tags",
+      "name": "isSimilarTag",
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -35,15 +28,16 @@
       }
     },
     {
-      "name": "isUserSelectable",
-      "description": "Filter by User Selectable Tags",
+      "name": "isTagEnabled",
+      "description": "Filter by Enabled Tags",
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
       }
     },
     {
-      "name": "isSimilarTag",
+      "name": "isUserSelectable",
+      "description": "Filter by User Selectable Tags",
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -58,11 +52,13 @@
       }
     },
     {
-      "name": "slug",
-      "description": "Filter by Tag Slug startswith",
+      "name": "limit",
       "type": {
-        "name": "String",
-        "kind": "SCALAR"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -76,23 +72,27 @@
       }
     },
     {
-      "name": "limit",
+      "name": "slug",
+      "description": "Filter by Tag Slug startswith",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "String",
+        "kind": "SCALAR"
       }
     },
     {
-      "name": "excludeTagCategoryIds",
+      "name": "tagCategoryId",
+      "description": "Category ID",
       "type": {
-        "kind": "LIST",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "Int",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "tagGroupId",
+      "description": "Group ID",
+      "type": {
+        "name": "Int",
+        "kind": "SCALAR"
       }
     }
   ]

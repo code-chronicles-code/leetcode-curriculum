@@ -3,17 +3,7 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "tagId",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "questionId",
+      "name": "limit",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -33,7 +23,17 @@
       }
     },
     {
-      "name": "limit",
+      "name": "questionId",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "tagId",
       "type": {
         "kind": "NON_NULL",
         "ofType": {

@@ -3,53 +3,6 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "itemSlug",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "username",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "details",
-      "type": {
-        "name": "JSONString",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "country",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "recipient",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
       "name": "address",
       "type": {
         "kind": "NON_NULL",
@@ -70,7 +23,71 @@
       }
     },
     {
+      "name": "country",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "details",
+      "type": {
+        "name": "JSONString",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "itemSlug",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "note",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "phone",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "recipient",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
       "name": "state",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "String",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "username",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -87,23 +104,6 @@
           "name": "String",
           "kind": "SCALAR"
         }
-      }
-    },
-    {
-      "name": "phone",
-      "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "note",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
       }
     }
   ]

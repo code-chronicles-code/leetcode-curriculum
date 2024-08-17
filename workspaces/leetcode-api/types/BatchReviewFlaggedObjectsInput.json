@@ -3,6 +3,13 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
+      "name": "description",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
       "name": "flagResultIds",
       "type": {
         "kind": "NON_NULL",
@@ -32,13 +39,6 @@
       "name": "reasonId",
       "type": {
         "name": "ID",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "description",
-      "type": {
-        "name": "String",
         "kind": "SCALAR"
       }
     }

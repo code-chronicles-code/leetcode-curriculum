@@ -3,14 +3,10 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "skip",
-      "defaultValue": "0",
+      "name": "favoriteType",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "FavoriteTypeEnum",
+        "kind": "ENUM"
       }
     },
     {
@@ -39,10 +35,14 @@
       }
     },
     {
-      "name": "favoriteType",
+      "name": "skip",
+      "defaultValue": "0",
       "type": {
-        "name": "FavoriteTypeEnum",
-        "kind": "ENUM"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {

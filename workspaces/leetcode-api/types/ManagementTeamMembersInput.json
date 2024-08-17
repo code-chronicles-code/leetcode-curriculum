@@ -3,17 +3,21 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
+      "name": "limit",
+      "defaultValue": "10",
+      "type": {
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
       "name": "roleGroup",
       "type": {
         "name": "ManagementRoleEnum",
         "kind": "ENUM"
-      }
-    },
-    {
-      "name": "username",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
       }
     },
     {
@@ -27,14 +31,10 @@
       }
     },
     {
-      "name": "limit",
-      "defaultValue": "10",
+      "name": "username",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "String",
+        "kind": "SCALAR"
       }
     }
   ]

@@ -8,6 +8,7 @@
       "args": [
         {
           "name": "langSlug",
+          "defaultValue": "\"\"",
           "type": {
             "name": "String",
             "kind": "SCALAR"

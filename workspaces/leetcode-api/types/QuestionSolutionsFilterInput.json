@@ -3,9 +3,19 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "questionSlug",
+      "name": "first",
       "type": {
         "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
+      }
+    },
+    {
+      "name": "languageTags",
+      "type": {
+        "kind": "LIST",
         "ofType": {
           "name": "String",
           "kind": "SCALAR"
@@ -27,19 +37,9 @@
       }
     },
     {
-      "name": "languageTags",
+      "name": "questionSlug",
       "type": {
-        "kind": "LIST",
-        "ofType": {
-          "name": "String",
-          "kind": "SCALAR"
-        }
-      }
-    },
-    {
-      "name": "topicTags",
-      "type": {
-        "kind": "LIST",
+        "kind": "NON_NULL",
         "ofType": {
           "name": "String",
           "kind": "SCALAR"
@@ -57,11 +57,11 @@
       }
     },
     {
-      "name": "first",
+      "name": "topicTags",
       "type": {
-        "kind": "NON_NULL",
+        "kind": "LIST",
         "ofType": {
-          "name": "Int",
+          "name": "String",
           "kind": "SCALAR"
         }
       }

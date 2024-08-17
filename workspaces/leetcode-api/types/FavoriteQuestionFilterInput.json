@@ -3,13 +3,6 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "positionRoleTagSlug",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
-      }
-    },
-    {
       "name": "difficultyList",
       "type": {
         "kind": "LIST",
@@ -17,6 +10,13 @@
           "name": "DifficultyDescribedEnum",
           "kind": "ENUM"
         }
+      }
+    },
+    {
+      "name": "positionRoleTagSlug",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
       }
     },
     {

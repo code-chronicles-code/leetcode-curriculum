@@ -790,6 +790,7 @@
         },
         {
           "name": "intentionTagSlug",
+          "defaultValue": "\"\"",
           "type": {
             "name": "String",
             "kind": "SCALAR"
@@ -810,6 +811,7 @@
         },
         {
           "name": "parentCommentId",
+          "defaultValue": "0",
           "type": {
             "name": "Int",
             "kind": "SCALAR"
@@ -1736,6 +1738,7 @@
       "args": [
         {
           "name": "resetAvatar",
+          "defaultValue": "false",
           "type": {
             "name": "Boolean",
             "kind": "SCALAR"
@@ -1743,6 +1746,7 @@
         },
         {
           "name": "resetUsername",
+          "defaultValue": "false",
           "type": {
             "name": "Boolean",
             "kind": "SCALAR"
@@ -3689,6 +3693,7 @@
       "args": [
         {
           "name": "message",
+          "defaultValue": "\"\"",
           "type": {
             "name": "String",
             "kind": "SCALAR"
@@ -3757,6 +3762,14 @@
       "name": "resetFavoriteSessionV2",
       "isDeprecated": false,
       "args": [
+        {
+          "name": "deleteSyncedCode",
+          "defaultValue": "false",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        },
         {
           "name": "favoriteSlug",
           "type": {
@@ -4644,6 +4657,23 @@
       }
     },
     {
+      "name": "toggleContestRankingDynamicLayout",
+      "isDeprecated": false,
+      "args": [
+        {
+          "name": "enable",
+          "type": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      ],
+      "type": {
+        "name": "ToggleContestRankingDynamicLayout",
+        "kind": "OBJECT"
+      }
+    },
+    {
       "name": "toggleFavorite",
       "isDeprecated": false,
       "args": [
@@ -4895,6 +4925,7 @@
         },
         {
           "name": "participationType",
+          "defaultValue": "1",
           "type": {
             "name": "Type",
             "kind": "ENUM"
@@ -5904,6 +5935,7 @@
         },
         {
           "name": "reason",
+          "defaultValue": "\"\"",
           "type": {
             "name": "String",
             "kind": "SCALAR"
@@ -5938,6 +5970,7 @@
         },
         {
           "name": "reason",
+          "defaultValue": "\"\"",
           "type": {
             "name": "String",
             "kind": "SCALAR"

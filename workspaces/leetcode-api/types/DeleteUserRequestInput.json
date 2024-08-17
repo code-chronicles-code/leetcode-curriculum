@@ -3,28 +3,15 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "userId",
+      "name": "endDate",
       "type": {
-        "name": "String",
+        "name": "DateTime",
         "kind": "SCALAR"
       }
     },
     {
-      "name": "username",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "userEmail",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "skip",
+      "name": "limit",
+      "defaultValue": "20",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -34,8 +21,7 @@
       }
     },
     {
-      "name": "limit",
-      "defaultValue": "20",
+      "name": "skip",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -52,9 +38,23 @@
       }
     },
     {
-      "name": "endDate",
+      "name": "userEmail",
       "type": {
-        "name": "DateTime",
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "userId",
+      "type": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "username",
+      "type": {
+        "name": "String",
         "kind": "SCALAR"
       }
     }

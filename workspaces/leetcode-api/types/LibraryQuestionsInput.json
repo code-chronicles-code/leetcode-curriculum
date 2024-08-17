@@ -3,15 +3,7 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "quesType",
-      "description": "Question Type",
-      "type": {
-        "name": "String",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "isNew",
+      "name": "canEdit",
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -19,6 +11,13 @@
     },
     {
       "name": "isCustom",
+      "type": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "isNew",
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -39,15 +38,16 @@
       }
     },
     {
-      "name": "canEdit",
+      "name": "keyword",
+      "description": "Search Keyword",
       "type": {
-        "name": "Boolean",
+        "name": "String",
         "kind": "SCALAR"
       }
     },
     {
-      "name": "keyword",
-      "description": "Search Keyword",
+      "name": "quesType",
+      "description": "Question Type",
       "type": {
         "name": "String",
         "kind": "SCALAR"

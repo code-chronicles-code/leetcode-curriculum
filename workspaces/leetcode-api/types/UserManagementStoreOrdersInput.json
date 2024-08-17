@@ -3,9 +3,9 @@
   "kind": "INPUT_OBJECT",
   "inputFields": [
     {
-      "name": "userId",
+      "name": "endedAt",
       "type": {
-        "name": "ID",
+        "name": "DateTime",
         "kind": "SCALAR"
       }
     },
@@ -17,24 +17,14 @@
       }
     },
     {
-      "name": "startedAt",
+      "name": "limit",
+      "defaultValue": "10",
       "type": {
-        "name": "DateTime",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "endedAt",
-      "type": {
-        "name": "DateTime",
-        "kind": "SCALAR"
-      }
-    },
-    {
-      "name": "status",
-      "type": {
-        "name": "UmStoreOrderStatusEnum",
-        "kind": "ENUM"
+        "kind": "NON_NULL",
+        "ofType": {
+          "name": "Int",
+          "kind": "SCALAR"
+        }
       }
     },
     {
@@ -48,14 +38,24 @@
       }
     },
     {
-      "name": "limit",
-      "defaultValue": "10",
+      "name": "startedAt",
       "type": {
-        "kind": "NON_NULL",
-        "ofType": {
-          "name": "Int",
-          "kind": "SCALAR"
-        }
+        "name": "DateTime",
+        "kind": "SCALAR"
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "name": "UmStoreOrderStatusEnum",
+        "kind": "ENUM"
+      }
+    },
+    {
+      "name": "userId",
+      "type": {
+        "name": "ID",
+        "kind": "SCALAR"
       }
     }
   ]
