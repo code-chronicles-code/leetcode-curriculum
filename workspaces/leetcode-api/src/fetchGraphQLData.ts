@@ -22,6 +22,7 @@ export async function fetchGraphQLData(
   });
 
   if (!response.ok) {
+    console.error(await response.text());
     throw new Error(`Got status ${response.status} from server!`);
   }
 
