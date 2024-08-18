@@ -1915,7 +1915,7 @@ iteratorPrototype.toIterable = function () {
 };
 
 iteratorPrototype.toSet ??= function () {
-  return new Set([...this.toIterable()]);
+  return new Set(this.toIterable());
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -4096,7 +4096,7 @@ iteratorPrototype.toIterable = function <T>(
 };
 
 iteratorPrototype.toSet ??= function <T>(this: Iterator<T>): Set<T> {
-  return new Set([...this.toIterable()]);
+  return new Set(this.toIterable());
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"

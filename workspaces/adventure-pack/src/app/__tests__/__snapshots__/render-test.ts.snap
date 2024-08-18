@@ -1054,7 +1054,7 @@ exports[`App can render goody: JavaScript Iterator.prototype.toSet 1`] = `
 import "Iterator.prototype.toIterable";
 
 iteratorPrototype.toSet ??= function () {
-  return new Set([...this.toIterable()]);
+  return new Set(this.toIterable());
 };"
 `;
 
@@ -2319,7 +2319,7 @@ declare global {
 }
 
 iteratorPrototype.toSet ??= function <T>(this: Iterator<T>): Set<T> {
-  return new Set([...this.toIterable()]);
+  return new Set(this.toIterable());
 };"
 `;
 

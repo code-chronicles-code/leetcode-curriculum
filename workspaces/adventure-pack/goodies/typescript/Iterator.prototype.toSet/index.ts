@@ -8,5 +8,5 @@ declare global {
 }
 
 iteratorPrototype.toSet ??= function <T>(this: Iterator<T>): Set<T> {
-  return new Set([...this.toIterable()]);
+  return new Set(this.toIterable());
 };

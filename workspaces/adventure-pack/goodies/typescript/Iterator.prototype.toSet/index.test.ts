@@ -2,31 +2,23 @@ import { describe, expect, it } from "@jest/globals";
 
 import "../Iterator.prototype.filter";
 import "../Iterator.prototype.map";
-
-import { iteratorPrototype } from "../Iterator.prototype";
-delete (iteratorPrototype as unknown as Record<string, unknown>).toSet;
-// eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
 import "./index";
 
 describe("Iterator.prototype.toSet", () => {
   it("adds primitives to a Set", () => {
     const arr = [1, 2, 2, 3, 1, 2, 3, 3, 100, false, 100, false, "hello"];
-    const iteratorToSet = arr.values().toSet();
+    const set = arr.values().toSet();
 
-    expect(iteratorToSet).toBeInstanceOf(Set);
-    expect(iteratorToSet).toStrictEqual(
-      new Set([1, 2, 3, 100, false, "hello"]),
-    );
+    expect(set).toStrictEqual(new Set([1, 2, 3, 100, false, "hello"]));
   });
 
-  it("adds objects to a Set", () => {
+  it("respects referential equality of objects", () => {
     const obj1 = { a: 1 };
     const obj2 = { b: 2 };
     const objectArray = [obj1, obj2, obj1, obj2, obj2, obj1];
-    const iteratorToSet = objectArray.values().toSet();
+    const set = objectArray.values().toSet();
 
-    expect(iteratorToSet).toBeInstanceOf(Set);
-    expect(iteratorToSet).toStrictEqual(new Set([obj1, obj2]));
+    expect(set).toStrictEqual(new Set([obj1, obj2]));
   });
 
   it("adds arrays to a Set", () => {
@@ -45,10 +37,9 @@ describe("Iterator.prototype.toSet", () => {
       arr2,
       arr2,
     ];
-    const iteratorToSet = arrayOfArrays.values().toSet();
+    const set = arrayOfArrays.values().toSet();
 
-    expect(iteratorToSet).toBeInstanceOf(Set);
-    expect(iteratorToSet).toStrictEqual(new Set([arr1, arr2]));
+    expect(set).toStrictEqual(new Set([arr1, arr2]));
   });
 
   it("can convert multiple Generators to a Set", () => {
@@ -71,12 +62,9 @@ describe("Iterator.prototype.toSet", () => {
       yield* generator2();
     };
 
-    const iteratorToSet = combinedIterator().toSet();
+    const set = combinedIterator().toSet();
 
-    expect(iteratorToSet).toBeInstanceOf(Set);
-    expect(iteratorToSet).toStrictEqual(
-      new Set(["a", "b", "c", "x", "y", "z"]),
-    );
+    expect(set).toStrictEqual(new Set(["a", "b", "c", "x", "y", "z"]));
   });
 
   it("adds falsy values to a Set", () => {
@@ -100,12 +88,9 @@ describe("Iterator.prototype.toSet", () => {
       undefined,
       undefined,
     ];
-    const iteratorToSet = falsyValues.values().toSet();
+    const set = falsyValues.values().toSet();
 
-    expect(iteratorToSet).toBeInstanceOf(Set);
-    expect(iteratorToSet).toStrictEqual(
-      new Set([false, 0, "", null, undefined, NaN]),
-    );
+    expect(set).toStrictEqual(new Set([false, 0, "", null, undefined, NaN]));
   });
 
   it("handles an empty iterator", () => {
