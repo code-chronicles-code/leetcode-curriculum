@@ -27,7 +27,7 @@ describe("Number.isIntegerOrIntegerObject", () => {
     expect(Number.isIntegerOrIntegerObject(value)).toBe(true);
   });
 
-  it.each([INTEGERS])("returns true for integer object %p", (value) => {
+  it.each(INTEGERS)("returns true for integer object %p", (value) => {
     expect(Number.isIntegerOrIntegerObject(new Number(value))).toBe(true);
   });
 
