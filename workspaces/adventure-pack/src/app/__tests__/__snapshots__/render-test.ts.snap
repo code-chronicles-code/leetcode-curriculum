@@ -1049,6 +1049,15 @@ iteratorPrototype.toObject = function () {
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.toSet 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.toSet ??= function () {
+  return new Set(this.toIterable());
+};"
+`;
+
 exports[`App can render goody: JavaScript Math.gcd 1`] = `
 "Math.gcd = function (a, b) {
   a = Math.abs(a);
@@ -2296,6 +2305,21 @@ iteratorPrototype.toObject = function (this: Iterator<unknown>) {
   return Object.fromEntries(
     this.toIterable() as unknown as Iterable<[unknown, unknown]>,
   );
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.toSet 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    toSet(this: Iterator<T>): Set<T>;
+  }
+}
+
+iteratorPrototype.toSet ??= function <T>(this: Iterator<T>): Set<T> {
+  return new Set(this.toIterable());
 };"
 `;
 
