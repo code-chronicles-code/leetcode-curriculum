@@ -31,15 +31,17 @@ jobs:
       - name: Set up everything
         uses: ./.github/workflows/set-up-everything
 
-      - name: Get LeetCode problem list
+      - name: Fetch LeetCode problem list
         run: yarn workspace @code-chronicles/fetch-leetcode-problem-list start && mv -f workspaces/fetch-leetcode-problem-list/problems.jsonl workspaces/archive/
 
       - name: Create or update PR
         uses: peter-evans/create-pull-request@v6
         with:
           branch: leetcode-problem-list-auto-update
+          # TODO: maybe include the current date in the title and commit message
           title: Update LeetCode problem data
           commit-message: Update LeetCode problem data
+          # TODO: maybe include some statistics in the body
           body: ""
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>

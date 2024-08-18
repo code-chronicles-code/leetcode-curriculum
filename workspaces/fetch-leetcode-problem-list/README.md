@@ -1,6 +1,6 @@
 # @code-chronicles/fetch-leetcode-problem-list
 
-[![Status of the GitHub Actions workflow that updates the LeetCode problem data in this repository](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/update-problem-data.yml/badge.svg)](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/update-problem-data.yml)
+[![Status of the GitHub Actions workflow that updates the LeetCode problem data in this repository](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/update-problem-data.yml/badge.svg)](https://github.com/code-chronicles-code/leetcode-curriculum/actions/workflows/update-leetcode-problem-data.yml)
 
 Fetch metadata of _all_ the LeetCode problems and save it in [JSON Lines](https://jsonlines.org/) format.
 
@@ -53,7 +53,7 @@ Each line of the output is JSON metadata for a problem, for example:
 ```
 <!-- prettier-ignore-end -->
 
-This repository includes [a Github Actions workflow](../../.github/workflows/post-leetcode-potd-to-discord.yml) for saving the problems metadata every week.
+This repository includes [a Github Actions workflow](../../.github/workflows/update-leetcode-problem-data.yml) for saving the problems metadata every week.
 
 ## Development
 
