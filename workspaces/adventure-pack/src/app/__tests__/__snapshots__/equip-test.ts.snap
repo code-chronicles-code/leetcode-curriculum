@@ -2542,6 +2542,43 @@ def traverse_inorder(
 ########################### END ADVENTURE PACK CODE ############################"
 `;
 
+exports[`App can equip single goody: Python 3 traverse_level_order 1`] = `
+"########################## BEGIN ADVENTURE PACK CODE ###########################
+# Adventure Pack commit fake-commit-hash
+# Running at: https://example.com/
+
+from typing import Generator, Optional, List
+
+
+class TreeNode:
+    def __init__(
+        self,
+        val: int = 0,
+        left: Optional["TreeNode"] = None,
+        right: Optional["TreeNode"] = None,
+    ):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def traverse_level_order(
+    root: Optional[TreeNode],
+) -> Generator[List[TreeNode], None, None]:
+    level = [root] if root else []
+    while level:
+        yield level
+
+        level = [
+            child
+            for node in level
+            for child in [node.left, node.right]
+            if child is not None
+        ]
+
+########################### END ADVENTURE PACK CODE ############################"
+`;
+
 exports[`App can equip single goody: Python 3 traverse_postorder 1`] = `
 "########################## BEGIN ADVENTURE PACK CODE ###########################
 # Adventure Pack commit fake-commit-hash
