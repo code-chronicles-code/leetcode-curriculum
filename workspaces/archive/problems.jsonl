@@ -621,7 +621,7 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":621,"title":"Task Scheduler","titleSlug":"task-scheduler"}
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":622,"title":"Design Circular Queue","titleSlug":"design-circular-queue"}
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":623,"title":"Add One Row to Tree","titleSlug":"add-one-row-to-tree"}
-{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":624,"title":"Maximum Distance in Arrays","titleSlug":"maximum-distance-in-arrays"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":624,"title":"Maximum Distance in Arrays","titleSlug":"maximum-distance-in-arrays"}
 {"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":625,"title":"Minimum Factorization","titleSlug":"minimum-factorization"}
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":626,"title":"Exchange Seats","titleSlug":"exchange-seats"}
 {"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":627,"title":"Swap Salary","titleSlug":"swap-salary"}
@@ -3250,3 +3250,12 @@
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3250,"title":"Find the Count of Monotonic Pairs I","titleSlug":"find-the-count-of-monotonic-pairs-i"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3251,"title":"Find the Count of Monotonic Pairs II","titleSlug":"find-the-count-of-monotonic-pairs-ii"}
 {"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3252,"title":"Premier League Table Ranking II","titleSlug":"premier-league-table-ranking-ii"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3253,"title":"Construct String with Minimum Cost (Easy)","titleSlug":"construct-string-with-minimum-cost-easy"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3254,"title":"Find the Power of K-Size Subarrays I","titleSlug":"find-the-power-of-k-size-subarrays-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3255,"title":"Find the Power of K-Size Subarrays II","titleSlug":"find-the-power-of-k-size-subarrays-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3256,"title":"Maximum Value Sum by Placing Three Rooks I","titleSlug":"maximum-value-sum-by-placing-three-rooks-i"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3257,"title":"Maximum Value Sum by Placing Three Rooks II","titleSlug":"maximum-value-sum-by-placing-three-rooks-ii"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3258,"title":"Count Substrings That Satisfy K-Constraint I","titleSlug":"count-substrings-that-satisfy-k-constraint-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3259,"title":"Maximum Energy Boost From Two Drinks","titleSlug":"maximum-energy-boost-from-two-drinks"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3260,"title":"Find the Largest Palindrome Divisible by K","titleSlug":"find-the-largest-palindrome-divisible-by-k"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3261,"title":"Count Substrings That Satisfy K-Constraint II","titleSlug":"count-substrings-that-satisfy-k-constraint-ii"}
