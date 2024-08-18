@@ -8,12 +8,12 @@ import "./index";
 describe("Iterator.prototype.flatMap", () => {
   it("can flatten an Array's values()", () => {
     const array = [-1, -5, 5, 3, 7];
-    const generator = function* (p: number): Generator<number, void, void> {
+    const callback = function* (p: number): Generator<number, void, void> {
       yield p;
       yield p * 2;
     };
 
-    const flatMapResult = array.values().flatMap(generator);
+    const flatMapResult = array.values().flatMap(callback);
 
     expect([...flatMapResult]).toStrictEqual([
       -1, -2, -5, -10, 5, 10, 3, 6, 7, 14,
@@ -22,25 +22,14 @@ describe("Iterator.prototype.flatMap", () => {
 
   it("can flatten a String's characters", () => {
     const s = "hello";
-    const generator = function* (c: string): Generator<string, void, void> {
+    const callback = function* (c: string): Generator<string, void, void> {
       yield c;
       yield c.toUpperCase();
     };
 
-    const flatMapResult = s[Symbol.iterator]().flatMap(generator);
+    const flatMapResult = s[Symbol.iterator]().flatMap(callback);
 
-    expect([...flatMapResult]).toStrictEqual([
-      "h",
-      "H",
-      "e",
-      "E",
-      "l",
-      "L",
-      "l",
-      "L",
-      "o",
-      "O",
-    ]);
+    expect([...flatMapResult]).toStrictEqual(Array.from("hHeElLlLoO"));
   });
 
   it("can flatten a Map's entries()", () => {
@@ -72,14 +61,14 @@ describe("Iterator.prototype.flatMap", () => {
 
   it("can flatten a Set's values()", () => {
     const set = new Set([2, 2, -4, -4, 7, 7, 9, 9, -10, -10]);
-    const generator = function* (
+    const callback = function* (
       p: number,
     ): Generator<number | boolean, void, void> {
       yield p;
       yield p % 2 === 0;
     };
 
-    const flatMapResult = set.values().flatMap(generator);
+    const flatMapResult = set.values().flatMap(callback);
 
     expect([...flatMapResult]).toStrictEqual([
       2,
@@ -95,7 +84,7 @@ describe("Iterator.prototype.flatMap", () => {
     ]);
   });
 
-  it("can map a Generator object", () => {
+  it("can flatten a Generator object", () => {
     const factory = function* (): Generator<string, void, void> {
       yield "o";
       yield "t";
@@ -104,47 +93,65 @@ describe("Iterator.prototype.flatMap", () => {
       yield "r";
     };
 
-    const generator = function* (c: string): Generator<string, void, void> {
+    const callback = function* (c: string): Generator<string, void, void> {
       yield c;
       yield "!";
     };
 
-    const flatMapResult = factory().flatMap(generator);
+    const flatMapResult = factory().flatMap(callback);
 
+    expect([...flatMapResult]).toStrictEqual(Array.from("o!t!t!e!r!"));
+  });
+
+  it("callback yields elements with their respective indices", () => {
+    const iterator = ["🍞", "🥓", "🥬", "🍅"].values();
+    const callback = function* (
+      c: string,
+      index: number,
+    ): Generator<string, void, void> {
+      yield `${index}: ${c}`;
+    };
+
+    const flatMapResult = iterator.flatMap(callback);
     expect([...flatMapResult]).toStrictEqual([
-      "o",
-      "!",
-      "t",
-      "!",
-      "t",
-      "!",
-      "e",
-      "!",
-      "r",
-      "!",
+      "0: 🍞",
+      "1: 🥓",
+      "2: 🥬",
+      "3: 🍅",
     ]);
   });
 
-  it("returns an empty iterator when called on an empty iterator", () => {
-    const generator = function* <T>(p: T): Generator<T, void, void> {
-      yield p;
-    };
-
-    expect([].values().flatMap(generator).next().done).toBe(true);
-    expect(new Set().values().flatMap(generator).next().done).toBe(true);
-    expect(new Map().values().flatMap(generator).next().done).toBe(true);
-    expect((function* () {})().flatMap(generator).next().done).toBe(true);
-  });
+  it.each([
+    [].values(),
+    new Set().values(),
+    new Map().values(),
+    (function* () {})(),
+  ])(
+    "returns an empty iterator when called on an empty iterator",
+    <T>(iterator: IterableIterator<T>) => {
+      expect(
+        iterator
+          .flatMap(function* <T>(p: T): Generator<T, void, void> {
+            yield p;
+          })
+          .next().done,
+      ).toBe(true);
+    },
+  );
 
   it("callback returns an iterator but not an iterable", () => {
     const iterator = [1, 2, 3].values();
     const callback = <T>(x: T): Iterator<T> => {
       let count = 0;
       return Object.assign(Object.create(iteratorPrototype), {
-        next: () => {
+        next() {
           if (count === 0) {
-            count++;
+            ++count;
             return { value: x };
+          }
+          if (count === 1) {
+            ++count;
+            return { value: x, done: true };
           }
           return { done: true };
         },
@@ -160,10 +167,11 @@ describe("Iterator.prototype.flatMap", () => {
     const callback = <T>(x: T): Iterable<T> => ({
       [Symbol.iterator]: function* () {
         yield x;
+        yield x;
       },
     });
     const flatMapResult = iterator.flatMap(callback);
-    expect([...flatMapResult]).toStrictEqual([1, 2, 3]);
+    expect([...flatMapResult]).toStrictEqual([1, 1, 2, 2, 3, 3]);
   });
 
   it("callback returns both an iterable and an iterator", () => {
@@ -178,7 +186,10 @@ describe("Iterator.prototype.flatMap", () => {
   it("throws a TypeError when the callback does not return an iterator or iterable", () => {
     const iterator = [1, 2, 3].values();
     const invalidCallback = <T>(x: T): T => x;
+
     // @ts-expect-error Incorrect callback return type
-    expect(() => iterator.flatMap(invalidCallback).next()).toThrow(TypeError);
+    const flatMapResult = iterator.flatMap(invalidCallback);
+
+    expect(() => flatMapResult.next()).toThrow(TypeError);
   });
 });
