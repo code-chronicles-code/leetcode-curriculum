@@ -1,5 +1,8 @@
 package union_find;
 
+/**
+ * The classic disjoint-set data structure!
+ */
 public class UnionFind {
 
   private final int[] parent;

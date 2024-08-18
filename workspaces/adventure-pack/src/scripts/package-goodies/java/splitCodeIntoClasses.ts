@@ -13,8 +13,24 @@ export function splitCodeIntoClasses(
   const classes: Record<string, { code: string[]; declaration: string }> = {};
 
   let currentClassName: string | null = null;
+  let isInMultiLineComment = false;
   const annotations = [];
+  const multiLineComment = [];
   for (const line of getLines(code)) {
+    if (isInMultiLineComment) {
+      multiLineComment.push(line);
+      if (line.includes("*/")) {
+        isInMultiLineComment = false;
+      }
+      continue;
+    }
+
+    if (line.startsWith("/*")) {
+      isInMultiLineComment = true;
+      multiLineComment.push(line);
+      continue;
+    }
+
     if (/^\@\S.*$/s.test(line)) {
       invariant(
         currentClassName == null,
@@ -37,6 +53,7 @@ export function splitCodeIntoClasses(
       classes[currentClassName] = {
         code: [],
         declaration:
+          multiLineComment.join("") +
           annotations.join("") +
           [
             ...Array.from(modifiers).sort(compareStringsCaseInsensitive),
@@ -46,6 +63,7 @@ export function splitCodeIntoClasses(
             .join(" "),
       };
       annotations.length = 0;
+      multiLineComment.length = 0;
 
       if (/}\n*$/.test(line)) {
         currentClassName = null;
@@ -70,6 +88,7 @@ export function splitCodeIntoClasses(
 
   invariant(currentClassName == null, "Unfinished class?");
   invariant(annotations.length === 0, "Orphaned annotations?");
+  invariant(multiLineComment.length === 0, "Orphaned multi-line comment?");
 
   for (const classToIgnore of CLASSES_TO_IGNORE) {
     delete classes[classToIgnore];

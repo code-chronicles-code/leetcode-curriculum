@@ -35,9 +35,11 @@ public final class AP {
   }
 }
 
+/**
+ * The TreeNode class provided by LeetCode.
+ * It will be omitted from the goody output, but is needed for compilation.
+ */
 class TreeNode {
-
-  // Class representing a single node in the binary tree.
 
   int val;
   TreeNode left;
