@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "challenges",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -22,7 +21,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -34,7 +32,6 @@
     {
       "name": "startDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -45,7 +42,6 @@
     },
     {
       "name": "weeklyChallenges",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

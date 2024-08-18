@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "recommendedStudyPlans",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -29,7 +27,6 @@
     },
     {
       "name": "slug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

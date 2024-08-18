@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "backLink",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "nextQuestion",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionNode",
         "kind": "OBJECT"
@@ -34,7 +31,6 @@
     },
     {
       "name": "previousQuestion",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionNode",
         "kind": "OBJECT"

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "banner",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "bannerBackground",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -20,7 +18,6 @@
     },
     {
       "name": "categorySlug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -28,7 +25,6 @@
     },
     {
       "name": "categoryTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -37,7 +33,6 @@
     {
       "name": "chapters",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -54,7 +49,6 @@
     },
     {
       "name": "codingChallengeInfo",
-      "isDeprecated": false,
       "type": {
         "name": "CodingChallengeNode",
         "kind": "OBJECT"
@@ -63,7 +57,6 @@
     {
       "name": "createdAt",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -75,7 +68,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -83,7 +75,6 @@
     },
     {
       "name": "discussCategory",
-      "isDeprecated": false,
       "type": {
         "name": "DiscussCategoryNode",
         "kind": "OBJECT"
@@ -92,7 +83,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -103,7 +93,6 @@
     },
     {
       "name": "img",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -112,7 +101,6 @@
     {
       "name": "introduction",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -120,7 +108,6 @@
     },
     {
       "name": "introText",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -128,7 +115,6 @@
     },
     {
       "name": "isFavorite",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -136,7 +122,6 @@
     },
     {
       "name": "isFeatured",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -144,7 +129,6 @@
     },
     {
       "name": "isPreview",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -152,7 +136,6 @@
     },
     {
       "name": "items",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -164,7 +147,6 @@
     {
       "name": "lastModified",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -175,7 +157,6 @@
     },
     {
       "name": "numChapters",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -183,7 +164,6 @@
     },
     {
       "name": "numItems",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -191,7 +171,6 @@
     },
     {
       "name": "numUsersCompleted",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -199,7 +178,6 @@
     },
     {
       "name": "numUsersStarted",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -208,7 +186,6 @@
     {
       "name": "paidOnly",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -219,7 +196,6 @@
     },
     {
       "name": "popularity",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -227,7 +203,6 @@
     },
     {
       "name": "prevCompleteLinkInfo",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -235,7 +210,6 @@
     },
     {
       "name": "progress",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -244,7 +218,6 @@
     {
       "name": "published",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -256,7 +229,6 @@
     {
       "name": "sequentialOnly",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -267,7 +239,6 @@
     },
     {
       "name": "shareEvent",
-      "isDeprecated": false,
       "type": {
         "name": "ShareEventNode",
         "kind": "OBJECT"
@@ -276,7 +247,6 @@
     {
       "name": "slug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -288,7 +258,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -299,7 +268,6 @@
     },
     {
       "name": "users",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -307,7 +275,6 @@
     },
     {
       "name": "valueAddedContent",
-      "isDeprecated": false,
       "type": {
         "name": "ValueAddedContentNode",
         "kind": "OBJECT"

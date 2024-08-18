@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "activityType",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     {
       "name": "dateCreated",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -28,7 +26,6 @@
     {
       "name": "id",
       "description": "The ID of the object.",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -40,7 +37,6 @@
     {
       "name": "isBaseline",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -51,7 +47,6 @@
     },
     {
       "name": "payload",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -60,7 +55,6 @@
     {
       "name": "question",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -72,7 +66,6 @@
     {
       "name": "user",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "PrivateContestUserNode",
         "kind": "OBJECT"

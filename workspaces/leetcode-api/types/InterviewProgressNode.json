@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "lastSavedCode",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -23,7 +21,6 @@
     },
     {
       "name": "questionId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -34,7 +31,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

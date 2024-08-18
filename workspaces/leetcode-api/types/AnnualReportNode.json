@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "badge",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "content",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -29,7 +27,6 @@
     },
     {
       "name": "showPopup",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

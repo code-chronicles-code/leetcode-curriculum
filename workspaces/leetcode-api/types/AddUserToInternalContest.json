@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "error",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "user",
-      "isDeprecated": false,
       "type": {
         "name": "UserNode",
         "kind": "OBJECT"

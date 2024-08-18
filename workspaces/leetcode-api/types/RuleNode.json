@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "difficultyNames",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -18,7 +17,6 @@
     },
     {
       "name": "knowledgeNames",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -32,7 +30,6 @@
     },
     {
       "name": "languageName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

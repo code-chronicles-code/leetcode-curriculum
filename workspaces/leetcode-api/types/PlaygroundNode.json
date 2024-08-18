@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "folder",
-      "isDeprecated": false,
       "type": {
         "name": "PlaygroundFolderNode",
         "kind": "OBJECT"
@@ -12,7 +11,6 @@
     },
     {
       "name": "isLive",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -20,7 +18,6 @@
     },
     {
       "name": "isShared",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -28,7 +25,6 @@
     },
     {
       "name": "isUserOwner",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -37,7 +33,6 @@
     {
       "name": "modifiedDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -49,7 +44,6 @@
     {
       "name": "name",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -61,7 +55,6 @@
     {
       "name": "playgroundcodeSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -79,7 +72,6 @@
     {
       "name": "selectedLang",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "PlaygroundSelectedLang",
         "kind": "ENUM"
@@ -87,7 +79,6 @@
     },
     {
       "name": "selectedLangSlug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -95,7 +86,6 @@
     },
     {
       "name": "showOpenInPlayground",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -103,7 +93,6 @@
     },
     {
       "name": "showRunCode",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -112,7 +101,6 @@
     {
       "name": "testcaseInput",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -124,7 +112,6 @@
     {
       "name": "uuid",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

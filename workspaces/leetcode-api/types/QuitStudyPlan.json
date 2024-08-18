@@ -6,7 +6,6 @@
     {
       "name": "deleted",
       "description": "whether delete this progress record",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     },
     {
       "name": "ok",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -28,7 +26,6 @@
     },
     {
       "name": "progressId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

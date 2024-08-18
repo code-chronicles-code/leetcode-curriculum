@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "nodes",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -18,7 +17,6 @@
     },
     {
       "name": "totalNum",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

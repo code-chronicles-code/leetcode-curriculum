@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "errors",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -18,7 +17,6 @@
     },
     {
       "name": "ok",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"

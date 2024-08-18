@@ -5,7 +5,6 @@
     {
       "name": "aboutMe",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "acStats",
-      "isDeprecated": false,
       "type": {
         "name": "AcStatsNode",
         "kind": "OBJECT"
@@ -24,7 +22,6 @@
     },
     {
       "name": "age",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -33,7 +30,6 @@
     {
       "name": "birthday",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -41,7 +37,6 @@
     },
     {
       "name": "categoryDiscussCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -52,7 +47,6 @@
     },
     {
       "name": "categoryDiscussCountDiff",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -63,7 +57,6 @@
     },
     {
       "name": "company",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -71,7 +64,6 @@
     },
     {
       "name": "contestCount",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -80,7 +72,6 @@
     {
       "name": "country",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "UserProfileCountry",
         "kind": "ENUM"
@@ -88,7 +79,6 @@
     },
     {
       "name": "countryCode",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -96,7 +86,6 @@
     },
     {
       "name": "countryName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -104,7 +93,6 @@
     },
     {
       "name": "displayMySubmissionHistory",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -112,7 +100,6 @@
     },
     {
       "name": "education",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -120,7 +107,6 @@
     },
     {
       "name": "gender",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -128,7 +114,6 @@
     },
     {
       "name": "globalRanking",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -136,7 +121,6 @@
     },
     {
       "name": "jobTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -144,7 +128,6 @@
     },
     {
       "name": "joinStudyPlanLeaderboard",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -153,7 +136,6 @@
     {
       "name": "lastModified",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -164,7 +146,6 @@
     },
     {
       "name": "location",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -173,7 +154,6 @@
     {
       "name": "occupation",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "UserProfileOccupation",
         "kind": "ENUM"
@@ -181,7 +161,6 @@
     },
     {
       "name": "postViewCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -192,7 +171,6 @@
     },
     {
       "name": "postViewCountDiff",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -203,7 +181,6 @@
     },
     {
       "name": "privacyContact",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -211,7 +188,6 @@
     },
     {
       "name": "publicBadgeType",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -222,7 +198,6 @@
     },
     {
       "name": "ranking",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -234,7 +209,6 @@
     {
       "name": "realName",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -245,7 +219,6 @@
     },
     {
       "name": "reputation",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -256,7 +229,6 @@
     },
     {
       "name": "reputationDiff",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -267,7 +239,6 @@
     },
     {
       "name": "rewardStats",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -278,7 +249,6 @@
     },
     {
       "name": "school",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -286,7 +256,6 @@
     },
     {
       "name": "skillTags",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -300,7 +269,6 @@
     },
     {
       "name": "solutionCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -311,7 +279,6 @@
     },
     {
       "name": "solutionCountDiff",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -322,7 +289,6 @@
     },
     {
       "name": "starRating",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -333,7 +299,6 @@
     },
     {
       "name": "userAvatar",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -342,7 +307,6 @@
     {
       "name": "userSlug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -353,7 +317,6 @@
     },
     {
       "name": "websites",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -364,7 +327,6 @@
     },
     {
       "name": "yearsOfExperience",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

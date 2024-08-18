@@ -5,7 +5,6 @@
     {
       "name": "companySet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +22,6 @@
     {
       "name": "createdAt",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -35,7 +33,6 @@
     {
       "name": "discussTopicTag",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -53,7 +50,6 @@
     {
       "name": "favorites",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -71,7 +67,6 @@
     {
       "name": "favoriteSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -88,7 +83,6 @@
     },
     {
       "name": "frequencies",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -97,7 +91,6 @@
     {
       "name": "hotScore",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -106,7 +99,6 @@
     {
       "name": "id",
       "description": "The ID of the object.",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -118,7 +110,6 @@
     {
       "name": "imgUrl",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -127,7 +118,6 @@
     {
       "name": "interviewTagsCategories",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -145,7 +135,6 @@
     {
       "name": "isEnabled",
       "description": "Deprecated in Tag System. Still used by old products.",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -157,7 +146,6 @@
     {
       "name": "isStandard",
       "description": "Whether this is a standard tag or not",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -169,7 +157,6 @@
     {
       "name": "isTagEnabled",
       "description": "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users.",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -181,7 +168,6 @@
     {
       "name": "isUserSelectable",
       "description": "Whether user can select this tag or not",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -193,7 +179,6 @@
     {
       "name": "keywords",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -205,7 +190,6 @@
     {
       "name": "name",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -217,7 +201,6 @@
     {
       "name": "questionapplicationSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -234,7 +217,6 @@
     },
     {
       "name": "questionIds",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -245,7 +227,6 @@
     },
     {
       "name": "questions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -260,7 +241,6 @@
     {
       "name": "slug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -272,7 +252,6 @@
     {
       "name": "tagCategories",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -289,7 +268,6 @@
     },
     {
       "name": "tagId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -301,7 +279,6 @@
     {
       "name": "tagType",
       "description": "Deprecated in Tag System. Still used by old products.",
-      "isDeprecated": false,
       "type": {
         "name": "TagTypeNode",
         "kind": "OBJECT"
@@ -309,7 +286,6 @@
     },
     {
       "name": "translatedName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

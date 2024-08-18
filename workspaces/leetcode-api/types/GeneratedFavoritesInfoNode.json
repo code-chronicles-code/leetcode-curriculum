@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "categoriesToSlugs",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -18,7 +17,6 @@
     },
     {
       "name": "defaultFavoriteSlug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

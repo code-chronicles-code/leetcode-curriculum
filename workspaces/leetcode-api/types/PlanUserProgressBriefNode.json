@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "allCompletedAt",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "finishedQuestionNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +21,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -34,7 +31,6 @@
     },
     {
       "name": "latestSubmissionAt",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -45,7 +41,6 @@
     },
     {
       "name": "nextQuestionInfo",
-      "isDeprecated": false,
       "type": {
         "name": "PlanNextQuestionNode",
         "kind": "OBJECT"
@@ -53,7 +48,6 @@
     },
     {
       "name": "plan",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -64,7 +58,6 @@
     },
     {
       "name": "quittedAt",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -72,7 +65,6 @@
     },
     {
       "name": "startedAt",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

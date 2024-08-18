@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "codeDefinitions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "drivers",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "frontendPreviews",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

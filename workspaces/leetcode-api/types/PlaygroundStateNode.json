@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "createdNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "upperLimitToCreate",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

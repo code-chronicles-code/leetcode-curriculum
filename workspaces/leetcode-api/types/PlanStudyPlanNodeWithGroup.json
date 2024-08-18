@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "allowedLanguages",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     {
       "name": "awarded",
       "description": "Whether to get reward",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -27,7 +25,6 @@
     },
     {
       "name": "dailyQuestionNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -39,7 +36,6 @@
     {
       "name": "days",
       "description": "Period (number of days)",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -51,7 +47,6 @@
     {
       "name": "easy",
       "description": "Number of easy questions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -63,7 +58,6 @@
     {
       "name": "group",
       "description": "Study Plan Group",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -75,7 +69,6 @@
     {
       "name": "hard",
       "description": "Number of hard questions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -86,7 +79,6 @@
     },
     {
       "name": "hasPremiumQuestion",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -97,7 +89,6 @@
     },
     {
       "name": "hint",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -109,7 +100,6 @@
     {
       "name": "medal",
       "description": "Medal corresponding to the plan",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -121,7 +111,6 @@
     {
       "name": "medium",
       "description": "Number of medium questions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -132,7 +121,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -144,7 +132,6 @@
     {
       "name": "ordering",
       "description": "Plan ordering in the study group",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -155,7 +142,6 @@
     },
     {
       "name": "premiumOnly",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -166,7 +152,6 @@
     },
     {
       "name": "slug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

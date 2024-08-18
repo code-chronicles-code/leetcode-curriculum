@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "advanced",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -21,7 +20,6 @@
     },
     {
       "name": "fundamental",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -38,7 +36,6 @@
     },
     {
       "name": "intermediate",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "positionOptions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "timeOptions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {

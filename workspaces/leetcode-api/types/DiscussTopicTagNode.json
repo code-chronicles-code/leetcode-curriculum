@@ -5,7 +5,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "name",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -28,7 +26,6 @@
     },
     {
       "name": "numTopics",
-      "isDeprecated": false,
       "args": [
         {
           "name": "otherTag",
@@ -49,7 +46,6 @@
     {
       "name": "order",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -61,7 +57,6 @@
     {
       "name": "slug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -73,7 +68,6 @@
     {
       "name": "tagFk",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "TagNode",
         "kind": "OBJECT"
@@ -82,7 +76,6 @@
     {
       "name": "tagType",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "TopicTagTagType",
         "kind": "ENUM"
@@ -91,7 +84,6 @@
     {
       "name": "topicSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

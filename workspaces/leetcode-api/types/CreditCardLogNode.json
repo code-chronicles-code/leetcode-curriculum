@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "action",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "operator",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -27,7 +25,6 @@
     {
       "name": "timestamp",
       "description": "In seconds",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

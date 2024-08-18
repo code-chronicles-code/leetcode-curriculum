@@ -5,7 +5,6 @@
     {
       "name": "canComplete",
       "description": "Whether the user can complete this task or not",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "day",
       "description": "Day that task will become available for completion",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -28,7 +26,6 @@
     },
     {
       "name": "desc",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -40,7 +37,6 @@
     {
       "name": "hasComplete",
       "description": "Whether the task has been completed",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -52,7 +48,6 @@
     {
       "name": "ordering",
       "description": "Sequence of questions in study plan",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -63,7 +58,6 @@
     },
     {
       "name": "question",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

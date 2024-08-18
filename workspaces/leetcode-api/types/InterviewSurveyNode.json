@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "companies",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "interviewedUrl",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -23,7 +21,6 @@
     },
     {
       "name": "popularCompanies",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -34,7 +31,6 @@
     },
     {
       "name": "positions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "stageOptions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -59,7 +54,6 @@
     },
     {
       "name": "timeOptions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "configurableNotificationTypes",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "slug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -23,7 +21,6 @@
     },
     {
       "name": "title",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

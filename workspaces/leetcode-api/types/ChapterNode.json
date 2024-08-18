@@ -5,7 +5,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -13,7 +12,6 @@
     },
     {
       "name": "descriptionText",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -22,7 +20,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -33,7 +30,6 @@
     },
     {
       "name": "isLocked",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -41,7 +37,6 @@
     },
     {
       "name": "items",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -53,7 +48,6 @@
     {
       "name": "paidOnly",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -64,7 +58,6 @@
     },
     {
       "name": "shareEvent",
-      "isDeprecated": false,
       "type": {
         "name": "ShareEventNode",
         "kind": "OBJECT"
@@ -73,7 +66,6 @@
     {
       "name": "slug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -85,7 +77,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

@@ -5,7 +5,6 @@
     {
       "name": "anonymous",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "asTopic",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -24,7 +22,6 @@
     },
     {
       "name": "author",
-      "isDeprecated": false,
       "type": {
         "name": "UserNode",
         "kind": "OBJECT"
@@ -32,7 +29,6 @@
     },
     {
       "name": "authorAdminOnly",
-      "isDeprecated": false,
       "type": {
         "name": "UserNodeAdminOnly",
         "kind": "OBJECT"
@@ -40,7 +36,6 @@
     },
     {
       "name": "authorIsModerator",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -48,7 +43,6 @@
     },
     {
       "name": "coinRewards",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -65,7 +59,6 @@
     },
     {
       "name": "comment",
-      "isDeprecated": false,
       "type": {
         "name": "CommentNode",
         "kind": "OBJECT"
@@ -73,7 +66,6 @@
     },
     {
       "name": "commentId",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -82,7 +74,6 @@
     {
       "name": "content",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -93,7 +84,6 @@
     },
     {
       "name": "contentPreview",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -101,7 +91,6 @@
     },
     {
       "name": "creationDate",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -109,7 +98,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -120,7 +108,6 @@
     },
     {
       "name": "isHidden",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -128,7 +115,6 @@
     },
     {
       "name": "isOwnPost",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -136,7 +122,6 @@
     },
     {
       "name": "isReported",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -144,7 +129,6 @@
     },
     {
       "name": "mentionedUsers",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -156,7 +140,6 @@
     {
       "name": "nodebbPid",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -168,7 +151,6 @@
     {
       "name": "originalContent",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -179,7 +161,6 @@
     },
     {
       "name": "peek",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -187,7 +168,6 @@
     },
     {
       "name": "reports",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -199,7 +179,6 @@
     {
       "name": "searchScore",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -210,7 +189,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -218,7 +196,6 @@
     },
     {
       "name": "topic",
-      "isDeprecated": false,
       "type": {
         "name": "TopicNode",
         "kind": "OBJECT"
@@ -226,7 +203,6 @@
     },
     {
       "name": "topicId",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -234,7 +210,6 @@
     },
     {
       "name": "topicTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -242,7 +217,6 @@
     },
     {
       "name": "updationDate",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -251,7 +225,6 @@
     {
       "name": "voteCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -263,7 +236,6 @@
     {
       "name": "voteSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -280,7 +252,6 @@
     },
     {
       "name": "voteStatus",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -289,7 +260,6 @@
     {
       "name": "voteUpCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

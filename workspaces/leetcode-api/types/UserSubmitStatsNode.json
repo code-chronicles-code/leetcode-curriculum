@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "acSubmissionNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -21,7 +20,6 @@
     },
     {
       "name": "totalSubmissionNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "currentGlobalRanking",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "currentRating",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -20,7 +18,6 @@
     },
     {
       "name": "dataRegion",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -28,7 +25,6 @@
     },
     {
       "name": "ranking",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -36,7 +32,6 @@
     },
     {
       "name": "user",
-      "isDeprecated": false,
       "type": {
         "name": "UserNode",
         "kind": "OBJECT"

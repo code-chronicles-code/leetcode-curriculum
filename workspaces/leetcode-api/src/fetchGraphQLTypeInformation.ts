@@ -5,15 +5,11 @@ import {
   type OptionalInsteadOfNullishValues,
   removeKeysWithNullishValues,
 } from "@code-chronicles/util/removeKeysWithNullishValues";
+import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
 import { sortByName } from "./sortByName";
-
-// TODO: utility
-function squashWhitespace(s: string) {
-  return s.trim().replace(/\s+/g, " ");
-}
 
 function getTypeFields(depth: number): string {
   const base = "name kind";
@@ -30,6 +26,8 @@ const FRAGMENT = squashWhitespace(`
     enumValues(includeDeprecated: true) {
       name
       description
+      isDeprecated
+      deprecationReason
     }
     fields(includeDeprecated: true) {
       name
@@ -130,13 +128,24 @@ export const graphqlTypeZodType = z.record(
     .extend({
       kind: graphqlKindTypeZodType,
       enumValues: z
-        .array(nameAndDescriptionZodType.transform(removeKeysWithNullishValues))
+        .array(
+          nameAndDescriptionZodType
+            .extend({
+              isDeprecated: z
+                .boolean()
+                .transform((isDeprecated) => isDeprecated || null),
+              deprecationReason: z.string().nullable(),
+            })
+            .transform(removeKeysWithNullishValues),
+        )
         .nullable(),
       fields: z
         .array(
           nameAndDescriptionZodType
             .extend({
-              isDeprecated: z.boolean(),
+              isDeprecated: z
+                .boolean()
+                .transform((isDeprecated) => isDeprecated || null),
               deprecationReason: z.string().nullable(),
               args: z
                 .array(

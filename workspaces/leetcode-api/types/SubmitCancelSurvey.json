@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "error",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

@@ -4,8 +4,7 @@
   "fields": [
     {
       "name": "content",
-      "description": "Resolves the following template variables automatically:<ul><li>suggested_q_slug</li><li>suggested_q_title</li><li>blocks</li><li>next_biweekly_contest_formatted_date</li><li>site_base_url</li><li>next_javascript_dcc_link</li><li>q_difficulty_w_article</li><li>next_biweekly_contest_time_url</li><li>next_contest_title_slug</li><li>current_year</li><li>next_javascript_dcc_editorial_link</li><li>next_biweekly_contest_title</li><li>q_difficulty_mandarin</li><li>next_javascript_dcc_day</li><li>username</li><li>next_biweekly_contest_title_slug</li><li>unsubscribe_url</li><li>next_biweekly_contest_time_by_timezone</li><li>q_num_ac_subs</li><li>next_contest_title</li><li>real_name</li><li>next_contest_time_by_timezone</li><li>q_description</li><li>next_contest_formatted_date</li><li>storage_base_url</li><li>next_contest_url</li><li>next_biweekly_contest_url</li><li>next_contest_time_url</li></ul>",
-      "isDeprecated": false,
+      "description": "Resolves the following template variables automatically:<ul><li>next_biweekly_contest_formatted_date</li><li>suggested_q_title</li><li>next_javascript_dcc_day</li><li>next_javascript_dcc_editorial_link</li><li>q_difficulty_w_article</li><li>suggested_q_slug</li><li>real_name</li><li>next_contest_title_slug</li><li>next_biweekly_contest_url</li><li>site_base_url</li><li>next_contest_time_by_timezone</li><li>next_contest_formatted_date</li><li>q_num_ac_subs</li><li>next_biweekly_contest_title</li><li>q_difficulty_mandarin</li><li>storage_base_url</li><li>next_biweekly_contest_time_url</li><li>current_year</li><li>next_contest_title</li><li>username</li><li>unsubscribe_url</li><li>next_contest_url</li><li>next_biweekly_contest_title_slug</li><li>next_javascript_dcc_link</li><li>blocks</li><li>next_contest_time_url</li><li>next_biweekly_contest_time_by_timezone</li><li>q_description</li></ul>",
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "conversionTargetUrlTemplates",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -25,7 +23,6 @@
     {
       "name": "emaileventSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -43,7 +40,6 @@
     {
       "name": "emailsendsessionSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -61,7 +57,6 @@
     {
       "name": "emailSubject",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -73,7 +68,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -85,7 +79,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

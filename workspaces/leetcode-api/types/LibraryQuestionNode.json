@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "activities",
-      "isDeprecated": false,
       "args": [
         {
           "name": "after",
@@ -52,7 +51,6 @@
     },
     {
       "name": "attachments",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -66,7 +64,6 @@
     },
     {
       "name": "canEdit",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -77,7 +74,6 @@
     },
     {
       "name": "codeDefinitions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -92,7 +88,6 @@
     {
       "name": "codedefinitionSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -110,7 +105,6 @@
     {
       "name": "content",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -121,7 +115,6 @@
     },
     {
       "name": "contribution",
-      "isDeprecated": false,
       "type": {
         "name": "ContributionNode",
         "kind": "OBJECT"
@@ -130,7 +123,6 @@
     {
       "name": "contributors",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -148,7 +140,6 @@
     {
       "name": "contributorSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -166,7 +157,6 @@
     {
       "name": "createDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -178,7 +168,6 @@
     {
       "name": "createdBy",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "PrivateContestUserNode",
         "kind": "OBJECT"
@@ -186,7 +175,6 @@
     },
     {
       "name": "customLimits",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -195,7 +183,6 @@
     {
       "name": "customMatcher",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -206,7 +193,6 @@
     },
     {
       "name": "defaultCustomMatchers",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -217,7 +203,6 @@
     },
     {
       "name": "defaultValidator",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -228,7 +213,6 @@
     },
     {
       "name": "difficulty",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -239,7 +223,6 @@
     },
     {
       "name": "drivers",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -257,7 +240,6 @@
     {
       "name": "driverSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -275,7 +257,6 @@
     {
       "name": "followup",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -286,7 +267,6 @@
     },
     {
       "name": "frontendPreviews",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -304,7 +284,6 @@
     {
       "name": "frontendpreviewSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -321,7 +300,6 @@
     },
     {
       "name": "frontendQuestionId",
-      "isDeprecated": false,
       "type": {
         "name": "ID",
         "kind": "SCALAR"
@@ -329,7 +307,6 @@
     },
     {
       "name": "hasFrontendPreview",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -337,7 +314,6 @@
     },
     {
       "name": "hideLastTestcases",
-      "isDeprecated": false,
       "type": {
         "name": "LibraryHideLastTestcases",
         "kind": "OBJECT"
@@ -345,7 +321,6 @@
     },
     {
       "name": "hidelasttestcases",
-      "isDeprecated": false,
       "type": {
         "name": "LibraryHideLastTestcases",
         "kind": "OBJECT"
@@ -353,7 +328,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -365,7 +339,6 @@
     {
       "name": "includeHeaders",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -377,7 +350,6 @@
     {
       "name": "inputCpp",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -388,7 +360,6 @@
     },
     {
       "name": "isCustom",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -397,7 +368,6 @@
     {
       "name": "isMultitestsQuestion",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -406,7 +376,6 @@
     {
       "name": "isPrivate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -417,7 +386,6 @@
     },
     {
       "name": "isSystemDesign",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -426,7 +394,6 @@
     {
       "name": "lastModified",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -437,7 +404,6 @@
     },
     {
       "name": "latestActivity",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionActivityNode",
         "kind": "OBJECT"
@@ -446,7 +412,6 @@
     {
       "name": "libraryactivitySet",
       "description": "",
-      "isDeprecated": false,
       "args": [
         {
           "name": "after",
@@ -494,7 +459,6 @@
     },
     {
       "name": "matchType",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -505,7 +469,6 @@
     },
     {
       "name": "mergedContent",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -516,7 +479,6 @@
     },
     {
       "name": "metadata",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -527,7 +489,6 @@
     },
     {
       "name": "multiTestcases",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -545,7 +506,6 @@
     {
       "name": "multitestcaseSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -563,7 +523,6 @@
     {
       "name": "note",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -574,7 +533,6 @@
     },
     {
       "name": "prodQuestion",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionNode",
         "kind": "OBJECT"
@@ -582,7 +540,6 @@
     },
     {
       "name": "prodTestcase",
-      "isDeprecated": false,
       "type": {
         "name": "ProdTestcase",
         "kind": "OBJECT"
@@ -591,7 +548,6 @@
     {
       "name": "publishedRevisionId",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -602,7 +558,6 @@
     },
     {
       "name": "publishError",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -613,7 +568,6 @@
     },
     {
       "name": "publishStatus",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -625,7 +579,6 @@
     {
       "name": "questionapplicationSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -643,7 +596,6 @@
     {
       "name": "questionattachmentSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -660,7 +612,6 @@
     },
     {
       "name": "questionTypes",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -678,7 +629,6 @@
     {
       "name": "revisionId",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -689,7 +639,6 @@
     },
     {
       "name": "sampleTestcase",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -700,7 +649,6 @@
     },
     {
       "name": "solutions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -718,7 +666,6 @@
     {
       "name": "solutionSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -735,7 +682,6 @@
     },
     {
       "name": "syncCategories",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -752,7 +698,6 @@
     },
     {
       "name": "testcase",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -764,7 +709,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -775,7 +719,6 @@
     },
     {
       "name": "validator",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

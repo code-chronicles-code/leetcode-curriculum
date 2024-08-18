@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "content",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "questionId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "submission",
-      "isDeprecated": false,
       "type": {
         "name": "InterviewSubmissionNode",
         "kind": "OBJECT"
@@ -34,7 +31,6 @@
     },
     {
       "name": "submissionHistory",
-      "isDeprecated": false,
       "args": [
         {
           "name": "after",

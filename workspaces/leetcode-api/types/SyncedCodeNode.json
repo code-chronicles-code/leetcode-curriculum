@@ -5,7 +5,6 @@
     {
       "name": "code",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "timestamp",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

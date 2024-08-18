@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "contest",
-      "isDeprecated": false,
       "type": {
         "name": "ContestNode",
         "kind": "OBJECT"
@@ -12,7 +11,6 @@
     },
     {
       "name": "finishTime",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -21,7 +19,6 @@
     {
       "name": "ranking",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -33,7 +30,6 @@
     {
       "name": "score",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -44,7 +40,6 @@
     },
     {
       "name": "startTime",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -53,7 +48,6 @@
     {
       "name": "totalAcQuestions",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -64,7 +58,6 @@
     },
     {
       "name": "totalQuestions",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -72,7 +65,6 @@
     },
     {
       "name": "totalScore",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -80,7 +72,6 @@
     },
     {
       "name": "totalUsers",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

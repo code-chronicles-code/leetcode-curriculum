@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "autocompleteLanguages",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "chinaProblemDiscuss",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -20,7 +18,6 @@
     },
     {
       "name": "cnJobs",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -28,7 +25,6 @@
     },
     {
       "name": "contest",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -36,7 +32,6 @@
     },
     {
       "name": "dangerZone",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -44,7 +39,6 @@
     },
     {
       "name": "discuss",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -52,7 +46,6 @@
     },
     {
       "name": "enableAiHelper",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -60,7 +53,6 @@
     },
     {
       "name": "enableAllQuestionsRaw",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -68,7 +60,6 @@
     },
     {
       "name": "enableAutocomplete",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -76,7 +67,6 @@
     },
     {
       "name": "enableAutocompletePremium",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -84,7 +74,6 @@
     },
     {
       "name": "enableCfTurnstile",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -92,7 +81,6 @@
     },
     {
       "name": "enableChannels",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -100,7 +88,6 @@
     },
     {
       "name": "enableCodingChallengeV2",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -108,7 +95,6 @@
     },
     {
       "name": "enableDebugger",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -116,7 +102,6 @@
     },
     {
       "name": "enableDebuggerPremium",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -124,7 +109,6 @@
     },
     {
       "name": "enableFrontendCategory",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -132,7 +116,6 @@
     },
     {
       "name": "enableIndiaPricing",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -140,7 +123,6 @@
     },
     {
       "name": "enableLcIde",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -148,7 +130,6 @@
     },
     {
       "name": "enableLegacyStudyPlanEntry",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -156,7 +137,6 @@
     },
     {
       "name": "enableNewPlanRankBoardAccess",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -164,7 +144,6 @@
     },
     {
       "name": "enableNewProfile",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -172,7 +151,6 @@
     },
     {
       "name": "enableNewQdPage",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -180,7 +158,6 @@
     },
     {
       "name": "enableNewStudyPlan",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -188,7 +165,6 @@
     },
     {
       "name": "enableRecaptchaV3",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -196,7 +172,6 @@
     },
     {
       "name": "enableReferralDiscount",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -204,7 +179,6 @@
     },
     {
       "name": "enableSharedWorker",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -212,7 +186,6 @@
     },
     {
       "name": "enableStoreShippingForm",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -220,7 +193,6 @@
     },
     {
       "name": "interview",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -228,7 +200,6 @@
     },
     {
       "name": "maxTimeTravelTicketCount",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -236,7 +207,6 @@
     },
     {
       "name": "mockInterview",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -244,7 +214,6 @@
     },
     {
       "name": "questionTranslation",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -252,7 +221,6 @@
     },
     {
       "name": "signUp",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -260,7 +228,6 @@
     },
     {
       "name": "socialProviders",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -268,7 +235,6 @@
     },
     {
       "name": "store",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -276,7 +242,6 @@
     },
     {
       "name": "studentFooter",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -284,7 +249,6 @@
     },
     {
       "name": "subscription",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"

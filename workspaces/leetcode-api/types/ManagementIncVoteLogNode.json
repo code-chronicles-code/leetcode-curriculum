@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "createdAt",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "createdBy",
-      "isDeprecated": false,
       "type": {
         "name": "UserNode",
         "kind": "OBJECT"
@@ -23,7 +21,6 @@
     },
     {
       "name": "positionTag",
-      "isDeprecated": false,
       "type": {
         "name": "CommonTagNode",
         "kind": "OBJECT"
@@ -31,7 +28,6 @@
     },
     {
       "name": "votedDate",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -42,7 +38,6 @@
     },
     {
       "name": "votedNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

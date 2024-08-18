@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "applicant",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "applyTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "attachments",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -40,7 +37,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -51,7 +47,6 @@
     },
     {
       "name": "notes",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -62,7 +57,6 @@
     },
     {
       "name": "premiumInfos",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -73,7 +67,6 @@
     },
     {
       "name": "reviewedTime",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -81,7 +74,6 @@
     },
     {
       "name": "sku",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -92,7 +84,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -103,7 +94,6 @@
     },
     {
       "name": "trialDays",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -114,7 +104,6 @@
     },
     {
       "name": "userInfo",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -125,7 +114,6 @@
     },
     {
       "name": "uuid",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

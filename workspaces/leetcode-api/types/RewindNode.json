@@ -5,7 +5,6 @@
     {
       "name": "ageInDays",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "attendedContestCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -28,7 +26,6 @@
     },
     {
       "name": "badges",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -39,7 +36,6 @@
     },
     {
       "name": "currentGlobalRank",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -48,7 +44,6 @@
     {
       "name": "dccSolvedCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -60,7 +55,6 @@
     {
       "name": "easyProblemsSolved",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -72,7 +66,6 @@
     {
       "name": "givenVoteDownCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -84,7 +77,6 @@
     {
       "name": "givenVoteUpCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -96,7 +88,6 @@
     {
       "name": "hardProblemsSolved",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -107,7 +98,6 @@
     },
     {
       "name": "highestRankedContest",
-      "isDeprecated": false,
       "type": {
         "name": "ContestNode",
         "kind": "OBJECT"
@@ -116,7 +106,6 @@
     {
       "name": "highestRankedContestId",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -127,7 +116,6 @@
     },
     {
       "name": "highestRankingInContest",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -136,7 +124,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -148,7 +135,6 @@
     {
       "name": "maxStreak",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -160,7 +146,6 @@
     {
       "name": "mediumProblemsSolved",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -171,7 +156,6 @@
     },
     {
       "name": "mostAttemptedQuestion",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionNode",
         "kind": "OBJECT"
@@ -180,7 +164,6 @@
     {
       "name": "mostAttemptedQuestionId",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -191,7 +174,6 @@
     },
     {
       "name": "mostSolvedTags",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -202,7 +184,6 @@
     },
     {
       "name": "mostUsedLanguage",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -214,7 +195,6 @@
     {
       "name": "mostUsedLanguageId",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -226,7 +206,6 @@
     {
       "name": "problemSolvePercentile",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -238,7 +217,6 @@
     {
       "name": "receivedVoteUpCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -250,7 +228,6 @@
     {
       "name": "solutionsPublished",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -262,7 +239,6 @@
     {
       "name": "tags",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -274,7 +250,6 @@
     {
       "name": "totalAcSubmissions",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -285,7 +260,6 @@
     },
     {
       "name": "totalQuestionsSolved",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -294,7 +268,6 @@
     {
       "name": "totalSubmissions",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -306,7 +279,6 @@
     {
       "name": "userId",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -318,7 +290,6 @@
     {
       "name": "year",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

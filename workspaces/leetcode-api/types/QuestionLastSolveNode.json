@@ -5,7 +5,6 @@
     {
       "name": "lastAcSession",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionSolveSessionNode",
         "kind": "OBJECT"
@@ -14,7 +13,6 @@
     {
       "name": "question",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     {
       "name": "totalSolves",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

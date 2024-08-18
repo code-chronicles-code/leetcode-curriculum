@@ -5,7 +5,6 @@
     {
       "name": "data",
       "description": "List of Plan Groups",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +22,6 @@
     {
       "name": "total",
       "description": "Number of Plan Groups",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

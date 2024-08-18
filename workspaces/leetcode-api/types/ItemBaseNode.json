@@ -5,7 +5,6 @@
     {
       "name": "article",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "ArticleNode",
         "kind": "OBJECT"
@@ -13,7 +12,6 @@
     },
     {
       "name": "cardTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -22,7 +20,6 @@
     {
       "name": "chapter",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -33,7 +30,6 @@
     },
     {
       "name": "chapterId",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -41,7 +37,6 @@
     },
     {
       "name": "chapterTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -49,7 +44,6 @@
     },
     {
       "name": "completedWithTimeTravelTicket",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -57,7 +51,6 @@
     },
     {
       "name": "hasAppliedTimeTravelTicket",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -66,7 +59,6 @@
     {
       "name": "htmlArticle",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "HtmlArticleNode",
         "kind": "OBJECT"
@@ -75,7 +67,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -86,7 +77,6 @@
     },
     {
       "name": "info",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -94,7 +84,6 @@
     },
     {
       "name": "isComplete",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -102,7 +91,6 @@
     },
     {
       "name": "isEligibleForCompletion",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -113,7 +101,6 @@
     },
     {
       "name": "lang",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -121,7 +108,6 @@
     },
     {
       "name": "numUsersCompleted",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -129,7 +115,6 @@
     },
     {
       "name": "numUsersStarted",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -137,7 +122,6 @@
     },
     {
       "name": "paidOnly",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -146,7 +130,6 @@
     {
       "name": "question",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionNode",
         "kind": "OBJECT"
@@ -154,7 +137,6 @@
     },
     {
       "name": "type",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -162,7 +144,6 @@
     },
     {
       "name": "users",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -170,7 +151,6 @@
     },
     {
       "name": "verboseLang",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -179,7 +159,6 @@
     {
       "name": "video",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "VideoNode",
         "kind": "OBJECT"
@@ -188,7 +167,6 @@
     {
       "name": "webPage",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "WebPageNode",
         "kind": "OBJECT"

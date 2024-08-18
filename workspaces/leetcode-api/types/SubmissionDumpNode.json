@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "flagType",
-      "isDeprecated": false,
       "type": {
         "name": "SubmissionFlagTypeEnum",
         "kind": "ENUM"
@@ -12,7 +11,6 @@
     },
     {
       "name": "hasNotes",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -20,7 +18,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "name": "ID",
         "kind": "SCALAR"
@@ -28,7 +25,6 @@
     },
     {
       "name": "isPending",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -36,7 +32,6 @@
     },
     {
       "name": "lang",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -44,7 +39,6 @@
     },
     {
       "name": "langName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -52,7 +46,6 @@
     },
     {
       "name": "langVerboseName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -60,7 +53,6 @@
     },
     {
       "name": "memory",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -68,7 +60,6 @@
     },
     {
       "name": "notes",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -76,7 +67,6 @@
     },
     {
       "name": "runtime",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -84,7 +74,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -92,7 +81,6 @@
     },
     {
       "name": "statusDisplay",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -100,7 +88,6 @@
     },
     {
       "name": "time",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -108,7 +95,6 @@
     },
     {
       "name": "timestamp",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -116,7 +102,6 @@
     },
     {
       "name": "title",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -124,7 +109,6 @@
     },
     {
       "name": "titleSlug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -132,7 +116,6 @@
     },
     {
       "name": "topicTags",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -143,7 +126,6 @@
     },
     {
       "name": "url",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

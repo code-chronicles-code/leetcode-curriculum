@@ -5,7 +5,6 @@
   "fields": [
     {
       "name": "description",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -13,7 +12,6 @@
     },
     {
       "name": "enumValues",
-      "isDeprecated": false,
       "args": [
         {
           "name": "includeDeprecated",
@@ -37,7 +35,6 @@
     },
     {
       "name": "fields",
-      "isDeprecated": false,
       "args": [
         {
           "name": "includeDeprecated",
@@ -61,7 +58,6 @@
     },
     {
       "name": "inputFields",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -75,7 +71,6 @@
     },
     {
       "name": "interfaces",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -89,7 +84,6 @@
     },
     {
       "name": "kind",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -100,7 +94,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -108,7 +101,6 @@
     },
     {
       "name": "ofType",
-      "isDeprecated": false,
       "type": {
         "name": "__Type",
         "kind": "OBJECT"
@@ -116,7 +108,6 @@
     },
     {
       "name": "possibleTypes",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {

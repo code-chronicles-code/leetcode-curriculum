@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "icon",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "progress",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
