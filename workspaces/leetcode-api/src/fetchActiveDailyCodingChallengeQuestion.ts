@@ -3,6 +3,8 @@ import { z } from "zod";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 import { sleep } from "@code-chronicles/util/sleep";
 import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
+import { MS_IN_SEC } from "@code-chronicles/util/timeConstants";
+import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType";
@@ -60,14 +62,7 @@ export async function fetchActiveDailyCodingChallengeQuestionWithDateValidation(
       // eslint-disable-next-line no-await-in-loop
       await fetchActiveDailyCodingChallengeQuestionWithoutDateValidation();
 
-    const now = new Date();
-    // TODO: utility
-    const today = [
-      now.getUTCFullYear(),
-      (now.getUTCMonth() + 1).toString().padStart(2, "0"),
-      now.getUTCDate().toString().padStart(2, "0"),
-    ].join("-");
-
+    const today = timestampInSecondsToYearMonthDay(Date.now() / MS_IN_SEC);
     if (res.date === today) {
       return res;
     }
