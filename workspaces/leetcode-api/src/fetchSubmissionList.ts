@@ -17,6 +17,7 @@ export const SUBMISSION_STATUS_TO_DISPLAY_TEXT: ReadonlyMap<number, string> =
     [20, "Compile Error"],
   ]);
 
+// TODO: generate from SubmissionStatusEnum in the GraphQL schema
 export const SUBMISSION_STATUS_TO_ABBREVIATION = {
   Accepted: "AC",
   "Wrong Answer": "WA",
