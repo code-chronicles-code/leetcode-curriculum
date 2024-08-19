@@ -5,11 +5,15 @@ import nullthrows from "nullthrows";
 
 import { invariantViolation } from "@code-chronicles/util/invariantViolation";
 import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
+import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 
 import type {
   InnerType,
   LeetCodeGraphQLType,
 } from "../fetchGraphQLTypeInformation";
+import { compareStrings } from "@code-chronicles/util/compareStrings";
+
+const CONCURRENT_READS = 20;
 
 function formatDescription(description: string | undefined): string {
   if (description == null || isStringEmptyOrWhitespaceOnly(description)) {
@@ -44,79 +48,83 @@ async function main(): Promise<void> {
   const interfaces: string[] = [];
   const objects: string[] = [];
 
-  for (const entry of fileEntries) {
-    if (!(entry.isFile() && entry.name.endsWith(".json"))) {
-      continue;
-    }
+  await promiseAllLimitingConcurrency(
+    fileEntries
+      .sort((a, b) => compareStrings(a.name, b.name))
+      .map((entry) => async () => {
+        if (!(entry.isFile() && entry.name.endsWith(".json"))) {
+          return;
+        }
 
-    const graphqlTypeInfo = JSON.parse(
-      // eslint-disable-next-line no-await-in-loop
-      await readFile(path.join("types", entry.name), "utf8"),
-    ) as LeetCodeGraphQLType;
+        const graphqlTypeInfo = JSON.parse(
+          await readFile(path.join("types", entry.name), "utf8"),
+        ) as LeetCodeGraphQLType;
 
-    switch (graphqlTypeInfo.kind) {
-      case "ENUM": {
-        const enumValues = nullthrows(graphqlTypeInfo.enumValues).map(
-          (ev) => `${formatDescription(ev.description)}${ev.name}\n`,
-        );
-        enums.push(
-          `${formatDescription(graphqlTypeInfo.description)}enum ${graphqlTypeInfo.name} {\n${enumValues.join("")}}\n`,
-        );
-        break;
-      }
-      case "INPUT_OBJECT":
-      case "INTERFACE":
-      case "OBJECT": {
-        const decl = {
-          INPUT_OBJECT: "input",
-          INTERFACE: "interface",
-          OBJECT: "type",
-        }[graphqlTypeInfo.kind];
-        const fields = [
-          ...(graphqlTypeInfo.fields ?? []),
-          ...(graphqlTypeInfo.inputFields ?? []),
-        ].map((field) => {
-          const args =
-            "args" in field && field.args && field.args.length > 0
-              ? "(\n" +
-                field.args
-                  .map(
-                    (arg) =>
-                      `${formatDescription(arg.description)}${arg.name}: ${stringifyType(arg.type)}` +
-                      (arg.defaultValue != null
-                        ? " = " + arg.defaultValue
-                        : ""),
-                  )
-                  .join("\n") +
-                "\n)"
-              : "";
-          return `${formatDescription(field.description)}${field.name}${args}: ${stringifyType(field.type)}\n`;
-        });
+        switch (graphqlTypeInfo.kind) {
+          case "ENUM": {
+            const enumValues = nullthrows(graphqlTypeInfo.enumValues).map(
+              (ev) => `${formatDescription(ev.description)}${ev.name}\n`,
+            );
+            enums.push(
+              `${formatDescription(graphqlTypeInfo.description)}enum ${graphqlTypeInfo.name} {\n${enumValues.join("")}}\n`,
+            );
+            break;
+          }
+          case "INPUT_OBJECT":
+          case "INTERFACE":
+          case "OBJECT": {
+            const decl = {
+              INPUT_OBJECT: "input",
+              INTERFACE: "interface",
+              OBJECT: "type",
+            }[graphqlTypeInfo.kind];
+            const fields = [
+              ...(graphqlTypeInfo.fields ?? []),
+              ...(graphqlTypeInfo.inputFields ?? []),
+            ].map((field) => {
+              const args =
+                "args" in field && field.args && field.args.length > 0
+                  ? "(\n" +
+                    field.args
+                      .map(
+                        (arg) =>
+                          `${formatDescription(arg.description)}${arg.name}: ${stringifyType(arg.type)}` +
+                          (arg.defaultValue != null
+                            ? " = " + arg.defaultValue
+                            : ""),
+                      )
+                      .join("\n") +
+                    "\n)"
+                  : "";
+              return `${formatDescription(field.description)}${field.name}${args}: ${stringifyType(field.type)}\n`;
+            });
 
-        const destination = {
-          INPUT_OBJECT: inputObjects,
-          INTERFACE: interfaces,
-          OBJECT: objects,
-        }[graphqlTypeInfo.kind];
-        destination.push(
-          `${formatDescription(graphqlTypeInfo.description)}${decl} ${graphqlTypeInfo.name} {\n${fields.join("")}}\n`,
-        );
-        break;
-      }
-      case "SCALAR": {
-        scalars.push(
-          `${formatDescription(graphqlTypeInfo.description)}scalar ${graphqlTypeInfo.name}\n`,
-        );
-        break;
-      }
-      case "LIST":
-      case "UNION":
-      case "NON_NULL":
-      default: {
-        invariantViolation(`Unexpected kind: ${graphqlTypeInfo.kind}`);
-      }
-    }
-  }
+            const destination = {
+              INPUT_OBJECT: inputObjects,
+              INTERFACE: interfaces,
+              OBJECT: objects,
+            }[graphqlTypeInfo.kind];
+            destination.push(
+              `${formatDescription(graphqlTypeInfo.description)}${decl} ${graphqlTypeInfo.name} {\n${fields.join("")}}\n`,
+            );
+            break;
+          }
+          case "SCALAR": {
+            scalars.push(
+              `${formatDescription(graphqlTypeInfo.description)}scalar ${graphqlTypeInfo.name}\n`,
+            );
+            break;
+          }
+          case "LIST":
+          case "UNION":
+          case "NON_NULL":
+          default: {
+            invariantViolation(`Unexpected kind: ${graphqlTypeInfo.kind}`);
+          }
+        }
+      }),
+    CONCURRENT_READS,
+  );
 
   console.log(
     [...scalars, ...enums, ...interfaces, ...inputObjects, ...objects].join(
