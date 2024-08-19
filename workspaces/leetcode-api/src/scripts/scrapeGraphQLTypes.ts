@@ -1,17 +1,53 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+import { buildSchema } from "graphql";
 import invariant from "invariant";
 
 import { popMany } from "@code-chronicles/util/popMany";
 import { sleep } from "@code-chronicles/util/sleep";
 
+import { SCHEMA_FILE } from "./constants";
 import {
   fetchGraphQLTypeInformation,
   type InnerType,
 } from "../fetchGraphQLTypeInformation";
 
-const BATCH_SIZE = 25;
+const BATCH_SIZE = 50;
+
+const OPTIONAL_TYPES = new Set(["Subscription"]);
+
+async function getSeedTypeNames(): Promise<string[]> {
+  // Start with some built-in types.
+  const res = new Set([
+    "Query",
+    "Mutation",
+    "Subscription",
+    "__Schema",
+    "__Type",
+    "__Directive",
+    "__EnumValue",
+    "__InputValue",
+    "__Field",
+    "Int",
+    "Float",
+    "String",
+    "Boolean",
+    "ID",
+  ]);
+
+  // Try to read additional types from the saved schema file.
+  try {
+    const schema = buildSchema(await readFile(SCHEMA_FILE, "utf8"));
+    Object.keys(schema.getTypeMap()).forEach((typeName) => {
+      res.add(typeName);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+
+  return [...res].sort();
+}
 
 async function main(): Promise<void> {
   const stack: string[] = [];
@@ -39,13 +75,11 @@ async function main(): Promise<void> {
     }
   };
 
-  "Query Mutation Subscription __Schema __Type __Directive __EnumValue __InputValue __Field"
-    .split(" ")
-    .forEach(pushTypeName);
+  (await getSeedTypeNames()).forEach(pushTypeName);
 
   while (stack.length > 0) {
     const typeNames = popMany(stack, BATCH_SIZE);
-    console.log(`Fetching ${typeNames.join(", ")}, ${stack.length} to go`);
+    console.error(`Fetching ${typeNames.join(", ")}, ${stack.length} to go`);
 
     // eslint-disable-next-line no-await-in-loop
     const graphqlTypeInfos = await fetchGraphQLTypeInformation(typeNames);
@@ -56,8 +90,8 @@ async function main(): Promise<void> {
         const graphqlTypeInfo = graphqlTypeInfos[typeName];
         if (graphqlTypeInfo == null) {
           invariant(
-            typeName === "Subscription",
-            "Subscription is the only type we currently expect to not be defined.",
+            OPTIONAL_TYPES.has(typeName),
+            `${typeName} is not an optional type!`,
           );
           return;
         }
