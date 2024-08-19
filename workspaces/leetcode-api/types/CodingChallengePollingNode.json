@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "dccSubmissionInfo",
-      "isDeprecated": false,
       "type": {
         "name": "CodingChallengeSubmissionNode",
         "kind": "OBJECT"
@@ -12,7 +11,6 @@
     },
     {
       "name": "keepPolling",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

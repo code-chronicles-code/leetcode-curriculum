@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "cards",
-      "isDeprecated": false,
       "args": [
         {
           "name": "num",
@@ -25,7 +24,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -34,7 +32,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -46,7 +43,6 @@
     {
       "name": "order",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -58,7 +54,6 @@
     {
       "name": "slug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -70,7 +65,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

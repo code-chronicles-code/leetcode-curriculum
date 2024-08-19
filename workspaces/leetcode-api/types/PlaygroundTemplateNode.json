@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "codes",
-      "isDeprecated": false,
       "args": [
         {
           "name": "langSlug",
@@ -26,7 +25,6 @@
     {
       "name": "name",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -38,7 +36,6 @@
     {
       "name": "nameSlug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -49,7 +46,6 @@
     },
     {
       "name": "templateId",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -58,7 +54,6 @@
     {
       "name": "testcaseInput",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -70,7 +65,6 @@
     {
       "name": "user",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

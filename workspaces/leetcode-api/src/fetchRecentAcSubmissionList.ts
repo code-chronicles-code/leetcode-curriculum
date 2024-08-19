@@ -1,11 +1,12 @@
 import { z } from "zod";
 
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
+import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
 
-const QUERY = `
+const QUERY = squashWhitespace(`
   query ($username: String!, $limit: Int!) {
     recentAcSubmissionList(username: $username, limit: $limit) {
       id
@@ -14,9 +15,7 @@ const QUERY = `
       timestamp
     }
   }
-`
-  .trim()
-  .replace(/\s+/g, " ");
+`);
 
 const submissionZodType = z.object({
   id: numericIdAsStringZodType,

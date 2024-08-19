@@ -5,7 +5,6 @@
     {
       "name": "badge",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "category",
-      "isDeprecated": false,
       "type": {
         "name": "BadgeCategoryEnum",
         "kind": "ENUM"
@@ -24,7 +22,6 @@
     },
     {
       "name": "creationDate",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -35,7 +32,6 @@
     },
     {
       "name": "displayName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -46,7 +42,6 @@
     },
     {
       "name": "expired",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -58,7 +53,6 @@
     {
       "name": "expiredDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -66,7 +60,6 @@
     },
     {
       "name": "hoverText",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -74,7 +67,6 @@
     },
     {
       "name": "icon",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -86,7 +78,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -97,7 +88,6 @@
     },
     {
       "name": "medal",
-      "isDeprecated": false,
       "type": {
         "name": "MedalNode",
         "kind": "OBJECT"
@@ -105,7 +95,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -116,7 +105,6 @@
     },
     {
       "name": "shortName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -128,7 +116,6 @@
     {
       "name": "updationDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -140,7 +127,6 @@
     {
       "name": "user",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -151,7 +137,6 @@
     },
     {
       "name": "userCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

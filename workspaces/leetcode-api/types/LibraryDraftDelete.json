@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "deleted",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

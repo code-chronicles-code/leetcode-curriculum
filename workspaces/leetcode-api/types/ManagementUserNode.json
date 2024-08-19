@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "avatar",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "dateJoined",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +21,6 @@
     },
     {
       "name": "emails",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -34,7 +31,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -45,7 +41,6 @@
     },
     {
       "name": "lastLoginTime",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -53,7 +48,6 @@
     },
     {
       "name": "premiumInfos",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -64,7 +58,6 @@
     },
     {
       "name": "realName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -72,7 +65,6 @@
     },
     {
       "name": "stripeCustomeId",
-      "isDeprecated": false,
       "type": {
         "name": "ID",
         "kind": "SCALAR"
@@ -80,7 +72,6 @@
     },
     {
       "name": "username",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

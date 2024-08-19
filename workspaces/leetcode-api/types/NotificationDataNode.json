@@ -5,7 +5,6 @@
     {
       "name": "content",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -28,7 +26,6 @@
     },
     {
       "name": "metadata",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -37,7 +34,6 @@
     {
       "name": "notificationSet",
       "description": "",
-      "isDeprecated": false,
       "args": [
         {
           "name": "after",
@@ -85,7 +81,6 @@
     },
     {
       "name": "type",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "date",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "link",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     },
     {
       "name": "question",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "userStatus",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

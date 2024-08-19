@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "activeBadge",
-      "isDeprecated": false,
       "type": {
         "name": "UserBadgeNode",
         "kind": "OBJECT"
@@ -12,7 +11,6 @@
     },
     {
       "name": "badges",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -29,7 +27,6 @@
     },
     {
       "name": "contestBadge",
-      "isDeprecated": false,
       "type": {
         "name": "UserBadgeNode",
         "kind": "OBJECT"
@@ -37,7 +34,6 @@
     },
     {
       "name": "contributions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "email",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -56,7 +51,6 @@
     },
     {
       "name": "emails",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -68,7 +62,6 @@
     {
       "name": "firstName",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -79,7 +72,6 @@
     },
     {
       "name": "githubUrl",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -87,7 +79,6 @@
     },
     {
       "name": "hasChangedUsernameRecently",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -95,7 +86,6 @@
     },
     {
       "name": "hasUsablePassword",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -103,7 +93,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "name": "ID",
         "kind": "SCALAR"
@@ -112,7 +101,6 @@
     {
       "name": "isActive",
       "description": "Designates whether this user should be treated as active. Unselect this instead of deleting accounts.",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -123,7 +111,6 @@
     },
     {
       "name": "isCurrentUserPremium",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -131,7 +118,6 @@
     },
     {
       "name": "isCurrentUserVerified",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -139,7 +125,6 @@
     },
     {
       "name": "isDiscussAdmin",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -147,7 +132,6 @@
     },
     {
       "name": "isDiscussStaff",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -155,7 +139,6 @@
     },
     {
       "name": "joinedTimestamp",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -166,7 +149,6 @@
     },
     {
       "name": "languageProblemCount",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -181,7 +163,6 @@
     {
       "name": "lastName",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -192,7 +173,6 @@
     },
     {
       "name": "linkedinUrl",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -200,7 +180,6 @@
     },
     {
       "name": "nameColor",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -208,7 +187,6 @@
     },
     {
       "name": "phone",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -216,7 +194,6 @@
     },
     {
       "name": "problemsSolvedBeatsStats",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -233,7 +210,6 @@
     },
     {
       "name": "profile",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -244,7 +220,6 @@
     },
     {
       "name": "socialAccounts",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -258,7 +233,6 @@
     },
     {
       "name": "submissionCalendar",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -269,7 +243,6 @@
     },
     {
       "name": "submitStats",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -280,7 +253,6 @@
     },
     {
       "name": "submitStatsGlobal",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -291,7 +263,6 @@
     },
     {
       "name": "tagProblemCounts",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -302,7 +273,6 @@
     },
     {
       "name": "twitterUrl",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -310,7 +280,6 @@
     },
     {
       "name": "upcomingBadges",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -327,7 +296,6 @@
     },
     {
       "name": "userCalendar",
-      "isDeprecated": false,
       "args": [
         {
           "name": "year",
@@ -348,7 +316,6 @@
     {
       "name": "username",
       "description": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -359,7 +326,6 @@
     },
     {
       "name": "yearJoined",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

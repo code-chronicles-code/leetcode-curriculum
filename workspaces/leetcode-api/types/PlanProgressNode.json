@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "completedNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "daysPassed",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "endAt",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     },
     {
       "name": "hasCompleted",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -59,7 +54,6 @@
     },
     {
       "name": "isAborted",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -70,7 +64,6 @@
     },
     {
       "name": "questionNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -81,7 +74,6 @@
     },
     {
       "name": "startedAt",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

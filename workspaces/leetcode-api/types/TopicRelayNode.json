@@ -5,7 +5,6 @@
     {
       "name": "challengequestionSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +22,6 @@
     {
       "name": "commentCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -35,7 +33,6 @@
     {
       "name": "commentSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -53,7 +50,6 @@
     {
       "name": "contestSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -70,7 +66,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -82,7 +77,6 @@
     {
       "name": "lastComment",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "CommentNode",
         "kind": "OBJECT"
@@ -91,7 +85,6 @@
     {
       "name": "nodebbTid",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -103,7 +96,6 @@
     {
       "name": "pinned",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -115,7 +107,6 @@
     {
       "name": "pinnedAt",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -124,7 +115,6 @@
     {
       "name": "post",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -135,7 +125,6 @@
     },
     {
       "name": "questionTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -144,7 +133,6 @@
     {
       "name": "tags",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -162,7 +150,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -174,7 +161,6 @@
     {
       "name": "topLevelCommentCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -185,7 +171,6 @@
     },
     {
       "name": "url",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -197,7 +182,6 @@
     {
       "name": "viewCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

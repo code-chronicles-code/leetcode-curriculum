@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "awardDescription",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "config",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     },
     {
       "name": "obtainDescription",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "slug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

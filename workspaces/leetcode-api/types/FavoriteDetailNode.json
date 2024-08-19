@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "collectCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     {
       "name": "companyLegalName",
       "description": "only for C.N. side",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -24,7 +22,6 @@
     },
     {
       "name": "companyVerified",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -35,7 +32,6 @@
     },
     {
       "name": "coverBackgroundColor",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -43,7 +39,6 @@
     },
     {
       "name": "coverEmoji",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -51,7 +46,6 @@
     },
     {
       "name": "coverUrl",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -59,7 +53,6 @@
     },
     {
       "name": "creator",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -70,7 +63,6 @@
     },
     {
       "name": "description",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -82,7 +74,6 @@
     {
       "name": "favoriteLockStatus",
       "description": "user unlock favorite status",
-      "isDeprecated": false,
       "type": {
         "name": "FavoriteLockStatusEnum",
         "kind": "ENUM"
@@ -90,7 +81,6 @@
     },
     {
       "name": "favoriteType",
-      "isDeprecated": false,
       "type": {
         "name": "FavoriteTypeEnum",
         "kind": "ENUM"
@@ -99,7 +89,6 @@
     {
       "name": "financingStageDisplay",
       "description": "only for C.N. side",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -107,7 +96,6 @@
     },
     {
       "name": "generatedFavoritesInfo",
-      "isDeprecated": false,
       "type": {
         "name": "GeneratedFavoritesInfoNode",
         "kind": "OBJECT"
@@ -115,7 +103,6 @@
     },
     {
       "name": "generateFromFavoriteSlug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -123,7 +110,6 @@
     },
     {
       "name": "hasCurrentQuestion",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -132,7 +118,6 @@
     {
       "name": "industryDisplay",
       "description": "only for C.N. side",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -140,7 +125,6 @@
     },
     {
       "name": "isDefaultList",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -151,7 +135,6 @@
     },
     {
       "name": "isPublicFavorite",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -163,7 +146,6 @@
     {
       "name": "languageTagSlug",
       "description": "for smart list",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -171,7 +153,6 @@
     },
     {
       "name": "lastModified",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -182,7 +163,6 @@
     },
     {
       "name": "lastQuestionAddedAt",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -190,7 +170,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -201,7 +180,6 @@
     },
     {
       "name": "positionRoleTags",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -215,7 +193,6 @@
     },
     {
       "name": "questionNumber",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -227,7 +204,6 @@
     {
       "name": "scaleDisplay",
       "description": "only for C.N. side",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -235,7 +211,6 @@
     },
     {
       "name": "slug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -246,7 +221,6 @@
     },
     {
       "name": "viewCount",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -255,7 +229,6 @@
     {
       "name": "website",
       "description": "only for C.N. side",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

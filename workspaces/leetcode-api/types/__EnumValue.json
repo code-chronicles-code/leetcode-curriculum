@@ -5,7 +5,6 @@
   "fields": [
     {
       "name": "deprecationReason",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -13,7 +12,6 @@
     },
     {
       "name": "description",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -21,7 +19,6 @@
     },
     {
       "name": "isDeprecated",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -32,7 +29,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

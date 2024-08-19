@@ -5,7 +5,6 @@
     {
       "name": "available",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "buckydropConfig",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -25,7 +23,6 @@
     {
       "name": "creationDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "disabledMsg",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -56,7 +51,6 @@
     },
     {
       "name": "displayConfig",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -64,7 +58,6 @@
     },
     {
       "name": "fields",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -79,7 +72,6 @@
     {
       "name": "hideIfPaid",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -91,7 +83,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -102,7 +93,6 @@
     },
     {
       "name": "img",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -111,7 +101,6 @@
     {
       "name": "imgSlug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -120,7 +109,6 @@
     {
       "name": "itemSlug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -132,7 +120,6 @@
     {
       "name": "name",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -144,7 +131,6 @@
     {
       "name": "needsProcessing",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -156,7 +142,6 @@
     {
       "name": "needsShipping",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -168,7 +153,6 @@
     {
       "name": "order",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -179,7 +163,6 @@
     },
     {
       "name": "promoImg",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -188,7 +171,6 @@
     {
       "name": "promoImgSlug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -196,7 +178,6 @@
     },
     {
       "name": "show",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -205,7 +186,6 @@
     {
       "name": "storeorderSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -223,7 +203,6 @@
     {
       "name": "updationDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -235,7 +214,6 @@
     {
       "name": "value",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -247,7 +225,6 @@
     {
       "name": "visible",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "acStats",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -22,7 +21,6 @@
     {
       "name": "children",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -40,7 +38,6 @@
     {
       "name": "companyTag",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "TagNode",
         "kind": "OBJECT"
@@ -49,7 +46,6 @@
     {
       "name": "coverUrl",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -58,7 +54,6 @@
     {
       "name": "created",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -69,7 +64,6 @@
     },
     {
       "name": "creator",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -81,7 +75,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -92,7 +85,6 @@
     },
     {
       "name": "extraInfo",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -101,7 +93,6 @@
     {
       "name": "favoriteType",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "FavoriteFavoriteType",
         "kind": "ENUM"
@@ -110,7 +101,6 @@
     {
       "name": "forkFrom",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "FeaturedQuestionListNode",
         "kind": "OBJECT"
@@ -119,7 +109,6 @@
     {
       "name": "generatedFavorites",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -137,7 +126,6 @@
     {
       "name": "generatedFrom",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "FeaturedQuestionListNode",
         "kind": "OBJECT"
@@ -146,7 +134,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -157,7 +144,6 @@
     },
     {
       "name": "idHash",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -169,7 +155,6 @@
     {
       "name": "isPublicFavorite",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -180,7 +165,6 @@
     },
     {
       "name": "isWatched",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -192,7 +176,6 @@
     {
       "name": "lastModified",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -204,7 +187,6 @@
     {
       "name": "lastQuestionAddedAt",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -213,7 +195,6 @@
     {
       "name": "name",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -225,7 +206,6 @@
     {
       "name": "order",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -236,7 +216,6 @@
     },
     {
       "name": "publicId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -247,7 +226,6 @@
     },
     {
       "name": "questionCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -259,7 +237,6 @@
     {
       "name": "questions",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -277,7 +254,6 @@
     {
       "name": "slug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -285,7 +261,6 @@
     },
     {
       "name": "tags",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -300,7 +275,6 @@
     {
       "name": "uuid",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -312,7 +286,6 @@
     {
       "name": "viewCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

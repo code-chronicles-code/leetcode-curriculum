@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "companyQuestion",
-      "isDeprecated": false,
       "type": {
         "name": "CompanyQuestionNode",
         "kind": "OBJECT"
@@ -12,7 +11,6 @@
     },
     {
       "name": "frequency",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +21,6 @@
     },
     {
       "name": "incVotedTotalNum",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -31,7 +28,6 @@
     },
     {
       "name": "latestIncVote",
-      "isDeprecated": false,
       "type": {
         "name": "LatestIncVoteNode",
         "kind": "OBJECT"
@@ -39,7 +35,6 @@
     },
     {
       "name": "periodVotedNum",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

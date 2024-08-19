@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "cardImg",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "company",
-      "isDeprecated": false,
       "type": {
         "name": "SponsorNode",
         "kind": "OBJECT"
@@ -20,7 +18,6 @@
     },
     {
       "name": "containsPremium",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -29,7 +26,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -41,7 +37,6 @@
     {
       "name": "duration",
       "description": "in seconds",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -52,7 +47,6 @@
     },
     {
       "name": "isVirtual",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -60,7 +54,6 @@
     },
     {
       "name": "originStartTime",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -68,7 +61,6 @@
     },
     {
       "name": "questions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -80,7 +72,6 @@
     {
       "name": "rankingUpdated",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -91,7 +82,6 @@
     },
     {
       "name": "sponsors",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -105,7 +95,6 @@
     },
     {
       "name": "startTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -117,7 +106,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -129,7 +117,6 @@
     {
       "name": "titleSlug",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -138,7 +125,6 @@
     {
       "name": "unrated",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

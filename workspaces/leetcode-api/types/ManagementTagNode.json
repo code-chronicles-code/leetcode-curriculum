@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "tags",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -18,7 +17,6 @@
     },
     {
       "name": "totalCount",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

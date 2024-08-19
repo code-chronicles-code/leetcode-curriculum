@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "attendedContestsCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "badge",
-      "isDeprecated": false,
       "type": {
         "name": "UserBadgeNode",
         "kind": "OBJECT"
@@ -23,7 +21,6 @@
     },
     {
       "name": "globalRanking",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -34,7 +31,6 @@
     },
     {
       "name": "rating",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -45,7 +41,6 @@
     },
     {
       "name": "topPercentage",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -56,7 +51,6 @@
     },
     {
       "name": "totalParticipants",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

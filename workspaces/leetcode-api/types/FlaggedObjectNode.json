@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "firstFlaggedTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "flaggedCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "flagResult",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     },
     {
       "name": "reasons",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -51,7 +47,6 @@
     },
     {
       "name": "summary",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

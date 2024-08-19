@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "contribution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -21,7 +20,6 @@
     },
     {
       "name": "error",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -29,7 +27,6 @@
     },
     {
       "name": "ok",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"

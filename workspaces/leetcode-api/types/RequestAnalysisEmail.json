@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "sessionWithReport",
-      "isDeprecated": false,
       "type": {
         "name": "InterviewSessionNode",
         "kind": "OBJECT"

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "isLimited",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "memoryComplexity",
-      "isDeprecated": false,
       "type": {
         "name": "ComplexityInfoNode",
         "kind": "OBJECT"
@@ -23,7 +21,6 @@
     },
     {
       "name": "timeComplexity",
-      "isDeprecated": false,
       "type": {
         "name": "ComplexityInfoNode",
         "kind": "OBJECT"

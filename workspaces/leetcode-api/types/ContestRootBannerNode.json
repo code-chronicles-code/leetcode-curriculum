@@ -5,7 +5,6 @@
     {
       "name": "aspectRatioType",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "backgroundColor",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -29,7 +27,6 @@
     {
       "name": "banner",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -41,7 +38,6 @@
     {
       "name": "targetUrl",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -53,7 +49,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

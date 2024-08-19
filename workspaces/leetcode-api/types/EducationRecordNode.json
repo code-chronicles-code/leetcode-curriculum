@@ -5,7 +5,6 @@
     {
       "name": "degree",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -14,7 +13,6 @@
     {
       "name": "endTime",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -23,7 +21,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -35,7 +32,6 @@
     {
       "name": "startTime",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -44,7 +40,6 @@
     {
       "name": "toPresent",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -56,7 +51,6 @@
     {
       "name": "unverifiedOrganizationName",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -65,7 +59,6 @@
     {
       "name": "user",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

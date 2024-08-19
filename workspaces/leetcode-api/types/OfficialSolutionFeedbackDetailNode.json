@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "additionalComment",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "authorName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +21,6 @@
     },
     {
       "name": "createdAt",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -34,7 +31,6 @@
     },
     {
       "name": "feedbackUser",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -45,7 +41,6 @@
     },
     {
       "name": "metaInfo",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -56,7 +51,6 @@
     },
     {
       "name": "questionInfo",
-      "isDeprecated": false,
       "type": {
         "name": "QuestionNode",
         "kind": "OBJECT"
@@ -64,7 +58,6 @@
     },
     {
       "name": "rateScore",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -75,7 +68,6 @@
     },
     {
       "name": "reasonTagIds",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

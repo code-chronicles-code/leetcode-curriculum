@@ -5,7 +5,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "reason",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "FlagReasonNode",
         "kind": "OBJECT"
@@ -26,7 +24,6 @@
     {
       "name": "reporter",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

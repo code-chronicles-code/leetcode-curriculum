@@ -1,12 +1,13 @@
 import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
+import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
 
-const QUERY = `
+const QUERY = squashWhitespace(`
   query ($categorySlug: String!, $limit: Int, $skip: Int, $filters: QuestionListFilterInput!) {
     questionList(
       categorySlug: $categorySlug
@@ -24,9 +25,7 @@ const QUERY = `
       totalNum
     }
   }
-`
-  .trim()
-  .replace(/\s+/g, " ");
+`);
 
 const questionZodType = z.object({
   difficulty: questionDifficultyZodType,

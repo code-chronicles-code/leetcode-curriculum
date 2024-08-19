@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "createdAt",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "difficulty",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -24,7 +22,6 @@
     {
       "name": "frequency",
       "description": "出题频率，企业题单专用字段",
-      "isDeprecated": false,
       "type": {
         "name": "Float",
         "kind": "SCALAR"
@@ -32,7 +29,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -44,7 +40,6 @@
     {
       "name": "isInMyFavorites",
       "description": "whether the question is in the user's favorites",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -55,7 +50,6 @@
     },
     {
       "name": "paidOnly",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -66,7 +60,6 @@
     },
     {
       "name": "questionFrontendId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -77,7 +70,6 @@
     },
     {
       "name": "questionStats",
-      "isDeprecated": false,
       "type": {
         "name": "JSONString",
         "kind": "SCALAR"
@@ -85,7 +77,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "name": "FavoriteQuestionStatusEnum",
         "kind": "ENUM"
@@ -93,7 +84,6 @@
     },
     {
       "name": "submissionNumFromFav",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -104,7 +94,6 @@
     },
     {
       "name": "title",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -115,7 +104,6 @@
     },
     {
       "name": "titleSlug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -126,7 +114,6 @@
     },
     {
       "name": "topicTags",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -140,7 +127,6 @@
     },
     {
       "name": "translatedTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

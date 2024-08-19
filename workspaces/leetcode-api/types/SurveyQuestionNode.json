@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "choices",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -19,7 +18,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -31,7 +29,6 @@
     {
       "name": "extra",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -43,7 +40,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -55,7 +51,6 @@
     {
       "name": "isRequired",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -67,7 +62,6 @@
     {
       "name": "questionType",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -79,7 +73,6 @@
     {
       "name": "survey",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -91,7 +84,6 @@
     {
       "name": "surveyquestionchoiceSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -109,7 +101,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

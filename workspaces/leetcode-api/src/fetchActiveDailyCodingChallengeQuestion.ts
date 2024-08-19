@@ -2,12 +2,13 @@ import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 import { sleep } from "@code-chronicles/util/sleep";
+import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
 import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
 
-const QUERY = `
+const QUERY = squashWhitespace(`
   query {
     activeDailyCodingChallengeQuestion {
       date
@@ -19,9 +20,7 @@ const QUERY = `
       }
     }
   }
-`
-  .trim()
-  .replace(/\s+/g, " ");
+`);
 
 const questionZodType = z.object({
   difficulty: questionDifficultyZodType,

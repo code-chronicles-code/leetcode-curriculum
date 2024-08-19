@@ -5,7 +5,6 @@
     {
       "name": "card",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "endTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -27,7 +25,6 @@
     },
     {
       "name": "expiredTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -39,7 +36,6 @@
     {
       "name": "id",
       "description": "The ID of the object.",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -50,7 +46,6 @@
     },
     {
       "name": "interview",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -61,7 +56,6 @@
     },
     {
       "name": "progress",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -78,7 +72,6 @@
     },
     {
       "name": "remainingTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -89,7 +82,6 @@
     },
     {
       "name": "report",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -100,7 +92,6 @@
     },
     {
       "name": "startTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -111,7 +102,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

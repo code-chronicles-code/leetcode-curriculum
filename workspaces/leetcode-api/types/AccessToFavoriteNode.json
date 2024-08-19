@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "hasAccess",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "questionCount",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -23,7 +21,6 @@
     },
     {
       "name": "rejectReason",
-      "isDeprecated": false,
       "type": {
         "name": "AccessDeniedReasonEnum",
         "kind": "ENUM"

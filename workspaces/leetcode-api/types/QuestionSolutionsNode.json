@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "hasDirectResults",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "solutions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "totalNum",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

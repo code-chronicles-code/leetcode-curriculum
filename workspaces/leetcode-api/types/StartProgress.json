@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "progress",
-      "isDeprecated": false,
       "type": {
         "name": "PlanProgressNode",
         "kind": "OBJECT"

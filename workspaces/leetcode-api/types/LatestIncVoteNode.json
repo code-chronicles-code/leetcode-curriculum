@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "incVotedAt",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "incVotedNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

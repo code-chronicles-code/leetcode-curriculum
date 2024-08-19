@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "complexity",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "displayName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -23,7 +21,6 @@
     },
     {
       "name": "funcStr",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -31,7 +28,6 @@
     },
     {
       "name": "vote",
-      "isDeprecated": false,
       "type": {
         "name": "ComplexityVoteEnum",
         "kind": "ENUM"

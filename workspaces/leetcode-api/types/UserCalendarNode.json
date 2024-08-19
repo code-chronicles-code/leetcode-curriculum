@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "activeYears",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -18,7 +17,6 @@
     },
     {
       "name": "dccBadges",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -35,7 +33,6 @@
     },
     {
       "name": "streak",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -46,7 +43,6 @@
     },
     {
       "name": "submissionCalendar",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -57,7 +53,6 @@
     },
     {
       "name": "totalActiveDays",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -68,7 +63,6 @@
     },
     {
       "name": "user",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -79,7 +73,6 @@
     },
     {
       "name": "year",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

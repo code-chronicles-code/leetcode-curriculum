@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "realName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "userAvatar",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "userName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -34,7 +31,6 @@
     },
     {
       "name": "userSlug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

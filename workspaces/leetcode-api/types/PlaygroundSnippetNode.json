@@ -5,7 +5,6 @@
     {
       "name": "dependencies",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -23,7 +22,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -34,7 +32,6 @@
     },
     {
       "name": "foldingPositions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -45,7 +42,6 @@
     },
     {
       "name": "fullSnippetWithDependencies",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -54,7 +50,6 @@
     {
       "name": "functionName",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -65,7 +60,6 @@
     },
     {
       "name": "hasDependencies",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -74,7 +68,6 @@
     {
       "name": "hidden",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -86,7 +79,6 @@
     {
       "name": "lang",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -97,7 +89,6 @@
     },
     {
       "name": "langSlug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -106,7 +97,6 @@
     {
       "name": "playgroundsnippetsSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -124,7 +114,6 @@
     {
       "name": "snippet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

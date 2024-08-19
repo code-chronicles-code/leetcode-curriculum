@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "allowedLanguages",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -21,7 +20,6 @@
     },
     {
       "name": "award",
-      "isDeprecated": false,
       "type": {
         "name": "MedalNode",
         "kind": "OBJECT"
@@ -29,7 +27,6 @@
     },
     {
       "name": "awardDescription",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -40,7 +37,6 @@
     },
     {
       "name": "colorPalette",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -48,7 +44,6 @@
     },
     {
       "name": "cover",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -59,7 +54,6 @@
     },
     {
       "name": "defaultLanguage",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -67,7 +61,6 @@
     },
     {
       "name": "description",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -78,7 +71,6 @@
     },
     {
       "name": "hasMedal",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -89,7 +81,6 @@
     },
     {
       "name": "highlight",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -100,7 +91,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -111,7 +101,6 @@
     },
     {
       "name": "needShowTags",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -122,7 +111,6 @@
     },
     {
       "name": "onGoing",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -133,7 +121,6 @@
     },
     {
       "name": "planSubGroups",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -150,7 +137,6 @@
     },
     {
       "name": "premiumOnly",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -161,7 +147,6 @@
     },
     {
       "name": "questionNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -172,7 +157,6 @@
     },
     {
       "name": "relatedStudyPlans",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -189,7 +173,6 @@
     },
     {
       "name": "slug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -200,7 +183,6 @@
     },
     {
       "name": "staticCoverPicture",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -211,7 +193,6 @@
     },
     {
       "name": "threeDimensionUrl",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

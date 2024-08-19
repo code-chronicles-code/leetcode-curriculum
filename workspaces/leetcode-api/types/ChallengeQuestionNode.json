@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "date",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -27,7 +25,6 @@
     },
     {
       "name": "incompleteChallengeCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -38,7 +35,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -49,7 +45,6 @@
     },
     {
       "name": "streakCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -60,7 +55,6 @@
     },
     {
       "name": "type",
-      "isDeprecated": false,
       "type": {
         "name": "ChallengeQuestionTypeEnum",
         "kind": "ENUM"

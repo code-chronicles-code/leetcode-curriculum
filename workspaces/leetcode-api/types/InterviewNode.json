@@ -5,7 +5,6 @@
     {
       "name": "company",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "createTime",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -26,7 +24,6 @@
     {
       "name": "disabled",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -38,7 +35,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -50,7 +46,6 @@
     {
       "name": "premiumOnly",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -61,7 +56,6 @@
     },
     {
       "name": "questions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -79,7 +73,6 @@
     {
       "name": "sessionSet",
       "description": "",
-      "isDeprecated": false,
       "args": [
         {
           "name": "after",
@@ -128,7 +121,6 @@
     {
       "name": "timeConstraint",
       "description": "in seconds",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -137,7 +129,6 @@
     {
       "name": "updateTime",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "difficulty",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "hasOfficialSolution",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     },
     {
       "name": "paidOnly",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "questionFrontendId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -59,7 +54,6 @@
     },
     {
       "name": "solutionInfo",
-      "isDeprecated": false,
       "type": {
         "name": "PlanQuestionSolutionInfoNode",
         "kind": "OBJECT"
@@ -67,7 +61,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "name": "PlanQuestionStatusEnum",
         "kind": "ENUM"
@@ -75,7 +68,6 @@
     },
     {
       "name": "title",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -86,7 +78,6 @@
     },
     {
       "name": "titleSlug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -97,7 +88,6 @@
     },
     {
       "name": "topicTags",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -114,7 +104,6 @@
     },
     {
       "name": "translatedTitle",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

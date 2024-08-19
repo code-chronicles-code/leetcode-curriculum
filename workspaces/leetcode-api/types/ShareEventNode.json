@@ -5,7 +5,6 @@
     {
       "name": "endDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "hasUserSharedEvent",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -28,7 +26,6 @@
     {
       "name": "startDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

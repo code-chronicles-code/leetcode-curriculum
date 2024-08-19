@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "archiveDate",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "archiveReason",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -21,7 +19,6 @@
     {
       "name": "createDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -33,7 +30,6 @@
     {
       "name": "extraInfo",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -45,7 +41,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -57,7 +52,6 @@
     {
       "name": "originalPrimaryEmail",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -69,7 +63,6 @@
     {
       "name": "originalUsername",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -81,7 +74,6 @@
     {
       "name": "user",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "PrivateContestUserNode",
         "kind": "OBJECT"

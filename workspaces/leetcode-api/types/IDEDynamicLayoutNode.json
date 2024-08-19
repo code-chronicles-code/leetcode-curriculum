@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "layoutId",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "layoutJson",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "layoutName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

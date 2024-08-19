@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "allFavorites",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "officialFavorites",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "privateFavorites",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -37,7 +34,6 @@
     },
     {
       "name": "publicFavorites",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -48,7 +44,6 @@
     },
     {
       "name": "watchedFavorites",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {

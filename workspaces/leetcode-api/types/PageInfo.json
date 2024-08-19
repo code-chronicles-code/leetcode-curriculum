@@ -6,7 +6,6 @@
     {
       "name": "endCursor",
       "description": "When paginating forwards, the cursor to continue.",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -15,7 +14,6 @@
     {
       "name": "hasNextPage",
       "description": "When paginating forwards, are there more items?",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -27,7 +25,6 @@
     {
       "name": "hasPreviousPage",
       "description": "When paginating backwards, are there more items?",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -39,7 +36,6 @@
     {
       "name": "startCursor",
       "description": "When paginating backwards, the cursor to continue.",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"

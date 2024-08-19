@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "currentPage",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "data",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -32,7 +30,6 @@
     },
     {
       "name": "numPerPage",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -43,7 +40,6 @@
     },
     {
       "name": "pageNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -54,7 +50,6 @@
     },
     {
       "name": "totalNum",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

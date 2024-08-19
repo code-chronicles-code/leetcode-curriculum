@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "internalContestAwardedUsers",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "ok",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"

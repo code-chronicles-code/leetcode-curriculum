@@ -5,7 +5,6 @@
     {
       "name": "anonymous",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -16,7 +15,6 @@
     },
     {
       "name": "background",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -24,7 +22,6 @@
     },
     {
       "name": "date",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -33,7 +30,6 @@
     {
       "name": "description",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -45,7 +41,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -57,7 +52,6 @@
     {
       "name": "solutions",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -65,7 +59,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -73,7 +66,6 @@
     },
     {
       "name": "tags",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -84,7 +76,6 @@
     },
     {
       "name": "testcases",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -93,7 +84,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -104,7 +94,6 @@
     },
     {
       "name": "topic",
-      "isDeprecated": false,
       "type": {
         "name": "TopicNode",
         "kind": "OBJECT"
@@ -112,7 +101,6 @@
     },
     {
       "name": "type",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -121,7 +109,6 @@
     {
       "name": "user",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

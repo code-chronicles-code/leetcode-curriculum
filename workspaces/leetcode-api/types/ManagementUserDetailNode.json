@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "avatar",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "banInfo",
-      "isDeprecated": false,
       "type": {
         "name": "BanInfoNode",
         "kind": "OBJECT"
@@ -20,7 +18,6 @@
     },
     {
       "name": "contestBan",
-      "isDeprecated": false,
       "type": {
         "name": "BanInfoNode",
         "kind": "OBJECT"
@@ -28,7 +25,6 @@
     },
     {
       "name": "dateJoined",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -39,7 +35,6 @@
     },
     {
       "name": "discussBanned",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -47,7 +42,6 @@
     },
     {
       "name": "emails",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -58,7 +52,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -69,7 +62,6 @@
     },
     {
       "name": "isBanned",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -77,7 +69,6 @@
     },
     {
       "name": "isDeleted",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -85,7 +76,6 @@
     },
     {
       "name": "isInactive",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -93,7 +83,6 @@
     },
     {
       "name": "isSpammer",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -101,7 +90,6 @@
     },
     {
       "name": "isStaff",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -109,7 +97,6 @@
     },
     {
       "name": "isSuperuser",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -117,7 +104,6 @@
     },
     {
       "name": "lastLoginTime",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -125,7 +111,6 @@
     },
     {
       "name": "managementRoles",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -139,7 +124,6 @@
     },
     {
       "name": "otherRoles",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -153,7 +137,6 @@
     },
     {
       "name": "premiumInfos",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -164,7 +147,6 @@
     },
     {
       "name": "realName",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -172,7 +154,6 @@
     },
     {
       "name": "socialAccounts",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -189,7 +170,6 @@
     },
     {
       "name": "stripeCredit",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -197,7 +177,6 @@
     },
     {
       "name": "stripeCustomeId",
-      "isDeprecated": false,
       "type": {
         "name": "ID",
         "kind": "SCALAR"
@@ -205,7 +184,6 @@
     },
     {
       "name": "totalScore",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -216,7 +194,6 @@
     },
     {
       "name": "username",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

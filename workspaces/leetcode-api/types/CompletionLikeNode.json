@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "completion",
-      "isDeprecated": false,
       "type": {
         "name": "CompletionNode",
         "kind": "OBJECT"
@@ -13,7 +12,6 @@
     {
       "name": "creationDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -25,7 +23,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     {
       "name": "isLike",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -49,7 +45,6 @@
     {
       "name": "updationDate",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

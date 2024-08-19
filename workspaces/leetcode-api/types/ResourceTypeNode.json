@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "flaggedObjects",
-      "isDeprecated": false,
       "args": [
         {
           "name": "after",
@@ -73,7 +72,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -84,7 +82,6 @@
     },
     {
       "name": "operations",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {

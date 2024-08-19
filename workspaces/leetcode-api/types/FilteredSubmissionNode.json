@@ -5,7 +5,6 @@
     {
       "name": "code",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "codeOutput",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -26,7 +24,6 @@
     {
       "name": "compareResult",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -34,7 +31,6 @@
     },
     {
       "name": "contest",
-      "isDeprecated": false,
       "type": {
         "name": "ContestNode",
         "kind": "OBJECT"
@@ -43,7 +39,6 @@
     {
       "name": "date",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -55,7 +50,6 @@
     {
       "name": "id",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -66,7 +60,6 @@
     },
     {
       "name": "lang",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -75,7 +68,6 @@
     {
       "name": "memoryComplexity",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "SubmissionMemoryComplexity",
         "kind": "ENUM"
@@ -84,7 +76,6 @@
     {
       "name": "question",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -96,7 +87,6 @@
     {
       "name": "runtime",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -104,7 +94,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -113,7 +102,6 @@
     {
       "name": "timeComplexity",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "SubmissionTimeComplexity",
         "kind": "ENUM"
@@ -122,7 +110,6 @@
     {
       "name": "totalCorrect",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -131,7 +118,6 @@
     {
       "name": "user",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

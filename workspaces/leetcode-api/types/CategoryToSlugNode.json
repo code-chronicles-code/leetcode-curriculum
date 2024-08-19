@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "categoryName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "displayName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "favoriteSlug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

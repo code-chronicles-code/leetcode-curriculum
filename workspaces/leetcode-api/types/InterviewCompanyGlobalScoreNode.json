@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "companyName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "score",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

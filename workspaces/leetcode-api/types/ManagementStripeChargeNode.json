@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "amount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "created",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -37,7 +34,6 @@
     },
     {
       "name": "invoiceId",
-      "isDeprecated": false,
       "type": {
         "name": "ID",
         "kind": "SCALAR"
@@ -45,7 +41,6 @@
     },
     {
       "name": "status",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "acceptAchievementReward",
-      "isDeprecated": false,
       "args": [
         {
           "name": "achievementName",
@@ -24,7 +23,6 @@
     },
     {
       "name": "acceptContribution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "comment",
@@ -48,7 +46,6 @@
     },
     {
       "name": "addFavoriteToMyCollectionV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -68,7 +65,6 @@
     },
     {
       "name": "addOrUpdateCodeInPlayground",
-      "isDeprecated": false,
       "args": [
         {
           "name": "code",
@@ -99,7 +95,6 @@
     },
     {
       "name": "addQuestionToDefaultFavoriteV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "questionSlug",
@@ -119,7 +114,6 @@
     },
     {
       "name": "addQuestionToFavorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteIdHash",
@@ -143,7 +137,6 @@
     },
     {
       "name": "addQuestionToFavoriteV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -173,7 +166,6 @@
     },
     {
       "name": "addQuestionToNewFavorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "isPublicFavorite",
@@ -204,7 +196,6 @@
     },
     {
       "name": "addQuestionToNewFavoriteV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "isPublicFavorite",
@@ -244,7 +235,6 @@
     },
     {
       "name": "addUserToInternalContest",
-      "isDeprecated": false,
       "args": [
         {
           "name": "userInput",
@@ -261,7 +251,6 @@
     },
     {
       "name": "applyTimeTravelTicket",
-      "isDeprecated": false,
       "args": [
         {
           "name": "itemId",
@@ -278,7 +267,6 @@
     },
     {
       "name": "applyTimeTravelTicketV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "challengeQuestionId",
@@ -305,7 +293,6 @@
     },
     {
       "name": "approveComment",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -322,7 +309,6 @@
     },
     {
       "name": "approveComments",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ids",
@@ -342,7 +328,6 @@
     },
     {
       "name": "approveContestReports",
-      "isDeprecated": false,
       "args": [
         {
           "name": "reportIds",
@@ -365,7 +350,6 @@
     },
     {
       "name": "approveReportedPosts",
-      "isDeprecated": false,
       "args": [
         {
           "name": "postIds",
@@ -388,7 +372,6 @@
     },
     {
       "name": "approveTopic",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -405,7 +388,6 @@
     },
     {
       "name": "approveTopics",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ids",
@@ -425,7 +407,6 @@
     },
     {
       "name": "archiveUser",
-      "isDeprecated": false,
       "args": [
         {
           "name": "reason",
@@ -452,7 +433,6 @@
     },
     {
       "name": "awardInternalContestCoin",
-      "isDeprecated": false,
       "args": [
         {
           "name": "coins",
@@ -483,7 +463,6 @@
     },
     {
       "name": "banIp",
-      "isDeprecated": false,
       "args": [
         {
           "name": "banTypeSlug",
@@ -513,7 +492,6 @@
     },
     {
       "name": "banUser",
-      "isDeprecated": false,
       "args": [
         {
           "name": "banTypeSlug",
@@ -543,7 +521,6 @@
     },
     {
       "name": "batchReviewFlaggedObjects",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -563,7 +540,6 @@
     },
     {
       "name": "btsEventNotification",
-      "isDeprecated": false,
       "args": [
         {
           "name": "enable",
@@ -583,7 +559,6 @@
     },
     {
       "name": "btsReferralRegister",
-      "isDeprecated": false,
       "args": [
         {
           "name": "refer",
@@ -604,7 +579,6 @@
     {
       "name": "cancelDeleteAccount",
       "description": "取消注销账户请求",
-      "isDeprecated": false,
       "type": {
         "name": "AuthCancelDeleteAccount",
         "kind": "OBJECT"
@@ -612,7 +586,6 @@
     },
     {
       "name": "checkin",
-      "isDeprecated": false,
       "type": {
         "name": "Checkin",
         "kind": "OBJECT"
@@ -620,7 +593,6 @@
     },
     {
       "name": "collectContestEasterEgg",
-      "isDeprecated": false,
       "type": {
         "name": "CollectContestEasterEgg",
         "kind": "OBJECT"
@@ -628,7 +600,6 @@
     },
     {
       "name": "commentContribution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "comment",
@@ -652,7 +623,6 @@
     },
     {
       "name": "completeFeatureGuide",
-      "isDeprecated": false,
       "args": [
         {
           "name": "guideType",
@@ -672,7 +642,6 @@
     },
     {
       "name": "completeSurvey",
-      "isDeprecated": false,
       "args": [
         {
           "name": "response",
@@ -699,7 +668,6 @@
     },
     {
       "name": "confirmSchoolLogo",
-      "isDeprecated": false,
       "args": [
         {
           "name": "schoolId",
@@ -719,7 +687,6 @@
     },
     {
       "name": "createCodeErrorHint",
-      "isDeprecated": false,
       "args": [
         {
           "name": "code",
@@ -779,7 +746,6 @@
     },
     {
       "name": "createComment",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -832,7 +798,6 @@
     },
     {
       "name": "createCompletionLike",
-      "isDeprecated": false,
       "args": [
         {
           "name": "completionId",
@@ -862,7 +827,6 @@
     },
     {
       "name": "createContribution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "contributionType",
@@ -886,7 +850,6 @@
     },
     {
       "name": "createEmail",
-      "isDeprecated": false,
       "args": [
         {
           "name": "email",
@@ -903,7 +866,6 @@
     },
     {
       "name": "createIdeDynamicLayout",
-      "isDeprecated": false,
       "args": [
         {
           "name": "layoutJson",
@@ -933,7 +895,6 @@
     },
     {
       "name": "createOrUpdateEmailEvent",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -957,7 +918,6 @@
     },
     {
       "name": "createOrUpdateOfficialSolutionFeedback",
-      "isDeprecated": false,
       "args": [
         {
           "name": "additionalComment",
@@ -1008,7 +968,6 @@
     {
       "name": "createOrUpdateUserYearlyMedals",
       "description": "obtain the new annual medals",
-      "isDeprecated": false,
       "args": [
         {
           "name": "medalSlugs",
@@ -1031,7 +990,6 @@
     },
     {
       "name": "createPlayground",
-      "isDeprecated": false,
       "args": [
         {
           "name": "name",
@@ -1062,7 +1020,6 @@
     },
     {
       "name": "createPlaygroundFolder",
-      "isDeprecated": false,
       "args": [
         {
           "name": "folderName",
@@ -1079,7 +1036,6 @@
     },
     {
       "name": "createTopic",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -1103,7 +1059,6 @@
     },
     {
       "name": "createTopicForContest",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -1134,7 +1089,6 @@
     },
     {
       "name": "createTopicForQuestion",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -1175,7 +1129,6 @@
     },
     {
       "name": "createTopicWithCategory",
-      "isDeprecated": false,
       "args": [
         {
           "name": "anonymous",
@@ -1227,7 +1180,6 @@
     {
       "name": "deleteAccount",
       "description": "user apply to delete account, account gets frozen after success",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -1247,7 +1199,6 @@
     },
     {
       "name": "deleteCodeFromPlayground",
-      "isDeprecated": false,
       "args": [
         {
           "name": "langSlug",
@@ -1271,7 +1222,6 @@
     },
     {
       "name": "deleteComment",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -1288,7 +1238,6 @@
     },
     {
       "name": "deleteComments",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ids",
@@ -1308,7 +1257,6 @@
     },
     {
       "name": "deleteEducation",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -1325,7 +1273,6 @@
     },
     {
       "name": "deleteEmail",
-      "isDeprecated": false,
       "args": [
         {
           "name": "email",
@@ -1342,7 +1289,6 @@
     },
     {
       "name": "deleteFavoriteV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -1362,7 +1308,6 @@
     },
     {
       "name": "deleteIdeDynamicLayout",
-      "isDeprecated": false,
       "args": [
         {
           "name": "layoutId",
@@ -1382,7 +1327,6 @@
     },
     {
       "name": "deleteNote",
-      "isDeprecated": false,
       "args": [
         {
           "name": "titleSlug",
@@ -1402,7 +1346,6 @@
     },
     {
       "name": "deleteOccupation",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -1419,7 +1362,6 @@
     },
     {
       "name": "deletePlayground",
-      "isDeprecated": false,
       "args": [
         {
           "name": "uuid",
@@ -1436,7 +1378,6 @@
     },
     {
       "name": "deletePlaygroundFolder",
-      "isDeprecated": false,
       "args": [
         {
           "name": "folder",
@@ -1453,7 +1394,6 @@
     },
     {
       "name": "deleteReportedPosts",
-      "isDeprecated": false,
       "args": [
         {
           "name": "postIds",
@@ -1476,7 +1416,6 @@
     },
     {
       "name": "deleteSocial",
-      "isDeprecated": false,
       "args": [
         {
           "name": "provider",
@@ -1493,7 +1432,6 @@
     },
     {
       "name": "deleteTeamMember",
-      "isDeprecated": false,
       "args": [
         {
           "name": "username",
@@ -1513,7 +1451,6 @@
     },
     {
       "name": "deleteTopic",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -1530,7 +1467,6 @@
     },
     {
       "name": "deleteTopics",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ids",
@@ -1550,7 +1486,6 @@
     },
     {
       "name": "discountEventRegister",
-      "isDeprecated": false,
       "args": [
         {
           "name": "discountEventReferral",
@@ -1570,7 +1505,6 @@
     },
     {
       "name": "endDebuggerSession",
-      "isDeprecated": false,
       "args": [
         {
           "name": "sessionUuid",
@@ -1590,7 +1524,6 @@
     },
     {
       "name": "executeScript",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -1620,7 +1553,6 @@
     },
     {
       "name": "flagPost",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -1657,7 +1589,6 @@
     },
     {
       "name": "flagSetContentStatus",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -1677,7 +1608,6 @@
     },
     {
       "name": "flagSomething",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -1697,7 +1627,6 @@
     },
     {
       "name": "forkFavoriteV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -1717,7 +1646,6 @@
     },
     {
       "name": "getOrCreateExploreSession",
-      "isDeprecated": false,
       "args": [
         {
           "name": "cardSlug",
@@ -1734,7 +1662,6 @@
     },
     {
       "name": "handleUserReports",
-      "isDeprecated": false,
       "args": [
         {
           "name": "resetAvatar",
@@ -1777,7 +1704,6 @@
     },
     {
       "name": "hideComments",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ids",
@@ -1797,7 +1723,6 @@
     },
     {
       "name": "hidePost",
-      "isDeprecated": false,
       "args": [
         {
           "name": "hide",
@@ -1827,7 +1752,6 @@
     },
     {
       "name": "hideTopicFromTrending",
-      "isDeprecated": false,
       "args": [
         {
           "name": "hide",
@@ -1857,7 +1781,6 @@
     },
     {
       "name": "hideTopics",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ids",
@@ -1877,7 +1800,6 @@
     },
     {
       "name": "hitResource",
-      "isDeprecated": false,
       "args": [
         {
           "name": "entityId",
@@ -1907,7 +1829,6 @@
     },
     {
       "name": "interviewedStatsPost",
-      "isDeprecated": false,
       "args": [
         {
           "name": "interviewedStats",
@@ -1927,7 +1848,6 @@
     },
     {
       "name": "interviewEnd",
-      "isDeprecated": false,
       "type": {
         "name": "InterviewEnd",
         "kind": "OBJECT"
@@ -1935,7 +1855,6 @@
     },
     {
       "name": "interviewStart",
-      "isDeprecated": false,
       "args": [
         {
           "name": "cardId",
@@ -1956,7 +1875,6 @@
     {
       "name": "joinStudyPlan",
       "description": "join a study plan",
-      "isDeprecated": false,
       "args": [
         {
           "name": "planSlug",
@@ -1990,7 +1908,6 @@
     },
     {
       "name": "libraryDefinitionSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "codeDefinitions",
@@ -2066,7 +1983,6 @@
     },
     {
       "name": "libraryDraftDelete",
-      "isDeprecated": false,
       "args": [
         {
           "name": "questionId",
@@ -2086,7 +2002,6 @@
     },
     {
       "name": "libraryFrontendQuestionIdChange",
-      "isDeprecated": false,
       "args": [
         {
           "name": "frontendQuestionId",
@@ -2116,7 +2031,6 @@
     },
     {
       "name": "libraryGenerateSampleTestcase",
-      "isDeprecated": false,
       "args": [
         {
           "name": "count",
@@ -2166,7 +2080,6 @@
     },
     {
       "name": "libraryMultiTestcaseSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "questionId",
@@ -2212,7 +2125,6 @@
     },
     {
       "name": "librarySetHide",
-      "isDeprecated": false,
       "args": [
         {
           "name": "hide",
@@ -2242,7 +2154,6 @@
     },
     {
       "name": "librarySetPerm",
-      "isDeprecated": false,
       "args": [
         {
           "name": "canEdit",
@@ -2272,7 +2183,6 @@
     },
     {
       "name": "librarySolutionDelete",
-      "isDeprecated": false,
       "args": [
         {
           "name": "questionId",
@@ -2302,7 +2212,6 @@
     },
     {
       "name": "librarySolutionSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "code",
@@ -2383,7 +2292,6 @@
     },
     {
       "name": "librarySolutionsOrderSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "questionId",
@@ -2416,7 +2324,6 @@
     },
     {
       "name": "librarySolutionsSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "questionId",
@@ -2446,7 +2353,6 @@
     },
     {
       "name": "libraryStatementSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "attachments",
@@ -2529,7 +2435,6 @@
     },
     {
       "name": "libraryTestcaseSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "expectedOutput",
@@ -2579,7 +2484,6 @@
     },
     {
       "name": "libraryValidatorSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "code",
@@ -2629,7 +2533,6 @@
     },
     {
       "name": "like",
-      "isDeprecated": false,
       "args": [
         {
           "name": "isLike",
@@ -2653,7 +2556,6 @@
     },
     {
       "name": "managementAddInterviewedStatVote",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -2674,7 +2576,6 @@
     },
     {
       "name": "managementAddOrEditTag",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -2703,7 +2604,6 @@
     },
     {
       "name": "managementAddOrEditTagCategory",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -2732,7 +2632,6 @@
     },
     {
       "name": "managementRemoveTagCategoryToTag",
-      "isDeprecated": false,
       "args": [
         {
           "name": "tagCategoryId",
@@ -2762,7 +2661,6 @@
     },
     {
       "name": "managementSetNonofficialTagSimilar",
-      "isDeprecated": false,
       "args": [
         {
           "name": "childId",
@@ -2794,7 +2692,6 @@
     },
     {
       "name": "markItemComplete",
-      "isDeprecated": false,
       "args": [
         {
           "name": "itemId",
@@ -2818,7 +2715,6 @@
     },
     {
       "name": "markItemIncomplete",
-      "isDeprecated": false,
       "args": [
         {
           "name": "itemId",
@@ -2835,7 +2731,6 @@
     },
     {
       "name": "markSolvedQuestion",
-      "isDeprecated": false,
       "args": [
         {
           "name": "planSlug",
@@ -2865,7 +2760,6 @@
     },
     {
       "name": "markSpammers",
-      "isDeprecated": false,
       "args": [
         {
           "name": "isSpammer",
@@ -2898,7 +2792,6 @@
     },
     {
       "name": "migrateDiscussionToSolution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "commentId",
@@ -2928,7 +2821,6 @@
     },
     {
       "name": "migrateSolutionToDiscussion",
-      "isDeprecated": false,
       "args": [
         {
           "name": "topicId",
@@ -2948,7 +2840,6 @@
     },
     {
       "name": "mockUser",
-      "isDeprecated": false,
       "args": [
         {
           "name": "usernameToMock",
@@ -2965,7 +2856,6 @@
     },
     {
       "name": "modifyIdeDynamicLayout",
-      "isDeprecated": false,
       "args": [
         {
           "name": "layoutId",
@@ -2999,7 +2889,6 @@
     },
     {
       "name": "moveTopic",
-      "isDeprecated": false,
       "args": [
         {
           "name": "categoryId",
@@ -3030,7 +2919,6 @@
     {
       "name": "omGenerateFavorite",
       "description": "online management generate favorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "difficultyTagSlugs",
@@ -3128,7 +3016,6 @@
     {
       "name": "omRemoveQuestionFromFavorite",
       "description": "online management remove question from favorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -3159,7 +3046,6 @@
     {
       "name": "omUpdateFavorite",
       "description": "online management update favorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteDescription",
@@ -3204,7 +3090,6 @@
     },
     {
       "name": "openNotifications",
-      "isDeprecated": false,
       "type": {
         "name": "OpenNotifications",
         "kind": "OBJECT"
@@ -3212,7 +3097,6 @@
     },
     {
       "name": "optInOrOutDynamicLayoutFeature",
-      "isDeprecated": false,
       "args": [
         {
           "name": "optIn",
@@ -3232,7 +3116,6 @@
     },
     {
       "name": "optInOrOutOfPremiumFeature",
-      "isDeprecated": false,
       "args": [
         {
           "name": "featureId",
@@ -3262,7 +3145,6 @@
     },
     {
       "name": "performNotificationAction",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -3279,7 +3161,6 @@
     },
     {
       "name": "planStartProgress",
-      "isDeprecated": false,
       "args": [
         {
           "name": "planSlug",
@@ -3299,7 +3180,6 @@
     },
     {
       "name": "publishContestAnnouncement",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -3316,7 +3196,6 @@
     },
     {
       "name": "publishSolution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -3370,7 +3249,6 @@
     {
       "name": "quitStudyPlan",
       "description": "quit a study plan",
-      "isDeprecated": false,
       "args": [
         {
           "name": "planSlug",
@@ -3390,7 +3268,6 @@
     },
     {
       "name": "rateArticle",
-      "isDeprecated": false,
       "args": [
         {
           "name": "contentTypeId",
@@ -3430,7 +3307,6 @@
     },
     {
       "name": "recordAbExperimentEvent",
-      "isDeprecated": false,
       "args": [
         {
           "name": "experimentKey",
@@ -3497,7 +3373,6 @@
     },
     {
       "name": "rejectContestReports",
-      "isDeprecated": false,
       "args": [
         {
           "name": "reportIds",
@@ -3520,7 +3395,6 @@
     },
     {
       "name": "rejectContribution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "comment",
@@ -3544,7 +3418,6 @@
     },
     {
       "name": "removeFavoriteFromMyCollectionV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -3564,7 +3437,6 @@
     },
     {
       "name": "removeQuestionFromFavorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteIdHash",
@@ -3588,7 +3460,6 @@
     },
     {
       "name": "removeQuestionFromFavoriteV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -3618,7 +3489,6 @@
     },
     {
       "name": "removeUsersFromInternalContest",
-      "isDeprecated": false,
       "args": [
         {
           "name": "userIds",
@@ -3638,7 +3508,6 @@
     },
     {
       "name": "reorderFavoriteQuestionV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -3689,7 +3558,6 @@
     },
     {
       "name": "reportUser",
-      "isDeprecated": false,
       "args": [
         {
           "name": "message",
@@ -3717,7 +3585,6 @@
     },
     {
       "name": "requestAnalysisEmail",
-      "isDeprecated": false,
       "args": [
         {
           "name": "sessionId",
@@ -3737,7 +3604,6 @@
     },
     {
       "name": "requestUpdateToReportedPosts",
-      "isDeprecated": false,
       "args": [
         {
           "name": "postIds",
@@ -3760,7 +3626,6 @@
     },
     {
       "name": "resetFavoriteSessionV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "deleteSyncedCode",
@@ -3788,7 +3653,6 @@
     },
     {
       "name": "resetWeeklyTaskSchedule",
-      "isDeprecated": false,
       "args": [
         {
           "name": "planSlug",
@@ -3825,7 +3689,6 @@
     },
     {
       "name": "rewardPostCoins",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -3856,7 +3719,6 @@
     },
     {
       "name": "runDebuggerCommand",
-      "isDeprecated": false,
       "args": [
         {
           "name": "command",
@@ -3886,7 +3748,6 @@
     },
     {
       "name": "saveSessionCode",
-      "isDeprecated": false,
       "args": [
         {
           "name": "code",
@@ -3916,7 +3777,6 @@
     },
     {
       "name": "sendAccountRecoveryEmail",
-      "isDeprecated": false,
       "args": [
         {
           "name": "email",
@@ -3940,7 +3800,6 @@
     },
     {
       "name": "sendInternalContestEmail",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -3967,7 +3826,6 @@
     },
     {
       "name": "sendVerificationEmail",
-      "isDeprecated": false,
       "args": [
         {
           "name": "email",
@@ -3984,7 +3842,6 @@
     },
     {
       "name": "setBlacklist",
-      "isDeprecated": false,
       "args": [
         {
           "name": "words",
@@ -4001,7 +3858,6 @@
     },
     {
       "name": "setItemStartTime",
-      "isDeprecated": false,
       "args": [
         {
           "name": "itemId",
@@ -4018,7 +3874,6 @@
     },
     {
       "name": "setNotificationSetting",
-      "isDeprecated": false,
       "args": [
         {
           "name": "channelIdentifier",
@@ -4050,7 +3905,6 @@
     {
       "name": "setVisibleOnPlanRank",
       "description": "whether hide current user rank info on rank boards",
-      "isDeprecated": false,
       "args": [
         {
           "name": "hideOnBoard",
@@ -4070,7 +3924,6 @@
     },
     {
       "name": "startDebuggerSession",
-      "isDeprecated": false,
       "args": [
         {
           "name": "commands",
@@ -4147,7 +4000,6 @@
     },
     {
       "name": "storeAdminCreateOrder",
-      "isDeprecated": false,
       "args": [
         {
           "name": "input",
@@ -4167,7 +4019,6 @@
     },
     {
       "name": "storeOrderEdit",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -4208,7 +4059,6 @@
     },
     {
       "name": "storeOrderSave",
-      "isDeprecated": false,
       "args": [
         {
           "name": "address",
@@ -4299,7 +4149,6 @@
     {
       "name": "submissionNoteComplexity",
       "description": "comment submission complexity",
-      "isDeprecated": false,
       "args": [
         {
           "name": "complexityType",
@@ -4340,7 +4189,6 @@
     {
       "name": "submissionVoteComplexity",
       "description": "vote submission complexity",
-      "isDeprecated": false,
       "args": [
         {
           "name": "complexityType",
@@ -4380,7 +4228,6 @@
     },
     {
       "name": "submitCancelSurvey",
-      "isDeprecated": false,
       "args": [
         {
           "name": "answers",
@@ -4403,7 +4250,6 @@
     },
     {
       "name": "submitQuestionSatisfactionSurvey",
-      "isDeprecated": false,
       "args": [
         {
           "name": "cancelled",
@@ -4453,7 +4299,6 @@
     },
     {
       "name": "submitQuestionSuggestion",
-      "isDeprecated": false,
       "args": [
         {
           "name": "checkedDictStr",
@@ -4490,7 +4335,6 @@
     },
     {
       "name": "submitSubscriptionSurvey",
-      "isDeprecated": false,
       "args": [
         {
           "name": "answers",
@@ -4513,7 +4357,6 @@
     },
     {
       "name": "submitSurveyV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "cancelled",
@@ -4573,7 +4416,6 @@
     },
     {
       "name": "subscribeTopic",
-      "isDeprecated": false,
       "args": [
         {
           "name": "subscribe",
@@ -4597,7 +4439,6 @@
     },
     {
       "name": "subscriptionViewCountIncrement",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ref",
@@ -4621,7 +4462,6 @@
     },
     {
       "name": "tagSearchHit",
-      "isDeprecated": false,
       "args": [
         {
           "name": "tagSlug",
@@ -4641,7 +4481,6 @@
     },
     {
       "name": "toggleContestDynamicLayout",
-      "isDeprecated": false,
       "args": [
         {
           "name": "enable",
@@ -4658,7 +4497,6 @@
     },
     {
       "name": "toggleContestRankingDynamicLayout",
-      "isDeprecated": false,
       "args": [
         {
           "name": "enable",
@@ -4675,7 +4513,6 @@
     },
     {
       "name": "toggleFavorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "cardSlug",
@@ -4692,7 +4529,6 @@
     },
     {
       "name": "toggleFavoriteSolution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "isFavorite",
@@ -4722,7 +4558,6 @@
     },
     {
       "name": "togglePinComment",
-      "isDeprecated": false,
       "args": [
         {
           "name": "commentId",
@@ -4746,7 +4581,6 @@
     },
     {
       "name": "togglePinTopic",
-      "isDeprecated": false,
       "args": [
         {
           "name": "pinned",
@@ -4770,7 +4604,6 @@
     },
     {
       "name": "unlockFavorite",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -4790,7 +4623,6 @@
     },
     {
       "name": "unlockShareEvent",
-      "isDeprecated": false,
       "args": [
         {
           "name": "cardSlug",
@@ -4807,7 +4639,6 @@
     },
     {
       "name": "unpublishContestAnnouncement",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -4824,7 +4655,6 @@
     },
     {
       "name": "upcSubmitResponse",
-      "isDeprecated": false,
       "args": [
         {
           "name": "response",
@@ -4851,7 +4681,6 @@
     },
     {
       "name": "upcV2SubmitSurvey",
-      "isDeprecated": false,
       "args": [
         {
           "name": "data",
@@ -4871,7 +4700,6 @@
     },
     {
       "name": "updateAnnualReportViewStatus",
-      "isDeprecated": false,
       "args": [
         {
           "name": "viewed",
@@ -4891,7 +4719,6 @@
     },
     {
       "name": "updateAvatarStatus",
-      "isDeprecated": false,
       "args": [
         {
           "name": "viewedSlugs",
@@ -4911,7 +4738,6 @@
     },
     {
       "name": "updateBetaParticipation",
-      "isDeprecated": false,
       "args": [
         {
           "name": "optIn",
@@ -4939,7 +4765,6 @@
     },
     {
       "name": "updateComment",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -4963,7 +4788,6 @@
     },
     {
       "name": "updateContribution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "applicationId",
@@ -5001,7 +4825,6 @@
     },
     {
       "name": "updateEducation",
-      "isDeprecated": false,
       "args": [
         {
           "name": "degree",
@@ -5053,7 +4876,6 @@
     },
     {
       "name": "updateEmailPrimary",
-      "isDeprecated": false,
       "args": [
         {
           "name": "email",
@@ -5077,7 +4899,6 @@
     },
     {
       "name": "updateFavoriteEmojiBackgroundV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "backgroundColor",
@@ -5111,7 +4932,6 @@
     },
     {
       "name": "updateFavoriteIsPublicV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "favoriteSlug",
@@ -5141,7 +4961,6 @@
     },
     {
       "name": "updateFavoriteNameDescriptionV2",
-      "isDeprecated": false,
       "args": [
         {
           "name": "description",
@@ -5178,7 +4997,6 @@
     },
     {
       "name": "updateInvalidUsername",
-      "isDeprecated": false,
       "args": [
         {
           "name": "username",
@@ -5195,7 +5013,6 @@
     },
     {
       "name": "updateNote",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -5225,7 +5042,6 @@
     },
     {
       "name": "updateOccupation",
-      "isDeprecated": false,
       "args": [
         {
           "name": "companyName",
@@ -5277,7 +5093,6 @@
     },
     {
       "name": "updatePassword",
-      "isDeprecated": false,
       "args": [
         {
           "name": "newPassword",
@@ -5307,7 +5122,6 @@
     },
     {
       "name": "updatePlayground",
-      "isDeprecated": false,
       "args": [
         {
           "name": "codeSnippetMode",
@@ -5373,7 +5187,6 @@
     },
     {
       "name": "updatePlaygroundFolder",
-      "isDeprecated": false,
       "args": [
         {
           "name": "newFolderName",
@@ -5397,7 +5210,6 @@
     },
     {
       "name": "updateProblematicPost",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -5428,7 +5240,6 @@
     },
     {
       "name": "updateProfile",
-      "isDeprecated": false,
       "args": [
         {
           "name": "fieldName",
@@ -5452,7 +5263,6 @@
     },
     {
       "name": "updateProfileV3",
-      "isDeprecated": false,
       "args": [
         {
           "name": "aboutMe",
@@ -5549,7 +5359,6 @@
     },
     {
       "name": "updatePublicBadge",
-      "isDeprecated": false,
       "args": [
         {
           "name": "badgeId",
@@ -5566,7 +5375,6 @@
     },
     {
       "name": "updateSolution",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -5616,7 +5424,6 @@
     },
     {
       "name": "updateSubmissionNote",
-      "isDeprecated": false,
       "args": [
         {
           "name": "flagType",
@@ -5660,7 +5467,6 @@
     },
     {
       "name": "updateSyncedCode",
-      "isDeprecated": false,
       "args": [
         {
           "name": "code",
@@ -5700,7 +5506,6 @@
     },
     {
       "name": "updateTeamMember",
-      "isDeprecated": false,
       "args": [
         {
           "name": "note",
@@ -5740,7 +5545,6 @@
     },
     {
       "name": "updateTopic",
-      "isDeprecated": false,
       "args": [
         {
           "name": "content",
@@ -5781,7 +5585,6 @@
     },
     {
       "name": "updateTopicWithCategory",
-      "isDeprecated": false,
       "args": [
         {
           "name": "categorySlugs",
@@ -5832,7 +5635,6 @@
     },
     {
       "name": "updateUsername",
-      "isDeprecated": false,
       "args": [
         {
           "name": "username",
@@ -5849,7 +5651,6 @@
     },
     {
       "name": "userManagementApplyForPremiumTrial",
-      "isDeprecated": false,
       "args": [
         {
           "name": "attachments",
@@ -5904,7 +5705,6 @@
     },
     {
       "name": "userManagementBanIp",
-      "isDeprecated": false,
       "args": [
         {
           "name": "banTypeSlug",
@@ -5949,7 +5749,6 @@
     },
     {
       "name": "userManagementBanUser",
-      "isDeprecated": false,
       "args": [
         {
           "name": "banTypeSlug",
@@ -5994,7 +5793,6 @@
     },
     {
       "name": "userManagementCreateScore",
-      "isDeprecated": false,
       "args": [
         {
           "name": "description",
@@ -6034,7 +5832,6 @@
     },
     {
       "name": "userManagementDeleteUserCreditCard",
-      "isDeprecated": false,
       "args": [
         {
           "name": "id",
@@ -6054,7 +5851,6 @@
     },
     {
       "name": "userManagementEditIpStatus",
-      "isDeprecated": false,
       "args": [
         {
           "name": "ip",
@@ -6084,7 +5880,6 @@
     },
     {
       "name": "userManagementSendVerificationEmail",
-      "isDeprecated": false,
       "args": [
         {
           "name": "email",
@@ -6114,7 +5909,6 @@
     },
     {
       "name": "userManagementSetEmailPrimary",
-      "isDeprecated": false,
       "args": [
         {
           "name": "email",
@@ -6144,7 +5938,6 @@
     },
     {
       "name": "userUploadSchoolLogo",
-      "isDeprecated": false,
       "args": [
         {
           "name": "schoolId",
@@ -6174,7 +5967,6 @@
     },
     {
       "name": "votePost",
-      "isDeprecated": false,
       "args": [
         {
           "name": "postId",

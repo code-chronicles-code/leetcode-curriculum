@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "notEligibleToDeleteAccountReasons",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "planDeleteDate",
-      "isDeprecated": false,
       "type": {
         "name": "Date",
         "kind": "SCALAR"
@@ -23,7 +21,6 @@
     },
     {
       "name": "userFrozenStatus",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

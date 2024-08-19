@@ -5,7 +5,6 @@
     {
       "name": "awarded",
       "description": "Whether to get reward",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -17,7 +16,6 @@
     {
       "name": "days",
       "description": "Period (number of days)",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -29,7 +27,6 @@
     {
       "name": "group",
       "description": "Study Plan Group",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -41,7 +38,6 @@
     {
       "name": "medal",
       "description": "Medal corresponding to the plan",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -52,7 +48,6 @@
     },
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -63,7 +58,6 @@
     },
     {
       "name": "slug",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

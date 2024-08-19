@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "authors",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "category",
-      "isDeprecated": false,
       "type": {
         "name": "DiscussCategoryNode",
         "kind": "OBJECT"
@@ -24,7 +22,6 @@
     {
       "name": "challengequestionSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -41,7 +38,6 @@
     },
     {
       "name": "commentCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -53,7 +49,6 @@
     {
       "name": "contestSet",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -70,7 +65,6 @@
     },
     {
       "name": "favoriteCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -81,7 +75,6 @@
     },
     {
       "name": "hideFromTrending",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -89,7 +82,6 @@
     },
     {
       "name": "id",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -100,7 +92,6 @@
     },
     {
       "name": "index",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -108,7 +99,6 @@
     },
     {
       "name": "isFavorite",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -116,7 +106,6 @@
     },
     {
       "name": "lastActivity",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -124,7 +113,6 @@
     },
     {
       "name": "lastComment",
-      "isDeprecated": false,
       "type": {
         "name": "CommentNode",
         "kind": "OBJECT"
@@ -133,7 +121,6 @@
     {
       "name": "nodebbTid",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -145,7 +132,6 @@
     {
       "name": "pinned",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -157,7 +143,6 @@
     {
       "name": "pinnedAt",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "name": "DateTime",
         "kind": "SCALAR"
@@ -165,7 +150,6 @@
     },
     {
       "name": "post",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -176,7 +160,6 @@
     },
     {
       "name": "searchMeta",
-      "isDeprecated": false,
       "type": {
         "name": "SearchMetaNode",
         "kind": "OBJECT"
@@ -184,7 +167,6 @@
     },
     {
       "name": "solutionTags",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -198,7 +180,6 @@
     },
     {
       "name": "subscribed",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -206,7 +187,6 @@
     },
     {
       "name": "tags",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -224,7 +204,6 @@
     {
       "name": "title",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -235,7 +214,6 @@
     },
     {
       "name": "topLevelCommentCount",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -247,7 +225,6 @@
     {
       "name": "viewCount",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

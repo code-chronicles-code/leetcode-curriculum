@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "hasMore",
-      "isDeprecated": false,
       "type": {
         "name": "Boolean",
         "kind": "SCALAR"
@@ -12,7 +11,6 @@
     },
     {
       "name": "questions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -29,7 +27,6 @@
     },
     {
       "name": "totalLength",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

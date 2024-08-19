@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "foldingPositions",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -16,7 +15,6 @@
     {
       "name": "lang",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -27,7 +25,6 @@
     },
     {
       "name": "langSlug",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -36,7 +33,6 @@
     {
       "name": "templateCode",
       "description": "",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

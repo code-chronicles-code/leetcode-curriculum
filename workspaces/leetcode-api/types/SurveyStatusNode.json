@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "lastCompleted",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

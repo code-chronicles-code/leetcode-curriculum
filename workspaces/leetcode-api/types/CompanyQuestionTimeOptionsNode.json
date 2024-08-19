@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "name",
-      "isDeprecated": false,
       "type": {
         "name": "String",
         "kind": "SCALAR"
@@ -13,7 +12,6 @@
     {
       "name": "option",
       "description": "时间选项",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

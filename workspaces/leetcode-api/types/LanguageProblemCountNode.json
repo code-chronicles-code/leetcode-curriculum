@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "languageName",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "problemsSolved",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

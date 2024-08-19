@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "hasMore",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "planUserProgresses",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -32,7 +30,6 @@
     },
     {
       "name": "total",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

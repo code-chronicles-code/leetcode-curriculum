@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "languageList",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "question",
-      "isDeprecated": false,
       "type": {
         "name": "ContestQuestionNodeV2",
         "kind": "OBJECT"
@@ -23,7 +21,6 @@
     },
     {
       "name": "statusList",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -34,7 +31,6 @@
     },
     {
       "name": "submittableLanguageList",
-      "isDeprecated": false,
       "type": {
         "kind": "LIST",
         "ofType": {
@@ -45,7 +41,6 @@
     },
     {
       "name": "totalAc",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -53,7 +48,6 @@
     },
     {
       "name": "totalAcUser",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -61,7 +55,6 @@
     },
     {
       "name": "totalSubmission",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"
@@ -69,7 +62,6 @@
     },
     {
       "name": "totalTriedUser",
-      "isDeprecated": false,
       "type": {
         "name": "Int",
         "kind": "SCALAR"

@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "numAcceptedQuestions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -21,7 +20,6 @@
     },
     {
       "name": "numFailedQuestions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -38,7 +36,6 @@
     },
     {
       "name": "numUntouchedQuestions",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -56,7 +53,6 @@
     {
       "name": "userSessionBeatsPercentage",
       "description": "用户击败其他用户的题目百分比",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {

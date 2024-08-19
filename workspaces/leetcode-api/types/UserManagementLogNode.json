@@ -4,7 +4,6 @@
   "fields": [
     {
       "name": "operation",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -15,7 +14,6 @@
     },
     {
       "name": "operationTime",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
@@ -26,7 +24,6 @@
     },
     {
       "name": "operator",
-      "isDeprecated": false,
       "type": {
         "kind": "NON_NULL",
         "ofType": {
