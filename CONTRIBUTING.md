@@ -2,6 +2,15 @@
 
 Thanks for your interest in contributing to this project! Contributions of all kinds are welcome and encouraged, whether in the form of code, documentation, discussion on issues, or something else.
 
+## Picking a Task
+
+If you're new to this project, start with a [good first issue](../../contribute) to get a feel for how the repository works. We try to maintain a backlog of relatively straightforward tasks, that are well-defined and scoped.
+
+If you'd like to contribute more regularly, join the Code Chronicles server on Discord! The server is private, but you can contact [@miorel](https://github.com/miorel) for an invite, via the email listed in the repository's `git log`.
+
+> [!IMPORTANT]
+> If you decide to work on an issue, comment on it, so others are aware. This will avoid duplicated work as well as give the maintainers a chance to offer their assistance if needed.
+
 ## GitHub Workflow
 
 Changes to the repository are proposed via GitHub pull requests.
