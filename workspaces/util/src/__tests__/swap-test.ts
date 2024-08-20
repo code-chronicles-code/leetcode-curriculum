@@ -51,7 +51,11 @@ describe("swap", () => {
   it("handles large arrays", () => {
     const arr = Array.from({ length: 1000 }, (_, i) => i);
     swap(arr, 0, 999);
-    expect(arr).toStrictEqual([999, ...Array.from({ length: 998 }, (_, i) => i + 1), 0]);
+    expect(arr).toStrictEqual([
+      999,
+      ...Array.from({ length: 998 }, (_, i) => i + 1),
+      0,
+    ]);
   });
 
   it("handles undefined values", () => {
