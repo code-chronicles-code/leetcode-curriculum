@@ -3,23 +3,23 @@ import { describe, expect, it } from "@jest/globals";
 import { squashWhitespace } from "../squashWhitespace";
 
 describe("squashWhitespace", () => {
-  it("removes whitespaces between words if it exists", () => {
+  it("removes whitespace between words if it exists", () => {
     expect(squashWhitespace("hello   world")).toBe("hello world");
   });
 
-  it("removes whitespaces at the end of the string", () => {
+  it("removes whitespace at the end of the string", () => {
     expect(squashWhitespace("hello world        ")).toBe("hello world");
   });
 
-  it("removes whitespaces at the beginginng of the string", () => {
+  it("removes whitespace at the beginginng of the string", () => {
     expect(squashWhitespace("         hello world")).toBe("hello world");
   });
 
-  it("nothing should be changed", () => {
+  it("removes nothing and keep the string unchanged", () => {
     expect(squashWhitespace("hello world !")).toBe("hello world !");
   });
 
-  it("empty string", () => {
+  it("returns empty string when empty string is given", () => {
     expect(squashWhitespace("")).toBe("");
   });
 
