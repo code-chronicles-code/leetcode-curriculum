@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-Map.groupBy = function <K, V>(
+Map.groupBy ??= function <K, V>(
   iterable: Iterable<V>,
   callbackFn: (value: V, index: number) => K,
 ): Map<K, V[]> {
@@ -19,7 +19,7 @@ Map.groupBy = function <K, V>(
       groups.set(key, []);
     }
     groups.get(key)!.push(value);
-    index++;
+    ++index;
   }
   return groups;
 };
