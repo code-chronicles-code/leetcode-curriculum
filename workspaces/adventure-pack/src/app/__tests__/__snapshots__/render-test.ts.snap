@@ -1058,6 +1058,22 @@ iteratorPrototype.toSet ??= function () {
 };"
 `;
 
+exports[`App can render goody: JavaScript Map.groupBy 1`] = `
+"Map.groupBy ??= function (iterable, callbackFn) {
+  const groups = new Map();
+  let index = 0;
+  for (const value of iterable) {
+    const key = callbackFn(value, index);
+    if (!groups.has(key)) {
+      groups.set(key, []);
+    }
+    groups.get(key).push(value);
+    ++index;
+  }
+  return groups;
+};"
+`;
+
 exports[`App can render goody: JavaScript Math.gcd 1`] = `
 "Math.gcd = function (a, b) {
   a = Math.abs(a);
@@ -2320,6 +2336,34 @@ declare global {
 
 iteratorPrototype.toSet ??= function <T>(this: Iterator<T>): Set<T> {
   return new Set(this.toIterable());
+};"
+`;
+
+exports[`App can render goody: TypeScript Map.groupBy 1`] = `
+"declare global {
+  interface MapConstructor {
+    groupBy<K, V>(
+      iterable: Iterable<V>,
+      callbackFn: (value: V, index: number) => K,
+    ): Map<K, V[]>;
+  }
+}
+
+Map.groupBy ??= function <K, V>(
+  iterable: Iterable<V>,
+  callbackFn: (value: V, index: number) => K,
+): Map<K, V[]> {
+  const groups = new Map<K, V[]>();
+  let index = 0;
+  for (const value of iterable) {
+    const key = callbackFn(value, index);
+    if (!groups.has(key)) {
+      groups.set(key, []);
+    }
+    groups.get(key)!.push(value);
+    ++index;
+  }
+  return groups;
 };"
 `;
 
