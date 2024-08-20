@@ -38,7 +38,7 @@ describe("Iterator.prototype.flatMap", () => {
       ["banana", "yellow"],
       ["grape", "purple"],
     ]);
-    const generator = function* ([fruit, color]: [string, string]): Generator<
+    const callback = function* ([fruit, color]: [string, string]): Generator<
       string,
       void,
       void
@@ -47,7 +47,7 @@ describe("Iterator.prototype.flatMap", () => {
       yield `I love ${color} ${fruit}s, *BITE*.`;
     };
 
-    const flatMapResult = map.entries().flatMap(generator);
+    const flatMapResult = map.entries().flatMap(callback);
 
     expect([...flatMapResult]).toStrictEqual([
       "I found a green apple.",
@@ -109,15 +109,20 @@ describe("Iterator.prototype.flatMap", () => {
       c: string,
       index: number,
     ): Generator<string, void, void> {
-      yield `${index}: ${c}`;
+      yield `${index}`;
+      yield `${c.repeat(index + 1)}`;
     };
 
     const flatMapResult = iterator.flatMap(callback);
     expect([...flatMapResult]).toStrictEqual([
-      "0: 🍞",
-      "1: 🥓",
-      "2: 🥬",
-      "3: 🍅",
+      "0",
+      "🍞",
+      "1",
+      "🥓🥓",
+      "2",
+      "🥬🥬🥬",
+      "3",
+      "🍅🍅🍅🍅",
     ]);
   });
 
@@ -132,6 +137,7 @@ describe("Iterator.prototype.flatMap", () => {
       expect(
         iterator
           .flatMap(function* <T>(p: T): Generator<T, void, void> {
+            yield p;
             yield p;
           })
           .next().done,
@@ -151,7 +157,7 @@ describe("Iterator.prototype.flatMap", () => {
           }
           if (count === 1) {
             ++count;
-            return { value: x, done: true };
+            return { value: x, done: false };
           }
           return { done: true };
         },
@@ -159,7 +165,7 @@ describe("Iterator.prototype.flatMap", () => {
     };
 
     const flatMapResult = iterator.flatMap(callback);
-    expect([...flatMapResult]).toStrictEqual([1, 2, 3]);
+    expect([...flatMapResult]).toStrictEqual([1, 1, 2, 2, 3, 3]);
   });
 
   it("callback returns an iterable but not an iterator", () => {
@@ -178,9 +184,10 @@ describe("Iterator.prototype.flatMap", () => {
     const iterator = [1, 2, 3].values();
     const callback = function* <T>(x: T) {
       yield x;
+      yield x;
     };
     const flatMapResult = iterator.flatMap(callback);
-    expect([...flatMapResult]).toStrictEqual([1, 2, 3]);
+    expect([...flatMapResult]).toStrictEqual([1, 1, 2, 2, 3, 3]);
   });
 
   it("throws a TypeError when the callback does not return an iterator or iterable", () => {
