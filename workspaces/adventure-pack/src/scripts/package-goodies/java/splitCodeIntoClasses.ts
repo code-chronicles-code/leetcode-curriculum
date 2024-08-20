@@ -7,6 +7,7 @@ import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 
 const CLASSES_TO_IGNORE: ReadonlySet<string> = new Set(["TreeNode"]);
 
+// TODO: refactor into some kind of easier to maintain state machine!
 export function splitCodeIntoClasses(
   code: string,
 ): Record<string, { code: string; declaration: string }> {
