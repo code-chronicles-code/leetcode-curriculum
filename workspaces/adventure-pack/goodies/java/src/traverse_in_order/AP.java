@@ -38,9 +38,15 @@ public final class AP {
   }
 }
 
+/**
+ * The TreeNode class provided by LeetCode.
+ * It will be omitted from the goody output, but is needed for compilation.
+ */
 class TreeNode {
 
-  // TODO: support comments outside a class in code extraction
+  // TODO: share the TreeNode class across files
+
+  // TODO: support single-line comments outside a class in code extraction
 
   // TODO: get coreImports to be first in generated output
 

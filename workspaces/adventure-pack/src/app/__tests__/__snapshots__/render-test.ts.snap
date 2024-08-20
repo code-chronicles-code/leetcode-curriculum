@@ -275,6 +275,9 @@ interface SimpleIterator<T> {
 exports[`App can render goody: Java UnionFind 1`] = `
 "package union_find;
 
+/**
+ * The classic disjoint-set data structure!
+ */
 class UnionFind {
   private final int[] parent;
   private final int[] componentSize;
