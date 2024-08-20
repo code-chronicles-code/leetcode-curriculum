@@ -110,7 +110,7 @@ describe("Iterator.prototype.flatMap", () => {
       index: number,
     ): Generator<string, void, void> {
       yield `${index}`;
-      yield `${c.repeat(index + 1)}`;
+      yield c.repeat(index + 1);
     };
 
     const flatMapResult = iterator.flatMap(callback);
