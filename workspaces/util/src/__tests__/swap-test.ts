@@ -25,69 +25,61 @@ describe("swap", () => {
       expected: [1, Math.PI, true, "a"],
       description: "swaps two elements in an array of mixed types",
     },
-    {
-      arr: [1, 2, 3],
-      i: 1,
-      j: 1,
-      expected: [1, 2, 3],
-      description: "does nothing when swapping the same index",
-    },
-    {
-      arr: [42],
-      i: 0,
-      j: 0,
-      expected: [42],
-      description: "handles arrays with one element",
-    },
-    {
-      arr: [1, 2, 3, 4, 5],
-      i: 4,
-      j: 2,
-      expected: [1, 2, 5, 4, 3],
-      description:
-        "swaps elements when the first index is larger than the second",
-    },
-    {
-      arr: Array.from({ length: 1000 }, (_, i) => i),
-      i: 0,
-      j: 999,
-      expected: [999, ...Array.from({ length: 998 }, (_, i) => i + 1), 0],
-      description: "handles large arrays",
-    },
-    {
-      arr: [undefined, "value", 42],
-      i: 0,
-      j: 1,
-      expected: ["value", undefined, 42],
-      description: "handles undefined values",
-    },
-    {
-      arr: [true, false],
-      i: 0,
-      j: 1,
-      expected: [false, true],
-      description: "swaps elements in an array with boolean values",
-    },
-    {
-      arr: [, 2, , 4],
-      i: 1,
-      j: 3,
-      expected: [, 4, , 2],
-      description: "swaps elements in a sparse array",
-    },
-    {
-      arr: [1, 2, 3, 4],
-      i: 0,
-      j: -1,
-      expected: [4, 2, 3, 1],
-      description: "swaps first and last element with negative index",
-    },
   ])("$description", ({ arr, i, j, expected }) => {
     swap(arr, i, j);
     expect(arr).toStrictEqual(expected);
   });
 
-  it("ensures referential equality when swapping complex objects", () => {
+  it("does nothing when swapping the same index", () => {
+    const arr = [1, 2, 3];
+    swap(arr, 1, 1);
+    expect(arr).toStrictEqual([1, 2, 3]);
+  });
+
+  it("handles arrays with one element", () => {
+    const arr = [42];
+    swap(arr, 0, 0);
+    expect(arr).toStrictEqual([42]);
+  });
+
+  it("swaps elements when the first index is larger than the second", () => {
+    const arr = [1, 2, 3, 4, 5];
+    swap(arr, 4, 2);
+    expect(arr).toStrictEqual([1, 2, 5, 4, 3]);
+  });
+
+  it("handles large arrays", () => {
+    const arr = Array.from({ length: 1000 }, (_, i) => i);
+    swap(arr, 0, 999);
+    expect(arr).toStrictEqual([999, ...Array.from({ length: 998 }, (_, i) => i + 1), 0]);
+  });
+
+  it("handles undefined values", () => {
+    const arr = [undefined, "value", 42];
+    swap(arr, 0, 1);
+    expect(arr).toStrictEqual(["value", undefined, 42]);
+  });
+
+  it("swaps elements in an array with boolean values", () => {
+    const arr = [true, false];
+    swap(arr, 0, 1);
+    expect(arr).toStrictEqual([false, true]);
+  });
+
+  it("swaps elements in a sparse array", () => {
+    /* eslint-disable no-sparse-arrays */
+    const arr = [, 2, , 4];
+    swap(arr, 1, 3);
+    expect(arr).toStrictEqual([, 4, , 2]);
+  });
+
+  it("swaps first and last element with negative index", () => {
+    const arr = [1, 2, 3, 4];
+    swap(arr, 0, -1);
+    expect(arr).toStrictEqual([4, 2, 3, 1]);
+  });
+
+  it("maintains object identity when swapping complex objects", () => {
     const obj1 = { a: 1 };
     const obj2 = { b: 2 };
     const obj3 = { c: 3 };
@@ -98,7 +90,7 @@ describe("swap", () => {
     expect(arr[2]).toBe(obj1);
   });
 
-  it("handles negative index out of bounds", () => {
+  it("doesn't throw on negative indexes", () => {
     const arr = [1, 2, 3];
     expect(() => swap(arr, 0, -1)).not.toThrow();
   });
