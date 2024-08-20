@@ -7,7 +7,7 @@ A collection of packages for LeetCode fun and profit!
 
 ## Contributing
 
-It would be wonderful to get to work with you! Learn more in the [Contributing](CONTRIBUTING.md) guide or jump right into the list of [good first issues](../../contribute).
+It would be wonderful to get to work with you! Learn more in the [Contributing](CONTRIBUTING.md) guide or jump right into the list of [good first issues](../../issues?q=is%3Aopen+is%3Aissue+label%3A"good+first+issue"+no%3Aassignee).
 
 ## License
 
