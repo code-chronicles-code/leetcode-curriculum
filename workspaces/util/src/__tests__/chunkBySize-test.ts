@@ -34,4 +34,19 @@ describe("chunkBySize", () => {
     const result = chunkBySize(["a", "b", "c"], 2);
     expect([...result]).toStrictEqual([["a", "b"], ["c"]]);
   });
+
+  it("throws an error for a chunk size less than 1", () => {
+    expect(() => chunkBySize([1, 2, 3], 0)).toThrow(
+      "Chunk size must be a positive integer!",
+    );
+    expect(() => chunkBySize([1, 2, 3], -1)).toThrow(
+      "Chunk size must be a positive integer!",
+    );
+  });
+
+  it("throws an error for a non-integer chunk size", () => {
+    expect(() => chunkBySize([1, 2, 3], 1.5)).toThrow(
+      "Chunk size must be a positive integer!",
+    );
+  });
 });
