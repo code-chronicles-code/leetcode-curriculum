@@ -1,11 +1,12 @@
 import type { ActiveDailyCodingChallengeQuestion } from "@code-chronicles/leetcode-api";
+import { getUnixTimestamp } from "./getUnixTimestamp";
+import { yearMonthDayToTimestampInSeconds } from "@code-chronicles/util/yearMonthDayToTimestampInSeconds";
+import { SEC_IN_DAY } from "@code-chronicles/util/timeConstants";
 
 export function getPotdMessage({
-  difficulty,
-  questionFrontendId,
-  title,
-  titleSlug,
-}: ActiveDailyCodingChallengeQuestion["question"]): string {
+  date,
+  question: { difficulty, questionFrontendId, title, titleSlug },
+}: ActiveDailyCodingChallengeQuestion): string {
   const link = `https://leetcode.com/problems/${titleSlug}/`;
   const sentences = [
     `✨ New LeetCode problem of the day: [${questionFrontendId}. ${title}](${link}) ✨`,
@@ -27,6 +28,10 @@ export function getPotdMessage({
       break;
     }
   }
+
+  sentences.push(
+    `\n-# Problem due - ⏳ ****${getUnixTimestamp(yearMonthDayToTimestampInSeconds(date) + SEC_IN_DAY, "R")}**** ⏳`,
+  );
 
   return sentences.join("\n");
 }
