@@ -1,16 +1,24 @@
 export function* chunkBySize<T>(
-  array: readonly T[] | null | undefined,
+  array: readonly T[],
   chunkSize: number,
 ): Generator<T[], void, void> {
-  if (chunkSize < 1 || !Number.isInteger(chunkSize)) {
+  if (
+    typeof chunkSize !== "number" ||
+    chunkSize < 1 ||
+    !Number.isInteger(chunkSize)
+  ) {
     throw new RangeError("Chunk size must be a positive integer!");
   }
 
-  if (array === null || array === undefined) {
-    throw new TypeError("Array cannot be null or undefined!");
-  }
-
   for (let i = 0; i < array.length; i += chunkSize) {
-    yield array.slice(i, i + chunkSize);
+    const chunk = array.slice(i, i + chunkSize);
+
+    for (const item of chunk) {
+      if (item === undefined) {
+        throw new TypeError("Array elements cannot be undefined!");
+      }
+    }
+
+    yield chunk;
   }
 }

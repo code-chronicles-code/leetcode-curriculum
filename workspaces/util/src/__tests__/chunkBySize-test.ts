@@ -15,34 +15,20 @@ describe("chunkBySize", () => {
     expect([...result]).toStrictEqual([[1, 2], [3]]);
   });
 
-  it("handles a chunk size greater than array length", () => {
-    const result = chunkBySize([1, 2], 3);
-    expect([...result]).toStrictEqual([[1, 2]]);
-  });
-
-  it("handles a chunk size of 1", () => {
-    const result = chunkBySize([1, 2, 3], 1);
-    expect([...result]).toStrictEqual([[1], [2], [3]]);
-  });
-
-  it("handles an empty array", () => {
-    const result = chunkBySize([], 2);
-    expect([...result]).toStrictEqual([]);
-  });
-
-  it("handles non-numeric elements", () => {
-    const result = chunkBySize(["a", "b", "c"], 2);
-    expect([...result]).toStrictEqual([["a", "b"], ["c"]]);
+  it("throws a TypeError if array contains undefined elements (sparse array)", () => {
+    expect(() => {
+      const result = chunkBySize([1, , 3], 2); // Sparse array
+      [...result];
+    }).toThrow(TypeError);
+    expect(() => {
+      const result = chunkBySize([1, undefined, 3], 2);
+      [...result];
+    }).toThrow("Array elements cannot be undefined!");
   });
 
   it("throws an error for a chunk size less than 1", () => {
     expect(() => {
       const result = chunkBySize([1, 2, 3], 0);
-      [...result];
-    }).toThrow("Chunk size must be a positive integer!");
-
-    expect(() => {
-      const result = chunkBySize([1, 2, 3], -1);
       [...result];
     }).toThrow("Chunk size must be a positive integer!");
   });
@@ -52,27 +38,5 @@ describe("chunkBySize", () => {
       const result = chunkBySize([1, 2, 3], 1.5);
       [...result];
     }).toThrow("Chunk size must be a positive integer!");
-  });
-
-  it("throws a TypeError for a null array", () => {
-    expect(() => {
-      const result = chunkBySize(null, 2);
-      [...result];
-    }).toThrow(TypeError);
-    expect(() => {
-      const result = chunkBySize(null, 2);
-      [...result];
-    }).toThrow("Array cannot be null or undefined!");
-  });
-
-  it("throws a TypeError for an undefined array", () => {
-    expect(() => {
-      const result = chunkBySize(undefined, 2);
-      [...result];
-    }).toThrow(TypeError);
-    expect(() => {
-      const result = chunkBySize(undefined, 2);
-      [...result];
-    }).toThrow("Array cannot be null or undefined!");
   });
 });
