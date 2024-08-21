@@ -50,7 +50,7 @@ async function main(): Promise<void> {
       return true;
     }
 
-    const message = getPotdMessage(potd);
+    const message = getPotdMessage({ date, question: potd });
     await sendDiscordMessage(secrets, message);
 
     await writeScriptData({ ...scriptData, lastPostedDate: date });
