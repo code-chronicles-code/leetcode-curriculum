@@ -1,7 +1,7 @@
 import nullthrows from "nullthrows";
 
 import { SUBMISSION_STATUS_TO_ABBREVIATION } from "@code-chronicles/leetcode-api";
-import { timestampToYearMonthDay } from "@code-chronicles/util/timestampToYearMonthDay";
+import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
 import { LANGUAGE_TO_FILE_EXTENSION } from "./constants";
 import type { TransformedSubmission } from "./transformSubmission";
@@ -17,7 +17,7 @@ export function getFilenameForSubmission({
     LANGUAGE_TO_FILE_EXTENSION[
       lang as keyof typeof LANGUAGE_TO_FILE_EXTENSION
     ] ?? "txt";
-  const date = timestampToYearMonthDay(timestamp, "");
+  const date = timestampInSecondsToYearMonthDay(timestamp, "");
   const resultAbbreviation = nullthrows(
     SUBMISSION_STATUS_TO_ABBREVIATION[
       // eslint-disable-next-line camelcase
