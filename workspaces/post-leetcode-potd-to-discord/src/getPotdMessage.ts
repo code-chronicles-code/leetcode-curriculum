@@ -1,5 +1,5 @@
 import type { ActiveDailyCodingChallengeQuestion } from "@code-chronicles/leetcode-api";
-import { getUnixTimestamp } from "./getUnixTimestamp";
+import { formatTimestampForDiscord } from "./formatTimestampForDiscord";
 import { yearMonthDayToTimestampInSeconds } from "@code-chronicles/util/yearMonthDayToTimestampInSeconds";
 import { SEC_IN_DAY } from "@code-chronicles/util/timeConstants";
 
@@ -30,7 +30,7 @@ export function getPotdMessage({
   }
 
   sentences.push(
-    `\n-# Problem due - ⏳ ****${getUnixTimestamp(yearMonthDayToTimestampInSeconds(date) + SEC_IN_DAY, "R")}**** ⏳`,
+    `\n-# Problem due - ⏳ ****${formatTimestampForDiscord(yearMonthDayToTimestampInSeconds(date) + SEC_IN_DAY, "R")}**** ⏳`,
   );
 
   return sentences.join("\n");
