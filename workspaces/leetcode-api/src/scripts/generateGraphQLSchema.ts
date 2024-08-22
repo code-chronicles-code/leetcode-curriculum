@@ -1,17 +1,25 @@
-import { readdir as readDirectory, readFile } from "node:fs/promises";
+import {
+  readdir as readDirectory,
+  readFile,
+  writeFile,
+} from "node:fs/promises";
 import path from "node:path";
 
+import { buildSchema, validateSchema } from "graphql";
 import nullthrows from "nullthrows";
+import * as prettier from "prettier";
 
+import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 import { invariantViolation } from "@code-chronicles/util/invariantViolation";
 import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
+import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 
 import type {
   InnerType,
   LeetCodeGraphQLType,
 } from "../fetchGraphQLTypeInformation";
-import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
+import { SCHEMA_FILE } from "./constants";
 
 const CONCURRENT_READS = 20;
 
@@ -153,10 +161,15 @@ async function main(): Promise<void> {
     section.sort((a, b) => compareStringsCaseInsensitive(a.key, b.key));
   }
 
-  console.log(
-    sections
-      .flatMap((section) => section.map((entry) => entry.content))
-      .join("\n"),
+  const schema = sections
+    .flatMap((section) => section.map((entry) => entry.content))
+    .join("\n");
+
+  maybeThrow(validateSchema(buildSchema(schema)));
+
+  await writeFile(
+    SCHEMA_FILE,
+    await prettier.format(schema, { parser: "graphql" }),
   );
 }
 
