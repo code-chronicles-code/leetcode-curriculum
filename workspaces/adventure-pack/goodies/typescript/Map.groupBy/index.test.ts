@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
-delete (Map as any).groupBy;
-// eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
+
+delete (Map as unknown as Record<string, unknown>).groupBy; // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
 import "./index";
 
 describe("Map.groupBy", () => {
@@ -169,18 +169,15 @@ describe("Map.groupBy", () => {
 
   it("should handle keys that are objects or arrays", () => {
     const data = [1, 2, 3, 4, 5, 6];
-    const even = { even: true };
-    const odd = ["odd"];
+    const even = { even: true } as const;
+    const odd = ["odd"] as const;
     const result = Map.groupBy(data, (num) => (num % 2 === 0 ? even : odd));
 
-    expect(result.size).toBe(2);
     expect(result.get({ even: true })).toBeUndefined();
     expect(result.get(["odd"])).toBeUndefined();
 
-    type KeyType = typeof even | typeof odd;
-
     expect(result).toStrictEqual(
-      new Map<KeyType, number[]>([
+      new Map<{ even: true } | readonly ["odd"], number[]>([
         [even, [2, 4, 6]],
         [odd, [1, 3, 5]],
       ]),
