@@ -1,10 +1,9 @@
 package traverse_level_order
 
 import common.TreeNode
-import java.util.stream.Stream
 
-public fun TreeNode?.traverseLevelOrder(): Stream<TreeNode> {
-    if (this == null) return Stream.empty()
+public fun TreeNode?.traverseLevelOrder(): Sequence<TreeNode> {
+    if (this == null) return emptyList<TreeNode>().asSequence()
 
     val levelOrder = mutableListOf<TreeNode>()
 
@@ -26,5 +25,5 @@ public fun TreeNode?.traverseLevelOrder(): Stream<TreeNode> {
         }
     }
 
-    return levelOrder.stream()
+    return levelOrder.asSequence()
 }
