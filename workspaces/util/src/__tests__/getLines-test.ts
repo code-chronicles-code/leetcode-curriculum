@@ -26,5 +26,4 @@ describe("getLines", () => {
 
     expect([...result]).toStrictEqual(["hello world !"]);
   });
-
 });
