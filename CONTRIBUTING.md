@@ -4,7 +4,7 @@ Thanks for your interest in contributing to this project! Contributions of all k
 
 ## Picking a Task
 
-If you're new to this project, start with a [good first issue](../../contribute) to get a feel for how the repository works. We try to maintain a backlog of relatively straightforward tasks, that are well-defined and scoped.
+If you're new to this project, start with a [good first issue](../../issues?q=is%3Aopen+is%3Aissue+label%3A"good+first+issue"+no%3Aassignee) to get a feel for how the repository works. We try to maintain a backlog of relatively straightforward tasks that are well-defined and scoped.
 
 If you'd like to contribute more regularly, join the Code Chronicles server on Discord! The server is private, but you can contact [@miorel](https://github.com/miorel) for an invite, via the email listed in the repository's `git log`.
 
@@ -15,7 +15,7 @@ If you'd like to contribute more regularly, join the Code Chronicles server on D
 
 Changes to the repository are proposed via GitHub pull requests.
 
-It's recommended to use [GitHub's command-line interface](https://cli.github.com/), as it will simplify the GitHub workflow. Specifically, you can:
+We recommend using [GitHub's command-line interface](https://cli.github.com/), as it will simplify the GitHub workflow. Specifically, you can:
 
 1. **Clone this repository directly**, without needing a fork at this point:
 
