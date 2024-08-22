@@ -3,27 +3,24 @@ package traverse_level_order
 import common.TreeNode
 
 public fun TreeNode?.traverseLevelOrder(): Sequence<TreeNode> {
-    if (this == null) return emptyList<TreeNode>().asSequence()
-
-    val levelOrder = mutableListOf<TreeNode>()
+    if (this == null) return sequenceOf()
 
     val q = ArrayDeque<TreeNode>()
-
     q.add(this)
 
-    while (q.isNotEmpty()) {
-        val current = q.removeFirst()
+    return sequence {
+        while (q.isNotEmpty()) {
+            val current = q.removeFirst()
 
-        levelOrder.add(current)
+            yield(current)
 
-        if (current.left != null) {
-            q.add(current.left!!)
-        }
+            if (current.left != null) {
+                q.add(current.left!!)
+            }
 
-        if (current.right != null) {
-            q.add(current.right!!)
+            if (current.right != null) {
+                q.add(current.right!!)
+            }
         }
     }
-
-    return levelOrder.asSequence()
 }
