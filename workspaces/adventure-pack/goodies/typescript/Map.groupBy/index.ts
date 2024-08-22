@@ -15,10 +15,12 @@ Map.groupBy ??= function <K, V>(
   let index = 0;
   for (const value of iterable) {
     const key = callbackFn(value, index);
-    if (!groups.has(key)) {
-      groups.set(key, []);
+    const group = groups.get(key);
+    if (group == null) {
+      groups.set(key, [value]);
+    } else {
+      group.push(value);
     }
-    groups.get(key)!.push(value);
     ++index;
   }
   return groups;
