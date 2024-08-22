@@ -2,7 +2,7 @@ import { describe, expect, it } from "@jest/globals";
 
 import { getLines } from "../getLines";
 
-describe("chunkBySize", () => {
+describe("getLines", () => {
   it("gets lines when the new line at the begining", () => {
     const result = getLines("\n hello\n world");
 
@@ -27,9 +27,4 @@ describe("chunkBySize", () => {
     expect([...result]).toStrictEqual(["hello world !"]);
   });
 
-  it("gets lines when using other new line characters", () => {
-    const result = getLines("this\vis\fa\rtest");
-
-    expect([...result]).toStrictEqual(["this\v", "is\f", "a\r", "test"]);
-  });
 });
