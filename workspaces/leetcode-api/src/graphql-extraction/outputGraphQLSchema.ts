@@ -1,5 +1,4 @@
 import {
-  GraphQLScalarType,
   GraphQLEnumType,
   buildSchema,
   printType,
@@ -25,7 +24,7 @@ export async function outputGraphQLSchema(
     compareStringsCaseInsensitive(a.name, b.name),
   );
 
-  const scalars: GraphQLScalarType[] = [];
+  const scalars: string[] = [];
   const enums: GraphQLEnumType[] = [];
   const inputObjects: string[] = [];
   const interfaces: string[] = [];
@@ -106,10 +105,7 @@ export async function outputGraphQLSchema(
 
       case "SCALAR": {
         scalars.push(
-          new GraphQLScalarType({
-            name: typeInfo.name,
-            description: typeInfo.description,
-          }),
+          `${outputGraphQLString(typeInfo.description)} scalar ${typeInfo.name}`,
         );
         break;
       }
@@ -127,7 +123,7 @@ export async function outputGraphQLSchema(
   }
 
   const schema = [
-    scalars.map(printType),
+    scalars,
     enums.map(printType),
     interfaces,
     inputObjects,

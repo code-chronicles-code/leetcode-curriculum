@@ -1,6 +1,4 @@
-"""
-The `Boolean` scalar type represents `true` or `false`.
-"""
+"The `Boolean` scalar type represents `true` or `false`."
 scalar Boolean
 
 """
@@ -17,14 +15,10 @@ value as specified by
 """
 scalar DateTime
 
-"""
-The `Decimal` scalar type represents a python Decimal.
-"""
+"The `Decimal` scalar type represents a python Decimal."
 scalar Decimal
 
-"""
-The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
-"""
+"The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). "
 scalar Float
 
 """
@@ -32,9 +26,7 @@ The `ID` scalar type represents a unique identifier, often used to refetch an ob
 """
 scalar ID
 
-"""
-The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31 - 1) and 2^31 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
-"""
+"The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31 - 1) and 2^31 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point)."
 scalar Int
 
 """
@@ -45,9 +37,7 @@ schema (one of the key benefits of GraphQL).
 """
 scalar JSONString
 
-"""
-The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
-"""
+"The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
 scalar String
 
 """
@@ -4148,13 +4138,9 @@ enum UserQuestionStatus {
   TRIED
 }
 
-"""
-An object with an ID
-"""
+"An object with an ID"
 interface Node {
-  """
-  The ID of the object.
-  """
+  "The ID of the object."
   id: ID!
 }
 
@@ -4218,13 +4204,9 @@ input LibraryQuestionsInput {
   isNew: Boolean
   isSystemDesign: Boolean
   isUnpublished: Boolean
-  """
-  Search Keyword
-  """
+  "Search Keyword"
   keyword: String
-  """
-  Question Type
-  """
+  "Question Type"
   quesType: String
   sortField: QuestionSortFieldEnum!
 }
@@ -4236,61 +4218,39 @@ input LibrarySolutionsInput {
 }
 
 input ManagementAddInterviewedStatVoteInput {
-  """
-  position tag id
-  """
+  "position tag id"
   positionTagSlug: String
   questionId: ID!
-  """
-  company tag id
-  """
+  "company tag id"
   tagId: ID!
   timeOption: Int
   votedNum: Int!
 }
 
 input ManagementAddOrEditTagCategoryInput {
-  """
-  Group ID for this category
-  """
+  "Group ID for this category"
   groupId: ID!
-  """
-  Category is enabled or not
-  """
+  "Category is enabled or not"
   isEnabled: Boolean
-  """
-  Category Name
-  """
+  "Category Name"
   name: String!
 }
 
 input ManagementAddOrEditTagInput {
-  """
-  Tag Image URL
-  """
+  "Tag Image URL"
   imgUrl: String
   isStandard: Boolean
-  """
-  Whether the tag is enabled (if not enabled, it's not shown to the users
-  """
+  "Whether the tag is enabled (if not enabled, it's not shown to the users"
   isTagEnabled: Boolean!
   isUserSelectable: Boolean
   keywords: JSONString
-  """
-  Tag Name
-  """
+  "Tag Name"
   name: String!
-  """
-  排序
-  """
+  "排序"
   order: Int
-  """
-  Tag Slug
-  """
+  "Tag Slug"
   slug: String!
-  """
-  Category List IDs
-  """
+  "Category List IDs"
   tagCategoryIds: [ID]
 }
 
@@ -4313,19 +4273,13 @@ input managementCompanyQuestionsV2Input {
 }
 
 input ManagementCompanyTagsInput {
-  """
-  Filter by Standard Tags
-  """
+  "Filter by Standard Tags"
   isEnabled: Boolean
-  """
-  Search Keyword
-  """
+  "Search Keyword"
   keyword: String
   limit: Int!
   offset: Int!
-  """
-  Tag Slug
-  """
+  "Tag Slug"
   slug: String
 }
 
@@ -4337,56 +4291,34 @@ input managementIncVoteLogsInput {
 }
 
 input ManagementTagCategoriesInput {
-  """
-  Filter by Category Enabled
-  """
+  "Filter by Category Enabled"
   isEnabled: Boolean
-  """
-  Search Keyword
-  """
+  "Search Keyword"
   keyword: String
-  """
-  Category Slug
-  """
+  "Category Slug"
   slug: String
-  """
-  Group ID
-  """
+  "Group ID"
   tagGroupId: Int
 }
 
 input ManagementTagsInput {
   excludeTagCategoryIds: [Int]
   isSimilarTag: Boolean
-  """
-  Filter by Standard Tags
-  """
+  "Filter by Standard Tags"
   isStandardTag: Boolean
-  """
-  Filter by Enabled Tags
-  """
+  "Filter by Enabled Tags"
   isTagEnabled: Boolean
-  """
-  Filter by User Selectable Tags
-  """
+  "Filter by User Selectable Tags"
   isUserSelectable: Boolean
-  """
-  Search Keyword
-  """
+  "Search Keyword"
   keyword: String
   limit: Int!
   offset: Int!
-  """
-  Filter by Tag Slug startswith
-  """
+  "Filter by Tag Slug startswith"
   slug: String
-  """
-  Category ID
-  """
+  "Category ID"
   tagCategoryId: Int
-  """
-  Group ID
-  """
+  "Group ID"
   tagGroupId: Int
 }
 
@@ -4416,9 +4348,7 @@ input OMFavoriteListInput {
   searchKeyword: String
   skip: Int!
   sortBy: OMFavoriteSortFieldEnum
-  """
-  sort descending or ascending
-  """
+  "sort descending or ascending"
   sortDsc: Boolean
 }
 
@@ -4467,19 +4397,13 @@ input QuestionSolutionsFilterInput {
 
 input ReviewFlaggedObjectInput {
   description: String
-  """
-  Use this to locate the object. Will ignore resourceType and resourceId if this is provided.
-  """
+  "Use this to locate the object. Will ignore resourceType and resourceId if this is provided."
   flagResultId: ID
   operation: FlagStatus!
   reasonId: ID
-  """
-  Use this together with resourceType as an alternative way to locate object.
-  """
+  "Use this together with resourceType as an alternative way to locate object."
   resourceId: String
-  """
-  Use this together with resourceId as an alternative way to locate object.
-  """
+  "Use this together with resourceId as an alternative way to locate object."
   resourceType: ResourceTypeEnum
 }
 
@@ -4554,9 +4478,7 @@ input UserManagementStripeChargesInput {
 
 input VacRecordsInput {
   limit: Int!
-  """
-  vac name to search
-  """
+  "vac name to search"
   searchKeyword: String
   skip: Int!
   userId: ID!
@@ -4572,29 +4494,12 @@ type __Directive {
   description: String
   locations: [__DirectiveLocation!]!
   name: String!
-  onField: Boolean!
-    @deprecated(
-      reason: """
-      Use `locations`.
-      """
-    )
-  onFragment: Boolean!
-    @deprecated(
-      reason: """
-      Use `locations`.
-      """
-    )
-  onOperation: Boolean!
-    @deprecated(
-      reason: """
-      Use `locations`.
-      """
-    )
+  onField: Boolean! @deprecated(reason: "Use `locations`.")
+  onFragment: Boolean! @deprecated(reason: "Use `locations`.")
+  onOperation: Boolean! @deprecated(reason: "Use `locations`.")
 }
 
-"""
-One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.
-"""
+"One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string."
 type __EnumValue {
   deprecationReason: String
   description: String
@@ -4602,9 +4507,7 @@ type __EnumValue {
   name: String!
 }
 
-"""
-Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.
-"""
+"Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type."
 type __Field {
   args: [__InputValue!]!
   deprecationReason: String
@@ -4614,9 +4517,7 @@ type __Field {
   type: __Type!
 }
 
-"""
-Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.
-"""
+"Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value."
 type __InputValue {
   defaultValue: String
   description: String
@@ -4624,29 +4525,17 @@ type __InputValue {
   type: __Type!
 }
 
-"""
-A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations.
-"""
+"A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations."
 type __Schema {
-  """
-  A list of all directives supported by this server.
-  """
+  "A list of all directives supported by this server."
   directives: [__Directive!]!
-  """
-  If this server supports mutation, the type that mutation operations will be rooted at.
-  """
+  "If this server supports mutation, the type that mutation operations will be rooted at."
   mutationType: __Type
-  """
-  The type that query operations will be rooted at.
-  """
+  "The type that query operations will be rooted at."
   queryType: __Type!
-  """
-  If this server support subscription, the type that subscription operations will be rooted at.
-  """
+  "If this server support subscription, the type that subscription operations will be rooted at."
   subscriptionType: __Type
-  """
-  A list of all types supported by this server.
-  """
+  "A list of all types supported by this server."
   types: [__Type!]!
 }
 
@@ -4749,22 +4638,16 @@ type AddUserToInternalContest {
 }
 
 type AdvertisementNode {
-  """
-  the ad slot of google adsense, None for internal ads
-  """
+  "the ad slot of google adsense, None for internal ads"
   adSlot: String
   adSource: AdSourceEnum!
   bannerUrl: String
   displayTitle: String
-  """
-  the height of google adsense, None for internal ads
-  """
+  "the height of google adsense, None for internal ads"
   height: Int
   targetUrl: String
   title: String!
-  """
-  the width of google adsense, None for internal ads
-  """
+  "the width of google adsense, None for internal ads"
   width: Int
 }
 
@@ -4856,13 +4739,9 @@ type ArticleNode {
   paidOnly: Boolean
   paidOnlyVideo: Boolean
   rating: RatingNode
-  """
-  The name of the page as it will appear in URLs e.g http://domain.com/blog/[my-slug]/
-  """
+  "The name of the page as it will appear in URLs e.g http://domain.com/blog/[my-slug]/"
   slug: String!
-  """
-  The page title as you'd like it to be seen by the public
-  """
+  "The page title as you'd like it to be seen by the public"
   title: String!
   titleSlug: String
   topic: TopicNode
@@ -4870,9 +4749,7 @@ type ArticleNode {
   url: String
 }
 
-"""
-取消注销账户请求
-"""
+"取消注销账户请求"
 type AuthCancelDeleteAccount {
   ok: Boolean!
 }
@@ -5075,9 +4952,7 @@ type CommentNode {
   lastComment: TopicNode
   nodebbPid: Int!
   numChildren: Int!
-  """
-  Ineffective field: Don't query this field in a list
-  """
+  "Ineffective field: Don't query this field in a list"
   pageNum(numPerPage: Int = 10, orderBy: String = ""): Int
   parent: CommentNode
   parentId: ID
@@ -5146,35 +5021,23 @@ type CompanyQuestionOptionsNode {
 
 type CompanyQuestionTimeOptionsNode {
   name: String
-  """
-  时间选项
-  """
+  "时间选项"
   option: CompanyQuestionTimeOptionEnumV2!
 }
 
 type CompanyTagConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [CompanyTagEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `CompanyTag` and its cursor.
-"""
+"A Relay edge containing a `CompanyTag` and its cursor."
 type CompanyTagEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: CompanyTagNode
 }
 
@@ -5186,27 +5049,17 @@ type CompanyTagNode {
   favoriteSet: [FeaturedQuestionListNode!]!
   frequencies: String
   hotScore: Int
-  """
-  The ID of the object.
-  """
+  "The ID of the object."
   id: ID!
   imgUrl: String
   interviewTagsCategories: [InterviewTagsCategoryNode!]!
-  """
-  Deprecated in Tag System. Still used by old products.
-  """
+  "Deprecated in Tag System. Still used by old products."
   isEnabled: Boolean!
-  """
-  Whether this is a standard tag or not
-  """
+  "Whether this is a standard tag or not"
   isStandard: Boolean!
-  """
-  Whether this tag is enabled or not. If not enabled, we NEVER show it to our users.
-  """
+  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
   isTagEnabled: Boolean!
-  """
-  Whether user can select this tag or not
-  """
+  "Whether user can select this tag or not"
   isUserSelectable: Boolean!
   keywords: JSONString!
   name: String!
@@ -5218,9 +5071,7 @@ type CompanyTagNode {
   slug: String!
   tagCategories: [TagCategoryNode!]!
   tagId: Int!
-  """
-  Deprecated in Tag System. Still used by old products.
-  """
+  "Deprecated in Tag System. Still used by old products."
   tagType: TagTypeNode
   translatedName: String
 }
@@ -5287,9 +5138,7 @@ type ContestNode {
   company: SponsorNode
   containsPremium: Boolean
   description: String!
-  """
-  in seconds
-  """
+  "in seconds"
   duration: Int!
   isVirtual: Boolean
   originStartTime: Int
@@ -5491,9 +5340,7 @@ type CreateOrUpdateEmailEvent {
   wasCreated: Boolean
 }
 
-"""
-obtain the new annual medals
-"""
+"obtain the new annual medals"
 type CreateOrUpdateUserYearlyMedals {
   error: String
   ok: Boolean!
@@ -5534,9 +5381,7 @@ type CreateTopicWithCategory {
 type CreditCardLogNode {
   action: String!
   operator: ManagementUserSimpleNode!
-  """
-  In seconds
-  """
+  "In seconds"
   timestamp: Int!
 }
 
@@ -5584,9 +5429,7 @@ type DebugSessionNode {
   uuid: String!
 }
 
-"""
-user apply to delete account, account gets frozen after success
-"""
+"user apply to delete account, account gets frozen after success"
 type DeleteAccount {
   ok: Boolean!
   planDeleteDate: Date
@@ -5819,9 +5662,7 @@ type EmailSendSessionNode {
 }
 
 type EmailTemplateNode {
-  """
-  Resolves the following template variables automatically:<ul><li>blocks</li><li>suggested_q_slug</li><li>next_biweekly_contest_time_url</li><li>current_year</li><li>next_contest_url</li><li>suggested_q_title</li><li>next_biweekly_contest_title_slug</li><li>next_biweekly_contest_time_by_timezone</li><li>next_javascript_dcc_link</li><li>next_contest_formatted_date</li><li>q_difficulty_w_article</li><li>q_num_ac_subs</li><li>unsubscribe_url</li><li>next_contest_time_by_timezone</li><li>q_difficulty_mandarin</li><li>next_biweekly_contest_formatted_date</li><li>next_biweekly_contest_title</li><li>site_base_url</li><li>storage_base_url</li><li>q_description</li><li>username</li><li>next_contest_time_url</li><li>real_name</li><li>next_biweekly_contest_url</li><li>next_javascript_dcc_editorial_link</li><li>next_javascript_dcc_day</li><li>next_contest_title_slug</li><li>next_contest_title</li></ul>
-  """
+  "Resolves the following template variables automatically:<ul><li>next_biweekly_contest_formatted_date</li><li>storage_base_url</li><li>q_difficulty_mandarin</li><li>q_description</li><li>next_javascript_dcc_editorial_link</li><li>suggested_q_title</li><li>next_contest_time_url</li><li>next_biweekly_contest_time_by_timezone</li><li>next_javascript_dcc_day</li><li>suggested_q_slug</li><li>q_num_ac_subs</li><li>next_contest_title_slug</li><li>unsubscribe_url</li><li>next_biweekly_contest_time_url</li><li>next_contest_formatted_date</li><li>next_biweekly_contest_url</li><li>next_contest_title</li><li>blocks</li><li>current_year</li><li>username</li><li>next_contest_time_by_timezone</li><li>next_biweekly_contest_title</li><li>next_javascript_dcc_link</li><li>next_contest_url</li><li>real_name</li><li>next_biweekly_contest_title_slug</li><li>q_difficulty_w_article</li><li>site_base_url</li></ul>"
   content: String!
   conversionTargetUrlTemplates: String
   emaileventSet: [EmailEventNode!]!
@@ -5875,9 +5716,7 @@ type FavoriteDetailListNode {
 
 type FavoriteDetailNode {
   collectCount: Int!
-  """
-  only for C.N. side
-  """
+  "only for C.N. side"
   companyLegalName: String
   companyVerified: Boolean!
   coverBackgroundColor: String
@@ -5885,42 +5724,30 @@ type FavoriteDetailNode {
   coverUrl: String
   creator: FavoriteBriefUserNode!
   description: String!
-  """
-  user unlock favorite status
-  """
+  "user unlock favorite status"
   favoriteLockStatus: FavoriteLockStatusEnum
   favoriteType: FavoriteTypeEnum
-  """
-  only for C.N. side
-  """
+  "only for C.N. side"
   financingStageDisplay: String
   generatedFavoritesInfo: GeneratedFavoritesInfoNode
   generateFromFavoriteSlug: String
   hasCurrentQuestion: Boolean
-  """
-  only for C.N. side
-  """
+  "only for C.N. side"
   industryDisplay: String
   isDefaultList: Boolean!
   isPublicFavorite: Boolean!
-  """
-  for smart list
-  """
+  "for smart list"
   languageTagSlug: String
   lastModified: DateTime!
   lastQuestionAddedAt: DateTime
   name: String!
   positionRoleTags: [CommonTagNode!]
   questionNumber: Int!
-  """
-  only for C.N. side
-  """
+  "only for C.N. side"
   scaleDisplay: String
   slug: String!
   viewCount: Int
-  """
-  only for C.N. side
-  """
+  "only for C.N. side"
   website: String
 }
 
@@ -5962,14 +5789,10 @@ type FavoriteQuestionListNode {
 
 type FavoriteQuestionNode {
   difficulty: DifficultyDescribedEnum!
-  """
-  出题频率，企业题单专用字段
-  """
+  "出题频率，企业题单专用字段"
   frequency: Float
   id: ID!
-  """
-  whether the question is in the user's favorites
-  """
+  "whether the question is in the user's favorites"
   isInMyFavorites: Boolean!
   paidOnly: Boolean!
   questionFrontendId: String!
@@ -6103,28 +5926,18 @@ type FilteredSubmissionOverviewNode {
 }
 
 type FlaggedObjectConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [FlaggedObjectEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `FlaggedObject` and its cursor.
-"""
+"A Relay edge containing a `FlaggedObject` and its cursor."
 type FlaggedObjectEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: FlaggedObjectNode
 }
 
@@ -6325,9 +6138,7 @@ type InterviewNode {
     last: Int
     offset: Int
   ): InterviewSessionNodeConnection!
-  """
-  in seconds
-  """
+  "in seconds"
   timeConstraint: Int
   updateTime: DateTime
 }
@@ -6368,28 +6179,18 @@ type InterviewScoreProgressNode {
 }
 
 type InterviewSessionConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [InterviewSessionEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `InterviewSession` and its cursor.
-"""
+"A Relay edge containing a `InterviewSession` and its cursor."
 type InterviewSessionEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: InterviewSessionNode
 }
 
@@ -6397,9 +6198,7 @@ type InterviewSessionNode {
   card: InterviewCardNode!
   endTime: Int!
   expiredTime: Int!
-  """
-  The ID of the object.
-  """
+  "The ID of the object."
   id: ID!
   interview: InterviewNode!
   progress: [InterviewProgressNode!]!
@@ -6410,27 +6209,17 @@ type InterviewSessionNode {
 }
 
 type InterviewSessionNodeConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [InterviewSessionNodeEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
 }
 
-"""
-A Relay edge containing a `InterviewSessionNode` and its cursor.
-"""
+"A Relay edge containing a `InterviewSessionNode` and its cursor."
 type InterviewSessionNodeEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: InterviewSessionNode
 }
 
@@ -6444,36 +6233,24 @@ type InterviewStart {
 }
 
 type InterviewSubmissionConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [InterviewSubmissionEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `InterviewSubmission` and its cursor.
-"""
+"A Relay edge containing a `InterviewSubmission` and its cursor."
 type InterviewSubmissionEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: InterviewSubmissionNode
 }
 
 type InterviewSubmissionNode {
   code: String
-  """
-  The ID of the object.
-  """
+  "The ID of the object."
   id: ID!
   isPending: String
   lang: String
@@ -6578,9 +6355,7 @@ type ItemNode {
   webPage: WebPageNode
 }
 
-"""
-join a study plan
-"""
+"join a study plan"
 type JoinStudyPlan {
   ok: Boolean!
   progressId: String!
@@ -6628,28 +6403,18 @@ type LevelBeatPercentageMixin {
 }
 
 type LibraryActivityConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [LibraryActivityEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `LibraryActivity` and its cursor.
-"""
+"A Relay edge containing a `LibraryActivity` and its cursor."
 type LibraryActivityEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: QuestionActivityNode
 }
 
@@ -6738,28 +6503,18 @@ type LibraryQuestionAttachmentNode {
 }
 
 type LibraryQuestionConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [LibraryQuestionEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `LibraryQuestion` and its cursor.
-"""
+"A Relay edge containing a `LibraryQuestion` and its cursor."
 type LibraryQuestionEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: LibraryQuestionNode
 }
 
@@ -6836,27 +6591,17 @@ type LibraryQuestionNode {
 }
 
 type LibraryQuestionNodeConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [LibraryQuestionNodeEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
 }
 
-"""
-A Relay edge containing a `LibraryQuestionNode` and its cursor.
-"""
+"A Relay edge containing a `LibraryQuestionNode` and its cursor."
 type LibraryQuestionNodeEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: LibraryQuestionNode
 }
 
@@ -7214,21 +6959,13 @@ type MedalBriefNode {
 }
 
 type MedalConfigNode {
-  """
-  The original image URL of the medal
-  """
+  "The original image URL of the medal"
   icon: String
-  """
-  GIF URL of the medal
-  """
+  "GIF URL of the medal"
   iconGif: String
-  """
-  GIF background URL of the medal
-  """
+  "GIF background URL of the medal"
   iconGifBackground: String
-  """
-  URL of the medal wearing picture
-  """
+  "URL of the medal wearing picture"
   iconWearing: String
 }
 
@@ -7350,9 +7087,7 @@ type Mutation {
   ): BatchReviewFlaggedObjects
   btsEventNotification(enable: Boolean!): BTSEventNotification
   btsReferralRegister(refer: String!): BTSReferralRegister
-  """
-  取消注销账户请求
-  """
+  "取消注销账户请求"
   cancelDeleteAccount: AuthCancelDeleteAccount
   checkin: Checkin
   collectContestEasterEgg: CollectContestEasterEgg
@@ -7394,9 +7129,7 @@ type Mutation {
     questionSlug: String!
     score: Int!
   ): CreateOrUpdateEditorialFeedback
-  """
-  obtain the new annual medals
-  """
+  "obtain the new annual medals"
   createOrUpdateUserYearlyMedals(
     medalSlugs: [String]!
   ): CreateOrUpdateUserYearlyMedals
@@ -7425,9 +7158,7 @@ type Mutation {
     tags: [String]
     title: String
   ): CreateTopicWithCategory
-  """
-  user apply to delete account, account gets frozen after success
-  """
+  "user apply to delete account, account gets frozen after success"
   deleteAccount(data: DeleteAccountInput!): DeleteAccount
   deleteCodeFromPlayground(
     langSlug: String
@@ -7472,14 +7203,10 @@ type Mutation {
   ): InterviewedStatsPost
   interviewEnd: InterviewEnd
   interviewStart(cardId: ID!): InterviewStart
-  """
-  join a study plan
-  """
+  "join a study plan"
   joinStudyPlan(
     planSlug: String!
-    """
-    e.g. [1,0,0,1,1,1,0], length should be 7
-    """
+    "e.g. [1,0,0,1,1,1,0], length should be 7"
     weeklyTaskSchedule: [Int!]
   ): JoinStudyPlan
   libraryDefinitionSave(
@@ -7553,29 +7280,19 @@ type Mutation {
   ): LibraryValidatorSave
   like(isLike: Boolean, titleSlug: String): Like
   managementAddInterviewedStatVote(
-    """
-    Add Vote Info
-    """
+    "Add Vote Info"
     data: ManagementAddInterviewedStatVoteInput!
   ): ManagementAddInterviewedStatVote
   managementAddOrEditTag(
-    """
-    Tag Data
-    """
+    "Tag Data"
     data: ManagementAddOrEditTagInput!
-    """
-    Tag ID if updating existing tag
-    """
+    "Tag ID if updating existing tag"
     id: ID
   ): ManagementAddOrEditTag
   managementAddOrEditTagCategory(
-    """
-    Tag Category Data
-    """
+    "Tag Category Data"
     data: ManagementAddOrEditTagCategoryInput!
-    """
-    Existing Tag Category ID for updation
-    """
+    "Existing Tag Category ID for updation"
     id: ID
   ): ManagementAddOrEditTagCategory
   managementRemoveTagCategoryToTag(
@@ -7583,13 +7300,9 @@ type Mutation {
     tagId: ID!
   ): ManagementRemoveTagCategoryToTag
   managementSetNonofficialTagSimilar(
-    """
-    Child Tag / Non-Standard Tag
-    """
+    "Child Tag / Non-Standard Tag"
     childId: ID!
-    """
-    Parent Tag / Standard Tag
-    """
+    "Parent Tag / Standard Tag"
     parentId: ID!
   ): ManagementSetNonofficialTagSimilar
   markItemComplete(itemId: String, submissionId: Int): MarkItemComplete
@@ -7608,9 +7321,7 @@ type Mutation {
     layoutName: String
   ): ModifyIdeDynamicLayout
   moveTopic(categoryId: Int!, topicId: Int!): MoveTopic
-  """
-  online management generate favorite
-  """
+  "online management generate favorite"
   omGenerateFavorite(
     difficultyTagSlugs: [String!]
     favoriteDescription: String
@@ -7622,16 +7333,12 @@ type Mutation {
     languageTagSlug: String
     questionIdListStr: String
   ): OMGenerateFavorite
-  """
-  online management remove question from favorite
-  """
+  "online management remove question from favorite"
   omRemoveQuestionFromFavorite(
     favoriteSlug: String!
     questionSlug: String!
   ): OMRemoveQuestionFromFavorite
-  """
-  online management update favorite
-  """
+  "online management update favorite"
   omUpdateFavorite(
     favoriteDescription: String
     favoriteName: String
@@ -7656,9 +7363,7 @@ type Mutation {
     tags: [String]!
     title: String!
   ): PublishSolution
-  """
-  quit a study plan
-  """
+  "quit a study plan"
   quitStudyPlan(planSlug: String!): QuitStudyPlan
   rateArticle(contentTypeId: ID!, objectId: ID!, score: Int!): RateArticle
   recordAbExperimentEvent(
@@ -7699,9 +7404,7 @@ type Mutation {
   ): ResetFavoriteSessionV2
   resetWeeklyTaskSchedule(
     planSlug: String!
-    """
-    e.g. [1,0,0,1,1,1,0], length should be 7
-    """
+    "e.g. [1,0,0,1,1,1,0], length should be 7"
     weeklyTaskSchedule: [Int!]!
   ): ResetWeeklyTaskSchedule
   rewardPostCoins(id: Int, numCoins: Int, reason: String): RewardPost
@@ -7726,9 +7429,7 @@ type Mutation {
     notificationIdentifier: String
     status: Boolean
   ): SetNotificationSetting
-  """
-  whether hide current user rank info on rank boards
-  """
+  "whether hide current user rank info on rank boards"
   setVisibleOnPlanRank(hideOnBoard: Boolean!): SetVisibleOnPlanRank
   startDebuggerSession(
     commands: [JSONString]!
@@ -7761,17 +7462,13 @@ type Mutation {
     province: String
     shirtSize: String
   ): StoreOrderSave
-  """
-  comment submission complexity
-  """
+  "comment submission complexity"
   submissionNoteComplexity(
     complexityType: ComplexityTypeEnum!
     note: String!
     submissionId: ID!
   ): SubmissionNoteComplexity
-  """
-  vote submission complexity
-  """
+  "vote submission complexity"
   submissionVoteComplexity(
     complexityType: ComplexityTypeEnum!
     submissionId: ID!
@@ -7941,9 +7638,7 @@ type Mutation {
   ): UpdateTopicWithCategory
   updateUsername(username: String): UpdateUsername
   userManagementApplyForPremiumTrial(
-    """
-    urls of the images
-    """
+    "urls of the images"
     attachments: [String!]
     notes: String
     sku: PremiumTrialSku!
@@ -7992,14 +7687,10 @@ type NotificationCategoryNode {
 }
 
 type NotificationConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [NotificationEdge]!
   id: String
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
 }
 
@@ -8017,26 +7708,18 @@ type NotificationDataNode {
   type: String
 }
 
-"""
-A Relay edge containing a `Notification` and its cursor.
-"""
+"A Relay edge containing a `Notification` and its cursor."
 type NotificationEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: NotificationNode
 }
 
 type NotificationNode {
   actioned: Boolean!
   creationDate: Int
-  """
-  The ID of the object.
-  """
+  "The ID of the object."
   id: ID!
   modifiedDate: Int!
   notificationData: NotificationDataNode!
@@ -8045,27 +7728,17 @@ type NotificationNode {
 }
 
 type NotificationNodeConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [NotificationNodeEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
 }
 
-"""
-A Relay edge containing a `NotificationNode` and its cursor.
-"""
+"A Relay edge containing a `NotificationNode` and its cursor."
 type NotificationNodeEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: NotificationNode
 }
 
@@ -8153,14 +7826,10 @@ type OMFavoriteQuestionListNode {
 type OMFavoriteQuestionNode {
   createdAt: DateTime
   difficulty: DifficultyDescribedEnum!
-  """
-  出题频率，企业题单专用字段
-  """
+  "出题频率，企业题单专用字段"
   frequency: Float
   id: ID!
-  """
-  whether the question is in the user's favorites
-  """
+  "whether the question is in the user's favorites"
   isInMyFavorites: Boolean!
   paidOnly: Boolean!
   questionFrontendId: String!
@@ -8210,25 +7879,15 @@ type OrderOperationLogNode {
   operator: PrivateContestUserNode!
 }
 
-"""
-The Relay compliant `PageInfo` type, containing data necessary to paginate this connection.
-"""
+"The Relay compliant `PageInfo` type, containing data necessary to paginate this connection."
 type PageInfo {
-  """
-  When paginating forwards, the cursor to continue.
-  """
+  "When paginating forwards, the cursor to continue."
   endCursor: String
-  """
-  When paginating forwards, are there more items?
-  """
+  "When paginating forwards, are there more items?"
   hasNextPage: Boolean!
-  """
-  When paginating backwards, are there more items?
-  """
+  "When paginating backwards, are there more items?"
   hasPreviousPage: Boolean!
-  """
-  When paginating backwards, the cursor to continue.
-  """
+  "When paginating backwards, the cursor to continue."
   startCursor: String
 }
 
@@ -8380,47 +8039,31 @@ type PlanBriefProgressNodeWithPlan {
   hasCompleted: Boolean!
   id: ID!
   isAborted: Boolean!
-  """
-  Study Plan
-  """
+  "Study Plan"
   plan: PlanBriefStudyPlanNodeWithGroup!
   questionNum: Int!
   startedAt: Date!
 }
 
 type PlanBriefStudyPlanNode {
-  """
-  Whether to get reward
-  """
+  "Whether to get reward"
   awarded: Boolean!
-  """
-  Period (number of days)
-  """
+  "Period (number of days)"
   days: Int!
-  """
-  Medal corresponding to the plan
-  """
+  "Medal corresponding to the plan"
   medal: MedalNode!
   name: String!
   slug: String!
 }
 
 type PlanBriefStudyPlanNodeWithGroup {
-  """
-  Whether to get reward
-  """
+  "Whether to get reward"
   awarded: Boolean!
-  """
-  Period (number of days)
-  """
+  "Period (number of days)"
   days: Int!
-  """
-  Study Plan Group
-  """
+  "Study Plan Group"
   group: PlanBriefPlanGroupNode!
-  """
-  Medal corresponding to the plan
-  """
+  "Medal corresponding to the plan"
   medal: MedalNode!
   name: String!
   slug: String!
@@ -8440,20 +8083,14 @@ type PlanCatalogNode {
 }
 
 type PlanCompletedStatusNode {
-  """
-  If null, keep polling
-  """
+  "If null, keep polling"
   completedStudyPlan: Boolean
-  """
-  Whether user joined this plan
-  """
+  "Whether user joined this plan"
   joinedStudyPlan: Boolean!
   planProgressDetail: PlanUserProgressDetailNode
 }
 
-"""
-Used to describe PlanGroup details
-"""
+"Used to describe PlanGroup details"
 type PlanDetailPlanGroupNode {
   cover: String!
   creator: UserNode
@@ -8463,9 +8100,7 @@ type PlanDetailPlanGroupNode {
   hidden: Boolean!
   name: String!
   ongoingProgress: PlanProgressNode
-  """
-  All study plans of the planning group
-  """
+  "All study plans of the planning group"
   plans: [PlanStudyPlanNode!]!
   slug: String!
   tags: [CommonTagNode!]!
@@ -8473,54 +8108,34 @@ type PlanDetailPlanGroupNode {
 
 type PlanDetailStudyPlanNode {
   allowedLanguages: JSONString!
-  """
-  Whether to get reward
-  """
+  "Whether to get reward"
   awarded: Boolean!
   dailyQuestionNum: String!
-  """
-  Period (number of days)
-  """
+  "Period (number of days)"
   days: Int!
-  """
-  Number of easy questions
-  """
+  "Number of easy questions"
   easy: Int!
-  """
-  Number of hard questions
-  """
+  "Number of hard questions"
   hard: Int!
   hasPremiumQuestion: Boolean!
   hint: String!
-  """
-  Medal corresponding to the plan
-  """
+  "Medal corresponding to the plan"
   medal: MedalNode!
-  """
-  Number of medium questions
-  """
+  "Number of medium questions"
   medium: Int!
   name: String!
-  """
-  Plan ordering in the study group
-  """
+  "Plan ordering in the study group"
   ordering: Int!
   premiumOnly: Boolean!
   slug: String!
-  """
-  Tasks of the study plan
-  """
+  "Tasks of the study plan"
   tasks: [PlanTaskNode!]!
 }
 
 type PlanGroupListNode {
-  """
-  List of Plan Groups
-  """
+  "List of Plan Groups"
   data: [PlanGroupNode!]!
-  """
-  Number of Plan Groups
-  """
+  "Number of Plan Groups"
   total: Int!
 }
 
@@ -8531,9 +8146,7 @@ type PlanGroupNode {
   hidden: Boolean!
   name: String!
   ongoingProgress: PlanProgressNode
-  """
-  All study plans of the planning group
-  """
+  "All study plans of the planning group"
   plans: [PlanBriefStudyPlanNode!]!
   slug: String!
 }
@@ -8556,18 +8169,14 @@ type PlanProgressNode {
 
 type PlanProgressNodeWithPlan {
   completedNum: Int!
-  """
-  Difficulty distribution of completed questions
-  """
+  "Difficulty distribution of completed questions"
   completedQuestionsDifficultyDistribution: JSONString!
   daysPassed: Int!
   endAt: Date!
   hasCompleted: Boolean!
   id: ID!
   isAborted: Boolean!
-  """
-  Study Plan
-  """
+  "Study Plan"
   plan: PlanDetailStudyPlanNode!
   startedAt: Date!
 }
@@ -8601,37 +8210,23 @@ type PlanQuestionSolutionInfoNode {
 
 type PlanStudyPlanNode {
   allowedLanguages: JSONString!
-  """
-  Whether to get reward
-  """
+  "Whether to get reward"
   awarded: Boolean!
   dailyQuestionNum: String!
-  """
-  Period (number of days)
-  """
+  "Period (number of days)"
   days: Int!
-  """
-  Number of easy questions
-  """
+  "Number of easy questions"
   easy: Int!
-  """
-  Number of hard questions
-  """
+  "Number of hard questions"
   hard: Int!
   hasPremiumQuestion: Boolean!
   hint: String!
-  """
-  Medal corresponding to the plan
-  """
+  "Medal corresponding to the plan"
   medal: MedalNode!
-  """
-  Number of medium questions
-  """
+  "Number of medium questions"
   medium: Int!
   name: String!
-  """
-  Plan ordering in the study group
-  """
+  "Plan ordering in the study group"
   ordering: Int!
   premiumOnly: Boolean!
   slug: String!
@@ -8639,41 +8234,25 @@ type PlanStudyPlanNode {
 
 type PlanStudyPlanNodeWithGroup {
   allowedLanguages: JSONString!
-  """
-  Whether to get reward
-  """
+  "Whether to get reward"
   awarded: Boolean!
   dailyQuestionNum: String!
-  """
-  Period (number of days)
-  """
+  "Period (number of days)"
   days: Int!
-  """
-  Number of easy questions
-  """
+  "Number of easy questions"
   easy: Int!
-  """
-  Study Plan Group
-  """
+  "Study Plan Group"
   group: PlanBriefPlanGroupNode!
-  """
-  Number of hard questions
-  """
+  "Number of hard questions"
   hard: Int!
   hasPremiumQuestion: Boolean!
   hint: String!
-  """
-  Medal corresponding to the plan
-  """
+  "Medal corresponding to the plan"
   medal: MedalNode!
-  """
-  Number of medium questions
-  """
+  "Number of medium questions"
   medium: Int!
   name: String!
-  """
-  Plan ordering in the study group
-  """
+  "Plan ordering in the study group"
   ordering: Int!
   premiumOnly: Boolean!
   slug: String!
@@ -8688,22 +8267,14 @@ type PlanSubGroupInfoNode {
 }
 
 type PlanTaskNode {
-  """
-  Whether the user can complete this task or not
-  """
+  "Whether the user can complete this task or not"
   canComplete: Boolean!
-  """
-  Day that task will become available for completion
-  """
+  "Day that task will become available for completion"
   day: Int!
   desc: String!
-  """
-  Whether the task has been completed
-  """
+  "Whether the task has been completed"
   hasComplete: Boolean!
-  """
-  Sequence of questions in study plan
-  """
+  "Sequence of questions in study plan"
   ordering: Int!
   question: QuestionNode!
 }
@@ -8855,17 +8426,13 @@ type PremiumBetaFeatureNode {
   featureId: Int!
   featureUrl: String
   feedbackUrl: String
-  """
-  Indicates whether a user has access to this feature.
-  """
+  "Indicates whether a user has access to this feature."
   hasAccess: Boolean
   id: ID!
   imageHeight: Int
   imageUrl: String!
   isEnabled: Boolean!
-  """
-  Indicates whether a user has opted in for this feature.
-  """
+  "Indicates whether a user has opted in for this feature."
   optedIn: Boolean
   order: Int
   startsAt: DateTime
@@ -8923,21 +8490,15 @@ type PrivateContestUserNode {
   hasChangedUsernameRecently: Boolean
   hasUsablePassword: Boolean
   id: ID
-  """
-  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
-  """
+  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
   isActive: Boolean!
   isCurrentUserPremium: Boolean
   isCurrentUserVerified: Boolean
   isDiscussAdmin: Boolean
   isDiscussStaff: Boolean
-  """
-  Designates whether the user can log into this admin site.
-  """
+  "Designates whether the user can log into this admin site."
   isStaff: Boolean!
-  """
-  Designates that this user has all permissions without explicitly assigning them.
-  """
+  "Designates that this user has all permissions without explicitly assigning them."
   isSuperuser: Boolean!
   joinedTimestamp: Int!
   languageProblemCount: [LanguageProblemCountNode!]
@@ -9005,9 +8566,7 @@ type PrivateContestUserNode {
   upcomingBadges: [UpcomingBadgeNode!]!
   userCalendar(year: Int): UserCalendarNode!
   useripSet: [UserIPNode!]!
-  """
-  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-  """
+  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
   username: String!
   userratingSet: [UserRatingNode!]!
   userskilltagSet: [UserSkillTagNode!]!
@@ -9071,9 +8630,7 @@ type Query {
     user: String = ""
   ): PagifiedContributionNode
   allLeetcodePlaygroundTemplates: [PlaygroundTemplateNode]
-  """
-  query a list of common complexities
-  """
+  "query a list of common complexities"
   allPinnedComplexitys: [ComplexityInfoNode!]
   allPlaygroundCodes(uuid: String): [PlaygroundCodeNode]
   allPlaygroundDatasets: [PlaygroundDatasetNode]
@@ -9199,9 +8756,7 @@ type Query {
     limit: Int
     offset: Int
     questionSlug: String!
-    """
-    提交结果
-    """
+    "提交结果"
     status: SubmissionStatusEnum
   ): ContestSubmissionListNode
   contestRatingHistogram: [ContestRatingHistogramBarNode!]!
@@ -9255,9 +8810,7 @@ type Query {
   favorite(name: String!): FavoriteNode
   favoriteCards: [CardNode]
   favoriteDetailV2(favoriteSlug: String!): FavoriteDetailNode
-  """
-  ac, notac, or null
-  """
+  "ac, notac, or null"
   favoriteQuestionAcStatus(favoriteSlug: String!, titleSlug: String!): String
   favoriteQuestionList(
     favoriteSlug: String!
@@ -9265,9 +8818,7 @@ type Query {
   ): FavoriteQuestionListNode!
   favoritesLists: FavoritesNode
   favoriteSubmitAcProgress(favoriteSlug: String!): FavoriteSubmitACProgressNode
-  """
-  user progress of a favorite, either his own or collected ones
-  """
+  "user progress of a favorite, either his own or collected ones"
   favoriteUserQuestionProgressV2(
     favoriteSlug: String!
   ): UserQuestionProgressNodeV2!
@@ -9294,17 +8845,13 @@ type Query {
   hasTakenSubscriptionSurvey: Boolean
   historyCards: [CardNode]
   htmlArticle(id: String): HtmlArticleNode
-  """
-  user preference dynamic layouts
-  """
+  "user preference dynamic layouts"
   ideDynamicLayouts: [IDEDynamicLayoutNode!]!
   intentionTags: [IntentionTagNode]!
   internalContestAwardedUsers(contestSlug: String): [Int]
   internalContestFeedbackEmail: String
   internalContestRegisterEmail: String
-  """
-  Used for stuff to create orders manually
-  """
+  "Used for stuff to create orders manually"
   internalStoreItems: [StoreItemNode!]!
   interviewAllSessions(
     after: String
@@ -9344,32 +8891,22 @@ type Query {
     currentQuestionSlug: String!
     envType: String
     id: String
-    """
-    whether to fetch prev/next question
-    """
+    "whether to fetch prev/next question"
     needQuestion: Boolean = true
   ): LearningContextNode
   learningContextV2(
     categorySlug: String = ""
-    """
-    新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效
-    """
+    "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
     childFavoriteSlug: String = ""
     currentQuestionSlug: String!
     envId: String = ""
     envType: String = ""
-    """
-    新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效
-    """
+    "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
     favoriteFilters: FavoriteQuestionFilterInput = {}
     filters: QuestionListFilterInput = {}
-    """
-    是否需要上下题信息
-    """
+    "是否需要上下题信息"
     needQuestion: Boolean = true
-    """
-    版本号, 默认为空, 新版企业题单需要传版本号v2
-    """
+    "版本号, 默认为空, 新版企业题单需要传版本号v2"
     version: String = ""
   ): LearningContextNodeV3
   libraryActivity(id: String!): QuestionActivityNode
@@ -9404,9 +8941,7 @@ type Query {
   managementCompanyQuestionV2(
     data: managementCompanyQuestionsV2Input!
   ): CompanyQuestionListNode!
-  """
-  Company Tag List
-  """
+  "Company Tag List"
   managementCompanyTags(
     data: ManagementCompanyTagsInput!
   ): ManagementCompanyTagNode!
@@ -9420,19 +8955,13 @@ type Query {
     offset: Int!
     tagId: Int!
   ): ManagementTagAdminLogListNode!
-  """
-  Tag Category List
-  """
+  "Tag Category List"
   managementTagCategories(
     data: ManagementTagCategoriesInput!
   ): [TagCategoryNode]!
-  """
-  Tag Group List
-  """
+  "Tag Group List"
   managementTagGroups: [TagGroupNode]!
-  """
-  Tag List
-  """
+  "Tag List"
   managementTags(data: ManagementTagsInput!): ManagementTagNode!
   managementTeamMembers(
     data: ManagementTeamMembersInput!
@@ -9460,9 +8989,7 @@ type Query {
   notificationStatus: JSONString
   notificationTypes: [NotificationTypeNode]
   occupationRecordList: [OccupationRecordNode]
-  """
-  official IDE dynamic layout
-  """
+  "official IDE dynamic layout"
   officialIdeDynamicLayout: [OfficialIDELayoutNode!]!
   officialSolutionFeedbacks(
     filters: OfficialSolutionFeedbackFilterInput!
@@ -9602,21 +9129,15 @@ type Query {
   ): TopicTagConnection
   randomPanelQuestion(
     categorySlug: String = ""
-    """
-    新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效
-    """
+    "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
     childFavoriteSlug: String = ""
     currentQuestionSlug: String!
     envId: String = ""
     envType: String = ""
-    """
-    新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效
-    """
+    "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
     favoriteFilters: FavoriteQuestionFilterInput = {}
     filters: QuestionListFilterInput = {}
-    """
-    版本号, 默认为空, 新版企业题单需要传版本号v2
-    """
+    "版本号, 默认为空, 新版企业题单需要传版本号v2"
     version: String = ""
   ): String
   randomQuestion(
@@ -9669,126 +9190,76 @@ type Query {
   streakCounter: StreakCounterNode
   stripePublicKey: String!
   studyPlanMedalPolling(submissionId: Int): StudyPlanMedalPollingNode
-  """
-  get advertisement study plans of feature on playground
-  """
+  "get advertisement study plans of feature on playground"
   studyPlansV2AdFeature: [StudyPlanFeatureNode!]!
-  """
-  get advertisement study plans on questions page
-  """
+  "get advertisement study plans on questions page"
   studyPlansV2AdQuestionPage: [StudyPlanBriefNode!]!
-  """
-  get study plans by catalog
-  """
+  "get study plans by catalog"
   studyPlansV2ByCatalog(
     catalogSlug: String!
-    """
-    default value is 6
-    """
+    "default value is 6"
     limit: Int = 6
     offset: Int = 0
   ): StudyPlanListNode!
-  """
-  get study plans by tag
-  """
+  "get study plans by tag"
   studyPlansV2ByTag(
-    """
-    default value is 6
-    """
+    "default value is 6"
     limit: Int = 6
     offset: Int = 0
     tagSlug: String!
   ): StudyPlanListNode!
-  """
-  get study plans by upc
-  """
+  "get study plans by upc"
   studyPlansV2ByUpc: [StudyPlanBriefNode!]!
-  """
-  get study plans for homepage
-  """
+  "get study plans for homepage"
   studyPlansV2ForHomepage: [StudyPlanWithProgressNode!]!
-  """
-  get all enabled study plan catalogs
-  """
+  "get all enabled study plan catalogs"
   studyPlanV2Catalogs: [StudyPlanCatalogNode!]!
-  """
-  Poll this API after submission get AC.
-  """
+  "Poll this API after submission get AC."
   studyPlanV2CompletedStatus(
     planSlug: String!
     submissionId: ID!
   ): PlanCompletedStatusNode
-  """
-  get a study plan detail
-  """
+  "get a study plan detail"
   studyPlanV2Detail(planSlug: String!): StudyPlanDetailNode
-  """
-  get a user progress detail
-  """
+  "get a user progress detail"
   studyPlanV2ProgressDetail(
-    """
-    user progress ID
-    """
+    "user progress ID"
     id: ID = ""
     planSlug: String!
   ): PlanUserProgressDetailNode
-  """
-  get the ranking board of a study plan
-  """
+  "get the ranking board of a study plan"
   studyPlanV2RankingBoard(
-    """
-    default value is 10
-    """
+    "default value is 10"
     limit: Int = 10
     offset: Int = 0
     planSlug: String!
   ): UserRankInfoList!
-  """
-  get the most recent user completed progress detail
-  """
+  "get the most recent user completed progress detail"
   studyPlanV2RecentCompletedProgress(
     planSlug: String!
   ): PlanUserProgressDetailNode
-  """
-  whether the current user hide on the rank board
-  """
+  "whether the current user hide on the rank board"
   studyPlanV2UserHideRank: Boolean
-  """
-  user on going study plans
-  """
+  "user on going study plans"
   studyPlanV2UserProgresses(
-    """
-    default 6, no more than100
-    """
+    "default 6, no more than100"
     limit: Int = 6
     offset: Int = 0
     progressType: PlanUserProgressTypeEnum!
   ): PlanUserProgressListNode
-  """
-  get current user rank in a plan
-  """
+  "get current user rank in a plan"
   studyPlanV2UserRank(planSlug: String!): UserRankInfoNode
-  """
-  get weekly task records by year and month
-  """
+  "get weekly task records by year and month"
   studyPlanV2WeeklyTaskRecords(
-    """
-    records of the month
-    """
+    "records of the month"
     month: Int!
     planSlug: String!
-    """
-    user progress obfuscated id
-    """
+    "user progress obfuscated id"
     progressId: String
-    """
-    records of the year
-    """
+    "records of the year"
     year: Int!
   ): UserWeeklyTaskRecordListNode
-  """
-  query submission complexity
-  """
+  "query submission complexity"
   submissionComplexity(submissionId: ID!): SubmissionComplexityNode
   submissionDetails(submissionId: Int!): SubmissionDetailsNode
   submissionList(
@@ -9883,9 +9354,7 @@ type Query {
   userOfficialSolutionFeedback(
     questionSlug: String!
   ): OfficialSolutionFeedbackBriefNode
-  """
-  获取用户当前 session 的做题进展，新版接口
-  """
+  "获取用户当前 session 的做题进展，新版接口"
   userProfileUserQuestionProgressV2(
     userSlug: String!
   ): UserQuestionProgressNodeV2!
@@ -9918,18 +9387,14 @@ type Query {
   worldCities(country: String, subcountry: String): [String!]
   worldCountries: [String!]
   worldSubcountries(country: String): [String!]
-  """
-  list of yearly medals which are qualified to acquire
-  """
+  "list of yearly medals which are qualified to acquire"
   yearlyMedalsQualified(excludeAcquired: Boolean = true): [MedalBriefNode!]
 }
 
 type QuestionActivityNode {
   activityType: LibraryActivityType!
   dateCreated: DateTime!
-  """
-  The ID of the object.
-  """
+  "The ID of the object."
   id: ID!
   isBaseline: Boolean!
   payload: String
@@ -9938,27 +9403,17 @@ type QuestionActivityNode {
 }
 
 type QuestionActivityNodeConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [QuestionActivityNodeEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
 }
 
-"""
-A Relay edge containing a `QuestionActivityNode` and its cursor.
-"""
+"A Relay edge containing a `QuestionActivityNode` and its cursor."
 type QuestionActivityNodeEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: QuestionActivityNode
 }
 
@@ -10025,9 +9480,7 @@ type QuestionNode {
   contributors: [ContributorNode]
   dataSchemas: [String]
   difficulty: String
-  """
-  discussion count for one question, 0 if no question exist
-  """
+  "discussion count for one question, 0 if no question exist"
   discussionCount: Int
   dislikes: Int
   enableDebugger: Boolean
@@ -10073,9 +9526,7 @@ type QuestionNode {
   similarQuestionList: [QuestionNode]!
   similarQuestions: JSONString
   solution: ArticleNode
-  """
-  solution for one question, 0 if no question exist
-  """
+  "solution for one question, 0 if no question exist"
   solutionNum: Int
   stats: JSONString
   status: String
@@ -10109,9 +9560,7 @@ type QuestionSolveSessionNode {
 type QuestionTagNode {
   createdAt: DateTime!
   id: ID!
-  """
-  Deprecated in Tag System. Still used by old products.
-  """
+  "Deprecated in Tag System. Still used by old products."
   isEnabled: Boolean!
   keywords: [String!]!
   name: String!
@@ -10126,13 +9575,9 @@ type QuestionTagStatsNode {
   title: String!
 }
 
-"""
-quit a study plan
-"""
+"quit a study plan"
 type QuitStudyPlan {
-  """
-  whether delete this progress record
-  """
+  "whether delete this progress record"
   deleted: Boolean!
   ok: Boolean!
   progressId: String!
@@ -10384,9 +9829,7 @@ type SetNotificationSetting {
   ok: Boolean
 }
 
-"""
-whether hide current user rank info on rank boards
-"""
+"whether hide current user rank info on rank boards"
 type SetVisibleOnPlanRank {
   ok: Boolean!
 }
@@ -10821,21 +10264,13 @@ type TagNode {
   id: ID!
   imgUrl: String
   interviewTagsCategories: [InterviewTagsCategoryNode!]!
-  """
-  Deprecated in Tag System. Still used by old products.
-  """
+  "Deprecated in Tag System. Still used by old products."
   isEnabled: Boolean!
-  """
-  Whether this is a standard tag or not
-  """
+  "Whether this is a standard tag or not"
   isStandard: Boolean!
-  """
-  Whether this tag is enabled or not. If not enabled, we NEVER show it to our users.
-  """
+  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
   isTagEnabled: Boolean!
-  """
-  Whether user can select this tag or not
-  """
+  "Whether user can select this tag or not"
   isUserSelectable: Boolean!
   keywords: JSONString!
   name: String!
@@ -10844,9 +10279,7 @@ type TagNode {
   questionapplicationSet: [ApplicationNode!]!
   slug: String!
   tagCategories: [TagCategoryNode!]!
-  """
-  Deprecated in Tag System. Still used by old products.
-  """
+  "Deprecated in Tag System. Still used by old products."
   tagType: TagTypeNode
 }
 
@@ -10908,28 +10341,18 @@ type TogglePinTopic {
 }
 
 type TopicConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [TopicEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `Topic` and its cursor.
-"""
+"A Relay edge containing a `Topic` and its cursor."
 type TopicEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: TopicRelayNode
 }
 
@@ -10979,28 +10402,18 @@ type TopicRelayNode {
 }
 
 type TopicTagConnection {
-  """
-  Contains the nodes in this connection.
-  """
+  "Contains the nodes in this connection."
   edges: [TopicTagEdge]!
-  """
-  Pagination data for this connection.
-  """
+  "Pagination data for this connection."
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"""
-A Relay edge containing a `TopicTag` and its cursor.
-"""
+"A Relay edge containing a `TopicTag` and its cursor."
 type TopicTagEdge {
-  """
-  A cursor for use in pagination
-  """
+  "A cursor for use in pagination"
   cursor: String!
-  """
-  The item at the end of the edge
-  """
+  "The item at the end of the edge"
   node: TopicTagNode
 }
 
@@ -11012,27 +10425,17 @@ type TopicTagNode {
   favoriteSet: [FeaturedQuestionListNode!]!
   frequencies: String
   hotScore: Int
-  """
-  The ID of the object.
-  """
+  "The ID of the object."
   id: ID!
   imgUrl: String
   interviewTagsCategories: [InterviewTagsCategoryNode!]!
-  """
-  Deprecated in Tag System. Still used by old products.
-  """
+  "Deprecated in Tag System. Still used by old products."
   isEnabled: Boolean!
-  """
-  Whether this is a standard tag or not
-  """
+  "Whether this is a standard tag or not"
   isStandard: Boolean!
-  """
-  Whether this tag is enabled or not. If not enabled, we NEVER show it to our users.
-  """
+  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
   isTagEnabled: Boolean!
-  """
-  Whether user can select this tag or not
-  """
+  "Whether user can select this tag or not"
   isUserSelectable: Boolean!
   keywords: JSONString!
   name: String!
@@ -11042,9 +10445,7 @@ type TopicTagNode {
   slug: String!
   tagCategories: [TagCategoryNode!]!
   tagId: Int!
-  """
-  Deprecated in Tag System. Still used by old products.
-  """
+  "Deprecated in Tag System. Still used by old products."
   tagType: TagTypeNode
   translatedName: String
 }
@@ -11394,9 +10795,7 @@ type UserNode {
   hasChangedUsernameRecently: Boolean
   hasUsablePassword: Boolean
   id: ID
-  """
-  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
-  """
+  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
   isActive: Boolean!
   isCurrentUserPremium: Boolean
   isCurrentUserVerified: Boolean
@@ -11418,9 +10817,7 @@ type UserNode {
   twitterUrl: String
   upcomingBadges: [UpcomingBadgeNode!]!
   userCalendar(year: Int): UserCalendarNode!
-  """
-  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-  """
+  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
   username: String!
   yearJoined: Int!
 }
@@ -11465,22 +10862,16 @@ type UserNodeAdminOnly {
   hasChangedUsernameRecently: Boolean
   hasUsablePassword: Boolean
   id: ID
-  """
-  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
-  """
+  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
   isActive: Boolean!
   isCurrentUserPremium: Boolean
   isCurrentUserVerified: Boolean
   isDiscussAdmin: Boolean
   isDiscussStaff: Boolean
   isPremium: Boolean!
-  """
-  Designates whether the user can log into this admin site.
-  """
+  "Designates whether the user can log into this admin site."
   isStaff: Boolean!
-  """
-  Designates that this user has all permissions without explicitly assigning them.
-  """
+  "Designates that this user has all permissions without explicitly assigning them."
   isSuperuser: Boolean!
   joinedTimestamp: Int!
   languageProblemCount: [LanguageProblemCountNode!]
@@ -11547,9 +10938,7 @@ type UserNodeAdminOnly {
   userCalendar(year: Int): UserCalendarNode!
   userIps: [UserIPNode]!
   useripSet: [UserIPNode!]!
-  """
-  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-  """
+  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
   username: String!
   userratingSet: [UserRatingNode!]!
   userskilltagSet: [UserSkillTagNode!]!
@@ -11609,9 +10998,7 @@ type UserQuestionProgressNodeV2 {
   numAcceptedQuestions: [QuestionCountNode!]!
   numFailedQuestions: [QuestionCountNode!]!
   numUntouchedQuestions: [QuestionCountNode!]!
-  """
-  用户击败其他用户的题目百分比
-  """
+  "用户击败其他用户的题目百分比"
   userSessionBeatsPercentage: [LevelBeatPercentageMixin!]!
 }
 
@@ -11670,13 +11057,9 @@ type UserWeeklyTaskRecordNode {
   date: Date!
   expectedFinishedQuestionNums: Int!
   finishedQuestionNums: Int!
-  """
-  Whether finish enough questions no matter user has schedule on the date
-  """
+  "Whether finish enough questions no matter user has schedule on the date"
   hasCompletedWeeklyTask: Boolean!
-  """
-  Whether user has weekly task schedule on the date
-  """
+  "Whether user has weekly task schedule on the date"
   hasWeeklyTaskSchedule: Boolean!
 }
 
@@ -11706,14 +11089,10 @@ type ValueAddedContentNode {
 }
 
 type VideoNode {
-  """
-  Collapsible HTML under video
-  """
+  "Collapsible HTML under video"
   content: String
   editLink: String
-  """
-  Embedded HTML video
-  """
+  "Embedded HTML video"
   html: String!
   id: ID!
   paidOnly: Boolean!
