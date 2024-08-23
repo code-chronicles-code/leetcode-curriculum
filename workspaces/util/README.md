@@ -1,8 +1,8 @@
 # @code-chronicles/util
 
-A potpourri of TypeScript utility functions with more than one potential appication.
+A potpourri of TypeScript utility functions and constants with more than one potential appication.
 
-These functions should be individually imported, for example:
+These functions are usually individually imported, for example:
 
 ```ts
 import { stripPrefix } from "@code-chronicles/util/stripPrefix";

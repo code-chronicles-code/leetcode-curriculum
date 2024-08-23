@@ -2024,6 +2024,30 @@ iteratorPrototype.toSet ??= function () {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Map.groupBy 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Map.groupBy ??= function (iterable, callbackFn) {
+  const groups = new Map();
+  let index = 0;
+  for (const value of iterable) {
+    const key = callbackFn(value, index);
+    const group = groups.get(key);
+    if (group == null) {
+      groups.set(key, [value]);
+    } else {
+      group.push(value);
+    }
+    ++index;
+  }
+  return groups;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Math.gcd 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -4200,6 +4224,42 @@ iteratorPrototype.toIterable = function <T>(
 
 iteratorPrototype.toSet ??= function <T>(this: Iterator<T>): Set<T> {
   return new Set(this.toIterable());
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Map.groupBy 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface MapConstructor {
+    groupBy<K, V>(
+      iterable: Iterable<V>,
+      callbackFn: (value: V, index: number) => K,
+    ): Map<K, V[]>;
+  }
+}
+
+Map.groupBy ??= function <K, V>(
+  iterable: Iterable<V>,
+  callbackFn: (value: V, index: number) => K,
+): Map<K, V[]> {
+  const groups = new Map<K, V[]>();
+  let index = 0;
+  for (const value of iterable) {
+    const key = callbackFn(value, index);
+    const group = groups.get(key);
+    if (group == null) {
+      groups.set(key, [value]);
+    } else {
+      group.push(value);
+    }
+    ++index;
+  }
+  return groups;
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"

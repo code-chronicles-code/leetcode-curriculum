@@ -1,8 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { timestampToYearMonthDay } from "../timestampToYearMonthDay";
+import { timestampInSecondsToYearMonthDay } from "../timestampInSecondsToYearMonthDay";
 
-describe("timestampToYearMonthDay", () => {
+describe("timestampInSecondsToYearMonthDay", () => {
   it.each([
     [1721211, "1970-01-20"],
     [-1721211, "1969-12-12"],
@@ -19,7 +19,7 @@ describe("timestampToYearMonthDay", () => {
   ])(
     "formats timestamp with default separator: %p => %p",
     (timestamp, expected) => {
-      expect(timestampToYearMonthDay(timestamp)).toBe(expected);
+      expect(timestampInSecondsToYearMonthDay(timestamp)).toBe(expected);
     },
   );
 
@@ -35,22 +35,26 @@ describe("timestampToYearMonthDay", () => {
   ])(
     "formats timestamp with custom separator: %p with %p => %p",
     (timestamp, separator, expected) => {
-      expect(timestampToYearMonthDay(timestamp, separator)).toBe(expected);
+      expect(timestampInSecondsToYearMonthDay(timestamp, separator)).toBe(
+        expected,
+      );
     },
   );
 
   it("detects the year boundary", () => {
-    expect(timestampToYearMonthDay(1640995199)).toBe("2021-12-31");
-    expect(timestampToYearMonthDay(1640995200)).toBe("2022-01-01");
+    expect(timestampInSecondsToYearMonthDay(1640995199)).toBe("2021-12-31");
+    expect(timestampInSecondsToYearMonthDay(1640995200)).toBe("2022-01-01");
 
-    expect(timestampToYearMonthDay(0)).toBe("1970-01-01");
-    expect(timestampToYearMonthDay(-1)).toBe("1969-12-31");
+    expect(timestampInSecondsToYearMonthDay(0)).toBe("1970-01-01");
+    expect(timestampInSecondsToYearMonthDay(-1)).toBe("1969-12-31");
   });
 
   it.each([9999999999999, NaN, Infinity, -Infinity, 1e100])(
     "throws when an invalid timestamp has been passed: %p",
     (timestamp) => {
-      expect(() => timestampToYearMonthDay(timestamp)).toThrow(RangeError);
+      expect(() => timestampInSecondsToYearMonthDay(timestamp)).toThrow(
+        RangeError,
+      );
     },
   );
 });

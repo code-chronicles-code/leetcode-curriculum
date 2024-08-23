@@ -11,3 +11,5 @@ export const graphqlKindTypeZodType = z.enum([
   "LIST",
   "NON_NULL",
 ]);
+
+export type GraphQLKind = z.infer<typeof graphqlKindTypeZodType>;

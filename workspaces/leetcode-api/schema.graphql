@@ -1,4 +1,6 @@
-"The `Boolean` scalar type represents `true` or `false`."
+"""
+The `Boolean` scalar type represents `true` or `false`.
+"""
 scalar Boolean
 
 """
@@ -15,10 +17,14 @@ value as specified by
 """
 scalar DateTime
 
-"The `Decimal` scalar type represents a python Decimal."
+"""
+The `Decimal` scalar type represents a python Decimal.
+"""
 scalar Decimal
 
-"The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). "
+"""
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
 scalar Float
 
 """
@@ -26,7 +32,9 @@ The `ID` scalar type represents a unique identifier, often used to refetch an ob
 """
 scalar ID
 
-"The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31 - 1) and 2^31 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point)."
+"""
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31 - 1) and 2^31 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
 scalar Int
 
 """
@@ -37,7 +45,9 @@ schema (one of the key benefits of GraphQL).
 """
 scalar JSONString
 
-"The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text."
+"""
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+"""
 scalar String
 
 """
@@ -46,73 +56,289 @@ in fields, resolvers and input.
 """
 scalar UUID
 
-"An enumeration."
+"""
+A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.
+"""
+enum __DirectiveLocation {
+  """
+  Location adjacent to a query operation.
+  """
+  QUERY
+
+  """
+  Location adjacent to a mutation operation.
+  """
+  MUTATION
+
+  """
+  Location adjacent to a subscription operation.
+  """
+  SUBSCRIPTION
+
+  """
+  Location adjacent to a field.
+  """
+  FIELD
+
+  """
+  Location adjacent to a fragment definition.
+  """
+  FRAGMENT_DEFINITION
+
+  """
+  Location adjacent to a fragment spread.
+  """
+  FRAGMENT_SPREAD
+
+  """
+  Location adjacent to an inline fragment.
+  """
+  INLINE_FRAGMENT
+
+  """
+  Location adjacent to a schema definition.
+  """
+  SCHEMA
+
+  """
+  Location adjacent to a scalar definition.
+  """
+  SCALAR
+
+  """
+  Location adjacent to an object definition.
+  """
+  OBJECT
+
+  """
+  Location adjacent to a field definition.
+  """
+  FIELD_DEFINITION
+
+  """
+  Location adjacent to an argument definition.
+  """
+  ARGUMENT_DEFINITION
+
+  """
+  Location adjacent to an interface definition.
+  """
+  INTERFACE
+
+  """
+  Location adjacent to a union definition.
+  """
+  UNION
+
+  """
+  Location adjacent to an enum definition.
+  """
+  ENUM
+
+  """
+  Location adjacent to an enum value definition.
+  """
+  ENUM_VALUE
+
+  """
+  Location adjacent to an input object definition.
+  """
+  INPUT_OBJECT
+
+  """
+  Location adjacent to an input object field definition.
+  """
+  INPUT_FIELD_DEFINITION
+}
+
+"""
+An enum describing what kind of type a given `__Type` is
+"""
+enum __TypeKind {
+  """
+  Indicates this type is a scalar.
+  """
+  SCALAR
+
+  """
+  Indicates this type is an object. `fields` and `interfaces` are valid fields.
+  """
+  OBJECT
+
+  """
+  Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.
+  """
+  INTERFACE
+
+  """
+  Indicates this type is a union. `possibleTypes` is a valid field.
+  """
+  UNION
+
+  """
+  Indicates this type is an enum. `enumValues` is a valid field.
+  """
+  ENUM
+
+  """
+  Indicates this type is an input object. `inputFields` is a valid field.
+  """
+  INPUT_OBJECT
+
+  """
+  Indicates this type is a list. `ofType` is a valid field.
+  """
+  LIST
+
+  """
+  Indicates this type is a non-null. `ofType` is a valid field.
+  """
+  NON_NULL
+}
+
+"""
+An enumeration.
+"""
 enum AccessDeniedReasonEnum {
-  "no such list"
+  """
+  no such list
+  """
   NO_SUCH_LIST
-  "list is private"
+
+  """
+  list is private
+  """
   LIST_IS_PRIVATE
-  "company list not available"
+
+  """
+  company list not available
+  """
   COMPANY_LIST_NOT_AVAILABLE
 }
 
-"An enumeration."
-enum AccountStatus {
-  "frozen"
-  FROZEN
-  "deleted"
-  DELETED
-}
-
-"An enumeration."
+"""
+An enumeration.
+"""
 enum AccountFrozenStatus {
-  "qualified to frozen"
+  """
+  qualified to frozen
+  """
   QUALIFIED_TO_FROZEN
-  "not qualified to frozen"
+
+  """
+  not qualified to frozen
+  """
   NOT_QUALIFIED_TO_FROZEN
-  "already frozen"
+
+  """
+  already frozen
+  """
   ALREADY_FROZEN
-  "inactive"
+
+  """
+  inactive
+  """
   INACTIVE
 }
 
-"advertisement location enums"
+"""
+An enumeration.
+"""
+enum AccountStatus {
+  """
+  frozen
+  """
+  FROZEN
+
+  """
+  deleted
+  """
+  DELETED
+}
+
+"""
+advertisement location enums
+"""
 enum AdLocationEnum {
-  "Home Ad"
+  """
+  Home Ad
+  """
   HOME_AD
-  "Problemset Ad Sidebar"
+
+  """
+  Problemset Ad Sidebar
+  """
   PROBLEMSET_AD
-  "Problemset Ad Primary"
+
+  """
+  Problemset Ad Primary
+  """
   PROBLEMSET_AD_PRIMARY
-  "Problemset Ad Secondary"
+
+  """
+  Problemset Ad Secondary
+  """
   PROBLEMSET_AD_SECONDARY
-  "Discuss Ad"
+
+  """
+  Discuss Ad
+  """
   DISCUSS_AD
-  "Study Plan Ad"
+
+  """
+  Study Plan Ad
+  """
   STUDY_PLAN_AD
-  "home feed"
+
+  """
+  home feed
+  """
   HOME_FEED
-  "discuss list"
+
+  """
+  discuss list
+  """
   DISCUSS_LIST
-  "discuss detail"
+
+  """
+  discuss detail
+  """
   DISCUSS_DETAIL
-  "qd description"
+
+  """
+  qd description
+  """
   QD_DESCRIPTION
-  "qd solution list"
+
+  """
+  qd solution list
+  """
   QD_SOLUTION_LIST
-  "qd solution detail"
+
+  """
+  qd solution detail
+  """
   QD_SOLUTION_DETAIL
 }
 
-"advertisement source enums"
+"""
+advertisement source enums
+"""
 enum AdSourceEnum {
-  "Internal Ad"
+  """
+  Internal Ad
+  """
   INTERNAL_AD
-  "AdSense"
+
+  """
+  AdSense
+  """
   ADSENSE
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum AllPermission {
   contest_see_private
   contest_private_access_dashboard
@@ -185,21 +411,43 @@ enum AvatarStatusEnum {
   UNVIEWED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum BadgeBadge {
-  "Guardian"
+  """
+  Guardian
+  """
   A_1
-  "Knight"
+
+  """
+  Knight
+  """
   A_2
-  "Daily Coding Challenge"
+
+  """
+  Daily Coding Challenge
+  """
   A_3
-  "Annual Daily Coding Challenge"
+
+  """
+  Annual Daily Coding Challenge
+  """
   A_4
-  "Study Plan Award"
+
+  """
+  Study Plan Award
+  """
   A_5
-  "Annual Badge"
+
+  """
+  Annual Badge
+  """
   A_6
-  "Study Plan V2 Award"
+
+  """
+  Study Plan V2 Award
+  """
   A_7
 }
 
@@ -210,18 +458,27 @@ enum BadgeCategoryEnum {
   STUDY_PLAN
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum Category {
   BASIC
   EDGE
   PERFORMANCE
 }
 
-"challenge question status enums"
+"""
+challenge question status enums
+"""
 enum ChallengeQuestionStatusEnum {
-  "not started"
+  """
+  not started
+  """
   NOT_STARTED
-  "finished"
+
+  """
+  finished
+  """
   FINISHED
 }
 
@@ -230,7 +487,9 @@ enum ChallengeQuestionTypeEnum {
   WEEKLY
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum CommentSortingOption {
   hot
   best
@@ -245,115 +504,203 @@ enum CompanyQuestionKeywordType {
   ID
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum CompanyQuestionTimeOptionEnum {
-  "Six Month"
+  """
+  Six Month
+  """
   SIX_MONTH
-  "One Year"
+
+  """
+  One Year
+  """
   ONE_YEAR
-  "Two Year"
+
+  """
+  Two Year
+  """
   TWO_YEAR
-  "All"
+
+  """
+  All
+  """
   ALL
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum CompanyQuestionTimeOptionEnumV2 {
-  "Recent 30 days"
+  """
+  Recent 30 days
+  """
   THIRTY_DAY
-  "Recent 3 months"
+
+  """
+  Recent 3 months
+  """
   THREE_MONTH
-  "Recent 6 months"
+
+  """
+  Recent 6 months
+  """
   SIX_MONTH
-  "More than 6 months"
+
+  """
+  More than 6 months
+  """
   MORE_THAN_SIX_MONTH
-  "All"
+
+  """
+  All
+  """
   ALL
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum CompanyStage {
   ONLINE_ASSESSMENT
   PHONE_INTERVIEW
   ONSITE_INTERVIEW
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum ComplexityTypeEnum {
-  "time_complexity"
+  """
+  time_complexity
+  """
   TIME_COMPLEXITY
-  "memory_complexity"
+
+  """
+  memory_complexity
+  """
   MEMORY_COMPLEXITY
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum ComplexityVoteEnum {
-  "Thumbs Down"
+  """
+  Thumbs Down
+  """
   THUMBS_DOWN
-  "Upvote"
+
+  """
+  Upvote
+  """
   UPVOTE
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum ContestReportStatus {
-  "UNPROCESSED"
+  """
+  UNPROCESSED
+  """
   A_0
-  "CANCELED"
+
+  """
+  CANCELED
+  """
   A_1
-  "ACCEPTED"
+
+  """
+  ACCEPTED
+  """
   A_2
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum ContestRootBannerAspectRatioType {
-  "SM Breakpoint Image"
+  """
+  SM Breakpoint Image
+  """
   A_0
-  "MD Breakpoint Image"
+
+  """
+  MD Breakpoint Image
+  """
   A_1
-  "LG Breakpoint Image"
+
+  """
+  LG Breakpoint Image
+  """
   A_2
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum CreditCardStatus {
-  "alive"
+  """
+  alive
+  """
   ALIVE
-  "deleted"
+
+  """
+  deleted
+  """
   DELETED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum DeleteAccountReason {
-  "Moving to another LeetCode account"
+  """
+  Moving to another LeetCode account
+  """
   EXTRA_ACCOUNT
-  "Not using LeetCode anymore"
+
+  """
+  Not using LeetCode anymore
+  """
   NO_LONGER_NEEDED
-  "Security and privacy concerns"
+
+  """
+  Security and privacy concerns
+  """
   SECURITY_CONCERN
-  "Want to start over with a new account"
+
+  """
+  Want to start over with a new account
+  """
   START_OVER
-  "Other"
+
+  """
+  Other
+  """
   OTHER
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum DifficultyDescribedEnum {
-  "Easy"
+  """
+  Easy
+  """
   EASY
-  "Medium"
-  MEDIUM
-  "Hard"
-  HARD
-}
 
-"An enumeration."
-enum DiscountEventBannerAspectRatioType {
-  "SM Breakpoint Image"
-  A_0
-  "MD Breakpoint Image"
-  A_1
-  "LG Breakpoint Image"
-  A_2
+  """
+  Medium
+  """
+  MEDIUM
+
+  """
+  Hard
+  """
+  HARD
 }
 
 enum DifficultyEnum {
@@ -362,54 +709,121 @@ enum DifficultyEnum {
   HARD
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
+enum DiscountEventBannerAspectRatioType {
+  """
+  SM Breakpoint Image
+  """
+  A_0
+
+  """
+  MD Breakpoint Image
+  """
+  A_1
+
+  """
+  LG Breakpoint Image
+  """
+  A_2
+}
+
+"""
+An enumeration.
+"""
 enum EntityType {
   DUMMY
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum FavoriteFavoriteType {
-  "normal"
+  """
+  normal
+  """
   A_1
-  "company favorite"
+
+  """
+  company favorite
+  """
   A_2
-  "smart list official"
+
+  """
+  smart list
+  """
   A_3
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum FavoriteLockStatusEnum {
-  "user can unlock"
+  """
+  user can unlock
+  """
   USER_CAN_UNLOCK
-  "user cannot unlock"
+
+  """
+  user cannot unlock
+  """
   USER_CANNOT_UNLOCK
-  "user already unlocked"
+
+  """
+  user already unlocked
+  """
   USER_ALREADY_UNLOCKED
-  "no need to unlock"
+
+  """
+  no need to unlock
+  """
   NO_NEED_TO_UNLOCK
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum FavoriteQuestionStatusEnum {
-  "to do"
+  """
+  to do
+  """
   TO_DO
-  "solved"
+
+  """
+  solved
+  """
   SOLVED
-  "attempted"
+
+  """
+  attempted
+  """
   ATTEMPTED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum FavoriteTypeEnum {
-  "normal"
+  """
+  normal
+  """
   NORMAL
-  "company favorite"
+
+  """
+  company favorite
+  """
   COMPANY_FAVORITE
-  "smart list official"
-  SMART_LIST_OFFICIAL
+
+  """
+  smart list
+  """
+  SMART_LIST
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum FeatureGuideType {
   OTHER
   QUESTION_DETAIL_TOUR
@@ -420,36 +834,19 @@ enum FeatureGuideType {
   NEW_IDE_DYNAMIC_LAYOUT_V2
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum FeedbackOrderByEnum {
-  "creation_date"
+  """
+  creation_date
+  """
   CREATION_DATE
-  "rate"
+
+  """
+  rate
+  """
   RATE
-}
-
-"An enumeration."
-enum FlagResultStatus {
-  "flagged"
-  A_0
-  "approved"
-  A_1
-  "edit requested"
-  A_2
-  "removed"
-  A_3
-}
-
-"An enumeration."
-enum FlagStatus {
-  "flagged"
-  FLAGGED
-  "approved"
-  APPROVED
-  "edit requested"
-  EDIT_REQUESTED
-  "removed"
-  REMOVED
 }
 
 enum FlaggedObjectListOrderByEnum {
@@ -457,7 +854,59 @@ enum FlaggedObjectListOrderByEnum {
   FLAGGED_COUNT
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
+enum FlagResultStatus {
+  """
+  flagged
+  """
+  A_0
+
+  """
+  approved
+  """
+  A_1
+
+  """
+  edit requested
+  """
+  A_2
+
+  """
+  removed
+  """
+  A_3
+}
+
+"""
+An enumeration.
+"""
+enum FlagStatus {
+  """
+  flagged
+  """
+  FLAGGED
+
+  """
+  approved
+  """
+  APPROVED
+
+  """
+  edit requested
+  """
+  EDIT_REQUESTED
+
+  """
+  removed
+  """
+  REMOVED
+}
+
+"""
+An enumeration.
+"""
 enum Group {
   everyone
   discuss_admin
@@ -465,16 +914,6 @@ enum Group {
   library_admin
   internal_contest_organizer
   internal_contest_participant
-}
-
-"An enumeration."
-enum IPStatusEnum {
-  "Banned"
-  Banned
-  "Monitored"
-  Monitored
-  "Normal"
-  Normal
 }
 
 enum InterviewAnalysisStatus {
@@ -485,55 +924,133 @@ enum InterviewAnalysisStatus {
   NEEDS_DATA
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
+enum IPStatusEnum {
+  """
+  Banned
+  """
+  Banned
+
+  """
+  Monitored
+  """
+  Monitored
+
+  """
+  Normal
+  """
+  Normal
+}
+
+"""
+An enumeration.
+"""
 enum ManagementRoleEnum {
-  "Admin"
+  """
+  Admin
+  """
   ADMIN
-  "Support"
+
+  """
+  Support
+  """
   CUSTOMER_SUPPORT
-  "Moderator"
+
+  """
+  Moderator
+  """
   MODERATORS
-  "Email"
+
+  """
+  Email
+  """
   EMAIL_BATCH_SENDER
-  "Redeem"
+
+  """
+  Redeem
+  """
   REDEEM_ORDER_MANAGEMENT
-  "Contest"
+
+  """
+  Contest
+  """
   INTERNAL_CONTEST_ORGANIZER
-  "Content"
+
+  """
+  Content
+  """
   CONTENT_OPERATION
 }
 
-"An enumeration."
-enum OMFavoriteSortFieldEnum {
-  "default"
-  DEFAULT
-  "view_count"
-  VIEW_COUNT
-  "save_count"
-  SAVE_COUNT
-  "fork_count"
-  FORK_COUNT
-}
-
-"An enumeration."
+"""
+An enumeration.
+"""
 enum OMFavoriteSearchFieldEnum {
-  "name"
+  """
+  name
+  """
   NAME
-  "id"
+
+  """
+  id
+  """
   ID
-  "slug"
+
+  """
+  slug
+  """
   SLUG
-  "author"
+
+  """
+  author
+  """
   AUTHOR
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
+enum OMFavoriteSortFieldEnum {
+  """
+  default
+  """
+  DEFAULT
+
+  """
+  view_count
+  """
+  VIEW_COUNT
+
+  """
+  save_count
+  """
+  SAVE_COUNT
+
+  """
+  fork_count
+  """
+  FORK_COUNT
+}
+
+"""
+An enumeration.
+"""
 enum PanelQuestionStatusEnum {
-  "to do"
+  """
+  to do
+  """
   TO_DO
-  "solved"
+
+  """
+  solved
+  """
   SOLVED
-  "attempted"
+
+  """
+  attempted
+  """
   ATTEMPTED
 }
 
@@ -545,302 +1062,703 @@ enum PasswordErrorEnum {
   PASSWORD_TOO_COMMON
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum PaymentGateways {
   STRIPE
   PAYPAL
   LEETPAY
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum PlanQuestionStatusEnum {
-  "to do"
+  """
+  to do
+  """
   TO_DO
-  "solved"
+
+  """
+  solved
+  """
   SOLVED
-  "past solved"
+
+  """
+  past solved
+  """
   PAST_SOLVED
-  "attempted"
+
+  """
+  attempted
+  """
   ATTEMPTED
 }
 
-"An enumeration."
-enum PlanUserProgressTypeEnum {
-  "on going"
-  ON_GOING
-  "history"
-  HISTORY
-}
-
-"An enumeration."
-enum PlaygroundCodeLang {
-  "cpp"
-  A_0
-  "java"
-  A_1
-  "python"
-  A_2
-  "python3"
-  A_11
-  "mysql"
-  A_3
-  "mssql"
-  A_14
-  "oraclesql"
-  A_15
-  "c"
-  A_4
-  "csharp"
-  A_5
-  "javascript"
-  A_6
-  "typescript"
-  A_20
-  "bash"
-  A_8
-  "php"
-  A_19
-  "swift"
-  A_9
-  "kotlin"
-  A_13
-  "dart"
-  A_24
-  "golang"
-  A_10
-  "ruby"
-  A_7
-  "scala"
-  A_12
-  "html"
-  A_16
-  "pythonml"
-  A_17
-  "rust"
-  A_18
-  "racket"
-  A_21
-  "erlang"
-  A_22
-  "elixir"
-  A_23
-  "pythondata"
-  A_25
-  "react"
-  A_26
-  "vanillajs"
-  A_27
-  "postgresql"
-  A_28
-  "cangjie"
-  A_29
-}
-
-"An enumeration."
-enum PlaygroundSelectedLang {
-  "cpp"
-  A_0
-  "java"
-  A_1
-  "python"
-  A_2
-  "python3"
-  A_11
-  "mysql"
-  A_3
-  "mssql"
-  A_14
-  "oraclesql"
-  A_15
-  "c"
-  A_4
-  "csharp"
-  A_5
-  "javascript"
-  A_6
-  "typescript"
-  A_20
-  "bash"
-  A_8
-  "php"
-  A_19
-  "swift"
-  A_9
-  "kotlin"
-  A_13
-  "dart"
-  A_24
-  "golang"
-  A_10
-  "ruby"
-  A_7
-  "scala"
-  A_12
-  "html"
-  A_16
-  "pythonml"
-  A_17
-  "rust"
-  A_18
-  "racket"
-  A_21
-  "erlang"
-  A_22
-  "elixir"
-  A_23
-  "pythondata"
-  A_25
-  "react"
-  A_26
-  "vanillajs"
-  A_27
-  "postgresql"
-  A_28
-  "cangjie"
-  A_29
-}
-
-"An enumeration."
-enum PlaygroundTemplateCodeLang {
-  "cpp"
-  A_0
-  "java"
-  A_1
-  "python"
-  A_2
-  "python3"
-  A_11
-  "mysql"
-  A_3
-  "mssql"
-  A_14
-  "oraclesql"
-  A_15
-  "c"
-  A_4
-  "csharp"
-  A_5
-  "javascript"
-  A_6
-  "typescript"
-  A_20
-  "bash"
-  A_8
-  "php"
-  A_19
-  "swift"
-  A_9
-  "kotlin"
-  A_13
-  "dart"
-  A_24
-  "golang"
-  A_10
-  "ruby"
-  A_7
-  "scala"
-  A_12
-  "html"
-  A_16
-  "pythonml"
-  A_17
-  "rust"
-  A_18
-  "racket"
-  A_21
-  "erlang"
-  A_22
-  "elixir"
-  A_23
-  "pythondata"
-  A_25
-  "react"
-  A_26
-  "vanillajs"
-  A_27
-  "postgresql"
-  A_28
-  "cangjie"
-  A_29
-}
-
-"An enumeration."
-enum PlaygroundSnippetsLang {
-  "cpp"
-  A_0
-  "java"
-  A_1
-  "python"
-  A_2
-  "python3"
-  A_11
-  "mysql"
-  A_3
-  "mssql"
-  A_14
-  "oraclesql"
-  A_15
-  "c"
-  A_4
-  "csharp"
-  A_5
-  "javascript"
-  A_6
-  "typescript"
-  A_20
-  "bash"
-  A_8
-  "php"
-  A_19
-  "swift"
-  A_9
-  "kotlin"
-  A_13
-  "dart"
-  A_24
-  "golang"
-  A_10
-  "ruby"
-  A_7
-  "scala"
-  A_12
-  "html"
-  A_16
-  "pythonml"
-  A_17
-  "rust"
-  A_18
-  "racket"
-  A_21
-  "erlang"
-  A_22
-  "elixir"
-  A_23
-  "pythondata"
-  A_25
-  "react"
-  A_26
-  "vanillajs"
-  A_27
-  "postgresql"
-  A_28
-  "cangjie"
-  A_29
-}
-
-"An enumeration."
+"""
+An enumeration.
+"""
 enum PlanUserProgressStatusEnum {
-  "on going"
+  """
+  on going
+  """
   ON_GOING
-  "completed"
+
+  """
+  completed
+  """
   COMPLETED
-  "quitted"
+
+  """
+  quitted
+  """
   QUITTED
-  "deleted"
+
+  """
+  deleted
+  """
   DELETED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
+enum PlanUserProgressTypeEnum {
+  """
+  on going
+  """
+  ON_GOING
+
+  """
+  history
+  """
+  HISTORY
+}
+
+"""
+An enumeration.
+"""
+enum PlaygroundCodeLang {
+  """
+  cpp
+  """
+  A_0
+
+  """
+  java
+  """
+  A_1
+
+  """
+  python
+  """
+  A_2
+
+  """
+  python3
+  """
+  A_11
+
+  """
+  mysql
+  """
+  A_3
+
+  """
+  mssql
+  """
+  A_14
+
+  """
+  oraclesql
+  """
+  A_15
+
+  """
+  c
+  """
+  A_4
+
+  """
+  csharp
+  """
+  A_5
+
+  """
+  javascript
+  """
+  A_6
+
+  """
+  typescript
+  """
+  A_20
+
+  """
+  bash
+  """
+  A_8
+
+  """
+  php
+  """
+  A_19
+
+  """
+  swift
+  """
+  A_9
+
+  """
+  kotlin
+  """
+  A_13
+
+  """
+  dart
+  """
+  A_24
+
+  """
+  golang
+  """
+  A_10
+
+  """
+  ruby
+  """
+  A_7
+
+  """
+  scala
+  """
+  A_12
+
+  """
+  html
+  """
+  A_16
+
+  """
+  pythonml
+  """
+  A_17
+
+  """
+  rust
+  """
+  A_18
+
+  """
+  racket
+  """
+  A_21
+
+  """
+  erlang
+  """
+  A_22
+
+  """
+  elixir
+  """
+  A_23
+
+  """
+  pythondata
+  """
+  A_25
+
+  """
+  react
+  """
+  A_26
+
+  """
+  vanillajs
+  """
+  A_27
+
+  """
+  postgresql
+  """
+  A_28
+
+  """
+  cangjie
+  """
+  A_29
+}
+
+"""
+An enumeration.
+"""
+enum PlaygroundSelectedLang {
+  """
+  cpp
+  """
+  A_0
+
+  """
+  java
+  """
+  A_1
+
+  """
+  python
+  """
+  A_2
+
+  """
+  python3
+  """
+  A_11
+
+  """
+  mysql
+  """
+  A_3
+
+  """
+  mssql
+  """
+  A_14
+
+  """
+  oraclesql
+  """
+  A_15
+
+  """
+  c
+  """
+  A_4
+
+  """
+  csharp
+  """
+  A_5
+
+  """
+  javascript
+  """
+  A_6
+
+  """
+  typescript
+  """
+  A_20
+
+  """
+  bash
+  """
+  A_8
+
+  """
+  php
+  """
+  A_19
+
+  """
+  swift
+  """
+  A_9
+
+  """
+  kotlin
+  """
+  A_13
+
+  """
+  dart
+  """
+  A_24
+
+  """
+  golang
+  """
+  A_10
+
+  """
+  ruby
+  """
+  A_7
+
+  """
+  scala
+  """
+  A_12
+
+  """
+  html
+  """
+  A_16
+
+  """
+  pythonml
+  """
+  A_17
+
+  """
+  rust
+  """
+  A_18
+
+  """
+  racket
+  """
+  A_21
+
+  """
+  erlang
+  """
+  A_22
+
+  """
+  elixir
+  """
+  A_23
+
+  """
+  pythondata
+  """
+  A_25
+
+  """
+  react
+  """
+  A_26
+
+  """
+  vanillajs
+  """
+  A_27
+
+  """
+  postgresql
+  """
+  A_28
+
+  """
+  cangjie
+  """
+  A_29
+}
+
+"""
+An enumeration.
+"""
+enum PlaygroundSnippetsLang {
+  """
+  cpp
+  """
+  A_0
+
+  """
+  java
+  """
+  A_1
+
+  """
+  python
+  """
+  A_2
+
+  """
+  python3
+  """
+  A_11
+
+  """
+  mysql
+  """
+  A_3
+
+  """
+  mssql
+  """
+  A_14
+
+  """
+  oraclesql
+  """
+  A_15
+
+  """
+  c
+  """
+  A_4
+
+  """
+  csharp
+  """
+  A_5
+
+  """
+  javascript
+  """
+  A_6
+
+  """
+  typescript
+  """
+  A_20
+
+  """
+  bash
+  """
+  A_8
+
+  """
+  php
+  """
+  A_19
+
+  """
+  swift
+  """
+  A_9
+
+  """
+  kotlin
+  """
+  A_13
+
+  """
+  dart
+  """
+  A_24
+
+  """
+  golang
+  """
+  A_10
+
+  """
+  ruby
+  """
+  A_7
+
+  """
+  scala
+  """
+  A_12
+
+  """
+  html
+  """
+  A_16
+
+  """
+  pythonml
+  """
+  A_17
+
+  """
+  rust
+  """
+  A_18
+
+  """
+  racket
+  """
+  A_21
+
+  """
+  erlang
+  """
+  A_22
+
+  """
+  elixir
+  """
+  A_23
+
+  """
+  pythondata
+  """
+  A_25
+
+  """
+  react
+  """
+  A_26
+
+  """
+  vanillajs
+  """
+  A_27
+
+  """
+  postgresql
+  """
+  A_28
+
+  """
+  cangjie
+  """
+  A_29
+}
+
+"""
+An enumeration.
+"""
+enum PlaygroundTemplateCodeLang {
+  """
+  cpp
+  """
+  A_0
+
+  """
+  java
+  """
+  A_1
+
+  """
+  python
+  """
+  A_2
+
+  """
+  python3
+  """
+  A_11
+
+  """
+  mysql
+  """
+  A_3
+
+  """
+  mssql
+  """
+  A_14
+
+  """
+  oraclesql
+  """
+  A_15
+
+  """
+  c
+  """
+  A_4
+
+  """
+  csharp
+  """
+  A_5
+
+  """
+  javascript
+  """
+  A_6
+
+  """
+  typescript
+  """
+  A_20
+
+  """
+  bash
+  """
+  A_8
+
+  """
+  php
+  """
+  A_19
+
+  """
+  swift
+  """
+  A_9
+
+  """
+  kotlin
+  """
+  A_13
+
+  """
+  dart
+  """
+  A_24
+
+  """
+  golang
+  """
+  A_10
+
+  """
+  ruby
+  """
+  A_7
+
+  """
+  scala
+  """
+  A_12
+
+  """
+  html
+  """
+  A_16
+
+  """
+  pythonml
+  """
+  A_17
+
+  """
+  rust
+  """
+  A_18
+
+  """
+  racket
+  """
+  A_21
+
+  """
+  erlang
+  """
+  A_22
+
+  """
+  elixir
+  """
+  A_23
+
+  """
+  pythondata
+  """
+  A_25
+
+  """
+  react
+  """
+  A_26
+
+  """
+  vanillajs
+  """
+  A_27
+
+  """
+  postgresql
+  """
+  A_28
+
+  """
+  cangjie
+  """
+  A_29
+}
+
+"""
+An enumeration.
+"""
 enum PostStatus {
   PENDING
   OPEN
@@ -851,51 +1769,108 @@ enum PostStatus {
   ALL
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum PremiumBetaFeatureType {
-  "Beta User Flow"
+  """
+  Beta User Flow
+  """
   A_1
-  "New Problemlist Page"
+
+  """
+  New Problemlist Page
+  """
   A_2
-  "New Profile Page"
+
+  """
+  New Profile Page
+  """
   A_3
-  "New Problem Detail Page"
+
+  """
+  New Problem Detail Page
+  """
   A_4
-  "New Study Plan Access"
+
+  """
+  New Study Plan Access
+  """
   A_5
-  "Ai Helper"
+
+  """
+  Ai Helper
+  """
   A_6
-  "New Subscribe Page"
+
+  """
+  New Subscribe Page
+  """
   A_7
-  "New Plan Rank Board Access"
+
+  """
+  New Plan Rank Board Access
+  """
   A_8
-  "Lc Ide"
+
+  """
+  Lc Ide
+  """
   A_9
-  "Lc Ide V2"
+
+  """
+  Lc Ide V2
+  """
   A_10
-  "Frontend Category"
+
+  """
+  Frontend Category
+  """
   A_11
-  "New Stripe Invoice"
+
+  """
+  New Stripe Invoice
+  """
   A_12
-  "Contest Dl"
+
+  """
+  Contest Dl
+  """
   A_13
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum PremiumTrialApplyStatus {
-  "Pending"
+  """
+  Pending
+  """
   PENDING
-  "Approved"
+
+  """
+  Approved
+  """
   APPROVED
-  "Rejected"
+
+  """
+  Rejected
+  """
   REJECTED
 }
 
-"enum value means trial days"
+"""
+enum value means trial days
+"""
 enum PremiumTrialSku {
-  "Monthly Premium Subscription"
+  """
+  Monthly Premium Subscription
+  """
   MONTHLY
-  "Annual Premium Subscription"
+
+  """
+  Annual Premium Subscription
+  """
   ANNUAL
 }
 
@@ -921,7 +1896,9 @@ enum ProgressOrderByEnum {
   TOTAL_SOLVES
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum ProgressStatus {
   UNATTEMPTED
   ATTEMPTED
@@ -934,11 +1911,18 @@ enum PublishStatus {
   UNKNOWN
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum QuestionEditorTypeEnum {
-  "CKEditor"
+  """
+  CKEditor
+  """
   CKEDITOR
-  "Markdown"
+
+  """
+  Markdown
+  """
   MARKDOWN
 }
 
@@ -955,6 +1939,15 @@ enum QuestionSortFieldEnum {
   LAST_MODIFIED
 }
 
+"""
+An enumeration.
+"""
+enum ReportedStatus {
+  ALL
+  REPORTED_UNHANDLED
+  REPORTED_HANDLED
+}
+
 enum ReportTypeEnum {
   ADVERTISING
   SEXUAL
@@ -969,117 +1962,293 @@ enum ReportTypeEnum {
   ALL
 }
 
-"An enumeration."
-enum ReportedStatus {
-  ALL
-  REPORTED_UNHANDLED
-  REPORTED_HANDLED
-}
-
 enum ResourceTypeEnum {
   DUMMY
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum ScoreCategory {
-  "ADD_QUESTION"
+  """
+  ADD_QUESTION
+  """
   A_0
-  "ADD_TESTCASE"
+
+  """
+  ADD_TESTCASE
+  """
   A_1
-  "TOP_IN_CONTEST"
+
+  """
+  TOP_IN_CONTEST
+  """
   A_2
-  "JOIN_CONTEST"
+
+  """
+  JOIN_CONTEST
+  """
   A_3
-  "JOIN_CONTEST_FIRST_TIME"
+
+  """
+  JOIN_CONTEST_FIRST_TIME
+  """
   A_17
-  "SOCIAL_ACCOUNT_BINDING"
+
+  """
+  SOCIAL_ACCOUNT_BINDING
+  """
   A_4
-  "DAILY_LOGIN"
+
+  """
+  DAILY_LOGIN
+  """
   A_5
-  "SEVEN_DAY_LOGIN"
+
+  """
+  SEVEN_DAY_LOGIN
+  """
   A_6
-  "THIRTY_DAY_LOGIN"
+
+  """
+  THIRTY_DAY_LOGIN
+  """
   A_7
-  "CREATE_QUESTION_TRANSLATION"
+
+  """
+  CREATE_QUESTION_TRANSLATION
+  """
   A_9
-  "QUESTION_TRANSLATION_ACCEPTED"
+
+  """
+  QUESTION_TRANSLATION_ACCEPTED
+  """
   A_10
-  "REDEEM"
+
+  """
+  REDEEM
+  """
   A_8
-  "ACCOUNT_TRANSFER"
+
+  """
+  ACCOUNT_TRANSFER
+  """
   A_11
-  "BASIC_INFO_PROVIDED"
+
+  """
+  BASIC_INFO_PROVIDED
+  """
   A_12
-  "AVATAR_PROVIDED"
+
+  """
+  AVATAR_PROVIDED
+  """
   A_13
-  "EXPERIENCE_PROVIDED"
+
+  """
+  EXPERIENCE_PROVIDED
+  """
   A_14
-  "PHONE_BINDING"
+
+  """
+  PHONE_BINDING
+  """
   A_15
-  "POST_TOPIC"
+
+  """
+  POST_TOPIC
+  """
   A_16
-  "EMAIL_CONFIRMED"
+
+  """
+  EMAIL_CONFIRMED
+  """
   A_18
-  "JOIN_INTERNAL_CONTEST"
+
+  """
+  JOIN_INTERNAL_CONTEST
+  """
   A_19
-  "FESTIVAL"
+
+  """
+  FESTIVAL
+  """
   A_20
-  "SURVEY_COMPLETED"
+
+  """
+  SURVEY_COMPLETED
+  """
   A_21
-  "JOIN_BOTH_CONTESTS_SAME_WEEK"
+
+  """
+  JOIN_BOTH_CONTESTS_SAME_WEEK
+  """
   A_22
-  "THIRTY_DAY_CHALLENGE_DAILY_COMPLETE"
+
+  """
+  THIRTY_DAY_CHALLENGE_DAILY_COMPLETE
+  """
   A_23
-  "THIRTY_DAY_CHALLENGE_25_COMPLETE"
+
+  """
+  THIRTY_DAY_CHALLENGE_25_COMPLETE
+  """
   A_24
-  "THIRTY_DAY_CHALLENGE_30_COMPLETE"
+
+  """
+  THIRTY_DAY_CHALLENGE_30_COMPLETE
+  """
   A_25
-  "LEETCODING_CHALLENGE_DAILY"
+
+  """
+  LEETCODING_CHALLENGE_DAILY
+  """
   A_30
-  "LEETCODING_CHALLENGE_MID"
+
+  """
+  LEETCODING_CHALLENGE_MID
+  """
   A_31
-  "LEETCODING_CHALLENGE_ALL"
+
+  """
+  LEETCODING_CHALLENGE_ALL
+  """
   A_32
-  "LEETCODING_CHALLENGE_PREM"
+
+  """
+  LEETCODING_CHALLENGE_PREM
+  """
   A_33
-  "EXPLORE_CARD_COMPLETED"
+
+  """
+  EXPLORE_CARD_COMPLETED
+  """
   A_26
-  "DISCUSS_FIRST_POST"
+
+  """
+  DISCUSS_FIRST_POST
+  """
   A_27
-  "CONTEST_REPORT_APPROVED"
+
+  """
+  CONTEST_REPORT_APPROVED
+  """
   A_28
-  "DAILY_SUBMIT_ACCEPTED_SOLUTIONS"
+
+  """
+  DAILY_SUBMIT_ACCEPTED_SOLUTIONS
+  """
   A_29
-  "CONTEST_EASTER_EGG"
+
+  """
+  CONTEST_EASTER_EGG
+  """
   A_34
-  "CUSTOM"
+
+  """
+  CUSTOM
+  """
   A_100
-  "QUESTION_DETAIL_SATISFACTION_SURVEY"
+
+  """
+  QUESTION_DETAIL_SATISFACTION_SURVEY
+  """
   A_35
-  "JAVASCRIPT_PROBLEM_SURVEY"
+
+  """
+  JAVASCRIPT_PROBLEM_SURVEY
+  """
   A_37
-  "PANDAS_PROBLEM_SURVEY"
+
+  """
+  PANDAS_PROBLEM_SURVEY
+  """
   A_38
-  "QD_DYNAMIC_SURVEY"
+
+  """
+  QD_DYNAMIC_SURVEY
+  """
   A_39
-  "PANDAS_INTRO_STUDY_PLAN_SURVEY"
+
+  """
+  PANDAS_INTRO_STUDY_PLAN_SURVEY
+  """
   A_40
-  "IDE_BACK_QD3_SURVEY"
+
+  """
+  IDE_BACK_QD3_SURVEY
+  """
   A_41
-  "NEW_STUDY_PLAN_SURVEY"
+
+  """
+  NEW_STUDY_PLAN_SURVEY
+  """
   A_36
-  "CONTEST_DYNAMIC_SURVEY"
+
+  """
+  CONTEST_DYNAMIC_SURVEY
+  """
   A_42
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum ScoreTypeEnum {
-  "All"
+  """
+  All
+  """
   ALL
-  "Mission Reward"
+
+  """
+  Mission Reward
+  """
   MISSION_REWARD
-  "Admin Reward"
+
+  """
+  Admin Reward
+  """
   ADMIN_REWARD
+}
+
+"""
+An enumeration.
+"""
+enum SearchDimensionType {
+  """
+  all
+  """
+  ALL
+
+  """
+  user_name
+  """
+  USER_NAME
+
+  """
+  user_id
+  """
+  USER_ID
+
+  """
+  email
+  """
+  EMAIL
+
+  """
+  stripe_id
+  """
+  STRIPE_ID
+
+  """
+  previous email
+  """
+  PREVIOUS_EMAIL
+
+  """
+  previous username
+  """
+  PREVIOUS_USERNAME
 }
 
 enum SearchMetaContentType {
@@ -1089,33 +2258,24 @@ enum SearchMetaContentType {
   REPLY
 }
 
-"An enumeration."
-enum SearchDimensionType {
-  "all"
-  ALL
-  "user_name"
-  USER_NAME
-  "user_id"
-  USER_ID
-  "email"
-  EMAIL
-  "stripe_id"
-  STRIPE_ID
-  "previous email"
-  PREVIOUS_EMAIL
-  "previous username"
-  PREVIOUS_USERNAME
-}
-
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SearchUserType {
-  "user_name"
+  """
+  user_name
+  """
   USER_NAME
-  "user_id"
+
+  """
+  user_id
+  """
   USER_ID
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SessionStatus {
   STARTED
   EXITED
@@ -1123,11 +2283,18 @@ enum SessionStatus {
   ACCEPTED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SortingEnum {
-  "ascending"
+  """
+  ascending
+  """
   ASCENDING
-  "descending"
+
+  """
+  descending
+  """
   DESCENDING
 }
 
@@ -1136,149 +2303,326 @@ enum SortingOrderEnum {
   DESCENDING
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum StripeChargeStatusEnum {
-  "All"
+  """
+  All
+  """
   ALL
-  "NoPaid"
+
+  """
+  NoPaid
+  """
   NO_PAID
-  "Paid"
+
+  """
+  Paid
+  """
   PAID
-  "Disputed"
+
+  """
+  Disputed
+  """
   DISPUTED
-  "Refunded"
+
+  """
+  Refunded
+  """
   REFUNDED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SubmissionFlagTypeEnum {
-  "white, not marked"
+  """
+  white, not marked
+  """
   WHITE
-  "blue"
+
+  """
+  blue
+  """
   BLUE
-  "orange"
+
+  """
+  orange
+  """
   ORANGE
-  "green"
+
+  """
+  green
+  """
   GREEN
-  "purple"
+
+  """
+  purple
+  """
   PURPLE
-  "red"
+
+  """
+  red
+  """
   RED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SubmissionMemoryComplexity {
-  "O(1)"
+  """
+  O(1)
+  """
   A_1
-  "O(log n)"
+
+  """
+  O(log n)
+  """
   A_2
-  "O(n)"
+
+  """
+  O(n)
+  """
   A_3
-  "O(n log n)"
+
+  """
+  O(n log n)
+  """
   A_4
-  "O(n²)"
+
+  """
+  O(n²)
+  """
   A_5
-  "O(n³)"
+
+  """
+  O(n³)
+  """
   A_6
-  "O(n⁴)"
+
+  """
+  O(n⁴)
+  """
   A_7
-  "O(n⁵)"
+
+  """
+  O(n⁵)
+  """
   A_8
-  "O(n⁶)"
+
+  """
+  O(n⁶)
+  """
   A_9
-  "O(2ⁿ)"
+
+  """
+  O(2ⁿ)
+  """
   A_10
-  "O(n!)"
+
+  """
+  O(n!)
+  """
   A_11
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SubmissionStatusEnum {
-  "Accepted"
+  """
+  Accepted
+  """
   AC
-  "Wrong Answer"
+
+  """
+  Wrong Answer
+  """
   WA
-  "Memory Limit Exceeded"
+
+  """
+  Memory Limit Exceeded
+  """
   MLE
-  "Output Limit Exceeded"
+
+  """
+  Output Limit Exceeded
+  """
   OLE
-  "Time Limit Exceeded"
+
+  """
+  Time Limit Exceeded
+  """
   TLE
-  "Runtime Error"
+
+  """
+  Runtime Error
+  """
   RE
-  "Internal Error"
+
+  """
+  Internal Error
+  """
   IE
-  "Compile Error"
+
+  """
+  Compile Error
+  """
   CE
-  "Timeout"
+
+  """
+  Timeout
+  """
   TO
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SubmissionTimeComplexity {
-  "O(1)"
+  """
+  O(1)
+  """
   A_1
-  "O(log n)"
+
+  """
+  O(log n)
+  """
   A_2
-  "O(n)"
+
+  """
+  O(n)
+  """
   A_3
-  "O(n log n)"
+
+  """
+  O(n log n)
+  """
   A_4
-  "O(n²)"
+
+  """
+  O(n²)
+  """
   A_5
-  "O(n³)"
+
+  """
+  O(n³)
+  """
   A_6
-  "O(n⁴)"
+
+  """
+  O(n⁴)
+  """
   A_7
-  "O(n⁵)"
+
+  """
+  O(n⁵)
+  """
   A_8
-  "O(n⁶)"
+
+  """
+  O(n⁶)
+  """
   A_9
-  "O(2ⁿ)"
+
+  """
+  O(2ⁿ)
+  """
   A_10
-  "O(n!)"
+
+  """
+  O(n!)
+  """
   A_11
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SurveyQuestionQuestionType {
-  "Yes/No"
+  """
+  Yes/No
+  """
   A_0
-  "Radio"
+
+  """
+  Radio
+  """
   A_1
-  "Written Response"
+
+  """
+  Written Response
+  """
   A_2
-  "Numeric Response"
+
+  """
+  Numeric Response
+  """
   A_3
-  "Checkbox"
+
+  """
+  Checkbox
+  """
   A_4
 }
 
-"An enumeration."
-enum TagAdminOperationType {
-  "Create"
-  CREATE
-  "Map"
-  MAP
-  "Edit"
-  EDIT
-  "Enable"
-  ENABLED
-  "Not Disable"
-  NOT_ENABLED
-  "Selectable"
-  SELECTABLE
-  "Not Selectable"
-  NOT_SELECTABLE
-  "Standard"
-  STANDARD
-  "Not Standard"
-  NOT_STANDARD
-}
-
-"An enumeration."
+"""
+An enumeration.
+"""
 enum SurveyType {
   MOCK_INTERVIEW
+}
+
+"""
+An enumeration.
+"""
+enum TagAdminOperationType {
+  """
+  Create
+  """
+  CREATE
+
+  """
+  Map
+  """
+  MAP
+
+  """
+  Edit
+  """
+  EDIT
+
+  """
+  Enable
+  """
+  ENABLED
+
+  """
+  Not Disable
+  """
+  NOT_ENABLED
+
+  """
+  Selectable
+  """
+  SELECTABLE
+
+  """
+  Not Selectable
+  """
+  NOT_SELECTABLE
+
+  """
+  Standard
+  """
+  STANDARD
+
+  """
+  Not Standard
+  """
+  NOT_STANDARD
 }
 
 enum TagTypeEnum {
@@ -1287,7 +2631,9 @@ enum TagTypeEnum {
   SKILL
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum TopicSortingOption {
   hot
   oldest_to_newest
@@ -1298,9 +2644,13 @@ enum TopicSortingOption {
   most_relevant
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum TopicTagTagType {
-  "Company"
+  """
+  Company
+  """
   A_0
 }
 
@@ -1310,7 +2660,9 @@ enum TrendingDirectionEnum {
   NONE
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum Type {
   BETA_USER_FLOW
   NEW_PROBLEMLIST_PAGE
@@ -1327,14 +2679,9 @@ enum Type {
   CONTEST_DL
 }
 
-"An enumeration."
-enum UPCResponseType {
-  BASIC_INFO
-  DESIRED_JOB
-  INTERVIEW_PREP_TIME
-}
-
-"An enumeration."
+"""
+An enumeration.
+"""
 enum UmScoreCategoryEnum {
   ADD_QUESTION
   ADD_TESTCASE
@@ -1382,33 +2729,67 @@ enum UmScoreCategoryEnum {
   CONTEST_DYNAMIC_SURVEY
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum UmStoreOrderStatusEnum {
   Canceled
   Processing
   Shipped
 }
 
-"An enumeration."
-enum UpcV2PurposeEnum {
-  "INTERVIEW"
-  INTERVIEW
-  "STUDY"
-  STUDY
-  "ALL"
-  ALL
+"""
+An enumeration.
+"""
+enum UPCResponseType {
+  BASIC_INFO
+  DESIRED_JOB
+  INTERVIEW_PREP_TIME
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum UpcV2CodingLevelEnum {
-  "BEGINNER"
+  """
   BEGINNER
-  "INTERMEDIATE"
+  """
+  BEGINNER
+
+  """
   INTERMEDIATE
-  "ADVANCED"
+  """
+  INTERMEDIATE
+
+  """
   ADVANCED
-  "EXPERT"
+  """
+  ADVANCED
+
+  """
   EXPERT
+  """
+  EXPERT
+}
+
+"""
+An enumeration.
+"""
+enum UpcV2PurposeEnum {
+  """
+  INTERVIEW
+  """
+  INTERVIEW
+
+  """
+  STUDY
+  """
+  STUDY
+
+  """
+  ALL
+  """
+  ALL
 }
 
 enum UserDailyQuestionStatus {
@@ -1421,545 +2802,1343 @@ enum UserDailyQuestionStatusV2 {
   Finish
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum UserOperationEnum {
-  "Login"
+  """
+  Login
+  """
   LOGIN
-  "Account Created"
+
+  """
+  Account Created
+  """
   ACCOUNT_CREATED
-  "Account Banned"
+
+  """
+  Account Banned
+  """
   ACCOUNT_BANNED
-  "Email Added"
+
+  """
+  Email Added
+  """
   EMAIL_ADDED
-  "Email Removed"
+
+  """
+  Email Removed
+  """
   EMAIL_REMOVED
-  "Email Verified"
+
+  """
+  Email Verified
+  """
   EMAIL_VERIFIED
-  "Email Primary Updated"
+
+  """
+  Email Primary Updated
+  """
   EMAIL_PRIMARY_UPDATED
-  "Username Updated"
+
+  """
+  Username Updated
+  """
   USERNAME_UPDATED
-  "Realname Updated"
+
+  """
+  Realname Updated
+  """
   REALNAME_UPDATED
-  "Avatar Updated"
+
+  """
+  Avatar Updated
+  """
   AVATAR_UPDATED
-  "Passward Updated"
+
+  """
+  Passward Updated
+  """
   PASSWORD_UPDATED
-  "Oauth Connected"
+
+  """
+  Oauth Connected
+  """
   OAUTH_CONNECTED
-  "Oauth Removed"
+
+  """
+  Oauth Removed
+  """
   OAUTH_REMOVED
-  "Account Deleted"
+
+  """
+  Account Deleted
+  """
   ACCOUNT_DELETED
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum UserProfileCountry {
-  "Afghanistan"
+  """
+  Afghanistan
+  """
   AF
-  "Åland Islands"
+
+  """
+  Åland Islands
+  """
   AX
-  "Albania"
+
+  """
+  Albania
+  """
   AL
-  "Algeria"
+
+  """
+  Algeria
+  """
   DZ
-  "American Samoa"
+
+  """
+  American Samoa
+  """
   AS
-  "Andorra"
+
+  """
+  Andorra
+  """
   AD
-  "Angola"
+
+  """
+  Angola
+  """
   AO
-  "Anguilla"
+
+  """
+  Anguilla
+  """
   AI
-  "Antarctica"
+
+  """
+  Antarctica
+  """
   AQ
-  "Antigua and Barbuda"
+
+  """
+  Antigua and Barbuda
+  """
   AG
-  "Argentina"
+
+  """
+  Argentina
+  """
   AR
-  "Armenia"
+
+  """
+  Armenia
+  """
   AM
-  "Aruba"
+
+  """
+  Aruba
+  """
   AW
-  "Australia"
+
+  """
+  Australia
+  """
   AU
-  "Austria"
+
+  """
+  Austria
+  """
   AT
-  "Azerbaijan"
+
+  """
+  Azerbaijan
+  """
   AZ
-  "Bahamas"
+
+  """
+  Bahamas
+  """
   BS
-  "Bahrain"
+
+  """
+  Bahrain
+  """
   BH
-  "Bangladesh"
+
+  """
+  Bangladesh
+  """
   BD
-  "Barbados"
+
+  """
+  Barbados
+  """
   BB
-  "Belarus"
+
+  """
+  Belarus
+  """
   BY
-  "Belgium"
+
+  """
+  Belgium
+  """
   BE
-  "Belize"
+
+  """
+  Belize
+  """
   BZ
-  "Benin"
+
+  """
+  Benin
+  """
   BJ
-  "Bermuda"
+
+  """
+  Bermuda
+  """
   BM
-  "Bhutan"
+
+  """
+  Bhutan
+  """
   BT
-  "Bolivia"
+
+  """
+  Bolivia
+  """
   BO
-  "Bonaire, Sint Eustatius and Saba"
+
+  """
+  Bonaire, Sint Eustatius and Saba
+  """
   BQ
-  "Bosnia and Herzegovina"
+
+  """
+  Bosnia and Herzegovina
+  """
   BA
-  "Botswana"
+
+  """
+  Botswana
+  """
   BW
-  "Bouvet Island"
+
+  """
+  Bouvet Island
+  """
   BV
-  "Brazil"
+
+  """
+  Brazil
+  """
   BR
-  "British Indian Ocean Territory"
+
+  """
+  British Indian Ocean Territory
+  """
   IO
-  "Brunei"
+
+  """
+  Brunei
+  """
   BN
-  "Bulgaria"
+
+  """
+  Bulgaria
+  """
   BG
-  "Burkina Faso"
+
+  """
+  Burkina Faso
+  """
   BF
-  "Burundi"
+
+  """
+  Burundi
+  """
   BI
-  "Cabo Verde"
+
+  """
+  Cabo Verde
+  """
   CV
-  "Cambodia"
+
+  """
+  Cambodia
+  """
   KH
-  "Cameroon"
+
+  """
+  Cameroon
+  """
   CM
-  "Canada"
+
+  """
+  Canada
+  """
   CA
-  "Cayman Islands"
+
+  """
+  Cayman Islands
+  """
   KY
-  "Central African Republic"
+
+  """
+  Central African Republic
+  """
   CF
-  "Chad"
+
+  """
+  Chad
+  """
   TD
-  "Chile"
+
+  """
+  Chile
+  """
   CL
-  "China"
+
+  """
+  China
+  """
   CN
-  "Christmas Island"
+
+  """
+  Christmas Island
+  """
   CX
-  "Cocos (Keeling) Islands"
+
+  """
+  Cocos (Keeling) Islands
+  """
   CC
-  "Colombia"
+
+  """
+  Colombia
+  """
   CO
-  "Comoros"
+
+  """
+  Comoros
+  """
   KM
-  "Congo"
+
+  """
+  Congo
+  """
   CG
-  "Congo (the Democratic Republic of the)"
+
+  """
+  Congo (the Democratic Republic of the)
+  """
   CD
-  "Cook Islands"
+
+  """
+  Cook Islands
+  """
   CK
-  "Costa Rica"
+
+  """
+  Costa Rica
+  """
   CR
-  "Côte d'Ivoire"
+
+  """
+  Côte d'Ivoire
+  """
   CI
-  "Croatia"
+
+  """
+  Croatia
+  """
   HR
-  "Cuba"
+
+  """
+  Cuba
+  """
   CU
-  "Curaçao"
+
+  """
+  Curaçao
+  """
   CW
-  "Cyprus"
+
+  """
+  Cyprus
+  """
   CY
-  "Czechia"
+
+  """
+  Czechia
+  """
   CZ
-  "Denmark"
+
+  """
+  Denmark
+  """
   DK
-  "Djibouti"
+
+  """
+  Djibouti
+  """
   DJ
-  "Dominica"
+
+  """
+  Dominica
+  """
   DM
-  "Dominican Republic"
+
+  """
+  Dominican Republic
+  """
   DO
-  "Ecuador"
+
+  """
+  Ecuador
+  """
   EC
-  "Egypt"
+
+  """
+  Egypt
+  """
   EG
-  "El Salvador"
+
+  """
+  El Salvador
+  """
   SV
-  "Equatorial Guinea"
+
+  """
+  Equatorial Guinea
+  """
   GQ
-  "Eritrea"
+
+  """
+  Eritrea
+  """
   ER
-  "Estonia"
+
+  """
+  Estonia
+  """
   EE
-  "Eswatini"
+
+  """
+  Eswatini
+  """
   SZ
-  "Ethiopia"
+
+  """
+  Ethiopia
+  """
   ET
-  "Falkland Islands (Malvinas)"
+
+  """
+  Falkland Islands (Malvinas)
+  """
   FK
-  "Faroe Islands"
+
+  """
+  Faroe Islands
+  """
   FO
-  "Fiji"
+
+  """
+  Fiji
+  """
   FJ
-  "Finland"
+
+  """
+  Finland
+  """
   FI
-  "France"
+
+  """
+  France
+  """
   FR
-  "French Guiana"
+
+  """
+  French Guiana
+  """
   GF
-  "French Polynesia"
+
+  """
+  French Polynesia
+  """
   PF
-  "French Southern Territories"
+
+  """
+  French Southern Territories
+  """
   TF
-  "Gabon"
+
+  """
+  Gabon
+  """
   GA
-  "Gambia"
+
+  """
+  Gambia
+  """
   GM
-  "Georgia"
+
+  """
+  Georgia
+  """
   GE
-  "Germany"
+
+  """
+  Germany
+  """
   DE
-  "Ghana"
+
+  """
+  Ghana
+  """
   GH
-  "Gibraltar"
+
+  """
+  Gibraltar
+  """
   GI
-  "Greece"
+
+  """
+  Greece
+  """
   GR
-  "Greenland"
+
+  """
+  Greenland
+  """
   GL
-  "Grenada"
+
+  """
+  Grenada
+  """
   GD
-  "Guadeloupe"
+
+  """
+  Guadeloupe
+  """
   GP
-  "Guam"
+
+  """
+  Guam
+  """
   GU
-  "Guatemala"
+
+  """
+  Guatemala
+  """
   GT
-  "Guernsey"
+
+  """
+  Guernsey
+  """
   GG
-  "Guinea"
+
+  """
+  Guinea
+  """
   GN
-  "Guinea-Bissau"
+
+  """
+  Guinea-Bissau
+  """
   GW
-  "Guyana"
+
+  """
+  Guyana
+  """
   GY
-  "Haiti"
+
+  """
+  Haiti
+  """
   HT
-  "Heard Island and McDonald Islands"
+
+  """
+  Heard Island and McDonald Islands
+  """
   HM
-  "Holy See"
+
+  """
+  Holy See
+  """
   VA
-  "Honduras"
+
+  """
+  Honduras
+  """
   HN
-  "Hong Kong"
+
+  """
+  Hong Kong
+  """
   HK
-  "Hungary"
+
+  """
+  Hungary
+  """
   HU
-  "Iceland"
+
+  """
+  Iceland
+  """
   IS
-  "India"
+
+  """
+  India
+  """
   IN
-  "Indonesia"
+
+  """
+  Indonesia
+  """
   ID
-  "Iran"
+
+  """
+  Iran
+  """
   IR
-  "Iraq"
+
+  """
+  Iraq
+  """
   IQ
-  "Ireland"
+
+  """
+  Ireland
+  """
   IE
-  "Isle of Man"
+
+  """
+  Isle of Man
+  """
   IM
-  "Israel"
+
+  """
+  Israel
+  """
   IL
-  "Italy"
+
+  """
+  Italy
+  """
   IT
-  "Jamaica"
+
+  """
+  Jamaica
+  """
   JM
-  "Japan"
+
+  """
+  Japan
+  """
   JP
-  "Jersey"
+
+  """
+  Jersey
+  """
   JE
-  "Jordan"
+
+  """
+  Jordan
+  """
   JO
-  "Kazakhstan"
+
+  """
+  Kazakhstan
+  """
   KZ
-  "Kenya"
+
+  """
+  Kenya
+  """
   KE
-  "Kiribati"
+
+  """
+  Kiribati
+  """
   KI
-  "Kuwait"
+
+  """
+  Kuwait
+  """
   KW
-  "Kyrgyzstan"
+
+  """
+  Kyrgyzstan
+  """
   KG
-  "Laos"
+
+  """
+  Laos
+  """
   LA
-  "Latvia"
+
+  """
+  Latvia
+  """
   LV
-  "Lebanon"
+
+  """
+  Lebanon
+  """
   LB
-  "Lesotho"
+
+  """
+  Lesotho
+  """
   LS
-  "Liberia"
+
+  """
+  Liberia
+  """
   LR
-  "Libya"
+
+  """
+  Libya
+  """
   LY
-  "Liechtenstein"
+
+  """
+  Liechtenstein
+  """
   LI
-  "Lithuania"
+
+  """
+  Lithuania
+  """
   LT
-  "Luxembourg"
+
+  """
+  Luxembourg
+  """
   LU
-  "Macao"
+
+  """
+  Macao
+  """
   MO
-  "Madagascar"
+
+  """
+  Madagascar
+  """
   MG
-  "Malawi"
+
+  """
+  Malawi
+  """
   MW
-  "Malaysia"
+
+  """
+  Malaysia
+  """
   MY
-  "Maldives"
+
+  """
+  Maldives
+  """
   MV
-  "Mali"
+
+  """
+  Mali
+  """
   ML
-  "Malta"
+
+  """
+  Malta
+  """
   MT
-  "Marshall Islands"
+
+  """
+  Marshall Islands
+  """
   MH
-  "Martinique"
+
+  """
+  Martinique
+  """
   MQ
-  "Mauritania"
+
+  """
+  Mauritania
+  """
   MR
-  "Mauritius"
+
+  """
+  Mauritius
+  """
   MU
-  "Mayotte"
+
+  """
+  Mayotte
+  """
   YT
-  "Mexico"
+
+  """
+  Mexico
+  """
   MX
-  "Micronesia (Federated States of)"
+
+  """
+  Micronesia (Federated States of)
+  """
   FM
-  "Moldova"
+
+  """
+  Moldova
+  """
   MD
-  "Monaco"
+
+  """
+  Monaco
+  """
   MC
-  "Mongolia"
+
+  """
+  Mongolia
+  """
   MN
-  "Montenegro"
+
+  """
+  Montenegro
+  """
   ME
-  "Montserrat"
+
+  """
+  Montserrat
+  """
   MS
-  "Morocco"
+
+  """
+  Morocco
+  """
   MA
-  "Mozambique"
+
+  """
+  Mozambique
+  """
   MZ
-  "Myanmar"
+
+  """
+  Myanmar
+  """
   MM
-  "Namibia"
+
+  """
+  Namibia
+  """
   NA
-  "Nauru"
+
+  """
+  Nauru
+  """
   NR
-  "Nepal"
+
+  """
+  Nepal
+  """
   NP
-  "Netherlands"
+
+  """
+  Netherlands
+  """
   NL
-  "New Caledonia"
+
+  """
+  New Caledonia
+  """
   NC
-  "New Zealand"
+
+  """
+  New Zealand
+  """
   NZ
-  "Nicaragua"
+
+  """
+  Nicaragua
+  """
   NI
-  "Niger"
+
+  """
+  Niger
+  """
   NE
-  "Nigeria"
+
+  """
+  Nigeria
+  """
   NG
-  "Niue"
+
+  """
+  Niue
+  """
   NU
-  "Norfolk Island"
+
+  """
+  Norfolk Island
+  """
   NF
-  "North Korea"
+
+  """
+  North Korea
+  """
   KP
-  "North Macedonia"
+
+  """
+  North Macedonia
+  """
   MK
-  "Northern Mariana Islands"
+
+  """
+  Northern Mariana Islands
+  """
   MP
-  "Norway"
+
+  """
+  Norway
+  """
   NO
-  "Oman"
+
+  """
+  Oman
+  """
   OM
-  "Pakistan"
+
+  """
+  Pakistan
+  """
   PK
-  "Palau"
+
+  """
+  Palau
+  """
   PW
-  "Palestine, State of"
+
+  """
+  Palestine, State of
+  """
   PS
-  "Panama"
+
+  """
+  Panama
+  """
   PA
-  "Papua New Guinea"
+
+  """
+  Papua New Guinea
+  """
   PG
-  "Paraguay"
+
+  """
+  Paraguay
+  """
   PY
-  "Peru"
+
+  """
+  Peru
+  """
   PE
-  "Philippines"
+
+  """
+  Philippines
+  """
   PH
-  "Pitcairn"
+
+  """
+  Pitcairn
+  """
   PN
-  "Poland"
+
+  """
+  Poland
+  """
   PL
-  "Portugal"
+
+  """
+  Portugal
+  """
   PT
-  "Puerto Rico"
+
+  """
+  Puerto Rico
+  """
   PR
-  "Qatar"
+
+  """
+  Qatar
+  """
   QA
-  "Réunion"
+
+  """
+  Réunion
+  """
   RE
-  "Romania"
+
+  """
+  Romania
+  """
   RO
-  "Russia"
+
+  """
+  Russia
+  """
   RU
-  "Rwanda"
+
+  """
+  Rwanda
+  """
   RW
-  "Saint Barthélemy"
+
+  """
+  Saint Barthélemy
+  """
   BL
-  "Saint Helena, Ascension and Tristan da Cunha"
+
+  """
+  Saint Helena, Ascension and Tristan da Cunha
+  """
   SH
-  "Saint Kitts and Nevis"
+
+  """
+  Saint Kitts and Nevis
+  """
   KN
-  "Saint Lucia"
+
+  """
+  Saint Lucia
+  """
   LC
-  "Saint Martin (French part)"
+
+  """
+  Saint Martin (French part)
+  """
   MF
-  "Saint Pierre and Miquelon"
+
+  """
+  Saint Pierre and Miquelon
+  """
   PM
-  "Saint Vincent and the Grenadines"
+
+  """
+  Saint Vincent and the Grenadines
+  """
   VC
-  "Samoa"
+
+  """
+  Samoa
+  """
   WS
-  "San Marino"
+
+  """
+  San Marino
+  """
   SM
-  "Sao Tome and Principe"
+
+  """
+  Sao Tome and Principe
+  """
   ST
-  "Saudi Arabia"
+
+  """
+  Saudi Arabia
+  """
   SA
-  "Senegal"
+
+  """
+  Senegal
+  """
   SN
-  "Serbia"
+
+  """
+  Serbia
+  """
   RS
-  "Seychelles"
+
+  """
+  Seychelles
+  """
   SC
-  "Sierra Leone"
+
+  """
+  Sierra Leone
+  """
   SL
-  "Singapore"
+
+  """
+  Singapore
+  """
   SG
-  "Sint Maarten (Dutch part)"
+
+  """
+  Sint Maarten (Dutch part)
+  """
   SX
-  "Slovakia"
+
+  """
+  Slovakia
+  """
   SK
-  "Slovenia"
+
+  """
+  Slovenia
+  """
   SI
-  "Solomon Islands"
+
+  """
+  Solomon Islands
+  """
   SB
-  "Somalia"
+
+  """
+  Somalia
+  """
   SO
-  "South Africa"
+
+  """
+  South Africa
+  """
   ZA
-  "South Georgia and the South Sandwich Islands"
+
+  """
+  South Georgia and the South Sandwich Islands
+  """
   GS
-  "South Korea"
+
+  """
+  South Korea
+  """
   KR
-  "South Sudan"
+
+  """
+  South Sudan
+  """
   SS
-  "Spain"
+
+  """
+  Spain
+  """
   ES
-  "Sri Lanka"
+
+  """
+  Sri Lanka
+  """
   LK
-  "Sudan"
+
+  """
+  Sudan
+  """
   SD
-  "Suriname"
+
+  """
+  Suriname
+  """
   SR
-  "Svalbard and Jan Mayen"
+
+  """
+  Svalbard and Jan Mayen
+  """
   SJ
-  "Sweden"
+
+  """
+  Sweden
+  """
   SE
-  "Switzerland"
+
+  """
+  Switzerland
+  """
   CH
-  "Syria"
+
+  """
+  Syria
+  """
   SY
-  "Taiwan"
+
+  """
+  Taiwan
+  """
   TW
-  "Tajikistan"
+
+  """
+  Tajikistan
+  """
   TJ
-  "Tanzania"
+
+  """
+  Tanzania
+  """
   TZ
-  "Thailand"
+
+  """
+  Thailand
+  """
   TH
-  "Timor-Leste"
+
+  """
+  Timor-Leste
+  """
   TL
-  "Togo"
+
+  """
+  Togo
+  """
   TG
-  "Tokelau"
+
+  """
+  Tokelau
+  """
   TK
-  "Tonga"
+
+  """
+  Tonga
+  """
   TO
-  "Trinidad and Tobago"
+
+  """
+  Trinidad and Tobago
+  """
   TT
-  "Tunisia"
+
+  """
+  Tunisia
+  """
   TN
-  "Türkiye"
+
+  """
+  Türkiye
+  """
   TR
-  "Turkmenistan"
+
+  """
+  Turkmenistan
+  """
   TM
-  "Turks and Caicos Islands"
+
+  """
+  Turks and Caicos Islands
+  """
   TC
-  "Tuvalu"
+
+  """
+  Tuvalu
+  """
   TV
-  "Uganda"
+
+  """
+  Uganda
+  """
   UG
-  "Ukraine"
+
+  """
+  Ukraine
+  """
   UA
-  "United Arab Emirates"
+
+  """
+  United Arab Emirates
+  """
   AE
-  "United Kingdom"
+
+  """
+  United Kingdom
+  """
   GB
-  "United States Minor Outlying Islands"
+
+  """
+  United States Minor Outlying Islands
+  """
   UM
-  "United States of America"
+
+  """
+  United States of America
+  """
   US
-  "Uruguay"
+
+  """
+  Uruguay
+  """
   UY
-  "Uzbekistan"
+
+  """
+  Uzbekistan
+  """
   UZ
-  "Vanuatu"
+
+  """
+  Vanuatu
+  """
   VU
-  "Venezuela"
+
+  """
+  Venezuela
+  """
   VE
-  "Vietnam"
+
+  """
+  Vietnam
+  """
   VN
-  "Virgin Islands (British)"
+
+  """
+  Virgin Islands (British)
+  """
   VG
-  "Virgin Islands (U.S.)"
+
+  """
+  Virgin Islands (U.S.)
+  """
   VI
-  "Wallis and Futuna"
+
+  """
+  Wallis and Futuna
+  """
   WF
-  "Western Sahara"
+
+  """
+  Western Sahara
+  """
   EH
-  "Yemen"
+
+  """
+  Yemen
+  """
   YE
-  "Zambia"
+
+  """
+  Zambia
+  """
   ZM
-  "Zimbabwe"
+
+  """
+  Zimbabwe
+  """
   ZW
 }
 
-"An enumeration."
+"""
+An enumeration.
+"""
 enum UserProfileOccupation {
-  "Student"
+  """
+  Student
+  """
   A_1
-  "Professional"
+
+  """
+  Professional
+  """
   A_2
 }
 
@@ -1969,69 +4148,13 @@ enum UserQuestionStatus {
   TRIED
 }
 
-"A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies."
-enum __DirectiveLocation {
-  "Location adjacent to a query operation."
-  QUERY
-  "Location adjacent to a mutation operation."
-  MUTATION
-  "Location adjacent to a subscription operation."
-  SUBSCRIPTION
-  "Location adjacent to a field."
-  FIELD
-  "Location adjacent to a fragment definition."
-  FRAGMENT_DEFINITION
-  "Location adjacent to a fragment spread."
-  FRAGMENT_SPREAD
-  "Location adjacent to an inline fragment."
-  INLINE_FRAGMENT
-  "Location adjacent to a schema definition."
-  SCHEMA
-  "Location adjacent to a scalar definition."
-  SCALAR
-  "Location adjacent to an object definition."
-  OBJECT
-  "Location adjacent to a field definition."
-  FIELD_DEFINITION
-  "Location adjacent to an argument definition."
-  ARGUMENT_DEFINITION
-  "Location adjacent to an interface definition."
-  INTERFACE
-  "Location adjacent to a union definition."
-  UNION
-  "Location adjacent to an enum definition."
-  ENUM
-  "Location adjacent to an enum value definition."
-  ENUM_VALUE
-  "Location adjacent to an input object definition."
-  INPUT_OBJECT
-  "Location adjacent to an input object field definition."
-  INPUT_FIELD_DEFINITION
-}
-
-"An enum describing what kind of type a given `__Type` is"
-enum __TypeKind {
-  "Indicates this type is a scalar."
-  SCALAR
-  "Indicates this type is an object. `fields` and `interfaces` are valid fields."
-  OBJECT
-  "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields."
-  INTERFACE
-  "Indicates this type is a union. `possibleTypes` is a valid field."
-  UNION
-  "Indicates this type is an enum. `enumValues` is a valid field."
-  ENUM
-  "Indicates this type is an input object. `inputFields` is a valid field."
-  INPUT_OBJECT
-  "Indicates this type is a list. `ofType` is a valid field."
-  LIST
-  "Indicates this type is a non-null. `ofType` is a valid field."
-  NON_NULL
-}
-
-"An object with an ID"
+"""
+An object with an ID
+"""
 interface Node {
-  "The ID of the object."
+  """
+  The ID of the object.
+  """
   id: ID!
 }
 
@@ -2095,9 +4218,15 @@ input LibraryQuestionsInput {
   isNew: Boolean
   isSystemDesign: Boolean
   isUnpublished: Boolean
-  "Search Keyword"
+
+  """
+  Search Keyword
+  """
   keyword: String
-  "Question Type"
+
+  """
+  Question Type
+  """
   quesType: String
   sortField: QuestionSortFieldEnum!
 }
@@ -2109,61 +4238,177 @@ input LibrarySolutionsInput {
 }
 
 input ManagementAddInterviewedStatVoteInput {
-  "position tag id"
+  """
+  position tag id
+  """
   positionTagSlug: String
   questionId: ID!
-  "company tag id"
+
+  """
+  company tag id
+  """
   tagId: ID!
   timeOption: Int
   votedNum: Int!
 }
 
 input ManagementAddOrEditTagCategoryInput {
-  "Group ID for this category"
+  """
+  Group ID for this category
+  """
   groupId: ID!
-  "Category is enabled or not"
+
+  """
+  Category is enabled or not
+  """
   isEnabled: Boolean
-  "Category Name"
+
+  """
+  Category Name
+  """
   name: String!
 }
 
 input ManagementAddOrEditTagInput {
-  "Tag Image URL"
+  """
+  Tag Image URL
+  """
   imgUrl: String
   isStandard: Boolean
-  "Whether the tag is enabled (if not enabled, it's not shown to the users"
+
+  """
+  Whether the tag is enabled (if not enabled, it's not shown to the users
+  """
   isTagEnabled: Boolean!
   isUserSelectable: Boolean
   keywords: JSONString
-  "Tag Name"
+
+  """
+  Tag Name
+  """
   name: String!
-  "排序"
+
+  """
+  排序
+  """
   order: Int
-  "Tag Slug"
+
+  """
+  Tag Slug
+  """
   slug: String!
-  "Category List IDs"
+
+  """
+  Category List IDs
+  """
   tagCategoryIds: [ID]
 }
 
-input ManagementCompanyTagsInput {
-  "Filter by Standard Tags"
-  isEnabled: Boolean
-  "Search Keyword"
+input managementCompanyQuestionsInput {
+  keyword: String
+  keywordType: CompanyQuestionKeywordType
+  limit: Int!
+  offset: Int!
+  tagId: Int!
+  timeOption: CompanyQuestionTimeOptionEnum
+}
+
+input managementCompanyQuestionsV2Input {
+  companyTagId: Int!
   keyword: String
   limit: Int!
   offset: Int!
-  "Tag Slug"
+  positionTagSlug: String
+  timeOption: CompanyQuestionTimeOptionEnumV2
+}
+
+input ManagementCompanyTagsInput {
+  """
+  Filter by Standard Tags
+  """
+  isEnabled: Boolean
+
+  """
+  Search Keyword
+  """
+  keyword: String
+  limit: Int!
+  offset: Int!
+
+  """
+  Tag Slug
+  """
   slug: String
 }
 
+input managementIncVoteLogsInput {
+  limit: Int!
+  offset: Int!
+  questionId: Int!
+  tagId: Int!
+}
+
 input ManagementTagCategoriesInput {
-  "Filter by Category Enabled"
+  """
+  Filter by Category Enabled
+  """
   isEnabled: Boolean
-  "Search Keyword"
+
+  """
+  Search Keyword
+  """
   keyword: String
-  "Category Slug"
+
+  """
+  Category Slug
+  """
   slug: String
-  "Group ID"
+
+  """
+  Group ID
+  """
+  tagGroupId: Int
+}
+
+input ManagementTagsInput {
+  excludeTagCategoryIds: [Int]
+  isSimilarTag: Boolean
+
+  """
+  Filter by Standard Tags
+  """
+  isStandardTag: Boolean
+
+  """
+  Filter by Enabled Tags
+  """
+  isTagEnabled: Boolean
+
+  """
+  Filter by User Selectable Tags
+  """
+  isUserSelectable: Boolean
+
+  """
+  Search Keyword
+  """
+  keyword: String
+  limit: Int!
+  offset: Int!
+
+  """
+  Filter by Tag Slug startswith
+  """
+  slug: String
+
+  """
+  Category ID
+  """
+  tagCategoryId: Int
+
+  """
+  Group ID
+  """
   tagGroupId: Int
 }
 
@@ -2172,38 +4417,6 @@ input ManagementTeamMembersInput {
   roleGroup: ManagementRoleEnum
   skip: Int!
   username: String
-}
-
-input ManagementTagsInput {
-  excludeTagCategoryIds: [Int]
-  isSimilarTag: Boolean
-  "Filter by Standard Tags"
-  isStandardTag: Boolean
-  "Filter by Enabled Tags"
-  isTagEnabled: Boolean
-  "Filter by User Selectable Tags"
-  isUserSelectable: Boolean
-  "Search Keyword"
-  keyword: String
-  limit: Int!
-  offset: Int!
-  "Filter by Tag Slug startswith"
-  slug: String
-  "Category ID"
-  tagCategoryId: Int
-  "Group ID"
-  tagGroupId: Int
-}
-
-input OMFavoriteListInput {
-  favoriteType: FavoriteTypeEnum
-  limit: Int!
-  searchFieldEnum: OMFavoriteSearchFieldEnum
-  searchKeyword: String
-  skip: Int!
-  sortBy: OMFavoriteSortFieldEnum
-  "sort descending or ascending"
-  sortDsc: Boolean
 }
 
 input OfficialSolutionFeedbackFilterInput {
@@ -2216,6 +4429,20 @@ input OfficialSolutionFeedbackFilterInput {
   reasons: [Int]
   sortOrder: SortingEnum
   startDate: String
+}
+
+input OMFavoriteListInput {
+  favoriteType: FavoriteTypeEnum
+  limit: Int!
+  searchFieldEnum: OMFavoriteSearchFieldEnum
+  searchKeyword: String
+  skip: Int!
+  sortBy: OMFavoriteSortFieldEnum
+
+  """
+  sort descending or ascending
+  """
+  sortDsc: Boolean
 }
 
 input PremiumTrialRecordsInput {
@@ -2233,6 +4460,12 @@ input ProgressListFilterInput {
   tags: [String!]
 }
 
+input QuestionAttachmentInput {
+  content: String!
+  extension: String!
+  name: String!
+}
+
 input QuestionListFilterInput {
   companies: [String!]
   difficulty: DifficultyEnum
@@ -2243,12 +4476,6 @@ input QuestionListFilterInput {
   sortOrder: SortingOrderEnum
   status: UserQuestionStatus
   tags: [String!]
-}
-
-input QuestionAttachmentInput {
-  content: String!
-  extension: String!
-  name: String!
 }
 
 input QuestionSolutionsFilterInput {
@@ -2263,13 +4490,22 @@ input QuestionSolutionsFilterInput {
 
 input ReviewFlaggedObjectInput {
   description: String
-  "Use this to locate the object. Will ignore resourceType and resourceId if this is provided."
+
+  """
+  Use this to locate the object. Will ignore resourceType and resourceId if this is provided.
+  """
   flagResultId: ID
   operation: FlagStatus!
   reasonId: ID
-  "Use this together with resourceType as an alternative way to locate object."
+
+  """
+  Use this together with resourceType as an alternative way to locate object.
+  """
   resourceId: String
-  "Use this together with resourceId as an alternative way to locate object."
+
+  """
+  Use this together with resourceId as an alternative way to locate object.
+  """
   resourceType: ResourceTypeEnum
 }
 
@@ -2312,16 +4548,6 @@ input UserManagementOperationHistoryInput {
   userId: ID!
 }
 
-input UserManagementStoreOrdersInput {
-  endedAt: DateTime
-  keywords: String
-  limit: Int!
-  skip: Int!
-  startedAt: DateTime
-  status: UmStoreOrderStatusEnum
-  userId: ID
-}
-
 input UserManagementScoreHistoryInput {
   category: UmScoreCategoryEnum
   endedAt: DateTime
@@ -2330,6 +4556,16 @@ input UserManagementScoreHistoryInput {
   skip: Int!
   startedAt: DateTime
   userId: ID!
+}
+
+input UserManagementStoreOrdersInput {
+  endedAt: DateTime
+  keywords: String
+  limit: Int!
+  skip: Int!
+  startedAt: DateTime
+  status: UmStoreOrderStatusEnum
+  userId: ID
 }
 
 input UserManagementStripeChargesInput {
@@ -2344,35 +4580,127 @@ input UserManagementStripeChargesInput {
 
 input VacRecordsInput {
   limit: Int!
-  "vac name to search"
+
+  """
+  vac name to search
+  """
   searchKeyword: String
   skip: Int!
   userId: ID!
 }
 
-input managementCompanyQuestionsInput {
-  keyword: String
-  keywordType: CompanyQuestionKeywordType
-  limit: Int!
-  offset: Int!
-  tagId: Int!
-  timeOption: CompanyQuestionTimeOptionEnum
+"""
+A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.
+
+In some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.
+"""
+type __Directive {
+  args: [__InputValue!]!
+  description: String
+  locations: [__DirectiveLocation!]!
+  name: String!
+  onField: Boolean!
+    @deprecated(
+      reason: """
+      Use `locations`.
+      """
+    )
+  onFragment: Boolean!
+    @deprecated(
+      reason: """
+      Use `locations`.
+      """
+    )
+  onOperation: Boolean!
+    @deprecated(
+      reason: """
+      Use `locations`.
+      """
+    )
 }
 
-input managementCompanyQuestionsV2Input {
-  companyTagId: Int!
-  keyword: String
-  limit: Int!
-  offset: Int!
-  positionTagSlug: String
-  timeOption: CompanyQuestionTimeOptionEnumV2
+"""
+One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.
+"""
+type __EnumValue {
+  deprecationReason: String
+  description: String
+  isDeprecated: Boolean!
+  name: String!
 }
 
-input managementIncVoteLogsInput {
-  limit: Int!
-  offset: Int!
-  questionId: Int!
-  tagId: Int!
+"""
+Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.
+"""
+type __Field {
+  args: [__InputValue!]!
+  deprecationReason: String
+  description: String
+  isDeprecated: Boolean!
+  name: String!
+  type: __Type!
+}
+
+"""
+Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.
+"""
+type __InputValue {
+  defaultValue: String
+  description: String
+  name: String!
+  type: __Type!
+}
+
+"""
+A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations.
+"""
+type __Schema {
+  """
+  A list of all directives supported by this server.
+  """
+  directives: [__Directive!]!
+
+  """
+  If this server supports mutation, the type that mutation operations will be rooted at.
+  """
+  mutationType: __Type
+
+  """
+  The type that query operations will be rooted at.
+  """
+  queryType: __Type!
+
+  """
+  If this server support subscription, the type that subscription operations will be rooted at.
+  """
+  subscriptionType: __Type
+
+  """
+  A list of all types supported by this server.
+  """
+  types: [__Type!]!
+}
+
+"""
+The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.
+
+Depending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.
+"""
+type __Type {
+  description: String
+  enumValues(includeDeprecated: Boolean = false): [__EnumValue!]
+  fields(includeDeprecated: Boolean = false): [__Field!]
+  inputFields: [__InputValue!]
+  interfaces: [__Type!]
+  kind: __TypeKind!
+  name: String
+  ofType: __Type
+  possibleTypes: [__Type!]
+}
+
+type AcceptAchievementReward {
+  error: String
+  ok: Boolean
 }
 
 type AcceptContribution {
@@ -2381,16 +4709,10 @@ type AcceptContribution {
   ok: Boolean
 }
 
-type AcceptAchievementReward {
-  error: String
-  ok: Boolean
-}
-
-type AcStatsNode {
-  acQuestionCount: Int
-  acRate: Int
-  acSubmissionCount: Int
-  totalSubmissionCount: Int
+type AccessToFavoriteNode {
+  hasAccess: Boolean!
+  questionCount: Int
+  rejectReason: AccessDeniedReasonEnum
 }
 
 type AchievementNode {
@@ -2401,13 +4723,14 @@ type AchievementNode {
   isRewardAccepted: Boolean!
 }
 
-type AccessToFavoriteNode {
-  hasAccess: Boolean!
-  questionCount: Int
-  rejectReason: AccessDeniedReasonEnum
+type AcStatsNode {
+  acQuestionCount: Int
+  acRate: Int
+  acSubmissionCount: Int
+  totalSubmissionCount: Int
 }
 
-type AddQuestionToDefaultFavoriteV2 {
+type AddFavoriteToMyCollectionV2 {
   error: String
   ok: Boolean!
 }
@@ -2417,12 +4740,7 @@ type AddOrUpdateCodeInPlayground {
   ok: Boolean
 }
 
-type AddFavoriteToMyCollectionV2 {
-  error: String
-  ok: Boolean!
-}
-
-type AddQuestionToFavoriteV2 {
+type AddQuestionToDefaultFavoriteV2 {
   error: String
   ok: Boolean!
 }
@@ -2435,10 +4753,9 @@ type AddQuestionToFavorite {
   userName: String
 }
 
-type AddQuestionToNewFavoriteV2 {
+type AddQuestionToFavoriteV2 {
   error: String
-  ok: Boolean
-  slug: String
+  ok: Boolean!
 }
 
 type AddQuestionToNewFavorite {
@@ -2451,22 +4768,36 @@ type AddQuestionToNewFavorite {
   userName: String
 }
 
+type AddQuestionToNewFavoriteV2 {
+  error: String
+  ok: Boolean
+  slug: String
+}
+
 type AddUserToInternalContest {
   error: String
   user: UserNode
 }
 
 type AdvertisementNode {
-  "the ad slot of google adsense, None for internal ads"
+  """
+  the ad slot of google adsense, None for internal ads
+  """
   adSlot: String
   adSource: AdSourceEnum!
   bannerUrl: String
   displayTitle: String
-  "the height of google adsense, None for internal ads"
+
+  """
+  the height of google adsense, None for internal ads
+  """
   height: Int
   targetUrl: String
   title: String!
-  "the width of google adsense, None for internal ads"
+
+  """
+  the width of google adsense, None for internal ads
+  """
   width: Int
 }
 
@@ -2474,6 +4805,22 @@ type AnnualReportNode {
   badge: UserBadgeNode!
   content: [String]!
   showPopup: Boolean!
+}
+
+type ApplicationNode {
+  anonymous: Boolean!
+  background: String
+  date: Int
+  description: String!
+  id: ID!
+  solutions: String
+  status: String
+  tags: [String]
+  testcases: String
+  title: String!
+  topic: TopicNode
+  type: String
+  user: PrivateContestUserNode!
 }
 
 type ApplyTimeTravelTicket {
@@ -2500,22 +4847,6 @@ type ApproveComments {
 
 type ApproveContestReports {
   approvedReports: [ContestReportNode!]!
-}
-
-type ApplicationNode {
-  anonymous: Boolean!
-  background: String
-  date: Int
-  description: String!
-  id: ID!
-  solutions: String
-  status: String
-  tags: [String]
-  testcases: String
-  title: String!
-  topic: TopicNode
-  type: String
-  user: PrivateContestUserNode!
 }
 
 type ApproveReportedPost {
@@ -2558,9 +4889,15 @@ type ArticleNode {
   paidOnly: Boolean
   paidOnlyVideo: Boolean
   rating: RatingNode
-  "The name of the page as it will appear in URLs e.g http://domain.com/blog/[my-slug]/"
+
+  """
+  The name of the page as it will appear in URLs e.g http://domain.com/blog/[my-slug]/
+  """
   slug: String!
-  "The page title as you'd like it to be seen by the public"
+
+  """
+  The page title as you'd like it to be seen by the public
+  """
   title: String!
   titleSlug: String
   topic: TopicNode
@@ -2568,33 +4905,15 @@ type ArticleNode {
   url: String
 }
 
-"取消注销账户请求"
+"""
+取消注销账户请求
+"""
 type AuthCancelDeleteAccount {
   ok: Boolean!
 }
 
 type AwardInternalContestCoin {
   internalContestAwardedUsers: [Int]
-  ok: Boolean
-}
-
-type BTSEventNotification {
-  error: String
-  ok: Boolean
-}
-
-type BTSReferralRegister {
-  error: String
-  ok: Boolean
-}
-
-type BTSReferralNode {
-  link: String!
-  referredCount: Int!
-}
-
-type BanIP {
-  error: String
   ok: Boolean
 }
 
@@ -2606,14 +4925,39 @@ type BanInfoNode {
   startDate: DateTime
 }
 
+type BanIP {
+  error: String
+  ok: Boolean
+}
+
 type BanUser {
   error: String
   ok: Boolean
   user: UserNodeAdminOnly!
 }
 
+type BatchReviewFlaggedObjects {
+  error: String
+  ok: Boolean!
+}
+
 type BlacklistNode {
   words: String!
+}
+
+type BTSEventNotification {
+  error: String
+  ok: Boolean
+}
+
+type BTSReferralNode {
+  link: String!
+  referredCount: Int!
+}
+
+type BTSReferralRegister {
+  error: String
+  ok: Boolean
 }
 
 type CalendarBadgeNode {
@@ -2657,12 +5001,6 @@ type CardNode {
   valueAddedContent: ValueAddedContentNode
 }
 
-type CategoryToSlugNode {
-  categoryName: String!
-  displayName: String!
-  favoriteSlug: String!
-}
-
 type CategoryNode {
   cards(num: Int): [CardNode]
   description: String
@@ -2670,6 +5008,12 @@ type CategoryNode {
   order: Int!
   slug: String!
   title: String!
+}
+
+type CategoryToSlugNode {
+  categoryName: String!
+  displayName: String!
+  favoriteSlug: String!
 }
 
 type CategoryType {
@@ -2689,6 +5033,12 @@ type ChallengeQuestionNode {
   type: ChallengeQuestionTypeEnum
 }
 
+type ChannelNode {
+  identifier: String
+  name: String
+  shortName: String
+}
+
 type ChapterNode {
   description: String
   descriptionText: String
@@ -2701,21 +5051,16 @@ type ChapterNode {
   title: String!
 }
 
-type BatchReviewFlaggedObjects {
-  error: String
-  ok: Boolean!
-}
-
-type ChannelNode {
-  identifier: String
-  name: String
-  shortName: String
-}
-
 type Checkin {
   checkedIn: Boolean
   error: String
   ok: Boolean
+}
+
+type CodeSnippetNode {
+  code: String
+  lang: String
+  langSlug: String
 }
 
 type CodingChallengeNode {
@@ -2735,6 +5080,11 @@ type CodingChallengeNodeV2 {
   weeklyChallenges: [DailyChallengeNodeV2!]!
 }
 
+type CodingChallengePollingNode {
+  dccSubmissionInfo: CodingChallengeSubmissionNode
+  keepPolling: Boolean!
+}
+
 type CodingChallengeSubmissionNode {
   dailyChallengeMedal: MedalNode
   discussLink: String
@@ -2743,14 +5093,13 @@ type CodingChallengeSubmissionNode {
   streakCounter: StreakCounterNode
 }
 
-type CommentContribution {
-  error: String
+type CollectContestEasterEgg {
   ok: Boolean
 }
 
-type CodingChallengePollingNode {
-  dccSubmissionInfo: CodingChallengeSubmissionNode
-  keepPolling: Boolean!
+type CommentContribution {
+  error: String
+  ok: Boolean
 }
 
 type CommentNode {
@@ -2761,7 +5110,10 @@ type CommentNode {
   lastComment: TopicNode
   nodebbPid: Int!
   numChildren: Int!
-  "Ineffective field: Don't query this field in a list"
+
+  """
+  Ineffective field: Don't query this field in a list
+  """
   pageNum(numPerPage: Int = 10, orderBy: String = ""): Int
   parent: CommentNode
   parentId: ID
@@ -2812,21 +5164,6 @@ type CompanyQuestionNode {
   titleSlug: String
 }
 
-type CodeSnippetNode {
-  code: String
-  lang: String
-  langSlug: String
-}
-
-type CollectContestEasterEgg {
-  ok: Boolean
-}
-
-type CompanyQuestionOptionsNode {
-  positionOptions: [CommonTagNode]
-  timeOptions: [CompanyQuestionTimeOptionsNode]
-}
-
 type CompanyQuestionNodeV2 {
   adminVotedNum: Int
   frequency: Float!
@@ -2838,26 +5175,99 @@ type CompanyQuestionNodeV2 {
   userVotedNum: Int
 }
 
-type CompanyTagConnection {
-  "Contains the nodes in this connection."
-  edges: [CompanyTagEdge]!
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
-  totalNum: Int
-}
-
-"A Relay edge containing a `CompanyTag` and its cursor."
-type CompanyTagEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: CompanyTagNode
+type CompanyQuestionOptionsNode {
+  positionOptions: [CommonTagNode]
+  timeOptions: [CompanyQuestionTimeOptionsNode]
 }
 
 type CompanyQuestionTimeOptionsNode {
   name: String
-  "时间选项"
+
+  """
+  时间选项
+  """
   option: CompanyQuestionTimeOptionEnumV2!
+}
+
+type CompanyTagConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [CompanyTagEdge]!
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"""
+A Relay edge containing a `CompanyTag` and its cursor.
+"""
+type CompanyTagEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: CompanyTagNode
+}
+
+type CompanyTagNode {
+  companySet: [InterviewCompanyNode!]!
+  createdAt: DateTime!
+  discussTopicTag: [DiscussTopicTagNode!]!
+  favorites: [FeaturedQuestionListNode!]!
+  favoriteSet: [FeaturedQuestionListNode!]!
+  frequencies: String
+  hotScore: Int
+
+  """
+  The ID of the object.
+  """
+  id: ID!
+  imgUrl: String
+  interviewTagsCategories: [InterviewTagsCategoryNode!]!
+
+  """
+  Deprecated in Tag System. Still used by old products.
+  """
+  isEnabled: Boolean!
+
+  """
+  Whether this is a standard tag or not
+  """
+  isStandard: Boolean!
+
+  """
+  Whether this tag is enabled or not. If not enabled, we NEVER show it to our users.
+  """
+  isTagEnabled: Boolean!
+
+  """
+  Whether user can select this tag or not
+  """
+  isUserSelectable: Boolean!
+  keywords: JSONString!
+  name: String!
+  order: Int
+  questionapplicationSet: [ApplicationNode!]!
+  questionCount: Int
+  questionIds: [Int]
+  questions: [QuestionNode!]
+  slug: String!
+  tagCategories: [TagCategoryNode!]!
+  tagId: Int!
+
+  """
+  Deprecated in Tag System. Still used by old products.
+  """
+  tagType: TagTypeNode
+  translatedName: String
 }
 
 type CompleteFeatureGuide {
@@ -2878,13 +5288,6 @@ type CompletionLikeNode {
   updationDate: DateTime!
 }
 
-type ComplexityInfoNode {
-  complexity: String!
-  displayName: String
-  funcStr: String
-  vote: ComplexityVoteEnum
-}
-
 type CompletionNode {
   aiResponse: String!
   completionlikeSet: [CompletionLikeNode!]!
@@ -2893,44 +5296,16 @@ type CompletionNode {
   updationDate: DateTime!
 }
 
+type ComplexityInfoNode {
+  complexity: String!
+  displayName: String
+  funcStr: String
+  vote: ComplexityVoteEnum
+}
+
 type ConfirmSchoolLogo {
   error: String
   ok: Boolean!
-}
-
-type CompanyTagNode {
-  companySet: [InterviewCompanyNode!]!
-  createdAt: DateTime!
-  discussTopicTag: [DiscussTopicTagNode!]!
-  favorites: [FeaturedQuestionListNode!]!
-  favoriteSet: [FeaturedQuestionListNode!]!
-  frequencies: String
-  hotScore: Int
-  "The ID of the object."
-  id: ID!
-  imgUrl: String
-  interviewTagsCategories: [InterviewTagsCategoryNode!]!
-  "Deprecated in Tag System. Still used by old products."
-  isEnabled: Boolean!
-  "Whether this is a standard tag or not"
-  isStandard: Boolean!
-  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
-  isTagEnabled: Boolean!
-  "Whether user can select this tag or not"
-  isUserSelectable: Boolean!
-  keywords: JSONString!
-  name: String!
-  order: Int
-  questionapplicationSet: [ApplicationNode!]!
-  questionCount: Int
-  questionIds: [Int]
-  questions: [QuestionNode!]
-  slug: String!
-  tagCategories: [TagCategoryNode!]!
-  tagId: Int!
-  "Deprecated in Tag System. Still used by old products."
-  tagType: TagTypeNode
-  translatedName: String
 }
 
 type ContestAnnouncementNode {
@@ -2950,6 +5325,38 @@ type ContestDetailNode {
   isVirtualContest: Boolean
   startTime: DateTime
   titleSlug: String
+}
+
+type ContestNode {
+  cardImg: String
+  company: SponsorNode
+  containsPremium: Boolean
+  description: String!
+
+  """
+  in seconds
+  """
+  duration: Int!
+  isVirtual: Boolean
+  originStartTime: Int
+  questions: [ContestQuestionNode]
+  rankingUpdated: Boolean!
+  sponsors: [SponsorNode]!
+  startTime: Int!
+  title: String!
+  titleSlug: String
+  unrated: Boolean!
+}
+
+type ContestQuestionDetailNode {
+  languageList: [LanguageNode]
+  question: ContestQuestionNodeV2
+  statusList: [SubmissionStatusNode]
+  submittableLanguageList: [LanguageNode]
+  totalAc: Int
+  totalAcUser: Int
+  totalSubmission: Int
+  totalTriedUser: Int
 }
 
 type ContestQuestionNode {
@@ -2983,40 +5390,16 @@ type ContestQuestionNodeV2 {
   translatedTitle: String
 }
 
-type ContestNode {
-  cardImg: String
-  company: SponsorNode
-  containsPremium: Boolean
-  description: String!
-  "in seconds"
-  duration: Int!
-  isVirtual: Boolean
-  originStartTime: Int
-  questions: [ContestQuestionNode]
-  rankingUpdated: Boolean!
-  sponsors: [SponsorNode]!
-  startTime: Int!
-  title: String!
-  titleSlug: String
-  unrated: Boolean!
-}
-
-type ContestQuestionDetailNode {
-  languageList: [LanguageNode]
-  question: ContestQuestionNodeV2
-  statusList: [SubmissionStatusNode]
-  submittableLanguageList: [LanguageNode]
-  totalAc: Int
-  totalAcUser: Int
-  totalSubmission: Int
-  totalTriedUser: Int
-}
-
 type ContestRatingHistogramBarNode {
   ratingEnd: Int!
   ratingStart: Int!
   topPercentage: Float!
   userCount: Int!
+}
+
+type ContestReportBannedNode {
+  banDuration: Int
+  user: UserNode!
 }
 
 type ContestReportLCCNNode {
@@ -3086,12 +5469,6 @@ type ContestSubmissionNodeV2 {
   url: String
 }
 
-type ContributorNode {
-  avatarUrl: String
-  profileUrl: String
-  username: String
-}
-
 type ContributionNode {
   application: ApplicationNode
   applyDate: DateTime!
@@ -3106,9 +5483,32 @@ type ContributionNode {
   user: PrivateContestUserNode!
 }
 
+type ContributorNode {
+  avatarUrl: String
+  profileUrl: String
+  username: String
+}
+
+type CreateCodeErrorHint {
+  completion: CompletionNode
+  error: String
+  ok: Boolean!
+}
+
 type CreateComment {
   comment: CommentNode
   commentId: Int
+  error: String
+  ok: Boolean
+}
+
+type CreateCompletionLike {
+  completionLike: CompletionLikeNode
+  error: String
+  ok: Boolean!
+}
+
+type CreateContribution {
   error: String
   ok: Boolean
 }
@@ -3125,31 +5525,9 @@ type CreateIdeDynamicLayout {
   ok: Boolean!
 }
 
-type CreateCompletionLike {
-  completionLike: CompletionLikeNode
-  error: String
-  ok: Boolean!
-}
-
-type CreateCodeErrorHint {
-  completion: CompletionNode
-  error: String
-  ok: Boolean!
-}
-
-type CreateContribution {
-  error: String
-  ok: Boolean
-}
-
 type CreateOrUpdateEditorialFeedback {
   error: String
   ok: Boolean!
-}
-
-type ContestReportBannedNode {
-  banDuration: Int
-  user: UserNode!
 }
 
 type CreateOrUpdateEmailEvent {
@@ -3159,7 +5537,9 @@ type CreateOrUpdateEmailEvent {
   wasCreated: Boolean
 }
 
-"obtain the new annual medals"
+"""
+obtain the new annual medals
+"""
 type CreateOrUpdateUserYearlyMedals {
   error: String
   ok: Boolean!
@@ -3182,7 +5562,7 @@ type CreateTopic {
   ok: Boolean
 }
 
-type CreateTopicWithCategory {
+type CreateTopicForContest {
   error: String
   topic: TopicNode
 }
@@ -3192,56 +5572,19 @@ type CreateTopicForQuestion {
   topic: TopicNode
 }
 
-type CreditCardLogNode {
-  action: String!
-  operator: ManagementUserSimpleNode!
-  "In seconds"
-  timestamp: Int!
-}
-
-type CreateTopicForContest {
+type CreateTopicWithCategory {
   error: String
   topic: TopicNode
 }
 
-type DailyChallengeNode {
-  date: DateTime!
-  item: ItemNode!
-  link: String!
-  question: QuestionNode!
-  userStatus: UserDailyQuestionStatus!
-}
+type CreditCardLogNode {
+  action: String!
+  operator: ManagementUserSimpleNode!
 
-type DebuggerLanguageFeatureNode {
-  id: ID!
-  lang: LibraryLanguage!
-  supportsDebugging: Boolean!
-  supportsDisablingBreakpoints: Boolean!
-  supportsExpressions: Boolean!
-}
-
-type DailyChallengeNodeV2 {
-  date: DateTime!
-  id: ID!
-  link: String!
-  question: QuestionNode!
-  userStatus: UserDailyQuestionStatusV2!
-}
-
-type DebugSessionNode {
-  crashed: Boolean!
-  endTime: DateTime!
-  isActive: Boolean!
-  startTime: DateTime!
-  updateTime: DateTime!
-  user: PrivateContestUserNode!
-  uuid: String!
-}
-
-"user apply to delete account, account gets frozen after success"
-type DeleteAccount {
-  ok: Boolean!
-  planDeleteDate: Date
+  """
+  In seconds
+  """
+  timestamp: Int!
 }
 
 type CurrentSubscriptionInfo {
@@ -3254,9 +5597,57 @@ type CurrentSubscriptionInfo {
   paymentMethod: String
 }
 
+type DailyChallengeNode {
+  date: DateTime!
+  item: ItemNode!
+  link: String!
+  question: QuestionNode!
+  userStatus: UserDailyQuestionStatus!
+}
+
+type DailyChallengeNodeV2 {
+  date: DateTime!
+  id: ID!
+  link: String!
+  question: QuestionNode!
+  userStatus: UserDailyQuestionStatusV2!
+}
+
+type DebuggerLanguageFeatureNode {
+  id: ID!
+  lang: LibraryLanguage!
+  supportsDebugging: Boolean!
+  supportsDisablingBreakpoints: Boolean!
+  supportsExpressions: Boolean!
+}
+
+type DebugSessionNode {
+  crashed: Boolean!
+  endTime: DateTime!
+  isActive: Boolean!
+  startTime: DateTime!
+  updateTime: DateTime!
+  user: PrivateContestUserNode!
+  uuid: String!
+}
+
+"""
+user apply to delete account, account gets frozen after success
+"""
+type DeleteAccount {
+  ok: Boolean!
+  planDeleteDate: Date
+}
+
 type DeleteCodeFromPlayground {
   error: String
   ok: Boolean
+}
+
+type DeleteComment {
+  error: String
+  ok: Boolean
+  post: PostNode
 }
 
 type DeleteComments {
@@ -3264,9 +5655,19 @@ type DeleteComments {
   ok: Boolean
 }
 
+type DeleteEducation {
+  error: String
+  ok: Boolean
+}
+
 type DeleteEmail {
   error: String
   ok: Boolean
+}
+
+type DeleteFavoriteV2 {
+  error: String
+  ok: Boolean!
 }
 
 type DeleteIdeDynamicLayout {
@@ -3289,7 +5690,7 @@ type DeletePlayground {
   ok: Boolean
 }
 
-type DeleteSocial {
+type DeletePlaygroundFolder {
   error: String
   ok: Boolean
 }
@@ -3299,7 +5700,7 @@ type DeleteReportedPost {
   ok: Boolean
 }
 
-type DeletePlaygroundFolder {
+type DeleteSocial {
   error: String
   ok: Boolean
 }
@@ -3309,28 +5710,12 @@ type DeleteTeamMember {
   ok: Boolean
 }
 
-type DeleteEducation {
+type DeleteTopic {
   error: String
   ok: Boolean
 }
 
 type DeleteTopics {
-  error: String
-  ok: Boolean
-}
-
-type DeleteFavoriteV2 {
-  error: String
-  ok: Boolean!
-}
-
-type DeleteComment {
-  error: String
-  ok: Boolean
-  post: PostNode
-}
-
-type DeleteTopic {
   error: String
   ok: Boolean
 }
@@ -3352,6 +5737,18 @@ type DeleteUserRequestNode {
   status: AccountStatus
   userId: ID!
   username: String!
+}
+
+type DiscountEventBannerNode {
+  aspectRatioType: DiscountEventBannerAspectRatioType!
+  backgroundColor: String!
+  banner: String!
+  creationDate: DateTime!
+  event: DiscountEventNode!
+  id: ID!
+  targetUrl: String!
+  title: String!
+  updationDate: DateTime!
 }
 
 type DiscountEventNode {
@@ -3384,18 +5781,6 @@ type DiscussAnnouncementNode {
   id: ID!
 }
 
-type DiscountEventBannerNode {
-  aspectRatioType: DiscountEventBannerAspectRatioType!
-  backgroundColor: String!
-  banner: String!
-  creationDate: DateTime!
-  event: DiscountEventNode!
-  id: ID!
-  targetUrl: String!
-  title: String!
-  updationDate: DateTime!
-}
-
 type DiscussCategoryNode {
   announcement: String
   anonymousEnabled: Boolean!
@@ -3412,16 +5797,6 @@ type DiscussCategoryNode {
   titleLink: String
 }
 
-type EducationRecordNode {
-  degree: String
-  endTime: String
-  id: ID!
-  startTime: String
-  toPresent: Boolean!
-  unverifiedOrganizationName: String
-  user: PrivateContestUserNode!
-}
-
 type DiscussTopicTagNode {
   id: ID!
   name: String!
@@ -3433,15 +5808,14 @@ type DiscussTopicTagNode {
   topicSet: [TopicNode!]!
 }
 
-type EmailTemplateNode {
-  "Resolves the following template variables automatically:<ul><li>next_biweekly_contest_title</li><li>q_description</li><li>real_name</li><li>next_contest_url</li><li>next_javascript_dcc_link</li><li>next_contest_title</li><li>q_difficulty_mandarin</li><li>q_difficulty_w_article</li><li>next_biweekly_contest_time_url</li><li>current_year</li><li>next_biweekly_contest_time_by_timezone</li><li>next_javascript_dcc_editorial_link</li><li>storage_base_url</li><li>suggested_q_title</li><li>q_num_ac_subs</li><li>next_biweekly_contest_url</li><li>next_contest_time_by_timezone</li><li>next_contest_formatted_date</li><li>blocks</li><li>site_base_url</li><li>next_javascript_dcc_day</li><li>suggested_q_slug</li><li>next_contest_title_slug</li><li>next_biweekly_contest_formatted_date</li><li>next_biweekly_contest_title_slug</li><li>next_contest_time_url</li><li>username</li><li>unsubscribe_url</li></ul>"
-  content: String!
-  conversionTargetUrlTemplates: String
-  emaileventSet: [EmailEventNode!]!
-  emailsendsessionSet: [EmailSendSessionNode!]!
-  emailSubject: String!
+type EducationRecordNode {
+  degree: String
+  endTime: String
   id: ID!
-  title: String!
+  startTime: String
+  toPresent: Boolean!
+  unverifiedOrganizationName: String
+  user: PrivateContestUserNode!
 }
 
 type EmailEventNode {
@@ -3456,6 +5830,12 @@ type EmailEventNode {
   title: String!
   truncatedUsers: [UserNode]
   userFilter: JSONString
+}
+
+type EmailNode {
+  email: String!
+  primary: Boolean!
+  verified: Boolean!
 }
 
 type EmailOpenNode {
@@ -3485,10 +5865,21 @@ type EmailSendSessionNode {
   totalSent: Int
 }
 
-type EmailNode {
-  email: String!
-  primary: Boolean!
-  verified: Boolean!
+type EmailTemplateNode {
+  """
+  Resolves the following template variables automatically:<ul><li>q_description</li><li>site_base_url</li><li>q_difficulty_mandarin</li><li>next_contest_formatted_date</li><li>next_contest_time_by_timezone</li><li>next_biweekly_contest_formatted_date</li><li>username</li><li>next_javascript_dcc_day</li><li>suggested_q_title</li><li>next_biweekly_contest_time_url</li><li>next_biweekly_contest_title</li><li>next_biweekly_contest_title_slug</li><li>next_biweekly_contest_url</li><li>next_contest_url</li><li>unsubscribe_url</li><li>next_contest_title_slug</li><li>next_javascript_dcc_link</li><li>next_javascript_dcc_editorial_link</li><li>next_biweekly_contest_time_by_timezone</li><li>q_num_ac_subs</li><li>current_year</li><li>blocks</li><li>storage_base_url</li><li>next_contest_title</li><li>real_name</li><li>suggested_q_slug</li><li>next_contest_time_url</li><li>q_difficulty_w_article</li></ul>
+  """
+  content: String!
+  conversionTargetUrlTemplates: String
+  emaileventSet: [EmailEventNode!]!
+  emailsendsessionSet: [EmailSendSessionNode!]!
+  emailSubject: String!
+  id: ID!
+  title: String!
+}
+
+type EndSession {
+  session: DebugSessionNode
 }
 
 type ExecuteScript {
@@ -3499,10 +5890,6 @@ type FavoriteBriefListNode {
   favorites: [FavoriteBriefNode!]!
   hasMore: Boolean!
   totalLength: Int!
-}
-
-type EndSession {
-  session: DebugSessionNode
 }
 
 type FavoriteBriefNode {
@@ -3533,10 +5920,62 @@ type FavoriteDetailListNode {
   totalLength: Int!
 }
 
-type FavoriteQuestionListNode {
-  hasMore: Boolean
-  questions: [FavoriteQuestionNode!]!
-  totalLength: Int
+type FavoriteDetailNode {
+  collectCount: Int!
+
+  """
+  only for C.N. side
+  """
+  companyLegalName: String
+  companyVerified: Boolean!
+  coverBackgroundColor: String
+  coverEmoji: String
+  coverUrl: String
+  creator: FavoriteBriefUserNode!
+  description: String!
+
+  """
+  user unlock favorite status
+  """
+  favoriteLockStatus: FavoriteLockStatusEnum
+  favoriteType: FavoriteTypeEnum
+
+  """
+  only for C.N. side
+  """
+  financingStageDisplay: String
+  generatedFavoritesInfo: GeneratedFavoritesInfoNode
+  generateFromFavoriteSlug: String
+  hasCurrentQuestion: Boolean
+
+  """
+  only for C.N. side
+  """
+  industryDisplay: String
+  isDefaultList: Boolean!
+  isPublicFavorite: Boolean!
+
+  """
+  for smart list
+  """
+  languageTagSlug: String
+  lastModified: DateTime!
+  lastQuestionAddedAt: DateTime
+  name: String!
+  positionRoleTags: [CommonTagNode!]
+  questionNumber: Int!
+
+  """
+  only for C.N. side
+  """
+  scaleDisplay: String
+  slug: String!
+  viewCount: Int
+
+  """
+  only for C.N. side
+  """
+  website: String
 }
 
 type FavoriteNode {
@@ -3569,49 +6008,24 @@ type FavoriteNode {
   viewCount: Int!
 }
 
-type FavoriteDetailNode {
-  collectCount: Int!
-  "only for C.N. side"
-  companyLegalName: String
-  companyVerified: Boolean!
-  coverBackgroundColor: String
-  coverEmoji: String
-  coverUrl: String
-  creator: FavoriteBriefUserNode!
-  description: String!
-  "user unlock favorite status"
-  favoriteLockStatus: FavoriteLockStatusEnum
-  favoriteType: FavoriteTypeEnum
-  "only for C.N. side"
-  financingStageDisplay: String
-  generatedFavoritesInfo: GeneratedFavoritesInfoNode
-  generateFromFavoriteSlug: String
-  hasCurrentQuestion: Boolean
-  "only for C.N. side"
-  industryDisplay: String
-  isDefaultList: Boolean!
-  isPublicFavorite: Boolean!
-  "for smart list"
-  languageTagSlug: String
-  lastModified: DateTime!
-  lastQuestionAddedAt: DateTime
-  name: String!
-  positionRoleTags: [CommonTagNode!]
-  questionNumber: Int!
-  "only for C.N. side"
-  scaleDisplay: String
-  slug: String!
-  viewCount: Int
-  "only for C.N. side"
-  website: String
+type FavoriteQuestionListNode {
+  hasMore: Boolean
+  questions: [FavoriteQuestionNode!]!
+  totalLength: Int
 }
 
 type FavoriteQuestionNode {
   difficulty: DifficultyDescribedEnum!
-  "出题频率，企业题单专用字段"
+
+  """
+  出题频率，企业题单专用字段
+  """
   frequency: Float
   id: ID!
-  "whether the question is in the user's favorites"
+
+  """
+  whether the question is in the user's favorites
+  """
   isInMyFavorites: Boolean!
   paidOnly: Boolean!
   questionFrontendId: String!
@@ -3622,17 +6036,17 @@ type FavoriteQuestionNode {
   translatedTitle: String
 }
 
-type FavoriteSubmitACProgressNode {
-  totalAcCount: Int!
-  totalSubmitCount: Int!
-}
-
 type FavoritesNode {
   allFavorites: [FavoriteNode]
   officialFavorites: [FavoriteNode]
   privateFavorites: [FavoriteNode]
   publicFavorites: [FavoriteNode]
   watchedFavorites: [FavoriteNode]
+}
+
+type FavoriteSubmitACProgressNode {
+  totalAcCount: Int!
+  totalSubmitCount: Int!
 }
 
 type FeaturedQuestionListNode {
@@ -3664,36 +6078,6 @@ type FeaturedQuestionListNode {
   tags: [CommonTagNode]!
   uuid: UUID!
   viewCount: Int!
-}
-
-type FeedBackOptionNode {
-  optionId: Int!
-  optionName: String!
-  optionSlug: String!
-}
-
-type FilteredSubmissionNode {
-  code: String!
-  codeOutput: String
-  compareResult: String
-  contest: ContestNode
-  date: DateTime!
-  id: ID!
-  lang: String
-  memoryComplexity: SubmissionMemoryComplexity
-  question: QuestionNode!
-  runtime: Int
-  status: String
-  timeComplexity: SubmissionTimeComplexity
-  totalCorrect: Int
-  user: PrivateContestUserNode!
-}
-
-type FeedBackMetaNode {
-  maxScore: Int!
-  name: String!
-  options: [FeedBackOptionNode!]
-  questionContent: String
 }
 
 type FeatureNode {
@@ -3735,6 +6119,36 @@ type FeatureNode {
   subscription: Boolean
 }
 
+type FeedBackMetaNode {
+  maxScore: Int!
+  name: String!
+  options: [FeedBackOptionNode!]
+  questionContent: String
+}
+
+type FeedBackOptionNode {
+  optionId: Int!
+  optionName: String!
+  optionSlug: String!
+}
+
+type FilteredSubmissionNode {
+  code: String!
+  codeOutput: String
+  compareResult: String
+  contest: ContestNode
+  date: DateTime!
+  id: ID!
+  lang: String
+  memoryComplexity: SubmissionMemoryComplexity
+  question: QuestionNode!
+  runtime: Int
+  status: String
+  timeComplexity: SubmissionTimeComplexity
+  totalCorrect: Int
+  user: PrivateContestUserNode!
+}
+
 type FilteredSubmissionOverviewNode {
   pages: Int
   submissions(
@@ -3744,20 +6158,56 @@ type FilteredSubmissionOverviewNode {
   ): [FilteredSubmissionNode]
 }
 
+type FlaggedObjectConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [FlaggedObjectEdge]!
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"""
+A Relay edge containing a `FlaggedObject` and its cursor.
+"""
+type FlaggedObjectEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: FlaggedObjectNode
+}
+
+type FlaggedObjectNode {
+  firstFlaggedTime: DateTime!
+  flaggedCount: Int!
+  flagResult: FlagResultNode!
+  reasons: [FlagReasonNode!]
+  summary: String!
+}
+
 type FlagNode {
   description: String!
   reason: FlagReasonNode
   reporter: PrivateContestUserNode!
 }
 
-type FlagReasonNode {
-  id: ID!
-  name: String!
-}
-
 type FlagPost {
   error: String
   ok: Boolean
+}
+
+type FlagReasonNode {
+  id: ID!
+  name: String!
 }
 
 type FlagResultNode {
@@ -3778,34 +6228,10 @@ type FlagSomething {
   ok: Boolean!
 }
 
-type FlaggedObjectConnection {
-  "Contains the nodes in this connection."
-  edges: [FlaggedObjectEdge]!
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
-  totalNum: Int
-}
-
 type ForkFavoriteV2 {
   error: String
   ok: Boolean!
   slug: String
-}
-
-"A Relay edge containing a `FlaggedObject` and its cursor."
-type FlaggedObjectEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: FlaggedObjectNode
-}
-
-type FlaggedObjectNode {
-  firstFlaggedTime: DateTime!
-  flaggedCount: Int!
-  flagResult: FlagResultNode!
-  reasons: [FlagReasonNode!]
-  summary: String!
 }
 
 type FrontendQuestionResultNode {
@@ -3827,6 +6253,13 @@ type GeneratedFavoritesInfoNode {
   defaultFavoriteSlug: String
 }
 
+type GetOrCreateExploreSession {
+  cardId: String
+  errors: JSONString
+  ok: Boolean
+  progress: JSONString
+}
+
 type GlobalRankingNode {
   myRank: RankingNode
   page: Int
@@ -3835,14 +6268,12 @@ type GlobalRankingNode {
   userPerPage: Int
 }
 
-type GetOrCreateExploreSession {
-  cardId: String
-  errors: JSONString
+type HandleUserReports {
+  error: String
   ok: Boolean
-  progress: JSONString
 }
 
-type HandleUserReports {
+type HideComments {
   error: String
   ok: Boolean
 }
@@ -3859,37 +6290,20 @@ type HidePost {
   post: PostNode
 }
 
-type HideTopics {
-  error: String
-  ok: Boolean
-}
-
 type HideTopicFromTrending {
   ok: Boolean
   topic: TopicNode
+}
+
+type HideTopics {
+  error: String
+  ok: Boolean
 }
 
 type HitResource {
   count: Int
   error: String
   ok: Boolean!
-}
-
-type HideComments {
-  error: String
-  ok: Boolean
-}
-
-type IPManagementLogNode {
-  operation: String!
-  operationTime: DateTime!
-  operator: ManagementUserSimpleNode!
-}
-
-type IDEDynamicLayoutNode {
-  layoutId: String!
-  layoutJson: JSONString!
-  layoutName: String!
 }
 
 type HtmlArticleNode {
@@ -3900,14 +6314,15 @@ type HtmlArticleNode {
   paidOnly: Boolean!
 }
 
+type IDEDynamicLayoutNode {
+  layoutId: String!
+  layoutJson: JSONString!
+  layoutName: String!
+}
+
 type IntentionTagNode {
   name: String!
   slug: String!
-}
-
-type InterviewCompanyGlobalScoreNode {
-  companyName: String!
-  score: Float!
 }
 
 type InterviewCardNode {
@@ -3918,6 +6333,11 @@ type InterviewCardNode {
   numParticipants: Int
   numPass: Int
   stage: CompanyStage
+}
+
+type InterviewCompanyGlobalScoreNode {
+  companyName: String!
+  score: Float!
 }
 
 type InterviewCompanyNode {
@@ -3934,6 +6354,12 @@ type InterviewCompanyOption {
   slug: String
 }
 
+type InterviewedStatsPost {
+  error: String
+  interviewedStatsId: Int
+  ok: Boolean
+}
+
 type InterviewEnd {
   session: InterviewSessionNode
 }
@@ -3941,6 +6367,28 @@ type InterviewEnd {
 type InterviewGlobalStatsNode {
   averageCompanyScores: [InterviewCompanyGlobalScoreNode!]!
   categories: [InterviewTagsCategoryNode!]!
+}
+
+type InterviewNode {
+  company: InterviewCompanyNode!
+  createTime: DateTime
+  disabled: Boolean!
+  id: ID!
+  premiumOnly: Boolean!
+  questions: [QuestionNode!]!
+  sessionSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): InterviewSessionNodeConnection!
+
+  """
+  in seconds
+  """
+  timeConstraint: Int
+  updateTime: DateTime
 }
 
 type InterviewProgressNode {
@@ -3973,58 +6421,47 @@ type InterviewReportNode {
   score: Float
 }
 
-type InterviewNode {
-  company: InterviewCompanyNode!
-  createTime: DateTime
-  disabled: Boolean!
-  id: ID!
-  premiumOnly: Boolean!
-  questions: [QuestionNode!]!
-  sessionSet(
-    after: String
-    before: String
-    first: Int
-    last: Int
-    offset: Int
-  ): InterviewSessionNodeConnection!
-  "in seconds"
-  timeConstraint: Int
-  updateTime: DateTime
-}
-
 type InterviewScoreProgressNode {
   score: Float!
   session: InterviewSessionNode!
 }
 
-"A Relay edge containing a `InterviewSession` and its cursor."
-type InterviewSessionEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: InterviewSessionNode
-}
-
 type InterviewSessionConnection {
-  "Contains the nodes in this connection."
+  """
+  Contains the nodes in this connection.
+  """
   edges: [InterviewSessionEdge]!
-  "Pagination data for this connection."
+
+  """
+  Pagination data for this connection.
+  """
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-type InterviewSessionNodeConnection {
-  "Contains the nodes in this connection."
-  edges: [InterviewSessionNodeEdge]!
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
+"""
+A Relay edge containing a `InterviewSession` and its cursor.
+"""
+type InterviewSessionEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: InterviewSessionNode
 }
 
 type InterviewSessionNode {
   card: InterviewCardNode!
   endTime: Int!
   expiredTime: Int!
-  "The ID of the object."
+
+  """
+  The ID of the object.
+  """
   id: ID!
   interview: InterviewNode!
   progress: [InterviewProgressNode!]!
@@ -4034,11 +6471,30 @@ type InterviewSessionNode {
   status: SessionStatus!
 }
 
-"A Relay edge containing a `InterviewSessionNode` and its cursor."
+type InterviewSessionNodeConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [InterviewSessionNodeEdge]!
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+}
+
+"""
+A Relay edge containing a `InterviewSessionNode` and its cursor.
+"""
 type InterviewSessionNodeEdge {
-  "A cursor for use in pagination"
+  """
+  A cursor for use in pagination
+  """
   cursor: String!
-  "The item at the end of the edge"
+
+  """
+  The item at the end of the edge
+  """
   node: InterviewSessionNode
 }
 
@@ -4052,16 +6508,39 @@ type InterviewStart {
 }
 
 type InterviewSubmissionConnection {
-  "Contains the nodes in this connection."
+  """
+  Contains the nodes in this connection.
+  """
   edges: [InterviewSubmissionEdge]!
-  "Pagination data for this connection."
+
+  """
+  Pagination data for this connection.
+  """
   pageInfo: PageInfo!
   totalNum: Int
 }
 
+"""
+A Relay edge containing a `InterviewSubmission` and its cursor.
+"""
+type InterviewSubmissionEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: InterviewSubmissionNode
+}
+
 type InterviewSubmissionNode {
   code: String
-  "The ID of the object."
+
+  """
+  The ID of the object.
+  """
   id: ID!
   isPending: String
   lang: String
@@ -4071,25 +6550,6 @@ type InterviewSubmissionNode {
   statusDisplay: String
   timestamp: Int
   total: Int
-}
-
-"A Relay edge containing a `InterviewSubmission` and its cursor."
-type InterviewSubmissionEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: InterviewSubmissionNode
-}
-
-type InterviewTagsCategoryScoreNode {
-  category: InterviewTagsCategoryNode!
-  creationDate: DateTime!
-  distribution: [[Int]!]
-  id: ID!
-  percentile: Float!
-  score: Float!
-  updationDate: DateTime!
-  user: PrivateContestUserNode!
 }
 
 type InterviewSurveyNode {
@@ -4110,9 +6570,26 @@ type InterviewTagsCategoryNode {
   suggestedQuestions: [QuestionNode!]!
 }
 
+type InterviewTagsCategoryScoreNode {
+  category: InterviewTagsCategoryNode!
+  creationDate: DateTime!
+  distribution: [[Int]!]
+  id: ID!
+  percentile: Float!
+  score: Float!
+  updationDate: DateTime!
+  user: PrivateContestUserNode!
+}
+
 type InterviewTimeOption {
   id: Int
   name: String
+}
+
+type IPManagementLogNode {
+  operation: String!
+  operationTime: DateTime!
+  operator: ManagementUserSimpleNode!
 }
 
 type ItemBaseNode {
@@ -4168,22 +6645,18 @@ type ItemNode {
   webPage: WebPageNode
 }
 
-type InterviewedStatsPost {
-  error: String
-  interviewedStatsId: Int
-  ok: Boolean
+"""
+join a study plan
+"""
+type JoinStudyPlan {
+  ok: Boolean!
+  progressId: String!
 }
 
 type LanguageNode {
   id: Int
   name: String
   verboseName: String
-}
-
-"join a study plan"
-type JoinStudyPlan {
-  ok: Boolean!
-  progressId: String!
 }
 
 type LanguageProblemCountNode {
@@ -4203,9 +6676,10 @@ type LearningContextNode {
   previousQuestion: QuestionNode
 }
 
-type LevelBeatPercentageMixin {
-  difficulty: DifficultyDescribedEnum!
-  percentage: Float
+type LearningContextNodeV2 {
+  name: String!
+  nextQuestion: QuestionNode
+  previousQuestion: QuestionNode
 }
 
 type LearningContextNodeV3 {
@@ -4215,26 +6689,42 @@ type LearningContextNodeV3 {
   previousQuestion: PanelQuestionNode
 }
 
-type LearningContextNodeV2 {
-  name: String!
-  nextQuestion: QuestionNode
-  previousQuestion: QuestionNode
-}
-
-"A Relay edge containing a `LibraryActivity` and its cursor."
-type LibraryActivityEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: QuestionActivityNode
+type LevelBeatPercentageMixin {
+  difficulty: DifficultyDescribedEnum!
+  percentage: Float
 }
 
 type LibraryActivityConnection {
-  "Contains the nodes in this connection."
+  """
+  Contains the nodes in this connection.
+  """
   edges: [LibraryActivityEdge]!
-  "Pagination data for this connection."
+
+  """
+  Pagination data for this connection.
+  """
   pageInfo: PageInfo!
   totalNum: Int
+}
+
+"""
+A Relay edge containing a `LibraryActivity` and its cursor.
+"""
+type LibraryActivityEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: QuestionActivityNode
+}
+
+type LibraryActivityType {
+  id: Int!
+  name: String!
 }
 
 type LibraryCodeDefinition {
@@ -4244,9 +6734,8 @@ type LibraryCodeDefinition {
   question: LibraryQuestionNode!
 }
 
-type LibraryActivityType {
-  id: Int!
-  name: String!
+type LibraryDefinitionSave {
+  question: LibraryQuestionNode!
 }
 
 type LibraryDifficulty {
@@ -4254,12 +6743,15 @@ type LibraryDifficulty {
   name: String!
 }
 
-type LibraryDefinitionSave {
-  question: LibraryQuestionNode!
-}
-
 type LibraryDraftDelete {
   deleted: Boolean!
+}
+
+type LibraryDriver {
+  content: String!
+  id: ID!
+  lang: LibraryLanguage!
+  question: LibraryQuestionNode!
 }
 
 type LibraryFrontendPreview {
@@ -4273,11 +6765,8 @@ type LibraryFrontendQuestionIdChange {
   question: LibraryQuestionNode!
 }
 
-type LibraryDriver {
+type LibraryGenerateSampleTestcase {
   content: String!
-  id: ID!
-  lang: LibraryLanguage!
-  question: LibraryQuestionNode!
 }
 
 type LibraryHideLastTestcases {
@@ -4293,6 +6782,11 @@ type LibraryLanguage {
   name: String!
 }
 
+type LibraryMatchType {
+  id: Int!
+  name: String!
+}
+
 type LibraryMultiTestcase {
   category: Category!
   expectedOutput: String!
@@ -4301,25 +6795,8 @@ type LibraryMultiTestcase {
   question: LibraryQuestionNode!
 }
 
-type LibraryMatchType {
-  id: Int!
-  name: String!
-}
-
-type LibraryGenerateSampleTestcase {
-  content: String!
-}
-
 type LibraryMultiTestcaseSave {
   question: LibraryQuestionNode!
-}
-
-"A Relay edge containing a `LibraryQuestion` and its cursor."
-type LibraryQuestionEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: LibraryQuestionNode
 }
 
 type LibraryQuestionAttachmentNode {
@@ -4330,35 +6807,31 @@ type LibraryQuestionAttachmentNode {
 }
 
 type LibraryQuestionConnection {
-  "Contains the nodes in this connection."
+  """
+  Contains the nodes in this connection.
+  """
   edges: [LibraryQuestionEdge]!
-  "Pagination data for this connection."
+
+  """
+  Pagination data for this connection.
+  """
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-type LibraryQuestionNodeConnection {
-  "Contains the nodes in this connection."
-  edges: [LibraryQuestionNodeEdge]!
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
-}
-
-type LibrarySetHide {
-  question: LibraryQuestionNode!
-}
-
-"A Relay edge containing a `LibraryQuestionNode` and its cursor."
-type LibraryQuestionNodeEdge {
-  "A cursor for use in pagination"
+"""
+A Relay edge containing a `LibraryQuestion` and its cursor.
+"""
+type LibraryQuestionEdge {
+  """
+  A cursor for use in pagination
+  """
   cursor: String!
-  "The item at the end of the edge"
-  node: LibraryQuestionNode
-}
 
-type LibraryQuestionType {
-  id: Int!
-  name: String!
+  """
+  The item at the end of the edge
+  """
+  node: LibraryQuestionNode
 }
 
 type LibraryQuestionNode {
@@ -4433,6 +6906,42 @@ type LibraryQuestionNode {
   validator: LibraryValidator!
 }
 
+type LibraryQuestionNodeConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [LibraryQuestionNodeEdge]!
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+}
+
+"""
+A Relay edge containing a `LibraryQuestionNode` and its cursor.
+"""
+type LibraryQuestionNodeEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: LibraryQuestionNode
+}
+
+type LibraryQuestionType {
+  id: Int!
+  name: String!
+}
+
+type LibrarySetHide {
+  question: LibraryQuestionNode!
+}
+
 type LibrarySetPerm {
   question: LibraryQuestionNode!
 }
@@ -4459,18 +6968,8 @@ type LibrarySolutionSave {
   solutionId: ID!
 }
 
-type LibrarySolutionStatus {
-  id: Int!
-  name: String!
-}
-
 type LibrarySolutionsOrderSave {
   question: LibraryQuestionNode!
-}
-
-type LibrarySolutionsSave {
-  question: LibraryQuestionNode!
-  solutions: [LibrarySolutionsOutput]
 }
 
 type LibrarySolutionsOutput {
@@ -4478,11 +6977,17 @@ type LibrarySolutionsOutput {
   solutionId: ID!
 }
 
-type LibraryStatementSave {
+type LibrarySolutionsSave {
   question: LibraryQuestionNode!
+  solutions: [LibrarySolutionsOutput]
 }
 
-type LibraryTestcaseSave {
+type LibrarySolutionStatus {
+  id: Int!
+  name: String!
+}
+
+type LibraryStatementSave {
   question: LibraryQuestionNode!
 }
 
@@ -4492,17 +6997,21 @@ type LibraryTemplate {
   frontendPreviews: JSONString!
 }
 
-type LibraryValidator {
-  code: String!
-  driver: String!
-}
-
 type LibraryTestcase {
   expectedOutput: String!
   inputFormatted: String!
   inputRaw: String!
   jsonBlob: JSONString!
   question: LibraryQuestionNode!
+}
+
+type LibraryTestcaseSave {
+  question: LibraryQuestionNode!
+}
+
+type LibraryValidator {
+  code: String!
+  driver: String!
 }
 
 type LibraryValidatorSave {
@@ -4515,17 +7024,17 @@ type Like {
   ok: Boolean
 }
 
-type LocationAutocomplete {
-  id: String!
-  name: String!
-}
-
 type LocalRankingNode {
   myRank: RankingNode
   page: Int
   rankingNodes: [RankingNode]
   totalUsers: Int
   userPerPage: Int
+}
+
+type LocationAutocomplete {
+  id: String!
+  name: String!
 }
 
 type ManagementAddInterviewedStatVote {
@@ -4558,17 +7067,17 @@ type ManagementCreditCardNode {
   status: CreditCardStatus!
 }
 
+type ManagementIncVoteLogListNone {
+  nodes: [ManagementIncVoteLogNode]!
+  totalNum: Int
+}
+
 type ManagementIncVoteLogNode {
   createdAt: DateTime!
   createdBy: UserNode
   positionTag: CommonTagNode
   votedDate: DateTime!
   votedNum: Int!
-}
-
-type ManagementIncVoteLogListNone {
-  nodes: [ManagementIncVoteLogNode]!
-  totalNum: Int
 }
 
 type ManagementIpListNode {
@@ -4654,17 +7163,17 @@ type ManagementStripeChargeListNode {
   totalNum: Int!
 }
 
-type ManagementTagAdminLogListNode {
-  nodes: [ManagementTagAdminLogNode]!
-  totalNum: Int
-}
-
 type ManagementStripeChargeNode {
   amount: Int!
   created: DateTime!
   id: ID!
   invoiceId: ID
   status: StripeChargeStatusEnum!
+}
+
+type ManagementTagAdminLogListNode {
+  nodes: [ManagementTagAdminLogNode]!
+  totalNum: Int
 }
 
 type ManagementTagAdminLogNode {
@@ -4674,14 +7183,14 @@ type ManagementTagAdminLogNode {
   operationType: TagAdminOperationType!
 }
 
-type ManagementTeamMemberListNode {
-  nodes: [ManagementTeamMemberNode!]!
-  totalNum: Int!
-}
-
 type ManagementTagNode {
   tags: [TagNode]!
   totalCount: Int
+}
+
+type ManagementTeamMemberListNode {
+  nodes: [ManagementTeamMemberNode!]!
+  totalNum: Int!
 }
 
 type ManagementTeamMemberNode {
@@ -4752,11 +7261,6 @@ type MarkItemComplete {
   ok: Boolean
 }
 
-type MarkSolvedQuestion {
-  ok: Boolean!
-  progressDetail: PlanUserProgressDetailNode!
-}
-
 type MarkItemIncomplete {
   cardId: String
   errors: JSONString
@@ -4764,9 +7268,53 @@ type MarkItemIncomplete {
   ok: Boolean
 }
 
+type MarkSolvedQuestion {
+  ok: Boolean!
+  progressDetail: PlanUserProgressDetailNode!
+}
+
 type MarkSpammers {
   error: String
   ok: Boolean
+}
+
+type MedalBriefNode {
+  awardDescription: String!
+  config: MedalConfigNode!
+  name: String!
+  obtainDescription: String!
+  slug: String!
+}
+
+type MedalConfigNode {
+  """
+  The original image URL of the medal
+  """
+  icon: String
+
+  """
+  GIF URL of the medal
+  """
+  iconGif: String
+
+  """
+  GIF background URL of the medal
+  """
+  iconGifBackground: String
+
+  """
+  URL of the medal wearing picture
+  """
+  iconWearing: String
+}
+
+type MedalNode {
+  awardDescription: String!
+  config: MedalConfigNode!
+  name: String!
+  obtainDescription: String!
+  shortName: String
+  slug: String!
 }
 
 type MeNode {
@@ -4796,45 +7344,17 @@ type MeNode {
   userSlug: String
 }
 
-type MedalBriefNode {
-  awardDescription: String!
-  config: MedalConfigNode!
-  name: String!
-  obtainDescription: String!
-  slug: String!
-}
-
-type MedalConfigNode {
-  "The original image URL of the medal"
-  icon: String
-  "GIF URL of the medal"
-  iconGif: String
-  "GIF background URL of the medal"
-  iconGifBackground: String
-  "URL of the medal wearing picture"
-  iconWearing: String
-}
-
-type MedalNode {
-  awardDescription: String!
-  config: MedalConfigNode!
-  name: String!
-  obtainDescription: String!
-  shortName: String
-  slug: String!
-}
-
 type MigrateDiscussionToSolution {
   ok: Boolean
   topic: TopicNode
 }
 
-type MockUser {
+type MigrateSolutionToDiscussion {
+  comment: CommentNode
   ok: Boolean
 }
 
-type MigrateSolutionToDiscussion {
-  comment: CommentNode
+type MockUser {
   ok: Boolean
 }
 
@@ -4847,82 +7367,6 @@ type ModifyIdeDynamicLayout {
 type MoveTopic {
   categorySlugs: [String!]
   topic: TopicNode
-}
-
-type NewFeatureAnnouncementNode {
-  id: ID!
-  isShown: Boolean!
-  link: String!
-  text: String!
-}
-
-type NotificationConnection {
-  "Contains the nodes in this connection."
-  edges: [NotificationEdge]!
-  id: String
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
-}
-
-"A Relay edge containing a `Notification` and its cursor."
-type NotificationEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: NotificationNode
-}
-
-type NotificationDataNode {
-  content: String!
-  id: ID!
-  metadata: JSONString
-  notificationSet(
-    after: String
-    before: String
-    first: Int
-    last: Int
-    offset: Int
-  ): NotificationNodeConnection!
-  type: String
-}
-
-type NotificationNode {
-  actioned: Boolean!
-  creationDate: Int
-  "The ID of the object."
-  id: ID!
-  modifiedDate: Int!
-  notificationData: NotificationDataNode!
-  notificationId: Int
-  user: UserNode
-}
-
-type NotificationNodeConnection {
-  "Contains the nodes in this connection."
-  edges: [NotificationNodeEdge]!
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
-}
-
-"A Relay edge containing a `NotificationNode` and its cursor."
-type NotificationNodeEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: NotificationNode
-}
-
-type NotificationCategoryNode {
-  configurableNotificationTypes: [NotificationTypeNode]
-  slug: String
-  title: String
-}
-
-type NotificationTypeNode {
-  channelSettings: JSONString
-  description: String
-  identifier: String
-  name: String
 }
 
 type Mutation {
@@ -4982,7 +7426,10 @@ type Mutation {
   ): BatchReviewFlaggedObjects
   btsEventNotification(enable: Boolean!): BTSEventNotification
   btsReferralRegister(refer: String!): BTSReferralRegister
-  "取消注销账户请求"
+
+  """
+  取消注销账户请求
+  """
   cancelDeleteAccount: AuthCancelDeleteAccount
   checkin: Checkin
   collectContestEasterEgg: CollectContestEasterEgg
@@ -5024,7 +7471,10 @@ type Mutation {
     questionSlug: String!
     score: Int!
   ): CreateOrUpdateEditorialFeedback
-  "obtain the new annual medals"
+
+  """
+  obtain the new annual medals
+  """
   createOrUpdateUserYearlyMedals(
     medalSlugs: [String]!
   ): CreateOrUpdateUserYearlyMedals
@@ -5053,7 +7503,10 @@ type Mutation {
     tags: [String]
     title: String
   ): CreateTopicWithCategory
-  "user apply to delete account, account gets frozen after success"
+
+  """
+  user apply to delete account, account gets frozen after success
+  """
   deleteAccount(data: DeleteAccountInput!): DeleteAccount
   deleteCodeFromPlayground(
     langSlug: String
@@ -5098,10 +7551,16 @@ type Mutation {
   ): InterviewedStatsPost
   interviewEnd: InterviewEnd
   interviewStart(cardId: ID!): InterviewStart
-  "join a study plan"
+
+  """
+  join a study plan
+  """
   joinStudyPlan(
     planSlug: String!
-    "e.g. [1,0,0,1,1,1,0], length should be 7"
+
+    """
+    e.g. [1,0,0,1,1,1,0], length should be 7
+    """
     weeklyTaskSchedule: [Int!]
   ): JoinStudyPlan
   libraryDefinitionSave(
@@ -5175,19 +7634,31 @@ type Mutation {
   ): LibraryValidatorSave
   like(isLike: Boolean, titleSlug: String): Like
   managementAddInterviewedStatVote(
-    "Add Vote Info"
+    """
+    Add Vote Info
+    """
     data: ManagementAddInterviewedStatVoteInput!
   ): ManagementAddInterviewedStatVote
   managementAddOrEditTag(
-    "Tag Data"
+    """
+    Tag Data
+    """
     data: ManagementAddOrEditTagInput!
-    "Tag ID if updating existing tag"
+
+    """
+    Tag ID if updating existing tag
+    """
     id: ID
   ): ManagementAddOrEditTag
   managementAddOrEditTagCategory(
-    "Tag Category Data"
+    """
+    Tag Category Data
+    """
     data: ManagementAddOrEditTagCategoryInput!
-    "Existing Tag Category ID for updation"
+
+    """
+    Existing Tag Category ID for updation
+    """
     id: ID
   ): ManagementAddOrEditTagCategory
   managementRemoveTagCategoryToTag(
@@ -5195,9 +7666,14 @@ type Mutation {
     tagId: ID!
   ): ManagementRemoveTagCategoryToTag
   managementSetNonofficialTagSimilar(
-    "Child Tag / Non-Standard Tag"
+    """
+    Child Tag / Non-Standard Tag
+    """
     childId: ID!
-    "Parent Tag / Standard Tag"
+
+    """
+    Parent Tag / Standard Tag
+    """
     parentId: ID!
   ): ManagementSetNonofficialTagSimilar
   markItemComplete(itemId: String, submissionId: Int): MarkItemComplete
@@ -5216,7 +7692,10 @@ type Mutation {
     layoutName: String
   ): ModifyIdeDynamicLayout
   moveTopic(categoryId: Int!, topicId: Int!): MoveTopic
-  "online management generate favorite"
+
+  """
+  online management generate favorite
+  """
   omGenerateFavorite(
     difficultyTagSlugs: [String!]
     favoriteDescription: String
@@ -5228,12 +7707,18 @@ type Mutation {
     languageTagSlug: String
     questionIdListStr: String
   ): OMGenerateFavorite
-  "online management remove question from favorite"
+
+  """
+  online management remove question from favorite
+  """
   omRemoveQuestionFromFavorite(
     favoriteSlug: String!
     questionSlug: String!
   ): OMRemoveQuestionFromFavorite
-  "online management update favorite"
+
+  """
+  online management update favorite
+  """
   omUpdateFavorite(
     favoriteDescription: String
     favoriteName: String
@@ -5258,7 +7743,10 @@ type Mutation {
     tags: [String]!
     title: String!
   ): PublishSolution
-  "quit a study plan"
+
+  """
+  quit a study plan
+  """
   quitStudyPlan(planSlug: String!): QuitStudyPlan
   rateArticle(contentTypeId: ID!, objectId: ID!, score: Int!): RateArticle
   recordAbExperimentEvent(
@@ -5299,7 +7787,10 @@ type Mutation {
   ): ResetFavoriteSessionV2
   resetWeeklyTaskSchedule(
     planSlug: String!
-    "e.g. [1,0,0,1,1,1,0], length should be 7"
+
+    """
+    e.g. [1,0,0,1,1,1,0], length should be 7
+    """
     weeklyTaskSchedule: [Int!]!
   ): ResetWeeklyTaskSchedule
   rewardPostCoins(id: Int, numCoins: Int, reason: String): RewardPost
@@ -5324,7 +7815,10 @@ type Mutation {
     notificationIdentifier: String
     status: Boolean
   ): SetNotificationSetting
-  "whether hide current user rank info on rank boards"
+
+  """
+  whether hide current user rank info on rank boards
+  """
   setVisibleOnPlanRank(hideOnBoard: Boolean!): SetVisibleOnPlanRank
   startDebuggerSession(
     commands: [JSONString]!
@@ -5357,13 +7851,19 @@ type Mutation {
     province: String
     shirtSize: String
   ): StoreOrderSave
-  "comment submission complexity"
+
+  """
+  comment submission complexity
+  """
   submissionNoteComplexity(
     complexityType: ComplexityTypeEnum!
     note: String!
     submissionId: ID!
   ): SubmissionNoteComplexity
-  "vote submission complexity"
+
+  """
+  vote submission complexity
+  """
   submissionVoteComplexity(
     complexityType: ComplexityTypeEnum!
     submissionId: ID!
@@ -5533,7 +8033,9 @@ type Mutation {
   ): UpdateTopicWithCategory
   updateUsername(username: String): UpdateUsername
   userManagementApplyForPremiumTrial(
-    "urls of the images"
+    """
+    urls of the images
+    """
     attachments: [String!]
     notes: String
     sku: PremiumTrialSku!
@@ -5566,6 +8068,143 @@ type Mutation {
   userManagementSetEmailPrimary(email: String!, userId: ID!): UmSetEmailPrimary
   userUploadSchoolLogo(schoolId: Int!, url: String!): UserUploadSchoolLogo
   votePost(postId: Int, value: Int): VotePost
+}
+
+type NewFeatureAnnouncementNode {
+  id: ID!
+  isShown: Boolean!
+  link: String!
+  text: String!
+}
+
+type NotificationCategoryNode {
+  configurableNotificationTypes: [NotificationTypeNode]
+  slug: String
+  title: String
+}
+
+type NotificationConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [NotificationEdge]!
+  id: String
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+}
+
+type NotificationDataNode {
+  content: String!
+  id: ID!
+  metadata: JSONString
+  notificationSet(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    offset: Int
+  ): NotificationNodeConnection!
+  type: String
+}
+
+"""
+A Relay edge containing a `Notification` and its cursor.
+"""
+type NotificationEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: NotificationNode
+}
+
+type NotificationNode {
+  actioned: Boolean!
+  creationDate: Int
+
+  """
+  The ID of the object.
+  """
+  id: ID!
+  modifiedDate: Int!
+  notificationData: NotificationDataNode!
+  notificationId: Int
+  user: UserNode
+}
+
+type NotificationNodeConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [NotificationNodeEdge]!
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+}
+
+"""
+A Relay edge containing a `NotificationNode` and its cursor.
+"""
+type NotificationNodeEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: NotificationNode
+}
+
+type NotificationTypeNode {
+  channelSettings: JSONString
+  description: String
+  identifier: String
+  name: String
+}
+
+type OccupationRecordNode {
+  endTime: String
+  id: ID!
+  jobTitle: String
+  startTime: String
+  toPresent: Boolean!
+  unverifiedOrganizationName: String
+  user: PrivateContestUserNode!
+}
+
+type OfficialIDELayoutNode {
+  layoutJson: JSONString!
+  slug: String!
+}
+
+type OfficialSolutionFeedbackBriefNode {
+  additionalComment: String
+  createdAt: DateTime!
+  metaInfo: FeedBackMetaNode!
+  rateScore: Int!
+  reasonTagIds: [Int!]!
+}
+
+type OfficialSolutionFeedbackDetailNode {
+  additionalComment: String
+  authorName: String!
+  createdAt: DateTime!
+  feedbackUser: String!
+  metaInfo: FeedBackMetaNode!
+  questionInfo: QuestionNode
+  rateScore: Int!
+  reasonTagIds: [Int!]!
 }
 
 type OMFavoriteBriefNode {
@@ -5603,13 +8242,24 @@ type OMFavoriteLogNode {
   operator: FavoriteBriefUserNode!
 }
 
+type OMFavoriteQuestionListNode {
+  questions: [OMFavoriteQuestionNode!]!
+  totalNum: Int!
+}
+
 type OMFavoriteQuestionNode {
   createdAt: DateTime
   difficulty: DifficultyDescribedEnum!
-  "出题频率，企业题单专用字段"
+
+  """
+  出题频率，企业题单专用字段
+  """
   frequency: Float
   id: ID!
-  "whether the question is in the user's favorites"
+
+  """
+  whether the question is in the user's favorites
+  """
   isInMyFavorites: Boolean!
   paidOnly: Boolean!
   questionFrontendId: String!
@@ -5622,29 +8272,9 @@ type OMFavoriteQuestionNode {
   translatedTitle: String
 }
 
-type OMFavoriteQuestionListNode {
-  questions: [OMFavoriteQuestionNode!]!
-  totalNum: Int!
-}
-
 type OMGenerateFavorite {
   error: String
   ok: Boolean!
-}
-
-type OfficialIDELayoutNode {
-  layoutJson: JSONString!
-  slug: String!
-}
-
-type OccupationRecordNode {
-  endTime: String
-  id: ID!
-  jobTitle: String
-  startTime: String
-  toPresent: Boolean!
-  unverifiedOrganizationName: String
-  user: PrivateContestUserNode!
 }
 
 type OMRemoveQuestionFromFavorite {
@@ -5652,28 +8282,9 @@ type OMRemoveQuestionFromFavorite {
   ok: Boolean!
 }
 
-type OfficialSolutionFeedbackBriefNode {
-  additionalComment: String
-  createdAt: DateTime!
-  metaInfo: FeedBackMetaNode!
-  rateScore: Int!
-  reasonTagIds: [Int!]!
-}
-
 type OMUpdateFavorite {
   error: String
   ok: Boolean!
-}
-
-type OfficialSolutionFeedbackDetailNode {
-  additionalComment: String
-  authorName: String!
-  createdAt: DateTime!
-  feedbackUser: String!
-  metaInfo: FeedBackMetaNode!
-  questionInfo: QuestionNode
-  rateScore: Int!
-  reasonTagIds: [Int!]!
 }
 
 type OpenNotifications {
@@ -5687,15 +8298,48 @@ type OptInOrOutDynamicLayoutFeature {
   optInResult: Boolean
 }
 
+type OptInOrOutPremiumFeature {
+  error: String
+  success: Boolean
+}
+
 type OrderOperationLogNode {
   action: String!
   createdAt: DateTime!
   operator: PrivateContestUserNode!
 }
 
-type OptInOrOutPremiumFeature {
-  error: String
-  success: Boolean
+"""
+The Relay compliant `PageInfo` type, containing data necessary to paginate this connection.
+"""
+type PageInfo {
+  """
+  When paginating forwards, the cursor to continue.
+  """
+  endCursor: String
+
+  """
+  When paginating forwards, are there more items?
+  """
+  hasNextPage: Boolean!
+
+  """
+  When paginating backwards, are there more items?
+  """
+  hasPreviousPage: Boolean!
+
+  """
+  When paginating backwards, the cursor to continue.
+  """
+  startCursor: String
+}
+
+type PagifiedCommentNode {
+  currentPage: Int!
+  data: [CommentNode!]!
+  numPerPage: Int!
+  pageNum: Int!
+  totalNum: Int!
 }
 
 type PagifiedContestNode {
@@ -5746,18 +8390,6 @@ type PagifiedQuestionLastSolveNode {
   totalNum: Int!
 }
 
-"The Relay compliant `PageInfo` type, containing data necessary to paginate this connection."
-type PageInfo {
-  "When paginating forwards, the cursor to continue."
-  endCursor: String
-  "When paginating forwards, are there more items?"
-  hasNextPage: Boolean!
-  "When paginating backwards, are there more items?"
-  hasPreviousPage: Boolean!
-  "When paginating backwards, the cursor to continue."
-  startCursor: String
-}
-
 type PagifiedQuestionNode {
   currentPage: Int!
   data: [QuestionNode!]!
@@ -5766,9 +8398,9 @@ type PagifiedQuestionNode {
   totalNum: Int!
 }
 
-type PagifiedUserNode {
+type PagifiedTopicNode {
   currentPage: Int!
-  data: [UserNode!]!
+  data: [TopicNode!]!
   numPerPage: Int!
   pageNum: Int!
   totalNum: Int!
@@ -5782,9 +8414,9 @@ type PagifiedUserContestStatNode {
   totalNum: Int!
 }
 
-type PagifiedTopicNode {
+type PagifiedUserNode {
   currentPage: Int!
-  data: [TopicNode!]!
+  data: [UserNode!]!
   numPerPage: Int!
   pageNum: Int!
   totalNum: Int!
@@ -5806,6 +8438,14 @@ type PagifiedVirtualContestScoreNode {
   totalNum: Int!
 }
 
+type PanelQuestionListNode {
+  finishedLength: Int
+  hasViewPermission: Boolean!
+  panelName: String!
+  questions: [PanelQuestionNode!]!
+  totalLength: Int
+}
+
 type PanelQuestionNode {
   difficulty: DifficultyDescribedEnum!
   id: ID!
@@ -5818,22 +8458,6 @@ type PanelQuestionNode {
   titleSlug: String!
   topicTags: [CommonTagNode!]
   translatedTitle: String
-}
-
-type PanelQuestionListNode {
-  finishedLength: Int
-  hasViewPermission: Boolean!
-  panelName: String!
-  questions: [PanelQuestionNode!]!
-  totalLength: Int
-}
-
-type PagifiedCommentNode {
-  currentPage: Int!
-  data: [CommentNode!]!
-  numPerPage: Int!
-  pageNum: Int!
-  totalNum: Int!
 }
 
 type PerformNotificationAction {
@@ -5858,31 +8482,53 @@ type PlanBriefProgressNodeWithPlan {
   hasCompleted: Boolean!
   id: ID!
   isAborted: Boolean!
-  "Study Plan"
+
+  """
+  Study Plan
+  """
   plan: PlanBriefStudyPlanNodeWithGroup!
   questionNum: Int!
   startedAt: Date!
 }
 
 type PlanBriefStudyPlanNode {
-  "Whether to get reward"
+  """
+  Whether to get reward
+  """
   awarded: Boolean!
-  "Period (number of days)"
+
+  """
+  Period (number of days)
+  """
   days: Int!
-  "Medal corresponding to the plan"
+
+  """
+  Medal corresponding to the plan
+  """
   medal: MedalNode!
   name: String!
   slug: String!
 }
 
 type PlanBriefStudyPlanNodeWithGroup {
-  "Whether to get reward"
+  """
+  Whether to get reward
+  """
   awarded: Boolean!
-  "Period (number of days)"
+
+  """
+  Period (number of days)
+  """
   days: Int!
-  "Study Plan Group"
+
+  """
+  Study Plan Group
+  """
   group: PlanBriefPlanGroupNode!
-  "Medal corresponding to the plan"
+
+  """
+  Medal corresponding to the plan
+  """
   medal: MedalNode!
   name: String!
   slug: String!
@@ -5895,21 +8541,28 @@ type PlanBriefUserNode {
   userSlug: String!
 }
 
-type PlanCompletedStatusNode {
-  "If null, keep polling"
-  completedStudyPlan: Boolean
-  "Whether user joined this plan"
-  joinedStudyPlan: Boolean!
-  planProgressDetail: PlanUserProgressDetailNode
-}
-
 type PlanCatalogNode {
   name: String!
   ordering: Int!
   slug: String!
 }
 
-"Used to describe PlanGroup details"
+type PlanCompletedStatusNode {
+  """
+  If null, keep polling
+  """
+  completedStudyPlan: Boolean
+
+  """
+  Whether user joined this plan
+  """
+  joinedStudyPlan: Boolean!
+  planProgressDetail: PlanUserProgressDetailNode
+}
+
+"""
+Used to describe PlanGroup details
+"""
 type PlanDetailPlanGroupNode {
   cover: String!
   creator: UserNode
@@ -5919,7 +8572,10 @@ type PlanDetailPlanGroupNode {
   hidden: Boolean!
   name: String!
   ongoingProgress: PlanProgressNode
-  "All study plans of the planning group"
+
+  """
+  All study plans of the planning group
+  """
   plans: [PlanStudyPlanNode!]!
   slug: String!
   tags: [CommonTagNode!]!
@@ -5927,28 +8583,64 @@ type PlanDetailPlanGroupNode {
 
 type PlanDetailStudyPlanNode {
   allowedLanguages: JSONString!
-  "Whether to get reward"
+
+  """
+  Whether to get reward
+  """
   awarded: Boolean!
   dailyQuestionNum: String!
-  "Period (number of days)"
+
+  """
+  Period (number of days)
+  """
   days: Int!
-  "Number of easy questions"
+
+  """
+  Number of easy questions
+  """
   easy: Int!
-  "Number of hard questions"
+
+  """
+  Number of hard questions
+  """
   hard: Int!
   hasPremiumQuestion: Boolean!
   hint: String!
-  "Medal corresponding to the plan"
+
+  """
+  Medal corresponding to the plan
+  """
   medal: MedalNode!
-  "Number of medium questions"
+
+  """
+  Number of medium questions
+  """
   medium: Int!
   name: String!
-  "Plan ordering in the study group"
+
+  """
+  Plan ordering in the study group
+  """
   ordering: Int!
   premiumOnly: Boolean!
   slug: String!
-  "Tasks of the study plan"
+
+  """
+  Tasks of the study plan
+  """
   tasks: [PlanTaskNode!]!
+}
+
+type PlanGroupListNode {
+  """
+  List of Plan Groups
+  """
+  data: [PlanGroupNode!]!
+
+  """
+  Number of Plan Groups
+  """
+  total: Int!
 }
 
 type PlanGroupNode {
@@ -5958,16 +8650,12 @@ type PlanGroupNode {
   hidden: Boolean!
   name: String!
   ongoingProgress: PlanProgressNode
-  "All study plans of the planning group"
+
+  """
+  All study plans of the planning group
+  """
   plans: [PlanBriefStudyPlanNode!]!
   slug: String!
-}
-
-type PlanGroupListNode {
-  "List of Plan Groups"
-  data: [PlanGroupNode!]!
-  "Number of Plan Groups"
-  total: Int!
 }
 
 type PlanNextQuestionNode {
@@ -5988,14 +8676,20 @@ type PlanProgressNode {
 
 type PlanProgressNodeWithPlan {
   completedNum: Int!
-  "Difficulty distribution of completed questions"
+
+  """
+  Difficulty distribution of completed questions
+  """
   completedQuestionsDifficultyDistribution: JSONString!
   daysPassed: Int!
   endAt: Date!
   hasCompleted: Boolean!
   id: ID!
   isAborted: Boolean!
-  "Study Plan"
+
+  """
+  Study Plan
+  """
   plan: PlanDetailStudyPlanNode!
   startedAt: Date!
 }
@@ -6027,51 +8721,96 @@ type PlanQuestionSolutionInfoNode {
   solutionTopicId: Int
 }
 
-type PlanStudyPlanNodeWithGroup {
+type PlanStudyPlanNode {
   allowedLanguages: JSONString!
-  "Whether to get reward"
+
+  """
+  Whether to get reward
+  """
   awarded: Boolean!
   dailyQuestionNum: String!
-  "Period (number of days)"
+
+  """
+  Period (number of days)
+  """
   days: Int!
-  "Number of easy questions"
+
+  """
+  Number of easy questions
+  """
   easy: Int!
-  "Study Plan Group"
-  group: PlanBriefPlanGroupNode!
-  "Number of hard questions"
+
+  """
+  Number of hard questions
+  """
   hard: Int!
   hasPremiumQuestion: Boolean!
   hint: String!
-  "Medal corresponding to the plan"
+
+  """
+  Medal corresponding to the plan
+  """
   medal: MedalNode!
-  "Number of medium questions"
+
+  """
+  Number of medium questions
+  """
   medium: Int!
   name: String!
-  "Plan ordering in the study group"
+
+  """
+  Plan ordering in the study group
+  """
   ordering: Int!
   premiumOnly: Boolean!
   slug: String!
 }
 
-type PlanStudyPlanNode {
+type PlanStudyPlanNodeWithGroup {
   allowedLanguages: JSONString!
-  "Whether to get reward"
+
+  """
+  Whether to get reward
+  """
   awarded: Boolean!
   dailyQuestionNum: String!
-  "Period (number of days)"
+
+  """
+  Period (number of days)
+  """
   days: Int!
-  "Number of easy questions"
+
+  """
+  Number of easy questions
+  """
   easy: Int!
-  "Number of hard questions"
+
+  """
+  Study Plan Group
+  """
+  group: PlanBriefPlanGroupNode!
+
+  """
+  Number of hard questions
+  """
   hard: Int!
   hasPremiumQuestion: Boolean!
   hint: String!
-  "Medal corresponding to the plan"
+
+  """
+  Medal corresponding to the plan
+  """
   medal: MedalNode!
-  "Number of medium questions"
+
+  """
+  Number of medium questions
+  """
   medium: Int!
   name: String!
-  "Plan ordering in the study group"
+
+  """
+  Plan ordering in the study group
+  """
   ordering: Int!
   premiumOnly: Boolean!
   slug: String!
@@ -6086,14 +8825,25 @@ type PlanSubGroupInfoNode {
 }
 
 type PlanTaskNode {
-  "Whether the user can complete this task or not"
+  """
+  Whether the user can complete this task or not
+  """
   canComplete: Boolean!
-  "Day that task will become available for completion"
+
+  """
+  Day that task will become available for completion
+  """
   day: Int!
   desc: String!
-  "Whether the task has been completed"
+
+  """
+  Whether the task has been completed
+  """
   hasComplete: Boolean!
-  "Sequence of questions in study plan"
+
+  """
+  Sequence of questions in study plan
+  """
   ordering: Int!
   question: QuestionNode!
 }
@@ -6205,50 +8955,6 @@ type PostMentionedUser {
   userSlug: String!
 }
 
-type PremiumBetaFeatureNode {
-  creationDate: DateTime!
-  description: String!
-  endsAt: DateTime
-  featureId: Int!
-  featureUrl: String
-  feedbackUrl: String
-  "Indicates whether a user has access to this feature."
-  hasAccess: Boolean
-  id: ID!
-  imageHeight: Int
-  imageUrl: String!
-  isEnabled: Boolean!
-  "Indicates whether a user has opted in for this feature."
-  optedIn: Boolean
-  order: Int
-  startsAt: DateTime
-  title: String!
-  type: PremiumBetaFeatureType!
-  updationDate: DateTime!
-}
-
-type PremiumInfoNode {
-  gateway: PaymentGateways!
-  periodEnd: DateTime!
-  periodStart: DateTime!
-}
-
-type ProdTestcase {
-  expectedOutput: [String]!
-  inputFormatted: [String]!
-  inputRaw: [String]!
-}
-
-type ProblemSolvedBeatsNode {
-  difficulty: String!
-  percentage: Float
-}
-
-type PricingNode {
-  originalPrice: Float
-  price: Float
-}
-
 type PostNode {
   anonymous: Boolean!
   asTopic: Boolean
@@ -6282,14 +8988,43 @@ type PostNode {
   voteUpCount: Int!
 }
 
-type PublishSolution {
-  error: String
-  ok: Boolean
-  topic: TopicNode
+type PremiumBetaFeatureNode {
+  creationDate: DateTime!
+  description: String!
+  endsAt: DateTime
+  featureId: Int!
+  featureUrl: String
+  feedbackUrl: String
+
+  """
+  Indicates whether a user has access to this feature.
+  """
+  hasAccess: Boolean
+  id: ID!
+  imageHeight: Int
+  imageUrl: String!
+  isEnabled: Boolean!
+
+  """
+  Indicates whether a user has opted in for this feature.
+  """
+  optedIn: Boolean
+  order: Int
+  startsAt: DateTime
+  title: String!
+  type: PremiumBetaFeatureType!
+  updationDate: DateTime!
 }
 
-type PublishContestAnnouncement {
-  ok: Boolean
+type PremiumInfoNode {
+  gateway: PaymentGateways!
+  periodEnd: DateTime!
+  periodStart: DateTime!
+}
+
+type PricingNode {
+  originalPrice: Float
+  price: Float
 }
 
 type PrivateContestUserNode {
@@ -6330,15 +9065,24 @@ type PrivateContestUserNode {
   hasChangedUsernameRecently: Boolean
   hasUsablePassword: Boolean
   id: ID
-  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
   isActive: Boolean!
   isCurrentUserPremium: Boolean
   isCurrentUserVerified: Boolean
   isDiscussAdmin: Boolean
   isDiscussStaff: Boolean
-  "Designates whether the user can log into this admin site."
+
+  """
+  Designates whether the user can log into this admin site.
+  """
   isStaff: Boolean!
-  "Designates that this user has all permissions without explicitly assigning them."
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
   isSuperuser: Boolean!
   joinedTimestamp: Int!
   languageProblemCount: [LanguageProblemCountNode!]
@@ -6406,7 +9150,10 @@ type PrivateContestUserNode {
   upcomingBadges: [UpcomingBadgeNode!]!
   userCalendar(year: Int): UserCalendarNode!
   useripSet: [UserIPNode!]!
-  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+
+  """
+  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+  """
   username: String!
   userratingSet: [UserRatingNode!]!
   userskilltagSet: [UserSkillTagNode!]!
@@ -6416,56 +9163,25 @@ type PrivateContestUserNode {
   yearJoined: Int!
 }
 
-type QuestionActivityNode {
-  activityType: LibraryActivityType!
-  dateCreated: DateTime!
-  "The ID of the object."
-  id: ID!
-  isBaseline: Boolean!
-  payload: String
-  question: LibraryQuestionNode!
-  user: PrivateContestUserNode
-}
-
-"A Relay edge containing a `QuestionActivityNode` and its cursor."
-type QuestionActivityNodeEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: QuestionActivityNode
-}
-
-type QuestionActivityNodeConnection {
-  "Contains the nodes in this connection."
-  edges: [QuestionActivityNodeEdge]!
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
-}
-
-type QuestionAdminVoteOptionsNode {
-  positionOptions: [CommonTagNode]
-  timeOptions: [InterviewTimeOption]
-}
-
-type QuestionCountNode {
-  count: Int!
-  difficulty: DifficultyDescribedEnum!
-}
-
-type QuestionCountByDifficultyNode {
-  count: Int!
+type ProblemSolvedBeatsNode {
   difficulty: String!
+  percentage: Float
 }
 
-type QuestionAttachmentNode {
-  content: String!
-  extension: String!
-  name: String!
+type ProdTestcase {
+  expectedOutput: [String]!
+  inputFormatted: [String]!
+  inputRaw: [String]!
 }
 
-type QuestionFeedbackReason {
-  id: Int!
-  name: String!
+type PublishContestAnnouncement {
+  ok: Boolean
+}
+
+type PublishSolution {
+  error: String
+  ok: Boolean
+  topic: TopicNode
 }
 
 type Query {
@@ -6501,7 +9217,10 @@ type Query {
     user: String = ""
   ): PagifiedContributionNode
   allLeetcodePlaygroundTemplates: [PlaygroundTemplateNode]
-  "query a list of common complexities"
+
+  """
+  query a list of common complexities
+  """
   allPinnedComplexitys: [ComplexityInfoNode!]
   allPlaygroundCodes(uuid: String): [PlaygroundCodeNode]
   allPlaygroundDatasets: [PlaygroundDatasetNode]
@@ -6627,7 +9346,10 @@ type Query {
     limit: Int
     offset: Int
     questionSlug: String!
-    "提交结果"
+
+    """
+    提交结果
+    """
     status: SubmissionStatusEnum
   ): ContestSubmissionListNode
   contestRatingHistogram: [ContestRatingHistogramBarNode!]!
@@ -6681,7 +9403,10 @@ type Query {
   favorite(name: String!): FavoriteNode
   favoriteCards: [CardNode]
   favoriteDetailV2(favoriteSlug: String!): FavoriteDetailNode
-  "ac, notac, or null"
+
+  """
+  ac, notac, or null
+  """
   favoriteQuestionAcStatus(favoriteSlug: String!, titleSlug: String!): String
   favoriteQuestionList(
     favoriteSlug: String!
@@ -6689,7 +9414,10 @@ type Query {
   ): FavoriteQuestionListNode!
   favoritesLists: FavoritesNode
   favoriteSubmitAcProgress(favoriteSlug: String!): FavoriteSubmitACProgressNode
-  "user progress of a favorite, either his own or collected ones"
+
+  """
+  user progress of a favorite, either his own or collected ones
+  """
   favoriteUserQuestionProgressV2(
     favoriteSlug: String!
   ): UserQuestionProgressNodeV2!
@@ -6716,13 +9444,19 @@ type Query {
   hasTakenSubscriptionSurvey: Boolean
   historyCards: [CardNode]
   htmlArticle(id: String): HtmlArticleNode
-  "user preference dynamic layouts"
+
+  """
+  user preference dynamic layouts
+  """
   ideDynamicLayouts: [IDEDynamicLayoutNode!]!
   intentionTags: [IntentionTagNode]!
   internalContestAwardedUsers(contestSlug: String): [Int]
   internalContestFeedbackEmail: String
   internalContestRegisterEmail: String
-  "Used for stuff to create orders manually"
+
+  """
+  Used for stuff to create orders manually
+  """
   internalStoreItems: [StoreItemNode!]!
   interviewAllSessions(
     after: String
@@ -6762,22 +9496,37 @@ type Query {
     currentQuestionSlug: String!
     envType: String
     id: String
-    "whether to fetch prev/next question"
+
+    """
+    whether to fetch prev/next question
+    """
     needQuestion: Boolean = true
   ): LearningContextNode
   learningContextV2(
     categorySlug: String = ""
-    "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
+
+    """
+    新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效
+    """
     childFavoriteSlug: String = ""
     currentQuestionSlug: String!
     envId: String = ""
     envType: String = ""
-    "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
+
+    """
+    新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效
+    """
     favoriteFilters: FavoriteQuestionFilterInput = {}
     filters: QuestionListFilterInput = {}
-    "是否需要上下题信息"
+
+    """
+    是否需要上下题信息
+    """
     needQuestion: Boolean = true
-    "版本号, 默认为空, 新版企业题单需要传版本号v2"
+
+    """
+    版本号, 默认为空, 新版企业题单需要传版本号v2
+    """
     version: String = ""
   ): LearningContextNodeV3
   libraryActivity(id: String!): QuestionActivityNode
@@ -6812,7 +9561,10 @@ type Query {
   managementCompanyQuestionV2(
     data: managementCompanyQuestionsV2Input!
   ): CompanyQuestionListNode!
-  "Company Tag List"
+
+  """
+  Company Tag List
+  """
   managementCompanyTags(
     data: ManagementCompanyTagsInput!
   ): ManagementCompanyTagNode!
@@ -6826,13 +9578,22 @@ type Query {
     offset: Int!
     tagId: Int!
   ): ManagementTagAdminLogListNode!
-  "Tag Category List"
+
+  """
+  Tag Category List
+  """
   managementTagCategories(
     data: ManagementTagCategoriesInput!
   ): [TagCategoryNode]!
-  "Tag Group List"
+
+  """
+  Tag Group List
+  """
   managementTagGroups: [TagGroupNode]!
-  "Tag List"
+
+  """
+  Tag List
+  """
   managementTags(data: ManagementTagsInput!): ManagementTagNode!
   managementTeamMembers(
     data: ManagementTeamMembersInput!
@@ -6860,7 +9621,10 @@ type Query {
   notificationStatus: JSONString
   notificationTypes: [NotificationTypeNode]
   occupationRecordList: [OccupationRecordNode]
-  "official IDE dynamic layout"
+
+  """
+  official IDE dynamic layout
+  """
   officialIdeDynamicLayout: [OfficialIDELayoutNode!]!
   officialSolutionFeedbacks(
     filters: OfficialSolutionFeedbackFilterInput!
@@ -7000,15 +9764,24 @@ type Query {
   ): TopicTagConnection
   randomPanelQuestion(
     categorySlug: String = ""
-    "新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效"
+
+    """
+    新版题单的真实收藏夹slug, 仅在env_type为company, problem-list-v2时有效
+    """
     childFavoriteSlug: String = ""
     currentQuestionSlug: String!
     envId: String = ""
     envType: String = ""
-    "新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效"
+
+    """
+    新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效
+    """
     favoriteFilters: FavoriteQuestionFilterInput = {}
     filters: QuestionListFilterInput = {}
-    "版本号, 默认为空, 新版企业题单需要传版本号v2"
+
+    """
+    版本号, 默认为空, 新版企业题单需要传版本号v2
+    """
     version: String = ""
   ): String
   randomQuestion(
@@ -7061,76 +9834,146 @@ type Query {
   streakCounter: StreakCounterNode
   stripePublicKey: String!
   studyPlanMedalPolling(submissionId: Int): StudyPlanMedalPollingNode
-  "get advertisement study plans of feature on playground"
+
+  """
+  get advertisement study plans of feature on playground
+  """
   studyPlansV2AdFeature: [StudyPlanFeatureNode!]!
-  "get advertisement study plans on questions page"
+
+  """
+  get advertisement study plans on questions page
+  """
   studyPlansV2AdQuestionPage: [StudyPlanBriefNode!]!
-  "get study plans by catalog"
+
+  """
+  get study plans by catalog
+  """
   studyPlansV2ByCatalog(
     catalogSlug: String!
-    "default value is 6"
+
+    """
+    default value is 6
+    """
     limit: Int = 6
     offset: Int = 0
   ): StudyPlanListNode!
-  "get study plans by tag"
+
+  """
+  get study plans by tag
+  """
   studyPlansV2ByTag(
-    "default value is 6"
+    """
+    default value is 6
+    """
     limit: Int = 6
     offset: Int = 0
     tagSlug: String!
   ): StudyPlanListNode!
-  "get study plans by upc"
+
+  """
+  get study plans by upc
+  """
   studyPlansV2ByUpc: [StudyPlanBriefNode!]!
-  "get study plans for homepage"
+
+  """
+  get study plans for homepage
+  """
   studyPlansV2ForHomepage: [StudyPlanWithProgressNode!]!
-  "get all enabled study plan catalogs"
+
+  """
+  get all enabled study plan catalogs
+  """
   studyPlanV2Catalogs: [StudyPlanCatalogNode!]!
-  "Poll this API after submission get AC."
+
+  """
+  Poll this API after submission get AC.
+  """
   studyPlanV2CompletedStatus(
     planSlug: String!
     submissionId: ID!
   ): PlanCompletedStatusNode
-  "get a study plan detail"
+
+  """
+  get a study plan detail
+  """
   studyPlanV2Detail(planSlug: String!): StudyPlanDetailNode
-  "get a user progress detail"
+
+  """
+  get a user progress detail
+  """
   studyPlanV2ProgressDetail(
-    "user progress ID"
+    """
+    user progress ID
+    """
     id: ID = ""
     planSlug: String!
   ): PlanUserProgressDetailNode
-  "get the ranking board of a study plan"
+
+  """
+  get the ranking board of a study plan
+  """
   studyPlanV2RankingBoard(
-    "default value is 10"
+    """
+    default value is 10
+    """
     limit: Int = 10
     offset: Int = 0
     planSlug: String!
   ): UserRankInfoList!
-  "get the most recent user completed progress detail"
+
+  """
+  get the most recent user completed progress detail
+  """
   studyPlanV2RecentCompletedProgress(
     planSlug: String!
   ): PlanUserProgressDetailNode
-  "whether the current user hide on the rank board"
+
+  """
+  whether the current user hide on the rank board
+  """
   studyPlanV2UserHideRank: Boolean
-  "user on going study plans"
+
+  """
+  user on going study plans
+  """
   studyPlanV2UserProgresses(
-    "default 6, no more than100"
+    """
+    default 6, no more than100
+    """
     limit: Int = 6
     offset: Int = 0
     progressType: PlanUserProgressTypeEnum!
   ): PlanUserProgressListNode
-  "get current user rank in a plan"
+
+  """
+  get current user rank in a plan
+  """
   studyPlanV2UserRank(planSlug: String!): UserRankInfoNode
-  "get weekly task records by year and month"
+
+  """
+  get weekly task records by year and month
+  """
   studyPlanV2WeeklyTaskRecords(
-    "records of the month"
+    """
+    records of the month
+    """
     month: Int!
     planSlug: String!
-    "user progress obfuscated id"
+
+    """
+    user progress obfuscated id
+    """
     progressId: String
-    "records of the year"
+
+    """
+    records of the year
+    """
     year: Int!
   ): UserWeeklyTaskRecordListNode
-  "query submission complexity"
+
+  """
+  query submission complexity
+  """
   submissionComplexity(submissionId: ID!): SubmissionComplexityNode
   submissionDetails(submissionId: Int!): SubmissionDetailsNode
   submissionList(
@@ -7225,7 +10068,10 @@ type Query {
   userOfficialSolutionFeedback(
     questionSlug: String!
   ): OfficialSolutionFeedbackBriefNode
-  "获取用户当前 session 的做题进展，新版接口"
+
+  """
+  获取用户当前 session 的做题进展，新版接口
+  """
   userProfileUserQuestionProgressV2(
     userSlug: String!
   ): UserQuestionProgressNodeV2!
@@ -7258,8 +10104,73 @@ type Query {
   worldCities(country: String, subcountry: String): [String!]
   worldCountries: [String!]
   worldSubcountries(country: String): [String!]
-  "list of yearly medals which are qualified to acquire"
+
+  """
+  list of yearly medals which are qualified to acquire
+  """
   yearlyMedalsQualified(excludeAcquired: Boolean = true): [MedalBriefNode!]
+}
+
+type QuestionActivityNode {
+  activityType: LibraryActivityType!
+  dateCreated: DateTime!
+
+  """
+  The ID of the object.
+  """
+  id: ID!
+  isBaseline: Boolean!
+  payload: String
+  question: LibraryQuestionNode!
+  user: PrivateContestUserNode
+}
+
+type QuestionActivityNodeConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [QuestionActivityNodeEdge]!
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+}
+
+"""
+A Relay edge containing a `QuestionActivityNode` and its cursor.
+"""
+type QuestionActivityNodeEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: QuestionActivityNode
+}
+
+type QuestionAdminVoteOptionsNode {
+  positionOptions: [CommonTagNode]
+  timeOptions: [InterviewTimeOption]
+}
+
+type QuestionAttachmentNode {
+  content: String!
+  extension: String!
+  name: String!
+}
+
+type QuestionCountByDifficultyNode {
+  count: Int!
+  difficulty: String!
+}
+
+type QuestionCountNode {
+  count: Int!
+  difficulty: DifficultyDescribedEnum!
 }
 
 type QuestionFeedbackNode {
@@ -7272,16 +10183,15 @@ type QuestionFeedbackNode {
   user: PrivateContestUserNode!
 }
 
+type QuestionFeedbackReason {
+  id: Int!
+  name: String!
+}
+
 type QuestionLastSolveNode {
   lastAcSession: QuestionSolveSessionNode
   question: QuestionNode!
   totalSolves: Int!
-}
-
-type QuestionSatisfactionSurveyNode {
-  leetcoinAmount: Int!
-  showSurvey: Boolean!
-  surveyJson: JSONString
 }
 
 type QuestionNode {
@@ -7305,7 +10215,10 @@ type QuestionNode {
   contributors: [ContributorNode]
   dataSchemas: [String]
   difficulty: String
-  "discussion count for one question, 0 if no question exist"
+
+  """
+  discussion count for one question, 0 if no question exist
+  """
   discussionCount: Int
   dislikes: Int
   enableDebugger: Boolean
@@ -7351,7 +10264,10 @@ type QuestionNode {
   similarQuestionList: [QuestionNode]!
   similarQuestions: JSONString
   solution: ArticleNode
-  "solution for one question, 0 if no question exist"
+
+  """
+  solution for one question, 0 if no question exist
+  """
   solutionNum: Int
   stats: JSONString
   status: String
@@ -7364,10 +10280,10 @@ type QuestionNode {
   urlManager: JSONString
 }
 
-type QuestionSolveSessionNode {
-  question: QuestionNode!
-  time: DateTime
-  wrongAttempts: Int!
+type QuestionSatisfactionSurveyNode {
+  leetcoinAmount: Int!
+  showSurvey: Boolean!
+  surveyJson: JSONString
 }
 
 type QuestionSolutionsNode {
@@ -7376,10 +10292,19 @@ type QuestionSolutionsNode {
   totalNum: Int
 }
 
+type QuestionSolveSessionNode {
+  question: QuestionNode!
+  time: DateTime
+  wrongAttempts: Int!
+}
+
 type QuestionTagNode {
   createdAt: DateTime!
   id: ID!
-  "Deprecated in Tag System. Still used by old products."
+
+  """
+  Deprecated in Tag System. Still used by old products.
+  """
   isEnabled: Boolean!
   keywords: [String!]!
   name: String!
@@ -7394,9 +10319,13 @@ type QuestionTagStatsNode {
   title: String!
 }
 
-"quit a study plan"
+"""
+quit a study plan
+"""
 type QuitStudyPlan {
-  "whether delete this progress record"
+  """
+  whether delete this progress record
+  """
   deleted: Boolean!
   ok: Boolean!
   progressId: String!
@@ -7410,17 +10339,17 @@ type RankingNode {
   user: UserNode
 }
 
+type RateArticle {
+  error: String
+  ok: Boolean
+  scoreResult: Int
+}
+
 type RatingNode {
   average: Decimal!
   count: Int!
   id: ID!
   userRating: UserRatingNode
-}
-
-type RateArticle {
-  error: String
-  ok: Boolean
-  scoreResult: Int
 }
 
 type RawQuestionNode {
@@ -7435,6 +10364,15 @@ type RawQuestionNode {
   translatedTitle: String
 }
 
+type RecordABExperimentEvent {
+  error: String
+  ok: Boolean!
+}
+
+type RejectContestReports {
+  rejectedReports: [ContestReportNode!]!
+}
+
 type RejectContribution {
   contribution(id: ID): ContributionNode
   error: String
@@ -7446,21 +10384,15 @@ type RemoveFavoriteFromMyCollectionV2 {
   ok: Boolean!
 }
 
-type RecordABExperimentEvent {
+type RemoveQuestionFromFavorite {
   error: String
-  ok: Boolean!
+  favoriteIdHash: String
+  ok: Boolean
+  questionId: String
+  userName: String
 }
 
 type RemoveQuestionFromFavoriteV2 {
-  error: String
-  ok: Boolean!
-}
-
-type RejectContestReports {
-  rejectedReports: [ContestReportNode!]!
-}
-
-type ReorderFavoriteQuestionV2 {
   error: String
   ok: Boolean!
 }
@@ -7469,12 +10401,9 @@ type RemoveUsersFromInternalContest {
   ok: Boolean
 }
 
-type RemoveQuestionFromFavorite {
+type ReorderFavoriteQuestionV2 {
   error: String
-  favoriteIdHash: String
-  ok: Boolean
-  questionId: String
-  userName: String
+  ok: Boolean!
 }
 
 type ReportInfoNode {
@@ -7529,37 +10458,6 @@ type RewardPost {
   post: PostNode
 }
 
-type RunDebuggerCommand {
-  session: DebugSessionNode!
-  taskId: String!
-}
-
-type SampleCodeNode {
-  code: String!
-  hasNext: Boolean!
-  hasPrevious: Boolean!
-}
-
-type SchoolNode {
-  colloquial: String!
-  id: ID!
-  name: String!
-  slug: String!
-}
-
-type SaveSessionCode {
-  session: InterviewSessionNode
-}
-
-type ScoreNode {
-  category: ScoreCategory!
-  date: DateTime!
-  description: String!
-  extraInfo: String
-  id: ID!
-  score: Int!
-}
-
 type RewindNode {
   ageInDays: Int!
   attendedContestCount: Int!
@@ -7592,6 +10490,43 @@ type RewindNode {
   year: Int!
 }
 
+type RuleNode {
+  difficultyNames: [String]!
+  knowledgeNames: [String]!
+  languageName: String!
+}
+
+type RunDebuggerCommand {
+  session: DebugSessionNode!
+  taskId: String!
+}
+
+type SampleCodeNode {
+  code: String!
+  hasNext: Boolean!
+  hasPrevious: Boolean!
+}
+
+type SaveSessionCode {
+  session: InterviewSessionNode
+}
+
+type SchoolNode {
+  colloquial: String!
+  id: ID!
+  name: String!
+  slug: String!
+}
+
+type ScoreNode {
+  category: ScoreCategory!
+  date: DateTime!
+  description: String!
+  extraInfo: String
+  id: ID!
+  score: Int!
+}
+
 type ScriptNode {
   content: String!
   creationDate: DateTime!
@@ -7600,12 +10535,6 @@ type ScriptNode {
   inputSample: String!
   name: String!
   updationDate: DateTime!
-}
-
-type RuleNode {
-  difficultyNames: [String]!
-  knowledgeNames: [String]!
-  languageName: String!
 }
 
 type SearchMetaNode {
@@ -7648,9 +10577,17 @@ type SetNotificationSetting {
   ok: Boolean
 }
 
-"whether hide current user rank info on rank boards"
+"""
+whether hide current user rank info on rank boards
+"""
 type SetVisibleOnPlanRank {
   ok: Boolean!
+}
+
+type ShareEventNode {
+  endDate: Date!
+  hasUserSharedEvent: Boolean!
+  startDate: Date!
 }
 
 type SiteAnnouncementNode {
@@ -7661,10 +10598,13 @@ type SiteAnnouncementNode {
   whitelistUrls: String
 }
 
-type ShareEventNode {
-  endDate: Date!
-  hasUserSharedEvent: Boolean!
-  startDate: Date!
+type SkillTagNode {
+  name: String!
+}
+
+type SocialAccountNode {
+  accountProvider: String!
+  profileLink: String
 }
 
 type SocialLoginNode {
@@ -7672,18 +10612,10 @@ type SocialLoginNode {
   loginUrl: String
 }
 
-type SkillTagNode {
-  name: String!
-}
-
 type SolutionTagNode {
   count: Int!
   name: String!
   slug: String!
-}
-
-type StartProgress {
-  progress: PlanProgressNode
 }
 
 type SponsorNode {
@@ -7696,19 +10628,13 @@ type SponsorNode {
   website: String!
 }
 
-type SocialAccountNode {
-  accountProvider: String!
-  profileLink: String
+type StartProgress {
+  progress: PlanProgressNode
 }
 
 type StartSession {
   session: DebugSessionNode!
   taskId: String!
-}
-
-type StoreAdminCreateOrder {
-  error: String
-  ok: Boolean
 }
 
 type StoreAddressNode {
@@ -7725,6 +10651,37 @@ type StoreAddressNode {
   storeorderSet: [StoreOrderNode!]!
   updationDate: DateTime!
   user: PrivateContestUserNode
+}
+
+type StoreAdminCreateOrder {
+  error: String
+  ok: Boolean
+}
+
+type StoreItemNode {
+  available: Boolean!
+  buckydropConfig: String
+  creationDate: DateTime!
+  description: String!
+  disabledMsg: String
+  displayConfig: JSONString
+  fields: [String!]
+  hideIfPaid: Boolean!
+  id: ID!
+  img: String
+  imgSlug: String
+  itemSlug: String!
+  name: String!
+  needsProcessing: Boolean!
+  needsShipping: Boolean!
+  order: Int!
+  promoImg: String
+  promoImgSlug: String
+  show: Boolean
+  storeorderSet: [StoreOrderNode!]!
+  updationDate: DateTime!
+  value: Int!
+  visible: Boolean!
 }
 
 type StoreOrderEdit {
@@ -7756,32 +10713,6 @@ type StoreOrderSave {
   success: Boolean!
 }
 
-type StoreItemNode {
-  available: Boolean!
-  buckydropConfig: String
-  creationDate: DateTime!
-  description: String!
-  disabledMsg: String
-  displayConfig: JSONString
-  fields: [String!]
-  hideIfPaid: Boolean!
-  id: ID!
-  img: String
-  imgSlug: String
-  itemSlug: String!
-  name: String!
-  needsProcessing: Boolean!
-  needsShipping: Boolean!
-  order: Int!
-  promoImg: String
-  promoImgSlug: String
-  show: Boolean
-  storeorderSet: [StoreOrderNode!]!
-  updationDate: DateTime!
-  value: Int!
-  visible: Boolean!
-}
-
 type StreakCounterNode {
   currentDayCompleted: Boolean!
   daysSkipped: Int!
@@ -7810,17 +10741,6 @@ type StudyPlanCatalogNode {
   slug: String!
 }
 
-type StudyPlanFeatureNode {
-  cover: String!
-  coverBackgroundColor: String!
-  highlight: String!
-  name: String!
-  onGoing: Boolean!
-  premiumOnly: Boolean!
-  questionNum: Int!
-  slug: String!
-}
-
 type StudyPlanDetailNode {
   allowedLanguages: [String!]!
   award: MedalNode
@@ -7841,6 +10761,17 @@ type StudyPlanDetailNode {
   slug: String!
   staticCoverPicture: String!
   threeDimensionUrl: String
+}
+
+type StudyPlanFeatureNode {
+  cover: String!
+  coverBackgroundColor: String!
+  highlight: String!
+  name: String!
+  onGoing: Boolean!
+  premiumOnly: Boolean!
+  questionNum: Int!
+  slug: String!
 }
 
 type StudyPlanListNode {
@@ -7877,27 +10808,6 @@ type SubmissionCountNode {
   submissions: Int!
 }
 
-type SubmissionDumpNode {
-  flagType: SubmissionFlagTypeEnum
-  hasNotes: Boolean
-  id: ID
-  isPending: String
-  lang: String
-  langName: String
-  langVerboseName: String
-  memory: String
-  notes: String
-  runtime: String
-  status: Int
-  statusDisplay: String
-  time: String
-  timestamp: String
-  title: String
-  titleSlug: String
-  topicTags: [TopicTagNode]
-  url: String
-}
-
 type SubmissionDetailsNode {
   code: String!
   codeOutput: String
@@ -7931,10 +10841,35 @@ type SubmissionDetailsNode {
   user: UserNode!
 }
 
+type SubmissionDumpNode {
+  flagType: SubmissionFlagTypeEnum
+  hasNotes: Boolean
+  id: ID
+  isPending: String
+  lang: String
+  langName: String
+  langVerboseName: String
+  memory: String
+  notes: String
+  runtime: String
+  status: Int
+  statusDisplay: String
+  time: String
+  timestamp: String
+  title: String
+  titleSlug: String
+  topicTags: [TopicTagNode]
+  url: String
+}
+
 type SubmissionListNode {
   hasNext: Boolean
   lastKey: String
   submissions: [SubmissionDumpNode]
+}
+
+type SubmissionNoteComplexity {
+  ok: Boolean
 }
 
 type SubmissionStatusNode {
@@ -7942,16 +10877,12 @@ type SubmissionStatusNode {
   name: String
 }
 
-type SubmissionNoteComplexity {
+type SubmissionVoteComplexity {
   ok: Boolean
 }
 
 type SubmitCancelSurvey {
   error: String
-}
-
-type SubmissionVoteComplexity {
-  ok: Boolean
 }
 
 type SubmitQuestionSatisfactionSurvey {
@@ -7963,13 +10894,20 @@ type SubmitQuestionSuggestion {
   msg: String
 }
 
+type SubmitSubscriptionSurvey {
+  error: String
+}
+
 type SubmitSurveyV2 {
   error: String
   ok: Boolean!
 }
 
-type SubmitSubscriptionSurvey {
+type SubscribeTopic {
   error: String
+  ok: Boolean
+  subscribe: Boolean
+  topic: TopicNode
 }
 
 type SubscriptionPricingNode {
@@ -7984,26 +10922,19 @@ type SubscriptionPricingNode {
   proration: Float!
 }
 
-type SubscribeTopic {
-  error: String
-  ok: Boolean
-  subscribe: Boolean
-  topic: TopicNode
-}
-
 type SubscriptionReferralNode {
   link: String!
   referredCount: Int!
 }
 
-type SubscriptionViewCountIncrement {
-  error: String
-  ok: Boolean
-}
-
 type SubscriptionsNode {
   monthlyPrice: SubscriptionPricingNode!
   yearlyPrice: SubscriptionPricingNode!
+}
+
+type SubscriptionViewCountIncrement {
+  error: String
+  ok: Boolean
 }
 
 type SurveyNode {
@@ -8064,6 +10995,15 @@ type TagCategoryNode {
   updationDate: DateTime!
 }
 
+type TagGroupNode {
+  creationDate: DateTime!
+  id: ID!
+  name: String!
+  slug: String!
+  tagcategorySet: [TagCategoryNode!]!
+  updationDate: DateTime!
+}
+
 type TagNode {
   companySet: [InterviewCompanyNode!]!
   createdAt: DateTime!
@@ -8074,13 +11014,25 @@ type TagNode {
   id: ID!
   imgUrl: String
   interviewTagsCategories: [InterviewTagsCategoryNode!]!
-  "Deprecated in Tag System. Still used by old products."
+
+  """
+  Deprecated in Tag System. Still used by old products.
+  """
   isEnabled: Boolean!
-  "Whether this is a standard tag or not"
+
+  """
+  Whether this is a standard tag or not
+  """
   isStandard: Boolean!
-  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
+
+  """
+  Whether this tag is enabled or not. If not enabled, we NEVER show it to our users.
+  """
   isTagEnabled: Boolean!
-  "Whether user can select this tag or not"
+
+  """
+  Whether user can select this tag or not
+  """
   isUserSelectable: Boolean!
   keywords: JSONString!
   name: String!
@@ -8089,17 +11041,11 @@ type TagNode {
   questionapplicationSet: [ApplicationNode!]!
   slug: String!
   tagCategories: [TagCategoryNode!]!
-  "Deprecated in Tag System. Still used by old products."
-  tagType: TagTypeNode
-}
 
-type TagGroupNode {
-  creationDate: DateTime!
-  id: ID!
-  name: String!
-  slug: String!
-  tagcategorySet: [TagCategoryNode!]!
-  updationDate: DateTime!
+  """
+  Deprecated in Tag System. Still used by old products.
+  """
+  tagType: TagTypeNode
 }
 
 type TagProblemCountsCategoryNode {
@@ -8147,67 +11093,44 @@ type ToggleFavoriteSolution {
   ok: Boolean
 }
 
-type TogglePinTopic {
-  error: String
-  ok: Boolean
-  topic: TopicNode
-}
-
 type TogglePinComment {
   comment: CommentNode
   error: String
   ok: Boolean
 }
 
+type TogglePinTopic {
+  error: String
+  ok: Boolean
+  topic: TopicNode
+}
+
 type TopicConnection {
-  "Contains the nodes in this connection."
+  """
+  Contains the nodes in this connection.
+  """
   edges: [TopicEdge]!
-  "Pagination data for this connection."
+
+  """
+  Pagination data for this connection.
+  """
   pageInfo: PageInfo!
   totalNum: Int
 }
 
-"A Relay edge containing a `Topic` and its cursor."
+"""
+A Relay edge containing a `Topic` and its cursor.
+"""
 type TopicEdge {
-  "A cursor for use in pagination"
+  """
+  A cursor for use in pagination
+  """
   cursor: String!
-  "The item at the end of the edge"
+
+  """
+  The item at the end of the edge
+  """
   node: TopicRelayNode
-}
-
-type TopicRelayNode {
-  challengequestionSet: [ChallengeQuestionNode!]!
-  commentCount: Int!
-  commentSet: [CommentNode!]!
-  contestSet: [ContestNode!]!
-  id: ID!
-  lastComment: CommentNode
-  nodebbTid: Int!
-  pinned: Boolean!
-  pinnedAt: DateTime
-  post: PostNode!
-  questionTitle: String
-  tags: [DiscussTopicTagNode!]!
-  title: String!
-  topLevelCommentCount: Int!
-  url: String!
-  viewCount: Int!
-}
-
-type TopicTagConnection {
-  "Contains the nodes in this connection."
-  edges: [TopicTagEdge]!
-  "Pagination data for this connection."
-  pageInfo: PageInfo!
-  totalNum: Int
-}
-
-"A Relay edge containing a `TopicTag` and its cursor."
-type TopicTagEdge {
-  "A cursor for use in pagination"
-  cursor: String!
-  "The item at the end of the edge"
-  node: TopicTagNode
 }
 
 type TopicNode {
@@ -8236,6 +11159,104 @@ type TopicNode {
   viewCount: Int!
 }
 
+type TopicRelayNode {
+  challengequestionSet: [ChallengeQuestionNode!]!
+  commentCount: Int!
+  commentSet: [CommentNode!]!
+  contestSet: [ContestNode!]!
+  id: ID!
+  lastComment: CommentNode
+  nodebbTid: Int!
+  pinned: Boolean!
+  pinnedAt: DateTime
+  post: PostNode!
+  questionTitle: String
+  tags: [DiscussTopicTagNode!]!
+  title: String!
+  topLevelCommentCount: Int!
+  url: String!
+  viewCount: Int!
+}
+
+type TopicTagConnection {
+  """
+  Contains the nodes in this connection.
+  """
+  edges: [TopicTagEdge]!
+
+  """
+  Pagination data for this connection.
+  """
+  pageInfo: PageInfo!
+  totalNum: Int
+}
+
+"""
+A Relay edge containing a `TopicTag` and its cursor.
+"""
+type TopicTagEdge {
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge
+  """
+  node: TopicTagNode
+}
+
+type TopicTagNode {
+  companySet: [InterviewCompanyNode!]!
+  createdAt: DateTime!
+  discussTopicTag: [DiscussTopicTagNode!]!
+  favorites: [FeaturedQuestionListNode!]!
+  favoriteSet: [FeaturedQuestionListNode!]!
+  frequencies: String
+  hotScore: Int
+
+  """
+  The ID of the object.
+  """
+  id: ID!
+  imgUrl: String
+  interviewTagsCategories: [InterviewTagsCategoryNode!]!
+
+  """
+  Deprecated in Tag System. Still used by old products.
+  """
+  isEnabled: Boolean!
+
+  """
+  Whether this is a standard tag or not
+  """
+  isStandard: Boolean!
+
+  """
+  Whether this tag is enabled or not. If not enabled, we NEVER show it to our users.
+  """
+  isTagEnabled: Boolean!
+
+  """
+  Whether user can select this tag or not
+  """
+  isUserSelectable: Boolean!
+  keywords: JSONString!
+  name: String!
+  questionapplicationSet: [ApplicationNode!]!
+  questionIds: [Int]
+  questions: [QuestionNode!]
+  slug: String!
+  tagCategories: [TagCategoryNode!]!
+  tagId: Int!
+
+  """
+  Deprecated in Tag System. Still used by old products.
+  """
+  tagType: TagTypeNode
+  translatedName: String
+}
+
 type TrialRecordListNode {
   nodes: [TrialRecordNode!]!
   totalNum: Int!
@@ -8254,43 +11275,6 @@ type TrialRecordNode {
   trialDays: Int!
   userInfo: ManagementUserSimpleNode!
   uuid: ID!
-}
-
-type TopicTagNode {
-  companySet: [InterviewCompanyNode!]!
-  createdAt: DateTime!
-  discussTopicTag: [DiscussTopicTagNode!]!
-  favorites: [FeaturedQuestionListNode!]!
-  favoriteSet: [FeaturedQuestionListNode!]!
-  frequencies: String
-  hotScore: Int
-  "The ID of the object."
-  id: ID!
-  imgUrl: String
-  interviewTagsCategories: [InterviewTagsCategoryNode!]!
-  "Deprecated in Tag System. Still used by old products."
-  isEnabled: Boolean!
-  "Whether this is a standard tag or not"
-  isStandard: Boolean!
-  "Whether this tag is enabled or not. If not enabled, we NEVER show it to our users."
-  isTagEnabled: Boolean!
-  "Whether user can select this tag or not"
-  isUserSelectable: Boolean!
-  keywords: JSONString!
-  name: String!
-  questionapplicationSet: [ApplicationNode!]!
-  questionIds: [Int]
-  questions: [QuestionNode!]
-  slug: String!
-  tagCategories: [TagCategoryNode!]!
-  tagId: Int!
-  "Deprecated in Tag System. Still used by old products."
-  tagType: TagTypeNode
-  translatedName: String
-}
-
-type UPCSubmitResponse {
-  ok: Boolean
 }
 
 type UmApplyForPremiumTrial {
@@ -8313,12 +11297,12 @@ type UmCreateScore {
   ok: Boolean
 }
 
-type UmEditIPStatus {
+type UmDeleteUserCreditCard {
   error: String
   ok: Boolean
 }
 
-type UmDeleteUserCreditCard {
+type UmEditIPStatus {
   error: String
   ok: Boolean
 }
@@ -8328,15 +11312,15 @@ type UmSendVerificationEmail {
   ok: Boolean
 }
 
+type UmSetEmailPrimary {
+  error: String
+  ok: Boolean
+}
+
 type UnlockFavorite {
   error: String
   ok: Boolean!
   unlockQuestion: FavoriteQuestionNode
-}
-
-type UmSetEmailPrimary {
-  error: String
-  ok: Boolean
 }
 
 type UnlockShareEvent {
@@ -8348,6 +11332,16 @@ type UnpublishContestAnnouncement {
   ok: Boolean
 }
 
+type UpcomingBadgeNode {
+  icon: String!
+  name: String!
+  progress: Int!
+}
+
+type UPCSubmitResponse {
+  ok: Boolean
+}
+
 type UpcV2SubmitSurvey {
   ok: Boolean!
 }
@@ -8355,12 +11349,6 @@ type UpcV2SubmitSurvey {
 type UpcV2TagNode {
   name: String!
   slug: String!
-}
-
-type UpcomingBadgeNode {
-  icon: String!
-  name: String!
-  progress: Int!
 }
 
 type UpdateAnnualReportViewStatus {
@@ -8392,6 +11380,11 @@ type UpdateEducation {
   record: EducationRecordNode
 }
 
+type UpdateEmailPrimary {
+  error: String
+  ok: Boolean
+}
+
 type UpdateFavoriteEmojiBackgroundV2 {
   error: String
   ok: Boolean!
@@ -8412,9 +11405,10 @@ type UpdateInvalidUsername {
   ok: Boolean
 }
 
-type UpdatePassword {
-  errors: [PasswordErrorEnum]!
+type UpdateNote {
+  error: String
   ok: Boolean
+  question: QuestionNode
 }
 
 type UpdateOccupation {
@@ -8423,12 +11417,12 @@ type UpdateOccupation {
   record: OccupationRecordNode
 }
 
-type UpdatePlayground {
-  error: String
+type UpdatePassword {
+  errors: [PasswordErrorEnum]!
   ok: Boolean
 }
 
-type UpdateEmailPrimary {
+type UpdatePlayground {
   error: String
   ok: Boolean
 }
@@ -8443,13 +11437,18 @@ type UpdateProblematicPost {
   ok: Boolean
 }
 
-type UpdatePublicBadge {
-  activeBadge: UserBadgeNode
-}
-
 type UpdateProfile {
   error: String
   ok: Boolean
+}
+
+type UpdateProfileV3 {
+  errors: [ProfileUpdateErrorEnum]!
+  ok: Boolean
+}
+
+type UpdatePublicBadge {
+  activeBadge: UserBadgeNode
 }
 
 type UpdateSolution {
@@ -8458,20 +11457,19 @@ type UpdateSolution {
   topic: TopicNode
 }
 
-type UpdateProfileV3 {
-  errors: [ProfileUpdateErrorEnum]!
-  ok: Boolean
-}
-
 type UpdateSubmissionNote {
   error: String
   ok: Boolean
 }
 
-type UpdateNote {
+type UpdateSyncedCode {
+  message: String
+  ok: Boolean
+}
+
+type UpdateTeamMember {
   error: String
   ok: Boolean
-  question: QuestionNode
 }
 
 type UpdateTopic {
@@ -8480,14 +11478,14 @@ type UpdateTopic {
   topic: TopicNode
 }
 
-type UpdateSyncedCode {
-  message: String
-  ok: Boolean
-}
-
 type UpdateTopicWithCategory {
   error: String
   topic: TopicNode
+}
+
+type UpdateUserAvatarStatus {
+  error: String
+  ok: Boolean
 }
 
 type UpdateUsername {
@@ -8498,9 +11496,10 @@ type UpdateUsername {
   warning: String
 }
 
-type UpdateUserAvatarStatus {
-  error: String
-  ok: Boolean
+type UserAccountFrozenInfoNode {
+  notEligibleToDeleteAccountReasons: [String]
+  planDeleteDate: Date
+  userFrozenStatus: AccountFrozenStatus!
 }
 
 type UserBadgeNode {
@@ -8521,6 +11520,11 @@ type UserBadgeNode {
   userCount: Int!
 }
 
+type UserBanTypeNode {
+  slug: String
+  typeName: String
+}
+
 type UserCalendarNode {
   activeYears: [Int]!
   dccBadges: [CalendarBadgeNode!]!
@@ -8529,22 +11533,6 @@ type UserCalendarNode {
   totalActiveDays: Int!
   user: UserNode!
   year: Int!
-}
-
-type UpdateTeamMember {
-  error: String
-  ok: Boolean
-}
-
-type UserBanTypeNode {
-  slug: String
-  typeName: String
-}
-
-type UserAccountFrozenInfoNode {
-  notEligibleToDeleteAccountReasons: [String]
-  planDeleteDate: Date
-  userFrozenStatus: AccountFrozenStatus!
 }
 
 type UserContestRankingHistoryNode {
@@ -8602,11 +11590,6 @@ type UserManagementLogNode {
   operator: ManagementUserSimpleNode!
 }
 
-type UserNotificationNode {
-  lastModified: Int
-  numUnread: Int
-}
-
 type UserNode {
   activeBadge: UserBadgeNode
   badges: [UserBadgeNode!]!
@@ -8619,7 +11602,10 @@ type UserNode {
   hasChangedUsernameRecently: Boolean
   hasUsablePassword: Boolean
   id: ID
-  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
   isActive: Boolean!
   isCurrentUserPremium: Boolean
   isCurrentUserVerified: Boolean
@@ -8641,7 +11627,10 @@ type UserNode {
   twitterUrl: String
   upcomingBadges: [UpcomingBadgeNode!]!
   userCalendar(year: Int): UserCalendarNode!
-  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+
+  """
+  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+  """
   username: String!
   yearJoined: Int!
 }
@@ -8686,16 +11675,25 @@ type UserNodeAdminOnly {
   hasChangedUsernameRecently: Boolean
   hasUsablePassword: Boolean
   id: ID
-  "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
   isActive: Boolean!
   isCurrentUserPremium: Boolean
   isCurrentUserVerified: Boolean
   isDiscussAdmin: Boolean
   isDiscussStaff: Boolean
   isPremium: Boolean!
-  "Designates whether the user can log into this admin site."
+
+  """
+  Designates whether the user can log into this admin site.
+  """
   isStaff: Boolean!
-  "Designates that this user has all permissions without explicitly assigning them."
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
   isSuperuser: Boolean!
   joinedTimestamp: Int!
   languageProblemCount: [LanguageProblemCountNode!]
@@ -8762,7 +11760,10 @@ type UserNodeAdminOnly {
   userCalendar(year: Int): UserCalendarNode!
   userIps: [UserIPNode]!
   useripSet: [UserIPNode!]!
-  "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+
+  """
+  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+  """
   username: String!
   userratingSet: [UserRatingNode!]!
   userskilltagSet: [UserSkillTagNode!]!
@@ -8772,12 +11773,9 @@ type UserNodeAdminOnly {
   yearJoined: Int!
 }
 
-type UserQuestionProgressNodeV2 {
-  numAcceptedQuestions: [QuestionCountNode!]!
-  numFailedQuestions: [QuestionCountNode!]!
-  numUntouchedQuestions: [QuestionCountNode!]!
-  "用户击败其他用户的题目百分比"
-  userSessionBeatsPercentage: [LevelBeatPercentageMixin!]!
+type UserNotificationNode {
+  lastModified: Int
+  numUnread: Int
 }
 
 type UserProfileNode {
@@ -8821,12 +11819,15 @@ type UserProfileNode {
   yearsOfExperience: Int
 }
 
-type UserRankInfoNode {
-  currentRank: Int!
-  finishedQuestionNum: Int!
-  hideOnBoard: Boolean!
-  previousRank: Int!
-  userInfo: PlanBriefUserNode!
+type UserQuestionProgressNodeV2 {
+  numAcceptedQuestions: [QuestionCountNode!]!
+  numFailedQuestions: [QuestionCountNode!]!
+  numUntouchedQuestions: [QuestionCountNode!]!
+
+  """
+  用户击败其他用户的题目百分比
+  """
+  userSessionBeatsPercentage: [LevelBeatPercentageMixin!]!
 }
 
 type UserRankInfoList {
@@ -8835,25 +11836,17 @@ type UserRankInfoList {
   userRankInfos: [UserRankInfoNode!]!
 }
 
+type UserRankInfoNode {
+  currentRank: Int!
+  finishedQuestionNum: Int!
+  hideOnBoard: Boolean!
+  previousRank: Int!
+  userInfo: PlanBriefUserNode!
+}
+
 type UserRatingNode {
   id: ID!
   score: Int!
-}
-
-type UserSubmitStatsNode {
-  acSubmissionNum: [SubmissionCountNode!]!
-  totalSubmissionNum: [SubmissionCountNode!]!
-}
-
-type UserUploadSchoolLogo {
-  error: String
-  ok: Boolean!
-}
-
-type UserWeeklyTaskRecordListNode {
-  planFinishDate: Date
-  planWeeklyTaskSetDate: Date
-  userWeeklyTaskRecords: [UserWeeklyTaskRecordNode!]!
 }
 
 type UserReportNode {
@@ -8872,13 +11865,35 @@ type UserSkillTagNode {
   user: PrivateContestUserNode!
 }
 
+type UserSubmitStatsNode {
+  acSubmissionNum: [SubmissionCountNode!]!
+  totalSubmissionNum: [SubmissionCountNode!]!
+}
+
+type UserUploadSchoolLogo {
+  error: String
+  ok: Boolean!
+}
+
+type UserWeeklyTaskRecordListNode {
+  planFinishDate: Date
+  planWeeklyTaskSetDate: Date
+  userWeeklyTaskRecords: [UserWeeklyTaskRecordNode!]!
+}
+
 type UserWeeklyTaskRecordNode {
   date: Date!
   expectedFinishedQuestionNums: Int!
   finishedQuestionNums: Int!
-  "Whether finish enough questions no matter user has schedule on the date"
+
+  """
+  Whether finish enough questions no matter user has schedule on the date
+  """
   hasCompletedWeeklyTask: Boolean!
-  "Whether user has weekly task schedule on the date"
+
+  """
+  Whether user has weekly task schedule on the date
+  """
   hasWeeklyTaskSchedule: Boolean!
 }
 
@@ -8908,10 +11923,15 @@ type ValueAddedContentNode {
 }
 
 type VideoNode {
-  "Collapsible HTML under video"
+  """
+  Collapsible HTML under video
+  """
   content: String
   editLink: String
-  "Embedded HTML video"
+
+  """
+  Embedded HTML video
+  """
   html: String!
   id: ID!
   paidOnly: Boolean!
@@ -8955,76 +11975,4 @@ type WebPageNode {
 type WordListTypeNode {
   name: String!
   slug: String!
-}
-
-"""
-A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.
-
-In some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.
-"""
-type __Directive {
-  args: [__InputValue!]!
-  description: String
-  locations: [__DirectiveLocation!]!
-  name: String!
-  onField: Boolean!
-  onFragment: Boolean!
-  onOperation: Boolean!
-}
-
-"One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string."
-type __EnumValue {
-  deprecationReason: String
-  description: String
-  isDeprecated: Boolean!
-  name: String!
-}
-
-"Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type."
-type __Field {
-  args: [__InputValue!]!
-  deprecationReason: String
-  description: String
-  isDeprecated: Boolean!
-  name: String!
-  type: __Type!
-}
-
-"Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value."
-type __InputValue {
-  defaultValue: String
-  description: String
-  name: String!
-  type: __Type!
-}
-
-"A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations."
-type __Schema {
-  "A list of all directives supported by this server."
-  directives: [__Directive!]!
-  "If this server supports mutation, the type that mutation operations will be rooted at."
-  mutationType: __Type
-  "The type that query operations will be rooted at."
-  queryType: __Type!
-  "If this server support subscription, the type that subscription operations will be rooted at."
-  subscriptionType: __Type
-  "A list of all types supported by this server."
-  types: [__Type!]!
-}
-
-"""
-The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.
-
-Depending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.
-"""
-type __Type {
-  description: String
-  enumValues(includeDeprecated: Boolean = false): [__EnumValue!]
-  fields(includeDeprecated: Boolean = false): [__Field!]
-  inputFields: [__InputValue!]
-  interfaces: [__Type!]
-  kind: __TypeKind!
-  name: String
-  ofType: __Type
-  possibleTypes: [__Type!]
 }
