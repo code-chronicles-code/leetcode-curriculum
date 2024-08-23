@@ -391,35 +391,7 @@ final class VirtualList<T> extends AbstractList<T> {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: Java gcd(int,int) 1`] = `
-"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
-// Adventure Pack commit fake-commit-hash
-// Running at: https://example.com/
-
-final class AP {
-  private AP() {}
-
-  public static int gcd(int a, int b) {
-    if (a < 0 || b < 0) {
-      throw new IllegalArgumentException(
-        "Can only find the GCD of non-negative integers!"
-      );
-    }
-
-    while (b != 0) {
-      int tmp = b;
-      b = a % b;
-      a = tmp;
-    }
-
-    return a;
-  }
-}
-
-/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
-`;
-
-exports[`App can equip single goody: Java integerDigits() 1`] = `
+exports[`App can equip single goody: Java digits(int) 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
@@ -478,26 +450,69 @@ final class AP {
   private AP() {}
 
   /**
-   * Get the digits in the given integer. For example, in the given integer 8725, digits are
-   * [8, 7, 2, 5].
-   * @param number Any number of interest.
-   * @return The {@link IterableIntStream stream} of digits in the given integer.
+   * Get the digits in the given integer. The digits are returned as an
+   * {@link IterableIntStream integer stream} with the least significant digit as the first element
+   * in the stream. For example, for integer 27363, [3,6,3,7,2] is returned.
+   * @param number Integer of interest.
+   * @return The {@link IterableIntStream stream} of digits.
+   * @throws Exception In case of negative integers.
    */
-  public static IterableIntStream integerDigits(int number) {
-    var digitsInReverse = IntStream.iterate(
-      number,
-      n1 -> n1 != 0,
-      n1 -> n1 / 10
-    )
-      .map(n1 -> n1 % 10)
-      .toArray();
+  public static IterableIntStream digits(int number) throws Exception {
+    return digits(number, 10);
+  }
 
-    var streamBuilder = IntStream.builder();
-    for (int i = digitsInReverse.length - 1; i >= 0; i--) {
-      streamBuilder.add(digitsInReverse[i]);
+  /**
+   * Get the digits in the given integer for the given radix value. The digits are returned as an
+   * {@link IterableIntStream integer stream} with the least significant digit as the first element
+   * in the stream. For example, for integer 27363, [3,6,3,7,2] is returned with radix = 10.
+   * @param number Integer of interest.
+   * @param radix Radix value of interest.
+   * @return The {@link IterableIntStream stream} of digits.
+   * @throws Exception In case of negative integers or radix less than 2.
+   */
+  public static IterableIntStream digits(int number, int radix)
+    throws Exception {
+    if (number < 0) throw new Exception("Please provide a positive integer.");
+
+    if (radix < 2) throw new Exception(
+      "Please provide the radix greater than or equal to 2."
+    );
+
+    return number == 0
+      ? IterableIntStream.from(IntStream.of(0))
+      : IterableIntStream.from(
+        IntStream.iterate(number, num -> num != 0, num -> num / radix).map(
+          num -> num % radix
+        )
+      );
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: Java gcd(int,int) 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+final class AP {
+  private AP() {}
+
+  public static int gcd(int a, int b) {
+    if (a < 0 || b < 0) {
+      throw new IllegalArgumentException(
+        "Can only find the GCD of non-negative integers!"
+      );
     }
 
-    return IterableIntStream.from(streamBuilder.build());
+    while (b != 0) {
+      int tmp = b;
+      b = a % b;
+      a = tmp;
+    }
+
+    return a;
   }
 }
 

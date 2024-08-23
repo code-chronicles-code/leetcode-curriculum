@@ -359,6 +359,56 @@ final class VirtualList<T> extends AbstractList<T> {
 }"
 `;
 
+exports[`App can render goody: Java digits(int) 1`] = `
+"package digits_int;
+
+import iterable_int_stream.IterableIntStream;
+
+import java.util.stream.IntStream;
+
+final class AP {
+  private AP() {}
+
+  /**
+   * Get the digits in the given integer. The digits are returned as an
+   * {@link IterableIntStream integer stream} with the least significant digit as the first element
+   * in the stream. For example, for integer 27363, [3,6,3,7,2] is returned.
+   * @param number Integer of interest.
+   * @return The {@link IterableIntStream stream} of digits.
+   * @throws Exception In case of negative integers.
+   */
+  public static IterableIntStream digits(int number) throws Exception {
+    return digits(number, 10);
+  }
+
+  /**
+   * Get the digits in the given integer for the given radix value. The digits are returned as an
+   * {@link IterableIntStream integer stream} with the least significant digit as the first element
+   * in the stream. For example, for integer 27363, [3,6,3,7,2] is returned with radix = 10.
+   * @param number Integer of interest.
+   * @param radix Radix value of interest.
+   * @return The {@link IterableIntStream stream} of digits.
+   * @throws Exception In case of negative integers or radix less than 2.
+   */
+  public static IterableIntStream digits(int number, int radix)
+    throws Exception {
+    if (number < 0) throw new Exception("Please provide a positive integer.");
+
+    if (radix < 2) throw new Exception(
+      "Please provide the radix greater than or equal to 2."
+    );
+
+    return number == 0
+      ? IterableIntStream.from(IntStream.of(0))
+      : IterableIntStream.from(
+        IntStream.iterate(number, num -> num != 0, num -> num / radix).map(
+          num -> num % radix
+        )
+      );
+  }
+}"
+`;
+
 exports[`App can render goody: Java gcd(int,int) 1`] = `
 "package gcd_int_int;
 
@@ -379,41 +429,6 @@ final class AP {
     }
 
     return a;
-  }
-}"
-`;
-
-exports[`App can render goody: Java integerDigits() 1`] = `
-"package integer_digits;
-
-import iterable_int_stream.IterableIntStream;
-
-import java.util.stream.IntStream;
-
-final class AP {
-  private AP() {}
-
-  /**
-   * Get the digits in the given integer. For example, in the given integer 8725, digits are
-   * [8, 7, 2, 5].
-   * @param number Any number of interest.
-   * @return The {@link IterableIntStream stream} of digits in the given integer.
-   */
-  public static IterableIntStream integerDigits(int number) {
-    var digitsInReverse = IntStream.iterate(
-      number,
-      n1 -> n1 != 0,
-      n1 -> n1 / 10
-    )
-      .map(n1 -> n1 % 10)
-      .toArray();
-
-    var streamBuilder = IntStream.builder();
-    for (int i = digitsInReverse.length - 1; i >= 0; i--) {
-      streamBuilder.add(digitsInReverse[i]);
-    }
-
-    return IterableIntStream.from(streamBuilder.build());
   }
 }"
 `;
