@@ -97,12 +97,16 @@ export async function outputGraphQLSchema(
 
       case "UNION": {
         invariantViolation(`Unsupported kind: ${typeInfo.kind}`);
+        // @ts-expect-error Unreachable code -- `invariantViolation` throws.
+        break;
       }
 
       case "LIST":
       case "NON_NULL":
       default: {
         invariantViolation(`Unexpected kind: ${typeInfo.kind}`);
+        // @ts-expect-error Unreachable code -- `invariantViolation` throws.
+        break;
       }
     }
   }

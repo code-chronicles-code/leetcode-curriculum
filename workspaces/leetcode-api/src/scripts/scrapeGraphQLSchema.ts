@@ -12,8 +12,8 @@ import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsy
 import { SCHEMA_FILE } from "../graphql-extraction/constants";
 import {
   fetchGraphQLTypeInformation,
-  LeetCodeGraphQLType,
   type InnerType,
+  type LeetCodeGraphQLType,
 } from "../fetchGraphQLTypeInformation";
 import { outputGraphQLSchema } from "../graphql-extraction/outputGraphQLSchema";
 import { readSeedGraphQLTypeNames } from "../graphql-extraction/readSeedGraphQLTypeNames";
