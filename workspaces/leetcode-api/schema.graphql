@@ -46,289 +46,133 @@ in fields, resolvers and input.
 """
 scalar UUID
 
-"""
-A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.
-"""
+"A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies."
 enum __DirectiveLocation {
-  """
-  Location adjacent to a query operation.
-  """
+  "Location adjacent to a query operation."
   QUERY
-
-  """
-  Location adjacent to a mutation operation.
-  """
+  "Location adjacent to a mutation operation."
   MUTATION
-
-  """
-  Location adjacent to a subscription operation.
-  """
+  "Location adjacent to a subscription operation."
   SUBSCRIPTION
-
-  """
-  Location adjacent to a field.
-  """
+  "Location adjacent to a field."
   FIELD
-
-  """
-  Location adjacent to a fragment definition.
-  """
+  "Location adjacent to a fragment definition."
   FRAGMENT_DEFINITION
-
-  """
-  Location adjacent to a fragment spread.
-  """
+  "Location adjacent to a fragment spread."
   FRAGMENT_SPREAD
-
-  """
-  Location adjacent to an inline fragment.
-  """
+  "Location adjacent to an inline fragment."
   INLINE_FRAGMENT
-
-  """
-  Location adjacent to a schema definition.
-  """
+  "Location adjacent to a schema definition."
   SCHEMA
-
-  """
-  Location adjacent to a scalar definition.
-  """
+  "Location adjacent to a scalar definition."
   SCALAR
-
-  """
-  Location adjacent to an object definition.
-  """
+  "Location adjacent to an object definition."
   OBJECT
-
-  """
-  Location adjacent to a field definition.
-  """
+  "Location adjacent to a field definition."
   FIELD_DEFINITION
-
-  """
-  Location adjacent to an argument definition.
-  """
+  "Location adjacent to an argument definition."
   ARGUMENT_DEFINITION
-
-  """
-  Location adjacent to an interface definition.
-  """
+  "Location adjacent to an interface definition."
   INTERFACE
-
-  """
-  Location adjacent to a union definition.
-  """
+  "Location adjacent to a union definition."
   UNION
-
-  """
-  Location adjacent to an enum definition.
-  """
+  "Location adjacent to an enum definition."
   ENUM
-
-  """
-  Location adjacent to an enum value definition.
-  """
+  "Location adjacent to an enum value definition."
   ENUM_VALUE
-
-  """
-  Location adjacent to an input object definition.
-  """
+  "Location adjacent to an input object definition."
   INPUT_OBJECT
-
-  """
-  Location adjacent to an input object field definition.
-  """
+  "Location adjacent to an input object field definition."
   INPUT_FIELD_DEFINITION
 }
 
-"""
-An enum describing what kind of type a given `__Type` is
-"""
+"An enum describing what kind of type a given `__Type` is"
 enum __TypeKind {
-  """
-  Indicates this type is a scalar.
-  """
+  "Indicates this type is a scalar."
   SCALAR
-
-  """
-  Indicates this type is an object. `fields` and `interfaces` are valid fields.
-  """
+  "Indicates this type is an object. `fields` and `interfaces` are valid fields."
   OBJECT
-
-  """
-  Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.
-  """
+  "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields."
   INTERFACE
-
-  """
-  Indicates this type is a union. `possibleTypes` is a valid field.
-  """
+  "Indicates this type is a union. `possibleTypes` is a valid field."
   UNION
-
-  """
-  Indicates this type is an enum. `enumValues` is a valid field.
-  """
+  "Indicates this type is an enum. `enumValues` is a valid field."
   ENUM
-
-  """
-  Indicates this type is an input object. `inputFields` is a valid field.
-  """
+  "Indicates this type is an input object. `inputFields` is a valid field."
   INPUT_OBJECT
-
-  """
-  Indicates this type is a list. `ofType` is a valid field.
-  """
+  "Indicates this type is a list. `ofType` is a valid field."
   LIST
-
-  """
-  Indicates this type is a non-null. `ofType` is a valid field.
-  """
+  "Indicates this type is a non-null. `ofType` is a valid field."
   NON_NULL
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum AccessDeniedReasonEnum {
-  """
-  no such list
-  """
+  "no such list"
   NO_SUCH_LIST
-
-  """
-  list is private
-  """
+  "list is private"
   LIST_IS_PRIVATE
-
-  """
-  company list not available
-  """
+  "company list not available"
   COMPANY_LIST_NOT_AVAILABLE
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum AccountFrozenStatus {
-  """
-  qualified to frozen
-  """
+  "qualified to frozen"
   QUALIFIED_TO_FROZEN
-
-  """
-  not qualified to frozen
-  """
+  "not qualified to frozen"
   NOT_QUALIFIED_TO_FROZEN
-
-  """
-  already frozen
-  """
+  "already frozen"
   ALREADY_FROZEN
-
-  """
-  inactive
-  """
+  "inactive"
   INACTIVE
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum AccountStatus {
-  """
-  frozen
-  """
+  "frozen"
   FROZEN
-
-  """
-  deleted
-  """
+  "deleted"
   DELETED
 }
 
-"""
-advertisement location enums
-"""
+"advertisement location enums"
 enum AdLocationEnum {
-  """
-  Home Ad
-  """
+  "Home Ad"
   HOME_AD
-
-  """
-  Problemset Ad Sidebar
-  """
+  "Problemset Ad Sidebar"
   PROBLEMSET_AD
-
-  """
-  Problemset Ad Primary
-  """
+  "Problemset Ad Primary"
   PROBLEMSET_AD_PRIMARY
-
-  """
-  Problemset Ad Secondary
-  """
+  "Problemset Ad Secondary"
   PROBLEMSET_AD_SECONDARY
-
-  """
-  Discuss Ad
-  """
+  "Discuss Ad"
   DISCUSS_AD
-
-  """
-  Study Plan Ad
-  """
+  "Study Plan Ad"
   STUDY_PLAN_AD
-
-  """
-  home feed
-  """
+  "home feed"
   HOME_FEED
-
-  """
-  discuss list
-  """
+  "discuss list"
   DISCUSS_LIST
-
-  """
-  discuss detail
-  """
+  "discuss detail"
   DISCUSS_DETAIL
-
-  """
-  qd description
-  """
+  "qd description"
   QD_DESCRIPTION
-
-  """
-  qd solution list
-  """
+  "qd solution list"
   QD_SOLUTION_LIST
-
-  """
-  qd solution detail
-  """
+  "qd solution detail"
   QD_SOLUTION_DETAIL
 }
 
-"""
-advertisement source enums
-"""
+"advertisement source enums"
 enum AdSourceEnum {
-  """
-  Internal Ad
-  """
+  "Internal Ad"
   INTERNAL_AD
-
-  """
-  AdSense
-  """
+  "AdSense"
   ADSENSE
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum AllPermission {
   contest_see_private
   contest_private_access_dashboard
@@ -401,43 +245,21 @@ enum AvatarStatusEnum {
   UNVIEWED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum BadgeBadge {
-  """
-  Guardian
-  """
+  "Guardian"
   A_1
-
-  """
-  Knight
-  """
+  "Knight"
   A_2
-
-  """
-  Daily Coding Challenge
-  """
+  "Daily Coding Challenge"
   A_3
-
-  """
-  Annual Daily Coding Challenge
-  """
+  "Annual Daily Coding Challenge"
   A_4
-
-  """
-  Study Plan Award
-  """
+  "Study Plan Award"
   A_5
-
-  """
-  Annual Badge
-  """
+  "Annual Badge"
   A_6
-
-  """
-  Study Plan V2 Award
-  """
+  "Study Plan V2 Award"
   A_7
 }
 
@@ -448,27 +270,18 @@ enum BadgeCategoryEnum {
   STUDY_PLAN
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum Category {
   BASIC
   EDGE
   PERFORMANCE
 }
 
-"""
-challenge question status enums
-"""
+"challenge question status enums"
 enum ChallengeQuestionStatusEnum {
-  """
-  not started
-  """
+  "not started"
   NOT_STARTED
-
-  """
-  finished
-  """
+  "finished"
   FINISHED
 }
 
@@ -477,9 +290,7 @@ enum ChallengeQuestionTypeEnum {
   WEEKLY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum CommentSortingOption {
   hot
   best
@@ -494,202 +305,104 @@ enum CompanyQuestionKeywordType {
   ID
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum CompanyQuestionTimeOptionEnum {
-  """
-  Six Month
-  """
+  "Six Month"
   SIX_MONTH
-
-  """
-  One Year
-  """
+  "One Year"
   ONE_YEAR
-
-  """
-  Two Year
-  """
+  "Two Year"
   TWO_YEAR
-
-  """
-  All
-  """
+  "All"
   ALL
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum CompanyQuestionTimeOptionEnumV2 {
-  """
-  Recent 30 days
-  """
+  "Recent 30 days"
   THIRTY_DAY
-
-  """
-  Recent 3 months
-  """
+  "Recent 3 months"
   THREE_MONTH
-
-  """
-  Recent 6 months
-  """
+  "Recent 6 months"
   SIX_MONTH
-
-  """
-  More than 6 months
-  """
+  "More than 6 months"
   MORE_THAN_SIX_MONTH
-
-  """
-  All
-  """
+  "All"
   ALL
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum CompanyStage {
   ONLINE_ASSESSMENT
   PHONE_INTERVIEW
   ONSITE_INTERVIEW
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ComplexityTypeEnum {
-  """
-  time_complexity
-  """
+  "time_complexity"
   TIME_COMPLEXITY
-
-  """
-  memory_complexity
-  """
+  "memory_complexity"
   MEMORY_COMPLEXITY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ComplexityVoteEnum {
-  """
-  Thumbs Down
-  """
+  "Thumbs Down"
   THUMBS_DOWN
-
-  """
-  Upvote
-  """
+  "Upvote"
   UPVOTE
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ContestReportStatus {
-  """
-  UNPROCESSED
-  """
+  "UNPROCESSED"
   A_0
-
-  """
-  CANCELED
-  """
+  "CANCELED"
   A_1
-
-  """
-  ACCEPTED
-  """
+  "ACCEPTED"
   A_2
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ContestRootBannerAspectRatioType {
-  """
-  SM Breakpoint Image
-  """
+  "SM Breakpoint Image"
   A_0
-
-  """
-  MD Breakpoint Image
-  """
+  "MD Breakpoint Image"
   A_1
-
-  """
-  LG Breakpoint Image
-  """
+  "LG Breakpoint Image"
   A_2
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum CreditCardStatus {
-  """
-  alive
-  """
+  "alive"
   ALIVE
-
-  """
-  deleted
-  """
+  "deleted"
   DELETED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum DeleteAccountReason {
-  """
-  Moving to another LeetCode account
-  """
+  "Moving to another LeetCode account"
   EXTRA_ACCOUNT
-
-  """
-  Not using LeetCode anymore
-  """
+  "Not using LeetCode anymore"
   NO_LONGER_NEEDED
-
-  """
-  Security and privacy concerns
-  """
+  "Security and privacy concerns"
   SECURITY_CONCERN
-
-  """
-  Want to start over with a new account
-  """
+  "Want to start over with a new account"
   START_OVER
-
-  """
-  Other
-  """
+  "Other"
   OTHER
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum DifficultyDescribedEnum {
-  """
-  Easy
-  """
+  "Easy"
   EASY
-
-  """
-  Medium
-  """
+  "Medium"
   MEDIUM
-
-  """
-  Hard
-  """
+  "Hard"
   HARD
 }
 
@@ -699,121 +412,64 @@ enum DifficultyEnum {
   HARD
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum DiscountEventBannerAspectRatioType {
-  """
-  SM Breakpoint Image
-  """
+  "SM Breakpoint Image"
   A_0
-
-  """
-  MD Breakpoint Image
-  """
+  "MD Breakpoint Image"
   A_1
-
-  """
-  LG Breakpoint Image
-  """
+  "LG Breakpoint Image"
   A_2
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum EntityType {
   DUMMY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FavoriteFavoriteType {
-  """
-  normal
-  """
+  "normal"
   A_1
-
-  """
-  company favorite
-  """
+  "company favorite"
   A_2
-
-  """
-  smart list
-  """
+  "smart list"
   A_3
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FavoriteLockStatusEnum {
-  """
-  user can unlock
-  """
+  "user can unlock"
   USER_CAN_UNLOCK
-
-  """
-  user cannot unlock
-  """
+  "user cannot unlock"
   USER_CANNOT_UNLOCK
-
-  """
-  user already unlocked
-  """
+  "user already unlocked"
   USER_ALREADY_UNLOCKED
-
-  """
-  no need to unlock
-  """
+  "no need to unlock"
   NO_NEED_TO_UNLOCK
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FavoriteQuestionStatusEnum {
-  """
-  to do
-  """
+  "to do"
   TO_DO
-
-  """
-  solved
-  """
+  "solved"
   SOLVED
-
-  """
-  attempted
-  """
+  "attempted"
   ATTEMPTED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FavoriteTypeEnum {
-  """
-  normal
-  """
+  "normal"
   NORMAL
-
-  """
-  company favorite
-  """
+  "company favorite"
   COMPANY_FAVORITE
-
-  """
-  smart list
-  """
+  "smart list"
   SMART_LIST
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FeatureGuideType {
   OTHER
   QUESTION_DETAIL_TOUR
@@ -824,18 +480,11 @@ enum FeatureGuideType {
   NEW_IDE_DYNAMIC_LAYOUT_V2
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FeedbackOrderByEnum {
-  """
-  creation_date
-  """
+  "creation_date"
   CREATION_DATE
-
-  """
-  rate
-  """
+  "rate"
   RATE
 }
 
@@ -844,59 +493,31 @@ enum FlaggedObjectListOrderByEnum {
   FLAGGED_COUNT
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FlagResultStatus {
-  """
-  flagged
-  """
+  "flagged"
   A_0
-
-  """
-  approved
-  """
+  "approved"
   A_1
-
-  """
-  edit requested
-  """
+  "edit requested"
   A_2
-
-  """
-  removed
-  """
+  "removed"
   A_3
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum FlagStatus {
-  """
-  flagged
-  """
+  "flagged"
   FLAGGED
-
-  """
-  approved
-  """
+  "approved"
   APPROVED
-
-  """
-  edit requested
-  """
+  "edit requested"
   EDIT_REQUESTED
-
-  """
-  removed
-  """
+  "removed"
   REMOVED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum Group {
   everyone
   discuss_admin
@@ -914,133 +535,65 @@ enum InterviewAnalysisStatus {
   NEEDS_DATA
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum IPStatusEnum {
-  """
+  "Banned"
   Banned
-  """
-  Banned
-
-  """
+  "Monitored"
   Monitored
-  """
-  Monitored
-
-  """
-  Normal
-  """
+  "Normal"
   Normal
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ManagementRoleEnum {
-  """
-  Admin
-  """
+  "Admin"
   ADMIN
-
-  """
-  Support
-  """
+  "Support"
   CUSTOMER_SUPPORT
-
-  """
-  Moderator
-  """
+  "Moderator"
   MODERATORS
-
-  """
-  Email
-  """
+  "Email"
   EMAIL_BATCH_SENDER
-
-  """
-  Redeem
-  """
+  "Redeem"
   REDEEM_ORDER_MANAGEMENT
-
-  """
-  Contest
-  """
+  "Contest"
   INTERNAL_CONTEST_ORGANIZER
-
-  """
-  Content
-  """
+  "Content"
   CONTENT_OPERATION
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum OMFavoriteSearchFieldEnum {
-  """
-  name
-  """
+  "name"
   NAME
-
-  """
-  id
-  """
+  "id"
   ID
-
-  """
-  slug
-  """
+  "slug"
   SLUG
-
-  """
-  author
-  """
+  "author"
   AUTHOR
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum OMFavoriteSortFieldEnum {
-  """
-  default
-  """
+  "default"
   DEFAULT
-
-  """
-  view_count
-  """
+  "view_count"
   VIEW_COUNT
-
-  """
-  save_count
-  """
+  "save_count"
   SAVE_COUNT
-
-  """
-  fork_count
-  """
+  "fork_count"
   FORK_COUNT
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PanelQuestionStatusEnum {
-  """
-  to do
-  """
+  "to do"
   TO_DO
-
-  """
-  solved
-  """
+  "solved"
   SOLVED
-
-  """
-  attempted
-  """
+  "attempted"
   ATTEMPTED
 }
 
@@ -1052,703 +605,302 @@ enum PasswordErrorEnum {
   PASSWORD_TOO_COMMON
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PaymentGateways {
   STRIPE
   PAYPAL
   LEETPAY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PlanQuestionStatusEnum {
-  """
-  to do
-  """
+  "to do"
   TO_DO
-
-  """
-  solved
-  """
+  "solved"
   SOLVED
-
-  """
-  past solved
-  """
+  "past solved"
   PAST_SOLVED
-
-  """
-  attempted
-  """
+  "attempted"
   ATTEMPTED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PlanUserProgressStatusEnum {
-  """
-  on going
-  """
+  "on going"
   ON_GOING
-
-  """
-  completed
-  """
+  "completed"
   COMPLETED
-
-  """
-  quitted
-  """
+  "quitted"
   QUITTED
-
-  """
-  deleted
-  """
+  "deleted"
   DELETED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PlanUserProgressTypeEnum {
-  """
-  on going
-  """
+  "on going"
   ON_GOING
-
-  """
-  history
-  """
+  "history"
   HISTORY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PlaygroundCodeLang {
-  """
-  cpp
-  """
+  "cpp"
   A_0
-
-  """
-  java
-  """
+  "java"
   A_1
-
-  """
-  python
-  """
+  "python"
   A_2
-
-  """
-  python3
-  """
+  "python3"
   A_11
-
-  """
-  mysql
-  """
+  "mysql"
   A_3
-
-  """
-  mssql
-  """
+  "mssql"
   A_14
-
-  """
-  oraclesql
-  """
+  "oraclesql"
   A_15
-
-  """
-  c
-  """
+  "c"
   A_4
-
-  """
-  csharp
-  """
+  "csharp"
   A_5
-
-  """
-  javascript
-  """
+  "javascript"
   A_6
-
-  """
-  typescript
-  """
+  "typescript"
   A_20
-
-  """
-  bash
-  """
+  "bash"
   A_8
-
-  """
-  php
-  """
+  "php"
   A_19
-
-  """
-  swift
-  """
+  "swift"
   A_9
-
-  """
-  kotlin
-  """
+  "kotlin"
   A_13
-
-  """
-  dart
-  """
+  "dart"
   A_24
-
-  """
-  golang
-  """
+  "golang"
   A_10
-
-  """
-  ruby
-  """
+  "ruby"
   A_7
-
-  """
-  scala
-  """
+  "scala"
   A_12
-
-  """
-  html
-  """
+  "html"
   A_16
-
-  """
-  pythonml
-  """
+  "pythonml"
   A_17
-
-  """
-  rust
-  """
+  "rust"
   A_18
-
-  """
-  racket
-  """
+  "racket"
   A_21
-
-  """
-  erlang
-  """
+  "erlang"
   A_22
-
-  """
-  elixir
-  """
+  "elixir"
   A_23
-
-  """
-  pythondata
-  """
+  "pythondata"
   A_25
-
-  """
-  react
-  """
+  "react"
   A_26
-
-  """
-  vanillajs
-  """
+  "vanillajs"
   A_27
-
-  """
-  postgresql
-  """
+  "postgresql"
   A_28
-
-  """
-  cangjie
-  """
+  "cangjie"
   A_29
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PlaygroundSelectedLang {
-  """
-  cpp
-  """
+  "cpp"
   A_0
-
-  """
-  java
-  """
+  "java"
   A_1
-
-  """
-  python
-  """
+  "python"
   A_2
-
-  """
-  python3
-  """
+  "python3"
   A_11
-
-  """
-  mysql
-  """
+  "mysql"
   A_3
-
-  """
-  mssql
-  """
+  "mssql"
   A_14
-
-  """
-  oraclesql
-  """
+  "oraclesql"
   A_15
-
-  """
-  c
-  """
+  "c"
   A_4
-
-  """
-  csharp
-  """
+  "csharp"
   A_5
-
-  """
-  javascript
-  """
+  "javascript"
   A_6
-
-  """
-  typescript
-  """
+  "typescript"
   A_20
-
-  """
-  bash
-  """
+  "bash"
   A_8
-
-  """
-  php
-  """
+  "php"
   A_19
-
-  """
-  swift
-  """
+  "swift"
   A_9
-
-  """
-  kotlin
-  """
+  "kotlin"
   A_13
-
-  """
-  dart
-  """
+  "dart"
   A_24
-
-  """
-  golang
-  """
+  "golang"
   A_10
-
-  """
-  ruby
-  """
+  "ruby"
   A_7
-
-  """
-  scala
-  """
+  "scala"
   A_12
-
-  """
-  html
-  """
+  "html"
   A_16
-
-  """
-  pythonml
-  """
+  "pythonml"
   A_17
-
-  """
-  rust
-  """
+  "rust"
   A_18
-
-  """
-  racket
-  """
+  "racket"
   A_21
-
-  """
-  erlang
-  """
+  "erlang"
   A_22
-
-  """
-  elixir
-  """
+  "elixir"
   A_23
-
-  """
-  pythondata
-  """
+  "pythondata"
   A_25
-
-  """
-  react
-  """
+  "react"
   A_26
-
-  """
-  vanillajs
-  """
+  "vanillajs"
   A_27
-
-  """
-  postgresql
-  """
+  "postgresql"
   A_28
-
-  """
-  cangjie
-  """
+  "cangjie"
   A_29
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PlaygroundSnippetsLang {
-  """
-  cpp
-  """
+  "cpp"
   A_0
-
-  """
-  java
-  """
+  "java"
   A_1
-
-  """
-  python
-  """
+  "python"
   A_2
-
-  """
-  python3
-  """
+  "python3"
   A_11
-
-  """
-  mysql
-  """
+  "mysql"
   A_3
-
-  """
-  mssql
-  """
+  "mssql"
   A_14
-
-  """
-  oraclesql
-  """
+  "oraclesql"
   A_15
-
-  """
-  c
-  """
+  "c"
   A_4
-
-  """
-  csharp
-  """
+  "csharp"
   A_5
-
-  """
-  javascript
-  """
+  "javascript"
   A_6
-
-  """
-  typescript
-  """
+  "typescript"
   A_20
-
-  """
-  bash
-  """
+  "bash"
   A_8
-
-  """
-  php
-  """
+  "php"
   A_19
-
-  """
-  swift
-  """
+  "swift"
   A_9
-
-  """
-  kotlin
-  """
+  "kotlin"
   A_13
-
-  """
-  dart
-  """
+  "dart"
   A_24
-
-  """
-  golang
-  """
+  "golang"
   A_10
-
-  """
-  ruby
-  """
+  "ruby"
   A_7
-
-  """
-  scala
-  """
+  "scala"
   A_12
-
-  """
-  html
-  """
+  "html"
   A_16
-
-  """
-  pythonml
-  """
+  "pythonml"
   A_17
-
-  """
-  rust
-  """
+  "rust"
   A_18
-
-  """
-  racket
-  """
+  "racket"
   A_21
-
-  """
-  erlang
-  """
+  "erlang"
   A_22
-
-  """
-  elixir
-  """
+  "elixir"
   A_23
-
-  """
-  pythondata
-  """
+  "pythondata"
   A_25
-
-  """
-  react
-  """
+  "react"
   A_26
-
-  """
-  vanillajs
-  """
+  "vanillajs"
   A_27
-
-  """
-  postgresql
-  """
+  "postgresql"
   A_28
-
-  """
-  cangjie
-  """
+  "cangjie"
   A_29
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PlaygroundTemplateCodeLang {
-  """
-  cpp
-  """
+  "cpp"
   A_0
-
-  """
-  java
-  """
+  "java"
   A_1
-
-  """
-  python
-  """
+  "python"
   A_2
-
-  """
-  python3
-  """
+  "python3"
   A_11
-
-  """
-  mysql
-  """
+  "mysql"
   A_3
-
-  """
-  mssql
-  """
+  "mssql"
   A_14
-
-  """
-  oraclesql
-  """
+  "oraclesql"
   A_15
-
-  """
-  c
-  """
+  "c"
   A_4
-
-  """
-  csharp
-  """
+  "csharp"
   A_5
-
-  """
-  javascript
-  """
+  "javascript"
   A_6
-
-  """
-  typescript
-  """
+  "typescript"
   A_20
-
-  """
-  bash
-  """
+  "bash"
   A_8
-
-  """
-  php
-  """
+  "php"
   A_19
-
-  """
-  swift
-  """
+  "swift"
   A_9
-
-  """
-  kotlin
-  """
+  "kotlin"
   A_13
-
-  """
-  dart
-  """
+  "dart"
   A_24
-
-  """
-  golang
-  """
+  "golang"
   A_10
-
-  """
-  ruby
-  """
+  "ruby"
   A_7
-
-  """
-  scala
-  """
+  "scala"
   A_12
-
-  """
-  html
-  """
+  "html"
   A_16
-
-  """
-  pythonml
-  """
+  "pythonml"
   A_17
-
-  """
-  rust
-  """
+  "rust"
   A_18
-
-  """
-  racket
-  """
+  "racket"
   A_21
-
-  """
-  erlang
-  """
+  "erlang"
   A_22
-
-  """
-  elixir
-  """
+  "elixir"
   A_23
-
-  """
-  pythondata
-  """
+  "pythondata"
   A_25
-
-  """
-  react
-  """
+  "react"
   A_26
-
-  """
-  vanillajs
-  """
+  "vanillajs"
   A_27
-
-  """
-  postgresql
-  """
+  "postgresql"
   A_28
-
-  """
-  cangjie
-  """
+  "cangjie"
   A_29
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PostStatus {
   PENDING
   OPEN
@@ -1759,108 +911,51 @@ enum PostStatus {
   ALL
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PremiumBetaFeatureType {
-  """
-  Beta User Flow
-  """
+  "Beta User Flow"
   A_1
-
-  """
-  New Problemlist Page
-  """
+  "New Problemlist Page"
   A_2
-
-  """
-  New Profile Page
-  """
+  "New Profile Page"
   A_3
-
-  """
-  New Problem Detail Page
-  """
+  "New Problem Detail Page"
   A_4
-
-  """
-  New Study Plan Access
-  """
+  "New Study Plan Access"
   A_5
-
-  """
-  Ai Helper
-  """
+  "Ai Helper"
   A_6
-
-  """
-  New Subscribe Page
-  """
+  "New Subscribe Page"
   A_7
-
-  """
-  New Plan Rank Board Access
-  """
+  "New Plan Rank Board Access"
   A_8
-
-  """
-  Lc Ide
-  """
+  "Lc Ide"
   A_9
-
-  """
-  Lc Ide V2
-  """
+  "Lc Ide V2"
   A_10
-
-  """
-  Frontend Category
-  """
+  "Frontend Category"
   A_11
-
-  """
-  New Stripe Invoice
-  """
+  "New Stripe Invoice"
   A_12
-
-  """
-  Contest Dl
-  """
+  "Contest Dl"
   A_13
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum PremiumTrialApplyStatus {
-  """
-  Pending
-  """
+  "Pending"
   PENDING
-
-  """
-  Approved
-  """
+  "Approved"
   APPROVED
-
-  """
-  Rejected
-  """
+  "Rejected"
   REJECTED
 }
 
-"""
-enum value means trial days
-"""
+"enum value means trial days"
 enum PremiumTrialSku {
-  """
-  Monthly Premium Subscription
-  """
+  "Monthly Premium Subscription"
   MONTHLY
-
-  """
-  Annual Premium Subscription
-  """
+  "Annual Premium Subscription"
   ANNUAL
 }
 
@@ -1886,9 +981,7 @@ enum ProgressOrderByEnum {
   TOTAL_SOLVES
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ProgressStatus {
   UNATTEMPTED
   ATTEMPTED
@@ -1901,18 +994,11 @@ enum PublishStatus {
   UNKNOWN
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum QuestionEditorTypeEnum {
-  """
-  CKEditor
-  """
+  "CKEditor"
   CKEDITOR
-
-  """
-  Markdown
-  """
+  "Markdown"
   MARKDOWN
 }
 
@@ -1929,9 +1015,7 @@ enum QuestionSortFieldEnum {
   LAST_MODIFIED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ReportedStatus {
   ALL
   REPORTED_UNHANDLED
@@ -1956,288 +1040,123 @@ enum ResourceTypeEnum {
   DUMMY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ScoreCategory {
-  """
-  ADD_QUESTION
-  """
+  "ADD_QUESTION"
   A_0
-
-  """
-  ADD_TESTCASE
-  """
+  "ADD_TESTCASE"
   A_1
-
-  """
-  TOP_IN_CONTEST
-  """
+  "TOP_IN_CONTEST"
   A_2
-
-  """
-  JOIN_CONTEST
-  """
+  "JOIN_CONTEST"
   A_3
-
-  """
-  JOIN_CONTEST_FIRST_TIME
-  """
+  "JOIN_CONTEST_FIRST_TIME"
   A_17
-
-  """
-  SOCIAL_ACCOUNT_BINDING
-  """
+  "SOCIAL_ACCOUNT_BINDING"
   A_4
-
-  """
-  DAILY_LOGIN
-  """
+  "DAILY_LOGIN"
   A_5
-
-  """
-  SEVEN_DAY_LOGIN
-  """
+  "SEVEN_DAY_LOGIN"
   A_6
-
-  """
-  THIRTY_DAY_LOGIN
-  """
+  "THIRTY_DAY_LOGIN"
   A_7
-
-  """
-  CREATE_QUESTION_TRANSLATION
-  """
+  "CREATE_QUESTION_TRANSLATION"
   A_9
-
-  """
-  QUESTION_TRANSLATION_ACCEPTED
-  """
+  "QUESTION_TRANSLATION_ACCEPTED"
   A_10
-
-  """
-  REDEEM
-  """
+  "REDEEM"
   A_8
-
-  """
-  ACCOUNT_TRANSFER
-  """
+  "ACCOUNT_TRANSFER"
   A_11
-
-  """
-  BASIC_INFO_PROVIDED
-  """
+  "BASIC_INFO_PROVIDED"
   A_12
-
-  """
-  AVATAR_PROVIDED
-  """
+  "AVATAR_PROVIDED"
   A_13
-
-  """
-  EXPERIENCE_PROVIDED
-  """
+  "EXPERIENCE_PROVIDED"
   A_14
-
-  """
-  PHONE_BINDING
-  """
+  "PHONE_BINDING"
   A_15
-
-  """
-  POST_TOPIC
-  """
+  "POST_TOPIC"
   A_16
-
-  """
-  EMAIL_CONFIRMED
-  """
+  "EMAIL_CONFIRMED"
   A_18
-
-  """
-  JOIN_INTERNAL_CONTEST
-  """
+  "JOIN_INTERNAL_CONTEST"
   A_19
-
-  """
-  FESTIVAL
-  """
+  "FESTIVAL"
   A_20
-
-  """
-  SURVEY_COMPLETED
-  """
+  "SURVEY_COMPLETED"
   A_21
-
-  """
-  JOIN_BOTH_CONTESTS_SAME_WEEK
-  """
+  "JOIN_BOTH_CONTESTS_SAME_WEEK"
   A_22
-
-  """
-  THIRTY_DAY_CHALLENGE_DAILY_COMPLETE
-  """
+  "THIRTY_DAY_CHALLENGE_DAILY_COMPLETE"
   A_23
-
-  """
-  THIRTY_DAY_CHALLENGE_25_COMPLETE
-  """
+  "THIRTY_DAY_CHALLENGE_25_COMPLETE"
   A_24
-
-  """
-  THIRTY_DAY_CHALLENGE_30_COMPLETE
-  """
+  "THIRTY_DAY_CHALLENGE_30_COMPLETE"
   A_25
-
-  """
-  LEETCODING_CHALLENGE_DAILY
-  """
+  "LEETCODING_CHALLENGE_DAILY"
   A_30
-
-  """
-  LEETCODING_CHALLENGE_MID
-  """
+  "LEETCODING_CHALLENGE_MID"
   A_31
-
-  """
-  LEETCODING_CHALLENGE_ALL
-  """
+  "LEETCODING_CHALLENGE_ALL"
   A_32
-
-  """
-  LEETCODING_CHALLENGE_PREM
-  """
+  "LEETCODING_CHALLENGE_PREM"
   A_33
-
-  """
-  EXPLORE_CARD_COMPLETED
-  """
+  "EXPLORE_CARD_COMPLETED"
   A_26
-
-  """
-  DISCUSS_FIRST_POST
-  """
+  "DISCUSS_FIRST_POST"
   A_27
-
-  """
-  CONTEST_REPORT_APPROVED
-  """
+  "CONTEST_REPORT_APPROVED"
   A_28
-
-  """
-  DAILY_SUBMIT_ACCEPTED_SOLUTIONS
-  """
+  "DAILY_SUBMIT_ACCEPTED_SOLUTIONS"
   A_29
-
-  """
-  CONTEST_EASTER_EGG
-  """
+  "CONTEST_EASTER_EGG"
   A_34
-
-  """
-  CUSTOM
-  """
+  "CUSTOM"
   A_100
-
-  """
-  QUESTION_DETAIL_SATISFACTION_SURVEY
-  """
+  "QUESTION_DETAIL_SATISFACTION_SURVEY"
   A_35
-
-  """
-  JAVASCRIPT_PROBLEM_SURVEY
-  """
+  "JAVASCRIPT_PROBLEM_SURVEY"
   A_37
-
-  """
-  PANDAS_PROBLEM_SURVEY
-  """
+  "PANDAS_PROBLEM_SURVEY"
   A_38
-
-  """
-  QD_DYNAMIC_SURVEY
-  """
+  "QD_DYNAMIC_SURVEY"
   A_39
-
-  """
-  PANDAS_INTRO_STUDY_PLAN_SURVEY
-  """
+  "PANDAS_INTRO_STUDY_PLAN_SURVEY"
   A_40
-
-  """
-  IDE_BACK_QD3_SURVEY
-  """
+  "IDE_BACK_QD3_SURVEY"
   A_41
-
-  """
-  NEW_STUDY_PLAN_SURVEY
-  """
+  "NEW_STUDY_PLAN_SURVEY"
   A_36
-
-  """
-  CONTEST_DYNAMIC_SURVEY
-  """
+  "CONTEST_DYNAMIC_SURVEY"
   A_42
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum ScoreTypeEnum {
-  """
-  All
-  """
+  "All"
   ALL
-
-  """
-  Mission Reward
-  """
+  "Mission Reward"
   MISSION_REWARD
-
-  """
-  Admin Reward
-  """
+  "Admin Reward"
   ADMIN_REWARD
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SearchDimensionType {
-  """
-  all
-  """
+  "all"
   ALL
-
-  """
-  user_name
-  """
+  "user_name"
   USER_NAME
-
-  """
-  user_id
-  """
+  "user_id"
   USER_ID
-
-  """
-  email
-  """
+  "email"
   EMAIL
-
-  """
-  stripe_id
-  """
+  "stripe_id"
   STRIPE_ID
-
-  """
-  previous email
-  """
+  "previous email"
   PREVIOUS_EMAIL
-
-  """
-  previous username
-  """
+  "previous username"
   PREVIOUS_USERNAME
 }
 
@@ -2248,24 +1167,15 @@ enum SearchMetaContentType {
   REPLY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SearchUserType {
-  """
-  user_name
-  """
+  "user_name"
   USER_NAME
-
-  """
-  user_id
-  """
+  "user_id"
   USER_ID
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SessionStatus {
   STARTED
   EXITED
@@ -2273,18 +1183,11 @@ enum SessionStatus {
   ACCEPTED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SortingEnum {
-  """
-  ascending
-  """
+  "ascending"
   ASCENDING
-
-  """
-  descending
-  """
+  "descending"
   DESCENDING
 }
 
@@ -2293,325 +1196,148 @@ enum SortingOrderEnum {
   DESCENDING
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum StripeChargeStatusEnum {
-  """
-  All
-  """
+  "All"
   ALL
-
-  """
-  NoPaid
-  """
+  "NoPaid"
   NO_PAID
-
-  """
-  Paid
-  """
+  "Paid"
   PAID
-
-  """
-  Disputed
-  """
+  "Disputed"
   DISPUTED
-
-  """
-  Refunded
-  """
+  "Refunded"
   REFUNDED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SubmissionFlagTypeEnum {
-  """
-  white, not marked
-  """
+  "white, not marked"
   WHITE
-
-  """
-  blue
-  """
+  "blue"
   BLUE
-
-  """
-  orange
-  """
+  "orange"
   ORANGE
-
-  """
-  green
-  """
+  "green"
   GREEN
-
-  """
-  purple
-  """
+  "purple"
   PURPLE
-
-  """
-  red
-  """
+  "red"
   RED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SubmissionMemoryComplexity {
-  """
-  O(1)
-  """
+  "O(1)"
   A_1
-
-  """
-  O(log n)
-  """
+  "O(log n)"
   A_2
-
-  """
-  O(n)
-  """
+  "O(n)"
   A_3
-
-  """
-  O(n log n)
-  """
+  "O(n log n)"
   A_4
-
-  """
-  O(n²)
-  """
+  "O(n²)"
   A_5
-
-  """
-  O(n³)
-  """
+  "O(n³)"
   A_6
-
-  """
-  O(n⁴)
-  """
+  "O(n⁴)"
   A_7
-
-  """
-  O(n⁵)
-  """
+  "O(n⁵)"
   A_8
-
-  """
-  O(n⁶)
-  """
+  "O(n⁶)"
   A_9
-
-  """
-  O(2ⁿ)
-  """
+  "O(2ⁿ)"
   A_10
-
-  """
-  O(n!)
-  """
+  "O(n!)"
   A_11
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SubmissionStatusEnum {
-  """
-  Accepted
-  """
+  "Accepted"
   AC
-
-  """
-  Wrong Answer
-  """
+  "Wrong Answer"
   WA
-
-  """
-  Memory Limit Exceeded
-  """
+  "Memory Limit Exceeded"
   MLE
-
-  """
-  Output Limit Exceeded
-  """
+  "Output Limit Exceeded"
   OLE
-
-  """
-  Time Limit Exceeded
-  """
+  "Time Limit Exceeded"
   TLE
-
-  """
-  Runtime Error
-  """
+  "Runtime Error"
   RE
-
-  """
-  Internal Error
-  """
+  "Internal Error"
   IE
-
-  """
-  Compile Error
-  """
+  "Compile Error"
   CE
-
-  """
-  Timeout
-  """
+  "Timeout"
   TO
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SubmissionTimeComplexity {
-  """
-  O(1)
-  """
+  "O(1)"
   A_1
-
-  """
-  O(log n)
-  """
+  "O(log n)"
   A_2
-
-  """
-  O(n)
-  """
+  "O(n)"
   A_3
-
-  """
-  O(n log n)
-  """
+  "O(n log n)"
   A_4
-
-  """
-  O(n²)
-  """
+  "O(n²)"
   A_5
-
-  """
-  O(n³)
-  """
+  "O(n³)"
   A_6
-
-  """
-  O(n⁴)
-  """
+  "O(n⁴)"
   A_7
-
-  """
-  O(n⁵)
-  """
+  "O(n⁵)"
   A_8
-
-  """
-  O(n⁶)
-  """
+  "O(n⁶)"
   A_9
-
-  """
-  O(2ⁿ)
-  """
+  "O(2ⁿ)"
   A_10
-
-  """
-  O(n!)
-  """
+  "O(n!)"
   A_11
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SurveyQuestionQuestionType {
-  """
-  Yes/No
-  """
+  "Yes/No"
   A_0
-
-  """
-  Radio
-  """
+  "Radio"
   A_1
-
-  """
-  Written Response
-  """
+  "Written Response"
   A_2
-
-  """
-  Numeric Response
-  """
+  "Numeric Response"
   A_3
-
-  """
-  Checkbox
-  """
+  "Checkbox"
   A_4
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum SurveyType {
   MOCK_INTERVIEW
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum TagAdminOperationType {
-  """
-  Create
-  """
+  "Create"
   CREATE
-
-  """
-  Map
-  """
+  "Map"
   MAP
-
-  """
-  Edit
-  """
+  "Edit"
   EDIT
-
-  """
-  Enable
-  """
+  "Enable"
   ENABLED
-
-  """
-  Not Disable
-  """
+  "Not Disable"
   NOT_ENABLED
-
-  """
-  Selectable
-  """
+  "Selectable"
   SELECTABLE
-
-  """
-  Not Selectable
-  """
+  "Not Selectable"
   NOT_SELECTABLE
-
-  """
-  Standard
-  """
+  "Standard"
   STANDARD
-
-  """
-  Not Standard
-  """
+  "Not Standard"
   NOT_STANDARD
 }
 
@@ -2621,9 +1347,7 @@ enum TagTypeEnum {
   SKILL
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum TopicSortingOption {
   hot
   oldest_to_newest
@@ -2634,13 +1358,9 @@ enum TopicSortingOption {
   most_relevant
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum TopicTagTagType {
-  """
-  Company
-  """
+  "Company"
   A_0
 }
 
@@ -2650,9 +1370,7 @@ enum TrendingDirectionEnum {
   NONE
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum Type {
   BETA_USER_FLOW
   NEW_PROBLEMLIST_PAGE
@@ -2669,9 +1387,7 @@ enum Type {
   CONTEST_DL
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UmScoreCategoryEnum {
   ADD_QUESTION
   ADD_TESTCASE
@@ -2719,66 +1435,39 @@ enum UmScoreCategoryEnum {
   CONTEST_DYNAMIC_SURVEY
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UmStoreOrderStatusEnum {
   Canceled
   Processing
   Shipped
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UPCResponseType {
   BASIC_INFO
   DESIRED_JOB
   INTERVIEW_PREP_TIME
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UpcV2CodingLevelEnum {
-  """
+  "BEGINNER"
   BEGINNER
-  """
-  BEGINNER
-
-  """
+  "INTERMEDIATE"
   INTERMEDIATE
-  """
-  INTERMEDIATE
-
-  """
+  "ADVANCED"
   ADVANCED
-  """
-  ADVANCED
-
-  """
-  EXPERT
-  """
+  "EXPERT"
   EXPERT
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UpcV2PurposeEnum {
-  """
+  "INTERVIEW"
   INTERVIEW
-  """
-  INTERVIEW
-
-  """
+  "STUDY"
   STUDY
-  """
-  STUDY
-
-  """
-  ALL
-  """
+  "ALL"
   ALL
 }
 
@@ -2792,1343 +1481,545 @@ enum UserDailyQuestionStatusV2 {
   Finish
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UserOperationEnum {
-  """
-  Login
-  """
+  "Login"
   LOGIN
-
-  """
-  Account Created
-  """
+  "Account Created"
   ACCOUNT_CREATED
-
-  """
-  Account Banned
-  """
+  "Account Banned"
   ACCOUNT_BANNED
-
-  """
-  Email Added
-  """
+  "Email Added"
   EMAIL_ADDED
-
-  """
-  Email Removed
-  """
+  "Email Removed"
   EMAIL_REMOVED
-
-  """
-  Email Verified
-  """
+  "Email Verified"
   EMAIL_VERIFIED
-
-  """
-  Email Primary Updated
-  """
+  "Email Primary Updated"
   EMAIL_PRIMARY_UPDATED
-
-  """
-  Username Updated
-  """
+  "Username Updated"
   USERNAME_UPDATED
-
-  """
-  Realname Updated
-  """
+  "Realname Updated"
   REALNAME_UPDATED
-
-  """
-  Avatar Updated
-  """
+  "Avatar Updated"
   AVATAR_UPDATED
-
-  """
-  Passward Updated
-  """
+  "Passward Updated"
   PASSWORD_UPDATED
-
-  """
-  Oauth Connected
-  """
+  "Oauth Connected"
   OAUTH_CONNECTED
-
-  """
-  Oauth Removed
-  """
+  "Oauth Removed"
   OAUTH_REMOVED
-
-  """
-  Account Deleted
-  """
+  "Account Deleted"
   ACCOUNT_DELETED
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UserProfileCountry {
-  """
-  Afghanistan
-  """
+  "Afghanistan"
   AF
-
-  """
-  Åland Islands
-  """
+  "Åland Islands"
   AX
-
-  """
-  Albania
-  """
+  "Albania"
   AL
-
-  """
-  Algeria
-  """
+  "Algeria"
   DZ
-
-  """
-  American Samoa
-  """
+  "American Samoa"
   AS
-
-  """
-  Andorra
-  """
+  "Andorra"
   AD
-
-  """
-  Angola
-  """
+  "Angola"
   AO
-
-  """
-  Anguilla
-  """
+  "Anguilla"
   AI
-
-  """
-  Antarctica
-  """
+  "Antarctica"
   AQ
-
-  """
-  Antigua and Barbuda
-  """
+  "Antigua and Barbuda"
   AG
-
-  """
-  Argentina
-  """
+  "Argentina"
   AR
-
-  """
-  Armenia
-  """
+  "Armenia"
   AM
-
-  """
-  Aruba
-  """
+  "Aruba"
   AW
-
-  """
-  Australia
-  """
+  "Australia"
   AU
-
-  """
-  Austria
-  """
+  "Austria"
   AT
-
-  """
-  Azerbaijan
-  """
+  "Azerbaijan"
   AZ
-
-  """
-  Bahamas
-  """
+  "Bahamas"
   BS
-
-  """
-  Bahrain
-  """
+  "Bahrain"
   BH
-
-  """
-  Bangladesh
-  """
+  "Bangladesh"
   BD
-
-  """
-  Barbados
-  """
+  "Barbados"
   BB
-
-  """
-  Belarus
-  """
+  "Belarus"
   BY
-
-  """
-  Belgium
-  """
+  "Belgium"
   BE
-
-  """
-  Belize
-  """
+  "Belize"
   BZ
-
-  """
-  Benin
-  """
+  "Benin"
   BJ
-
-  """
-  Bermuda
-  """
+  "Bermuda"
   BM
-
-  """
-  Bhutan
-  """
+  "Bhutan"
   BT
-
-  """
-  Bolivia
-  """
+  "Bolivia"
   BO
-
-  """
-  Bonaire, Sint Eustatius and Saba
-  """
+  "Bonaire, Sint Eustatius and Saba"
   BQ
-
-  """
-  Bosnia and Herzegovina
-  """
+  "Bosnia and Herzegovina"
   BA
-
-  """
-  Botswana
-  """
+  "Botswana"
   BW
-
-  """
-  Bouvet Island
-  """
+  "Bouvet Island"
   BV
-
-  """
-  Brazil
-  """
+  "Brazil"
   BR
-
-  """
-  British Indian Ocean Territory
-  """
+  "British Indian Ocean Territory"
   IO
-
-  """
-  Brunei
-  """
+  "Brunei"
   BN
-
-  """
-  Bulgaria
-  """
+  "Bulgaria"
   BG
-
-  """
-  Burkina Faso
-  """
+  "Burkina Faso"
   BF
-
-  """
-  Burundi
-  """
+  "Burundi"
   BI
-
-  """
-  Cabo Verde
-  """
+  "Cabo Verde"
   CV
-
-  """
-  Cambodia
-  """
+  "Cambodia"
   KH
-
-  """
-  Cameroon
-  """
+  "Cameroon"
   CM
-
-  """
-  Canada
-  """
+  "Canada"
   CA
-
-  """
-  Cayman Islands
-  """
+  "Cayman Islands"
   KY
-
-  """
-  Central African Republic
-  """
+  "Central African Republic"
   CF
-
-  """
-  Chad
-  """
+  "Chad"
   TD
-
-  """
-  Chile
-  """
+  "Chile"
   CL
-
-  """
-  China
-  """
+  "China"
   CN
-
-  """
-  Christmas Island
-  """
+  "Christmas Island"
   CX
-
-  """
-  Cocos (Keeling) Islands
-  """
+  "Cocos (Keeling) Islands"
   CC
-
-  """
-  Colombia
-  """
+  "Colombia"
   CO
-
-  """
-  Comoros
-  """
+  "Comoros"
   KM
-
-  """
-  Congo
-  """
+  "Congo"
   CG
-
-  """
-  Congo (the Democratic Republic of the)
-  """
+  "Congo (the Democratic Republic of the)"
   CD
-
-  """
-  Cook Islands
-  """
+  "Cook Islands"
   CK
-
-  """
-  Costa Rica
-  """
+  "Costa Rica"
   CR
-
-  """
-  Côte d'Ivoire
-  """
+  "Côte d'Ivoire"
   CI
-
-  """
-  Croatia
-  """
+  "Croatia"
   HR
-
-  """
-  Cuba
-  """
+  "Cuba"
   CU
-
-  """
-  Curaçao
-  """
+  "Curaçao"
   CW
-
-  """
-  Cyprus
-  """
+  "Cyprus"
   CY
-
-  """
-  Czechia
-  """
+  "Czechia"
   CZ
-
-  """
-  Denmark
-  """
+  "Denmark"
   DK
-
-  """
-  Djibouti
-  """
+  "Djibouti"
   DJ
-
-  """
-  Dominica
-  """
+  "Dominica"
   DM
-
-  """
-  Dominican Republic
-  """
+  "Dominican Republic"
   DO
-
-  """
-  Ecuador
-  """
+  "Ecuador"
   EC
-
-  """
-  Egypt
-  """
+  "Egypt"
   EG
-
-  """
-  El Salvador
-  """
+  "El Salvador"
   SV
-
-  """
-  Equatorial Guinea
-  """
+  "Equatorial Guinea"
   GQ
-
-  """
-  Eritrea
-  """
+  "Eritrea"
   ER
-
-  """
-  Estonia
-  """
+  "Estonia"
   EE
-
-  """
-  Eswatini
-  """
+  "Eswatini"
   SZ
-
-  """
-  Ethiopia
-  """
+  "Ethiopia"
   ET
-
-  """
-  Falkland Islands (Malvinas)
-  """
+  "Falkland Islands (Malvinas)"
   FK
-
-  """
-  Faroe Islands
-  """
+  "Faroe Islands"
   FO
-
-  """
-  Fiji
-  """
+  "Fiji"
   FJ
-
-  """
-  Finland
-  """
+  "Finland"
   FI
-
-  """
-  France
-  """
+  "France"
   FR
-
-  """
-  French Guiana
-  """
+  "French Guiana"
   GF
-
-  """
-  French Polynesia
-  """
+  "French Polynesia"
   PF
-
-  """
-  French Southern Territories
-  """
+  "French Southern Territories"
   TF
-
-  """
-  Gabon
-  """
+  "Gabon"
   GA
-
-  """
-  Gambia
-  """
+  "Gambia"
   GM
-
-  """
-  Georgia
-  """
+  "Georgia"
   GE
-
-  """
-  Germany
-  """
+  "Germany"
   DE
-
-  """
-  Ghana
-  """
+  "Ghana"
   GH
-
-  """
-  Gibraltar
-  """
+  "Gibraltar"
   GI
-
-  """
-  Greece
-  """
+  "Greece"
   GR
-
-  """
-  Greenland
-  """
+  "Greenland"
   GL
-
-  """
-  Grenada
-  """
+  "Grenada"
   GD
-
-  """
-  Guadeloupe
-  """
+  "Guadeloupe"
   GP
-
-  """
-  Guam
-  """
+  "Guam"
   GU
-
-  """
-  Guatemala
-  """
+  "Guatemala"
   GT
-
-  """
-  Guernsey
-  """
+  "Guernsey"
   GG
-
-  """
-  Guinea
-  """
+  "Guinea"
   GN
-
-  """
-  Guinea-Bissau
-  """
+  "Guinea-Bissau"
   GW
-
-  """
-  Guyana
-  """
+  "Guyana"
   GY
-
-  """
-  Haiti
-  """
+  "Haiti"
   HT
-
-  """
-  Heard Island and McDonald Islands
-  """
+  "Heard Island and McDonald Islands"
   HM
-
-  """
-  Holy See
-  """
+  "Holy See"
   VA
-
-  """
-  Honduras
-  """
+  "Honduras"
   HN
-
-  """
-  Hong Kong
-  """
+  "Hong Kong"
   HK
-
-  """
-  Hungary
-  """
+  "Hungary"
   HU
-
-  """
-  Iceland
-  """
+  "Iceland"
   IS
-
-  """
-  India
-  """
+  "India"
   IN
-
-  """
-  Indonesia
-  """
+  "Indonesia"
   ID
-
-  """
-  Iran
-  """
+  "Iran"
   IR
-
-  """
-  Iraq
-  """
+  "Iraq"
   IQ
-
-  """
-  Ireland
-  """
+  "Ireland"
   IE
-
-  """
-  Isle of Man
-  """
+  "Isle of Man"
   IM
-
-  """
-  Israel
-  """
+  "Israel"
   IL
-
-  """
-  Italy
-  """
+  "Italy"
   IT
-
-  """
-  Jamaica
-  """
+  "Jamaica"
   JM
-
-  """
-  Japan
-  """
+  "Japan"
   JP
-
-  """
-  Jersey
-  """
+  "Jersey"
   JE
-
-  """
-  Jordan
-  """
+  "Jordan"
   JO
-
-  """
-  Kazakhstan
-  """
+  "Kazakhstan"
   KZ
-
-  """
-  Kenya
-  """
+  "Kenya"
   KE
-
-  """
-  Kiribati
-  """
+  "Kiribati"
   KI
-
-  """
-  Kuwait
-  """
+  "Kuwait"
   KW
-
-  """
-  Kyrgyzstan
-  """
+  "Kyrgyzstan"
   KG
-
-  """
-  Laos
-  """
+  "Laos"
   LA
-
-  """
-  Latvia
-  """
+  "Latvia"
   LV
-
-  """
-  Lebanon
-  """
+  "Lebanon"
   LB
-
-  """
-  Lesotho
-  """
+  "Lesotho"
   LS
-
-  """
-  Liberia
-  """
+  "Liberia"
   LR
-
-  """
-  Libya
-  """
+  "Libya"
   LY
-
-  """
-  Liechtenstein
-  """
+  "Liechtenstein"
   LI
-
-  """
-  Lithuania
-  """
+  "Lithuania"
   LT
-
-  """
-  Luxembourg
-  """
+  "Luxembourg"
   LU
-
-  """
-  Macao
-  """
+  "Macao"
   MO
-
-  """
-  Madagascar
-  """
+  "Madagascar"
   MG
-
-  """
-  Malawi
-  """
+  "Malawi"
   MW
-
-  """
-  Malaysia
-  """
+  "Malaysia"
   MY
-
-  """
-  Maldives
-  """
+  "Maldives"
   MV
-
-  """
-  Mali
-  """
+  "Mali"
   ML
-
-  """
-  Malta
-  """
+  "Malta"
   MT
-
-  """
-  Marshall Islands
-  """
+  "Marshall Islands"
   MH
-
-  """
-  Martinique
-  """
+  "Martinique"
   MQ
-
-  """
-  Mauritania
-  """
+  "Mauritania"
   MR
-
-  """
-  Mauritius
-  """
+  "Mauritius"
   MU
-
-  """
-  Mayotte
-  """
+  "Mayotte"
   YT
-
-  """
-  Mexico
-  """
+  "Mexico"
   MX
-
-  """
-  Micronesia (Federated States of)
-  """
+  "Micronesia (Federated States of)"
   FM
-
-  """
-  Moldova
-  """
+  "Moldova"
   MD
-
-  """
-  Monaco
-  """
+  "Monaco"
   MC
-
-  """
-  Mongolia
-  """
+  "Mongolia"
   MN
-
-  """
-  Montenegro
-  """
+  "Montenegro"
   ME
-
-  """
-  Montserrat
-  """
+  "Montserrat"
   MS
-
-  """
-  Morocco
-  """
+  "Morocco"
   MA
-
-  """
-  Mozambique
-  """
+  "Mozambique"
   MZ
-
-  """
-  Myanmar
-  """
+  "Myanmar"
   MM
-
-  """
-  Namibia
-  """
+  "Namibia"
   NA
-
-  """
-  Nauru
-  """
+  "Nauru"
   NR
-
-  """
-  Nepal
-  """
+  "Nepal"
   NP
-
-  """
-  Netherlands
-  """
+  "Netherlands"
   NL
-
-  """
-  New Caledonia
-  """
+  "New Caledonia"
   NC
-
-  """
-  New Zealand
-  """
+  "New Zealand"
   NZ
-
-  """
-  Nicaragua
-  """
+  "Nicaragua"
   NI
-
-  """
-  Niger
-  """
+  "Niger"
   NE
-
-  """
-  Nigeria
-  """
+  "Nigeria"
   NG
-
-  """
-  Niue
-  """
+  "Niue"
   NU
-
-  """
-  Norfolk Island
-  """
+  "Norfolk Island"
   NF
-
-  """
-  North Korea
-  """
+  "North Korea"
   KP
-
-  """
-  North Macedonia
-  """
+  "North Macedonia"
   MK
-
-  """
-  Northern Mariana Islands
-  """
+  "Northern Mariana Islands"
   MP
-
-  """
-  Norway
-  """
+  "Norway"
   NO
-
-  """
-  Oman
-  """
+  "Oman"
   OM
-
-  """
-  Pakistan
-  """
+  "Pakistan"
   PK
-
-  """
-  Palau
-  """
+  "Palau"
   PW
-
-  """
-  Palestine, State of
-  """
+  "Palestine, State of"
   PS
-
-  """
-  Panama
-  """
+  "Panama"
   PA
-
-  """
-  Papua New Guinea
-  """
+  "Papua New Guinea"
   PG
-
-  """
-  Paraguay
-  """
+  "Paraguay"
   PY
-
-  """
-  Peru
-  """
+  "Peru"
   PE
-
-  """
-  Philippines
-  """
+  "Philippines"
   PH
-
-  """
-  Pitcairn
-  """
+  "Pitcairn"
   PN
-
-  """
-  Poland
-  """
+  "Poland"
   PL
-
-  """
-  Portugal
-  """
+  "Portugal"
   PT
-
-  """
-  Puerto Rico
-  """
+  "Puerto Rico"
   PR
-
-  """
-  Qatar
-  """
+  "Qatar"
   QA
-
-  """
-  Réunion
-  """
+  "Réunion"
   RE
-
-  """
-  Romania
-  """
+  "Romania"
   RO
-
-  """
-  Russia
-  """
+  "Russia"
   RU
-
-  """
-  Rwanda
-  """
+  "Rwanda"
   RW
-
-  """
-  Saint Barthélemy
-  """
+  "Saint Barthélemy"
   BL
-
-  """
-  Saint Helena, Ascension and Tristan da Cunha
-  """
+  "Saint Helena, Ascension and Tristan da Cunha"
   SH
-
-  """
-  Saint Kitts and Nevis
-  """
+  "Saint Kitts and Nevis"
   KN
-
-  """
-  Saint Lucia
-  """
+  "Saint Lucia"
   LC
-
-  """
-  Saint Martin (French part)
-  """
+  "Saint Martin (French part)"
   MF
-
-  """
-  Saint Pierre and Miquelon
-  """
+  "Saint Pierre and Miquelon"
   PM
-
-  """
-  Saint Vincent and the Grenadines
-  """
+  "Saint Vincent and the Grenadines"
   VC
-
-  """
-  Samoa
-  """
+  "Samoa"
   WS
-
-  """
-  San Marino
-  """
+  "San Marino"
   SM
-
-  """
-  Sao Tome and Principe
-  """
+  "Sao Tome and Principe"
   ST
-
-  """
-  Saudi Arabia
-  """
+  "Saudi Arabia"
   SA
-
-  """
-  Senegal
-  """
+  "Senegal"
   SN
-
-  """
-  Serbia
-  """
+  "Serbia"
   RS
-
-  """
-  Seychelles
-  """
+  "Seychelles"
   SC
-
-  """
-  Sierra Leone
-  """
+  "Sierra Leone"
   SL
-
-  """
-  Singapore
-  """
+  "Singapore"
   SG
-
-  """
-  Sint Maarten (Dutch part)
-  """
+  "Sint Maarten (Dutch part)"
   SX
-
-  """
-  Slovakia
-  """
+  "Slovakia"
   SK
-
-  """
-  Slovenia
-  """
+  "Slovenia"
   SI
-
-  """
-  Solomon Islands
-  """
+  "Solomon Islands"
   SB
-
-  """
-  Somalia
-  """
+  "Somalia"
   SO
-
-  """
-  South Africa
-  """
+  "South Africa"
   ZA
-
-  """
-  South Georgia and the South Sandwich Islands
-  """
+  "South Georgia and the South Sandwich Islands"
   GS
-
-  """
-  South Korea
-  """
+  "South Korea"
   KR
-
-  """
-  South Sudan
-  """
+  "South Sudan"
   SS
-
-  """
-  Spain
-  """
+  "Spain"
   ES
-
-  """
-  Sri Lanka
-  """
+  "Sri Lanka"
   LK
-
-  """
-  Sudan
-  """
+  "Sudan"
   SD
-
-  """
-  Suriname
-  """
+  "Suriname"
   SR
-
-  """
-  Svalbard and Jan Mayen
-  """
+  "Svalbard and Jan Mayen"
   SJ
-
-  """
-  Sweden
-  """
+  "Sweden"
   SE
-
-  """
-  Switzerland
-  """
+  "Switzerland"
   CH
-
-  """
-  Syria
-  """
+  "Syria"
   SY
-
-  """
-  Taiwan
-  """
+  "Taiwan"
   TW
-
-  """
-  Tajikistan
-  """
+  "Tajikistan"
   TJ
-
-  """
-  Tanzania
-  """
+  "Tanzania"
   TZ
-
-  """
-  Thailand
-  """
+  "Thailand"
   TH
-
-  """
-  Timor-Leste
-  """
+  "Timor-Leste"
   TL
-
-  """
-  Togo
-  """
+  "Togo"
   TG
-
-  """
-  Tokelau
-  """
+  "Tokelau"
   TK
-
-  """
-  Tonga
-  """
+  "Tonga"
   TO
-
-  """
-  Trinidad and Tobago
-  """
+  "Trinidad and Tobago"
   TT
-
-  """
-  Tunisia
-  """
+  "Tunisia"
   TN
-
-  """
-  Türkiye
-  """
+  "Türkiye"
   TR
-
-  """
-  Turkmenistan
-  """
+  "Turkmenistan"
   TM
-
-  """
-  Turks and Caicos Islands
-  """
+  "Turks and Caicos Islands"
   TC
-
-  """
-  Tuvalu
-  """
+  "Tuvalu"
   TV
-
-  """
-  Uganda
-  """
+  "Uganda"
   UG
-
-  """
-  Ukraine
-  """
+  "Ukraine"
   UA
-
-  """
-  United Arab Emirates
-  """
+  "United Arab Emirates"
   AE
-
-  """
-  United Kingdom
-  """
+  "United Kingdom"
   GB
-
-  """
-  United States Minor Outlying Islands
-  """
+  "United States Minor Outlying Islands"
   UM
-
-  """
-  United States of America
-  """
+  "United States of America"
   US
-
-  """
-  Uruguay
-  """
+  "Uruguay"
   UY
-
-  """
-  Uzbekistan
-  """
+  "Uzbekistan"
   UZ
-
-  """
-  Vanuatu
-  """
+  "Vanuatu"
   VU
-
-  """
-  Venezuela
-  """
+  "Venezuela"
   VE
-
-  """
-  Vietnam
-  """
+  "Vietnam"
   VN
-
-  """
-  Virgin Islands (British)
-  """
+  "Virgin Islands (British)"
   VG
-
-  """
-  Virgin Islands (U.S.)
-  """
+  "Virgin Islands (U.S.)"
   VI
-
-  """
-  Wallis and Futuna
-  """
+  "Wallis and Futuna"
   WF
-
-  """
-  Western Sahara
-  """
+  "Western Sahara"
   EH
-
-  """
-  Yemen
-  """
+  "Yemen"
   YE
-
-  """
-  Zambia
-  """
+  "Zambia"
   ZM
-
-  """
-  Zimbabwe
-  """
+  "Zimbabwe"
   ZW
 }
 
-"""
-An enumeration.
-"""
+"An enumeration."
 enum UserProfileOccupation {
-  """
-  Student
-  """
+  "Student"
   A_1
-
-  """
-  Professional
-  """
+  "Professional"
   A_2
 }
 
@@ -5662,7 +3553,7 @@ type EmailSendSessionNode {
 }
 
 type EmailTemplateNode {
-  "Resolves the following template variables automatically:<ul><li>next_biweekly_contest_formatted_date</li><li>storage_base_url</li><li>q_difficulty_mandarin</li><li>q_description</li><li>next_javascript_dcc_editorial_link</li><li>suggested_q_title</li><li>next_contest_time_url</li><li>next_biweekly_contest_time_by_timezone</li><li>next_javascript_dcc_day</li><li>suggested_q_slug</li><li>q_num_ac_subs</li><li>next_contest_title_slug</li><li>unsubscribe_url</li><li>next_biweekly_contest_time_url</li><li>next_contest_formatted_date</li><li>next_biweekly_contest_url</li><li>next_contest_title</li><li>blocks</li><li>current_year</li><li>username</li><li>next_contest_time_by_timezone</li><li>next_biweekly_contest_title</li><li>next_javascript_dcc_link</li><li>next_contest_url</li><li>real_name</li><li>next_biweekly_contest_title_slug</li><li>q_difficulty_w_article</li><li>site_base_url</li></ul>"
+  "Resolves the following template variables automatically:<ul><li>q_difficulty_w_article</li><li>suggested_q_slug</li><li>current_year</li><li>next_biweekly_contest_url</li><li>unsubscribe_url</li><li>suggested_q_title</li><li>q_description</li><li>blocks</li><li>next_contest_time_by_timezone</li><li>next_biweekly_contest_time_by_timezone</li><li>next_javascript_dcc_link</li><li>q_num_ac_subs</li><li>next_biweekly_contest_time_url</li><li>storage_base_url</li><li>next_biweekly_contest_title</li><li>next_javascript_dcc_editorial_link</li><li>next_contest_time_url</li><li>real_name</li><li>next_biweekly_contest_formatted_date</li><li>next_contest_formatted_date</li><li>next_javascript_dcc_day</li><li>next_contest_url</li><li>next_biweekly_contest_title_slug</li><li>next_contest_title_slug</li><li>site_base_url</li><li>username</li><li>next_contest_title</li><li>q_difficulty_mandarin</li></ul>"
   content: String!
   conversionTargetUrlTemplates: String
   emaileventSet: [EmailEventNode!]!

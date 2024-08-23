@@ -18,7 +18,7 @@ import {
 import { outputGraphQLSchema } from "../graphql-extraction/outputGraphQLSchema";
 import { readSeedGraphQLTypeNames } from "../graphql-extraction/readSeedGraphQLTypeNames";
 
-const BATCH_SIZE = 50;
+const BATCH_SIZE = 200;
 
 const OPTIONAL_TYPES = new Set(["Subscription"]);
 
