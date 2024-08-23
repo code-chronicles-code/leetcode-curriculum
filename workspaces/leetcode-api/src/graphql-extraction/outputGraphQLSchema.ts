@@ -1,4 +1,5 @@
 import {
+  GraphQLEnumType,
   GraphQLScalarType,
   buildSchema,
   printType,
@@ -25,7 +26,7 @@ export async function outputGraphQLSchema(
   );
 
   const scalars: GraphQLScalarType[] = [];
-  const enums: string[] = [];
+  const enums: GraphQLEnumType[] = [];
   const inputObjects: string[] = [];
   const interfaces: string[] = [];
   const objects: string[] = [];
@@ -33,12 +34,22 @@ export async function outputGraphQLSchema(
   for (const typeInfo of sortedTypes) {
     switch (typeInfo.kind) {
       case "ENUM": {
-        const enumValues = nullthrows(typeInfo.enumValues).map(
-          (ev) =>
-            `${outputGraphQLString(ev.description)} ${ev.name} ${ev.isDeprecated ? outputGraphQLDeprecatedDirective(ev.deprecationReason) : ""}`,
-        );
         enums.push(
-          `${outputGraphQLString(typeInfo.description)} enum ${typeInfo.name} { ${enumValues.join(nullthrows(typeInfo.enumValues).some((ev) => ev.description) ? "\n\n" : "\n")} }`,
+          new GraphQLEnumType({
+            name: typeInfo.name,
+            description: typeInfo.description,
+            values: Object.fromEntries(
+              nullthrows(typeInfo.enumValues).map((ev) => [
+                ev.name,
+                {
+                  description: ev.description,
+                  deprecationReason: ev.isDeprecated
+                    ? nullthrows(ev.deprecationReason)
+                    : undefined,
+                },
+              ]),
+            ),
+          }),
         );
         break;
       }
@@ -121,7 +132,7 @@ export async function outputGraphQLSchema(
 
   const schema = [
     scalars.map(printType),
-    enums,
+    enums.map(printType),
     interfaces,
     inputObjects,
     objects,
