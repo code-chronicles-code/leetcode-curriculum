@@ -5,5 +5,5 @@ export function outputGraphQLString(s: string | null | undefined): string {
     return "";
   }
 
-  return s.includes("\n") || s.includes('"') ? `"""\n${s}\n"""\n` : `"${s}"\n`;
+  return `"""\n${s}\n"""\n`;
 }
