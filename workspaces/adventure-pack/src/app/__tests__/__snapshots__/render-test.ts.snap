@@ -1459,23 +1459,23 @@ exports[`App can render goody: Python 3 is_palindrome 1`] = `
     return True"
 `;
 
-exports[`App can render goody: Python 3 list_transpose 1`] = `
-"from typing import Any
+exports[`App can render goody: Python 3 transpose_matrix 1`] = `
+"from typing import TypeVar
+
+matrix_element = TypeVar("matrix_element")
 
 
-def list_transpose(list: list[Any]) -> list[Any]:
-    r = len(list)
-    c = len(list[0]) if r != 0 else 0
+def transpose_matrix(
+    input: list[list[matrix_element]],
+) -> list[list[matrix_element]]:
+    r = len(input)
+    c = len(input[0]) if r != 0 else 0
     if r == 0 or c == 0:
-        return []
-    if any(len(row) != c for row in list):
-        return []
+        raise ValueError("Can't transpose a matrix that has a 0 dimension")
+    if any(len(row) != c for row in input):
+        raise ValueError("Matrix has rows of different lengths")
 
-    ret = [[0] * r for _ in range(c)]
-    for i in range(c):
-        for j in range(r):
-            ret[i][j] = list[j][i]
-    return ret"
+    return [list(tup) for tup in zip(*input)]"
 `;
 
 exports[`App can render goody: Python 3 traverse_inorder 1`] = `
