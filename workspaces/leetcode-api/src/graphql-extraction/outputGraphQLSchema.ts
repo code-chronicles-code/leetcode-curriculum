@@ -38,7 +38,7 @@ export async function outputGraphQLSchema(
             `${outputGraphQLString(ev.description)} ${ev.name} ${ev.isDeprecated ? outputGraphQLDeprecatedDirective(ev.deprecationReason) : ""}`,
         );
         enums.push(
-          `${outputGraphQLString(typeInfo.description)} enum ${typeInfo.name} { ${enumValues.join("\n")} }`,
+          `${outputGraphQLString(typeInfo.description)} enum ${typeInfo.name} { ${enumValues.join(nullthrows(typeInfo.enumValues).some((ev) => ev.description) ? "\n\n" : "\n")} }`,
         );
         break;
       }
