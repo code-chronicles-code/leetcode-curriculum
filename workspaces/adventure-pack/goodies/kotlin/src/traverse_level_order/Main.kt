@@ -1,26 +1,21 @@
 package traverse_level_order
 
-import common.TreeNode
+public data class TreeNode(val `val`: Int, var left: TreeNode? = null, var right: TreeNode? = null)
 
-public fun TreeNode?.traverseLevelOrder(): Sequence<TreeNode> {
-  if (this == null) return sequenceOf()
+public fun TreeNode?.traverseLevelOrder(): Sequence<Collection<TreeNode>> {
+  if (this == null) {
+    return sequenceOf()
+  }
 
-  val q = ArrayDeque<TreeNode>()
-  q.add(this)
+  var nodesAtLevel = listOf(this)
 
   return sequence {
-    while (q.isNotEmpty()) {
-      val current = q.removeFirst()
+    while (nodesAtLevel.isNotEmpty()) {
+      yield(nodesAtLevel)
 
-      yield(current)
-
-      if (current.left != null) {
-        q.add(current.left!!)
-      }
-
-      if (current.right != null) {
-        q.add(current.right!!)
-      }
+      nodesAtLevel = nodesAtLevel
+        .flatMap { listOf(it.left, it.right) }
+        .filterNotNull()
     }
   }
 }
