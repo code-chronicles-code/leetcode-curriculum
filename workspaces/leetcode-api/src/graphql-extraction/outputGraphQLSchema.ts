@@ -1,4 +1,9 @@
-import { buildSchema, validateSchema } from "graphql";
+import {
+  GraphQLScalarType,
+  buildSchema,
+  printType,
+  validateSchema,
+} from "graphql";
 import nullthrows from "nullthrows";
 import * as prettier from "prettier";
 
@@ -19,7 +24,7 @@ export async function outputGraphQLSchema(
     compareStringsCaseInsensitive(a.name, b.name),
   );
 
-  const scalars: string[] = [];
+  const scalars: GraphQLScalarType[] = [];
   const enums: string[] = [];
   const inputObjects: string[] = [];
   const interfaces: string[] = [];
@@ -90,7 +95,10 @@ export async function outputGraphQLSchema(
 
       case "SCALAR": {
         scalars.push(
-          `${outputGraphQLString(typeInfo.description)} scalar ${typeInfo.name}`,
+          new GraphQLScalarType({
+            name: typeInfo.name,
+            description: typeInfo.description,
+          }),
         );
         break;
       }
@@ -111,7 +119,13 @@ export async function outputGraphQLSchema(
     }
   }
 
-  const schema = [scalars, enums, interfaces, inputObjects, objects]
+  const schema = [
+    scalars.map(printType),
+    enums,
+    interfaces,
+    inputObjects,
+    objects,
+  ]
     .flat()
     .join("\n\n");
 
