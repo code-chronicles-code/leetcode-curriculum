@@ -13,9 +13,7 @@ public fun TreeNode?.traverseLevelOrder(): Sequence<Collection<TreeNode>> {
     while (nodesAtLevel.isNotEmpty()) {
       yield(nodesAtLevel)
 
-      nodesAtLevel = nodesAtLevel
-        .flatMap { listOf(it.left, it.right) }
-        .filterNotNull()
+      nodesAtLevel = nodesAtLevel.flatMap { listOf(it.left, it.right) }.filterNotNull()
     }
   }
 }

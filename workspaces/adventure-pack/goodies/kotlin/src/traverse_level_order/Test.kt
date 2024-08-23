@@ -7,13 +7,15 @@ internal class LevelOrderTraversalTest {
   @Test
   fun itTraversesLevelOrderEmptyTree() {
     val root: TreeNode? = null
-    assertContentEquals(root.traverseLevelOrder().flatMap { it }.map { it.`val` }.toList(), emptyList<Int>())
+    assertContentEquals(
+        root.traverseLevelOrder().flatMap { it }.map { it.`val` }.toList(), emptyList<Int>())
   }
 
   @Test
   fun itTraversesLevelOrderSingleNode() {
     val root: TreeNode = TreeNode(0)
-    assertContentEquals(root.traverseLevelOrder().flatMap { it }.map { it.`val` }.toList(), listOf<Int>(0))
+    assertContentEquals(
+        root.traverseLevelOrder().flatMap { it }.map { it.`val` }.toList(), listOf<Int>(0))
   }
 
   @Test

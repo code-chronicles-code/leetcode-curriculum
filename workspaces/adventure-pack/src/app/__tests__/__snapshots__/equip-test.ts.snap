@@ -2444,6 +2444,34 @@ public fun lcm(a: Int, b: Int): Int = a / gcd(a, b) * b
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: Kotlin traverseLevelOrder() 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+public data class TreeNode(val \`val\`: Int, var left: TreeNode? = null, var right: TreeNode? = null)
+
+public fun TreeNode?.traverseLevelOrder(): Sequence<Collection<TreeNode>> {
+  if (this == null) {
+    return sequenceOf()
+  }
+
+  var nodesAtLevel = listOf(this)
+
+  return sequence {
+    while (nodesAtLevel.isNotEmpty()) {
+      yield(nodesAtLevel)
+
+      nodesAtLevel = nodesAtLevel
+        .flatMap { listOf(it.left, it.right) }
+        .filterNotNull()
+    }
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: Python 3 UnionFind 1`] = `
 "########################## BEGIN ADVENTURE PACK CODE ###########################
 # Adventure Pack commit fake-commit-hash
