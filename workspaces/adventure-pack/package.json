@@ -84,7 +84,7 @@
     "tsx": "4.17.0",
     "type-fest": "4.24.0",
     "typescript": "5.5.4",
-    "webpack": "5.93.0",
+    "webpack": "5.94.0",
     "webpack-cli": "5.1.4",
     "zod": "3.23.8"
   }
