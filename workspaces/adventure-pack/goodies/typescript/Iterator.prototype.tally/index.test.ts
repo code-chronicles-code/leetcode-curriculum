@@ -83,12 +83,33 @@ describe("Iterator.prototype.tally", () => {
     );
   });
 
-  it("can tally undefined and null values", () => {
-    const array = [undefined, null, null, undefined, undefined];
+  it("can tally falsy values", () => {
+    const array = [
+      NaN,
+      undefined,
+      null,
+      0n,
+      false,
+      false,
+      false,
+      null,
+      "",
+      "",
+      undefined,
+      NaN,
+      undefined,
+      0,
+      0,
+    ];
     expect(array.values().tally()).toStrictEqual(
-      new Map([
+      new Map<unknown, number>([
+        [NaN, 2],
         [undefined, 3],
         [null, 2],
+        [0n, 1],
+        [false, 3],
+        ["", 2],
+        [0, 2],
       ]),
     );
   });
