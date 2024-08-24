@@ -1,0 +1,18 @@
+{
+  "name": "@code-chronicles/chrome-extension-hello-world",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
+    "directory": "workspaces/chrome-extension-hello-world"
+  },
+  "scripts": {
+    "format": "prettier --color --write .",
+    "lint": "eslint --color --max-warnings=0 ."
+  },
+  "devDependencies": {
+    "@code-chronicles/eslint-config": "0.0.1",
+    "prettier": "3.3.3"
+  }
+}

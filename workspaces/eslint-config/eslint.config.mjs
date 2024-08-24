@@ -12,21 +12,10 @@ import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 // TODO: see if we can get typechecking
 
 const vanilla = {
-  files: ["**/*.js", "**/*.jsx"],
+  files: ["**/*.js", "**/*.jsx", "**/*.mjs"],
   languageOptions: {
     globals: globals.node,
     parser: typeScriptEslintParser,
-    parserOptions: {
-      get project() {
-        const project = "./tsconfig.json";
-        if (!fs.existsSync(project)) {
-          throw new Error(
-            `No file ${project} exists in directory: ${process.cwd()}`,
-          );
-        }
-        return project;
-      },
-    },
   },
   plugins: {
     "import-x": importPlugin,
@@ -235,6 +224,20 @@ const jest = {
 
 const typescript = {
   ...vanilla,
+  languageOptions: {
+    ...vanilla.languageOptions,
+    parserOptions: {
+      get project() {
+        const project = "./tsconfig.json";
+        if (!fs.existsSync(project)) {
+          throw new Error(
+            `No file ${project} exists in directory: ${process.cwd()}`,
+          );
+        }
+        return project;
+      },
+    },
+  },
   files: ["**/*.ts", "**/*.tsx"],
   plugins: {
     ...vanilla.plugins,
