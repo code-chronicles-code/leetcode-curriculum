@@ -375,9 +375,8 @@ final class AP {
    * in the stream. For example, for integer 27363, [3,6,3,7,2] is returned.
    * @param number Integer of interest.
    * @return The {@link IterableIntStream stream} of digits.
-   * @throws Exception In case of negative integers.
    */
-  public static IterableIntStream digits(int number) throws Exception {
+  public static IterableIntStream digits(int number) {
     return digits(number, 10);
   }
 
@@ -388,23 +387,23 @@ final class AP {
    * @param number Integer of interest.
    * @param radix Radix value of interest.
    * @return The {@link IterableIntStream stream} of digits.
-   * @throws Exception In case of negative integers or radix less than 2.
    */
-  public static IterableIntStream digits(int number, int radix)
-    throws Exception {
-    if (number < 0) throw new Exception("Please provide a positive integer.");
-
-    if (radix < 2) throw new Exception(
-      "Please provide the radix greater than or equal to 2."
+  public static IterableIntStream digits(int number, int radix) {
+    if (number < 0) throw new IllegalArgumentException(
+      "Please provide a positive integer."
+    );
+    
+    if (radix < 2) throw new IllegalArgumentException(
+      "Please provide a radix greater than or equal to 2."
     );
 
-    return number == 0
-      ? IterableIntStream.from(IntStream.of(0))
-      : IterableIntStream.from(
-        IntStream.iterate(number, num -> num != 0, num -> num / radix).map(
+    return IterableIntStream.from(
+      number == 0
+        ? IntStream.of(0)
+        : IntStream.iterate(number, num -> num != 0, num -> num / radix).map(
           num -> num % radix
         )
-      );
+    );
   }
 }"
 `;
