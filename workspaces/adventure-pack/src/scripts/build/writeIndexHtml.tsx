@@ -6,18 +6,19 @@ import { promisify } from "node:util";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
-import { App } from "../app/components/App";
+import { App } from "../../app/components/App";
+import { WEBAPP_DIST } from "./constants";
 
 const exec = promisify(execWithCallback);
 
 // TODO: Investigate why this script works with `tsx` but not `ts-node`.
 
-async function main(): Promise<void> {
+export async function writeIndexHtml(): Promise<void> {
   const commitHash = (await exec("git rev-parse HEAD")).stdout.trim();
 
-  await mkdir("dist", { recursive: true });
+  await mkdir(WEBAPP_DIST, { recursive: true });
   await writeFile(
-    path.join("dist", "index.html"),
+    path.join(WEBAPP_DIST, "index.html"),
     "<!DOCTYPE html>\n" +
       ReactDOMServer.renderToStaticMarkup(
         <html lang="en-US">
@@ -52,8 +53,3 @@ async function main(): Promise<void> {
       "\n",
   );
 }
-
-main().catch((err) => {
-  console.error(err);
-  process.exitCode = 1;
-});
