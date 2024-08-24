@@ -2028,21 +2028,6 @@ Math.primes = function* () {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: JavaScript Number.isIntegerOrIntegerObject 1`] = `
-"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
-// Adventure Pack commit fake-commit-hash
-// Running at: https://example.com/
-
-Number.isIntegerOrIntegerObject = function (num) {
-  return (
-    (typeof num === "number" || num instanceof Number) &&
-    Number.isInteger(Number(num))
-  );
-};
-
-/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
-`;
-
 exports[`App can equip single goody: JavaScript Number.prototype.chr 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2060,28 +2045,21 @@ exports[`App can equip single goody: JavaScript Number.prototype.digits 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
-Number.isIntegerOrIntegerObject = function (num) {
-  return (
-    (typeof num === "number" || num instanceof Number) &&
-    Number.isInteger(Number(num))
-  );
-};
-
 Number.prototype.digits = function (radix = 10) {
-  if (!(Number.isIntegerOrIntegerObject(this) && Number(this) >= 0)) {
+  let num = Number(this);
+  if (!(Number.isInteger(num) && num >= 0)) {
     throw new Error("Must invoke on a non-negative integer.");
   }
-  if (!(Number.isIntegerOrIntegerObject(radix) && radix >= 2)) {
+  if (!(Number.isInteger(radix) && radix >= 2)) {
     throw new Error("Radix must be an integer >= 2.");
   }
 
-  return function* () {
-    let num = Number(this);
+  return (function* () {
     do {
       yield num % radix;
       num = Math.floor(num / radix);
     } while (num > 0);
-  }.call(this);
+  })();
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -4291,27 +4269,6 @@ Math.primes = function* (): Generator<number, void, void> {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
-exports[`App can equip single goody: TypeScript Number.isIntegerOrIntegerObject 1`] = `
-"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
-// Adventure Pack commit fake-commit-hash
-// Running at: https://example.com/
-
-declare global {
-  interface NumberConstructor {
-    isIntegerOrIntegerObject(num: unknown): boolean;
-  }
-}
-
-Number.isIntegerOrIntegerObject = function (num: unknown): boolean {
-  return (
-    (typeof num === "number" || num instanceof Number) &&
-    Number.isInteger(Number(num))
-  );
-};
-
-/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
-`;
-
 exports[`App can equip single goody: TypeScript Number.prototype.chr 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -4340,37 +4297,26 @@ declare global {
     digits(this: Number): Generator<number, void, void>;
     digits(this: Number, radix: number): Generator<number, void, void>;
   }
-
-  interface NumberConstructor {
-    isIntegerOrIntegerObject(num: unknown): boolean;
-  }
 }
-
-Number.isIntegerOrIntegerObject = function (num: unknown): boolean {
-  return (
-    (typeof num === "number" || num instanceof Number) &&
-    Number.isInteger(Number(num))
-  );
-};
 
 Number.prototype.digits = function (
   this: Number,
   radix: number = 10,
 ): Generator<number, void, void> {
-  if (!(Number.isIntegerOrIntegerObject(this) && Number(this) >= 0)) {
+  let num = Number(this);
+  if (!(Number.isInteger(num) && num >= 0)) {
     throw new Error("Must invoke on a non-negative integer.");
   }
-  if (!(Number.isIntegerOrIntegerObject(radix) && radix >= 2)) {
+  if (!(Number.isInteger(radix) && radix >= 2)) {
     throw new Error("Radix must be an integer >= 2.");
   }
 
-  return function* (this: Number) {
-    let num = Number(this);
+  return (function* () {
     do {
       yield num % radix;
       num = Math.floor(num / radix);
     } while (num > 0);
-  }.call(this);
+  })();
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
