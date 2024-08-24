@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { graphqlKindTypeZodType } from "@code-chronicles/util/graphqlKindTypeZodType";
+import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
 import {
   type OptionalInsteadOfNullishValues,
   removeKeysWithNullishValues,
@@ -119,7 +120,12 @@ const innerTypeZodType = innerTypeZodTypeBase
 
 const nameAndDescriptionZodType = z.strictObject({
   name: z.string(),
-  description: z.string().nullable(),
+  description: z
+    .string()
+    .nullable()
+    .transform((desc) =>
+      desc != null && !isStringEmptyOrWhitespaceOnly(desc) ? desc : undefined,
+    ),
 });
 
 export const graphqlTypeZodType = z.record(

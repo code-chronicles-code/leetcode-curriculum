@@ -1,9 +1,19 @@
 import {
   GraphQLEnumType,
   GraphQLScalarType,
+  GraphQLList,
   buildSchema,
   printType,
   validateSchema,
+  GraphQLInputObjectType,
+  GraphQLNonNull,
+  type GraphQLType,
+  assertInputType,
+  GraphQLInterfaceType,
+  assertOutputType,
+  GraphQLObjectType,
+  DEFAULT_DEPRECATION_REASON,
+  isScalarType,
 } from "graphql";
 import nullthrows from "nullthrows";
 import * as prettier from "prettier";
@@ -12,10 +22,18 @@ import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStri
 import { invariantViolation } from "@code-chronicles/util/invariantViolation";
 import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 
-import type { LeetCodeGraphQLType } from "../fetchGraphQLTypeInformation";
-import { outputGraphQLDeprecatedDirective } from "./outputGraphQLDeprecatedDirective";
-import { outputGraphQLTypeAnnotation } from "./outputGraphQLTypeAnnotation";
-import { outputGraphQLString } from "./outputGraphQLString";
+import type {
+  InnerType,
+  LeetCodeGraphQLType,
+} from "../fetchGraphQLTypeInformation";
+
+function getUnderlyingType(innerType: InnerType): InnerType {
+  if (innerType.kind === "LIST" || innerType.kind === "NON_NULL") {
+    return getUnderlyingType(nullthrows(innerType.ofType));
+  }
+
+  return innerType;
+}
 
 export async function outputGraphQLSchema(
   types: readonly LeetCodeGraphQLType[],
@@ -25,92 +43,152 @@ export async function outputGraphQLSchema(
     compareStringsCaseInsensitive(a.name, b.name),
   );
 
+  const typesByName = new Map<string, GraphQLType>();
+  const getType = (innerType: InnerType): GraphQLType => {
+    if (innerType.kind === "LIST") {
+      return new GraphQLList(getType(nullthrows(innerType.ofType)));
+    }
+
+    if (innerType.kind === "NON_NULL") {
+      return new GraphQLNonNull(getType(nullthrows(innerType.ofType)));
+    }
+
+    const typeName = nullthrows(innerType.name);
+    return nullthrows(typesByName.get(typeName));
+  };
+
   const scalars: GraphQLScalarType[] = [];
   const enums: GraphQLEnumType[] = [];
-  const inputObjects: string[] = [];
-  const interfaces: string[] = [];
-  const objects: string[] = [];
+  const inputObjects: GraphQLInputObjectType[] = [];
+  const interfaces: GraphQLInterfaceType[] = [];
+  const objects: GraphQLObjectType[] = [];
 
   for (const typeInfo of sortedTypes) {
     switch (typeInfo.kind) {
       case "ENUM": {
-        enums.push(
-          new GraphQLEnumType({
-            name: typeInfo.name,
-            description: typeInfo.description,
-            values: Object.fromEntries(
-              nullthrows(typeInfo.enumValues).map((ev) => [
-                ev.name,
-                {
-                  description: ev.description,
-                  deprecationReason: ev.isDeprecated
-                    ? nullthrows(ev.deprecationReason)
-                    : undefined,
-                },
-              ]),
-            ),
-          }),
-        );
+        const graphqlType = new GraphQLEnumType({
+          name: typeInfo.name,
+          description: typeInfo.description,
+          values: Object.fromEntries(
+            nullthrows(typeInfo.enumValues).map((ev) => [
+              ev.name,
+              {
+                description: ev.description,
+                deprecationReason: ev.isDeprecated
+                  ? (ev.deprecationReason ?? DEFAULT_DEPRECATION_REASON)
+                  : undefined,
+              },
+            ]),
+          ),
+        });
+
+        enums.push(graphqlType);
+        typesByName.set(graphqlType.name, graphqlType);
         break;
       }
 
-      case "INPUT_OBJECT":
-      case "INTERFACE":
-      case "OBJECT": {
-        const decl = {
-          INPUT_OBJECT: "input",
-          INTERFACE: "interface",
-          OBJECT: "type",
-        }[typeInfo.kind];
-        const fields = [
-          ...(typeInfo.fields ?? []),
-          ...(typeInfo.inputFields ?? []),
-        ].map((field) => {
-          const args =
-            "args" in field && field.args && field.args.length > 0
-              ? "(\n" +
-                field.args
-                  .map(
-                    (arg) =>
-                      `${outputGraphQLString(arg.description)} ${arg.name}: ${outputGraphQLTypeAnnotation(arg.type)}` +
-                      (arg.defaultValue != null
-                        ? " = " + arg.defaultValue
-                        : ""),
-                  )
-                  .join("\n") +
-                "\n)"
-              : "";
-
-          return [
-            outputGraphQLString(field.description),
-            field.name,
-            args,
-            ":",
-            outputGraphQLTypeAnnotation(field.type),
-            "isDeprecated" in field && field.isDeprecated
-              ? outputGraphQLDeprecatedDirective(field.deprecationReason)
-              : "",
-          ].join(" ");
+      case "INPUT_OBJECT": {
+        const graphqlType = new GraphQLInputObjectType({
+          name: typeInfo.name,
+          description: typeInfo.description,
+          fields: () =>
+            Object.fromEntries(
+              nullthrows(typeInfo.inputFields).map((field) => [
+                field.name,
+                {
+                  description: field.description,
+                  type: assertInputType(getType(field.type)),
+                },
+              ]),
+            ),
         });
 
-        const destination = {
-          INPUT_OBJECT: inputObjects,
-          INTERFACE: interfaces,
-          OBJECT: objects,
-        }[typeInfo.kind];
-        destination.push(
-          `${outputGraphQLString(typeInfo.description)} ${decl} ${typeInfo.name} { ${fields.join("\n")} }`,
-        );
+        inputObjects.push(graphqlType);
+        typesByName.set(graphqlType.name, graphqlType);
+        break;
+      }
+
+      case "INTERFACE":
+      case "OBJECT": {
+        const classAndDestination =
+          typeInfo.kind === "INTERFACE"
+            ? ([GraphQLInterfaceType, interfaces] as const)
+            : ([GraphQLObjectType, objects] as const);
+        const graphqlType = new classAndDestination[0]({
+          name: typeInfo.name,
+          description: typeInfo.description,
+          fields: () =>
+            Object.fromEntries(
+              nullthrows(typeInfo.fields).map((field) => [
+                field.name,
+                {
+                  description: field.description,
+                  deprecationReason: field.isDeprecated
+                    ? (field.deprecationReason ?? DEFAULT_DEPRECATION_REASON)
+                    : undefined,
+                  type: assertOutputType(getType(field.type)),
+                  args: Object.fromEntries(
+                    (field.args ?? []).map((arg) => [
+                      arg.name,
+                      {
+                        description: arg.description,
+                        type: assertInputType(getType(arg.type)),
+                        defaultValue: (() => {
+                          if (arg.defaultValue == null) {
+                            return undefined;
+                          }
+
+                          const underlyingArgType = getType(
+                            getUnderlyingType(arg.type),
+                          );
+
+                          (
+                            underlyingArgType as unknown as Record<
+                              string,
+                              unknown
+                            >
+                          ).serialize = function (
+                            this: GraphQLType,
+                            s: string,
+                          ) {
+                            try {
+                              const parsed = JSON.parse(s);
+                              if (
+                                typeof parsed === "boolean" ||
+                                typeof parsed === "number" ||
+                                (typeof parsed === "string" &&
+                                  isScalarType(this))
+                              ) {
+                                return parsed;
+                              }
+                            } catch {}
+
+                            return s;
+                          };
+
+                          return arg.defaultValue;
+                        })(),
+                      },
+                    ]),
+                  ),
+                },
+              ]),
+            ),
+        });
+
+        (classAndDestination[1] as GraphQLType[]).push(graphqlType);
+        typesByName.set(graphqlType.name, graphqlType);
         break;
       }
 
       case "SCALAR": {
-        scalars.push(
-          new GraphQLScalarType({
-            name: typeInfo.name,
-            description: typeInfo.description,
-          }),
-        );
+        const graphqlType = new GraphQLScalarType({
+          name: typeInfo.name,
+          description: typeInfo.description,
+        });
+
+        scalars.push(graphqlType);
+        typesByName.set(graphqlType.name, graphqlType);
         break;
       }
 
@@ -130,14 +208,8 @@ export async function outputGraphQLSchema(
     }
   }
 
-  const schema = [
-    scalars.map(printType),
-    enums.map(printType),
-    interfaces,
-    inputObjects,
-    objects,
-  ]
-    .flat()
+  const schema = [scalars, enums, interfaces, inputObjects, objects]
+    .flatMap((group) => group.map(printType))
     .join("\n\n");
 
   maybeThrow(validateSchema(buildSchema(schema)));
