@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import iterable_int_stream.IterableIntStream;
+import java.util.List;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
@@ -14,37 +15,26 @@ class DigitsIntTest {
 
   @Test
   public void withIntegerGreaterThanZero() {
-    var digits = digits(4984);
-    assertIterableEquals(
-      IterableIntStream.from(IntStream.of(4, 8, 9, 4)),
-      digits
-    );
+    assertIterableEquals(List.of(4, 8, 9, 4), digits(4984));
   }
 
   @Test
   public void withZero() {
-    var digits = digits(0);
-    assertIterableEquals(IterableIntStream.from(IntStream.of(0)), digits);
+    assertIterableEquals(List.of(0), digits(0));
   }
 
   @Test
   public void withRadixOtherThan10() {
-    var digits = digits(12345, 7);
-    assertIterableEquals(
-      IterableIntStream.from(IntStream.of(4, 6, 6, 0, 5)),
-      digits
-    );
+    assertIterableEquals(List.of(4, 6, 6, 0, 5), digits(12345, 7));
   }
 
   @Test
   public void withRadixLessThan2() {
-    Exception thrown = assertThrows(Exception.class, () -> digits(12345, 1));
-    assertTrue(thrown instanceof IllegalArgumentException);
+    assertThrows(IllegalArgumentException.class, () -> digits(12345, 1));
   }
 
   @Test
   public void withNegativeInteger() {
-    Exception thrown = assertThrows(Exception.class, () -> digits(-145));
-    assertTrue(thrown instanceof IllegalArgumentException);
+    assertThrows(IllegalArgumentException.class, () -> digits(-145));
   }
 }

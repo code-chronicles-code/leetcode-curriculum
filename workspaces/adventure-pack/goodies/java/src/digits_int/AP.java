@@ -28,7 +28,7 @@ public final class AP {
     if (number < 0) throw new IllegalArgumentException(
       "Please provide a positive integer."
     );
-    
+
     if (radix < 2) throw new IllegalArgumentException(
       "Please provide a radix greater than or equal to 2."
     );
