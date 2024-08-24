@@ -2698,7 +2698,7 @@ exports[`App can equip single goody: Kotlin traverseLevelOrder() 1`] = `
 
 public data class TreeNode(val \`val\`: Int, var left: TreeNode? = null, var right: TreeNode? = null)
 
-public fun TreeNode?.traverseLevelOrder(): Sequence<Collection<TreeNode>> {
+public fun TreeNode?.traverseLevelOrder(): Sequence<List<TreeNode>> {
   if (this == null) {
     return sequenceOf()
   }
@@ -2706,11 +2706,11 @@ public fun TreeNode?.traverseLevelOrder(): Sequence<Collection<TreeNode>> {
   var nodesAtLevel = listOf(this)
 
   return sequence {
-    while (nodesAtLevel.isNotEmpty()) {
+    do {
       yield(nodesAtLevel)
 
       nodesAtLevel = nodesAtLevel.flatMap { listOf(it.left, it.right) }.filterNotNull()
-    }
+    } while (nodesAtLevel.isNotEmpty())
   }
 }
 
@@ -2764,11 +2764,10 @@ exports[`App can equip single goody: Python 3 flatten 1`] = `
 from typing import Generator, TypeVar
 
 T = TypeVar("T")
+NestedList = T | list["NestedList"]
 
-nested_list = T | list["nested_list"]
 
-
-def flatten(self: nested_list) -> Generator[T, None, None]:
+def flatten(self: NestedList) -> Generator[T, None, None]:
     for i in self:
         if isinstance(i, list):
             yield from flatten(i)
@@ -2837,18 +2836,18 @@ exports[`App can equip single goody: Python 3 transpose_matrix 1`] = `
 
 from typing import TypeVar
 
-matrix_element = TypeVar("matrix_element")
+T = TypeVar("T")
 
 
 def transpose_matrix(
-    input: list[list[matrix_element]],
-) -> list[list[matrix_element]]:
+    input: list[list[T]],
+) -> list[list[T]]:
     r = len(input)
     c = len(input[0]) if r != 0 else 0
     if r == 0 or c == 0:
-        raise ValueError("Can't transpose a matrix that has a 0 dimension")
+        raise ValueError("Can't transpose a matrix that has a 0 dimension!")
     if any(len(row) != c for row in input):
-        raise ValueError("Matrix has rows of different lengths")
+        raise ValueError("Matrix has rows of different lengths!")
 
     return [list(row) for row in zip(*input)]
 

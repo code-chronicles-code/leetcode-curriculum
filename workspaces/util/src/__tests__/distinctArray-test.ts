@@ -3,77 +3,115 @@ import { describe, expect, it } from "@jest/globals";
 import { distinctArray } from "../distinctArray.ts";
 
 describe("distinctArray", () => {
-  it("returns an empty list if given an empty list", () => {
-    expect(distinctArray([])).toStrictEqual([]);
+  it("deduplicates numbers", () => {
+    const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+
+    expect(distinctArray(arr)).toStrictEqual([3, 1, 4, 5, 9, 2, 6]);
   });
 
-  it("can handle NaN in an iterable of numbers", () => {
-    const arr = [156, 89, NaN, 99, NaN, 156];
-    const expected = [156, 89, NaN, 99];
+  it("deduplicates booleans", () => {
+    const arr = [true, true, false, false, true, false];
 
-    expect(distinctArray(arr)).toStrictEqual(expected);
+    expect(distinctArray(arr)).toStrictEqual([true, false]);
   });
 
-  it("can handle an iterable of booleans", () => {
-    const arr = [true, true, false, false];
-    const expected = [true, false];
+  it("uses strict equality", () => {
+    const arr = [null, undefined, "5", 5, "", 0, false, "0"];
 
-    expect(distinctArray(arr)).toStrictEqual(expected);
-  });
-
-  it("can handle iterables like sets", () => {
-    const iter = new Set([
-      "uno",
-      "dos",
-      "tres",
-      "cuatro",
-      "cinco",
-      "cinco",
-      "seis",
+    expect(distinctArray(arr)).toStrictEqual([
+      null,
+      undefined,
+      "5",
+      5,
+      "",
+      0,
+      false,
+      "0",
     ]);
-    const expected = ["uno", "dos", "tres", "cuatro", "cinco", "seis"];
+  });
 
-    expect(distinctArray(iter)).toStrictEqual(expected);
+  it("deduplicates NaN values", () => {
+    const arr = [156, 89, NaN, 99, NaN, 156, Infinity, Infinity];
+
+    expect(distinctArray(arr)).toStrictEqual([156, 89, NaN, 99, Infinity]);
+  });
+
+  it("deduplicates negative zero and zero", () => {
+    const arr = [314, 0, 159, -0, 265, -Infinity, Infinity];
+
+    expect(distinctArray(arr)).toStrictEqual([
+      314,
+      0,
+      159,
+      265,
+      -Infinity,
+      Infinity,
+    ]);
+  });
+
+  it.each([
+    [],
+    [].values(),
+    new Set().values(),
+    new Map().entries(),
+    ""[Symbol.iterator](),
+    (function* () {})(),
+  ])("returns an empty array if given an empty iterable", (iterable) => {
+    expect(distinctArray(iterable)).toStrictEqual([]);
   });
 
   it("defaults to comparing objects by reference", () => {
-    const obj1 = { id: "001" };
-    const map = new Map<{ id: string }, string>([
-      [obj1, "object 1"],
-      [{ id: "O02" }, "object 2"],
-      [{ id: "O03" }, "object 3"],
-      [obj1, "object 1"],
-      [{ id: "O04" }, "object 4"],
-      [obj1, "object 1"],
-    ]);
+    const repeatedReference = { id: "007" };
+    const arr = [
+      { id: "008" },
+      repeatedReference,
+      { id: "0011" },
+      repeatedReference,
+      { id: "009" },
+      repeatedReference,
+      { id: "006" },
+      { id: "009" },
+      { id: "009" },
+      { id: "007" },
+    ];
 
-    const keys = Array.from(map.keys());
-    expect(distinctArray(map)).toStrictEqual([
-      [keys[0], "object 1"],
-      [keys[1], "object 2"],
-      [keys[2], "object 3"],
-      [keys[3], "object 4"],
-    ]);
-  });
-
-  it("is guaranteed to receive distinct result for a map with a keyFn", () => {
-    const map = new Map([
-      [1, "uno"],
-      [2, "dos"],
-      [3, "tres"],
-      [4, "tres"],
-      [5, "cinco!"],
-    ]);
-
-    expect(distinctArray(map, (val) => val[1])).toStrictEqual([
-      [1, "uno"],
-      [2, "dos"],
-      [4, "tres"],
-      [5, "cinco!"],
+    expect(distinctArray(arr)).toStrictEqual([
+      { id: "008" },
+      { id: "007" },
+      { id: "0011" },
+      { id: "009" },
+      { id: "006" },
+      { id: "009" },
+      { id: "009" },
+      { id: "007" },
     ]);
   });
 
-  it("can handle iterables like objects", () => {
+  it("can take a key function to define distinctiveness", () => {
+    const arr = [
+      { name: "Joe" },
+      { name: "Joe" },
+      { name: "Joseph" },
+      { name: "Joe" },
+      { name: "Frank" },
+    ];
+
+    expect(distinctArray(arr)).toStrictEqual(arr);
+
+    expect(distinctArray(arr, (val) => val.name)).toStrictEqual([
+      { name: "Joe" },
+      { name: "Joseph" },
+      { name: "Frank" },
+    ]);
+  });
+
+  it("keeps the first occurring element based on the key", () => {
+    const arr = [3, 1, 4, 1, 5, 9, 2, 6];
+
+    expect(distinctArray(arr, (val) => val % 2)).toStrictEqual([3, 4]);
+  });
+
+  it("works with a generator", () => {
     const obj = {
       *[Symbol.iterator]() {
         yield "uno";
@@ -87,23 +125,7 @@ describe("distinctArray", () => {
     expect(distinctArray(obj)).toStrictEqual(["uno", "dos", "tres", "cinco!"]);
   });
 
-  it("can handle iterables like strings", () => {
+  it("can get the distinct characters of a string", () => {
     expect(distinctArray("GNUU")).toStrictEqual(["G", "N", "U"]);
-  });
-
-  it("can take a keyFn to define distinctiveness", () => {
-    const arr = [
-      { name: "Joe" },
-      { name: "Joe" },
-      { name: "Joseph" },
-      { name: "Joe" },
-      { name: "Frank" },
-    ];
-
-    expect(distinctArray(arr, (val) => val.name)).toStrictEqual([
-      { name: "Joe" },
-      { name: "Joseph" },
-      { name: "Frank" },
-    ]);
   });
 });

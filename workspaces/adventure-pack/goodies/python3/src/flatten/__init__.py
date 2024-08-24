@@ -1,11 +1,10 @@
 from typing import Generator, TypeVar
 
 T = TypeVar("T")
+NestedList = T | list["NestedList"]
 
-nested_list = T | list["nested_list"]
 
-
-def flatten(self: nested_list) -> Generator[T, None, None]:
+def flatten(self: NestedList) -> Generator[T, None, None]:
     for i in self:
         if isinstance(i, list):
             yield from flatten(i)
