@@ -68,7 +68,7 @@ export function isScript(value: string): value is Script {
 export const SCRIPTS_TO_SKIP_BY_WORKSPACE: Readonly<
   Record<string, ReadonlySet<Script>>
 > = {
-  "chrome-extension-hello-world": new Set(["test", "typecheck"]),
+  "chrome-extension-hello-world": new Set(["test"]),
   "download-leetcode-submissions": new Set(["test"]),
   "eslint-config": new Set(["test", "typecheck"]),
   "fetch-leetcode-problem-list": new Set(["test"]),
