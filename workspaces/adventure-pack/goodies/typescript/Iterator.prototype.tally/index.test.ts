@@ -3,9 +3,6 @@ import { describe, expect, it } from "@jest/globals";
 import "../Iterator.prototype.filter";
 import "../Iterator.prototype.map";
 
-import { iteratorPrototype } from "../Iterator.prototype";
-delete (iteratorPrototype as unknown as Record<string, unknown>).toArray;
-// eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
 import "./index";
 
 describe("Iterator.prototype.tally", () => {
