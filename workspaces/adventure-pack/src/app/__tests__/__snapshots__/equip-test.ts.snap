@@ -391,6 +391,105 @@ final class VirtualList<T> extends AbstractList<T> {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: Java digits(int) 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
+@SuppressWarnings("overloads")
+interface IterableIntStream extends Iterable<Integer>, IntStream {
+  @Override
+  public Spliterator.OfInt spliterator();
+
+  public static IterableIntStream from(final Iterable<Integer> iterable) {
+    return from(iterable.spliterator());
+  }
+
+  public static IterableIntStream from(final Iterator<Integer> iterator) {
+    return from(() -> iterator);
+  }
+
+  public static IterableIntStream from(final Spliterator<Integer> spliterator) {
+    return from(StreamSupport.stream(spliterator, false));
+  }
+
+  public static IterableIntStream from(final Spliterator.OfInt spliterator) {
+    return from(StreamSupport.intStream(spliterator, false));
+  }
+
+  public static IterableIntStream from(final Stream<Integer> stream) {
+    return from(stream.mapToInt(Integer::intValue));
+  }
+
+  public static IterableIntStream from(final IntStream stream) {
+    @SuppressWarnings("unchecked")
+    var proxy = (IterableIntStream) Proxy.newProxyInstance(
+      ClassLoader.getSystemClassLoader(),
+      new Class<?>[] { IterableIntStream.class },
+      (Object _proxy, Method method, Object[] args) ->
+        IntStream.class.getMethod(
+            method.getName(),
+            method.getParameterTypes()
+          ).invoke(stream, args)
+    );
+    return proxy;
+  }
+}
+
+final class AP {
+  private AP() {}
+
+  /**
+   * Get the digits in the given integer. The digits are returned as an
+   * {@link IterableIntStream integer stream} with the least significant digit as the first element
+   * in the stream. For example, for integer 27363, [3,6,3,7,2] is returned.
+   * @param number Integer of interest.
+   * @return The {@link IterableIntStream stream} of digits.
+   */
+  public static IterableIntStream digits(int number) {
+    return digits(number, 10);
+  }
+
+  /**
+   * Get the digits in the given integer for the given radix value. The digits are returned as an
+   * {@link IterableIntStream integer stream} with the least significant digit as the first element
+   * in the stream. For example, for integer 27363, [3,6,3,7,2] is returned with radix = 10.
+   * @param number Integer of interest.
+   * @param radix Radix value of interest.
+   * @return The {@link IterableIntStream stream} of digits.
+   */
+  public static IterableIntStream digits(int number, int radix) {
+    if (number < 0) throw new IllegalArgumentException(
+      "Please provide a positive integer."
+    );
+
+    if (radix < 2) throw new IllegalArgumentException(
+      "Please provide a radix greater than or equal to 2."
+    );
+
+    return IterableIntStream.from(
+      number == 0
+        ? IntStream.of(0)
+        : IntStream.iterate(number, num -> num != 0, num -> num / radix).map(
+          num -> num % radix
+        )
+    );
+  }
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: Java gcd(int,int) 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
