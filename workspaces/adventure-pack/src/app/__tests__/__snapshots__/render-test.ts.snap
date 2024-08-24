@@ -1064,6 +1064,21 @@ iteratorPrototype.take ??= function (limit) {
 };"
 `;
 
+exports[`App can render goody: JavaScript Iterator.prototype.tally 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+iteratorPrototype.tally = function () {
+  const tally = new Map();
+
+  for (const element of this.toIterable()) {
+    tally.set(element, (tally.get(element) ?? 0) + 1);
+  }
+
+  return tally;
+};"
+`;
+
 exports[`App can render goody: JavaScript Iterator.prototype.toArray 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -2302,6 +2317,27 @@ iteratorPrototype.take ??= function <T>(
       }
     }
   }.call(this);
+};"
+`;
+
+exports[`App can render goody: TypeScript Iterator.prototype.tally 1`] = `
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
+
+declare global {
+  interface Iterator<T> {
+    tally(this: Iterator<T>): Map<T, number>;
+  }
+}
+
+iteratorPrototype.tally = function <T>(this: Iterator<T>): Map<T, number> {
+  const tally = new Map<T, number>();
+
+  for (const element of this.toIterable()) {
+    tally.set(element, (tally.get(element) ?? 0) + 1);
+  }
+
+  return tally;
 };"
 `;
 
