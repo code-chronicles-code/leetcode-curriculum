@@ -1,5 +1,0 @@
-{
-  "name": "UUID",
-  "description": "Leverages the internal Python implmeentation of UUID (uuid.UUID) to provide native UUID objects\nin fields, resolvers and input.",
-  "kind": "SCALAR"
-}

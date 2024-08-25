@@ -1,5 +1,0 @@
-{
-  "name": "Decimal",
-  "description": "The `Decimal` scalar type represents a python Decimal.",
-  "kind": "SCALAR"
-}

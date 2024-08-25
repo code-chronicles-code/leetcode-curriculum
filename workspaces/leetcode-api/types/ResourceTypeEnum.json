@@ -1,9 +1,0 @@
-{
-  "name": "ResourceTypeEnum",
-  "kind": "ENUM",
-  "enumValues": [
-    {
-      "name": "DUMMY"
-    }
-  ]
-}
