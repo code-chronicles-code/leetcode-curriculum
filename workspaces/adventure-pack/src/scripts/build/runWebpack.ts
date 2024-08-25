@@ -1,10 +1,10 @@
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 
 export async function runWebpack(): Promise<void> {
-  console.log("ENV with bash");
-  await spawnWithSafeStdio("env", [], { shell: "bash" });
-  console.log("ENV without bash");
-  await spawnWithSafeStdio("env", []);
+  console.log("which with bash");
+  await spawnWithSafeStdio("which", ["-a", "yarn"], { shell: "bash" });
+  console.log("which without bash");
+  await spawnWithSafeStdio("which", ["-a", "yarn"]);
   console.log();
   console.log();
 
