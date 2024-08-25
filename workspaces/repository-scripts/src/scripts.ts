@@ -46,7 +46,7 @@ export const SCRIPTS = {
       maybeThrow(errors);
     },
 
-    repositoryRootCommand: ["prettier", [" --color", "--write", "."]],
+    repositoryRootCommand: ["prettier", ["--color", "--write", "."]],
   } as ScriptData,
 
   lint: {

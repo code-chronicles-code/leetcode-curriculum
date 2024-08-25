@@ -9,11 +9,17 @@ export function spawnWithSafeStdio(
   return new Promise((resolve, reject) => {
     const childProcess = spawn(command, args, {
       ...options,
+
+      // Without a shell specified, many comands seem to fail to spawn on
+      // Windows. I verified that it's not a PATH issue. It seems like it's
+      // probably https://github.com/nodejs/node-v0.x-archive/issues/5841
+      ...(process.platform === "win32" && { shell: options?.shell ?? "bash" }),
+
+      // When using "inherit" mode, it sometimes broke the interaction with
+      // the actions/github-script@v7 GitHub Action...
       stdio: ["ignore", "pipe", "pipe"],
     });
 
-    // When using "inherit" mode, this sometimes broke the interaction with
-    // the actions/github-script@v7 GitHub Action...
     childProcess.stdout.pipe(process.stdout);
     childProcess.stderr.pipe(process.stderr);
 

@@ -15,7 +15,7 @@ jobs:
       - name: Set up everything
         uses: ./.github/workflows/set-up-everything
 
-      - name: Linting
+      - name: Lint
         run: yarn lint
         # TODO: Annotations of files that fail lint?
         # TODO: Maybe write up a job summary per https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
