@@ -6,7 +6,7 @@ import prettier from "prettier";
 import { isEnvironmentDev } from "@code-chronicles/util/isEnvironmentDev";
 
 import { readAllGoodies } from "../package-goodies/readAllGoodies";
-import { WEBAPP_DIST } from "./constants";
+import { WEB_APP_DIST } from "./constants";
 
 async function readAllGoodiesAsString(): Promise<string> {
   const goodies = await readAllGoodies();
@@ -24,5 +24,7 @@ async function readAllGoodiesAsString(): Promise<string> {
 export async function writeGoodiesJson(): Promise<void> {
   const text = await readAllGoodiesAsString();
 
-  await writeFile(path.join(WEBAPP_DIST, "goodies.json"), text);
+  await writeFile(path.join(WEB_APP_DIST, "goodies.json"), text, {
+    encoding: "utf8",
+  });
 }

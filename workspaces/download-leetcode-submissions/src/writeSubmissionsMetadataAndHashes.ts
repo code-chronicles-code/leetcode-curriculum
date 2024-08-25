@@ -1,4 +1,4 @@
-import fsPromises from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 
 import { METADATA_FILE, HASHES_FILE } from "./constants";
 import { getFilenameForSubmission } from "./getFilenameForSubmission";
@@ -13,14 +13,15 @@ export async function writeSubmissionsMetadataAndHashes(
   );
 
   await Promise.all([
-    fsPromises.writeFile(
+    writeFile(
       METADATA_FILE,
       submissions
         .map((submission) => JSON.stringify(submission) + "\n")
         .join(""),
+      { encoding: "utf8" },
     ),
 
-    fsPromises.writeFile(
+    writeFile(
       HASHES_FILE,
       submissions
         .map(
@@ -31,6 +32,7 @@ export async function writeSubmissionsMetadataAndHashes(
             )}/${getFilenameForSubmission(submission)}\n`,
         )
         .join(""),
+      { encoding: "utf8" },
     ),
   ]);
 }

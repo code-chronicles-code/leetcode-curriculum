@@ -1,4 +1,4 @@
-import fsPromises from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
@@ -92,10 +92,10 @@ async function main(): Promise<void> {
           console.error(`Saving submission ${submission.id} to a file.`);
 
           const dir = getDirnameForSubmission(submission);
-          await fsPromises.mkdir(dir, { recursive: true });
+          await mkdir(dir, { recursive: true });
 
           const filename = getFilenameForSubmission(submission);
-          await fsPromises.writeFile(path.join(dir, filename), code);
+          await writeFile(path.join(dir, filename), code, { encoding: "utf8" });
         });
       }
 
