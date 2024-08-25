@@ -47,7 +47,7 @@
     "goodies:typescript:format": "prettier --color --write goodies/typescript",
     "goodies:typescript:install": "yarn",
     "goodies:typescript:test": "jest --color goodies/typescript",
-    "build-app": "ts-node src/scripts/package-goodies/main.ts && tsx src/scripts/build-html.tsx && webpack && cp css/style.css dist/style.css",
+    "build-app": "tsx src/scripts/build/main.ts",
     "package-goodies:test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --color --testPathIgnorePatterns=\"/goodies/\"",
     "format": "yarn goodies:java:format && yarn goodies:kotlin:format && yarn goodies:python3:format && yarn goodies:typescript:format && prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",

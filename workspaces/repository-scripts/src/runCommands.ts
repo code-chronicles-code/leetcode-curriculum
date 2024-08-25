@@ -33,9 +33,6 @@ export async function runCommands(
       await spawnWithSafeStdio(command, combinedArgs, {
         ...options,
         env: { ...process.env, FORCE_COLOR: "1" },
-        // Without a shell specified, `yarn` can fail to spawn in Windows
-        // GitHub Actions for some reason. Maybe a PATH issue?
-        shell: "bash",
       });
     } catch (error) {
       failedCommands.push({ command, args: combinedArgs, error });

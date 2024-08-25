@@ -3,6 +3,8 @@ import path from "node:path";
 
 import webpack, { type Configuration } from "webpack";
 
+import { WEBAPP_DIST } from "./src/scripts/build/constants";
+
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
 const config: Configuration = {
@@ -10,7 +12,7 @@ const config: Configuration = {
   entry: "./src/app/main.tsx",
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, WEBAPP_DIST),
   },
 
   module: {
