@@ -6,5 +6,11 @@
   "action": {
     "default_popup": "hello.html",
     "default_icon": "hello_extensions.png"
-  }
+  },
+  "content_scripts": [
+        {
+            "matches": ["https://leetcode.com/*"],
+            "js": ["hard-mode.js"]
+        }
+    ]
 }
