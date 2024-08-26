@@ -2482,16 +2482,20 @@ exports[`App can equip single goody: JavaScript traverseInOrder 1`] = `
 
 function* traverseInOrder(root) {
   const stack = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseLeftChild] = stack.pop();
-    if (node) {
-      if (didTraverseLeftChild) {
-        yield node;
-      } else {
-        stack.push([node.right, false], [node, true], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseLeftChild) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node.right, false], [node, true], [node.left, false]);
+  } while (stack.length > 0);
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -2507,13 +2511,14 @@ function isNonNullish(value) {
 }
 
 function* traverseLevelOrder(root) {
-  if (!root) {
+  if (root == null) {
     return;
   }
 
   let level = [root];
   do {
     yield level;
+
     level = level
       .flatMap((node) => [node.left, node.right])
       .filter(isNonNullish);
@@ -2530,16 +2535,50 @@ exports[`App can equip single goody: JavaScript traversePostOrder 1`] = `
 
 function* traversePostOrder(root) {
   const stack = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseChildren] = stack.pop();
-    if (node) {
-      if (didTraverseChildren) {
-        yield node;
-      } else {
-        stack.push([node, true], [node.right, false], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true], [node.right, false], [node.left, false]);
+  } while (stack.length > 0);
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: JavaScript traversePostOrderNAry 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traversePostOrderNAry(root) {
+  const stack = [[root, false]];
+
+  do {
+    const [node, didTraverseChildren] = stack.pop();
+    if (node == null) {
+      continue;
+    }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true]);
+    // TODO: add an Array.prototype.valuesReversed() goody and use it here
+    for (let i = node.children.length - 1; i >= 0; --i) {
+      stack.push([node.children[i], false]);
+    }
+  } while (stack.length > 0);
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -2552,13 +2591,15 @@ exports[`App can equip single goody: JavaScript traversePreOrder 1`] = `
 
 function* traversePreOrder(root) {
   const stack = [root];
-  while (stack.length > 0) {
+
+  do {
     const node = stack.pop();
-    if (node) {
+
+    if (node != null) {
       yield node;
       stack.push(node.right, node.left);
     }
-  }
+  } while (stack.length > 0);
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -4967,16 +5008,20 @@ function* traverseInOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseLeftChild] = stack.pop()!;
-    if (node) {
-      if (didTraverseLeftChild) {
-        yield node;
-      } else {
-        stack.push([node.right, false], [node, true], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseLeftChild) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node.right, false], [node, true], [node.left, false]);
+  } while (stack.length > 0);
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -4994,13 +5039,14 @@ function isNonNullish<T>(value: T | null | undefined): value is T {
 function* traverseLevelOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T[], void, void> {
-  if (!root) {
+  if (root == null) {
     return;
   }
 
   let level = [root];
   do {
     yield level;
+
     level = level
       .flatMap((node) => [node.left, node.right])
       .filter(isNonNullish);
@@ -5019,16 +5065,52 @@ function* traversePostOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseChildren] = stack.pop()!;
-    if (node) {
-      if (didTraverseChildren) {
-        yield node;
-      } else {
-        stack.push([node, true], [node.right, false], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true], [node.right, false], [node.left, false]);
+  } while (stack.length > 0);
+}
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript traversePostOrderNAry 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function* traversePostOrderNAry<T extends { children: T[] }>(
+  root: T | null | undefined,
+): Generator<T, void, void> {
+  const stack: [T | null | undefined, boolean][] = [[root, false]];
+
+  do {
+    const [node, didTraverseChildren] = stack.pop()!;
+    if (node == null) {
+      continue;
+    }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true]);
+    // TODO: add an Array.prototype.valuesReversed() goody and use it here
+    for (let i = node.children.length - 1; i >= 0; --i) {
+      stack.push([node.children[i], false]);
+    }
+  } while (stack.length > 0);
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -5043,13 +5125,15 @@ function* traversePreOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack = [root];
-  while (stack.length > 0) {
+
+  do {
     const node = stack.pop();
-    if (node) {
+
+    if (node != null) {
       yield node;
       stack.push(node.right, node.left);
     }
-  }
+  } while (stack.length > 0);
 }
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
