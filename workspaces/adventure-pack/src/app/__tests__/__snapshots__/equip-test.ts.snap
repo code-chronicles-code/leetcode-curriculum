@@ -2669,6 +2669,28 @@ class UnionFind:
 ########################### END ADVENTURE PACK CODE ############################"
 `;
 
+exports[`App can equip single goody: Python 3 flatten 1`] = `
+"########################## BEGIN ADVENTURE PACK CODE ###########################
+# Adventure Pack commit fake-commit-hash
+# Running at: https://example.com/
+
+from typing import Generator, TypeVar
+
+T = TypeVar("T")
+
+nested_list = T | list["nested_list"]
+
+
+def flatten(self: nested_list) -> Generator[T, None, None]:
+    for i in self:
+        if isinstance(i, list):
+            yield from flatten(i)
+        else:
+            yield i
+
+########################### END ADVENTURE PACK CODE ############################"
+`;
+
 exports[`App can equip single goody: Python 3 int.digits 1`] = `
 "########################## BEGIN ADVENTURE PACK CODE ###########################
 # Adventure Pack commit fake-commit-hash

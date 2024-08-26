@@ -1494,6 +1494,22 @@ exports[`App can render goody: Python 3 UnionFind 1`] = `
         return self.find(c1) == self.find(c2)"
 `;
 
+exports[`App can render goody: Python 3 flatten 1`] = `
+"from typing import Generator, TypeVar
+
+T = TypeVar("T")
+
+nested_list = T | list["nested_list"]
+
+
+def flatten(self: nested_list) -> Generator[T, None, None]:
+    for i in self:
+        if isinstance(i, list):
+            yield from flatten(i)
+        else:
+            yield i"
+`;
+
 exports[`App can render goody: Python 3 int.digits 1`] = `
 "from typing import Generator
 
