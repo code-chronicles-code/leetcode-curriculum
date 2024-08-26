@@ -20,7 +20,7 @@ export default [...config, { ignores: ["dist/"] }];
 
 ## Development
 
-Like the rest of the [Code Chronicles Leetcode ecosystem](../../), this package is structured as a Node module, using [classic Yarn](https://classic.yarnpkg.com/) as the package manager.
+Like the rest of the [Code Chronicles Leetcode ecosystem](../../), this package is structured as a Node module, using [Yarn](https://yarnpkg.com/) as the package manager.
 
 You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format` and `yarn lint` commands are available, but for the time being there is no `yarn typecheck`, since this package is pure JavaScript rather than TypeScript. (However, it hopefully will be [in the near future](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files)!)
 
