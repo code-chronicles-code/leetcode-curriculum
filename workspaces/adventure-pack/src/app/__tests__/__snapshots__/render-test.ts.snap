@@ -1356,16 +1356,20 @@ exports[`App can render goody: JavaScript nullthrows 1`] = `
 exports[`App can render goody: JavaScript traverseInOrder 1`] = `
 "export function* traverseInOrder(root) {
   const stack = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseLeftChild] = stack.pop();
-    if (node) {
-      if (didTraverseLeftChild) {
-        yield node;
-      } else {
-        stack.push([node.right, false], [node, true], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseLeftChild) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node.right, false], [node, true], [node.left, false]);
+  } while (stack.length > 0);
 }"
 `;
 
@@ -1373,13 +1377,14 @@ exports[`App can render goody: JavaScript traverseLevelOrder 1`] = `
 "import "isNonNullish";
 
 export function* traverseLevelOrder(root) {
-  if (!root) {
+  if (root == null) {
     return;
   }
 
   let level = [root];
   do {
     yield level;
+
     level = level
       .flatMap((node) => [node.left, node.right])
       .filter(isNonNullish);
@@ -1390,29 +1395,59 @@ export function* traverseLevelOrder(root) {
 exports[`App can render goody: JavaScript traversePostOrder 1`] = `
 "export function* traversePostOrder(root) {
   const stack = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseChildren] = stack.pop();
-    if (node) {
-      if (didTraverseChildren) {
-        yield node;
-      } else {
-        stack.push([node, true], [node.right, false], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true], [node.right, false], [node.left, false]);
+  } while (stack.length > 0);
+}"
+`;
+
+exports[`App can render goody: JavaScript traversePostOrderNAry 1`] = `
+"export function* traversePostOrderNAry(root) {
+  const stack = [[root, false]];
+
+  do {
+    const [node, didTraverseChildren] = stack.pop();
+    if (node == null) {
+      continue;
+    }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true]);
+    // TODO: add an Array.prototype.valuesReversed() goody and use it here
+    for (let i = node.children.length - 1; i >= 0; --i) {
+      stack.push([node.children[i], false]);
+    }
+  } while (stack.length > 0);
 }"
 `;
 
 exports[`App can render goody: JavaScript traversePreOrder 1`] = `
 "export function* traversePreOrder(root) {
   const stack = [root];
-  while (stack.length > 0) {
+
+  do {
     const node = stack.pop();
-    if (node) {
+
+    if (node != null) {
       yield node;
       stack.push(node.right, node.left);
     }
-  }
+  } while (stack.length > 0);
 }"
 `;
 
@@ -2843,16 +2878,20 @@ exports[`App can render goody: TypeScript traverseInOrder 1`] = `
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseLeftChild] = stack.pop()!;
-    if (node) {
-      if (didTraverseLeftChild) {
-        yield node;
-      } else {
-        stack.push([node.right, false], [node, true], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseLeftChild) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node.right, false], [node, true], [node.left, false]);
+  } while (stack.length > 0);
 }"
 `;
 
@@ -2862,13 +2901,14 @@ exports[`App can render goody: TypeScript traverseLevelOrder 1`] = `
 export function* traverseLevelOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T[], void, void> {
-  if (!root) {
+  if (root == null) {
     return;
   }
 
   let level = [root];
   do {
     yield level;
+
     level = level
       .flatMap((node) => [node.left, node.right])
       .filter(isNonNullish);
@@ -2881,16 +2921,46 @@ exports[`App can render goody: TypeScript traversePostOrder 1`] = `
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack: [T | null | undefined, boolean][] = [[root, false]];
-  while (stack.length > 0) {
+
+  do {
     const [node, didTraverseChildren] = stack.pop()!;
-    if (node) {
-      if (didTraverseChildren) {
-        yield node;
-      } else {
-        stack.push([node, true], [node.right, false], [node.left, false]);
-      }
+    if (node == null) {
+      continue;
     }
-  }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true], [node.right, false], [node.left, false]);
+  } while (stack.length > 0);
+}"
+`;
+
+exports[`App can render goody: TypeScript traversePostOrderNAry 1`] = `
+"export function* traversePostOrderNAry<T extends { children: T[] }>(
+  root: T | null | undefined,
+): Generator<T, void, void> {
+  const stack: [T | null | undefined, boolean][] = [[root, false]];
+
+  do {
+    const [node, didTraverseChildren] = stack.pop()!;
+    if (node == null) {
+      continue;
+    }
+
+    if (didTraverseChildren) {
+      yield node;
+      continue;
+    }
+
+    stack.push([node, true]);
+    // TODO: add an Array.prototype.valuesReversed() goody and use it here
+    for (let i = node.children.length - 1; i >= 0; --i) {
+      stack.push([node.children[i], false]);
+    }
+  } while (stack.length > 0);
 }"
 `;
 
@@ -2899,12 +2969,14 @@ exports[`App can render goody: TypeScript traversePreOrder 1`] = `
   T extends { left?: T | null | undefined; right?: T | null | undefined },
 >(root: T | null | undefined): Generator<T, void, void> {
   const stack = [root];
-  while (stack.length > 0) {
+
+  do {
     const node = stack.pop();
-    if (node) {
+
+    if (node != null) {
       yield node;
       stack.push(node.right, node.left);
     }
-  }
+  } while (stack.length > 0);
 }"
 `;
