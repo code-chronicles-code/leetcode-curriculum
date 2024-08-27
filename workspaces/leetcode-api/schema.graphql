@@ -4166,14 +4166,14 @@ input BatchReviewFlaggedObjectsInput {
 }
 
 input DeleteAccountInput {
-  otherReason: String
+  otherReason: String = ""
   reason: DeleteAccountReason!
   usernameOrEmail: String!
 }
 
 input DeleteUserRequestInput {
   endDate: DateTime
-  limit: Int!
+  limit: Int! = 20
   skip: Int!
   startDate: DateTime
   userEmail: String
@@ -4198,7 +4198,7 @@ input InterviewedStatsInput {
   companyId: Int
   companyName: String
   interviewedStatsId: Int!
-  isInterviewed: Boolean
+  isInterviewed: Boolean = false
   positionTagSlug: String
   questionId: String!
   stageOption: Int
@@ -4248,7 +4248,7 @@ input ManagementAddInterviewedStatVoteInput {
   company tag id
   """
   tagId: ID!
-  timeOption: Int
+  timeOption: Int = 0
   votedNum: Int!
 }
 
@@ -4310,7 +4310,7 @@ input managementCompanyQuestionsInput {
   limit: Int!
   offset: Int!
   tagId: Int!
-  timeOption: CompanyQuestionTimeOptionEnum
+  timeOption: CompanyQuestionTimeOptionEnum = 0
 }
 
 input managementCompanyQuestionsV2Input {
@@ -4319,7 +4319,7 @@ input managementCompanyQuestionsV2Input {
   limit: Int!
   offset: Int!
   positionTagSlug: String
-  timeOption: CompanyQuestionTimeOptionEnumV2
+  timeOption: CompanyQuestionTimeOptionEnumV2 = 4
 }
 
 input ManagementCompanyTagsInput {
@@ -4413,7 +4413,7 @@ input ManagementTagsInput {
 }
 
 input ManagementTeamMembersInput {
-  limit: Int!
+  limit: Int! = 10
   roleGroup: ManagementRoleEnum
   skip: Int!
   username: String
@@ -4424,29 +4424,29 @@ input OfficialSolutionFeedbackFilterInput {
   categories: [String]
   endDate: String
   hasComment: Boolean
-  orderBy: FeedbackOrderByEnum
+  orderBy: FeedbackOrderByEnum = 1
   questionSlugs: [String]
   reasons: [Int]
-  sortOrder: SortingEnum
+  sortOrder: SortingEnum = 2
   startDate: String
 }
 
 input OMFavoriteListInput {
   favoriteType: FavoriteTypeEnum
-  limit: Int!
+  limit: Int! = 20
   searchFieldEnum: OMFavoriteSearchFieldEnum
   searchKeyword: String
-  skip: Int!
+  skip: Int! = 0
   sortBy: OMFavoriteSortFieldEnum
 
   """
   sort descending or ascending
   """
-  sortDsc: Boolean
+  sortDsc: Boolean = true
 }
 
 input PremiumTrialRecordsInput {
-  limit: Int!
+  limit: Int! = 10
   searchBy: SearchUserType
   searchKeyword: String
   skip: Int!
@@ -4532,7 +4532,7 @@ input UpcV2SubmitSurveyInput {
 input UserManagementIpListInput {
   endedAt: DateTime
   ip: String
-  limit: Int!
+  limit: Int! = 10
   skip: Int!
   startedAt: DateTime
   status: IPStatusEnum
@@ -4541,7 +4541,7 @@ input UserManagementIpListInput {
 
 input UserManagementOperationHistoryInput {
   endedAt: DateTime
-  limit: Int!
+  limit: Int! = 10
   operations: [UserOperationEnum]
   skip: Int!
   startedAt: DateTime
@@ -4551,7 +4551,7 @@ input UserManagementOperationHistoryInput {
 input UserManagementScoreHistoryInput {
   category: UmScoreCategoryEnum
   endedAt: DateTime
-  limit: Int!
+  limit: Int! = 10
   scoreType: ScoreTypeEnum
   skip: Int!
   startedAt: DateTime
@@ -4561,7 +4561,7 @@ input UserManagementScoreHistoryInput {
 input UserManagementStoreOrdersInput {
   endedAt: DateTime
   keywords: String
-  limit: Int!
+  limit: Int! = 10
   skip: Int!
   startedAt: DateTime
   status: UmStoreOrderStatusEnum
@@ -4571,7 +4571,7 @@ input UserManagementStoreOrdersInput {
 input UserManagementStripeChargesInput {
   endedAt: DateTime
   keywords: String
-  limit: Int!
+  limit: Int! = 10
   skip: Int!
   startedAt: DateTime
   status: StripeChargeStatusEnum
@@ -4579,7 +4579,7 @@ input UserManagementStripeChargesInput {
 }
 
 input VacRecordsInput {
-  limit: Int!
+  limit: Int! = 10
 
   """
   vac name to search
@@ -5852,7 +5852,7 @@ type EmailSendSessionNode {
 
 type EmailTemplateNode {
   """
-  Resolves the following template variables automatically:<ul><li>q_description</li><li>next_javascript_dcc_editorial_link</li><li>next_javascript_dcc_day</li><li>username</li><li>unsubscribe_url</li><li>next_contest_title_slug</li><li>q_difficulty_w_article</li><li>next_biweekly_contest_time_url</li><li>next_contest_url</li><li>suggested_q_slug</li><li>suggested_q_title</li><li>next_contest_title</li><li>q_difficulty_mandarin</li><li>site_base_url</li><li>real_name</li><li>storage_base_url</li><li>q_num_ac_subs</li><li>next_biweekly_contest_title_slug</li><li>next_contest_formatted_date</li><li>next_biweekly_contest_formatted_date</li><li>next_contest_time_url</li><li>current_year</li><li>next_biweekly_contest_title</li><li>blocks</li><li>next_biweekly_contest_time_by_timezone</li><li>next_biweekly_contest_url</li><li>next_contest_time_by_timezone</li><li>next_javascript_dcc_link</li></ul>
+  Resolves the following template variables automatically:<ul><li>next_javascript_dcc_day</li><li>next_biweekly_contest_formatted_date</li><li>q_description</li><li>next_contest_title_slug</li><li>next_biweekly_contest_time_by_timezone</li><li>current_year</li><li>q_difficulty_w_article</li><li>suggested_q_title</li><li>suggested_q_slug</li><li>next_contest_time_by_timezone</li><li>q_difficulty_mandarin</li><li>next_contest_title</li><li>next_biweekly_contest_time_url</li><li>next_contest_time_url</li><li>blocks</li><li>next_biweekly_contest_url</li><li>next_biweekly_contest_title_slug</li><li>next_javascript_dcc_editorial_link</li><li>storage_base_url</li><li>unsubscribe_url</li><li>site_base_url</li><li>next_contest_formatted_date</li><li>q_num_ac_subs</li><li>real_name</li><li>next_contest_url</li><li>next_javascript_dcc_link</li><li>username</li><li>next_biweekly_contest_title</li></ul>
   """
   content: String!
   conversionTargetUrlTemplates: String
@@ -9395,7 +9395,7 @@ type Query {
   favoriteQuestionAcStatus(favoriteSlug: String!, titleSlug: String!): String
   favoriteQuestionList(
     favoriteSlug: String!
-    filter: FavoriteQuestionFilterInput
+    filter: FavoriteQuestionFilterInput = {}
   ): FavoriteQuestionListNode!
   favoritesLists: FavoritesNode
   favoriteSubmitAcProgress(favoriteSlug: String!): FavoriteSubmitACProgressNode
@@ -9501,8 +9501,8 @@ type Query {
     """
     新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效
     """
-    favoriteFilters: FavoriteQuestionFilterInput
-    filters: QuestionListFilterInput
+    favoriteFilters: FavoriteQuestionFilterInput = {}
+    filters: QuestionListFilterInput = {}
 
     """
     是否需要上下题信息
@@ -9616,7 +9616,9 @@ type Query {
     numPerPage: Int
     pageNo: Int
   ): PagifiedOfficialSolutionFeedbackDetailNode
-  omFavoriteList(data: OMFavoriteListInput!): OMFavoriteListNode!
+  omFavoriteList(
+    data: OMFavoriteListInput! = { skip: 0, limit: 20, sort_dsc: true }
+  ): OMFavoriteListNode!
   omFavoriteLogs(favoriteSlug: String!): [OMFavoriteLogNode]!
   omFavoriteQuestionList(
     favoriteSlug: String!
@@ -9629,7 +9631,7 @@ type Query {
     currentQuestionSlug: String!
     envId: String = ""
     envType: String = ""
-    filters: QuestionListFilterInput
+    filters: QuestionListFilterInput = {}
   ): PanelQuestionListNode
   pastContests(numPerPage: Int = 10, pageNo: Int = 1): PagifiedContestNode!
   planCompletedPlans: [PlanStudyPlanNodeWithGroup!]!
@@ -9667,7 +9669,7 @@ type Query {
   privateContestRegisteredUserIds(contestSlug: String): [ID]
   problemsetLearningContext(
     categorySlug: String = ""
-    filters: QuestionListFilterInput
+    filters: QuestionListFilterInput = {}
     limit: Int = 50
     questionSlug: String!
     skip: Int = 0
@@ -9759,8 +9761,8 @@ type Query {
     """
     新版题单的过滤条件, 仅在env_type为company, problem-list-v2时有效
     """
-    favoriteFilters: FavoriteQuestionFilterInput
-    filters: QuestionListFilterInput
+    favoriteFilters: FavoriteQuestionFilterInput = {}
+    filters: QuestionListFilterInput = {}
 
     """
     版本号, 默认为空, 新版企业题单需要传版本号v2
