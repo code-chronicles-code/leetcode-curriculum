@@ -24,13 +24,8 @@ describe("Number.prototype.chr", () => {
     expect(Number(0x1f92a).chr()).toBe("🤪");
   });
 
-  it("convert empty coercions to null character", () => {
-    expect(Number().chr()).toBe("\0");
-    expect(Number([]).chr()).toBe("\0");
-    expect(Number("").chr()).toBe("\0");
-    expect(Number(0).chr()).toBe("\0");
-    expect(Number(false).chr()).toBe("\0");
-    expect(Number(null).chr()).toBe("\0");
+  it("convert zero to null character", () => {
+    expect((0).chr()).toBe("\0");
   });
 
   it("handle numbers outside unicode range by throwing range error", () => {
@@ -47,8 +42,5 @@ describe("Number.prototype.chr", () => {
   it("handles incompatible types by throwing range error", () => {
     expect(() => Number(undefined).chr()).toThrow(RangeError);
     expect(() => Number(NaN).chr()).toThrow(RangeError);
-    expect(() => Number([1, 2]).chr()).toThrow(RangeError);
-    expect(() => Number("65,55").chr()).toThrow(RangeError);
-    expect(() => Number({}).chr()).toThrow(RangeError);
   });
 });
