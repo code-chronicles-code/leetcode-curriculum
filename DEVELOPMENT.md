@@ -7,7 +7,7 @@ This document aims to get you up-and-running developing on this project! If afte
 At a minimum, you will need:
 
 - Node.js, version 20 or higher
-- Yarn 1.\* (i.e. classic Yarn)
+- Yarn 4+
 - a Bash shell
 
 For the most enjoyable development experience, or if you plan to contribute to the [Adventure Pack](workspaces/adventure-pack/), you will additionally need:
@@ -19,7 +19,7 @@ See below for more context on each prerequisite and how to install it.
 
 ### Node
 
-This project is structured as a Node module, using [classic Yarn](https://classic.yarnpkg.com/) as the package manager. So even if you don't intend to write any TypeScript/JavaScript code, it will be beneficial to have a recent version of Node, so you can run the repository management code, which is generally written in TypeScript or JavaScript.
+This project is structured as a Node module, using Yarn as the package manager. So even if you don't intend to write any TypeScript/JavaScript code, it will be beneficial to have a recent version of Node, so you can run the repository management code, which is generally written in TypeScript or JavaScript.
 
 We recommend installing Node using the Node Version Manager (`nvm`). Follow the installation instructions at https://nvm.sh/ then:
 
@@ -33,7 +33,7 @@ node -v
 
 ### Yarn
 
-As mentioned, Yarn (specifically [classic Yarn](https://classic.yarnpkg.com/)) is the package manager we currently use for the TypeScript/JavaScript code. If you have a recent version of Node, you will have access to all the package managers your heart desires, though you may need to enable them using [Corepack](https://nodejs.org/api/corepack.html):
+As mentioned, [Yarn](https://yarnpkg.com/) is the package manager we currently use for the TypeScript/JavaScript code. If you have a recent version of Node, you will have access to all the package managers your heart desires, though you may need to enable them using [Corepack](https://nodejs.org/api/corepack.html):
 
 ```sh
 # The `corepack` command is distributed with Node.

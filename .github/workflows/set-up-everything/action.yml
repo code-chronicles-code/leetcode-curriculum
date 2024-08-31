@@ -27,6 +27,5 @@ runs:
         python-version: 3.12.4
 
     - name: Install dependencies
-      # I learned about https://github.com/yarnpkg/yarn/issues/2739 painfully.
-      run: yarn --production=false --frozen-lockfile
+      run: yarn --immutable
       shell: bash
