@@ -102,7 +102,7 @@ async function main(): Promise<void> {
 
   maybeThrow(validateSchema(buildSchema(schema)));
 
-  await writeFile(SCHEMA_FILE, schema);
+  await writeFile(SCHEMA_FILE, schema, { encoding: "utf8" });
 }
 
 main().catch((err) => {

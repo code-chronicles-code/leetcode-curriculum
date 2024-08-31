@@ -3,16 +3,17 @@ import path from "node:path";
 
 import webpack, { type Configuration } from "webpack";
 
-import { WEBAPP_DIST } from "./src/scripts/build/constants";
+import { WEB_APP_DIST } from "./src/scripts/build/constants";
 
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
 const config: Configuration = {
   target: "web",
+  // TODO: for Chrome extension we will need devtool: "cheap-source-map" since we can't eval.
   entry: "./src/app/main.tsx",
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, WEBAPP_DIST),
+    path: path.resolve(__dirname, WEB_APP_DIST),
   },
 
   module: {

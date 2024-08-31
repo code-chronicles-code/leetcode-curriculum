@@ -1,5 +1,5 @@
 import { exec as execWithCallback } from "node:child_process";
-import { mkdir, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 
@@ -7,7 +7,7 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 
 import { App } from "../../app/components/App";
-import { WEBAPP_DIST } from "./constants";
+import { WEB_APP_DIST } from "./constants";
 
 const exec = promisify(execWithCallback);
 
@@ -16,9 +16,8 @@ const exec = promisify(execWithCallback);
 export async function writeIndexHtml(): Promise<void> {
   const commitHash = (await exec("git rev-parse HEAD")).stdout.trim();
 
-  await mkdir(WEBAPP_DIST, { recursive: true });
   await writeFile(
-    path.join(WEBAPP_DIST, "index.html"),
+    path.join(WEB_APP_DIST, "index.html"),
     "<!DOCTYPE html>\n" +
       ReactDOMServer.renderToStaticMarkup(
         <html lang="en-US">
@@ -51,5 +50,6 @@ export async function writeIndexHtml(): Promise<void> {
         </html>,
       ) +
       "\n",
+    { encoding: "utf8" },
   );
 }
