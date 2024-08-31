@@ -591,6 +591,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@code-chronicles/javascript-leetcode-month@workspace:workspaces/javascript-leetcode-month":
+  version: 0.0.0-use.local
+  resolution: "@code-chronicles/javascript-leetcode-month@workspace:workspaces/javascript-leetcode-month"
+  dependencies:
+    "@code-chronicles/eslint-config": "npm:0.0.1"
+    "@types/node": "npm:22.5.1"
+    eslint: "npm:9.9.1"
+    prettier: "npm:3.3.3"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@code-chronicles/leetcode-api@npm:0.0.1, @code-chronicles/leetcode-api@workspace:workspaces/leetcode-api":
   version: 0.0.0-use.local
   resolution: "@code-chronicles/leetcode-api@workspace:workspaces/leetcode-api"
