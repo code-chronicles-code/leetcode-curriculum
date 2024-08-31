@@ -2,6 +2,9 @@
 
 [View Problem on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/)
 
+> [!WARNING]
+> This page includes spoilers. For a spoiler-free introduction to the problem, see the [README](README.md) file.
+
 ## Summary
 
 There are two primary approaches to this problem:
@@ -32,15 +35,15 @@ A few more things to note from this code:
 - strings can be double-quoted, single-quoted, or even enclosed in backticks for [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals); I used double quotes because that's the default used by [Prettier](https://prettier.io/), a popular (the most popular?) JavaScript formatter
 - strings can be concatenated using `+`
 
-The name of a function is actually optional! The following is vaild code:
+The name of a function is actually optional! The following is valid code:
 
 ```js
-function(name) {
+(function (name) {
   console.log("Hello, " + name + "!");
-}
+});
 ```
 
-However, this code is not very useful. It creates a new, anonymous function object, and immediately throws it away. Nobody will ever have a chance to invoke this function, because we don't have any way to refer to it.
+It's wrapped in parentheses because it's a function expression. However, this code is not very useful. It creates a new, anonymous function object, and immediately throws it away. Nobody will ever have a chance to invoke this function, because we don't have any way to refer to it.
 
 If we wanted to have a way to refer to the function, but insisted on not naming it, we could also assign it to a variable:
 
@@ -52,7 +55,8 @@ const greet = function (name) {
 
 For some reason, this is the style that LeetCode favors for its pure JavaScript templates. Except, LeetCode also uses [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var), which is a terrible example to set, because `var` is essentially deprecated. Why? Programmers have generally come to expect block-scoped variables, but `var` is function-scoped. All the modern codebases I've seen use [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) and [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) instead, and you should too. I'm assuming `var`'s behavior could not be changed or removed for backward compatibility, but there's no reason to use it in new code.
 
-> [!TIP] > **Did you know that you can modify the code provided by LeetCode?** The only rule is the updated code has to be compatible with the interface expected by LeetCode. Changing the function declaration syntax is a minor change, and I will always replace the use of `var` for pure JavaScript solutions.
+> [!TIP]  
+> **Did you know that you can modify the code provided by LeetCode?** The only rule is the updated code has to be compatible with the interface expected by LeetCode. Changing the function declaration syntax is a minor change, and I will always replace the use of `var` for pure JavaScript solutions.
 
 > [!NOTE] > **Are the two ways we saw of declaring a function different only in syntax?** If you're new to JavaScript, it's safe to consider them identical, because in practice they are. If you're an advanced JavaScript user, can you name the subtle differences? Answer will be revealed at the end of this doc!
 
@@ -66,7 +70,8 @@ Note that the code provided by LeetCode for this problem already uses a rest par
 
 We're almost ready to write a solution! Since the rest parameter will be a JavaScript array, we need to know how to check the size of a JavaScript array, and the answer is the [`length` property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)! Note that `length` gives us raw numeric data, so we don't have to invoke it like `foo.length()`, we simply read the property as `foo.length`.
 
-> [!NOTE] > **What happens if we try to _assign a value_ to an array's length?** In other words, what happens if we declare an array like `arr = [3, 1, 4, 1, 5, 9]` and then we run `arr.length = 3`? Or `arr.length = 10`? Open up your browser's JavaScript console and try it! Answer will be revealed at the end of this doc.
+> [!NOTE]  
+> **What happens if we try to _assign a value_ to an array's length?** In other words, what happens if we declare an array like `arr = [3, 1, 4, 1, 5, 9]` and then we run `arr.length = 3`? Or `arr.length = 10`? Open up your browser's JavaScript console and try it! Answer will be revealed at the end of this doc.
 
 ### `arguments` Object
 
@@ -120,6 +125,8 @@ We are now more than ready to solve the problem! Let's look at a few options for
 
 As mentioned, I am going to always replace the usage of `var` in JavaScript solutions, because there's no reason to use it. I didn't bother updating the docblock, so the full solution in pure JavaScript becomes:
 
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374676829/)
+
 ```js
 /**
  * @param {...(null|boolean|number|string|Array|Object)} args
@@ -136,6 +143,8 @@ function argumentsLength(...args) {
 
 I did however update the types for the TypeScript solution:
 
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374678115/)
+
 ```ts
 function argumentsLength(...args: readonly unknown[]): number {
   return args.length;
@@ -148,6 +157,8 @@ function argumentsLength(...args: readonly unknown[]): number {
 
 As a bonus, we can use the syntax for assigning a function expression to a variable, and combine it with the [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) syntax. (If you're new to JavaScript, we'll discuss this in more detail later.)
 
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374678620/)
+
 ```ts
 const argumentsLength = (...args: readonly unknown[]): number => args.length;
 
@@ -157,6 +168,8 @@ const argumentsLength = (...args: readonly unknown[]): number => args.length;
 ```
 
 Note that TypeScript type annotations are often optional, if there is enough context to infer a type. For example, the return type of the function can be inferred to be a number, because we are returning the `length` of an array, which is a number:
+
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374678865/)
 
 ```ts
 const argumentsLength = (...args: readonly unknown[]) => args.length;
@@ -171,6 +184,8 @@ If you are new to TypeScript, I recommend using type annotations as much as poss
 ### Using `arguments`
 
 If we use the `arguments` object, the rest parameter becomes unused, so we can choose to not even declare it!
+
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374679390/)
 
 ```js
 /**
@@ -187,8 +202,24 @@ function argumentsLength() {
 
 However, in TypeScript, omitting the rest parameter will result in a type error in the code LeetCode uses to invoke our function! A common practice is to prefix the names of unused variables with an underscore:
 
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374680348/)
+
 ```ts
 function argumentsLength(..._args: readonly unknown[]): number {
+  return arguments.length;
+}
+
+/**
+ * argumentsLength(1, 2, 3); // 3
+ */
+```
+
+We can also do something a bit funny-looking, and use an empty destructure of the rest parameter! Destructuring of the rest parameter is documented in [the rest parameters documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374680779/)
+
+```ts
+function argumentsLength(...[]: readonly unknown[]): number {
   return arguments.length;
 }
 
@@ -202,6 +233,8 @@ Fun fact, `arguments` don't work the same way in arrow functions. [The documenta
 > Arrow functions don't have their own bindings to `this`, `arguments`, or `super`
 
 So if we want to assign a function expression to a variable, we'll have to keep using the `function` keyword. In pure JavaScript:
+
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374688659/)
 
 ```js
 /**
@@ -218,6 +251,8 @@ const argumentsLength = function () {
 
 And in TypeScript:
 
+[View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374688909/)
+
 ```ts
 const argumentsLength = function (..._args: readonly unknown[]): number {
   return arguments.length;
@@ -228,7 +263,8 @@ const argumentsLength = function (..._args: readonly unknown[]): number {
  */
 ```
 
-> [!NOTE] > **So what does happen if we try to use `arguments` in an arrow function?** If you're an advanced JavaScript user, try it out! Answers below...
+> [!NOTE]  
+> **So what does happen if we try to use `arguments` in an arrow function?** If you're an advanced JavaScript user, try it out! Answers below...
 
 ## Answers to Bonus Questions
 
