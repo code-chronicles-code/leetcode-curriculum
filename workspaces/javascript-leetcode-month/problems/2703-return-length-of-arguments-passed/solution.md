@@ -43,9 +43,11 @@ The name of a function is actually optional! The following is valid code:
 });
 ```
 
-It's wrapped in parentheses because it's a function expression. However, this code is not very useful. It creates a new, anonymous function object, and immediately throws it away. Nobody will ever have a chance to invoke this function, because we don't have any way to refer to it.
+It's wrapped in parentheses because it's a function expression rather than a function declaration, and the lack of name confuses the parser.
 
-If we wanted to have a way to refer to the function, but insisted on not naming it, we could also assign it to a variable:
+However, despite still being runnable, the above code is not very useful. It creates a new, anonymous function object, and immediately throws it away. Nobody will ever have a chance to invoke this function, because we don't have any way to refer to it.
+
+If we wanted to have a way to refer to the function, but insisted on not naming it, we could also assign it to a variable. As part of an assignment we also no longer need the parentheses around the function expression:
 
 ```js
 const greet = function (name) {
@@ -58,7 +60,8 @@ For some reason, this is the style that LeetCode favors for its pure JavaScript 
 > [!TIP]  
 > **Did you know that you can modify the code provided by LeetCode?** The only rule is the updated code has to be compatible with the interface expected by LeetCode. Changing the function declaration syntax is a minor change, and I will always replace the use of `var` for pure JavaScript solutions.
 
-> [!NOTE] > **Are the two ways we saw of declaring a function different only in syntax?** If you're new to JavaScript, it's safe to consider them identical, because in practice they are. If you're an advanced JavaScript user, can you name the subtle differences? Answer will be revealed at the end of this doc!
+> [!NOTE]  
+> **Are the two ways we saw of declaring a function different only in syntax?** If you're new to JavaScript, it's safe to consider them identical, because in practice they are. If you're an advanced JavaScript user, can you name the subtle differences? Answer will be revealed at the end of this doc!
 
 ### Rest Parameters
 
@@ -113,7 +116,7 @@ type StringOrNumber = string | number;
 
 LeetCode's TypeScript template for this problem is unnecessarily complicated. It declares our rest parameter as an array of JSON values, and it defines a recursive type to express this! While this is interesting to illustrate the power of TypeScript, for this problem we don't care what arguments we get, we just care how many we get. Therefore I think it's sufficient to declare the arguments as being of type [`unknown`](https://www.typescriptlang.org/docs/handbook/2/functions.html#unknown). This is the safe way to say that we don't know the type. TypeScript will require us to test the type of the value before doing anything with it. In many LeetCode problems you will see `any`, which is the _unsafe_ way of saying we don't know the type. Unlike `unknown`, `any` allows us to do _anything_ with the value. It bypasses the typechecker for that section of code, and if we're not careful it can even leak to code that interacts with that section of code. It's best to avoid `any` as much as possible.
 
-We can additionally mark array arguments as [`readonly`](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#readonly-and-const) when we don't intend to mutate them.
+We can additionally mark array arguments as [`readonly`](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#readonly-and-const) when we don't intend to mutate them, as you'll see below.
 
 To learn more about types, check out [the TypeScript website](https://www.typescriptlang.org/).
 
