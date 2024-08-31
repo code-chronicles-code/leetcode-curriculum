@@ -20,12 +20,15 @@
   "scripts": {
     "format": "yarn workspace @code-chronicles/repository-scripts start format",
     "lint": "yarn workspace @code-chronicles/repository-scripts start lint",
+    "prepare": "husky",
     "test": "yarn workspace @code-chronicles/repository-scripts start test",
     "typecheck": "yarn workspace @code-chronicles/repository-scripts start typecheck"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
     "eslint": "9.9.1",
+    "husky": "9.1.5",
+    "lint-staged": "15.2.9",
     "prettier": "3.3.3"
   },
   "packageManager": "yarn@4.4.1"
