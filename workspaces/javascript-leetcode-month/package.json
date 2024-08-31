@@ -1,0 +1,27 @@
+{
+  "name": "@code-chronicles/javascript-leetcode-month",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
+    "directory": "workspaces/javascript-leetcode-month"
+  },
+  "author": {
+    "name": "Miorel-Lucian Palii",
+    "url": "https://github.com/miorel"
+  },
+  "scripts": {
+    "format": "prettier --color --write .",
+    "lint": "eslint --color --max-warnings=0 .",
+    "typecheck": "tsc --pretty --project ."
+  },
+  "devDependencies": {
+    "@code-chronicles/eslint-config": "0.0.1",
+    "@types/node": "22.5.1",
+    "eslint": "9.9.1",
+    "prettier": "3.3.3",
+    "typescript": "5.5.4"
+  }
+}
