@@ -1,6 +1,6 @@
 # 2727. Is Object Empty
 
-View this Write-up on LeetCode TODO | [View Problem on LeetCode](https://leetcode.com/problems/is-object-empty/)
+[View this Write-up on LeetCode](https://leetcode.com/problems/is-object-empty/solutions/5722608/content/) | [View Problem on LeetCode](https://leetcode.com/problems/is-object-empty/)
 
 > [!WARNING]
 > This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
@@ -287,7 +287,7 @@ function isEmpty(obj) {
 }
 ```
 
-If you like ternaries as much as I do, you may put the loop in a helper function. Note that :
+If you like ternaries as much as I do, you may put the loop in a helper function. Note that we will need a TypeScript cast using the as keyword for TypeScript to approve of the second branch:
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375728095/)
 
@@ -408,4 +408,4 @@ function isEmpty(
    ```
 
 > [!TIP]  
-> Thanks for reading! If you enjoyed this write-up, feel free to up-vote it on LeetCode! 🙏
+> Thanks for reading! If you enjoyed this write-up, feel free to [up-vote it on LeetCode](https://leetcode.com/problems/is-object-empty/solutions/5722608/content/)! 🙏
