@@ -4,8 +4,8 @@ This directory contains the resources for the month of JavaScript on LeetCode, a
 
 ## Problem Order
 
-1. [2703. Return Length of Arguments Passed](https://leetcode.com/problems/return-length-of-arguments-passed/)
-2. [2727. Is Object Empty](https://leetcode.com/problems/is-object-empty/)
+1. [2703. Return Length of Arguments Passed](problems/2703-return-length-of-arguments-passed/)
+2. [2727. Is Object Empty](problems/2727-is-object-empty/)
 3. [2677. Chunk Array](https://leetcode.com/problems/chunk-array/)
 4. [2635. Apply Transform Over Each Element in Array](https://leetcode.com/problems/apply-transform-over-each-element-in-array/)
 5. [2634. Filter Elements from Array](https://leetcode.com/problems/filter-elements-from-array/)
