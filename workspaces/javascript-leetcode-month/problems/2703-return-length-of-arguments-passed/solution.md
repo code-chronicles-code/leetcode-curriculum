@@ -1,9 +1,9 @@
 # 2703. Return Length of Arguments Passed
 
-[View Problem on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/)
+[View this Write-up on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/solutions/5722508/content/) | [View Problem on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/)
 
 > [!WARNING]
-> This page includes spoilers. For a spoiler-free introduction to the problem, see the [README](README.md) file.
+> This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
 
 ## Summary
 
@@ -114,7 +114,10 @@ We can also define new types, for example:
 type StringOrNumber = string | number;
 ```
 
-LeetCode's TypeScript template for this problem is unnecessarily complicated. It declares our rest parameter as an array of JSON values, and it defines a recursive type to express this! While this is interesting to illustrate the power of TypeScript, for this problem we don't care what arguments we get, we just care how many we get. Therefore I think it's sufficient to declare the arguments as being of type [`unknown`](https://www.typescriptlang.org/docs/handbook/2/functions.html#unknown). This is the safe way to say that we don't know the type. TypeScript will require us to test the type of the value before doing anything with it. In many LeetCode problems you will see `any`, which is the _unsafe_ way of saying we don't know the type. Unlike `unknown`, `any` allows us to do _anything_ with the value. It bypasses the typechecker for that section of code, and if we're not careful it can even leak to code that interacts with that section of code. It's best to avoid `any` as much as possible.
+LeetCode's TypeScript template for this problem is unnecessarily complicated. It declares our rest parameter as an array of JSON values, and it defines a recursive type to express this! While this is interesting to illustrate the power of TypeScript, for this problem we don't care what arguments we get, we just care how many we get. Therefore I think it's sufficient to declare the arguments as being of type [`unknown`](https://www.typescriptlang.org/docs/handbook/2/functions.html#unknown). This is the safe way to say that we don't know the type. TypeScript will require us to test the type of the value before doing anything with it.
+
+> [!WARNING]  
+> In many LeetCode problems you will see `any`, which is the _unsafe_ way of saying we don't know the type. Unlike `unknown`, `any` allows us to do _anything_ with the value. It bypasses the typechecker for that section of code, and if we're not careful it can even leak to code that interacts with that section of code. It's best to avoid `any` as much as possible.
 
 We can additionally mark array arguments as [`readonly`](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#readonly-and-const) when we don't intend to mutate them, as you'll see below.
 
@@ -312,3 +315,6 @@ const argumentsLength = function (..._args: readonly unknown[]): number {
    console.log(enclosing("a", "b", "c")); // prints 3
    console.log(enclosing("a", "b")); // prints 2
    ```
+
+> [!TIP]  
+> Thanks for reading! If you enjoyed this write-up, feel free to [up-vote it on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/solutions/5722508/)! 🙏
