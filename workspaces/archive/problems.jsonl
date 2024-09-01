@@ -3259,3 +3259,19 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3259,"title":"Maximum Energy Boost From Two Drinks","titleSlug":"maximum-energy-boost-from-two-drinks"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3260,"title":"Find the Largest Palindrome Divisible by K","titleSlug":"find-the-largest-palindrome-divisible-by-k"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3261,"title":"Count Substrings That Satisfy K-Constraint II","titleSlug":"count-substrings-that-satisfy-k-constraint-ii"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3262,"title":"Find Overlapping Shifts","titleSlug":"find-overlapping-shifts"}
+{"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3263,"title":"Convert Doubly Linked List to Array I","titleSlug":"convert-doubly-linked-list-to-array-i"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3264,"title":"Final Array State After K Multiplication Operations I","titleSlug":"final-array-state-after-k-multiplication-operations-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3265,"title":"Count Almost Equal Pairs I","titleSlug":"count-almost-equal-pairs-i"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3266,"title":"Final Array State After K Multiplication Operations II","titleSlug":"final-array-state-after-k-multiplication-operations-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3267,"title":"Count Almost Equal Pairs II","titleSlug":"count-almost-equal-pairs-ii"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3268,"title":"Find Overlapping Shifts II","titleSlug":"find-overlapping-shifts-ii"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3269,"title":"Constructing Two Increasing Arrays","titleSlug":"constructing-two-increasing-arrays"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3270,"title":"Find the Key of the Numbers","titleSlug":"find-the-key-of-the-numbers"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3271,"title":"Hash Divided String","titleSlug":"hash-divided-string"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3272,"title":"Find the Count of Good Integers","titleSlug":"find-the-count-of-good-integers"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3273,"title":"Minimum Amount of Damage Dealt to Bob","titleSlug":"minimum-amount-of-damage-dealt-to-bob"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3274,"title":"Check if Two Chessboard Squares Have the Same Color","titleSlug":"check-if-two-chessboard-squares-have-the-same-color"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3275,"title":"K-th Nearest Obstacle Queries","titleSlug":"k-th-nearest-obstacle-queries"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3276,"title":"Select Cells in Grid With Maximum Score","titleSlug":"select-cells-in-grid-with-maximum-score"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3277,"title":"Maximum XOR Score Subarray Queries","titleSlug":"maximum-xor-score-subarray-queries"}
