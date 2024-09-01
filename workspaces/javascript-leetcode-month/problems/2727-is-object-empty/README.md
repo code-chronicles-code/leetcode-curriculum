@@ -10,4 +10,6 @@ Both of the above strategies have one flaw, however. For a large object, turning
 
 It will also probably be helpful to be able to check if a value is an array or an object. [The `typeof` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) seems tempting, but unfortunately it won't work, because an array is still an object, so `typeof` on an array returns `"object"`. However, there is another function that does what we need. Search for it.
 
+A big takeaway of this problem will be that plain JavaScript objects are rather annoying when we care about the size. We'll need to either maintain our own variable for the size, or do something inefficient. If we want a map data structure, modern JavaScript has [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map).
+
 Once you've worked on the problem, check out [the full write-up and solution](solution.md)!

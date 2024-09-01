@@ -20,7 +20,7 @@ Based on the function signature provided by LeetCode, which already declares a r
 
 To solve this problem, you'll need to know the basics of functions in JavaScript. Here's a simple JavaScript function named `greet`:
 
-```js
+```javascript []
 function greet(name) {
   console.log("Hello, " + name + "!");
 }
@@ -31,13 +31,13 @@ The syntax may be reminiscent of Java, C, or C++, except that pure JavaScript is
 A few more things to note from this code:
 
 - blocks are wrapped in braces
-- [`console.log`](https://developer.mozilla.org/en-US/docs/Web/API/console/log_static) lets us print to the console (the developer console if your code runs in a browser, otherwise [standard output](https://en.wikipedia.org/wiki/Standard_streams))
+- [`console.log`](https://developer.mozilla.org/en-US/docs/Web/API/console/log_static) lets us print to the console (the JavaScript console if your code runs in a browser, otherwise [standard output](https://en.wikipedia.org/wiki/Standard_streams))
 - strings can be double-quoted, single-quoted, or even enclosed in backticks for [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals); I used double quotes because that's the default used by [Prettier](https://prettier.io/), a popular (the most popular?) JavaScript formatter
 - strings can be concatenated using `+`
 
 The name of a function is actually optional! The following is valid code:
 
-```js
+```javascript []
 (function (name) {
   console.log("Hello, " + name + "!");
 });
@@ -49,7 +49,7 @@ However, despite still being runnable, the above code is not very useful. It cre
 
 If we wanted to have a way to refer to the function, but insisted on not naming it, we could also assign it to a variable. As part of an assignment we also no longer need the parentheses around the function expression:
 
-```js
+```javascript []
 const greet = function (name) {
   console.log("Hello, " + name + "!");
 };
@@ -80,7 +80,7 @@ We're almost ready to write a solution! Since the rest parameter will be a JavaS
 
 We already have enough background to write our first solution, but for the second solution strategy we also need to know about [the `arguments` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments). Unlike the rest parameter, `arguments` doesn't have to be declared, it simply exists. This function works:
 
-```js
+```javascript []
 function printArguments() {
   console.log(arguments);
 }
@@ -100,7 +100,7 @@ TypeScript isn't considered a new JavaScript feature, it's more like a new JavaS
 
 Type annotations are added using a colon and the type, and they are supported in several places. For example, in TypeScript, we could have annotated our `greet` function as:
 
-```ts
+```typescript []
 function greet(name: string): void {
   console.log("Hello, " + name + "!");
 }
@@ -110,7 +110,7 @@ The `string` annotation applies to the argument, whereas the `void` annotation i
 
 We can also define new types, for example:
 
-```ts
+```typescript []
 type StringOrNumber = string | number;
 ```
 
@@ -133,7 +133,7 @@ As mentioned, I am going to always replace the usage of `var` in JavaScript solu
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374676829/)
 
-```js
+```javascript []
 /**
  * @param {...(null|boolean|number|string|Array|Object)} args
  * @return {number}
@@ -151,7 +151,7 @@ I did however update the types for the TypeScript solution:
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374678115/)
 
-```ts
+```typescript []
 function argumentsLength(...args: readonly unknown[]): number {
   return args.length;
 }
@@ -165,7 +165,7 @@ As a bonus, we can use the syntax for assigning a function expression to a varia
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374678620/)
 
-```ts
+```typescript []
 const argumentsLength = (...args: readonly unknown[]): number => args.length;
 
 /**
@@ -177,7 +177,7 @@ Note that TypeScript type annotations are often optional, if there is enough con
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374678865/)
 
-```ts
+```typescript []
 const argumentsLength = (...args: readonly unknown[]) => args.length;
 
 /**
@@ -193,7 +193,7 @@ If we use the `arguments` object, the rest parameter becomes unused, so we can c
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374679390/)
 
-```js
+```javascript []
 /**
  * @return {number}
  */
@@ -210,7 +210,7 @@ However, in TypeScript, omitting the rest parameter will result in a type error 
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374680348/)
 
-```ts
+```typescript []
 function argumentsLength(..._args: readonly unknown[]): number {
   return arguments.length;
 }
@@ -224,7 +224,7 @@ We can also do something a bit funny-looking, and use an empty destructure of th
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374680779/)
 
-```ts
+```typescript []
 function argumentsLength(...[]: readonly unknown[]): number {
   return arguments.length;
 }
@@ -242,7 +242,7 @@ So if we want to assign a function expression to a variable, we'll have to keep 
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374688659/)
 
-```js
+```javascript []
 /**
  * @return {number}
  */
@@ -259,7 +259,7 @@ And in TypeScript:
 
 [View submission on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/submissions/1374688909/)
 
-```ts
+```typescript []
 const argumentsLength = function (..._args: readonly unknown[]): number {
   return arguments.length;
 };
@@ -274,25 +274,25 @@ const argumentsLength = function (..._args: readonly unknown[]): number {
 
 ## Answers to Bonus Questions
 
-1. What's the difference between `function foo() {}` and `const foo = function() {}`?
+1. **What's the difference between `function foo() {}` and `const foo = function() {}`?**
 
    [The documentation on defining functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions#defining_functions) lists some differences among these and other ways of defining functions, but in short, in the second version the function is anonymous, whereas in the first one it is named. This could have implications for how the function shows up in stack traces.
 
    Additionally, when using `const` the function cannot be reassigned, but otherwise it can. For example, this code runs without errors:
 
-   ```js
+   ```javascript []
    function foo() {}
    foo = 42;
    console.log(foo); // prints 42
    ```
 
-2. What happens if we try to assign a value to an array's length?
+2. **What happens if we try to assign a value to an array's length?**
 
    The array's length gets updated! If the new length is smaller than the old one, some array elements will be discarded. If the new length is greater than the old one, additional array slots are added. In either case, the time complexity of changing the array length ought to be constant. Increasing the length of the array doesn't allocate new memory until the new slots are used, because JavaScript supports [sparse arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays).
 
    Let's test:
 
-   ```js
+   ```javascript []
    const arr = [3, 1, 4, 1, 5, 9];
    arr.length = 3;
    console.log(arr); // prints [ 3, 1, 4 ]
@@ -300,13 +300,13 @@ const argumentsLength = function (..._args: readonly unknown[]): number {
    console.log(arr); // prints [ 3, 1, 4, <7 empty items> ]
    ```
 
-3. What happens if we try to use `arguments` in an arrow function?
+3. **What happens if we try to use `arguments` in an arrow function?**
 
    If the arrow function is defined in the global scope, we'll get a `ReferenceError` that `arguments` is not defined. If the arrow function is defined within the body of a non-arrow function, we'll be accessing the `arguments` of the enclosing function!
 
    You can test with the following code:
 
-   ```js
+   ```javascript []
    function enclosing() {
      const arrow = () => arguments.length;
      return arrow();
