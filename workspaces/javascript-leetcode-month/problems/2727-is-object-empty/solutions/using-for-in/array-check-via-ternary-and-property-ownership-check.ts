@@ -11,5 +11,7 @@ function isEmptyObject(obj: Readonly<Record<PropertyKey, unknown>>): boolean {
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
-  return Array.isArray(obj) ? obj.length === 0 : isEmptyObject(obj);
+  return Array.isArray(obj)
+    ? obj.length === 0
+    : isEmptyObject(obj as Readonly<Record<PropertyKey, unknown>>);
 }

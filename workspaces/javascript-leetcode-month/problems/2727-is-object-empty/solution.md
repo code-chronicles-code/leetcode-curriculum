@@ -123,6 +123,8 @@ The code provided by LeetCode for this problem once again uses an overly-complic
 
 I didn't mention conditional execution in the background section, but if you're new to JavaScript know that it supports `if` statements, using the same syntax as C, C++, Java, and many other languages:
 
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375713791/)
+
 ```js
 /**
  * @param {Object|Array} obj
@@ -138,6 +140,8 @@ function isEmpty(obj) {
 ```
 
 Although I normally advocate for early returns, I decided to use an explicit `else` above to put arrays and non-array objects on equal footing for this problem. Below is the TypeScript equivalent, with updated types, as promised. Since it's only used in one spot, I inlined the type. I also marked the argument as read-only. For non-array objects, I used [`Raadonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype).
+
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375714232/)
 
 ```ts
 function isEmpty(
@@ -155,6 +159,8 @@ If you're wondering what's up with the triple `=`, that's the [strict equality o
 
 JavaScript also supports a ternary conditional operator, again reusing the syntax of many other languages:
 
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375714595/)
+
 ```ts
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
@@ -164,6 +170,8 @@ function isEmpty(
 ```
 
 An oft-forgotten feature of the ternary operator is that it can be used _within_ another expression. Looking at the above code we're always comparing the length of something with 0, so the ternary could focus on picking what that something is:
+
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375714948/)
 
 ```ts
 function isEmpty(
@@ -179,22 +187,27 @@ But if we truly want to golf this, we can
 - treat the numeric length as a boolean and use `!` to negate its value
 - remove the return type annotation since `!` can only return a boolean
 - sloppily use `Object.keys` for any input, even arrays, since it seems to work
-- update the argument type annotation to `unknown` since `Object.keys` accepts anything
+- remove the array part of the argument's type annotation since arrays are objects
 - rename the argument, since that doesn't affect how the function can be used
 
 The result is:
 
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375736186/)
+
 ```ts
-const isEmpty = (o: unknown) => !Object.keys(o).length;
+const isEmpty = (o: Readonly<Record<PropertyKey, unknown>>) =>
+  !Object.keys(o).length;
 ```
 
-We could also save some characters by using `let` instead of `const` and `any` instead of `unknown` but I didn't want to loosen things up _too_ much.
+We could also save some characters by using `let` instead of `const` and `any` for the type annotation but I didn't want to loosen things up _too_ much.
 
 Note that `Object.values` or `Object.entries` could be used instead of `Object.keys` throughout the solutions above.
 
 ### Using `JSON.stringify`
 
 An empty object gets stringified to `"{}"` so instead of checking if `Object.keys(obj).length === 0`, we can check if `JSON.stringify(obj) === "{}"`. For example, in pure JavaScript:
+
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375715874/)
 
 ```js
 /**
@@ -212,6 +225,8 @@ function isEmpty(obj) {
 
 Or in TypeScript, using a ternary:
 
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375716353/)
+
 ```ts
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
@@ -221,6 +236,8 @@ function isEmpty(
 ```
 
 We could also check if stringifying gives us a length of 2, since if the object properties is not empty, that will push the length beyond 2:
+
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375719502/)
 
 ```ts
 function isEmpty(
@@ -234,6 +251,8 @@ function isEmpty(
 
 Empty arrays also get stringified to a string of length 2 (specifically `"[]"`) so we can golf once again:
 
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375719967/)
+
 ```ts
 const isEmpty = (o: unknown) => JSON.stringify(o).length < 3;
 ```
@@ -245,6 +264,8 @@ We should, however, feel a little bad that we're traversing entire arrays. Let's
 ### Using `for...in`
 
 The most careful solutions will distinguish between arrays and non-array objects, as well as check property ownership. In pure JavaScript:
+
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375720258/)
 
 ```js
 /**
@@ -266,10 +287,12 @@ function isEmpty(obj) {
 }
 ```
 
-If you like ternaries as much as I do, you may put the loop in a helper function. In TypeScript:
+If you like ternaries as much as I do, you may put the loop in a helper function. Note that :
+
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375728095/)
 
 ```ts
-function isEmptyObject(obj: Readonly<Record<PropertyKey, unknown>>): boolean {
+function isEmptyObject(obj: Readonly<Record<string, unknown>>): boolean {
   for (const property in obj) {
     if (Object.hasOwn(obj, property)) {
       return false;
@@ -282,11 +305,15 @@ function isEmptyObject(obj: Readonly<Record<PropertyKey, unknown>>): boolean {
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
-  return Array.isArray(obj) ? obj.length === 0 : isEmptyObject(obj);
+  return Array.isArray(obj)
+    ? obj.length === 0
+    : isEmptyObject(obj as Readonly<Record<PropertyKey, unknown>>);
 }
 ```
 
 If we don't care to be careful, we can skip the array-ness and ownership checks. LeetCode accepts this:
+
+[View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375734860/)
 
 ```ts
 function isEmpty(

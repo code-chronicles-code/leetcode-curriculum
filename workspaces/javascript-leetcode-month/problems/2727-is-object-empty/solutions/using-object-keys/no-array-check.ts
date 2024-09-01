@@ -1,1 +1,2 @@
-const isEmpty = (o: unknown) => !Object.keys(o).length;
+const isEmpty = (o: Readonly<Record<PropertyKey, unknown>>) =>
+  !Object.keys(o).length;
