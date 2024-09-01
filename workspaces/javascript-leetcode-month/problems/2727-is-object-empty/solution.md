@@ -1,9 +1,9 @@
 # 2727. Is Object Empty
 
-[View Problem on LeetCode](https://leetcode.com/problems/is-object-empty/)
+View this Write-up on LeetCode TODO | [View Problem on LeetCode](https://leetcode.com/problems/is-object-empty/)
 
 > [!WARNING]
-> This page includes spoilers. For a spoiler-free introduction to the problem, see the [README](README.md) file.
+> This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
 
 ## Summary
 
@@ -406,3 +406,6 @@ function isEmpty(
    ```ts
    type PropertyKey = string | number | symbol;
    ```
+
+> [!TIP]  
+> Thanks for reading! If you enjoyed this write-up, feel free to up-vote it on LeetCode! 🙏
