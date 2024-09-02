@@ -9,14 +9,14 @@ import { popMany } from "@code-chronicles/util/popMany";
 import { sleep } from "@code-chronicles/util/sleep";
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
-import { SCHEMA_FILE } from "../graphql-extraction/constants";
+import { SCHEMA_FILE } from "./constants";
 import {
   fetchGraphQLTypeInformation,
   type InnerType,
   type LeetCodeGraphQLType,
-} from "../fetchGraphQLTypeInformation";
-import { outputGraphQLSchema } from "../graphql-extraction/outputGraphQLSchema";
-import { readSeedGraphQLTypeNames } from "../graphql-extraction/readSeedGraphQLTypeNames";
+} from "../../fetchGraphQLTypeInformation";
+import { readSeedGraphQLTypeNames } from "./readSeedGraphQLTypeNames";
+import { stringifyGraphQLSchema } from "./stringifyGraphQLSchema";
 
 const BATCH_SIZE = 100;
 
@@ -96,13 +96,13 @@ async function main(): Promise<void> {
     return true;
   });
 
-  const schema = await outputGraphQLSchema(
+  const schema = await stringifyGraphQLSchema(
     [...typeInfos.values()].filter(isNonNullish),
   );
 
   maybeThrow(validateSchema(buildSchema(schema)));
 
-  await writeFile(SCHEMA_FILE, schema);
+  await writeFile(SCHEMA_FILE, schema, { encoding: "utf8" });
 }
 
 main().catch((err) => {

@@ -12,6 +12,8 @@ import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 const COMMANDS = [
   "yarn test",
   "yarn workspace @code-chronicles/adventure-pack build-app",
+  "yarn workspace @code-chronicles/adventure-pack build-chrome-extension",
+  "yarn workspace @code-chronicles/chrome-extension-hello-world build",
   "yarn workspace @code-chronicles/fetch-leetcode-problem-list build",
   "yarn workspace @code-chronicles/fetch-recent-accepted-leetcode-submissions build",
   "yarn workspace @code-chronicles/leetcode-api validate-graphql-schema",
@@ -52,7 +54,7 @@ async function main(): Promise<void> {
     });
   }
 
-  await writeFile(outputPath, summary.join(""));
+  await writeFile(outputPath, summary.join(""), { encoding: "utf8" });
 
   maybeThrow(errors);
 }

@@ -1,5 +1,5 @@
 import { constants } from "node:fs";
-import fsPromises from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 import process from "node:process";
 
 import {
@@ -55,10 +55,13 @@ async function main(): Promise<void> {
     (a, b) => a.questionFrontendId - b.questionFrontendId,
   );
 
-  await fsPromises.writeFile(
+  await writeFile(
     FILENAME,
     problems.map((p) => JSON.stringify(p) + "\n"),
-    { flag: constants.O_CREAT | constants.O_RDWR | constants.O_EXCL },
+    {
+      encoding: "utf8",
+      flag: constants.O_CREAT | constants.O_RDWR | constants.O_EXCL,
+    },
   );
 
   console.error(`Wrote data to: ${FILENAME}`);
