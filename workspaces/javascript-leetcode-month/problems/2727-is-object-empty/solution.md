@@ -32,7 +32,7 @@ You may be wondering why JavaScript even calls them objects. If you're familiar 
 
 The other is more akin to a [`struct`](<https://en.wikipedia.org/wiki/Struct_(C_programming_language)>) in C or C++, i.e. a data structure with fixed fields thay may have heterogenous values. For example:
 
-```js
+```javascript []
 const pet = { name: "Spot", age: 3 };
 ```
 
@@ -40,7 +40,7 @@ Perhaps JavaScript wanted to emphasize the `struct` nature of objects, and the u
 
 It's worth noting that JavaScript objects come with a lot of syntactic sugar. For example, the dot-notation for property access is simply a shorthand for accessing via square brackets and string literals (although the square brackets syntax also accepts more complex expressions):
 
-```js
+```javascript []
 console.log(pet.age); // prints 3, if `pet` is the object defined above
 console.log(pet["age"]); // accesses the same property
 console.log(pet["AGE".toLowercase()]); // also accesses the same property
@@ -48,7 +48,7 @@ console.log(pet["AGE".toLowercase()]); // also accesses the same property
 
 Another piece of sugar worth knowing relates to object literals:
 
-```js
+```javascript []
 const name = "Spot";
 console.log({ name: name, age: 3 }); // prints { name: "Spot", age: 3 }
 console.log({ name, age: 3 }); // also prints { name: "Spot", age: 3 }
@@ -86,7 +86,7 @@ A downside of `Object.keys` and friends is that they loop over an entire object 
 
 This probably sounds like a lot of work just to check if an object is empty, and it is. Let's use a loop that will let us return early as soon as we know whether the object is empty or not. JavaScript supports a few different looping constructs, but the one we'll use today is [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in), which loops over the _names_ of the properties of an object:
 
-```js
+```javascript []
 for (const property of obj) {
   console.log({ name: property, value: obj[property] });
 }
@@ -98,13 +98,13 @@ for (const property of obj) {
 Although we won't need it for today, I also want to mention that for looping over arrays we typically don't use `for...in`, we instead use [`for...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), which loops over the values of an iterable source.
 
 > [!NOTE]  
-> **What happens if we use `for...in` on an array?** Open the developer console and try it! Answer is at the bottom of the doc.
+> **What happens if we use `for...in` on an array?** Open the JavaScript console in your browser's developer tools and try it! Answer is at the bottom of the doc.
 
 ### Type Annotations for Objects
 
 Before we talk about solutions to the problem I want to mention TypeScript annotations for object types. For an object used as a `struct`, we can define a type with a syntax similar for object literals, except that the values must themselves be types. Recursive definitions are allowed! Here's a possible definition for a linked list node type:
 
-```ts
+```typescript []
 type LinkedListNode = { value: number; next?: LinkedListNode };
 ```
 
@@ -119,13 +119,15 @@ The code provided by LeetCode for this problem once again uses an overly-complic
 
 ## Solutions
 
+Let's apply this knowledge and write some solutions!
+
 ### Using `Object.keys`
 
 I didn't mention conditional execution in the background section, but if you're new to JavaScript know that it supports `if` statements, using the same syntax as C, C++, Java, and many other languages:
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375713791/)
 
-```js
+```javascript []
 /**
  * @param {Object|Array} obj
  * @return {boolean}
@@ -143,7 +145,7 @@ Although I normally advocate for early returns, I decided to use an explicit `el
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375714232/)
 
-```ts
+```typescript []
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
@@ -157,11 +159,11 @@ function isEmpty(
 
 If you're wondering what's up with the triple `=`, that's the [strict equality operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality). It should be preferred over [its looser counterpart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality) in modern code, because we want to be intentional and explicit when it comes to converting types.
 
-JavaScript also supports a ternary conditional operator, again reusing the syntax of many other languages:
+JavaScript also supports a [ternary conditional operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator), again reusing the syntax of many other languages:
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375714595/)
 
-```ts
+```typescript []
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
@@ -173,7 +175,7 @@ An oft-forgotten feature of the ternary operator is that it can be used _within_
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375714948/)
 
-```ts
+```typescript []
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
@@ -194,7 +196,7 @@ The result is:
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375736186/)
 
-```ts
+```typescript []
 const isEmpty = (o: Readonly<Record<PropertyKey, unknown>>) =>
   !Object.keys(o).length;
 ```
@@ -209,7 +211,7 @@ An empty object gets stringified to `"{}"` so instead of checking if `Object.key
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375715874/)
 
-```js
+```javascript []
 /**
  * @param {Object|Array} obj
  * @return {boolean}
@@ -227,7 +229,7 @@ Or in TypeScript, using a ternary:
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375716353/)
 
-```ts
+```typescript []
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
@@ -235,11 +237,11 @@ function isEmpty(
 }
 ```
 
-We could also check if stringifying gives us a length of 2, since if the object properties is not empty, that will push the length beyond 2:
+We could also check if stringifying gives us a length of 2, since if the object has any properties at all, that will push the length beyond 2:
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375719502/)
 
-```ts
+```typescript []
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
@@ -249,17 +251,17 @@ function isEmpty(
 }
 ```
 
-Empty arrays also get stringified to a string of length 2 (specifically `"[]"`) so we can golf once again:
+Empty arrays also get stringified to a string of length 2 (specifically `"[]"`) so we can golf once again. `JSON.stringify` accepts pretty much anything as an argument, so we can golf the argument type annotation too:
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375719967/)
 
-```ts
+```typescript []
 const isEmpty = (o: unknown) => JSON.stringify(o).length < 3;
 ```
 
 This would break in the case of something like `isEmpty(12)` but LeetCode promised us that the input will be an array or an object, so we don't have to worry about it.
 
-We should, however, feel a little bad that we're traversing entire arrays. Let's atone by writing a more efficient solution.
+We should, however, feel a little bad that we're traversing entire data structures. Let's atone by writing a more efficient solution.
 
 ### Using `for...in`
 
@@ -267,7 +269,7 @@ The most careful solutions will distinguish between arrays and non-array objects
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375720258/)
 
-```js
+```javascript []
 /**
  * @param {Object|Array} obj
  * @return {boolean}
@@ -287,11 +289,11 @@ function isEmpty(obj) {
 }
 ```
 
-If you like ternaries as much as I do, you may put the loop in a helper function. Note that we will need a TypeScript cast using the as keyword for TypeScript to approve of the second branch:
+If you like ternaries as much as I do, you may put the loop in a helper function. Note that we will need a TypeScript cast using the `as` keyword for TypeScript to approve of the second branch. I'll have to discuss casts in more detail another time.
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375728095/)
 
-```ts
+```typescript []
 function isEmptyObject(obj: Readonly<Record<string, unknown>>): boolean {
   for (const property in obj) {
     if (Object.hasOwn(obj, property)) {
@@ -315,7 +317,7 @@ If we don't care to be careful, we can skip the array-ness and ownership checks.
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375734860/)
 
-```ts
+```typescript []
 function isEmpty(
   obj: Readonly<Record<PropertyKey, unknown>> | readonly unknown[],
 ): boolean {
@@ -327,24 +329,27 @@ function isEmpty(
 }
 ```
 
+> [!TIP]  
+> A big takeaway of this problem is that plain JavaScript objects are rather annoying when we care about the size. Although empty-ness can still be checked somewhat efficiently if we use the `for...in` implementation, there's no good way to avoid linear time complexity if we need the number of entries. We'd have to maintain our own variable for the size and keep it in sync with the object. Thankfully, if we want a map data structure, modern JavaScript gives us another option in [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map).
+
 ## Answers to Bonus Questions
 
-1. What's the difference between `obj instanceof Array` and `Array.isArray(obj)`?
+1. **What's the difference between `obj instanceof Array` and `Array.isArray(obj)`?**
 
    [The `Array.isArray` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray#instanceof_vs._array.isarray) mentions why `obj instanceof Array` may not always work, and the reason is fascinating! The `Array` class is not shared across different JavaScript "realms". For example if we embed a web page within another web page using an [`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe), the inner web page will get its own JavaScript execution context, with its own `Array` class, which won't be referentially the same as the parent web page's `Array` class. Checking objects from the inner realm against the outer realm's `Array` class using `instanceof` would return false!
 
-2. What happens if `Object.keys` or its friends is invoked with an array argument?
+2. **What happens if `Object.keys` or its friends is invoked with an array argument?**
 
    `Object.keys` works fine, and returns the "keys" of the array, i.e. the indexes. However, it not only creates a new array, it also stringifies the keys. You'd be better off using [`Array.prototype.keys`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys) which doesn't stringify and returns an iterator instead of creating a full array.
 
-   ```js
+   ```javascript []
    const arr = [3, 1, 4];
    console.log(Object.keys(arr)); // prints [ "0", "1", "2" ]
    ```
 
    `Object.values` is an odd way of copying the array and would probably surprise people reading your code, since `Object.values` is usually used with non-array objects. Prefer [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_in_array_literals) to copy an array.
 
-   ```js
+   ```javascript []
    const arr = [3, 1, 4];
    console.log(Object.values(arr)); // prints [ 3, 1, 4 ]
    console.log(Object.values(arr) === arr); // prints false, it's a new array
@@ -352,18 +357,18 @@ function isEmpty(
 
    You can probably guess what `Object.entries` does.
 
-3. Can we use `Array.from` to turn objects into arrays?
+3. **Can we use `Array.from` to turn objects into arrays?**
 
    Yes in the sense that `Array.from` won't crash if we give it an arbitrary object, but the result probably isn't what we want:
 
-   ```js
+   ```javascript []
    const obj = { foo: "bar" };
    console.log(Array.from(obj)); // prints []
    ```
 
    That's because `Array.from` looks for a `length` property to decide the size of the array, and then it tries to index from 0 inclusive to the length, exclusive. Properties not named `length` and properties outside the range are ignored:
 
-   ```js
+   ```javascript []
    const obj = {
      foo: "this is ignored",
      length: 3,
@@ -375,15 +380,15 @@ function isEmpty(
 
    For objects that implement [the iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol), `Array.from` does what you'd expect:
 
-   ```js
+   ```javascript []
    console.log(Array.from("hello")); // prints [ "h", "e", "l", "l", "o" ]
    ```
 
-4. What happens if we use `for...in` on an array?
+4. **What happens if we use `for...in` on an array?**
 
    It iterates over the _indexes_ not the values, and just like `Object.keys`, they are stringified. I was once asked in an interview to debug some JavaScript code, the problem was that it used `for...in` to iterate over an array. Remember that `in` is for keys and `of` is for values.
 
-   ```js
+   ```javascript []
    for (const property in [3, 1, 4]) {
      console.log(property); // prints "0", then "1", then "2"
    }
@@ -395,7 +400,7 @@ function isEmpty(
 
    You might be wondering why using `in` on an array doesn't print `"length"`. Isn't `length` one of the array's properties? It's because [the array `length` property is not enumerable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length#value), and `for...in` only iterates over enumerable properties.
 
-5. What happens if we use `Record<unknown, unknown>` in TypeScript?
+5. **What happens if we use `Record<unknown, unknown>` in TypeScript?**
 
    We'll get a typecheck error:
 
@@ -403,7 +408,7 @@ function isEmpty(
 
    In effect this reveals the definition of `PropertyKey`. It's likely defined somewhere as:
 
-   ```ts
+   ```typescript []
    type PropertyKey = string | number | symbol;
    ```
 
