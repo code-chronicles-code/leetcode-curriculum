@@ -141,7 +141,7 @@ function isEmpty(obj) {
 }
 ```
 
-Although I normally advocate for early returns, I decided to use an explicit `else` above to put arrays and non-array objects on equal footing for this problem. Below is the TypeScript equivalent, with updated types, as promised. Since it's only used in one spot, I inlined the type. I also marked the argument as read-only. For non-array objects, I used [`Raadonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype).
+Although I normally advocate for early returns, I decided to use an explicit `else` above to put arrays and non-array objects on equal footing for this problem. Below is the TypeScript equivalent, with updated types, as promised. Since it's only used in one spot, I inlined the type. I also marked the argument as read-only. For non-array objects, I used [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype).
 
 [View submission on LeetCode](https://leetcode.com/problems/is-object-empty/submissions/1375714232/)
 
