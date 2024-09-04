@@ -24,14 +24,14 @@
 const sortBy = (arr, fn) => arr.sort((a, b) => fn(a) - fn(b));
 ```
 
-[View Submission on LeetCode TODO]()
+[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760710/)
 
 ```typescript []
 const sortBy = <T>(arr: T[], fn: (value: T) => number): T[] =>
   arr.sort((a, b) => fn(a) - fn(b));
 ```
 
-[View Submission on LeetCode TODO]()
+[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760479/)
 
 ```typescript []
 const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
@@ -40,7 +40,7 @@ const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
 
 ### Using `Array.prototype.toSorted`
 
-[View Submission on LeetCode TODO]()
+[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760265/)
 
 ```javascript []
 /**
@@ -51,7 +51,7 @@ const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
 const sortBy = (arr, fn) => arr.toSorted((a, b) => fn(a) - fn(b));
 ```
 
-[View Submission on LeetCode TODO]()
+[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759820/)
 
 ```typescript []
 declare global {
@@ -70,7 +70,7 @@ const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
 
 ### Minimizing Calls to `fn`
 
-[View Submission on LeetCode TODO]()
+[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759536/)
 
 ```typescript []
 const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
@@ -80,7 +80,7 @@ const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
     .map(({ element }) => element);
 ```
 
-[View Submission on LeetCode TODO]()
+[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759168/)
 
 ```typescript []
 const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
