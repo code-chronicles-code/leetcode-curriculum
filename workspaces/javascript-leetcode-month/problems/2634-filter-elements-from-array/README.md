@@ -6,6 +6,6 @@ This is one of many problems that essentially ask us to implement some built-in 
 
 For a more serious solution, a loop that builds the result works just fine.
 
-One more thing worth practicing is implementing `.filter` using [`.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce). Since pretty much anything can be done through `.reduce`, it was at one point popular in interviews to ask candidates to build some other operation without explicit loops, but using only `.reduce`.
+One more thing worth practicing is implementing `.filter` using [`.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce). Since pretty much anything can be done through `.reduce`, it was at one point popular in interviews to ask candidates to build some other operation without explicit loops, instead using only `.reduce`.
 
 Once you've worked on the problem, check out [the full write-up and solution](solution.md)!
