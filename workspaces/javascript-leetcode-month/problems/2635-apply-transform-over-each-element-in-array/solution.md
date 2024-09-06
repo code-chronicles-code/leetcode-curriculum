@@ -184,7 +184,7 @@ const map = Function.prototype.call.bind(Array.prototype.map);
 
 Any of the many ways to iterate over an array will work, for example a classic `for` loop:
 
-[View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1380674098/)
+[View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1377318849/)
 
 ```typescript []
 function map<TIn, TOut>(
@@ -198,20 +198,6 @@ function map<TIn, TOut>(
   }
 
   return res;
-}
-```
-
-A `for` loop mutating the input array:
-
-[View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1380674098/)
-
-```typescript []
-function map<TIn>(arr: TIn[], fn: (element: TIn, index: number) => TIn): TIn[] {
-  for (let i = 0; i < arr.length; ++i) {
-    arr[i] = fn(arr[i], i);
-  }
-
-  return arr;
 }
 ```
 
@@ -465,6 +451,24 @@ function map<TIn, TOut>(
 
   res.push(fn(arr[res.length], res.length));
   return map(arr, fn, res);
+}
+```
+
+Also, since the output is the same size as the input, you could modify the array to save space:
+
+[View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1380674098/)
+
+```typescript []
+function map<TIn>(
+  arr: TIn[], 
+  fn: (element: TIn, index: number) => TIn,
+): TIn[] {
+
+  for (let i = 0; i < arr.length; ++i) {
+    arr[i] = fn(arr[i], i);
+  }
+
+  return arr;
 }
 ```
 
