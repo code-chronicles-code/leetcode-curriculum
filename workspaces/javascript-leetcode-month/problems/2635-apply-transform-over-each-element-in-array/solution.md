@@ -201,6 +201,18 @@ function map<TIn, TOut>(
 }
 ```
 
+A `for` loop mutating the input array:
+
+```typescript []
+function map<TIn>(arr: TIn[], fn: (element: TIn, index: number) => TIn): TIn[] {
+  for (let i = 0; i < arr.length; ++i) {
+    arr[i] = fn(arr[i], i);
+  }
+
+  return arr;
+}
+```
+
 A `.forEach`:
 
 [View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1377319261/)
