@@ -459,10 +459,7 @@ Also, since the output is the same size as the input, you could modify the array
 [View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1380674098/)
 
 ```typescript []
-function map<TIn>(
-  arr: TIn[], 
-  fn: (element: TIn, index: number) => TIn,
-): TIn[] {
+function map<TIn>(arr: TIn[], fn: (element: TIn, index: number) => TIn): TIn[] {
   for (let i = 0; i < arr.length; ++i) {
     arr[i] = fn(arr[i], i);
   }
