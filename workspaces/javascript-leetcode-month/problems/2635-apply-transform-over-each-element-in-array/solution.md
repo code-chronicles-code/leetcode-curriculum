@@ -184,7 +184,7 @@ const map = Function.prototype.call.bind(Array.prototype.map);
 
 Any of the many ways to iterate over an array will work, for example a classic `for` loop:
 
-[View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1377318849/)
+[View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1380674098/)
 
 ```typescript []
 function map<TIn, TOut>(
@@ -202,6 +202,8 @@ function map<TIn, TOut>(
 ```
 
 A `for` loop mutating the input array:
+
+[View submission on LeetCode](https://leetcode.com/problems/apply-transform-over-each-element-in-array/submissions/1380674098/)
 
 ```typescript []
 function map<TIn>(arr: TIn[], fn: (element: TIn, index: number) => TIn): TIn[] {
