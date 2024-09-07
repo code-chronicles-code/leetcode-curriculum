@@ -2,7 +2,7 @@
 
 [View this Write-up on LeetCode](https://leetcode.com/problems/is-object-empty/solutions/5722608/content/) | [View Problem on LeetCode](https://leetcode.com/problems/is-object-empty/)
 
-> [!WARNING]
+> \[!WARNING]\
 > This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
 
 ## Summary
@@ -23,7 +23,7 @@ JavaScript has an [`instanceof`](https://developer.mozilla.org/en-US/docs/Web/Ja
 
 I think you can guess what the bonus question is going to be.
 
-> [!NOTE]  
+> \[!NOTE]\
 > **What's the difference between `obj instanceof Array` and `Array.isArray(obj)`?** Major props if you know this one. Answer is at the bottom of the doc!
 
 ### Objects
@@ -64,10 +64,10 @@ If we want to use the array `length` property to solve the problem, one approach
 
 If you're experienced with JavaScript you probably knew all of that already, but do you know the answer to these bonus questions?
 
-> [!NOTE]  
+> \[!NOTE]\
 > **What happens if `Object.keys` or its friends is invoked with an array argument?** Since an array is still an object, and more generally since JavaScript is often forgiving, we can assume it probably wouldn't crash, but does it do anything useful?
 
-> [!NOTE]  
+> \[!NOTE]\
 > **What about [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from), can we use it to turn an object into an array?** It was mentioned when discussing the `arguments` object in [another write-up](../2703-return-length-of-arguments-passed/solution.md), but what does it do on an arbitrary object? Try it!
 
 Answers will be at the bottom of this doc!
@@ -92,12 +92,12 @@ for (const property of obj) {
 }
 ```
 
-> [!WARNING]  
+> \[!WARNING]\
 > In JavaScript, properties can also be inherited via an object's "prototype chain", which is how JavaScript implements classes and inheritance. When iterating over an object's properties we usually only care about its _own_ properties. It's therefore common in `for...in` loops to check ownership of the property, using [`Object.hasOwn`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) for example. Some codebases avoid `for...in` altogether for this reason and instead take the cost of `Object.keys` which only includes the object's own properties. If we intend to iterate over all (or a majority of) the object's properties, the additional cost of `Object.keys` is primarily one of allocating an additional array, which may be negligible in most applications.
 
 Although we won't need it for today, I also want to mention that for looping over arrays we typically don't use `for...in`, we instead use [`for...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), which loops over the values of an iterable source.
 
-> [!NOTE]  
+> \[!NOTE]\
 > **What happens if we use `for...in` on an array?** Open the JavaScript console in your browser's developer tools and try it! Answer is at the bottom of the doc.
 
 ### Type Annotations for Objects
@@ -114,7 +114,7 @@ When an object is used as a map of keys and values, there are a couple of ways t
 
 The code provided by LeetCode for this problem once again uses an overly-complicated type. We don't care what type of values are in the object, we can accept anything. So I intend to replace the value type with `unknown`. We also don't care about the key type, either, so perhaps we should use `Record<unknown, unknown>` to mean any kind of object? That won't work unfortunately, because JavaScript objects aren't true hash maps, so they don't accept arbitrary key types. Object keys in JavaScript are usually strings, so `Record<string, unknown>` would be a reasonable type annotation. If we wanted to generalize it, we could use `Record<PropertyKey, unknown>`. The `PropertyKey` type which ships with TypeScript means "anything that can be a property key".
 
-> [!NOTE]  
+> \[!NOTE]\
 > **What happens if we use `Record<unknown, unknown>`?** Try it in LeetCode! Answer is... you guessed it, at the bottom of the doc.
 
 ## Solutions
@@ -329,7 +329,7 @@ function isEmpty(
 }
 ```
 
-> [!TIP]  
+> \[!TIP]\
 > A big takeaway of this problem is that plain JavaScript objects are rather annoying when we care about the size. Although empty-ness can still be checked somewhat efficiently if we use the `for...in` implementation, there's no good way to avoid linear time complexity if we need the number of entries. We'd have to maintain our own variable for the size and keep it in sync with the object. Thankfully, if we want a map data structure, modern JavaScript gives us another option in [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map).
 
 ## Answers to Bonus Questions
@@ -412,5 +412,5 @@ function isEmpty(
    type PropertyKey = string | number | symbol;
    ```
 
-> [!TIP]  
+> \[!TIP]\
 > Thanks for reading! If you enjoyed this write-up, feel free to [up-vote it on LeetCode](https://leetcode.com/problems/is-object-empty/solutions/5722608/content/)! 🙏
