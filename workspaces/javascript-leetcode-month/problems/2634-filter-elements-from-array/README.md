@@ -2,7 +2,7 @@
 
 [View Problem on LeetCode](https://leetcode.com/problems/filter-elements-from-array/)
 
-This is one of many problems that essentially ask us to implement some built-in JavaScript function. Here, we're asked to implement filtering without using [`.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), so of course the first thing we should do is get accepted using `.filter`!
+This is one of several problems that essentially ask us to implement some built-in JavaScript function. Here, we're asked to implement filtering without using [`.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), so of course the first thing we should do is get accepted using `.filter`!
 
 For a more serious solution, a loop that builds the result works just fine.
 
