@@ -2,7 +2,7 @@
 
 [View this Write-up on LeetCode](https://leetcode.com/problems/chunk-array/solutions/5727606/content/) | [View Problem on LeetCode](https://leetcode.com/problems/chunk-array/)
 
-> [!WARNING]
+> [!WARNING]  
 > This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
 
 ## Summary

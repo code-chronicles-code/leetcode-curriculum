@@ -15,13 +15,20 @@
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
+    "prep-write-up-for-leetcode": "ts-node scripts/prep-write-up-for-leetcode.ts",
     "typecheck": "tsc --pretty --project ."
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "0.0.1",
+    "@code-chronicles/util": "workspace:*",
+    "@types/mdast": "^3",
     "@types/node": "22.5.1",
     "eslint": "9.9.1",
+    "mdast": "3.0.0",
     "prettier": "3.3.3",
-    "typescript": "5.5.4"
+    "remark": "15.0.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.5.4",
+    "unist-util-visit": "5.0.0"
   }
 }

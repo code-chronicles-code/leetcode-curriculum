@@ -127,7 +127,7 @@ Let's write some!
 
 If we don't mind mutating the input, we can write a single expression, using the subtraction idiom for the custom comparator function:
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378429436/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378429436/)
 
 ```javascript []
 /**
@@ -140,7 +140,7 @@ const sortBy = (arr, fn) => arr.sort((a, b) => fn(a) - fn(b));
 
 For TypeScript, I opted to use generics and get rid of the `JSONValue` junk from LeetCode's default template. We don't have to limit ourselves to JSON, we can handle anything as long as our input array and `fn` are in sync!
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760710/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760710/)
 
 ```typescript []
 const sortBy = <T>(arr: T[], fn: (value: T) => number): T[] =>
@@ -149,7 +149,7 @@ const sortBy = <T>(arr: T[], fn: (value: T) => number): T[] =>
 
 Since the problem is asking us to _return_ a sorted array, by the principle of either mutating or returning but not both, I think we should favor not modifying the input, and marking it `readonly` in TypeScript. We can still use `.sort` if we first make a copy of the input, for example using [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax):
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760479/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760479/)
 
 ```typescript []
 const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
@@ -160,7 +160,7 @@ const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
 
 The code will look very similar to the code using `.sort`:
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760265/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378760265/)
 
 ```javascript []
 /**
@@ -173,7 +173,7 @@ const sortBy = (arr, fn) => arr.toSorted((a, b) => fn(a) - fn(b));
 
 Curiously, although LeetCode's JavaScript environment supports the `.toSorted` method, at the time of this writing, LeetCode's TypeScript config isn't aware that this method exists. So we have to inform TypeScript that it does, by declaring it!
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759820/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759820/)
 
 ```typescript []
 declare global {
@@ -202,7 +202,7 @@ For now, let's assume that it's a good idea to minimize calls to `fn` and see so
 
 The code below uses a JavaScript object (a record) to group each element with its sort key. The braces in `({ element }) => element` are a [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759536/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759536/)
 
 ```typescript []
 const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
@@ -217,7 +217,7 @@ const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
 
 Instead of records, we could have used tuples. JavaScript doesn't have an explicit tuple data type, but arrays are often used as tuples. An explicit [tuple type annotation](https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types) helps TypeScript distinguish it from some other kind of array, and the square brackets in `([element]) => element` are once again a [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759168/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378759168/)
 
 ```typescript []
 const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
@@ -229,7 +229,7 @@ const sortBy = <T>(arr: readonly T[], fn: (value: T) => number): T[] =>
 
 Instead of explicit pre-computing via `.map`, we can give `fn` a caching wrapper. Memoization is incredibly common in JavaScript code, and on LeetCode we have access to a [`memoize`](https://lodash.com/docs/#memoize) helper through [Lodash](https://lodash.com/). (In the future we'll also implement our own, in problems like [2623. Memoize](https://leetcode.com/problems/memoize/).)
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378433879/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378433879/)
 
 ```javascript []
 /**
@@ -245,7 +245,7 @@ function sortBy(arr, fn) {
 
 We can also implement our own bespoke caching wrapper, using a [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map). It's important to go with a `Map` instead of a plain JavaScript object as a map, because we don't know what type of data the input array might hold. JavaScript objects are adequate maps primarily when working with string keys. For arbitrary keys, we can't assume unique stringifications.
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378432975/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378432975/)
 
 ```typescript []
 function sortBy<T>(arr: readonly T[], fn: (value: T) => number): T[] {
@@ -267,7 +267,7 @@ function sortBy<T>(arr: readonly T[], fn: (value: T) => number): T[] {
 
 Although I think the intent of the problem was to teach us about how to `.sort` with a custom comparator, we can also choose to treat it as an algorithmic problem and implement our own sort. For example, here's a (not particularly optimized) [merge sort](https://en.wikipedia.org/wiki/Merge_sort):
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378430770/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1378430770/)
 
 ```typescript []
 function sortBy<T>(arr: readonly T[], fn: (value: T) => number): T[] {
@@ -307,7 +307,7 @@ function sortBy<T>(arr: readonly T[], fn: (value: T) => number): T[] {
 
 I couldn't resist also including a fun hack as a bonus solution. Since the problem clearly wants us to `.sort` with a custom comparator function, could we somehow get default `.sort` to do the right thing? It turns out we can...
 
-[View Submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1379421195/)
+[View submission on LeetCode](https://leetcode.com/problems/sort-by/submissions/1379421195/)
 
 ```typescript []
 const sortBy = <T>(arr: T[], fn: (value: T) => number): T[] =>

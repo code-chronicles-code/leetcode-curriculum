@@ -13,7 +13,7 @@
 
 ### Using `Array.prototype.reduce`
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378766665/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378766665/)
 
 ```javascript []
 /**
@@ -25,7 +25,7 @@
 const reduce = (arr, fn, init) => arr.reduce(fn, init);
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378765352/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378765352/)
 
 ```typescript []
 const reduce = <TElement, TResult>(
@@ -35,7 +35,7 @@ const reduce = <TElement, TResult>(
 ): TResult => arr.reduce(fn, init);
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378767802/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378767802/)
 
 ```javascript []
 /**
@@ -47,7 +47,7 @@ const reduce = <TElement, TResult>(
 const reduce = Function.prototype.call.bind(Array.prototype.reduce);
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378777231/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378777231/)
 
 ```typescript []
 const reduce = <TElement, TResult>(
@@ -57,7 +57,7 @@ const reduce = <TElement, TResult>(
 ): TResult => [...arr].reverse().reduceRight(fn, init);
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378778477/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378778477/)
 
 ```typescript []
 declare global {
@@ -79,7 +79,7 @@ const reduce = <TElement, TResult>(
 
 ### Iterative
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378776182/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378776182/)
 
 ```typescript []
 function reduce<TElement, TResult>(
@@ -97,7 +97,7 @@ function reduce<TElement, TResult>(
 }
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378776438/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378776438/)
 
 ```typescript []
 function reduce<TElement, TResult>(
@@ -115,7 +115,7 @@ function reduce<TElement, TResult>(
 }
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378781727/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378781727/)
 
 ```typescript []
 function reduce<TElement, TResult>(
@@ -136,7 +136,7 @@ function reduce<TElement, TResult>(
 
 ### Recursive
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378782688/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378782688/)
 
 ```typescript []
 const reduce = <TElement, TResult>(
@@ -147,7 +147,7 @@ const reduce = <TElement, TResult>(
   arr.length === 0 ? init : reduce(arr, fn, fn(init, arr.shift()));
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378769940/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378769940/)
 
 ```typescript []
 const reduce = <TElement, TResult>(
@@ -161,7 +161,7 @@ const reduce = <TElement, TResult>(
     : reduce(arr, fn, fn(init, arr[index]), index + 1);
 ```
 
-[View Submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378772700/)
+[View submission on LeetCode](https://leetcode.com/problems/array-reduce-transformation/submissions/1378772700/)
 
 ```typescript []
 function reduce<TElement, TResult>(
