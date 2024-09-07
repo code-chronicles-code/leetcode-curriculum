@@ -2,7 +2,7 @@
 
 [View this Write-up on LeetCode](https://leetcode.com/problems/chunk-array/solutions/5727606/content/) | [View Problem on LeetCode](https://leetcode.com/problems/chunk-array/)
 
-> [!WARNING]
+> [!WARNING]  
 > This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
 
 ## Summary
@@ -524,7 +524,7 @@ function chunk<T>(arr: readonly T[], size: number): T[][] {
 
 1. **What happens if we try to access a negative index on a JavaScript array using square brackets (i.e. property access) syntax?**
 
-   It doesn't crash, it simply returns `undefined`, the same as when we access any other property on an object that doesn't have that property. If you're new to JavaScript, you will soon discover that JavaScript has not one but two "nullish" value. The first is `null`, which is like `null` / `nil` / `None` in other programming languages, and the second is `undefined`. These are distinct values with different semantics, but unless there's a very good reason for it, I don't recommend trying to treat `null` and `undefined` differently in your code. You can pretend that `null` and `undefined` don't both exist by using a _loose_ comparison to `null`:
+   It doesn't crash, it simply returns `undefined`, the same as when we access any other property on an object that doesn't have that property. If you're new to JavaScript, you will soon discover that JavaScript has not one but two "nullish" values. The first is `null`, which is like `null` / `nil` / `None` in other programming languages, and the second is `undefined`. These are distinct values with different semantics, but unless there's a very good reason for it, I don't recommend trying to treat `null` and `undefined` differently in your code. You can pretend that `null` and `undefined` don't both exist by using a _loose_ comparison to `null`:
 
    ```javascript []
    const x = null;

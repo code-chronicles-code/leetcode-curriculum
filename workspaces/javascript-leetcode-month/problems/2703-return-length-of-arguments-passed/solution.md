@@ -2,7 +2,7 @@
 
 [View this Write-up on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/solutions/5722508/content/) | [View Problem on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/)
 
-> [!WARNING]
+> [!WARNING]  
 > This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
 
 ## Summary
