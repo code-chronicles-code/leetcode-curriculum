@@ -310,7 +310,7 @@ function filter<T>(
 
 Unlike in [2635. Apply Transform Over Each Element in Array](../2635-apply-transform-over-each-element-in-array/), it's a bit harder to get rid of the index variable, because the size of the result array doesn't necessarily match the number of elements we've processed so far.
 
-However, we can still merge the inner function into the main function, by using additional argument with [default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters). I don't love this because it pollutes the interface of our function, but it works:
+However, we can still merge the inner function into the main function, by using additional arguments with [default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters). I don't love this because it pollutes the interface of our function, but it works:
 
 [View submission on LeetCode](https://leetcode.com/problems/filter-elements-from-array/submissions/1381119504/)
 
@@ -333,7 +333,7 @@ function filter<T>(
 
 ### Using Other Built-Ins
 
-The [`.flatMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/flatMap) method is used to map each array element to a list of values, rather than a single value as im `.map`. Although not explicitly designed as filtering behavior, it can be used to filter out array elements by returning an empty list! To handle arbitrary kinds of data in the input array, elements we keep are also wrapped in lists:
+The [`.flatMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/flatMap) method is used to map each array element to a list of values, rather than a single value as in `.map`. Although not explicitly designed as filtering behavior, it can be used to filter out array elements by returning an empty list! To handle arbitrary kinds of data in the input array, elements we keep are also wrapped in lists:
 
 [View submission on LeetCode](https://leetcode.com/problems/filter-elements-from-array/submissions/1381120126/)
 
