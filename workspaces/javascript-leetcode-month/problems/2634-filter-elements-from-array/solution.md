@@ -124,7 +124,7 @@ We can also get weird. If you're new to JavaScript, please ignore this next solu
 const filter = Function.prototype.call.bind(Array.prototype.filter);
 ```
 
-Understanding why the above works was a bonus question in [an earlier write-up](../2635-apply-transform-over-each-element-in-array/solution.md). Read about it there if you're curious, but otherwise don't worry about this code at this time.
+Understanding why the above works was a bonus question in [another write-up](../2635-apply-transform-over-each-element-in-array/solution.md). Read about it there if you're curious, but otherwise don't worry about this code too much.
 
 ### Iterate and Build
 

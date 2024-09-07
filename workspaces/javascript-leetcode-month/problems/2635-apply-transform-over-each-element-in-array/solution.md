@@ -130,7 +130,7 @@ Aside from a `for...of` loop, another way to get all of the elements of a genera
 
 ### Reducing
 
-If you're a veteran of [functional programming](https://en.wikipedia.org/wiki/Functional_programming) you likely know about the concept of reducing, also known as folding. If not, it's useful to learn, because it's the concept behind popular JavaScript libraries like [Redux](https://redux.js.org/).
+If you're a veteran of [functional programming](https://en.wikipedia.org/wiki/Functional_programming) you likely know about the concept of reducing, also known as folding. If not, it's useful to learn, because it's the concept behind popular JavaScript libraries like [Redux](https://redux.js.org/) and the handy [`useReducer` React hook](https://react.dev/reference/react/useReducer).
 
 A full explanation of reducing is beyond the scope of this write-up, but the gist of it is that we can use it to combine some multi-dimensional data in some way, and _reduce_ its number of dimensions. To build up your intuition of this concept, imagine that we have some list of numbers like 3, 1, 4, 1, 5, 9 and we decide to reduce it using the addition operation. That would entail putting a + between adjacent numbers to get 3 + 1 + 4 + 1 + 5 + 9 which reduces the (one-dimensional) list to a single ("zero-dimensional") number, 23. If we were to reduce the list using multiplication instead, we'd get a different result. So the reduce result depends on the operation used.
 
@@ -143,7 +143,9 @@ type Reducer<ResultType, ElementType> = (
 ) => ResultType;
 ```
 
-In other words, it should take an "accumulator" of type `ResultType` and an element of type `ElementType` and combine them into a new value of type `ReturnType`, where `ResultType` and `ElementType` will depend on the context. This allows for much more complex operations to be expressed as a reduce. In cases where `ResultType` and `ElementType` are different, we will also need to provide an initial value for the accumulator.
+In other words, it should take an "accumulator" of type `ResultType` and an element of type `ElementType` and combine them into a new value of type `ReturnType`, where `ResultType` and `ElementType` will depend on the context. This allows for much more complex operations to be expressed as a reduce. In cases where `ResultType` and `ElementType` are different, we will also need to provide an initial value for the accumulator, so we have a value of type `ResultType` to kick off the reduce -- without an initial value the first step of the reduce is to combine the first two elements of the list, which wouldn't align with the reducer's signature.
+
+The initial value also ensures a meaningful result when trying to reduce an empty list. For example, the sum of an empty list is usually defined to be zero, and we can achieve this by specifying an initial value of zero when expressing summing as a reduce via addition.
 
 This is why JavaScript's [`Array.prototype.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) takes in a function (the reducer) and optionally an initial value. Also note that JavaScript's `.reduce` passes in an index to the reducer function as well.
 
