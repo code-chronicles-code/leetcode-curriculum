@@ -3275,3 +3275,9 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3275,"title":"K-th Nearest Obstacle Queries","titleSlug":"k-th-nearest-obstacle-queries"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3276,"title":"Select Cells in Grid With Maximum Score","titleSlug":"select-cells-in-grid-with-maximum-score"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3277,"title":"Maximum XOR Score Subarray Queries","titleSlug":"maximum-xor-score-subarray-queries"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3278,"title":"Find Candidates for Data Scientist Position II","titleSlug":"find-candidates-for-data-scientist-position-ii"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3279,"title":"Maximum Total Area Occupied by Pistons","titleSlug":"maximum-total-area-occupied-by-pistons"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3280,"title":"Convert Date to Binary","titleSlug":"convert-date-to-binary"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3281,"title":"Maximize Score of Numbers in Ranges","titleSlug":"maximize-score-of-numbers-in-ranges"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3282,"title":"Reach End of Array With Max Score","titleSlug":"reach-end-of-array-with-max-score"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3283,"title":"Maximum Number of Moves to Kill All Pawns","titleSlug":"maximum-number-of-moves-to-kill-all-pawns"}
