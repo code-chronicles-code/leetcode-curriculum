@@ -19,22 +19,25 @@ declare global {
 ).from ??= function <T>(
   object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
 ): IterableIterator<T> {
-  if (Symbol.iterator in object) {
-    return object as IterableIterator<T>;
-  } else if (
-    "toIterable" in object &&
-    typeof (object as Iterator<T>).toIterable === "function"
-  ) {
+  if (typeof (object as Iterable<T>)[Symbol.iterator] === "function") {
+    return (object as Iterable<T>)[Symbol.iterator]() as IterableIterator<T>;
+  }
+
+  if (typeof (object as Iterator<T>).toIterable === "function") {
     return (object as Iterator<T>).toIterable();
-  } else {
+  }
+
+  if (typeof (object as { next(): IteratorResult<T> }).next === "function") {
     return (function* () {
       let result: IteratorResult<T>;
       do {
-        result = object.next();
+        result = (object as { next(): IteratorResult<T> }).next();
         if (!result.done) {
           yield result.value;
         }
       } while (!result.done);
     })();
   }
+
+  throw new TypeError("Object is not an Iterator or Iterable");
 };
