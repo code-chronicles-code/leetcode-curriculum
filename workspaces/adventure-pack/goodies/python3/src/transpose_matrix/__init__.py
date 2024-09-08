@@ -13,4 +13,4 @@ def transpose_matrix(
     if any(len(row) != c for row in input):
         raise ValueError("Matrix has rows of different lengths")
 
-    return [list(tup) for tup in zip(*input)]
+    return [list(row) for row in zip(*input)]
