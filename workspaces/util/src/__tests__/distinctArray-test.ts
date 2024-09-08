@@ -30,23 +30,23 @@ describe("distinctArray", () => {
     ).toStrictEqual(["uno", "dos", "tres", "cuatro", "cinco", "seis"]);
   });
 
-  it("is not guaranteed to receive distinct result for a map with no keyFn", () => {
-    expect(
-      distinctArray(
-        new Map([
-          [1, "uno"],
-          [2, "dos"],
-          [3, "tres"],
-          [4, "tres"],
-          [5, "cinco!"],
-        ]),
-      ),
-    ).toStrictEqual([
-      [1, "uno"],
-      [2, "dos"],
-      [3, "tres"],
-      [4, "tres"],
-      [5, "cinco!"],
+  it("defaults to comparing objects by reference", () => {
+    const obj1 = {id: "001"};
+    const map = new Map<{id: string}, string>([
+        [obj1, "object 1"],
+        [{id: "O02"}, "object 2"],
+        [{id: "O03"}, "object 3"],
+        [obj1, "object 1"],
+        [{id: "O04"}, "object 4"],
+        [obj1, "object 1"],
+    ]);
+    
+    const keys = Array.from(map.keys());
+    expect(distinctArray(map)).toStrictEqual([
+        [keys[0], "object 1"],
+        [keys[1], "object 2"],
+        [keys[2], "object 3"],
+        [keys[3], "object 4"]
     ]);
   });
 
