@@ -11,14 +11,30 @@ declare global {
     ): IterableIterator<TElem>;
   }
 }
+
 (globalThis as Record<string, unknown>).Iterator ??= {};
 
 (
   (globalThis as Record<string, unknown>).Iterator as Record<string, unknown>
-).from ??= function <T>(iterator: unknown): Iterable<T> {
-  return (iterator as Iterator<T>).toIterable();
+).from ??= function <T>(
+  object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
+): IterableIterator<T> {
+  if (Symbol.iterator in object) {
+    return object as IterableIterator<T>;
+  } else if (
+    "toIterable" in object &&
+    typeof (object as Iterator<T>).toIterable === "function"
+  ) {
+    return (object as Iterator<T>).toIterable();
+  } else {
+    return (function* () {
+      let result: IteratorResult<T>;
+      do {
+        result = object.next();
+        if (!result.done) {
+          yield result.value;
+        }
+      } while (!result.done);
+    })();
+  }
 };
-
-Iterator.from([1, 2, 3]);
-Iterator.from("hello world");
-Iterator.from(new Set([1, 1, 2, 3, 3]));
