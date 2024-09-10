@@ -11,6 +11,7 @@ import { mergeJavaCode } from "./mergeJavaCode";
 import type { JavaGoody } from "./zod-types/javaGoodyZodType";
 import { sortTypeScriptModuleAndInterfaceDeclarations } from "./sortTypeScriptModuleAndInterfaceDeclarations";
 import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
+import type { GoodyModuleDeclaration } from "../scripts/package-goodies/typescript/extractModuleDeclarations";
 
 function topo({
   equippedGoodies,
@@ -116,21 +117,29 @@ export function mergeCode({
         return "";
       }
 
-      const mergedDeclarations: Record<string, Record<string, string[]>> = {};
+      const mergedDeclarations: Record<string, GoodyModuleDeclaration> = {};
       for (const goody of orderedGoodies) {
         invariant(
           goody.language === "typescript",
           "Goody language must match language!",
         );
 
-        for (const [moduleName, interfaceDeclarations] of Object.entries(
-          goody.moduleDeclarations,
-        )) {
+        for (const [
+          moduleName,
+          { interfaces = {}, variables = [] },
+        ] of Object.entries(goody.moduleDeclarations)) {
           for (const [interfaceName, codeSections] of Object.entries(
-            interfaceDeclarations,
+            interfaces,
           )) {
-            ((mergedDeclarations[moduleName] ??= {})[interfaceName] ??=
-              []).push(...codeSections);
+            (((mergedDeclarations[moduleName] ??= {}).interfaces ??= {})[
+              interfaceName
+            ] ??= []).push(...codeSections);
+          }
+
+          if (variables.length > 0) {
+            ((mergedDeclarations[moduleName] ??= {}).variables ??= []).push(
+              ...variables,
+            );
           }
         }
       }

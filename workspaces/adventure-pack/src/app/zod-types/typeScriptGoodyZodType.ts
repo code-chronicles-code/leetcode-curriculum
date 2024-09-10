@@ -11,7 +11,12 @@ export const typeScriptGoodyZodType = goodyBaseZodType
     code: nonBlankStringZodType,
     moduleDeclarations: z.record(
       z.string(),
-      z.record(z.string(), z.array(nonBlankStringZodType)),
+      z.strictObject({
+        interfaces: z
+          .record(z.string(), z.array(nonBlankStringZodType))
+          .optional(),
+        variables: z.array(nonBlankStringZodType).optional(),
+      }),
     ),
     language: z.literal("typescript"),
   })
