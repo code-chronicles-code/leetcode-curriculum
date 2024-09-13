@@ -1,12 +1,11 @@
+import { gql, request } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
-import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 
-import { fetchGraphQLData } from "./fetchGraphQLData.ts";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
-const QUERY = squashWhitespace(`
+const QUERY = gql`
   query ($username: String!, $limit: Int!) {
     recentAcSubmissionList(username: $username, limit: $limit) {
       id
@@ -15,7 +14,7 @@ const QUERY = squashWhitespace(`
       timestamp
     }
   }
-`);
+`;
 
 const submissionZodType = z.object({
   id: numericIdAsStringZodType,
@@ -45,6 +44,11 @@ export async function fetchRecentAcSubmissionList({
   limit?: number;
   username: string;
 }): Promise<RecentAcSubmission[]> {
-  const { data } = await fetchGraphQLData(QUERY, { username, limit });
+  const data = await request({
+    url: "https://leetcode.com/graphql/",
+    document: QUERY,
+    variables: { username, limit },
+  });
+
   return recentAcSubmissionListZodType.parse(data);
 }
