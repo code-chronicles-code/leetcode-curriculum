@@ -10,6 +10,7 @@ import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
 import { fetchGraphQLData } from "./fetchGraphQLData";
+import { normalizeGraphQLDescription } from "./normalizeGraphQLDescription";
 import { sortByName } from "./sortByName";
 
 function getTypeFields(depth: number): string {
@@ -124,7 +125,9 @@ const nameAndDescriptionZodType = z.strictObject({
     .string()
     .nullable()
     .transform((desc) =>
-      desc != null && !isStringEmptyOrWhitespaceOnly(desc) ? desc : undefined,
+      desc != null && !isStringEmptyOrWhitespaceOnly(desc)
+        ? normalizeGraphQLDescription(desc)
+        : undefined,
     ),
 });
 
