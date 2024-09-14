@@ -1,9 +1,21 @@
 name: Set Up Everything
 
+inputs:
+  include-additional-languages:
+    description: "TODO"
+    required: false
+
 runs:
   using: composite
 
   steps:
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: yarn
+        cache-dependency-path: ./yarn.lock
+
     - name: Set up Java
       uses: actions/setup-java@v4
       with:
@@ -14,17 +26,15 @@ runs:
           ./workspaces/adventure-pack/goodies/java/build.gradle.kts
           ./workspaces/adventure-pack/goodies/kotlin/build.gradle.kts
 
-    - name: Set up Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22
-        cache: yarn
-        cache-dependency-path: ./yarn.lock
-
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: 3.12.4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2
 
     - name: Install dependencies
       run: yarn --immutable
