@@ -21,17 +21,17 @@
     "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
-    "@code-chronicles/leetcode-api": "0.0.1",
-    "@code-chronicles/util": "0.0.1"
+    "@code-chronicles/leetcode-api": "workspace:*",
+    "@code-chronicles/util": "workspace:*"
   },
   "devDependencies": {
-    "@code-chronicles/eslint-config": "0.0.1",
-    "@types/node": "22.5.1",
-    "eslint": "9.9.1",
+    "@code-chronicles/eslint-config": "workspace:*",
+    "@types/node": "22.5.5",
+    "eslint": "9.10.0",
     "prettier": "3.3.3",
     "ts-loader": "9.5.1",
     "ts-node": "10.9.2",
-    "typescript": "5.5.4",
+    "typescript": "5.6.2",
     "webpack": "5.94.0",
     "webpack-cli": "5.1.4"
   }
