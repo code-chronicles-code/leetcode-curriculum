@@ -21,7 +21,7 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/util": "workspace:*",
-    "@types/mdast": "^3.0.15",
+    "@types/mdast": "4.0.4",
     "@types/node": "22.5.5",
     "eslint": "9.10.0",
     "mdast": "3.0.0",
