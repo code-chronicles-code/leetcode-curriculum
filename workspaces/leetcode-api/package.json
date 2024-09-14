@@ -18,7 +18,7 @@
     "lint": "eslint --color --max-warnings=0 .",
     "scrape-graphql-schema": "ts-node src/scripts/scrape-graphql-schema/main.ts",
     "typecheck": "tsc --pretty --project .",
-    "validate-graphql-schema": "ts-node src/scripts/validateGraphQLSchema.ts"
+    "validate-graphql-schema": "ts-node src/scripts/validate-graphql-schema/main.ts"
   },
   "dependencies": {
     "@code-chronicles/util": "0.0.1",
@@ -32,6 +32,7 @@
     "eslint": "9.9.1",
     "graphql": "16.9.0",
     "prettier": "3.3.3",
+    "ts-node": "10.9.2",
     "typescript": "5.5.4"
   }
 }
