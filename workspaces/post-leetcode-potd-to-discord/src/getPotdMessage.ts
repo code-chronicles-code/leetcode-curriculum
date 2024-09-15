@@ -1,7 +1,8 @@
 import type { ActiveDailyCodingChallengeQuestion } from "@code-chronicles/leetcode-api";
-import { formatTimestampForDiscord } from "./formatTimestampForDiscord";
-import { yearMonthDayToTimestampInSeconds } from "@code-chronicles/util/yearMonthDayToTimestampInSeconds";
 import { SEC_IN_DAY } from "@code-chronicles/util/timeConstants";
+import { yearMonthDayToTimestampInSeconds } from "@code-chronicles/util/yearMonthDayToTimestampInSeconds";
+
+import { formatTimestampForDiscord } from "./formatTimestampForDiscord.js";
 
 export function getPotdMessage({
   date,

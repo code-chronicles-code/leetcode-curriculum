@@ -36,10 +36,10 @@ yarn
 yarn build
 
 # Run it with Node!
-node dist/fetch-leetcode-problem-list.js
+node dist/fetch-leetcode-problem-list.cjs
 
 # Or if your system can handle executable files, try running it directly:
-./dist/fetch-leetcode-problem-list.js
+./dist/fetch-leetcode-problem-list.cjs
 
 # Examine the output:
 cat problems.jsonl

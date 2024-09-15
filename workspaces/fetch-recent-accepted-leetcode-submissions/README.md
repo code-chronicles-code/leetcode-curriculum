@@ -31,10 +31,10 @@ yarn
 yarn build
 
 # Run it with Node!
-node dist/fetch-recent-accepted-leetcode-submissions.js elimanzo VehicleOfPuzzle
+node dist/fetch-recent-accepted-leetcode-submissions.cjs elimanzo VehicleOfPuzzle
 
 # Or if your system can handle executable files, try running it directly:
-./dist/fetch-recent-accepted-leetcode-submissions.js elimanzo VehicleOfPuzzle
+./dist/fetch-recent-accepted-leetcode-submissions.cjs elimanzo VehicleOfPuzzle
 ```
 
 The output is JSON and will look something like:
