@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 
 import { buildSchema } from "graphql";
 
-import { SCHEMA_FILE } from "./constants";
+import { SCHEMA_FILE } from "./constants.js";
 
 export async function readSeedGraphQLTypeNames(): Promise<string[]> {
   // Start with some built-in types.
