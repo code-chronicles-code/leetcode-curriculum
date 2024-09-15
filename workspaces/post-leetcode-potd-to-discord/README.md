@@ -48,10 +48,10 @@ To use:
    yarn build
 
    # Run it with Node!
-   node dist/post-leetcode-potd-to-discord.js
+   node dist/post-leetcode-potd-to-discord.cjs
 
    # Or if your system can handle executable files, try running it directly:
-   ./dist/post-leetcode-potd-to-discord.js
+   ./dist/post-leetcode-potd-to-discord.cjs
    ```
 
    Here's an example message:

@@ -9,13 +9,14 @@ import webpack, {
 import { stripPrefix } from "@code-chronicles/util/stripPrefix";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
-import packageJson from "./package.json";
+import packageJson from "./package.json" with { type: "module" };
 
 const config: Configuration = {
   target: "node",
-  entry: path.resolve(__dirname, packageJson.main),
+  entry: path.resolve(__dirname, packageJson.exports),
   output: {
-    filename: stripPrefixOrThrow(packageJson.name, "@code-chronicles/") + ".js",
+    filename:
+      stripPrefixOrThrow(packageJson.name, "@code-chronicles/") + ".cjs",
     path: path.resolve(__dirname, "dist"),
   },
 
@@ -40,6 +41,9 @@ const config: Configuration = {
 
   resolve: {
     extensions: [".tsx", ".ts", "..."],
+    extensionAlias: {
+      ".js": [".ts", ".tsx", ".js"],
+    },
   },
 
   externalsType: "commonjs",

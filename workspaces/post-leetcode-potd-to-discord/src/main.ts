@@ -11,11 +11,11 @@ import {
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 import { yearMonthDayToTimestampInSeconds } from "@code-chronicles/util/yearMonthDayToTimestampInSeconds";
 
-import { getPotdMessage } from "./getPotdMessage";
-import { readScriptData } from "./readScriptData";
-import { readSecrets } from "./readSecrets";
-import { sendDiscordMessage } from "./sendDiscordMessage";
-import { writeScriptData } from "./writeScriptData";
+import { getPotdMessage } from "./getPotdMessage.js";
+import { readScriptData } from "./readScriptData.js";
+import { readSecrets } from "./readSecrets.js";
+import { sendDiscordMessage } from "./sendDiscordMessage.js";
+import { writeScriptData } from "./writeScriptData.js";
 
 async function main(): Promise<void> {
   // TODO: maybe create the file from a template if it doesn't exist
