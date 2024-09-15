@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/workflows/set-up-everything
 
       - name: Prepare secrets
-        run: (cd workspaces/post-leetcode-potd-to-discord && echo "$SECRETS_FILE" > secrets_DO_NOT_COMMIT_OR_SHARE.json)
+        run: echo "$SECRETS_FILE" > workspaces/post-leetcode-potd-to-discord/secrets_DO_NOT_COMMIT_OR_SHARE.json
         env:
           SECRETS_FILE: ${{ secrets.SECRETS_FILE }}
 

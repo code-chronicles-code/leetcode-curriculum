@@ -473,7 +473,7 @@ __metadata:
     immutability-helper: "npm:3.1.1"
     invariant: "npm:2.2.4"
     jest: "npm:29.7.0"
-    nullthrows: "npm:1.1.1"
+    nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
     prettier-plugin-java: "npm:2.6.4"
     react: "npm:18.3.1"
@@ -514,11 +514,15 @@ __metadata:
     "@code-chronicles/leetcode-api": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@types/node": "npm:22.5.5"
+    cross-env: "npm:7.0.3"
     eslint: "npm:9.10.0"
-    nullthrows: "npm:1.1.1"
+    nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
+    ts-loader: "npm:9.5.1"
     tsx: "npm:4.19.1"
     typescript: "npm:5.6.2"
+    webpack: "npm:5.94.0"
+    webpack-cli: "npm:5.1.4"
     zod: "npm:3.23.8"
   languageName: unknown
   linkType: soft
@@ -588,7 +592,7 @@ __metadata:
     "@code-chronicles/util": "workspace:*"
     "@types/node": "npm:22.5.5"
     eslint: "npm:9.10.0"
-    nullthrows: "npm:1.1.1"
+    nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.6.2"
@@ -623,7 +627,7 @@ __metadata:
     eslint: "npm:9.10.0"
     graphql: "npm:16.9.0"
     invariant: "npm:2.2.4"
-    nullthrows: "npm:1.1.1"
+    nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.6.2"
@@ -681,7 +685,7 @@ __metadata:
     eslint: "npm:9.10.0"
     invariant: "npm:2.2.4"
     jest: "npm:29.7.0"
-    nullthrows: "npm:1.1.1"
+    nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
     ts-jest: "npm:29.2.5"
     type-fest: "npm:4.26.1"
@@ -6383,6 +6387,13 @@ __metadata:
   version: 1.1.1
   resolution: "nullthrows@npm:1.1.1"
   checksum: 10c0/56f34bd7c3dcb3bd23481a277fa22918120459d3e9d95ca72976c72e9cac33a97483f0b95fc420e2eb546b9fe6db398273aba9a938650cdb8c98ee8f159dcb30
+  languageName: node
+  linkType: hard
+
+"nullthrows@patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch":
+  version: 1.1.1
+  resolution: "nullthrows@patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch::version=1.1.1&hash=c31495"
+  checksum: 10c0/dde30293d9d05c1595ab780194df4173768b4047c417503409411a084f9b97d71a304f6ebdf82dda997a95edf12fe92baf9130d1beba54f6ac9176450a19b548
   languageName: node
   linkType: hard
 
