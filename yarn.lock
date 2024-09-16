@@ -498,8 +498,10 @@ __metadata:
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
     "@types/node": "npm:22.5.5"
+    cross-env: "npm:7.0.3"
     prettier: "npm:3.3.3"
     ts-loader: "npm:9.5.1"
+    tsx: "npm:4.19.1"
     typescript: "npm:5.6.2"
     webpack: "npm:5.94.0"
     webpack-cli: "npm:5.1.4"
@@ -594,7 +596,7 @@ __metadata:
     eslint: "npm:9.10.0"
     nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
-    ts-node: "npm:10.9.2"
+    tsx: "npm:4.19.1"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -611,7 +613,7 @@ __metadata:
     mdast: "npm:3.0.0"
     prettier: "npm:3.3.3"
     remark: "npm:15.0.1"
-    ts-node: "npm:10.9.2"
+    tsx: "npm:4.19.1"
     typescript: "npm:5.6.2"
     unist-util-visit: "npm:5.0.0"
   languageName: unknown
@@ -669,7 +671,7 @@ __metadata:
     "@types/node": "npm:22.5.5"
     eslint: "npm:9.10.0"
     prettier: "npm:3.3.3"
-    ts-node: "npm:10.9.2"
+    tsx: "npm:4.19.1"
     type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
   languageName: unknown
@@ -2193,11 +2195,11 @@ __metadata:
   linkType: hard
 
 "acorn-walk@npm:^8.1.1":
-  version: 8.3.3
-  resolution: "acorn-walk@npm:8.3.3"
+  version: 8.3.4
+  resolution: "acorn-walk@npm:8.3.4"
   dependencies:
     acorn: "npm:^8.11.0"
-  checksum: 10c0/4a9e24313e6a0a7b389e712ba69b66b455b4cb25988903506a8d247e7b126f02060b05a8a5b738a9284214e4ca95f383dd93443a4ba84f1af9b528305c7f243b
+  checksum: 10c0/76537ac5fb2c37a64560feaf3342023dadc086c46da57da363e64c6148dc21b57d49ace26f949e225063acb6fb441eabffd89f7a3066de5ad37ab3e328927c62
   languageName: node
   linkType: hard
 

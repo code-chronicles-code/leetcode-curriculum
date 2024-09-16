@@ -12,22 +12,22 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "type": "module",
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "start": "ts-node src/main.ts",
+    "start": "tsx src/main.ts",
     "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
-    "ts-node": "10.9.2"
+    "tsx": "4.19.1"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@types/node": "22.5.5",
     "eslint": "9.10.0",
     "prettier": "3.3.3",
-    "ts-node": "10.9.2",
     "type-fest": "4.26.1",
     "typescript": "5.6.2"
   }

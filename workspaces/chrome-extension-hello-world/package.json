@@ -7,9 +7,10 @@
     "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
     "directory": "workspaces/chrome-extension-hello-world"
   },
-  "main": "src/main.ts",
+  "type": "module",
+  "exports": "./src/main.ts",
   "scripts": {
-    "build": "webpack",
+    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "typecheck": "tsc --pretty --project ."
@@ -17,8 +18,10 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@types/node": "22.5.5",
+    "cross-env": "7.0.3",
     "prettier": "3.3.3",
     "ts-loader": "9.5.1",
+    "tsx": "4.19.1",
     "typescript": "5.6.2",
     "webpack": "5.94.0",
     "webpack-cli": "5.1.4"

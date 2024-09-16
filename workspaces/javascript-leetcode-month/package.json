@@ -12,10 +12,11 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "type": "module",
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "prep-write-up-for-leetcode": "ts-node scripts/prep-write-up-for-leetcode.ts",
+    "prep-write-up-for-leetcode": "tsx scripts/prep-write-up-for-leetcode.ts",
     "typecheck": "tsc --pretty --project ."
   },
   "devDependencies": {
@@ -27,7 +28,7 @@
     "mdast": "3.0.0",
     "prettier": "3.3.3",
     "remark": "15.0.1",
-    "ts-node": "10.9.2",
+    "tsx": "4.19.1",
     "typescript": "5.6.2",
     "unist-util-visit": "5.0.0"
   }
