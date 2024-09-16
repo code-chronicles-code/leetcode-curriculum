@@ -98,6 +98,10 @@ As such it's safe to run the script multiple times, without redoing too much wor
 
 Like the rest of the [Code Chronicles Leetcode ecosystem](../../), this package is structured as a Node module, using [Yarn](https://yarnpkg.com/) as the package manager.
 
-You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format`, `yarn lint`, and `yarn typecheck` scripts are available to aid in development and occasionally to annoy.
+You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format`, `yarn lint`, and `yarn typecheck` scripts are available to aid in development and occasionally to annoy. Read more in the repository's general [development guide](../../DEVELOPMENT.md).
 
-See also the repository's general [development guide](../../DEVELOPMENT.md).
+This package supports an additional `package.json` script:
+
+### `yarn build`
+
+Builds a distribution version of this package, in a `dist` directory within the package's workspace.
