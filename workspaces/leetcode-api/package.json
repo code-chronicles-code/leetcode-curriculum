@@ -12,13 +12,14 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
-  "main": "src/main.ts",
+  "type": "module",
+  "exports": "./src/main.ts",
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "scrape-graphql-schema": "ts-node src/scripts/scrape-graphql-schema/main.ts",
+    "scrape-graphql-schema": "tsx src/scripts/scrape-graphql-schema/main.ts",
     "typecheck": "tsc --pretty --project .",
-    "validate-graphql-schema": "ts-node src/scripts/validate-graphql-schema/main.ts"
+    "validate-graphql-schema": "tsx src/scripts/validate-graphql-schema/main.ts"
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
@@ -32,7 +33,7 @@
     "eslint": "9.10.0",
     "graphql": "16.9.0",
     "prettier": "3.3.3",
-    "ts-node": "10.9.2",
+    "tsx": "4.19.1",
     "typescript": "5.6.2"
   }
 }

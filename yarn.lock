@@ -629,7 +629,7 @@ __metadata:
     invariant: "npm:2.2.4"
     nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
-    ts-node: "npm:10.9.2"
+    tsx: "npm:4.19.1"
     typescript: "npm:5.6.2"
     zod: "npm:3.23.8"
   languageName: unknown

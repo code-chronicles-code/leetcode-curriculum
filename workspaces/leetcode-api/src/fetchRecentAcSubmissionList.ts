@@ -3,8 +3,8 @@ import { z } from "zod";
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
 import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 
-import { fetchGraphQLData } from "./fetchGraphQLData";
-import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType";
+import { fetchGraphQLData } from "./fetchGraphQLData.js";
+import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.js";
 
 const QUERY = squashWhitespace(`
   query ($username: String!, $limit: Int!) {
