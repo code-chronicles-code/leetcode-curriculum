@@ -23,7 +23,7 @@
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
     "invariant": "2.2.4",
-    "nullthrows": "1.1.1",
+    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch",
     "zod": "3.23.8"
   },
   "devDependencies": {

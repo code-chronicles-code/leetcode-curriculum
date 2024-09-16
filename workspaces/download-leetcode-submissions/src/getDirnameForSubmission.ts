@@ -1,6 +1,6 @@
 import path from "node:path";
 
-import type { TransformedSubmission } from "./transformSubmission";
+import type { TransformedSubmission } from "./transformSubmission.js";
 
 const PROBLEMS_PER_GROUP = 100;
 

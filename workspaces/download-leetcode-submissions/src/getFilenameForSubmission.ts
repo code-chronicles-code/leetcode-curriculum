@@ -3,8 +3,8 @@ import nullthrows from "nullthrows";
 import { SUBMISSION_STATUS_TO_ABBREVIATION } from "@code-chronicles/leetcode-api";
 import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
-import { LANGUAGE_TO_FILE_EXTENSION } from "./constants";
-import type { TransformedSubmission } from "./transformSubmission";
+import { LANGUAGE_TO_FILE_EXTENSION } from "./constants.js";
+import type { TransformedSubmission } from "./transformSubmission.js";
 
 export function getFilenameForSubmission({
   id,

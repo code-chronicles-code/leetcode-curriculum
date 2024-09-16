@@ -19,7 +19,7 @@ To use:
    nano secrets_DO_NOT_COMMIT_OR_SHARE.json
    ```
 
-2. **Run the script!**
+2. **Run the script!** You can run a development version:
 
    ```sh
    # Install dependencies, if you haven't already:
@@ -33,7 +33,26 @@ To use:
    yarn start
    ```
 
-Submissions will be downloaded to a directory named `submissions`, grouped by problem and problem number range. Filenames take the form `{yyyymmdd-date}-{submission-id}-{result}.{extension}`, resulting in full paths like `submissions/2101-2200/2163-kth-distinct-string-in-an-array/20240805-1345920313-ac.c` for an accepted C solution submitted on August 5th, 2024.
+   Or, build and run a distribution version:
+
+   ```sh
+   # It's easiest to do this from the package's directory:
+   cd workspaces/download-leetcode-submissions
+
+   # Install dependencies, if you haven't already:
+   yarn
+
+   # Package the script into an executable:
+   yarn build
+
+   # Run it with Node!
+   node dist/download-leetcode-submissions.cjs
+
+   # Or if your system can handle executable files, try running it directly:
+   ./dist/download-leetcode-submissions.cjs
+   ```
+
+   Submissions will be downloaded to a directory named `submissions`, grouped by problem and problem number range. Filenames take the form `{yyyymmdd-date}-{submission-id}-{result}.{extension}`, resulting in full paths like `submissions/2101-2200/2163-kth-distinct-string-in-an-array/20240805-1345920313-ac.c` for an accepted C solution submitted on August 5th, 2024.
 
 ## Metadata Files
 
@@ -79,6 +98,10 @@ As such it's safe to run the script multiple times, without redoing too much wor
 
 Like the rest of the [Code Chronicles Leetcode ecosystem](../../), this package is structured as a Node module, using [Yarn](https://yarnpkg.com/) as the package manager.
 
-You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format`, `yarn lint`, and `yarn typecheck` scripts are available to aid in development and occasionally to annoy.
+You can install dependencies by running `yarn`, either in this package's directory, or in the repository root. The usual `yarn format`, `yarn lint`, and `yarn typecheck` scripts are available to aid in development and occasionally to annoy. Read more in the repository's general [development guide](../../DEVELOPMENT.md).
 
-See also the repository's general [development guide](../../DEVELOPMENT.md).
+This package supports an additional `package.json` script:
+
+### `yarn build`
+
+Builds a distribution version of this package, in a `dist` directory within the package's workspace.

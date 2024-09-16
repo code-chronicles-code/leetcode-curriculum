@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
-    "nullthrows": "1.1.1"
+    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
