@@ -2,11 +2,11 @@ import path from "node:path";
 
 import type { Configuration } from "webpack";
 
-import packageJson from "./package.json";
+import packageJson from "./package.json" with { type: "module" };
 
 const config: Configuration = {
   target: "web",
-  entry: path.resolve(__dirname, packageJson.main),
+  entry: path.resolve(__dirname, packageJson.exports),
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
@@ -33,6 +33,9 @@ const config: Configuration = {
 
   resolve: {
     extensions: [".tsx", ".ts", "..."],
+    extensionAlias: {
+      ".js": [".ts", ".tsx", ".js"],
+    },
   },
 
   optimization: {

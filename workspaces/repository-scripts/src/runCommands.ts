@@ -9,7 +9,11 @@ import { runWithLogGroupAsync } from "@code-chronicles/util/runWithLogGroupAsync
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
-import { SCRIPTS, SCRIPTS_TO_SKIP_BY_WORKSPACE, type Script } from "./scripts";
+import {
+  SCRIPTS,
+  SCRIPTS_TO_SKIP_BY_WORKSPACE,
+  type Script,
+} from "./scripts.js";
 
 type FailedCommand = {
   command: string;

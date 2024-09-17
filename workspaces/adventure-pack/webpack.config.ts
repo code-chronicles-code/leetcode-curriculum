@@ -37,6 +37,9 @@ const config: Configuration = {
 
   resolve: {
     extensions: [".tsx", ".ts", "..."],
+    extensionAlias: {
+      ".js": [".ts", ".tsx", ".js"],
+    },
   },
 
   plugins: [

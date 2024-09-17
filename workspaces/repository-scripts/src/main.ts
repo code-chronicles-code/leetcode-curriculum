@@ -1,7 +1,7 @@
 import process from "node:process";
 
-import { runCommands } from "./runCommands";
-import { SCRIPTS, isScript } from "./scripts";
+import { runCommands } from "./runCommands.js";
+import { SCRIPTS, isScript } from "./scripts.js";
 
 async function main() {
   if (process.argv.length < 3) {
