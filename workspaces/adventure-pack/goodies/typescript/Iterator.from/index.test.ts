@@ -47,12 +47,12 @@ describe("Iterator.from", () => {
     expect([...iterator]).toStrictEqual([...string]);
   });
 
-  it("can convert an Iterator to an Iterator", () => {
+  it("can convert an Iterator to an IterableIterator without altering the original iterator", () => {
     const array = [1, 2, 3];
-    const iterator = Iterator.from(array.values());
-    const iterator2 = Iterator.from(iterator);
+    const iterator = array.values();
+    const convertedIterator = Iterator.from(iterator);
 
-    expect([...iterator2]).toStrictEqual(array);
+    expect(iterator === convertedIterator).toBe(true);
   });
 
   it("can convert an IterableIterator to an Iterator", () => {
@@ -79,7 +79,7 @@ describe("Iterator.from", () => {
     expect([...iterator]).toStrictEqual([1, 2, 3]);
   });
 
-  it("throws an error if the object is not an IterableIterator", () => {
+  it("throws an error if the object is not an Iterator, Iterable, or an object with a next method", () => {
     const object = {};
     // @ts-expect-error Invalid argument
     expect(() => Iterator.from(object)).toThrow(TypeError);
