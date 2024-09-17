@@ -1,17 +1,19 @@
 import { describe, expect, it } from "@jest/globals";
 
 import "./index";
+import "../Iterator.prototype.map";
+import "../Iterator.prototype.filter";
 
 describe("Iterator.from", () => {
   it("can convert an Array to an Iterator", () => {
-    const array = [1, 2, 3];
+    const array = [-3, 1, -4, 1, -5];
     const iterator = Iterator.from(array);
 
     expect([...iterator]).toStrictEqual(array);
   });
 
   it("can convert a Set to an Iterator", () => {
-    const set = new Set([1, 2, 3]);
+    const set = new Set([-3, 1, 1, -4, -4, 1, -5]);
     const iterator = Iterator.from(set);
 
     expect([...iterator]).toStrictEqual([...set]);
@@ -19,9 +21,9 @@ describe("Iterator.from", () => {
 
   it("can convert a Map to an Iterator", () => {
     const map = new Map([
-      ["a", 1],
-      ["b", 2],
-      ["c", 3],
+      ["z", 3],
+      ["e", 1],
+      ["d", 4],
     ]);
     const iterator = Iterator.from(map);
     expect([...iterator]).toStrictEqual([...map.entries()]);
@@ -47,16 +49,16 @@ describe("Iterator.from", () => {
     expect([...iterator]).toStrictEqual([...string]);
   });
 
-  it("can convert an Iterator to an IterableIterator without altering the original iterator", () => {
-    const array = [1, 2, 3];
+  it("can convert an Iterator to an IterableIterator and returns the same reference", () => {
+    const array = [-3, 1, -4, 1, -5];
     const iterator = array.values();
     const convertedIterator = Iterator.from(iterator);
 
-    expect(iterator === convertedIterator).toBe(true);
+    expect(convertedIterator).toBe(iterator);
   });
 
   it("can convert an IterableIterator to an Iterator", () => {
-    const array = [1, 2, 3];
+    const array = [-3, 1, -4, 1, -5];
     const iterator = Iterator.from(array.values());
     const iterator2 = Iterator.from(iterator[Symbol.iterator]());
 
@@ -65,7 +67,7 @@ describe("Iterator.from", () => {
 
   it("can convert an object with a random next() method to an Iterator", () => {
     const object = {
-      values: [1, 2, 3],
+      values: [-3, 1, -4, 1, -5, 9],
       index: 0,
       next() {
         if (this.index < this.values.length) {
@@ -76,7 +78,13 @@ describe("Iterator.from", () => {
     };
     const iterator = Iterator.from(object);
 
-    expect([...iterator]).toStrictEqual([1, 2, 3]);
+    expect([...iterator]).toStrictEqual(object.values);
+    const chainedIterator = iterator
+      .map((x) => (x !== undefined ? x * 2 : 0))
+      .filter((x) => x > 0);
+  
+    expect([...chainedIterator]).toStrictEqual([2, 2, 18]);
+    
   });
 
   it("throws an error if the object is not an Iterator, Iterable, or an object with a next method", () => {
