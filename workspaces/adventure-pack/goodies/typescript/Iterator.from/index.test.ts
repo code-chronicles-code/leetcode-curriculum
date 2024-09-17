@@ -76,15 +76,11 @@ describe("Iterator.from", () => {
         return { done: true, value: undefined };
       },
     };
-    const iterator = Iterator.from(object);
-
-    expect([...iterator]).toStrictEqual(object.values);
-    const chainedIterator = iterator
+    const iterator = Iterator.from(object)
       .map((x) => (x !== undefined ? x * 2 : 0))
       .filter((x) => x > 0);
-  
-    expect([...chainedIterator]).toStrictEqual([2, 2, 18]);
-    
+
+    expect([...iterator]).toStrictEqual([2, 2, 18]);
   });
 
   it("throws an error if the object is not an Iterator, Iterable, or an object with a next method", () => {
