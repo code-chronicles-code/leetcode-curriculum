@@ -803,40 +803,26 @@ exports[`App can render goody: JavaScript Function.returnThis 1`] = `
 <<<<<<< HEAD
 =======
 exports[`App can render goody: JavaScript Iterator.from 1`] = `
-"import "Iterator.prototype.toIterable";
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
 
 globalThis.Iterator ??= {};
 
 globalThis.Iterator = {
   from(object) {
     if (typeof object[Symbol.iterator] === "function") {
-      const iterator = object[Symbol.iterator]();
-      if (typeof iterator === "object" && Symbol.iterator in iterator) {
-        return iterator;
-      } else {
-        return {
-          ...iterator,
-          [Symbol.iterator]() {
-            return this;
-          },
-        };
-      }
+      const iterable = object;
+      const iterator = iterable[Symbol.iterator]();
+      return iteratorPrototype.toIterable.call(iterator);
     }
 
-    if (typeof object.toIterable === "function") {
-      return object.toIterable();
+    if (Object.prototype.isPrototypeOf.call(iteratorPrototype, object)) {
+      return iteratorPrototype.toIterable.call(object);
     }
 
     if (typeof object.next === "function") {
       return (function* () {
-        let result;
-        while (true) {
-          result = object.next();
-          if (result.done) {
-            break;
-          }
-          yield result.value;
-        }
+        yield* iteratorPrototype.toIterable.call(object);
       })();
     }
 
@@ -2001,7 +1987,8 @@ Function.returnThis = function <T>(this: T): T {
 <<<<<<< HEAD
 =======
 exports[`App can render goody: TypeScript Iterator.from 1`] = `
-"import "Iterator.prototype.toIterable";
+"import "Iterator.prototype";
+import "Iterator.prototype.toIterable";
 
 declare global {
   interface IteratorConstructor {
@@ -2020,33 +2007,22 @@ declare global {
     object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
   ): IterableIterator<T> {
     if (typeof (object as Iterable<T>)[Symbol.iterator] === "function") {
-      const iterator = (object as Iterable<T>)[Symbol.iterator]();
-      if (typeof iterator === "object" && Symbol.iterator in iterator) {
-        return iterator as IterableIterator<T>;
-      } else {
-        return {
-          ...iterator,
-          [Symbol.iterator]() {
-            return this;
-          },
-        } as IterableIterator<T>;
-      }
+      const iterable = object as Iterable<T>;
+      const iterator = iterable[Symbol.iterator]();
+      return iteratorPrototype.toIterable.call(iterator) as IterableIterator<T>;
     }
 
-    if (typeof (object as Iterator<T>).toIterable === "function") {
-      return (object as Iterator<T>).toIterable();
+    if (Object.prototype.isPrototypeOf.call(iteratorPrototype, object)) {
+      return iteratorPrototype.toIterable.call(
+        object as Iterator<T>,
+      ) as IterableIterator<T>;
     }
 
     if (typeof (object as { next(): IteratorResult<T> }).next === "function") {
-      return (function* () {
-        let result: IteratorResult<T>;
-        while (true) {
-          result = (object as { next(): IteratorResult<T> }).next();
-          if (result.done) {
-            break;
-          }
-          yield result.value;
-        }
+      return (function* (): IterableIterator<T> {
+        yield* iteratorPrototype.toIterable.call(
+          object as Iterator<T>,
+        ) as Iterable<T>;
       })();
     }
 
