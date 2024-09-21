@@ -1,6 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "./index";
 import "../Iterator.prototype.map";
 import "../Iterator.prototype.filter";
 
@@ -8,6 +7,9 @@ import "../Iterator.prototype.filter";
   delete (
     (globalThis as Record<string, unknown>).Iterator as Record<string, unknown>
   ).from;
+
+// eslint-disable-next-line import-x/first
+import "./index";
 
 describe("Iterator.from", () => {
   it("can convert an Array to an Iterator", () => {

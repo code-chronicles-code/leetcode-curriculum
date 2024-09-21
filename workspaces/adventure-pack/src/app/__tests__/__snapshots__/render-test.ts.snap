@@ -800,40 +800,37 @@ exports[`App can render goody: JavaScript Function.returnThis 1`] = `
 };"
 `;
 
-<<<<<<< HEAD
-=======
 exports[`App can render goody: JavaScript Iterator.from 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
 
 globalThis.Iterator ??= {};
 
-globalThis.Iterator = {
-  from(object) {
-    if (typeof object[Symbol.iterator] === "function") {
-      const iterable = object;
-      const iterator = iterable[Symbol.iterator]();
-      return iteratorPrototype.toIterable.call(iterator);
-    }
+globalThis.Iterator.from ??= function (object) {
+  const toIterable = iteratorPrototype.toIterable;
 
-    if (Object.prototype.isPrototypeOf.call(iteratorPrototype, object)) {
-      return iteratorPrototype.toIterable.call(object);
-    }
+  const iteratorFactory = object[Symbol.iterator];
+  if (typeof iteratorFactory === "function") {
+    return toIterable.call(iteratorFactory.call(object));
+  }
 
-    if (typeof object.next === "function") {
-      return (function* () {
-        yield* iteratorPrototype.toIterable.call(object);
-      })();
-    }
+  // eslint-disable-next-line no-prototype-builtins
+  if (iteratorPrototype.isPrototypeOf(object)) {
+    return toIterable.call(object);
+  }
 
-    throw new TypeError(
-      "Object is not an iterator, iterable, or an object with a next method",
-    );
-  },
+  if (typeof object.next === "function") {
+    return (function* () {
+      yield* toIterable.call(object);
+    })();
+  }
+
+  throw new TypeError(
+    "Object is not an iterator, iterable, or an object with a next method",
+  );
 };"
 `;
 
->>>>>>> 319cf8b (chore(pr): Applying 1st round of PR feedback)
 exports[`App can render goody: JavaScript Iterator.prototype 1`] = `
 "export const iteratorPrototype = Object.getPrototypeOf(
   Object.getPrototypeOf([].values()),
@@ -1162,29 +1159,18 @@ iteratorPrototype.toSet ??= function () {
 exports[`App can render goody: JavaScript Map.groupBy 1`] = `
 "Map.groupBy ??= function (iterable, callbackFn) {
   const groups = new Map();
-<<<<<<< HEAD
 
   let index = 0;
   for (const value of iterable) {
     const key = callbackFn(value, index++);
-=======
-  let index = 0;
-  for (const value of iterable) {
-    const key = callbackFn(value, index);
->>>>>>> 319cf8b (chore(pr): Applying 1st round of PR feedback)
     const group = groups.get(key);
     if (group == null) {
       groups.set(key, [value]);
     } else {
       group.push(value);
     }
-<<<<<<< HEAD
   }
 
-=======
-    ++index;
-  }
->>>>>>> 319cf8b (chore(pr): Applying 1st round of PR feedback)
   return groups;
 };"
 `;
@@ -1984,8 +1970,6 @@ Function.returnThis = function <T>(this: T): T {
 };"
 `;
 
-<<<<<<< HEAD
-=======
 exports[`App can render goody: TypeScript Iterator.from 1`] = `
 "import "Iterator.prototype";
 import "Iterator.prototype.toIterable";
@@ -2002,38 +1986,36 @@ declare global {
 
 (globalThis as Record<string, unknown>).Iterator ??= {};
 
-(globalThis as Record<string, unknown>).Iterator = {
-  from<T>(
+((globalThis as Record<string, unknown>).Iterator as { from: unknown }).from ??=
+  function <T>(
     object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
   ): IterableIterator<T> {
-    if (typeof (object as Iterable<T>)[Symbol.iterator] === "function") {
-      const iterable = object as Iterable<T>;
-      const iterator = iterable[Symbol.iterator]();
-      return iteratorPrototype.toIterable.call(iterator) as IterableIterator<T>;
+    const toIterable = iteratorPrototype.toIterable as (
+      this: Iterator<T>,
+    ) => IterableIterator<T>;
+
+    const iteratorFactory = (object as Iterable<T>)[Symbol.iterator];
+    if (typeof iteratorFactory === "function") {
+      return toIterable.call(iteratorFactory.call(object));
     }
 
-    if (Object.prototype.isPrototypeOf.call(iteratorPrototype, object)) {
-      return iteratorPrototype.toIterable.call(
-        object as Iterator<T>,
-      ) as IterableIterator<T>;
+    // eslint-disable-next-line no-prototype-builtins
+    if (iteratorPrototype.isPrototypeOf(object)) {
+      return toIterable.call(object as Iterator<T>);
     }
 
-    if (typeof (object as { next(): IteratorResult<T> }).next === "function") {
-      return (function* (): IterableIterator<T> {
-        yield* iteratorPrototype.toIterable.call(
-          object as Iterator<T>,
-        ) as Iterable<T>;
+    if (typeof (object as Record<string, unknown>).next === "function") {
+      return (function* () {
+        yield* toIterable.call(object as Iterator<T>);
       })();
     }
 
     throw new TypeError(
       "Object is not an iterator, iterable, or an object with a next method",
     );
-  },
-};"
+  };"
 `;
 
->>>>>>> 319cf8b (chore(pr): Applying 1st round of PR feedback)
 exports[`App can render goody: TypeScript Iterator.prototype 1`] = `
 "export const iteratorPrototype = Object.getPrototypeOf(
   Object.getPrototypeOf([].values()),
@@ -2602,29 +2584,18 @@ Map.groupBy ??= function <K, V>(
   callbackFn: (value: V, index: number) => K,
 ): Map<K, V[]> {
   const groups = new Map<K, V[]>();
-<<<<<<< HEAD
 
   let index = 0;
   for (const value of iterable) {
     const key = callbackFn(value, index++);
-=======
-  let index = 0;
-  for (const value of iterable) {
-    const key = callbackFn(value, index);
->>>>>>> 319cf8b (chore(pr): Applying 1st round of PR feedback)
     const group = groups.get(key);
     if (group == null) {
       groups.set(key, [value]);
     } else {
       group.push(value);
     }
-<<<<<<< HEAD
   }
 
-=======
-    ++index;
-  }
->>>>>>> 319cf8b (chore(pr): Applying 1st round of PR feedback)
   return groups;
 };"
 `;

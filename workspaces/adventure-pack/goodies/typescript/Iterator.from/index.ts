@@ -1,5 +1,5 @@
-import { iteratorPrototype } from "../Iterator.prototype";
-import "../Iterator.prototype.toIterable";
+import "../Iterator.prototype.toIterable/index.ts";
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 
 declare global {
   interface IteratorConstructor {
