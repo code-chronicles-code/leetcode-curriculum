@@ -4,14 +4,14 @@ import type { ReadonlyDeep } from "type-fest";
 import { BinaryHeap } from "@code-chronicles/util/BinaryHeap";
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 
-import { centerTextInComment } from "./centerTextInComment";
-import type { Goody } from "./Goody";
-import type { Language } from "./Language";
-import { mergeJavaCode } from "./mergeJavaCode";
-import type { JavaGoody } from "./zod-types/javaGoodyZodType";
-import { sortTypeScriptModuleAndInterfaceDeclarations } from "./sortTypeScriptModuleAndInterfaceDeclarations";
-import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
-import type { GoodyModuleDeclaration } from "../scripts/package-goodies/typescript/extractModuleDeclarations";
+import { centerTextInComment } from "./centerTextInComment.ts";
+import type { Goody } from "./Goody.ts";
+import type { Language } from "./Language.ts";
+import { mergeJavaCode } from "./mergeJavaCode.ts";
+import type { JavaGoody } from "./zod-types/javaGoodyZodType.ts";
+import { sortTypeScriptModuleAndInterfaceDeclarations } from "./sortTypeScriptModuleAndInterfaceDeclarations.ts";
+import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations.ts";
+import type { GoodyModuleDeclaration } from "../scripts/package-goodies/typescript/extractModuleDeclarations.ts";
 
 function topo({
   equippedGoodies,

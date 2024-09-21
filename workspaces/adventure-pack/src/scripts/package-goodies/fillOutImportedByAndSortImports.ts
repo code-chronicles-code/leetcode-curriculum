@@ -7,7 +7,7 @@ import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 export function fillOutImportedByAndSortImports<
   T extends ReadonlyDeep<{ imports: string[]; name: string }>,
 >(
-  baseGoodiesByName: Record<string, T>,
+  baseGoodiesByName: Readonly<Record<string, T>>,
 ): Record<string, T & { importedBy: string[] }> {
   const res = mapObjectValues(baseGoodiesByName, (baseGoody) => ({
     ...baseGoody,

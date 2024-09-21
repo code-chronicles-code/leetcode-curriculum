@@ -1,4 +1,4 @@
-import { isNonNullish } from "../isNonNullish";
+import { isNonNullish } from "../isNonNullish/index.ts";
 
 export function* traverseLevelOrder<
   T extends { left?: T | null | undefined; right?: T | null | undefined },

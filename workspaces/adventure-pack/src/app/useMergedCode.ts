@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { promiseIdleCallback } from "@code-chronicles/util/promiseIdleCallback";
 
-import { type Data, mergeCode } from "./mergeCode";
+import { type Data, mergeCode } from "./mergeCode.ts";
 
 export function useMergedCode({
   commitHash,

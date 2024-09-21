@@ -1,7 +1,7 @@
 import { copyFile } from "node:fs/promises";
 import path from "node:path";
 
-import { WEB_APP_DIST } from "./constants";
+import { WEB_APP_DIST } from "./constants.ts";
 
 export async function writeStyleCss(): Promise<void> {
   await copyFile(

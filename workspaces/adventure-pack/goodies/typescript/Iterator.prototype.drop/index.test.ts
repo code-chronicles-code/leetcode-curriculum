@@ -1,11 +1,11 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "../Iterator.prototype.take";
+import "../Iterator.prototype.take/index.ts";
 
-import { iteratorPrototype } from "../Iterator.prototype";
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 delete (iteratorPrototype as unknown as Record<string, unknown>).drop;
 // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.drop", () => {
   it("drops the specified number of elements from the iterator", () => {

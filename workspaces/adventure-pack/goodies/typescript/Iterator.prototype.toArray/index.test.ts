@@ -1,12 +1,12 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "../Iterator.prototype.filter";
-import "../Iterator.prototype.map";
+import "../Iterator.prototype.filter/index.ts";
+import "../Iterator.prototype.map/index.ts";
 
-import { iteratorPrototype } from "../Iterator.prototype";
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 delete (iteratorPrototype as unknown as Record<string, unknown>).toArray;
 // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.toArray", () => {
   it("copies an array", () => {

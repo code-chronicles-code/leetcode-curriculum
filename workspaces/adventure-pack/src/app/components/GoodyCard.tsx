@@ -1,8 +1,8 @@
 import React from "react";
 
-import type { Goody } from "../Goody";
-import { stringifyGoody } from "../stringifyGoody";
-import { HighlightedCode } from "./HighlightedCode";
+import type { Goody } from "../Goody.ts";
+import { stringifyGoody } from "../stringifyGoody.ts";
+import { HighlightedCode } from "./HighlightedCode.tsx";
 
 type Props = {
   goody: Goody;

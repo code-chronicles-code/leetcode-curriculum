@@ -2,7 +2,7 @@ import nullthrows from "nullthrows";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { App } from "./components/App";
+import { App } from "./components/App.tsx";
 
 declare const ADVENTURE_PACK_COMMIT_HASH: string;
 

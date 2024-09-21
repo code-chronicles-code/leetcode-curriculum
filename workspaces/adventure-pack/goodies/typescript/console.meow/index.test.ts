@@ -7,7 +7,7 @@ import {
   jest,
 } from "@jest/globals";
 
-import "./index";
+import "./index.ts";
 
 describe("console.meow", () => {
   const originalConsoleLog = console.log;

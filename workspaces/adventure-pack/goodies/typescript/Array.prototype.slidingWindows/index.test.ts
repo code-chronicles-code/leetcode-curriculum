@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "./index";
+import "./index.ts";
 
 describe("Array.prototype.slidingWindows", () => {
   it("can slide over an array", () => {

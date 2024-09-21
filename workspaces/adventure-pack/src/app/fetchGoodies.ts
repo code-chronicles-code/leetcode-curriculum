@@ -1,11 +1,11 @@
 import type { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
-import { javaGoodyZodType } from "./zod-types/javaGoodyZodType";
-import { javaScriptGoodyZodType } from "./zod-types/javaScriptGoodyZodType";
-import { kotlinGoodyZodType } from "./zod-types/kotlinGoodyZodType";
-import { python3GoodyZodType } from "./zod-types/python3GoodyZodType";
-import { typeScriptGoodyZodType } from "./zod-types/typeScriptGoodyZodType";
+import { javaGoodyZodType } from "./zod-types/javaGoodyZodType.ts";
+import { javaScriptGoodyZodType } from "./zod-types/javaScriptGoodyZodType.ts";
+import { kotlinGoodyZodType } from "./zod-types/kotlinGoodyZodType.ts";
+import { python3GoodyZodType } from "./zod-types/python3GoodyZodType.ts";
+import { typeScriptGoodyZodType } from "./zod-types/typeScriptGoodyZodType.ts";
 
 const goodiesByLanguage = z.object({
   java: z.record(z.string(), javaGoodyZodType),

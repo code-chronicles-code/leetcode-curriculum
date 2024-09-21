@@ -4,13 +4,14 @@ import path from "node:path";
 import type { WritableDeep } from "type-fest";
 
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
+import { stripSuffixOrThrow } from "@code-chronicles/util/stripSuffixOrThrow";
 
-import type { TypeScriptGoody } from "../../../app/zod-types/typeScriptGoodyZodType";
-import { createSourceFile } from "./createSourceFile";
-import { extractImports } from "./extractImports";
-import { extractModuleDeclarations } from "./extractModuleDeclarations";
-import { formatCode } from "./formatCode";
-import { removeNode } from "./removeNode";
+import type { TypeScriptGoody } from "../../../app/zod-types/typeScriptGoodyZodType.ts";
+import { createSourceFile } from "./createSourceFile.ts";
+import { extractImports } from "./extractImports.ts";
+import { extractModuleDeclarations } from "./extractModuleDeclarations.ts";
+import { formatCode } from "./formatCode.ts";
+import { removeNode } from "./removeNode.ts";
 
 export const GOODIES_DIRECTORY = path.join("goodies", "typescript");
 
@@ -41,7 +42,9 @@ export async function readBaseGoody(
 
   return {
     code: updatedCode,
-    imports: Array.from(imports).map((im) => stripPrefixOrThrow(im, "../")),
+    imports: Array.from(imports, (im) =>
+      stripSuffixOrThrow(stripPrefixOrThrow(im, "../"), "/index.ts"),
+    ),
     language: "typescript",
     moduleDeclarations,
     name,

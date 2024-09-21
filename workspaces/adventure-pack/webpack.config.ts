@@ -3,7 +3,7 @@ import path from "node:path";
 
 import webpack, { type Configuration } from "webpack";
 
-import { WEB_APP_DIST } from "./src/scripts/build/constants";
+import { WEB_APP_DIST } from "./src/scripts/build/constants.ts";
 
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
@@ -32,10 +32,6 @@ const config: Configuration = {
         exclude: /\bnode_modules\b/,
       },
     ],
-  },
-
-  resolve: {
-    extensions: [".tsx", ".ts", "..."],
   },
 
   plugins: [

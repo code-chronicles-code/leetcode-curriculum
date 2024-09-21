@@ -1,12 +1,8 @@
-// eslint-disable-next-line import-x/newline-after-import -- Recursive effect of disabling the "no-duplicate-imports" rule below.
 import immutableUpdate from "immutability-helper";
-// eslint-disable-next-line import-x/newline-after-import -- Recursive effect of disabling the "no-duplicate-imports" rule below.
-import { useReducer } from "react";
-// eslint-disable-next-line no-duplicate-imports -- Unavoidable duplicate import, due to needing a type import.
-import type React from "react";
+import { type Dispatch as ReactDispatch, useReducer } from "react";
 
-import type { GoodiesByLanguage } from "./fetchGoodies";
-import type { Language } from "./Language";
+import type { GoodiesByLanguage } from "./fetchGoodies.ts";
+import type { Language } from "./Language.ts";
 
 type Action =
   | {
@@ -78,7 +74,7 @@ function reducer(state: AppState, action: Action): AppState {
   return state;
 }
 
-export function useAppState(): [AppState, React.Dispatch<Action>] {
+export function useAppState(): [AppState, ReactDispatch<Action>] {
   return useReducer(
     reducer,
     undefined,

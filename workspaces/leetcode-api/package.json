@@ -30,7 +30,7 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@types/node": "22.5.5",
-    "eslint": "9.10.0",
+    "eslint": "9.11.0",
     "graphql": "16.9.0",
     "prettier": "3.3.3",
     "tsx": "4.19.1",

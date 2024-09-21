@@ -9,8 +9,8 @@ import {
 
 import { getRandomBytes } from "@code-chronicles/util/getRandomBytes";
 
-import { formatCode } from "./formatCode";
-import { removeUninitializedPropertyDeclarations } from "./removeUninitializedPropertyDeclarations";
+import { formatCode } from "./formatCode.ts";
+import { removeUninitializedPropertyDeclarations } from "./removeUninitializedPropertyDeclarations.ts";
 
 export async function transpile(code: string): Promise<string> {
   // There is some dark magic here to work around the fact that TypeScript

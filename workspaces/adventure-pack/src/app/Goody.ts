@@ -1,8 +1,8 @@
-import type { JavaGoody } from "./zod-types/javaGoodyZodType";
-import type { JavaScriptGoody } from "./zod-types/javaScriptGoodyZodType";
-import type { KotlinGoody } from "./zod-types/kotlinGoodyZodType";
-import type { Python3Goody } from "./zod-types/python3GoodyZodType";
-import type { TypeScriptGoody } from "./zod-types/typeScriptGoodyZodType";
+import type { JavaGoody } from "./zod-types/javaGoodyZodType.ts";
+import type { JavaScriptGoody } from "./zod-types/javaScriptGoodyZodType.ts";
+import type { KotlinGoody } from "./zod-types/kotlinGoodyZodType.ts";
+import type { Python3Goody } from "./zod-types/python3GoodyZodType.ts";
+import type { TypeScriptGoody } from "./zod-types/typeScriptGoodyZodType.ts";
 
 export type Goody =
   | JavaGoody

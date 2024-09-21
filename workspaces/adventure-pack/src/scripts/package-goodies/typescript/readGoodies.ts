@@ -5,15 +5,15 @@ import invariant from "invariant";
 import { mapObjectValuesAsync } from "@code-chronicles/util/mapObjectValuesAsync";
 import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
-import type { JavaScriptGoody } from "../../../app/zod-types/javaScriptGoodyZodType";
-import type { TypeScriptGoody } from "../../../app/zod-types/typeScriptGoodyZodType";
-import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
+import type { JavaScriptGoody } from "../../../app/zod-types/javaScriptGoodyZodType.ts";
+import type { TypeScriptGoody } from "../../../app/zod-types/typeScriptGoodyZodType.ts";
+import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports.ts";
 import {
   GOODIES_DIRECTORY,
   type TypeScriptGoodyBase,
   readBaseGoody,
-} from "./readBaseGoody";
-import { transpile } from "./transpile";
+} from "./readBaseGoody.ts";
+import { transpile } from "./transpile.ts";
 
 export async function readGoodies(): Promise<{
   javascript: Record<string, JavaScriptGoody>;

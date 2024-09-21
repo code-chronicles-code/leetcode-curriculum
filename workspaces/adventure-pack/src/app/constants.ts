@@ -1,4 +1,4 @@
-import type { Language } from "./Language";
+import type { Language } from "./Language.ts";
 
 export const LANGUAGE_NAMES: Record<Language, string> = {
   java: "Java",

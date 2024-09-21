@@ -1,10 +1,11 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "../String.prototype.chars";
-import { iteratorPrototype } from "../Iterator.prototype";
+import "../String.prototype.chars/index.ts";
+
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 delete (iteratorPrototype as unknown as Record<string, unknown>).reduce;
 // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.reduce", () => {
   it("can reduce an iterator without an initial value", () => {

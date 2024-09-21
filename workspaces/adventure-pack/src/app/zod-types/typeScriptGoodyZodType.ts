@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { nonBlankStringZodType } from "@code-chronicles/util/nonBlankStringZodType";
 
-import { goodyBaseZodType } from "./goodyBaseZodType";
+import { goodyBaseZodType } from "./goodyBaseZodType.ts";
 
 // TODO: find a way to enforce the strict-ness across all these files
 export const typeScriptGoodyZodType = goodyBaseZodType

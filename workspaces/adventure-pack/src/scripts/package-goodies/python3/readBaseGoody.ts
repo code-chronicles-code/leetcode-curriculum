@@ -1,8 +1,8 @@
 import type { WritableDeep } from "type-fest";
 
-import type { Python3Goody } from "../../../app/zod-types/python3GoodyZodType";
-import { readCode } from "./readCode";
-import { readMetadata } from "./readMetadata";
+import type { Python3Goody } from "../../../app/zod-types/python3GoodyZodType.ts";
+import { readCode } from "./readCode.ts";
+import { readMetadata } from "./readMetadata.ts";
 
 export type Python3GoodyBase = Omit<WritableDeep<Python3Goody>, "importedBy">;
 

@@ -1,0 +1,12 @@
+diff --git a/index.d.ts b/index.d.ts
+index 77c12444ac3adf293518e92c07e1680f7d954cb2..8b8da3a4fe0405d81e14998045f8047b1822ac12 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -11,6 +11,7 @@ export declare const isEquals: any;
+ export declare const extend: <T>(directive: string, fn: (param: any, old: T) => T) => void;
+ declare const _default: <T, C extends CustomCommands<object> = never>(object: T, $spec: Spec<T, C>) => T;
+ export default _default;
++export = _default;
+ export declare type CustomCommands<T> = T & {
+     __noInferenceCustomCommandsBrand: any;
+ };

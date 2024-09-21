@@ -1,6 +1,6 @@
 import type { SourceFile as TSSourceFile } from "ts-morph";
 
-import { removeNode } from "./removeNode";
+import { removeNode } from "./removeNode.ts";
 
 export function extractImports(sourceFile: TSSourceFile): Set<string> {
   const imports = new Set<string>();

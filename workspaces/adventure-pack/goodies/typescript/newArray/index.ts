@@ -1,4 +1,4 @@
-import { nullthrows } from "../nullthrows";
+import { nullthrows } from "../nullthrows/index.ts";
 
 export function newArray(dimensions: [], fillValue?: unknown): never;
 export function newArray<T>(dimensions: [number]): (T | null)[];

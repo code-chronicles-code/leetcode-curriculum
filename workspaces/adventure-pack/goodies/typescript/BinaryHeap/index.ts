@@ -1,4 +1,4 @@
-import "../Array.prototype.swap";
+import "../Array.prototype.swap/index.ts";
 
 export class BinaryHeap<T> {
   private readonly elements: T[] = [];

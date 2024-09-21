@@ -1,7 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 
-delete (Map as unknown as Record<string, unknown>).groupBy; // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
-import "./index";
+delete (Map as unknown as Record<string, unknown>).groupBy;
+// eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
+import "./index.ts";
 
 describe("Map.groupBy", () => {
   it("should group elements by the result of the callback function", () => {

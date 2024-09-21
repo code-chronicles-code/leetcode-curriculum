@@ -1,6 +1,6 @@
-import type { Goody } from "./Goody";
-import { mergeJavaCode } from "./mergeJavaCode";
-import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations";
+import type { Goody } from "./Goody.ts";
+import { mergeJavaCode } from "./mergeJavaCode.ts";
+import { stringifyTypeScriptModuleDeclarations } from "./stringifyTypeScriptModuleDeclarations.ts";
 
 export function stringifyGoody(goody: Goody): string {
   switch (goody.language) {

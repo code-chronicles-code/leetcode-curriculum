@@ -18,6 +18,7 @@
     "workspaces/repository-scripts",
     "workspaces/util"
   ],
+  "type": "module",
   "scripts": {
     "format": "yarn workspace @code-chronicles/repository-scripts start format",
     "lint": "yarn workspace @code-chronicles/repository-scripts start lint",
@@ -27,7 +28,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
-    "eslint": "9.10.0",
+    "eslint": "9.11.0",
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "prettier": "3.3.3"

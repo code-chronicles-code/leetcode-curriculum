@@ -5,8 +5,8 @@ import prettier from "prettier";
 
 import { isEnvironmentDev } from "@code-chronicles/util/isEnvironmentDev";
 
-import { readAllGoodies } from "../package-goodies/readAllGoodies";
-import { WEB_APP_DIST } from "./constants";
+import { readAllGoodies } from "../package-goodies/readAllGoodies.ts";
+import { WEB_APP_DIST } from "./constants.ts";
 
 async function readAllGoodiesAsString(): Promise<string> {
   const goodies = await readAllGoodies();

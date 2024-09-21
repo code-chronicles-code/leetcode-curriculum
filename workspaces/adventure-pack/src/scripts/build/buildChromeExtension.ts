@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { CHROME_EXTENSION_DIST } from "./constants";
+import { CHROME_EXTENSION_DIST } from "./constants.ts";
 
 async function main(): Promise<void> {
   await mkdir(CHROME_EXTENSION_DIST, { recursive: true });
