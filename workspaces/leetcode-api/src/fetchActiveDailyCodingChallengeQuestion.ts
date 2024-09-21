@@ -6,9 +6,9 @@ import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 import { MS_IN_SEC } from "@code-chronicles/util/timeConstants";
 import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
-import { fetchGraphQLData } from "./fetchGraphQLData.js";
-import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.js";
-import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.js";
+import { fetchGraphQLData } from "./fetchGraphQLData.ts";
+import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
+import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
 const QUERY = squashWhitespace(`
   query {

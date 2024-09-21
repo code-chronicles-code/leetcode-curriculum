@@ -18,10 +18,10 @@ import { getRandomBytes } from "@code-chronicles/util/getRandomBytes";
 import { invariantViolation } from "@code-chronicles/util/invariantViolation";
 import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 
-import type { LeetCodeGraphQLType } from "../../fetchGraphQLTypeInformation.js";
-import { encodeValue } from "./encodeValue.js";
-import { getFakeScalarType } from "./getFakeScalarType.js";
-import { parseEncodedValues } from "./parseEncodedValues.js";
+import type { LeetCodeGraphQLType } from "../../fetchGraphQLTypeInformation.ts";
+import { encodeValue } from "./encodeValue.ts";
+import { getFakeScalarType } from "./getFakeScalarType.ts";
+import { parseEncodedValues } from "./parseEncodedValues.ts";
 
 export async function stringifyGraphQLSchema(
   types: readonly LeetCodeGraphQLType[],

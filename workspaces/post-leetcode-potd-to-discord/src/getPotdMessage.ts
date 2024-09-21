@@ -2,7 +2,7 @@ import type { ActiveDailyCodingChallengeQuestion } from "@code-chronicles/leetco
 import { SEC_IN_DAY } from "@code-chronicles/util/timeConstants";
 import { yearMonthDayToTimestampInSeconds } from "@code-chronicles/util/yearMonthDayToTimestampInSeconds";
 
-import { formatTimestampForDiscord } from "./formatTimestampForDiscord.js";
+import { formatTimestampForDiscord } from "./formatTimestampForDiscord.ts";
 
 export function getPotdMessage({
   date,

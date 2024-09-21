@@ -2,8 +2,8 @@ import fsPromises from "node:fs/promises";
 
 import { getLines } from "@code-chronicles/util/getLines";
 
-import { METADATA_FILE } from "./constants.js";
-import type { TransformedSubmission } from "./transformSubmission.js";
+import { METADATA_FILE } from "./constants.ts";
+import type { TransformedSubmission } from "./transformSubmission.ts";
 
 export async function readPriorSubmissions(): Promise<
   Map<string, TransformedSubmission>

@@ -9,14 +9,14 @@ import { popMany } from "@code-chronicles/util/popMany";
 import { sleep } from "@code-chronicles/util/sleep";
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
-import { SCHEMA_FILE } from "./constants.js";
+import { SCHEMA_FILE } from "./constants.ts";
 import {
   fetchGraphQLTypeInformation,
   type InnerType,
   type LeetCodeGraphQLType,
-} from "../../fetchGraphQLTypeInformation.js";
-import { readSeedGraphQLTypeNames } from "./readSeedGraphQLTypeNames.js";
-import { stringifyGraphQLSchema } from "./stringifyGraphQLSchema.js";
+} from "../../fetchGraphQLTypeInformation.ts";
+import { readSeedGraphQLTypeNames } from "./readSeedGraphQLTypeNames.ts";
+import { stringifyGraphQLSchema } from "./stringifyGraphQLSchema.ts";
 
 const BATCH_SIZE = 100;
 

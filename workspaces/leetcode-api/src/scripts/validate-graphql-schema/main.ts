@@ -4,7 +4,7 @@ import { buildSchema, validateSchema } from "graphql";
 
 import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 
-import { SCHEMA_FILE } from "../scrape-graphql-schema/constants.js";
+import { SCHEMA_FILE } from "../scrape-graphql-schema/constants.ts";
 
 async function main(): Promise<void> {
   const schema = buildSchema(await readFile(SCHEMA_FILE, "utf8"));

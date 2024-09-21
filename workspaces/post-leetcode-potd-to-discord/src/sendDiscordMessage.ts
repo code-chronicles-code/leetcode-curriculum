@@ -1,7 +1,7 @@
 import { ChannelType, Client, GatewayIntentBits } from "discord.js";
 import invariant from "invariant";
 
-import type { Secrets } from "./readSecrets.js";
+import type { Secrets } from "./readSecrets.ts";
 
 export async function sendDiscordMessage(
   { discordChannelID, discordToken }: Secrets,
