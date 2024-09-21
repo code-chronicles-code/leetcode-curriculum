@@ -1364,6 +1364,53 @@ Function.returnThis = function () {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Iterator.from 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Function.returnThis = function () {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+);
+
+iteratorPrototype.toIterable = function () {
+  this[Symbol.iterator] ??= Function.returnThis;
+  return this;
+};
+
+globalThis.Iterator ??= {};
+
+globalThis.Iterator.from ??= function (object) {
+  const toIterable = iteratorPrototype.toIterable;
+
+  const iteratorFactory = object[Symbol.iterator];
+  if (typeof iteratorFactory === "function") {
+    return toIterable.call(iteratorFactory.call(object));
+  }
+
+  // eslint-disable-next-line no-prototype-builtins
+  if (iteratorPrototype.isPrototypeOf(object)) {
+    return toIterable.call(object);
+  }
+
+  if (typeof object.next === "function") {
+    return (function* () {
+      yield* toIterable.call(object);
+    })();
+  }
+
+  throw new TypeError(
+    "Object is not an iterator, iterable, or an object with a next method",
+  );
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Iterator.prototype 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -3276,6 +3323,79 @@ declare global {
 Function.returnThis = function <T>(this: T): T {
   return this;
 };
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
+exports[`App can equip single goody: TypeScript Iterator.from 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface FunctionConstructor {
+    returnThis<T>(this: T): T;
+  }
+
+  interface Iterator<T> {
+    toIterable(this: Iterator<T>): IterableIterator<T>;
+  }
+
+  interface IteratorConstructor {
+    from<T>(
+      object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
+    ): IterableIterator<T>;
+  }
+
+  const Iterator: IteratorConstructor;
+}
+
+Function.returnThis = function <T>(this: T): T {
+  return this;
+};
+
+const iteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([].values()),
+) as Iterator<unknown, unknown, unknown>;
+
+iteratorPrototype.toIterable = function <T>(
+  this: Iterator<T>,
+): IterableIterator<T> {
+  (this as unknown as Record<symbol, unknown>)[Symbol.iterator] ??=
+    Function.returnThis;
+  return this as unknown as IterableIterator<T>;
+};
+
+(globalThis as Record<string, unknown>).Iterator ??= {};
+
+((globalThis as Record<string, unknown>).Iterator as { from: unknown }).from ??=
+  function <T>(
+    object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
+  ): IterableIterator<T> {
+    const toIterable = iteratorPrototype.toIterable as (
+      this: Iterator<T>,
+    ) => IterableIterator<T>;
+
+    const iteratorFactory = (object as Iterable<T>)[Symbol.iterator];
+    if (typeof iteratorFactory === "function") {
+      return toIterable.call(iteratorFactory.call(object));
+    }
+
+    // eslint-disable-next-line no-prototype-builtins
+    if (iteratorPrototype.isPrototypeOf(object)) {
+      return toIterable.call(object as Iterator<T>);
+    }
+
+    if (typeof (object as Record<string, unknown>).next === "function") {
+      return (function* () {
+        yield* toIterable.call(object as Iterator<T>);
+      })();
+    }
+
+    throw new TypeError(
+      "Object is not an iterator, iterable, or an object with a next method",
+    );
+  };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
