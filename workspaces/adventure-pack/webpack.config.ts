@@ -24,9 +24,8 @@ const config: Configuration = {
           {
             loader: "ts-loader",
             options: {
-              compilerOptions: {
-                noEmit: false,
-              },
+              // TODO: Consider using fork-ts-checker-webpack-plugin for typechecking.
+              transpileOnly: true,
             },
           },
         ],
@@ -37,9 +36,6 @@ const config: Configuration = {
 
   resolve: {
     extensions: [".tsx", ".ts", "..."],
-    extensionAlias: {
-      ".js": [".ts", ".tsx", ".js"],
-    },
   },
 
   plugins: [
