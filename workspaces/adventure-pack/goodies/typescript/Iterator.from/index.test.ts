@@ -4,6 +4,11 @@ import "./index";
 import "../Iterator.prototype.map";
 import "../Iterator.prototype.filter";
 
+(globalThis as Record<string, unknown>).Iterator &&
+  delete (
+    (globalThis as Record<string, unknown>).Iterator as Record<string, unknown>
+  ).from;
+
 describe("Iterator.from", () => {
   it("can convert an Array to an Iterator", () => {
     const array = [-3, 1, -4, 1, -5];
@@ -69,7 +74,7 @@ describe("Iterator.from", () => {
     const object = {
       values: [-3, 1, -4, 1, -5, 9],
       index: 0,
-      next() {
+      next(): IteratorResult<number, void> {
         if (this.index < this.values.length) {
           return { value: this.values[this.index++], done: false };
         }
@@ -77,7 +82,7 @@ describe("Iterator.from", () => {
       },
     };
     const iterator = Iterator.from(object)
-      .map((x) => (x !== undefined ? x * 2 : 0))
+      .map((x) => x * 2)
       .filter((x) => x > 0);
 
     expect([...iterator]).toStrictEqual([2, 2, 18]);
