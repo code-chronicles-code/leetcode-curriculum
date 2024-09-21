@@ -3,7 +3,7 @@ import path from "node:path";
 
 import webpack, { type Configuration } from "webpack";
 
-import { WEB_APP_DIST } from "./src/scripts/build/constants";
+import { WEB_APP_DIST } from "./src/scripts/build/constants.ts";
 
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
@@ -24,22 +24,14 @@ const config: Configuration = {
           {
             loader: "ts-loader",
             options: {
-              compilerOptions: {
-                noEmit: false,
-              },
+              // TODO: Consider using fork-ts-checker-webpack-plugin for typechecking.
+              transpileOnly: true,
             },
           },
         ],
         exclude: /\bnode_modules\b/,
       },
     ],
-  },
-
-  resolve: {
-    extensions: [".tsx", ".ts", "..."],
-    extensionAlias: {
-      ".js": [".ts", ".tsx", ".js"],
-    },
   },
 
   plugins: [

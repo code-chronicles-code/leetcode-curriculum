@@ -1,21 +1,19 @@
 diff --git a/nullthrows.d.ts b/nullthrows.d.ts
-index d4953f2f47b79701e5f125b9c041fb185668dd53..a39a37b30cd206e037ecbbb66bc90dacd6adb3af 100644
+index d4953f2f47b79701e5f125b9c041fb185668dd53..2b48c84aa711910fe2d11d43dcf1e78e21fa56ab 100644
 --- a/nullthrows.d.ts
 +++ b/nullthrows.d.ts
-@@ -1,5 +1,15 @@
+@@ -1,5 +1,12 @@
  /**
-  * Throws if value is null or undefined, otherwise returns value.
+- * Throws if value is null or undefined, otherwise returns value.
++ * Throws if `value` is `null` or `undefined`, otherwise returns `value`.
   */
 +declare function nullthrows<T>(
 +  value?: T | null,
 +  message?: string,
 +): NonNullable<T>;
-+
-+// Patched based on https://github.com/microsoft/TypeScript/issues/46770#issuecomment-1039459991 and https://github.com/zertosh/nullthrows/pull/15
-+
-+declare namespace nullthrows {
-+  export { nullthrows as default };
-+}
-+export = nullthrows;
  
 -export default function nullthrows<T>(value?: T | null, message?: string): T;
++// Patched based on https://github.com/microsoft/TypeScript/issues/46770#issuecomment-1039459991 and https://github.com/zertosh/nullthrows/pull/15
++
++export default nullthrows;
++export = nullthrows;

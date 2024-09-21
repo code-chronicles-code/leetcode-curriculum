@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "./index";
+import "./index.ts";
 
 describe("Number.prototype.digits", () => {
   it("can get the base 10 digits", () => {

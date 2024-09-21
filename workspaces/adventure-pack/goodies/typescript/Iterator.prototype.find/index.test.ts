@@ -1,9 +1,9 @@
 import { describe, expect, it, jest } from "@jest/globals";
 
-import { iteratorPrototype } from "../Iterator.prototype";
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 delete (iteratorPrototype as unknown as Record<string, unknown>).find;
 // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.find", () => {
   it("returns the first element that satisfies the callback", () => {

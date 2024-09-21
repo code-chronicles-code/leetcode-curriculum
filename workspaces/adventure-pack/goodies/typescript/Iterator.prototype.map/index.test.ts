@@ -1,9 +1,9 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { iteratorPrototype } from "../Iterator.prototype";
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 delete (iteratorPrototype as unknown as Record<string, unknown>).map;
 // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.map", () => {
   it("can map an Array's values()", () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { newArray } from "./index";
+import { newArray } from "./index.ts";
 
 describe("newArray", () => {
   it("respects dimensions", () => {

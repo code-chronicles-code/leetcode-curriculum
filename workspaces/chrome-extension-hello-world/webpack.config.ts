@@ -20,22 +20,14 @@ const config: Configuration = {
           {
             loader: "ts-loader",
             options: {
-              compilerOptions: {
-                noEmit: false,
-              },
+              // TODO: Consider using fork-ts-checker-webpack-plugin for typechecking.
+              transpileOnly: true,
             },
           },
         ],
         exclude: /\bnode_modules\b/,
       },
     ],
-  },
-
-  resolve: {
-    extensions: [".tsx", ".ts", "..."],
-    extensionAlias: {
-      ".js": [".ts", ".tsx", ".js"],
-    },
   },
 
   optimization: {

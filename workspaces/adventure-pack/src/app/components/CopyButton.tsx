@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
 
-type CopyButtonProps = {
+type Props = {
   textToCopy: string;
 };
 
-export function CopyButton({ textToCopy }: CopyButtonProps) {
+export function CopyButton({ textToCopy }: Props) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(async () => {

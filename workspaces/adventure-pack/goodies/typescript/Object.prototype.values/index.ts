@@ -1,5 +1,5 @@
-import "../Iterator.prototype.map";
-import "../Object.prototype.keys";
+import "../Iterator.prototype.map/index.ts";
+import "../Object.prototype.keys/index.ts";
 
 declare global {
   interface Object {

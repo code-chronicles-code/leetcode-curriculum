@@ -1,6 +1,6 @@
-import { compareNatural } from "../compareNatural";
-import "../Iterator.prototype.toIterable";
-import { iteratorPrototype } from "../Iterator.prototype";
+import { compareNatural } from "../compareNatural/index.ts";
+import "../Iterator.prototype.toIterable/index.ts";
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 
 declare global {
   interface Iterator<T> {

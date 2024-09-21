@@ -1,7 +1,7 @@
 import { SyntaxKind } from "typescript";
 
-import { createSourceFile } from "./createSourceFile";
-import { removeNode } from "./removeNode";
+import { createSourceFile } from "./createSourceFile.ts";
+import { removeNode } from "./removeNode.ts";
 
 export function removeUninitializedPropertyDeclarations(code: string): string {
   const sourceFile = createSourceFile(code);

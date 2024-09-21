@@ -1,8 +1,9 @@
 import { type SourceFile as TSSourceFile, SyntaxKind } from "ts-morph";
 
 import { invariantViolation } from "@code-chronicles/util/invariantViolation";
-import { sortTypeScriptModuleAndInterfaceDeclarations } from "../../../app/sortTypeScriptModuleAndInterfaceDeclarations";
-import { removeNode } from "./removeNode";
+
+import { sortTypeScriptModuleAndInterfaceDeclarations } from "../../../app/sortTypeScriptModuleAndInterfaceDeclarations.ts";
+import { removeNode } from "./removeNode.ts";
 
 export type GoodyModuleDeclaration = {
   interfaces?: Record<string, string[]>;

@@ -1,10 +1,10 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "../Iterator.prototype.map";
-import "../Object.prototype.entries";
-import "../String.prototype.chars";
+import "../Iterator.prototype.map/index.ts";
+import "../Object.prototype.entries/index.ts";
+import "../String.prototype.chars/index.ts";
 
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.toObject", () => {
   it("creates an object from an iterator of tuples", () => {

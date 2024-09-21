@@ -1,12 +1,10 @@
 import { mkdir } from "node:fs/promises";
 
-import { WEB_APP_DIST } from "./constants";
-import { runWebpack } from "./runWebpack";
-import { writeGoodiesJson } from "./writeGoodiesJson";
-import { writeIndexHtml } from "./writeIndexHtml";
-import { writeStyleCss } from "./writeStyleCss";
-
-// TODO: Investigate why this script works with `tsx` but not `ts-node`.
+import { WEB_APP_DIST } from "./constants.ts";
+import { runWebpack } from "./runWebpack.ts";
+import { writeGoodiesJson } from "./writeGoodiesJson.ts";
+import { writeIndexHtml } from "./writeIndexHtml.tsx";
+import { writeStyleCss } from "./writeStyleCss.ts";
 
 async function main(): Promise<void> {
   await mkdir(WEB_APP_DIST, { recursive: true });

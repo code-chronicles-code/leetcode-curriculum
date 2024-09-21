@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { compareNatural } from "./index";
+import { compareNatural } from "./index.ts";
 
 describe("compareNatural", () => {
   it("compares numbers", () => {

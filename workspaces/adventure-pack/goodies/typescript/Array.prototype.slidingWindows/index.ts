@@ -1,4 +1,4 @@
-import { type IndexableArraySlice, ArraySlice } from "../ArraySlice";
+import { type IndexableArraySlice, ArraySlice } from "../ArraySlice/index.ts";
 
 declare global {
   interface Array<T> {

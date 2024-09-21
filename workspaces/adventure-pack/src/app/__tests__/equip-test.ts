@@ -1,9 +1,9 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { LANGUAGE_NAMES } from "../constants";
-import type { Language } from "../Language";
-import { mergeCode } from "../mergeCode";
-import { readAllGoodies } from "../../scripts/package-goodies/readAllGoodies";
+import { LANGUAGE_NAMES } from "../constants.ts";
+import type { Language } from "../Language.ts";
+import { mergeCode } from "../mergeCode.ts";
+import { readAllGoodies } from "../../scripts/package-goodies/readAllGoodies.ts";
 
 function setUnsafe(
   obj: unknown,

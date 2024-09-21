@@ -1,7 +1,7 @@
 import React from "react";
 
-import { LANGUAGE_NAMES } from "../constants";
-import type { Language } from "../Language";
+import { LANGUAGE_NAMES } from "../constants.ts";
+import type { Language } from "../Language.ts";
 
 type Props = {
   selectedLanguage: Language;

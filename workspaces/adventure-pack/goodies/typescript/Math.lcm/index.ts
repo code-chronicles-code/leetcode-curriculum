@@ -1,4 +1,4 @@
-import "../Math.gcd";
+import "../Math.gcd/index.ts";
 
 declare global {
   interface Math {

@@ -1,9 +1,9 @@
 import type { WritableDeep } from "type-fest";
 
-import type { KotlinGoody } from "../../../app/zod-types/kotlinGoodyZodType";
-import { extractJavaesqueImports } from "../extractJavaesqueImports";
-import { readCode } from "./readCode";
-import { readMetadata } from "./readMetadata";
+import type { KotlinGoody } from "../../../app/zod-types/kotlinGoodyZodType.ts";
+import { extractJavaesqueImports } from "../extractJavaesqueImports.ts";
+import { readCode } from "./readCode.ts";
+import { readMetadata } from "./readMetadata.ts";
 
 export type KotlinGoodyBase = Omit<WritableDeep<KotlinGoody>, "importedBy">;
 

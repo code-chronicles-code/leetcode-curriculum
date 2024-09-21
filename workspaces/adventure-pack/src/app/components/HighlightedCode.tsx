@@ -1,8 +1,9 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow as syntaxHighlighterStyle } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { CopyButton } from "./CopyButton";
-import type { Language } from "../Language";
+
+import { CopyButton } from "./CopyButton.tsx";
+import type { Language } from "../Language.ts";
 
 // Cross-reference with https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_LANGUAGES_PRISM.MD
 type HighlighterLanguage =

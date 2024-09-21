@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.min", () => {
   it("can find the min of an iterator of numbers", () => {

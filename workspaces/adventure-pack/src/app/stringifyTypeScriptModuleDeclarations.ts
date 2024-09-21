@@ -1,9 +1,11 @@
 import type { ReadonlyDeep } from "type-fest";
 
-import { stringifyTypeScriptInterfaceDeclarations } from "./stringifyTypeScriptInterfaceDeclarations";
-
-import type { GoodyModuleDeclaration } from "../scripts/package-goodies/typescript/extractModuleDeclarations";
 import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
+
+import type { GoodyModuleDeclaration } from "../scripts/package-goodies/typescript/extractModuleDeclarations.ts";
+import { stringifyTypeScriptInterfaceDeclarations } from "./stringifyTypeScriptInterfaceDeclarations.ts";
+
+// TODO: we should probably not allow importing stuff from the scripts, even if it's just the type
 
 const INDENT = "  ";
 

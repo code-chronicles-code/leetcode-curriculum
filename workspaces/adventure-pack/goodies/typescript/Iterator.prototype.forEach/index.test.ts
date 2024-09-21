@@ -1,9 +1,9 @@
 import { describe, expect, it, jest } from "@jest/globals";
 
-import { iteratorPrototype } from "../Iterator.prototype";
+import { iteratorPrototype } from "../Iterator.prototype/index.ts";
 delete (iteratorPrototype as unknown as Record<string, unknown>).forEach;
 // eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.forEach", () => {
   it("calls the callback function for each array element", () => {

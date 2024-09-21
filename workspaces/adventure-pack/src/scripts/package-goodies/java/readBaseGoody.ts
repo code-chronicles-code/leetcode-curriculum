@@ -1,10 +1,10 @@
 import type { WritableDeep } from "type-fest";
 
-import type { JavaGoody } from "../../../app/zod-types/javaGoodyZodType";
-import { extractJavaesqueImports } from "../extractJavaesqueImports";
-import { readCode } from "./readCode";
-import { readMetadata } from "./readMetadata";
-import { splitCodeIntoClasses } from "./splitCodeIntoClasses";
+import type { JavaGoody } from "../../../app/zod-types/javaGoodyZodType.ts";
+import { extractJavaesqueImports } from "../extractJavaesqueImports.ts";
+import { readCode } from "./readCode.ts";
+import { readMetadata } from "./readMetadata.ts";
+import { splitCodeIntoClasses } from "./splitCodeIntoClasses.ts";
 
 export type JavaGoodyBase = Omit<WritableDeep<JavaGoody>, "importedBy">;
 

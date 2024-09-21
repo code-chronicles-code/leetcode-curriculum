@@ -1,9 +1,9 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "../Iterator.prototype.filter";
-import "../Iterator.prototype.map";
+import "../Iterator.prototype.filter/index.ts";
+import "../Iterator.prototype.map/index.ts";
 
-import "./index";
+import "./index.ts";
 
 describe("Iterator.prototype.tally", () => {
   it("tallies an Array's values()", () => {

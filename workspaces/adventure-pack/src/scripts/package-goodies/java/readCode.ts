@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { only } from "@code-chronicles/util/only";
 
-import { GOODIES_DIRECTORY } from "./constants";
+import { GOODIES_DIRECTORY } from "./constants.ts";
 
 export async function readCode(packageName: string): Promise<string> {
   const fileEntries = await fsPromises.readdir(

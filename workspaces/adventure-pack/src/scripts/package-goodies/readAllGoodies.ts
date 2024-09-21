@@ -2,11 +2,11 @@ import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStri
 import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
 import { sortObjectKeysRecursive } from "@code-chronicles/util/sortObjectKeysRecursive";
 
-import type { GoodiesByLanguage } from "../../app/fetchGoodies";
-import { readGoodies as readJavaGoodies } from "./java/readGoodies";
-import { readGoodies as readKotlinGoodies } from "./kotlin/readGoodies";
-import { readGoodies as readPythonGoodies } from "./python3/readGoodies";
-import { readGoodies as readTypeScriptAndJavaScriptGoodies } from "./typescript/readGoodies";
+import type { GoodiesByLanguage } from "../../app/fetchGoodies.ts";
+import { readGoodies as readJavaGoodies } from "./java/readGoodies.ts";
+import { readGoodies as readKotlinGoodies } from "./kotlin/readGoodies.ts";
+import { readGoodies as readPythonGoodies } from "./python3/readGoodies.ts";
+import { readGoodies as readTypeScriptAndJavaScriptGoodies } from "./typescript/readGoodies.ts";
 
 function sortLanguagesGoodiesAndGoodyFields(
   goodies: GoodiesByLanguage,

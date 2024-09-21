@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "./index";
+import "./index.ts";
 
 describe("String.prototype.chars", () => {
   it("can iterate over a string's characters", () => {

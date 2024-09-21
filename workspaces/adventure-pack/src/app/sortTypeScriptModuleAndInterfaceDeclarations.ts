@@ -4,7 +4,7 @@ import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStri
 import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 import { sortObjectKeysRecursive } from "@code-chronicles/util/sortObjectKeysRecursive";
 
-import type { GoodyModuleDeclaration } from "../scripts/package-goodies/typescript/extractModuleDeclarations";
+import type { GoodyModuleDeclaration } from "../scripts/package-goodies/typescript/extractModuleDeclarations.ts";
 
 export function sortTypeScriptModuleAndInterfaceDeclarations(
   moduleDeclarations: ReadonlyDeep<Record<string, GoodyModuleDeclaration>>,

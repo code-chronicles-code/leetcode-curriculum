@@ -12,17 +12,18 @@ Map.groupBy ??= function <K, V>(
   callbackFn: (value: V, index: number) => K,
 ): Map<K, V[]> {
   const groups = new Map<K, V[]>();
+
   let index = 0;
   for (const value of iterable) {
-    const key = callbackFn(value, index);
+    const key = callbackFn(value, index++);
     const group = groups.get(key);
     if (group == null) {
       groups.set(key, [value]);
     } else {
       group.push(value);
     }
-    ++index;
   }
+
   return groups;
 };
 

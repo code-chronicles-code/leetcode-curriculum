@@ -1,7 +1,7 @@
 import fsPromises from "node:fs/promises";
 import path from "node:path";
 
-import { GOODIES_DIRECTORY } from "./constants";
+import { GOODIES_DIRECTORY } from "./constants.ts";
 
 export function readCode(packageName: string): Promise<string> {
   return fsPromises.readFile(

@@ -1,9 +1,9 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { LANGUAGE_NAMES } from "../constants";
-import type { Language } from "../Language";
-import { readAllGoodies } from "../../scripts/package-goodies/readAllGoodies";
-import { stringifyGoody } from "../stringifyGoody";
+import { LANGUAGE_NAMES } from "../constants.ts";
+import type { Language } from "../Language.ts";
+import { readAllGoodies } from "../../scripts/package-goodies/readAllGoodies.ts";
+import { stringifyGoody } from "../stringifyGoody.ts";
 
 describe("App", () => {
   it("can render goody", async () => {

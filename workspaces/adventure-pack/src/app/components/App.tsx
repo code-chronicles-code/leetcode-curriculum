@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 
-import { Checkbox } from "./Checkbox";
-import { GoodyCard } from "./GoodyCard";
-import { HighlightedCode } from "./HighlightedCode";
-import { fetchGoodies } from "../fetchGoodies";
-import { useMergedCode } from "../useMergedCode";
-import { useAppState } from "../useAppState";
-import type { Goody } from "../Goody";
-import { LanguageSelector } from "./LanguageSelector";
+import { Checkbox } from "./Checkbox.tsx";
+import { GoodyCard } from "./GoodyCard.tsx";
+import { HighlightedCode } from "./HighlightedCode.tsx";
+import { fetchGoodies } from "../fetchGoodies.ts";
+import { useMergedCode } from "../useMergedCode.ts";
+import { useAppState } from "../useAppState.ts";
+import type { Goody } from "../Goody.ts";
+import { LanguageSelector } from "./LanguageSelector.tsx";
+
+// TODO: add a lint rule that files are imported with their actual extension (i.e. ".tsx" not ".ts" where applicable)
 
 function Column({
   children,

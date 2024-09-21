@@ -4,11 +4,11 @@ import invariant from "invariant";
 
 import { setIfNotHasOwnOrThrow } from "@code-chronicles/util/setIfNotHasOwnOrThrow";
 
-import type { Python3Goody } from "../../../app/zod-types/python3GoodyZodType";
-import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports";
-import { GOODIES_DIRECTORY } from "./constants";
-import { type Python3GoodyBase, readBaseGoody } from "./readBaseGoody";
-import { normalizeGoodyNameToPackageOrModuleName } from "../normalizeGoodyNameToPackageOrModuleName";
+import type { Python3Goody } from "../../../app/zod-types/python3GoodyZodType.ts";
+import { fillOutImportedByAndSortImports } from "../fillOutImportedByAndSortImports.ts";
+import { GOODIES_DIRECTORY } from "./constants.ts";
+import { type Python3GoodyBase, readBaseGoody } from "./readBaseGoody.ts";
+import { normalizeGoodyNameToPackageOrModuleName } from "../normalizeGoodyNameToPackageOrModuleName.ts";
 
 export async function readGoodies(): Promise<Record<string, Python3Goody>> {
   const fileEntries = await fsPromises.readdir(GOODIES_DIRECTORY, {

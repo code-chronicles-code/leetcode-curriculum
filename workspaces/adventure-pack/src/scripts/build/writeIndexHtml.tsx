@@ -6,8 +6,8 @@ import { promisify } from "node:util";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
-import { App } from "../../app/components/App";
-import { WEB_APP_DIST } from "./constants";
+import { App } from "../../app/components/App.tsx";
+import { WEB_APP_DIST } from "./constants.ts";
 
 const exec = promisify(execWithCallback);
 

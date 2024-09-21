@@ -1,8 +1,8 @@
 import type { SourceFile as TSSourceFile } from "ts-morph";
 
-import { getCodeAt } from "./getCodeAt";
-import { getLeadingTriviaRange } from "./getLeadingTriviaRange";
-import { getTrailingTriviaRange } from "./getTrailingTriviaRange";
+import { getCodeAt } from "./getCodeAt.ts";
+import { getLeadingTriviaRange } from "./getLeadingTriviaRange.ts";
+import { getTrailingTriviaRange } from "./getTrailingTriviaRange.ts";
 
 export function getTrivia(sourceFile: TSSourceFile): [number, number][] {
   const set = new Set<string>();
