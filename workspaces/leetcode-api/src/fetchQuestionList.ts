@@ -3,9 +3,9 @@ import { z } from "zod";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 
-import { fetchGraphQLData } from "./fetchGraphQLData.js";
-import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.js";
-import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.js";
+import { fetchGraphQLData } from "./fetchGraphQLData.ts";
+import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
+import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
 const QUERY = squashWhitespace(`
   query ($categorySlug: String!, $limit: Int, $skip: Int, $filters: QuestionListFilterInput!) {

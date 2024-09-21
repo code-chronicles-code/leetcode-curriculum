@@ -13,7 +13,7 @@ import {
   SCRIPTS,
   SCRIPTS_TO_SKIP_BY_WORKSPACE,
   type Script,
-} from "./scripts.js";
+} from "./scripts.ts";
 
 type FailedCommand = {
   command: string;

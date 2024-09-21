@@ -7,7 +7,7 @@ import {
 } from "graphql";
 import nullthrows from "nullthrows";
 
-import type { InnerType } from "../../fetchGraphQLTypeInformation.js";
+import type { InnerType } from "../../fetchGraphQLTypeInformation.ts";
 
 export function getFakeScalarType(
   innerType: InnerType,

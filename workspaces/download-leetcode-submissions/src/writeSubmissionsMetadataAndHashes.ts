@@ -1,9 +1,9 @@
 import { writeFile } from "node:fs/promises";
 
-import { METADATA_FILE, HASHES_FILE } from "./constants.js";
-import { getDirnameForSubmission } from "./getDirnameForSubmission.js";
-import { getFilenameForSubmission } from "./getFilenameForSubmission.js";
-import type { TransformedSubmission } from "./transformSubmission.js";
+import { METADATA_FILE, HASHES_FILE } from "./constants.ts";
+import { getDirnameForSubmission } from "./getDirnameForSubmission.ts";
+import { getFilenameForSubmission } from "./getFilenameForSubmission.ts";
+import type { TransformedSubmission } from "./transformSubmission.ts";
 
 export async function writeSubmissionsMetadataAndHashes(
   submissionsMap: ReadonlyMap<string, TransformedSubmission>,

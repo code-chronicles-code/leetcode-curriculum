@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import process from "node:process";
 
-import { processWriteUpForLeetCode } from "./processWriteUpForLeetCode.js";
+import { processWriteUpForLeetCode } from "./processWriteUpForLeetCode.ts";
 
 async function main(): Promise<void> {
   const [, , file] = process.argv as (string | undefined)[];

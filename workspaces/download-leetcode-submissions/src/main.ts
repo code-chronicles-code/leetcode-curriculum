@@ -10,16 +10,16 @@ import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllL
 import { sleep } from "@code-chronicles/util/sleep";
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
-import { CONCURRENCY_LIMIT } from "./constants.js";
-import { getDirnameForSubmission } from "./getDirnameForSubmission.js";
-import { getFilenameForSubmission } from "./getFilenameForSubmission.js";
-import { readPriorSubmissions } from "./readPriorSubmissions.js";
-import { readSecrets } from "./readSecrets.js";
+import { CONCURRENCY_LIMIT } from "./constants.ts";
+import { getDirnameForSubmission } from "./getDirnameForSubmission.ts";
+import { getFilenameForSubmission } from "./getFilenameForSubmission.ts";
+import { readPriorSubmissions } from "./readPriorSubmissions.ts";
+import { readSecrets } from "./readSecrets.ts";
 import {
   transformSubmission,
   type TransformedSubmission,
-} from "./transformSubmission.js";
-import { writeSubmissionsMetadataAndHashes } from "./writeSubmissionsMetadataAndHashes.js";
+} from "./transformSubmission.ts";
+import { writeSubmissionsMetadataAndHashes } from "./writeSubmissionsMetadataAndHashes.ts";
 
 async function main(): Promise<void> {
   // TODO: maybe create the file from a template if it doesn't exist

@@ -9,9 +9,9 @@ import {
 import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
-import { fetchGraphQLData } from "./fetchGraphQLData.js";
-import { normalizeGraphQLDescription } from "./normalizeGraphQLDescription.js";
-import { sortByName } from "./sortByName.js";
+import { fetchGraphQLData } from "./fetchGraphQLData.ts";
+import { normalizeGraphQLDescription } from "./normalizeGraphQLDescription.ts";
+import { sortByName } from "./sortByName.ts";
 
 function getTypeFields(depth: number): string {
   const base = "name kind";
