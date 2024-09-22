@@ -8,7 +8,7 @@ const config: Configuration = {
   target: "web",
   entry: path.resolve(__dirname, packageJson.exports),
   output: {
-    filename: "[name].js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
 
@@ -28,18 +28,6 @@ const config: Configuration = {
         exclude: /\bnode_modules\b/,
       },
     ],
-  },
-
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        dependencies: {
-          test: /\bnode_modules\b/,
-          name: "dependencies",
-          chunks: "all",
-        },
-      },
-    },
   },
 };
 

@@ -76,6 +76,7 @@ export const SCRIPTS_TO_SKIP_BY_WORKSPACE: Readonly<
   "generate-health-report": new Set(["test"]),
   "javascript-leetcode-month": new Set(["test"]),
   "leetcode-api": new Set(["test"]),
+  "leetcode-zen-mode": new Set(["test"]),
   "post-leetcode-potd-to-discord": new Set(["test"]),
   "repository-scripts": new Set(["test"]),
 };
