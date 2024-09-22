@@ -1620,9 +1620,7 @@ exports[`App can render goody: Python 3 transpose_matrix 1`] = `
 T = TypeVar("T")
 
 
-def transpose_matrix(
-    input: list[list[T]],
-) -> list[list[T]]:
+def transpose_matrix(input: list[list[T]]) -> list[list[T]]:
     r = len(input)
     c = len(input[0]) if r != 0 else 0
     if r == 0 or c == 0:
