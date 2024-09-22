@@ -12,23 +12,26 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "type": "module",
   "exports": {
     "./*": "./src/*.ts",
+    ".": null,
     "./__tests__/*": null
   },
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "test": "tsx ./jest.config.mts",
+    "test": "tsx ./jest.config.ts",
     "typecheck": "tsc --pretty --project ."
   },
-  "dependencies": {
+  "peerDependencies": {
     "invariant": "2.2.4",
-    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch",
+    "nullthrows": "*",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/util": "workspace:*",
     "@jest/globals": "29.7.0",
     "@types/node": "22.5.5",
     "eslint": "9.11.0",

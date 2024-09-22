@@ -10,6 +10,7 @@ import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 
 const COMMANDS = [
+  "yarn constraints",
   "yarn test",
   "yarn workspace @code-chronicles/adventure-pack build-app",
   "yarn workspace @code-chronicles/adventure-pack build-chrome-extension",

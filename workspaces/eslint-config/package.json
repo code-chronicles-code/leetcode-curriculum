@@ -12,6 +12,7 @@
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
+  "type": "module",
   "exports": {
     ".": "./eslint.config.mjs"
   },

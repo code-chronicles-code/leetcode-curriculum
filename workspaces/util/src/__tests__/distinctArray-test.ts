@@ -1,5 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
-import { distinctArray } from "../distinctArray";
+
+import { distinctArray } from "../distinctArray.ts";
 
 describe("distinctArray", () => {
   it("returns an empty list if given an empty list", () => {

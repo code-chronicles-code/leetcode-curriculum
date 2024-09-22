@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { getLines } from "../getLines";
+import { getLines } from "../getLines.ts";
 
 describe("getLines", () => {
   it("gets lines when the new line at the begining", () => {

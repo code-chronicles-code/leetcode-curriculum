@@ -1,15 +1,14 @@
 import { describe, expect, it } from "@jest/globals";
 
-import "../Iterator.prototype.map";
-import "../Iterator.prototype.filter";
+import "../Iterator.prototype.map/index.ts";
+import "../Iterator.prototype.filter/index.ts";
 
 (globalThis as Record<string, unknown>).Iterator &&
   delete (
     (globalThis as Record<string, unknown>).Iterator as Record<string, unknown>
   ).from;
-
-// eslint-disable-next-line import-x/first
-import "./index";
+// eslint-disable-next-line import-x/first -- This has to happen after we delete the built-in implementation.
+import "./index.ts";
 
 describe("Iterator.from", () => {
   it("can convert an Array to an Iterator", () => {

@@ -699,18 +699,20 @@ __metadata:
   resolution: "@code-chronicles/util@workspace:workspaces/util"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/util": "workspace:*"
     "@jest/globals": "npm:29.7.0"
     "@types/node": "npm:22.5.5"
     eslint: "npm:9.11.0"
-    invariant: "npm:2.2.4"
     jest: "npm:29.7.0"
-    nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
     ts-jest: "npm:29.2.5"
     tsx: "npm:4.19.1"
     type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
-    zod: "npm:3.23.8"
+  peerDependencies:
+    invariant: 2.2.4
+    nullthrows: "*"
+    zod: 3.23.8
   languageName: unknown
   linkType: soft
 
