@@ -26,8 +26,7 @@ declare global {
       return toIterable.call(iteratorFactory.call(object));
     }
 
-    // eslint-disable-next-line no-prototype-builtins
-    if (iteratorPrototype.isPrototypeOf(object)) {
+    if (Object.prototype.isPrototypeOf.call(iteratorPrototype, object)) {
       return toIterable.call(object as Iterator<T>);
     }
 
