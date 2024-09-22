@@ -15,7 +15,7 @@ export async function* getCurrentGitRepositoryStatusPaths(): AsyncGenerator<
 
   // Using a set to deduplicate, in case multiple files were "moved from" the
   // same file. I'm not even completely sure if that's possible, but no harm in
-  // defending aagainst it.
+  // defending against it.
   const yieldedPaths = new Set();
 
   for (const line of getLines(gitCommandResult.stdout)) {

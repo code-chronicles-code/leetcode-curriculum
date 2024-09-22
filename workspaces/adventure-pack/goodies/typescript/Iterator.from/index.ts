@@ -12,7 +12,6 @@ declare global {
 }
 
 (globalThis as Record<string, unknown>).Iterator ??= {};
-
 ((globalThis as Record<string, unknown>).Iterator as { from: unknown }).from ??=
   function <T>(
     object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },

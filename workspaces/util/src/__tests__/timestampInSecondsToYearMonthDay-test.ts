@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { timestampInSecondsToYearMonthDay } from "../timestampInSecondsToYearMonthDay";
+import { timestampInSecondsToYearMonthDay } from "../timestampInSecondsToYearMonthDay.ts";
 
 describe("timestampInSecondsToYearMonthDay", () => {
   it.each([

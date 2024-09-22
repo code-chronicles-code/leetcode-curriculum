@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { squashWhitespace } from "../squashWhitespace";
+import { squashWhitespace } from "../squashWhitespace.ts";
 
 describe("squashWhitespace", () => {
   it("removes whitespace between words if it exists", () => {

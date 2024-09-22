@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { stripSuffixOrThrow } from "../stripSuffixOrThrow";
+import { stripSuffixOrThrow } from "../stripSuffixOrThrow.ts";
 
 describe("stripSuffixOrThrow", () => {
   it("removes the suffix if it exists", () => {

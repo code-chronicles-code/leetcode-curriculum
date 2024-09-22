@@ -2,7 +2,7 @@
 
 import { describe, expect, it } from "@jest/globals";
 
-import { isNonNullish } from "../isNonNullish";
+import { isNonNullish } from "../isNonNullish.ts";
 
 describe("isNonNullish", () => {
   it.each([[], {}, new Set(), new Map(), "hi", 4, Symbol(undefined)])(
