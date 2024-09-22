@@ -3281,3 +3281,18 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3281,"title":"Maximize Score of Numbers in Ranges","titleSlug":"maximize-score-of-numbers-in-ranges"}
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3282,"title":"Reach End of Array With Max Score","titleSlug":"reach-end-of-array-with-max-score"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3283,"title":"Maximum Number of Moves to Kill All Pawns","titleSlug":"maximum-number-of-moves-to-kill-all-pawns"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3284,"title":"Sum of Consecutive Subarrays","titleSlug":"sum-of-consecutive-subarrays"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3285,"title":"Find Indices of Stable Mountains","titleSlug":"find-indices-of-stable-mountains"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3286,"title":"Find a Safe Walk Through a Grid","titleSlug":"find-a-safe-walk-through-a-grid"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3287,"title":"Find the Maximum Sequence Value of Array","titleSlug":"find-the-maximum-sequence-value-of-array"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3288,"title":"Length of the Longest Increasing Path","titleSlug":"length-of-the-longest-increasing-path"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3289,"title":"The Two Sneaky Numbers of Digitville","titleSlug":"the-two-sneaky-numbers-of-digitville"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3290,"title":"Maximum Multiplication Score","titleSlug":"maximum-multiplication-score"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3291,"title":"Minimum Number of Valid Strings to Form Target I","titleSlug":"minimum-number-of-valid-strings-to-form-target-i"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3292,"title":"Minimum Number of Valid Strings to Form Target II","titleSlug":"minimum-number-of-valid-strings-to-form-target-ii"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3293,"title":"Calculate Product Final Price","titleSlug":"calculate-product-final-price"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3294,"title":"Convert Doubly Linked List to Array II","titleSlug":"convert-doubly-linked-list-to-array-ii"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3295,"title":"Report Spam Message","titleSlug":"report-spam-message"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3296,"title":"Minimum Number of Seconds to Make Mountain Height Zero","titleSlug":"minimum-number-of-seconds-to-make-mountain-height-zero"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3297,"title":"Count Substrings That Can Be Rearranged to Contain a String I","titleSlug":"count-substrings-that-can-be-rearranged-to-contain-a-string-i"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3298,"title":"Count Substrings That Can Be Rearranged to Contain a String II","titleSlug":"count-substrings-that-can-be-rearranged-to-contain-a-string-ii"}
