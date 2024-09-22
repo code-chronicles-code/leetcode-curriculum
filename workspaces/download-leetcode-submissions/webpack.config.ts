@@ -9,7 +9,7 @@ import webpack, {
 import { stripPrefix } from "@code-chronicles/util/stripPrefix";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
-import packageJson from "./package.json" with { type: "module" };
+import packageJson from "./package.json" with { type: "json" };
 
 const config: Configuration = {
   target: "node",
