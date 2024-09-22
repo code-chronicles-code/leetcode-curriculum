@@ -19,7 +19,7 @@
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "test": "jest --color .",
+    "test": "tsx ./jest.config.mts",
     "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
@@ -35,7 +35,7 @@
     "jest": "29.7.0",
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
-    "ts-node": "10.9.2",
+    "tsx": "4.19.1",
     "type-fest": "4.26.1",
     "typescript": "5.6.2"
   }
