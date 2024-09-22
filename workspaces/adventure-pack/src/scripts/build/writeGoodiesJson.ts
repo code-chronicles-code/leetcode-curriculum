@@ -1,30 +1,18 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import prettier from "prettier";
-
-import { isEnvironmentDev } from "@code-chronicles/util/isEnvironmentDev";
+import { jsonStringifyPrettyInDev } from "@code-chronicles/util/jsonStringifyPrettyInDev";
 
 import { readAllGoodies } from "../package-goodies/readAllGoodies.ts";
 import { WEB_APP_DIST } from "./constants.ts";
 
-async function readAllGoodiesAsString(): Promise<string> {
-  const goodies = await readAllGoodies();
-  const text = JSON.stringify(goodies);
-
-  if (isEnvironmentDev()) {
-    // Could also change the arguments to `JSON.stringify` but thought we
-    // could give Prettier the chance to do something fancier.
-    return await prettier.format(text, { parser: "json" });
-  }
-
-  return text + "\n";
-}
-
 export async function writeGoodiesJson(): Promise<void> {
-  const text = await readAllGoodiesAsString();
+  const goodies = await readAllGoodies();
 
-  await writeFile(path.join(WEB_APP_DIST, "goodies.json"), text, {
-    encoding: "utf8",
-  });
+  // TODO: share the filenames via some constants
+  await writeFile(
+    path.join(WEB_APP_DIST, "goodies.json"),
+    jsonStringifyPrettyInDev(goodies),
+    { encoding: "utf8" },
+  );
 }

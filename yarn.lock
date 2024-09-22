@@ -539,7 +539,7 @@ __metadata:
     eslint: "npm:9.11.0"
     eslint-import-resolver-typescript: "npm:3.6.3"
     eslint-plugin-import: "npm:2.30.0"
-    eslint-plugin-import-x: "npm:4.2.1"
+    eslint-plugin-import-x: "npm:4.3.0"
     eslint-plugin-jest: "npm:28.8.3"
     globals: "npm:15.9.0"
     prettier: "npm:3.3.3"
@@ -645,9 +645,11 @@ __metadata:
     "@types/node": "npm:22.5.5"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.11.0"
+    nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
     ts-loader: "npm:9.5.1"
     tsx: "npm:4.19.1"
+    type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
     webpack: "npm:5.94.0"
     webpack-cli: "npm:5.1.4"
@@ -3522,9 +3524,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import-x@npm:4.2.1":
-  version: 4.2.1
-  resolution: "eslint-plugin-import-x@npm:4.2.1"
+"eslint-plugin-import-x@npm:4.3.0":
+  version: 4.3.0
+  resolution: "eslint-plugin-import-x@npm:4.3.0"
   dependencies:
     "@typescript-eslint/utils": "npm:^8.1.0"
     debug: "npm:^4.3.4"
@@ -3538,7 +3540,7 @@ __metadata:
     tslib: "npm:^2.6.3"
   peerDependencies:
     eslint: ^8.57.0 || ^9.0.0
-  checksum: 10c0/5a644448e2658e999ef01582011f24589920aa7c01ee45478481d0182fb9a21a0649c84d63fc4108f5bf2e2ce4c3d4c14930d7064224619230690a3240d98839
+  checksum: 10c0/46d8f6c3d49fd170a6cc0aecb435f353f9111bf6f612f01479a33b1e382a7b09fe70df764e0a0f21f804b5cdd80523f4781993f417b336fef00ec3f5488727e4
   languageName: node
   linkType: hard
 

@@ -22,7 +22,8 @@
     "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
-    "@code-chronicles/util": "workspace:*"
+    "@code-chronicles/util": "workspace:*",
+    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
@@ -32,6 +33,7 @@
     "prettier": "3.3.3",
     "ts-loader": "9.5.1",
     "tsx": "4.19.1",
+    "type-fest": "4.26.1",
     "typescript": "5.6.2",
     "webpack": "5.94.0",
     "webpack-cli": "5.1.4"
