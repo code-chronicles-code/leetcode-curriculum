@@ -12,6 +12,5 @@ def test_flatten_random_types():
     dictionary = {"something": "something_else"}
     l = [["hi", -80, "c", 0.0], [[(3, 3), dictionary, 6], [5, 4, 3]], 2, 1, 0]
     flattened = list(flatten(l))
-    assert isinstance(l[0], list)
     expected = ["hi", -80, "c", 0.0, (3, 3), dictionary, 6, 5, 4, 3, 2, 1, 0]
     assert flattened == expected

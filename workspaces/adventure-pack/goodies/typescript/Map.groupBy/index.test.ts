@@ -5,41 +5,69 @@ delete (Map as unknown as Record<string, unknown>).groupBy;
 import "./index.ts";
 
 describe("Map.groupBy", () => {
-  it("should group elements by the result of the callback function", () => {
-    const numbers = [1, 2, 3, 4, 5, 6];
+  it("groups elements by the result of the callback function", () => {
+    const words = ["zero", "one", "two", "three", "four", "five", "six"];
+    const result = Map.groupBy(words, (word) => word.length);
+
+    expect(result).toStrictEqual(
+      new Map([
+        [4, ["zero", "four", "five"]],
+        [3, ["one", "two", "six"]],
+        [5, ["three"]],
+      ]),
+    );
+  });
+
+  it("allows duplicate elements", () => {
+    const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
     const result = Map.groupBy(numbers, (num) =>
       num % 2 === 0 ? "even" : "odd",
     );
 
     expect(result).toStrictEqual(
       new Map([
-        ["even", [2, 4, 6]],
-        ["odd", [1, 3, 5]],
+        ["odd", [3, 1, 1, 5, 9, 5, 3, 5, 9, 7, 9]],
+        ["even", [4, 2, 6, 8]],
       ]),
     );
   });
 
-  it("should handle empty iterables", () => {
-    const emptyArray: number[] = [];
-    const result = Map.groupBy(emptyArray, (num) => num.toString());
+  it("respects key order", () => {
+    const words = [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+    ];
+    const result = Map.groupBy(
+      words,
+      (word) => word.replace(/[aeiou]/gi, "").length,
+    );
+
+    expect([...result.keys()]).toStrictEqual([2, 1, 3]);
+  });
+
+  it.each([
+    [],
+    [].values(),
+    new Set().values(),
+    new Map().entries(),
+    ""[Symbol.iterator](),
+    (function* () {})(),
+  ])("handles empty iterables", (iterable) => {
+    const result = Map.groupBy(iterable, String);
 
     expect(result).toStrictEqual(new Map());
   });
 
-  it("should group strings by their length", () => {
-    const words = ["one", "two", "three", "four", "five", "six"];
-    const result = Map.groupBy(words, (word) => word.length);
-
-    expect(result).toStrictEqual(
-      new Map([
-        [3, ["one", "two", "six"]],
-        [4, ["four", "five"]],
-        [5, ["three"]],
-      ]),
-    );
-  });
-
-  it("should use the index in the callback function", () => {
+  it("can use the index in the callback function", () => {
     const letters = ["a", "b", "c", "d"];
     const result = Map.groupBy(letters, (_, index) =>
       index % 2 === 0 ? "even" : "odd",
@@ -53,64 +81,26 @@ describe("Map.groupBy", () => {
     );
   });
 
-  it("should handle non-array iterables", () => {
-    const set = new Set(["apple", "banana", "cherry"]);
-    const result = Map.groupBy(set, (fruit) => fruit[0]);
+  it("works with a Set", () => {
+    const set = new Set(["apple", "banana", "cherry", "apple"]);
+    const result = Map.groupBy(set, (fruit) => fruit[1]);
 
     expect(result).toStrictEqual(
       new Map([
-        ["a", ["apple"]],
-        ["b", ["banana"]],
-        ["c", ["cherry"]],
+        ["p", ["apple"]],
+        ["a", ["banana"]],
+        ["h", ["cherry"]],
       ]),
     );
   });
 
-  it("should work with custom iterables", () => {
-    const customIterable = {
-      *[Symbol.iterator]() {
-        yield 1;
-        yield 2;
-        yield 3;
-      },
-    };
-    const result = Map.groupBy(customIterable, (num) =>
-      num % 2 === 0 ? "even" : "odd",
-    );
-
-    expect(result).toStrictEqual(
-      new Map([
-        ["even", [2]],
-        ["odd", [1, 3]],
-      ]),
-    );
-  });
-
-  it("should work with generators", () => {
-    function* numberGenerator() {
-      yield 1;
-      yield 2;
-      yield 3;
-    }
-    const result = Map.groupBy(numberGenerator(), (num) =>
-      num % 2 === 0 ? "even" : "odd",
-    );
-
-    expect(result).toStrictEqual(
-      new Map([
-        ["even", [2]],
-        ["odd", [1, 3]],
-      ]),
-    );
-  });
-
-  it("should work with Maps", () => {
+  it("works with a Map", () => {
     const map = new Map([
       ["a", 1],
       ["b", 2],
       ["c", 3],
     ]);
-    const result = Map.groupBy(map, ([_, value]) =>
+    const result = Map.groupBy(map, ([, value]) =>
       value % 2 === 0 ? "even" : "odd",
     );
 
@@ -128,60 +118,80 @@ describe("Map.groupBy", () => {
     );
   });
 
-  it("should handle objects with custom iterator", () => {
-    const obj: Iterable<number> = {
-      *[Symbol.iterator]() {
-        const data = [1, 2, 3, 4];
-        for (const item of data) {
-          yield item;
-        }
+  it("works with a generator", () => {
+    const generator = (function* () {
+      yield 3;
+      yield 1;
+      yield 4;
+    })();
+    const result = Map.groupBy(generator, (num) =>
+      num % 2 === 0 ? "even" : "odd",
+    );
+
+    expect(result).toStrictEqual(
+      new Map([
+        ["odd", [3, 1]],
+        ["even", [4]],
+      ]),
+    );
+  });
+
+  it("works with a custom iterable", () => {
+    const iterable = {
+      [Symbol.iterator]() {
+        let count = 0;
+        return {
+          next: () =>
+            count < 3 ? { value: ++count } : { done: true, value: undefined },
+        };
       },
-    };
-    const result = Map.groupBy(obj, (num) => (num % 2 === 0 ? "even" : "odd"));
+    } as Iterable<number>;
+
+    const result = Map.groupBy(iterable, (num) =>
+      num % 2 === 0 ? "even" : "odd",
+    );
 
     expect(result).toStrictEqual(
       new Map([
-        ["even", [2, 4]],
         ["odd", [1, 3]],
+        ["even", [2]],
       ]),
     );
   });
 
-  it("should throw TypeError for non-iterable arguments", () => {
-    expect(() => {
-      // @ts-ignore - Intentionally passing invalid type
-      Map.groupBy(123, (x) => x);
-    }).toThrow(TypeError);
-  });
-
-  it("should handle undefined or null keys", () => {
-    const data = [1, 2, 3, 4, 5];
-    const result = Map.groupBy(data, (num) =>
-      num % 2 === 0 ? undefined : null,
-    );
+  it("works with nullish keys", () => {
+    const data = [3, 1, 4, 1, 5, 9];
+    const result = Map.groupBy(data, (num) => (num === 1 ? undefined : null));
 
     expect(result).toStrictEqual(
       new Map([
-        [undefined, [2, 4]],
-        [null, [1, 3, 5]],
+        [null, [3, 4, 5, 9]],
+        [undefined, [1, 1]],
       ]),
     );
   });
 
-  it("should handle keys that are objects or arrays", () => {
-    const data = [1, 2, 3, 4, 5, 6];
+  it("treats non-primitive keys by reference", () => {
+    const data = [1, 4, 3, 2, 6, 5];
     const even = { even: true } as const;
     const odd = ["odd"] as const;
     const result = Map.groupBy(data, (num) => (num % 2 === 0 ? even : odd));
 
-    expect(result.get({ even: true })).toBeUndefined();
-    expect(result.get(["odd"])).toBeUndefined();
+    expect(result.has({ even: true })).toBe(false);
+    expect(result.has(["odd"])).toBe(false);
 
     expect(result).toStrictEqual(
       new Map<{ even: true } | readonly ["odd"], number[]>([
-        [even, [2, 4, 6]],
         [odd, [1, 3, 5]],
+        [even, [4, 2, 6]],
       ]),
     );
+  });
+
+  it("throws for non-iterable arguments", () => {
+    expect(() => {
+      // @ts-expect-error Invalid argument.
+      Map.groupBy(123, (x) => x);
+    }).toThrow(TypeError);
   });
 });

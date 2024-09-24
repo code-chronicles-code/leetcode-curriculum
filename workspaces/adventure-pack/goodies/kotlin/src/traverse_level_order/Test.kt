@@ -3,30 +3,29 @@ package traverse_level_order
 import kotlin.test.*
 
 internal class LevelOrderTraversalTest {
-
   @Test
-  fun itTraversesLevelOrderEmptyTree() {
-    val root: TreeNode? = null
-    assertContentEquals(
-        root.traverseLevelOrder().flatMap { it }.map { it.`val` }.toList(), emptyList<Int>())
-  }
-
-  @Test
-  fun itTraversesLevelOrderSingleNode() {
-    val root: TreeNode = TreeNode(0)
-    assertContentEquals(
-        root.traverseLevelOrder().flatMap { it }.map { it.`val` }.toList(), listOf<Int>(0))
-  }
-
-  @Test
-  fun itTraversesLevelOrderFullTree() {
-    val root: TreeNode =
+  fun traversesSimpleTree() {
+    val root =
         TreeNode(
-            1,
-            TreeNode(2, TreeNode(4, TreeNode(8)), TreeNode(5)),
-            TreeNode(3, TreeNode(6), TreeNode(7)))
+            314,
+            TreeNode(159, TreeNode(265, TreeNode(35)), TreeNode(8979)),
+            TreeNode(323, TreeNode(846), TreeNode(26)))
     assertContentEquals(
-        root.traverseLevelOrder().flatMap { it }.map { it.`val` }.toList(),
-        listOf<Int>(1, 2, 3, 4, 5, 6, 7, 8))
+        root.traverseLevelOrder().map { level -> level.map { it.`val` } }.toList(),
+        listOf(listOf(314), listOf(159, 323), listOf(265, 8979, 846, 26), listOf(35)))
+  }
+
+  @Test
+  fun traversesEmptyTree() {
+    val root: TreeNode? = null
+    assertContentEquals(root.traverseLevelOrder().toList(), emptyList())
+  }
+
+  @Test
+  fun traversesSingleNode() {
+    val root = TreeNode(0)
+    assertContentEquals(
+        root.traverseLevelOrder().map { level -> level.map { it.`val` } }.toList(),
+        listOf(listOf(0)))
   }
 }

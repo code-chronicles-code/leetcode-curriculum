@@ -1,4 +1,11 @@
+import invariant from "invariant";
+
 export function popMany<T>(array: T[], count: number): T[] {
+  invariant(
+    Number.isInteger(count) && count > 0,
+    "Expected a positive integer count!",
+  );
+
   const res: T[] = [];
   while (array.length > 0 && res.length < count) {
     // The cast is safe because we checked the size of the array.

@@ -11,7 +11,10 @@ export function distinctArray<TVal, TKey>(
 ): TVal[] {
   const map = new Map<TKey, TVal>();
   for (const element of iterable) {
-    map.set(keyFn(element), element);
+    const key = keyFn(element);
+    if (!map.has(key)) {
+      map.set(key, element);
+    }
   }
 
   return [...map.values()];

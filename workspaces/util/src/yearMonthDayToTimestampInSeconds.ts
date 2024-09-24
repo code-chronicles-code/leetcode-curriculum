@@ -6,7 +6,7 @@ export function yearMonthDayToTimestampInSeconds(yearMonthDay: string): number {
   );
   if (match == null) {
     throw new Error(
-      `Couldn't figure out which part of ${yearMonthDay} was the year, month, or day.`,
+      `Couldn't figure out which part of ${yearMonthDay} was the year, month, and day.`,
     );
   }
 
