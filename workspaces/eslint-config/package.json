@@ -14,7 +14,7 @@
   },
   "type": "module",
   "exports": {
-    ".": "./eslint.config.mjs"
+    ".": "./eslint.config.js"
   },
   "scripts": {
     "format": "prettier --color --write .",
