@@ -9,9 +9,11 @@ import {
 import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
-import { fetchGraphQLData } from "./fetchGraphQLData.ts";
 import { normalizeGraphQLDescription } from "./normalizeGraphQLDescription.ts";
 import { sortByName } from "./sortByName.ts";
+import { getGraphQLClient } from "./getGraphQLClient.ts";
+import { rawRequest } from "graphql-request";
+import { GraphQLError } from "graphql";
 
 function getTypeFields(depth: number): string {
   const base = "name kind";
@@ -78,9 +80,10 @@ function graphqlDecode(s: string): string {
   ).toString("utf8");
 }
 
-function getQueryAndVariables(
-  typeNames: Iterable<string>,
-): [string, Record<string, string>] {
+function getQueryAndVariables(typeNames: Iterable<string>): {
+  query: string;
+  variables: Record<string, string>;
+} {
   const variables = Object.fromEntries(
     // TODO: .map the iterator once that's more widespread!
     [...typeNames].map((typeName, index) => [`typeName${index}`, typeName]),
@@ -94,12 +97,12 @@ function getQueryAndVariables(
       `${graphqlEncode(typeName)}: __type(name: $${variable}) { ...TypeFields }`,
   );
 
-  return [
-    squashWhitespace(
+  return {
+    query: squashWhitespace(
       `query (${queryArgs.join(",")}) {${queryFields.join(",")}}\n${FRAGMENT}`,
     ),
     variables,
-  ];
+  };
 }
 
 const innerTypeZodTypeBase = z.strictObject({
@@ -203,13 +206,18 @@ export type LeetCodeGraphQLType = NonNullable<
 
 export async function fetchGraphQLTypeInformation(
   typeNames: string[],
+  onErrors?: (errors: GraphQLError[]) => void,
 ): Promise<Record<string, LeetCodeGraphQLType | null>> {
   const distinctTypeNames = new Set(typeNames);
   if (distinctTypeNames.size === 0) {
     return {};
   }
 
-  const [query, variables] = getQueryAndVariables(distinctTypeNames);
-  const { data } = await fetchGraphQLData(query, variables);
+  const { data, errors } = await getGraphQLClient("all").rawRequest(
+    getQueryAndVariables(distinctTypeNames),
+  );
+
+  errors && errors.length > 0 && onErrors?.(errors);
+
   return graphqlTypeZodType.parse(data);
 }

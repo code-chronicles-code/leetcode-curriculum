@@ -1,7 +1,16 @@
 import { GraphQLClient } from "graphql-request";
 
-let client: GraphQLClient | null = null;
+type ErrorPolicy = NonNullable<
+  NonNullable<ConstructorParameters<typeof GraphQLClient>[1]>["errorPolicy"]
+>;
 
-export function getGraphQLClient(): GraphQLClient {
-  return (client ??= new GraphQLClient("https://leetcode.com/graphql/"));
+export function getGraphQLClient(
+  errorPolicy: ErrorPolicy = "none",
+): GraphQLClient {
+  return new GraphQLClient("https://leetcode.com/graphql/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    excludeOperationName: true,
+    errorPolicy,
+  });
 }
