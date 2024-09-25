@@ -1,8 +1,9 @@
-import { gql, request } from "graphql-request";
+import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
 
+import { getGraphQLClient } from "./getGraphQLClient.ts";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
 const QUERY = gql`
@@ -44,11 +45,7 @@ export async function fetchRecentAcSubmissionList({
   limit?: number;
   username: string;
 }): Promise<RecentAcSubmission[]> {
-  const data = await request({
-    url: "https://leetcode.com/graphql/",
-    document: QUERY,
-    variables: { username, limit },
-  });
+  const data = await getGraphQLClient().request(QUERY, { username, limit });
 
   return recentAcSubmissionListZodType.parse(data);
 }

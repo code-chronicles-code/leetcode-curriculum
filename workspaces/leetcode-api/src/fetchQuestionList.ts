@@ -1,8 +1,9 @@
-import { gql, request } from "graphql-request";
+import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 
+import { getGraphQLClient } from "./getGraphQLClient.ts";
 import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
@@ -78,15 +79,11 @@ export async function fetchQuestionList({
   limit?: number;
   skip?: number;
 } = {}): Promise<QuestionList> {
-  const data = await request({
-    url: "https://leetcode.com/graphql/",
-    document: QUERY,
-    variables: {
-      categorySlug,
-      filters,
-      limit,
-      skip,
-    },
+  const data = await getGraphQLClient().request(QUERY, {
+    categorySlug,
+    filters,
+    limit,
+    skip,
   });
 
   return questionListZodType.parse(data);

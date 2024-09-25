@@ -30,6 +30,10 @@ const config: Configuration = {
     ],
   },
 
+  resolve: {
+    conditionNames: ["import"],
+  },
+
   optimization: {
     splitChunks: {
       cacheGroups: {

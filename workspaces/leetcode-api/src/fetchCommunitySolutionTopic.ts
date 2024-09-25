@@ -1,5 +1,7 @@
-import { gql, request } from "graphql-request";
+import { gql } from "graphql-request";
 import { z } from "zod";
+
+import { getGraphQLClient } from "./getGraphQLClient.ts";
 
 // TODO: see if there are any fun GraphQL ESLint plugins
 
@@ -37,12 +39,8 @@ export type CommunitySolutionTopic = z.infer<
 
 export async function fetchCommunitySolutionTopic(
   topicId: string,
-): Promise<null | CommunitySolutionTopic> {
-  const data = await request({
-    url: "https://leetcode.com/graphql/",
-    document: QUERY,
-    variables: { topicId },
-  });
+): Promise<CommunitySolutionTopic> {
+  const data = await getGraphQLClient().request(QUERY, { topicId });
 
   return communitySolutionTopicZodType.parse(data);
 }

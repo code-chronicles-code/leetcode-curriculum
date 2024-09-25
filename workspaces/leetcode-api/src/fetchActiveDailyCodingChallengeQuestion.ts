@@ -1,4 +1,4 @@
-import { gql, request } from "graphql-request";
+import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
@@ -6,6 +6,7 @@ import { sleep } from "@code-chronicles/util/sleep";
 import { MS_IN_SEC } from "@code-chronicles/util/timeConstants";
 import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
+import { getGraphQLClient } from "./getGraphQLClient.ts";
 import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
@@ -47,10 +48,7 @@ export type ActiveDailyCodingChallengeQuestion = z.infer<
 >;
 
 export async function fetchActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
-  const data = await request({
-    url: "https://leetcode.com/graphql/",
-    document: QUERY,
-  });
+  const data = await getGraphQLClient().request(QUERY);
 
   return activeDailyCodingChallengeQuestionZodType.parse(data);
 }
