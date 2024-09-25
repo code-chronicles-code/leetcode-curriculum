@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
-    "@types/node": "22.7.0",
+    "@types/node": "22.7.4",
     "cross-env": "7.0.3",
     "eslint": "9.11.1",
     "prettier": "3.3.3",
@@ -35,7 +35,7 @@
     "tsx": "4.19.1",
     "type-fest": "4.26.1",
     "typescript": "5.6.2",
-    "webpack": "5.94.0",
+    "webpack": "5.95.0",
     "webpack-cli": "5.1.4"
   }
 }
