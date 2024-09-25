@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { GraphQLError } from "graphql";
 
 import { graphqlKindTypeZodType } from "@code-chronicles/util/graphqlKindTypeZodType";
 import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
@@ -12,8 +13,6 @@ import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 import { normalizeGraphQLDescription } from "./normalizeGraphQLDescription.ts";
 import { sortByName } from "./sortByName.ts";
 import { getGraphQLClient } from "./getGraphQLClient.ts";
-import { rawRequest } from "graphql-request";
-import { GraphQLError } from "graphql";
 
 function getTypeFields(depth: number): string {
   const base = "name kind";
