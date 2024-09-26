@@ -38,6 +38,10 @@ const config: Configuration = {
     ],
   },
 
+  resolve: {
+    conditionNames: ["import"],
+  },
+
   externalsType: "commonjs",
   externals: ({ request }: ExternalItemFunctionData) =>
     Promise.resolve(

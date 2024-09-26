@@ -1,16 +1,16 @@
+import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 import { sleep } from "@code-chronicles/util/sleep";
-import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 import { MS_IN_SEC } from "@code-chronicles/util/timeConstants";
 import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
-import { fetchGraphQLData } from "./fetchGraphQLData.ts";
+import { getGraphQLClient } from "./getGraphQLClient.ts";
 import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
-const QUERY = squashWhitespace(`
+const QUERY = gql`
   query {
     activeDailyCodingChallengeQuestion {
       date
@@ -22,7 +22,7 @@ const QUERY = squashWhitespace(`
       }
     }
   }
-`);
+`;
 
 const questionZodType = z.object({
   difficulty: questionDifficultyZodType,
@@ -48,7 +48,8 @@ export type ActiveDailyCodingChallengeQuestion = z.infer<
 >;
 
 export async function fetchActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
-  const { data } = await fetchGraphQLData(QUERY);
+  const data = await getGraphQLClient().request(QUERY);
+
   return activeDailyCodingChallengeQuestionZodType.parse(data);
 }
 

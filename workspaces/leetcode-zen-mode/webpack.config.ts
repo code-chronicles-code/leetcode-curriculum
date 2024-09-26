@@ -29,6 +29,10 @@ const config: Configuration = {
       },
     ],
   },
+
+  resolve: {
+    conditionNames: ["import"],
+  },
 };
 
 export default config;

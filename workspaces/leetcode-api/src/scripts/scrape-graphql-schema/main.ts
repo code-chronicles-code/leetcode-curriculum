@@ -54,7 +54,14 @@ async function main(): Promise<void> {
     const typeNames = popMany(stack, BATCH_SIZE);
     console.error(`Fetching ${typeNames.join(", ")}, ${stack.length} to go`);
 
-    const typeInfosBatch = await fetchGraphQLTypeInformation(typeNames);
+    const typeInfosBatch = await fetchGraphQLTypeInformation(
+      typeNames,
+      (errors) => {
+        errors.forEach((err) => {
+          console.error("Got GraphQLError", err);
+        });
+      },
+    );
 
     for (const typeName of typeNames) {
       const typeInfo = typeInfosBatch[typeName];

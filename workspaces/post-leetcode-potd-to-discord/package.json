@@ -34,9 +34,9 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@types/invariant": "2.2.37",
-    "@types/node": "22.5.5",
+    "@types/node": "22.7.0",
     "cross-env": "7.0.3",
-    "eslint": "9.11.0",
+    "eslint": "9.11.1",
     "prettier": "3.3.3",
     "tsx": "4.19.1",
     "typescript": "5.6.2",

@@ -34,6 +34,10 @@ const config: Configuration = {
     ],
   },
 
+  resolve: {
+    conditionNames: ["import"],
+  },
+
   plugins: [
     new webpack.DefinePlugin({
       ADVENTURE_PACK_COMMIT_HASH: JSON.stringify(commitHash),

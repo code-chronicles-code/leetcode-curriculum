@@ -5,6 +5,11 @@ export {
 } from "./fetchActiveDailyCodingChallengeQuestion.ts";
 
 export {
+  fetchCommunitySolutionTopic,
+  type CommunitySolutionTopic,
+} from "./fetchCommunitySolutionTopic.ts";
+
+export {
   fetchGraphQLTypeInformation,
   type LeetCodeGraphQLType,
 } from "./fetchGraphQLTypeInformation.ts";

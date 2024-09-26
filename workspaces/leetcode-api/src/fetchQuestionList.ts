@@ -1,14 +1,19 @@
+import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
-import { squashWhitespace } from "@code-chronicles/util/squashWhitespace";
 
-import { fetchGraphQLData } from "./fetchGraphQLData.ts";
+import { getGraphQLClient } from "./getGraphQLClient.ts";
 import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
-const QUERY = squashWhitespace(`
-  query ($categorySlug: String!, $limit: Int, $skip: Int, $filters: QuestionListFilterInput!) {
+const QUERY = gql`
+  query (
+    $categorySlug: String!
+    $limit: Int
+    $skip: Int
+    $filters: QuestionListFilterInput!
+  ) {
     questionList(
       categorySlug: $categorySlug
       limit: $limit
@@ -25,7 +30,7 @@ const QUERY = squashWhitespace(`
       totalNum
     }
   }
-`);
+`;
 
 const questionZodType = z.object({
   difficulty: questionDifficultyZodType,
@@ -74,11 +79,12 @@ export async function fetchQuestionList({
   limit?: number;
   skip?: number;
 } = {}): Promise<QuestionList> {
-  const { data } = await fetchGraphQLData(QUERY, {
+  const data = await getGraphQLClient().request(QUERY, {
     categorySlug,
     filters,
     limit,
     skip,
   });
+
   return questionListZodType.parse(data);
 }
