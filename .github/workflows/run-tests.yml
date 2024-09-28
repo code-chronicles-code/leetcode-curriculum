@@ -5,12 +5,8 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  run-tests:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+  lint:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository

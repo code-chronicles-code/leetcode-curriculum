@@ -5,13 +5,11 @@ import { getLines } from "@code-chronicles/util/getLines";
 import { execWithArgsOrThrowOnNzec } from "@code-chronicles/util/execWithArgsOrThrowOnNzec";
 
 export async function readWorkspaces(): Promise<string[]> {
-  const yarnCommandResult = await execWithArgsOrThrowOnNzec(
-    "yarn",
-    ["workspaces", "list", "--json"],
-    { env: { ...process.env, YARN_ENABLE_HARDENED_MODE: "0" } },
-  );
-
-  console.log(yarnCommandResult);
+  const yarnCommandResult = await execWithArgsOrThrowOnNzec("yarn", [
+    "workspaces",
+    "list",
+    "--json",
+  ]);
 
   return [...getLines(yarnCommandResult.stdout)]
     .map((line) => assertIsObject(JSON.parse(line)))
