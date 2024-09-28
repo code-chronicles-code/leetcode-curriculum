@@ -11,6 +11,8 @@ export async function readWorkspaces(): Promise<string[]> {
     "--json",
   ]);
 
+  console.log(yarnCommandResult);
+
   return [...getLines(yarnCommandResult.stdout)]
     .map((line) => assertIsObject(JSON.parse(line)))
     .filter((workspace) => workspace.location !== ".")
