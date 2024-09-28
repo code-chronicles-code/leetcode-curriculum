@@ -15,7 +15,7 @@
   "type": "module",
   "exports": "./src/main.ts",
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack && chmod +x dist/fetch-leetcode-problem-list.cjs",
+    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "start": "tsx src/main.ts",
