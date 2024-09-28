@@ -1,7 +1,7 @@
 import process from "node:process";
 import { spawn, type SpawnOptions } from "node:child_process";
 
-// TODO: audit callsites since the behavior is changing
+// TODO: audit callsites since the behavior changed recently
 
 export function spawnWithSafeStdio(
   command: string,
@@ -17,7 +17,7 @@ export function spawnWithSafeStdio(
       // Without a shell specified, many comands seem to fail to spawn on
       // Windows. I verified that it's not a PATH issue. It seems like it's
       // probably https://github.com/nodejs/node-v0.x-archive/issues/5841
-      ...(process.platform === "win32" && { shell: options?.shell ?? "bash" }),
+      ...(process.platform === "win32" && { shell: "bash" }),
 
       ...options,
     });
