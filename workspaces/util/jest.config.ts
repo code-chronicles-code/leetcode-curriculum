@@ -19,7 +19,7 @@ import("node:process").then(async ({ default: process }) => {
       "@code-chronicles/util/spawnWithSafeStdio"
     );
     await spawnWithSafeStdio(
-      "echo",
+      "jest",
       ["--color", "-c", JSON.stringify(config), ...process.argv.slice(2)],
       {
         stdio: "inherit",

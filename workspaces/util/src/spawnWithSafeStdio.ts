@@ -34,7 +34,10 @@ export function spawnWithSafeStdio(
       // Without a shell specified, many comands seem to fail to spawn on
       // Windows. I verified that it's not a PATH issue. It seems like it's
       // probably https://github.com/nodejs/node-v0.x-archive/issues/5841
-      ...(process.platform === "win32" && { shell: "bash" }),
+      ...(process.platform === "win32" && {
+        shell: "bash",
+        windowsVerbatimArguments: true,
+      }),
 
       ...options,
     });
