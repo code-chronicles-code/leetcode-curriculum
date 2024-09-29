@@ -27,6 +27,7 @@ jobs:
         uses: ./.github/workflows/set-up-everything
 
       # Yarn constraints are kinda like tests.
+      # TODO: own job anyway
       - name: Check Yarn constraints
         run: yarn constraints
         # TODO: Maybe write up a job summary per https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary
