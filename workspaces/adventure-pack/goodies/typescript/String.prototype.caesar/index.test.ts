@@ -28,6 +28,14 @@ describe("String.prototype.caesar", () => {
     expect("Civis Romanus sum.".caesar()).toBe("Djwjt Spnbovt tvn.");
   });
 
+  it("handles empty string", () => {
+    expect("".caesar()).toBe("");
+    expect("".caesar(13)).toBe("");
+    expect("".caesar(-27)).toBe("");
+    expect("".caesar(-2)).toBe("");
+    expect("".caesar(42)).toBe("");
+  });
+
   // TODO: test ROT-13
 
   // TODO: test Unicode characters
