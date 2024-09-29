@@ -5023,7 +5023,7 @@ declare global {
 function nullthrows<T>(
   value: T | null | undefined,
   errorMessage: string = "Unexpected nullish value!",
-): T {
+): NonNullable<T> {
   if (value == null) {
     throw new Error(errorMessage);
   }
@@ -5082,7 +5082,7 @@ declare global {
 function nullthrows<T>(
   value: T | null | undefined,
   errorMessage: string = "Unexpected nullish value!",
-): T {
+): NonNullable<T> {
   if (value == null) {
     throw new Error(errorMessage);
   }
@@ -5203,7 +5203,7 @@ exports[`App can equip single goody: TypeScript newArray 1`] = `
 function nullthrows<T>(
   value: T | null | undefined,
   errorMessage: string = "Unexpected nullish value!",
-): T {
+): NonNullable<T> {
   if (value == null) {
     throw new Error(errorMessage);
   }
@@ -5262,7 +5262,7 @@ exports[`App can equip single goody: TypeScript nullthrows 1`] = `
 function nullthrows<T>(
   value: T | null | undefined,
   errorMessage: string = "Unexpected nullish value!",
-): T {
+): NonNullable<T> {
   if (value == null) {
     throw new Error(errorMessage);
   }
