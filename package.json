@@ -6,7 +6,6 @@
   },
   "workspaces": [
     "workspaces/adventure-pack",
-    "workspaces/chrome-extension-hello-world",
     "workspaces/download-leetcode-submissions",
     "workspaces/eslint-config",
     "workspaces/fetch-leetcode-problem-list",

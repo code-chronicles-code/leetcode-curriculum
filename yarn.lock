@@ -491,22 +491,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@code-chronicles/chrome-extension-hello-world@workspace:workspaces/chrome-extension-hello-world":
-  version: 0.0.0-use.local
-  resolution: "@code-chronicles/chrome-extension-hello-world@workspace:workspaces/chrome-extension-hello-world"
-  dependencies:
-    "@code-chronicles/eslint-config": "workspace:*"
-    "@types/node": "npm:22.7.4"
-    cross-env: "npm:7.0.3"
-    prettier: "npm:3.3.3"
-    ts-loader: "npm:9.5.1"
-    tsx: "npm:4.19.1"
-    typescript: "npm:5.6.2"
-    webpack: "npm:5.95.0"
-    webpack-cli: "npm:5.1.4"
-  languageName: unknown
-  linkType: soft
-
 "@code-chronicles/download-leetcode-submissions@workspace:workspaces/download-leetcode-submissions":
   version: 0.0.0-use.local
   resolution: "@code-chronicles/download-leetcode-submissions@workspace:workspaces/download-leetcode-submissions"
