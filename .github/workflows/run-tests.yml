@@ -1,4 +1,4 @@
-name: Run tests on PRs
+name: Run tests
 
 on:
   pull_request:
@@ -6,6 +6,8 @@ on:
 
 jobs:
   run-tests:
+    name: Node ${{ matrix.node-version }}
+
     strategy:
       fail-fast: false
       matrix:
