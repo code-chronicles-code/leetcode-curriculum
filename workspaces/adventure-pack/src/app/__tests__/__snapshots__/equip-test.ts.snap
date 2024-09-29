@@ -2383,6 +2383,40 @@ Object.setUnsafe = function (obj, properties, value) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript String.prototype.caesar 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function nullthrows(value, errorMessage = "Unexpected nullish value!") {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
+}
+
+Number.prototype.chr = function () {
+  return String.fromCodePoint(Number(this));
+};
+
+Number.prototype.positiveMod = function (modulo) {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};
+
+String.prototype.ord = function () {
+  return nullthrows(this.codePointAt(0));
+};
+
+String.prototype.caesar = function (delta = 1) {
+  return this.replaceAll(/([a-z])|[A-Z]/g, (letter, lower) => {
+    const offset = (lower == null ? "A" : "a").ord();
+    return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+  });
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript String.prototype.chars 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2407,40 +2441,6 @@ function nullthrows(value, errorMessage = "Unexpected nullish value!") {
 
 String.prototype.ord = function () {
   return nullthrows(this.codePointAt(0));
-};
-
-/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
-`;
-
-exports[`App can equip single goody: JavaScript String.prototype.rot 1`] = `
-"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
-// Adventure Pack commit fake-commit-hash
-// Running at: https://example.com/
-
-function nullthrows(value, errorMessage = "Unexpected nullish value!") {
-  if (value == null) {
-    throw new Error(errorMessage);
-  }
-  return value;
-}
-
-Number.prototype.chr = function () {
-  return String.fromCodePoint(Number(this));
-};
-
-Number.prototype.positiveMod = function (modulo) {
-  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
-};
-
-String.prototype.ord = function () {
-  return nullthrows(this.codePointAt(0));
-};
-
-String.prototype.rot = function (delta = 1) {
-  return this.replaceAll(/([a-z])|([A-Z])/g, (letter, lower, upper) => {
-    const offset = (lower == null ? "A" : "a").ord();
-    return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
-  });
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -5000,6 +5000,61 @@ Object.setUnsafe = function (
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: TypeScript String.prototype.caesar 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Number {
+    chr(this: Number): string;
+
+    positiveMod(this: Number, modulo: number): number;
+  }
+
+  interface String {
+    caesar(this: String): string;
+    caesar(this: String, delta: number): string;
+
+    ord(this: String): number;
+  }
+}
+
+function nullthrows<T>(
+  value: T | null | undefined,
+  errorMessage: string = "Unexpected nullish value!",
+): T {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
+}
+
+Number.prototype.chr = function (this: Number): string {
+  return String.fromCodePoint(Number(this));
+};
+
+Number.prototype.positiveMod = function (this: Number, modulo: number): number {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};
+
+String.prototype.ord = function (this: String): number {
+  return nullthrows(this.codePointAt(0));
+};
+
+String.prototype.caesar = function (this: String, delta: number = 1): string {
+  return this.replaceAll(
+    /([a-z])|[A-Z]/g,
+    (letter: string, lower: string | undefined) => {
+      const offset = (lower == null ? "A" : "a").ord();
+      return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+    },
+  );
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: TypeScript String.prototype.chars 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -5039,61 +5094,6 @@ function nullthrows<T>(
 
 String.prototype.ord = function (this: String): number {
   return nullthrows(this.codePointAt(0));
-};
-
-/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
-`;
-
-exports[`App can equip single goody: TypeScript String.prototype.rot 1`] = `
-"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
-// Adventure Pack commit fake-commit-hash
-// Running at: https://example.com/
-
-declare global {
-  interface Number {
-    chr(this: Number): string;
-
-    positiveMod(this: Number, modulo: number): number;
-  }
-
-  interface String {
-    ord(this: String): number;
-
-    rot(this: String): string;
-    rot(this: String, delta: number): string;
-  }
-}
-
-function nullthrows<T>(
-  value: T | null | undefined,
-  errorMessage: string = "Unexpected nullish value!",
-): T {
-  if (value == null) {
-    throw new Error(errorMessage);
-  }
-  return value;
-}
-
-Number.prototype.chr = function (this: Number): string {
-  return String.fromCodePoint(Number(this));
-};
-
-Number.prototype.positiveMod = function (this: Number, modulo: number): number {
-  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
-};
-
-String.prototype.ord = function (this: String): number {
-  return nullthrows(this.codePointAt(0));
-};
-
-String.prototype.rot = function (this: String, delta: number = 1): string {
-  return this.replaceAll(
-    /([a-z])|([A-Z])/g,
-    (letter: string, lower: string | undefined, upper: string | undefined) => {
-      const offset = (lower == null ? "A" : "a").ord();
-      return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
-    },
-  );
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"

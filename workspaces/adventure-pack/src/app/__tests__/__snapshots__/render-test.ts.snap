@@ -1304,6 +1304,19 @@ exports[`App can render goody: JavaScript Object.setUnsafe 1`] = `
 };"
 `;
 
+exports[`App can render goody: JavaScript String.prototype.caesar 1`] = `
+"import "Number.prototype.chr";
+import "Number.prototype.positiveMod";
+import "String.prototype.ord";
+
+String.prototype.caesar = function (delta = 1) {
+  return this.replaceAll(/([a-z])|[A-Z]/g, (letter, lower) => {
+    const offset = (lower == null ? "A" : "a").ord();
+    return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+  });
+};"
+`;
+
 exports[`App can render goody: JavaScript String.prototype.chars 1`] = `"String.prototype.chars = String.prototype[Symbol.iterator];"`;
 
 exports[`App can render goody: JavaScript String.prototype.ord 1`] = `
@@ -1311,19 +1324,6 @@ exports[`App can render goody: JavaScript String.prototype.ord 1`] = `
 
 String.prototype.ord = function () {
   return nullthrows(this.codePointAt(0));
-};"
-`;
-
-exports[`App can render goody: JavaScript String.prototype.rot 1`] = `
-"import "Number.prototype.chr";
-import "Number.prototype.positiveMod";
-import "String.prototype.ord";
-
-String.prototype.rot = function (delta = 1) {
-  return this.replaceAll(/([a-z])|([A-Z])/g, (letter, lower, upper) => {
-    const offset = (lower == null ? "A" : "a").ord();
-    return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
-  });
 };"
 `;
 
@@ -2856,6 +2856,29 @@ Object.setUnsafe = function (
 };"
 `;
 
+exports[`App can render goody: TypeScript String.prototype.caesar 1`] = `
+"import "Number.prototype.chr";
+import "Number.prototype.positiveMod";
+import "String.prototype.ord";
+
+declare global {
+  interface String {
+    caesar(this: String): string;
+    caesar(this: String, delta: number): string;
+  }
+}
+
+String.prototype.caesar = function (this: String, delta: number = 1): string {
+  return this.replaceAll(
+    /([a-z])|[A-Z]/g,
+    (letter: string, lower: string | undefined) => {
+      const offset = (lower == null ? "A" : "a").ord();
+      return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+    },
+  );
+};"
+`;
+
 exports[`App can render goody: TypeScript String.prototype.chars 1`] = `
 "declare global {
   interface String {
@@ -2877,29 +2900,6 @@ declare global {
 
 String.prototype.ord = function (this: String): number {
   return nullthrows(this.codePointAt(0));
-};"
-`;
-
-exports[`App can render goody: TypeScript String.prototype.rot 1`] = `
-"import "Number.prototype.chr";
-import "Number.prototype.positiveMod";
-import "String.prototype.ord";
-
-declare global {
-  interface String {
-    rot(this: String): string;
-    rot(this: String, delta: number): string;
-  }
-}
-
-String.prototype.rot = function (this: String, delta: number = 1): string {
-  return this.replaceAll(
-    /([a-z])|([A-Z])/g,
-    (letter: string, lower: string | undefined, upper: string | undefined) => {
-      const offset = (lower == null ? "A" : "a").ord();
-      return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
-    },
-  );
 };"
 `;
 
