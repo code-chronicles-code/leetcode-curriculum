@@ -1,19 +1,17 @@
 import type { SpawnOptions } from "node:child_process";
 import process from "node:process";
 
-import { getCurrentGitRepositoryRoot } from "@code-chronicles/util/getCurrentGitRepositoryRoot";
+import nullthrows from "nullthrows";
+
 import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
+import { readPackageJson } from "@code-chronicles/util/readPackageJson";
 import { readWorkspaces } from "@code-chronicles/util/readWorkspaces";
 import { runWithLogGroupAsync } from "@code-chronicles/util/runWithLogGroupAsync";
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
-import {
-  SCRIPTS,
-  SCRIPTS_TO_SKIP_BY_WORKSPACE,
-  type Script,
-} from "./scripts.ts";
+import { SCRIPTS, type Script } from "./scripts.ts";
 
 type FailedCommand = {
   command: string;
@@ -44,41 +42,41 @@ export async function runCommands(
     }
   };
 
-  const commands = [
-    async () => {
+  const commands = (await readWorkspaces()).map((workspace) => async () => {
+    if (workspace.location === ".") {
       const rootCommand = SCRIPTS[script]?.repositoryRootCommand;
-      if (rootCommand != null) {
-        const currentGitRepositoryRoot = await getCurrentGitRepositoryRoot();
-
-        await runWithLogGroupAsync(
-          `Running script ${script} for repository root!`,
-          async () =>
-            await run.apply(null, [
-              ...rootCommand,
-              { cwd: currentGitRepositoryRoot },
-            ]),
-        );
-      }
-    },
-
-    ...(await readWorkspaces()).map((workspace) => async () => {
-      const workspaceShortName = stripPrefixOrThrow(
-        workspace,
-        "@code-chronicles/",
-      );
-      if (SCRIPTS_TO_SKIP_BY_WORKSPACE[workspaceShortName]?.has(script)) {
-        console.error(
-          `Skipping script ${script} for workspace: ${workspaceShortName}`,
-        );
+      if (rootCommand == null) {
+        console.error(`Skipping script ${script} for repository root!`);
         return;
       }
 
       await runWithLogGroupAsync(
-        `Running script ${script} for workspace: ${workspaceShortName}`,
-        async () => await run("yarn", ["workspace", workspace, script]),
+        `Running script ${script} for repository root!`,
+        async () => await run(...rootCommand),
       );
-    }),
-  ];
+      return;
+    }
+
+    const workspaceName = nullthrows(workspace.name);
+    const workspaceShortName = stripPrefixOrThrow(
+      workspaceName,
+      "@code-chronicles/",
+    );
+
+    const { scripts } = await readPackageJson(workspace.location);
+
+    if (scripts?.[script] == null) {
+      console.error(
+        `Skipping script ${script} for workspace: ${workspaceShortName}`,
+      );
+      return;
+    }
+
+    await runWithLogGroupAsync(
+      `Running script ${script} for workspace: ${workspaceShortName}`,
+      async () => await run("yarn", ["workspace", workspaceName, script]),
+    );
+  });
 
   await promiseAllLimitingConcurrency(
     commands,
