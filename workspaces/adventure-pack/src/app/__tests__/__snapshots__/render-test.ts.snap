@@ -1250,6 +1250,12 @@ exports[`App can render goody: JavaScript Number.prototype.digits 1`] = `
 };"
 `;
 
+exports[`App can render goody: JavaScript Number.prototype.positiveMod 1`] = `
+"Number.prototype.positiveMod = function (modulo) {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};"
+`;
+
 exports[`App can render goody: JavaScript Object.getUnsafe 1`] = `
 "Object.getUnsafe = function (obj, properties) {
   let res = obj;
@@ -1301,8 +1307,23 @@ exports[`App can render goody: JavaScript Object.setUnsafe 1`] = `
 exports[`App can render goody: JavaScript String.prototype.chars 1`] = `"String.prototype.chars = String.prototype[Symbol.iterator];"`;
 
 exports[`App can render goody: JavaScript String.prototype.ord 1`] = `
-"String.prototype.ord = function () {
-  return this.codePointAt(0);
+"import "nullthrows";
+
+String.prototype.ord = function () {
+  return nullthrows(this.codePointAt(0));
+};"
+`;
+
+exports[`App can render goody: JavaScript String.prototype.rot 1`] = `
+"import "Number.prototype.chr";
+import "Number.prototype.positiveMod";
+import "String.prototype.ord";
+
+String.prototype.rot = function (delta = 1) {
+  return this.replaceAll(/([a-z])|([A-Z])/g, (letter, lower, upper) => {
+    const offset = (lower == null ? "A" : "a").ord();
+    return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+  });
 };"
 `;
 
@@ -2723,6 +2744,18 @@ Number.prototype.digits = function (
 };"
 `;
 
+exports[`App can render goody: TypeScript Number.prototype.positiveMod 1`] = `
+"declare global {
+  interface Number {
+    positiveMod(this: Number, modulo: number): number;
+  }
+}
+
+Number.prototype.positiveMod = function (this: Number, modulo: number): number {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};"
+`;
+
 exports[`App can render goody: TypeScript Object.getUnsafe 1`] = `
 "declare global {
   interface ObjectConstructor {
@@ -2834,14 +2867,39 @@ String.prototype.chars = String.prototype[Symbol.iterator];"
 `;
 
 exports[`App can render goody: TypeScript String.prototype.ord 1`] = `
-"declare global {
+"import "nullthrows";
+
+declare global {
   interface String {
-    ord(this: String): number | undefined;
+    ord(this: String): number;
   }
 }
 
-String.prototype.ord = function (this: String): number | undefined {
-  return this.codePointAt(0);
+String.prototype.ord = function (this: String): number {
+  return nullthrows(this.codePointAt(0));
+};"
+`;
+
+exports[`App can render goody: TypeScript String.prototype.rot 1`] = `
+"import "Number.prototype.chr";
+import "Number.prototype.positiveMod";
+import "String.prototype.ord";
+
+declare global {
+  interface String {
+    rot(this: String): string;
+    rot(this: String, delta: number): string;
+  }
+}
+
+String.prototype.rot = function (this: String, delta: number = 1): string {
+  return this.replaceAll(
+    /([a-z])|([A-Z])/g,
+    (letter: string, lower: string | undefined, upper: string | undefined) => {
+      const offset = (lower == null ? "A" : "a").ord();
+      return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+    },
+  );
 };"
 `;
 
