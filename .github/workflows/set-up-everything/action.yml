@@ -1,5 +1,10 @@
 name: Set Up Everything
 
+inputs:
+  node-version:
+    required: true
+    default: latest
+
 runs:
   using: composite
 
@@ -17,7 +22,7 @@ runs:
     - name: Set up Node
       uses: actions/setup-node@v4
       with:
-        node-version: 22
+        node-version: ${{ inputs.node-version }}
         cache: yarn
         cache-dependency-path: ./yarn.lock
 
