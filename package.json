@@ -5,18 +5,7 @@
     "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git"
   },
   "workspaces": [
-    "workspaces/adventure-pack",
-    "workspaces/download-leetcode-submissions",
-    "workspaces/eslint-config",
-    "workspaces/fetch-leetcode-problem-list",
-    "workspaces/fetch-recent-accepted-leetcode-submissions",
-    "workspaces/generate-health-report",
-    "workspaces/javascript-leetcode-month",
-    "workspaces/leetcode-api",
-    "workspaces/leetcode-zen-mode",
-    "workspaces/post-leetcode-potd-to-discord",
-    "workspaces/repository-scripts",
-    "workspaces/util"
+    "workspaces/*"
   ],
   "type": "module",
   "scripts": {

@@ -491,6 +491,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@code-chronicles/archive@workspace:workspaces/archive":
+  version: 0.0.0-use.local
+  resolution: "@code-chronicles/archive@workspace:workspaces/archive"
+  languageName: unknown
+  linkType: soft
+
 "@code-chronicles/download-leetcode-submissions@workspace:workspaces/download-leetcode-submissions":
   version: 0.0.0-use.local
   resolution: "@code-chronicles/download-leetcode-submissions@workspace:workspaces/download-leetcode-submissions"

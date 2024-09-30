@@ -1,0 +1,10 @@
+{
+  "name": "@code-chronicles/archive",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
+    "directory": "workspaces/archive"
+  },
+  "type": "module"
+}

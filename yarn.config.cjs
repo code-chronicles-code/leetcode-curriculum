@@ -54,11 +54,12 @@ module.exports = defineConfig({
       }
     }
 
-    // Expect each workspace to specify a version, except for the root.
+    // Expect each workspace to specify a version, except for the root and
+    // anything private.
     for (const workspace of Yarn.workspaces()) {
       if (workspace.cwd === ".") {
         workspace.unset("version");
-      } else {
+      } else if (!workspace.manifest.private) {
         workspace.set("version", workspace.manifest.version ?? "0.0.1");
       }
     }
