@@ -19,8 +19,8 @@ describe("String.prototype.ord", () => {
     expect(" ?!".ord()).toBe(32);
   });
 
-  it("handles empty string", () => {
-    expect("".ord()).toBe(undefined);
+  it("throws on empty string", () => {
+    expect(() => "".ord()).toThrow();
   });
 
   it("handles emoji", () => {

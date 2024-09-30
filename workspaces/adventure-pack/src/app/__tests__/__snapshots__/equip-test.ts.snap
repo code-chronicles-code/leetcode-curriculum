@@ -2241,6 +2241,18 @@ Number.prototype.digits = function (radix = 10) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript Number.prototype.positiveMod 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+Number.prototype.positiveMod = function (modulo) {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript Object.getUnsafe 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2371,6 +2383,40 @@ Object.setUnsafe = function (obj, properties, value) {
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: JavaScript String.prototype.caesar 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+function nullthrows(value, errorMessage = "Unexpected nullish value!") {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
+}
+
+Number.prototype.chr = function () {
+  return String.fromCodePoint(Number(this));
+};
+
+Number.prototype.positiveMod = function (modulo) {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};
+
+String.prototype.ord = function () {
+  return nullthrows(this.codePointAt(0));
+};
+
+String.prototype.caesar = function (delta = 1) {
+  return this.replaceAll(/[a-z]/gi, (letter) => {
+    const offset = (letter >= "A" && letter <= "Z" ? "A" : "a").ord();
+    return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+  });
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: JavaScript String.prototype.chars 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -2386,8 +2432,15 @@ exports[`App can equip single goody: JavaScript String.prototype.ord 1`] = `
 // Adventure Pack commit fake-commit-hash
 // Running at: https://example.com/
 
+function nullthrows(value, errorMessage = "Unexpected nullish value!") {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
+}
+
 String.prototype.ord = function () {
-  return this.codePointAt(0);
+  return nullthrows(this.codePointAt(0));
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -4701,6 +4754,24 @@ Number.prototype.digits = function (
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: TypeScript Number.prototype.positiveMod 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Number {
+    positiveMod(this: Number, modulo: number): number;
+  }
+}
+
+Number.prototype.positiveMod = function (this: Number, modulo: number): number {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: TypeScript Object.getUnsafe 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -4929,6 +5000,58 @@ Object.setUnsafe = function (
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
 `;
 
+exports[`App can equip single goody: TypeScript String.prototype.caesar 1`] = `
+"////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
+// Adventure Pack commit fake-commit-hash
+// Running at: https://example.com/
+
+declare global {
+  interface Number {
+    chr(this: Number): string;
+
+    positiveMod(this: Number, modulo: number): number;
+  }
+
+  interface String {
+    caesar(this: String): string;
+    caesar(this: String, delta: number): string;
+
+    ord(this: String): number;
+  }
+}
+
+function nullthrows<T>(
+  value: T | null | undefined,
+  errorMessage: string = "Unexpected nullish value!",
+): NonNullable<T> {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
+}
+
+Number.prototype.chr = function (this: Number): string {
+  return String.fromCodePoint(Number(this));
+};
+
+Number.prototype.positiveMod = function (this: Number, modulo: number): number {
+  return ((Number(this) % modulo) + Math.abs(modulo)) % modulo;
+};
+
+String.prototype.ord = function (this: String): number {
+  return nullthrows(this.codePointAt(0));
+};
+
+String.prototype.caesar = function (this: String, delta: number = 1): string {
+  return this.replaceAll(/[a-z]/gi, (letter: string) => {
+    const offset = (letter >= "A" && letter <= "Z" ? "A" : "a").ord();
+    return ((letter.ord() - offset + delta).positiveMod(26) + offset).chr();
+  });
+};
+
+/////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
+`;
+
 exports[`App can equip single goody: TypeScript String.prototype.chars 1`] = `
 "////////////////////////// BEGIN ADVENTURE PACK CODE ///////////////////////////
 // Adventure Pack commit fake-commit-hash
@@ -4952,12 +5075,22 @@ exports[`App can equip single goody: TypeScript String.prototype.ord 1`] = `
 
 declare global {
   interface String {
-    ord(this: String): number | undefined;
+    ord(this: String): number;
   }
 }
 
-String.prototype.ord = function (this: String): number | undefined {
-  return this.codePointAt(0);
+function nullthrows<T>(
+  value: T | null | undefined,
+  errorMessage: string = "Unexpected nullish value!",
+): NonNullable<T> {
+  if (value == null) {
+    throw new Error(errorMessage);
+  }
+  return value;
+}
+
+String.prototype.ord = function (this: String): number {
+  return nullthrows(this.codePointAt(0));
 };
 
 /////////////////////////// END ADVENTURE PACK CODE ////////////////////////////"
@@ -5070,7 +5203,7 @@ exports[`App can equip single goody: TypeScript newArray 1`] = `
 function nullthrows<T>(
   value: T | null | undefined,
   errorMessage: string = "Unexpected nullish value!",
-): T {
+): NonNullable<T> {
   if (value == null) {
     throw new Error(errorMessage);
   }
@@ -5129,7 +5262,7 @@ exports[`App can equip single goody: TypeScript nullthrows 1`] = `
 function nullthrows<T>(
   value: T | null | undefined,
   errorMessage: string = "Unexpected nullish value!",
-): T {
+): NonNullable<T> {
   if (value == null) {
     throw new Error(errorMessage);
   }
