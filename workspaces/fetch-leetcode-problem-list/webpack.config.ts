@@ -2,11 +2,13 @@ import { chmod } from "node:fs/promises";
 import { builtinModules } from "node:module";
 import path from "node:path";
 
-import webpack, {
+import {
+  BannerPlugin,
   type Compiler,
   type Configuration,
   type ExternalItemFunctionData,
 } from "webpack";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import { stripPrefix } from "@code-chronicles/util/stripPrefix";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
@@ -16,7 +18,7 @@ import packageJson from "./package.json" with { type: "json" };
 class WebpackMakeOutputExecutablePlugin {
   // eslint-disable-next-line class-methods-use-this -- This is the interface expected by webpack.
   apply(compiler: Compiler): void {
-    compiler.hooks.afterEmit.tapAsync(
+    compiler.hooks.afterEmit.tapPromise(
       "WebpackMakeOutputExecutablePlugin",
       async (compilation) => {
         const promises: Promise<void>[] = [];
@@ -59,7 +61,6 @@ const config: Configuration = {
           {
             loader: "ts-loader",
             options: {
-              // TODO: Consider using fork-ts-checker-webpack-plugin for typechecking.
               transpileOnly: true,
             },
           },
@@ -84,13 +85,15 @@ const config: Configuration = {
     ),
 
   plugins: [
-    new webpack.BannerPlugin({
+    new BannerPlugin({
       banner: "#!/usr/bin/env node\n",
       raw: true,
       entryOnly: true,
     }),
 
     new WebpackMakeOutputExecutablePlugin(),
+
+    new ForkTsCheckerWebpackPlugin(),
   ],
 };
 

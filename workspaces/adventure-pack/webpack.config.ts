@@ -1,7 +1,8 @@
 import { execSync } from "node:child_process";
 import path from "node:path";
 
-import webpack, { type Configuration } from "webpack";
+import { DefinePlugin, type Configuration } from "webpack";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import { WEB_APP_DIST } from "./src/scripts/build/constants.ts";
 
@@ -24,7 +25,6 @@ const config: Configuration = {
           {
             loader: "ts-loader",
             options: {
-              // TODO: Consider using fork-ts-checker-webpack-plugin for typechecking.
               transpileOnly: true,
             },
           },
@@ -39,9 +39,11 @@ const config: Configuration = {
   },
 
   plugins: [
-    new webpack.DefinePlugin({
+    new DefinePlugin({
       ADVENTURE_PACK_COMMIT_HASH: JSON.stringify(commitHash),
     }),
+
+    new ForkTsCheckerWebpackPlugin(),
   ],
 
   optimization: {

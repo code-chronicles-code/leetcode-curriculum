@@ -1,10 +1,12 @@
 import { builtinModules } from "node:module";
 import path from "node:path";
 
-import webpack, {
+import {
+  BannerPlugin,
   type Configuration,
   type ExternalItemFunctionData,
 } from "webpack";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import { stripPrefix } from "@code-chronicles/util/stripPrefix";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
@@ -28,7 +30,6 @@ const config: Configuration = {
           {
             loader: "ts-loader",
             options: {
-              // TODO: Consider using fork-ts-checker-webpack-plugin for typechecking.
               transpileOnly: true,
             },
           },
@@ -59,11 +60,13 @@ const config: Configuration = {
   ],
 
   plugins: [
-    new webpack.BannerPlugin({
+    new BannerPlugin({
       banner: "#!/usr/bin/env node\n",
       raw: true,
       entryOnly: true,
     }),
+
+    new ForkTsCheckerWebpackPlugin(),
   ],
 };
 
