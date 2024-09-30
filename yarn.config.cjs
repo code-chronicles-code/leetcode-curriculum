@@ -1,11 +1,27 @@
 const { defineConfig } = require("@yarnpkg/types");
 
+const NAME_PREFIX = "@code-chronicles/";
+
 module.exports = defineConfig({
   async constraints({ Yarn }) {
     const rootWorkspace = Yarn.workspace({ cwd: "." });
     if (rootWorkspace == null) {
       Yarn.workspace().error("Didn't find a root workspace?!");
       return;
+    }
+
+    // Expect each workspace to specify a name, except for the root.
+    for (const workspace of Yarn.workspaces()) {
+      if (workspace.cwd === ".") {
+        workspace.unset("name");
+      } else {
+        const { name } = workspace.manifest;
+        if (typeof name !== "string" || !name.startsWith(NAME_PREFIX)) {
+          workspace.error(
+            `Repository name didn't start with the prefix ${JSON.stringify(NAME_PREFIX)}`,
+          );
+        }
+      }
     }
 
     // Use ESM everywhere.
@@ -40,10 +56,10 @@ module.exports = defineConfig({
 
     // Expect each workspace to specify a version, except for the root.
     for (const workspace of Yarn.workspaces()) {
-      if (workspace.cwd !== ".") {
-        workspace.set("version", workspace.manifest.version ?? "0.0.1");
-      } else {
+      if (workspace.cwd === ".") {
         workspace.unset("version");
+      } else {
+        workspace.set("version", workspace.manifest.version ?? "0.0.1");
       }
     }
 

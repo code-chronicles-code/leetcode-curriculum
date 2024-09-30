@@ -1,5 +1,7 @@
 import process from "node:process";
 
+import { chdirToCurrentGitRepositoryRoot } from "@code-chronicles/util/chdirToCurrentGitRepositoryRoot";
+
 import { runCommands } from "./runCommands.ts";
 import { SCRIPTS, isScript } from "./scripts.ts";
 
@@ -15,6 +17,8 @@ async function main() {
   if (!isScript(script)) {
     throw new Error(`Invalid script: ${script}`);
   }
+
+  await chdirToCurrentGitRepositoryRoot();
 
   const action = async () => await runCommands(script, scriptArgs);
   const actionWrapper = SCRIPTS[script]?.run;

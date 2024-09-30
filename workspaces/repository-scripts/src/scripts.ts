@@ -63,18 +63,3 @@ export type Script = keyof typeof SCRIPTS;
 export function isScript(value: string): value is Script {
   return Object.hasOwn(SCRIPTS, value);
 }
-
-// TODO: maybe read this from the package.json of each workspace
-export const SCRIPTS_TO_SKIP_BY_WORKSPACE: Readonly<
-  Record<string, ReadonlySet<Script>>
-> = {
-  "download-leetcode-submissions": new Set(["test"]),
-  "eslint-config": new Set(["test", "typecheck"]),
-  "fetch-leetcode-problem-list": new Set(["test"]),
-  "fetch-recent-accepted-leetcode-submissions": new Set(["test"]),
-  "generate-health-report": new Set(["test"]),
-  "javascript-leetcode-month": new Set(["test"]),
-  "leetcode-zen-mode": new Set(["test"]),
-  "post-leetcode-potd-to-discord": new Set(["test"]),
-  "repository-scripts": new Set(["test"]),
-};

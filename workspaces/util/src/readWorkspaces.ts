@@ -1,10 +1,23 @@
-import { assertIsObject } from "@code-chronicles/util/assertIsObject";
-import { assertIsString } from "@code-chronicles/util/assertIsString";
+import { z } from "zod";
+
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 import { getLines } from "@code-chronicles/util/getLines";
 import { execWithArgsOrThrowOnNzec } from "@code-chronicles/util/execWithArgsOrThrowOnNzec";
 
-export async function readWorkspaces(): Promise<string[]> {
+const workspaceZodType = z.union([
+  z.object({
+    location: z.string(),
+    name: z.string(),
+  }),
+  z.object({
+    location: z.literal("."),
+    name: z.null(),
+  }),
+]);
+
+export type Workspace = z.infer<typeof workspaceZodType>;
+
+export async function readWorkspaces(): Promise<Workspace[]> {
   const yarnCommandResult = await execWithArgsOrThrowOnNzec("yarn", [
     "workspaces",
     "list",
@@ -12,8 +25,6 @@ export async function readWorkspaces(): Promise<string[]> {
   ]);
 
   return [...getLines(yarnCommandResult.stdout)]
-    .map((line) => assertIsObject(JSON.parse(line)))
-    .filter((workspace) => workspace.location !== ".")
-    .map(({ name }) => assertIsString(name))
-    .sort(compareStringsCaseInsensitive);
+    .map((line) => workspaceZodType.parse(JSON.parse(line)))
+    .sort((a, b) => compareStringsCaseInsensitive(a.name ?? "", b.name ?? ""));
 }
