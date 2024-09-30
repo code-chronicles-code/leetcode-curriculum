@@ -1,6 +1,7 @@
 const { defineConfig } = require("@yarnpkg/types");
 
 const NAME_PREFIX = "@code-chronicles/";
+const CWD_PREFIX = "workspaces/";
 
 module.exports = defineConfig({
   async constraints({ Yarn }) {
@@ -14,13 +15,12 @@ module.exports = defineConfig({
     for (const workspace of Yarn.workspaces()) {
       if (workspace.cwd === ".") {
         workspace.unset("name");
+      } else if (!workspace.cwd.startsWith(CWD_PREFIX)) {
+        workspace.error(
+          `Workspace directory didn't start with the prefix ${JSON.stringify(CWD_PREFIX)}`,
+        );
       } else {
-        const { name } = workspace.manifest;
-        if (typeof name !== "string" || !name.startsWith(NAME_PREFIX)) {
-          workspace.error(
-            `Repository name didn't start with the prefix ${JSON.stringify(NAME_PREFIX)}`,
-          );
-        }
+        workspace.set(NAME_PREFIX + workspace.cwd.slice(CWD_PREFIX.length));
       }
     }
 

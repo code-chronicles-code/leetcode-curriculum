@@ -505,6 +505,7 @@ __metadata:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
     "@code-chronicles/util": "workspace:*"
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.7.4"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.11.1"
@@ -546,6 +547,7 @@ __metadata:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
     "@code-chronicles/util": "workspace:*"
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.7.4"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.11.1"
@@ -566,6 +568,7 @@ __metadata:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
     "@code-chronicles/util": "workspace:*"
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.7.4"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.11.1"
@@ -661,6 +664,7 @@ __metadata:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
     "@code-chronicles/util": "workspace:*"
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/invariant": "npm:2.2.37"
     "@types/node": "npm:22.7.4"
     bufferutil: "npm:4.0.8"
@@ -714,6 +718,18 @@ __metadata:
     invariant: 2.2.4
     nullthrows: "*"
     zod: 3.23.8
+  languageName: unknown
+  linkType: soft
+
+"@code-chronicles/webpack-make-output-executable-plugin@workspace:*, @code-chronicles/webpack-make-output-executable-plugin@workspace:workspaces/webpack-make-output-executable-plugin":
+  version: 0.0.0-use.local
+  resolution: "@code-chronicles/webpack-make-output-executable-plugin@workspace:workspaces/webpack-make-output-executable-plugin"
+  dependencies:
+    "@code-chronicles/eslint-config": "workspace:*"
+    "@types/node": "npm:22.7.4"
+    eslint: "npm:9.11.1"
+    prettier: "npm:3.3.3"
+    typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
 

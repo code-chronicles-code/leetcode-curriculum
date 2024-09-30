@@ -15,7 +15,7 @@
   "type": "module",
   "exports": "./src/main.ts",
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack && chmod +x dist/download-leetcode-submissions.cjs",
+    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "start": "tsx src/main.ts",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*",
     "@types/node": "22.7.4",
     "cross-env": "7.0.3",
     "eslint": "9.11.1",

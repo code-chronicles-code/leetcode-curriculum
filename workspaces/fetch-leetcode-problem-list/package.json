@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*",
     "@types/node": "22.7.4",
     "cross-env": "7.0.3",
     "eslint": "9.11.1",

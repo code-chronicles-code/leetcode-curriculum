@@ -8,6 +8,8 @@ import {
 } from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
+import { WebpackMakeOutputExecutablePlugin } from "@code-chronicles/webpack-make-output-executable-plugin";
+
 import { stripPrefix } from "@code-chronicles/util/stripPrefix";
 import { stripPrefixOrThrow } from "@code-chronicles/util/stripPrefixOrThrow";
 
@@ -65,6 +67,8 @@ const config: Configuration = {
       raw: true,
       entryOnly: true,
     }),
+
+    new WebpackMakeOutputExecutablePlugin(),
 
     new ForkTsCheckerWebpackPlugin(),
   ],
