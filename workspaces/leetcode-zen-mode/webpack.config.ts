@@ -1,6 +1,7 @@
 import path from "node:path";
 
 import type { Configuration } from "webpack";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import packageJson from "./package.json" with { type: "json" };
 
@@ -20,7 +21,6 @@ const config: Configuration = {
           {
             loader: "ts-loader",
             options: {
-              // TODO: Consider using fork-ts-checker-webpack-plugin for typechecking.
               transpileOnly: true,
             },
           },
@@ -33,6 +33,8 @@ const config: Configuration = {
   resolve: {
     conditionNames: ["import"],
   },
+
+  plugins: [new ForkTsCheckerWebpackPlugin()],
 };
 
 export default config;
