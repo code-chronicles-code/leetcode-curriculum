@@ -2,6 +2,7 @@ import { constants } from "node:fs";
 import { open as openFile, type FileHandle } from "node:fs/promises";
 
 import { getRandomBytes } from "@code-chronicles/util/getRandomBytes";
+import { isSystemError } from "@code-chronicles/util/isSystemError";
 
 export async function createTemporaryFile(
   prefix: string = "",
@@ -29,7 +30,7 @@ export async function createTemporaryFile(
       try {
         // We won the lottery and came up with a temporary file name that
         // already exists. Try again?
-        if ((e as { code: string }).code === "EEXIST") {
+        if (isSystemError(e) && e.code === "EEXIST") {
           continue;
         }
       } catch {}
