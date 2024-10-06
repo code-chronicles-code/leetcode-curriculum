@@ -1,4 +1,4 @@
-query fetchRecentAcSubmissionList($username: String!, $limit: Int!) {
+query RecentAcSubmissionList($username: String!, $limit: Int!) {
   recentAcSubmissionList(username: $username, limit: $limit) {
     id
     title

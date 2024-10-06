@@ -4,11 +4,11 @@ import type { Simplify } from "type-fest";
 
 import { getGraphQLClient } from "../../getGraphQLClient.ts";
 
-type FetchTopicQueryVariables = Types.Exact<{
+type TopicQueryVariables = Types.Exact<{
   topicId: Types.Scalars["Int"]["input"];
 }>;
 
-type FetchTopicQuery = {
+type TopicQuery = {
   topic?: {
     title: string;
     solutionTags: Array<{ slug: string } | null>;
@@ -16,11 +16,11 @@ type FetchTopicQuery = {
   } | null;
 };
 
-export type QueryVariables = Simplify<FetchTopicQueryVariables>;
-export type Query = Simplify<FetchTopicQuery>;
+export type QueryVariables = Simplify<TopicQueryVariables>;
+export type Query = Simplify<TopicQuery>;
 
 export const QUERY =
-  "query fetchTopic($topicId:Int!){topic(id:$topicId){title solutionTags{slug}post{content}}}";
+  "query Topic($topicId:Int!){topic(id:$topicId){title solutionTags{slug}post{content}}}";
 
 export function fetchGraphQL(variables: QueryVariables): Promise<Query> {
   return getGraphQLClient().request(QUERY, variables);

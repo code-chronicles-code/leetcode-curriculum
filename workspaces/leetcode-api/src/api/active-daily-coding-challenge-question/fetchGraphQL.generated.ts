@@ -4,11 +4,11 @@ import type { Simplify } from "type-fest";
 
 import { getGraphQLClient } from "../../getGraphQLClient.ts";
 
-type FetchActiveDailyCodingChallengeQuestionQueryVariables = Types.Exact<{
+type ActiveDailyCodingChallengeQuestionQueryVariables = Types.Exact<{
   [key: string]: never;
 }>;
 
-type FetchActiveDailyCodingChallengeQuestionQuery = {
+type ActiveDailyCodingChallengeQuestionQuery = {
   activeDailyCodingChallengeQuestion?: {
     date: unknown;
     question: {
@@ -21,11 +21,11 @@ type FetchActiveDailyCodingChallengeQuestionQuery = {
 };
 
 export type QueryVariables =
-  Simplify<FetchActiveDailyCodingChallengeQuestionQueryVariables>;
-export type Query = Simplify<FetchActiveDailyCodingChallengeQuestionQuery>;
+  Simplify<ActiveDailyCodingChallengeQuestionQueryVariables>;
+export type Query = Simplify<ActiveDailyCodingChallengeQuestionQuery>;
 
 export const QUERY =
-  "query fetchActiveDailyCodingChallengeQuestion{activeDailyCodingChallengeQuestion{date question{difficulty questionFrontendId title titleSlug}}}";
+  "query ActiveDailyCodingChallengeQuestion{activeDailyCodingChallengeQuestion{date question{difficulty questionFrontendId title titleSlug}}}";
 
 export function fetchGraphQL(variables: QueryVariables): Promise<Query> {
   return getGraphQLClient().request(QUERY, variables);

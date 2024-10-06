@@ -1,5 +1,4 @@
 import type { PluginFunction } from "@graphql-codegen/plugin-helpers";
-import { pascalCase } from "change-case";
 import graphqlQueryCompress from "graphql-query-compress";
 import invariant from "invariant";
 import nullthrows from "nullthrows";
@@ -31,8 +30,8 @@ export const plugin: PluginFunction<{}> = function plugin(_schema, documents) {
 
   // Note: The import will be moved to the top by ESLint post-processing.
   return `
-    export type QueryVariables = Simplify<${pascalCase(operationName)}QueryVariables>;
-    export type Query = Simplify<${pascalCase(operationName)}Query>;  
+    export type QueryVariables = Simplify<${operationName}QueryVariables>;
+    export type Query = Simplify<${operationName}Query>;  
 
     export const QUERY = ${JSON.stringify(minifiedGraphql)};
 

@@ -1,4 +1,4 @@
-query fetchTopic($topicId: Int!) {
+query Topic($topicId: Int!) {
   topic(id: $topicId) {
     title
     solutionTags {
