@@ -7,7 +7,7 @@ import { getGraphQLClient } from "./getGraphQLClient.ts";
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
 const QUERY = gql`
-  query ($username: String!, $limit: Int!) {
+  query fetchRecentAcSubmissionList($username: String!, $limit: Int!) {
     recentAcSubmissionList(username: $username, limit: $limit) {
       id
       title

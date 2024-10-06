@@ -6,7 +6,7 @@ import { getGraphQLClient } from "./getGraphQLClient.ts";
 // TODO: see if there are any fun GraphQL ESLint plugins
 
 const QUERY = gql`
-  query ($topicId: Int!) {
+  query fetchTopic($topicId: Int!) {
     topic(id: $topicId) {
       title
       solutionTags {

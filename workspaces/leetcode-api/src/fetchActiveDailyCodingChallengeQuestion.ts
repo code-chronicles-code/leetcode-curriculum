@@ -11,7 +11,7 @@ import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType
 import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
 
 const QUERY = gql`
-  query {
+  query fetchActiveDailyCodingChallengeQuestion {
     activeDailyCodingChallengeQuestion {
       date
       question {

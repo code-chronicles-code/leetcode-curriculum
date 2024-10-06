@@ -1,0 +1,22 @@
+query fetchQuestionList(
+  $categorySlug: String!
+  $limit: Int
+  $skip: Int
+  $filters: QuestionListFilterInput!
+) {
+  questionList(
+    categorySlug: $categorySlug
+    limit: $limit
+    skip: $skip
+    filters: $filters
+  ) {
+    data {
+      difficulty
+      isPaidOnly
+      questionFrontendId
+      title
+      titleSlug
+    }
+    totalNum
+  }
+}
