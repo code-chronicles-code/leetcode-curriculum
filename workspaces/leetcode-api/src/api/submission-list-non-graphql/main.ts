@@ -3,7 +3,7 @@ import { z } from "zod";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
 
-import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
+import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
 
 export const SUBMISSION_STATUS_TO_DISPLAY_TEXT: ReadonlyMap<number, string> =
   new Map([

@@ -2,7 +2,6 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const commonTypeScriptPluginConfig = {
   arrayInputCoercion: false,
-  avoidOptionals: true,
   enumsAsTypes: true,
   defaultScalarType: "unknown",
   skipTypename: true,
@@ -24,15 +23,27 @@ const config: CodegenConfig = {
     "src/": {
       preset: "near-operation-file",
       presetConfig: {
-        baseTypesPath: "~./graphqlTypes.generated",
+        baseTypesPath: "~../../graphqlTypes.generated",
         extension: ".generated.ts",
+        fileName: "fetchGraphQL",
       },
-      plugins: ["typescript-operations"],
-      config: commonTypeScriptPluginConfig,
+      plugins: [
+        "typescript-operations",
+        "./src/scripts/codegen/graphqlCodegenPlugin.ts",
+      ],
+      config: {
+        ...commonTypeScriptPluginConfig,
+
+        // Our custom plugin will handle the exports!
+        noExport: true,
+      },
     },
   },
   hooks: {
-    afterAllFileWrite: ["prettier --write"],
+    afterAllFileWrite: [
+      "eslint --fix --rule import-x/first:warn",
+      "prettier --write",
+    ],
   },
 };
 

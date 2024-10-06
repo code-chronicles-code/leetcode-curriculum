@@ -1234,8 +1234,11 @@ __metadata:
     "@graphql-codegen/cli": "npm:5.0.2"
     "@graphql-codegen/near-operation-file-preset": "npm:3.0.0"
     "@types/node": "npm:22.7.4"
+    change-case: "npm:5.4.4"
+    cross-env: "npm:7.0.3"
     eslint: "npm:9.12.0"
     graphql: "npm:16.9.0"
+    graphql-query-compress: "npm:1.2.4"
     graphql-request: "npm:7.1.0"
     invariant: "npm:2.2.4"
     jest: "npm:29.7.0"
@@ -1243,6 +1246,7 @@ __metadata:
     prettier: "npm:3.3.3"
     ts-jest: "npm:29.2.5"
     tsx: "npm:4.19.1"
+    type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
     zod: "npm:3.23.8"
   languageName: unknown
@@ -4447,6 +4451,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"change-case@npm:5.4.4":
+  version: 5.4.4
+  resolution: "change-case@npm:5.4.4"
+  checksum: 10c0/2a9c2b9c9ad6ab2491105aaf506db1a9acaf543a18967798dcce20926c6a173aa63266cb6189f3086e3c14bf7ae1f8ea4f96ecc466fcd582310efa00372f3734
+  languageName: node
+  linkType: hard
+
 "change-case@npm:^4.1.2":
   version: 4.1.2
   resolution: "change-case@npm:4.1.2"
@@ -6433,6 +6444,15 @@ __metadata:
     cosmiconfig-toml-loader:
       optional: true
   checksum: 10c0/9f61bba544d7de757e4572445bdc55bd0d1be01bf3def06833834a7ae070cb8fc3b83f2ab7f47f4fd9f4855f18a2f9528124e0a4c6630c72e1ff012a2cc85154
+  languageName: node
+  linkType: hard
+
+"graphql-query-compress@npm:1.2.4":
+  version: 1.2.4
+  resolution: "graphql-query-compress@npm:1.2.4"
+  dependencies:
+    tokenizr: "npm:1.5.7"
+  checksum: 10c0/6a4f6d329020224d0f53150ce20bb7af211ab101a746d9fe51b1bbc01a855309b91342288e5bc3298a6f1acf76c3a353cd3865681bd95bfef812eca78b10699c
   languageName: node
   linkType: hard
 
@@ -10565,6 +10585,13 @@ __metadata:
   dependencies:
     is-number: "npm:^7.0.0"
   checksum: 10c0/487988b0a19c654ff3e1961b87f471702e708fa8a8dd02a298ef16da7206692e8552a0250e8b3e8759270f62e9d8314616f6da274734d3b558b1fc7b7724e892
+  languageName: node
+  linkType: hard
+
+"tokenizr@npm:1.5.7":
+  version: 1.5.7
+  resolution: "tokenizr@npm:1.5.7"
+  checksum: 10c0/15711ee3414be27137990e55c7ed5aeaf80375081101a10b2ca56f419785a2c28f2e9bf6b3871934962daed1e08e892f5384feab95c9720ff60089a232ecb71c
   languageName: node
   linkType: hard
 

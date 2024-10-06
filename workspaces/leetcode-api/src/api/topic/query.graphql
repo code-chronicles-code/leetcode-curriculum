@@ -1,0 +1,11 @@
+query fetchTopic($topicId: Int!) {
+  topic(id: $topicId) {
+    title
+    solutionTags {
+      slug
+    }
+    post {
+      content
+    }
+  }
+}

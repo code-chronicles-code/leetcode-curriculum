@@ -1,36 +1,10 @@
-import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 
-import { getGraphQLClient } from "./getGraphQLClient.ts";
-import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
-import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
-
-const QUERY = gql`
-  query (
-    $categorySlug: String!
-    $limit: Int
-    $skip: Int
-    $filters: QuestionListFilterInput!
-  ) {
-    questionList(
-      categorySlug: $categorySlug
-      limit: $limit
-      skip: $skip
-      filters: $filters
-    ) {
-      data {
-        difficulty
-        isPaidOnly
-        questionFrontendId
-        title
-        titleSlug
-      }
-      totalNum
-    }
-  }
-`;
+import { fetchGraphQL, type QueryVariables } from "./fetchGraphQL.generated.ts";
+import { questionDifficultyZodType } from "../../zod-types/questionDifficultyZodType.ts";
+import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
 
 const questionZodType = z.object({
   difficulty: questionDifficultyZodType,
@@ -74,12 +48,11 @@ export async function fetchQuestionList({
   skip,
 }: {
   categorySlug?: CategorySlug;
-  // TODO: more specific type if possible
-  filters?: Record<string, unknown>;
-  limit?: number;
-  skip?: number;
-} = {}): Promise<QuestionList> {
-  const data = await getGraphQLClient().request(QUERY, {
+  filters?: QueryVariables["filters"];
+  limit: number;
+  skip: number;
+}): Promise<QuestionList> {
+  const data = await fetchGraphQL({
     categorySlug,
     filters,
     limit,

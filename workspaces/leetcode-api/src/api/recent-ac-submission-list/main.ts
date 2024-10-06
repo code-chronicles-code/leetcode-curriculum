@@ -1,21 +1,9 @@
-import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
 
-import { getGraphQLClient } from "./getGraphQLClient.ts";
-import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
-
-const QUERY = gql`
-  query fetchRecentAcSubmissionList($username: String!, $limit: Int!) {
-    recentAcSubmissionList(username: $username, limit: $limit) {
-      id
-      title
-      titleSlug
-      timestamp
-    }
-  }
-`;
+import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
+import { fetchGraphQL } from "./fetchGraphQL.generated.ts";
 
 const submissionZodType = z.object({
   id: numericIdAsStringZodType,
@@ -45,7 +33,7 @@ export async function fetchRecentAcSubmissionList({
   limit?: number;
   username: string;
 }): Promise<RecentAcSubmission[]> {
-  const data = await getGraphQLClient().request(QUERY, { username, limit });
+  const data = await fetchGraphQL({ username, limit });
 
   return recentAcSubmissionListZodType.parse(data);
 }
