@@ -5,7 +5,7 @@ Read data from the LeetCode API in TypeScript!
 For example, run:
 
 ```ts
-import { fetchActiveDailyCodingChallengeQuestionWithDateValidation as fetchPotd } from "@code-chronicles/leetcode-api";
+import { fetchActiveDailyCodingChallengeQuestionWithDateValidation as fetchPotd } from "@code-chronicles/leetcode-api/active-daily-coding-challenge-question";
 
 const potd = await fetchPotd();
 console.log(JSON.stringify(potd, null, 2));

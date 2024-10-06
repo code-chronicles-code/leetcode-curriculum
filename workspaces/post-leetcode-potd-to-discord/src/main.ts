@@ -1,6 +1,6 @@
 import process from "node:process";
 
-import { fetchActiveDailyCodingChallengeQuestionWithDateValidation as fetchPotd } from "@code-chronicles/leetcode-api";
+import { fetchActiveDailyCodingChallengeQuestionWithDateValidation as fetchPotd } from "@code-chronicles/leetcode-api/active-daily-coding-challenge-question";
 import { promiseAllObject } from "@code-chronicles/util/promiseAllObject";
 import { sleep } from "@code-chronicles/util/sleep";
 import {

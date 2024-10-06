@@ -5,7 +5,7 @@ import process from "node:process";
 import {
   fetchSubmissionList,
   SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE,
-} from "@code-chronicles/leetcode-api";
+} from "@code-chronicles/leetcode-api/submission-list-non-graphql";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 import { sleep } from "@code-chronicles/util/sleep";
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";

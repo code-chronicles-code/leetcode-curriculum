@@ -5,7 +5,7 @@ import process from "node:process";
 import {
   fetchQuestionList,
   type QuestionListQuestion,
-} from "@code-chronicles/leetcode-api";
+} from "@code-chronicles/leetcode-api/question-list";
 import { sleep } from "@code-chronicles/util/sleep";
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 

@@ -3,7 +3,7 @@ import process from "node:process";
 import {
   fetchRecentAcSubmissionList,
   type RecentAcSubmission,
-} from "@code-chronicles/leetcode-api";
+} from "@code-chronicles/leetcode-api/recent-ac-submission-list";
 import { distinctArray } from "@code-chronicles/util/distinctArray";
 import { promiseAllLimitingConcurrency } from "@code-chronicles/util/promiseAllLimitingConcurrency";
 
