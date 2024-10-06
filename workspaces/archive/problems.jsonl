@@ -3296,3 +3296,17 @@
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3296,"title":"Minimum Number of Seconds to Make Mountain Height Zero","titleSlug":"minimum-number-of-seconds-to-make-mountain-height-zero"}
 {"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3297,"title":"Count Substrings That Can Be Rearranged to Contain a String I","titleSlug":"count-substrings-that-can-be-rearranged-to-contain-a-string-i"}
 {"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3298,"title":"Count Substrings That Can Be Rearranged to Contain a String II","titleSlug":"count-substrings-that-can-be-rearranged-to-contain-a-string-ii"}
+{"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3299,"title":"Sum of Consecutive Subsequences","titleSlug":"sum-of-consecutive-subsequences"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3300,"title":"Minimum Element After Replacement With Digit Sum","titleSlug":"minimum-element-after-replacement-with-digit-sum"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3301,"title":"Maximize the Total Height of Unique Towers","titleSlug":"maximize-the-total-height-of-unique-towers"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3302,"title":"Find the Lexicographically Smallest Valid Sequence","titleSlug":"find-the-lexicographically-smallest-valid-sequence"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3303,"title":"Find the Occurrence of First Almost Equal Substring","titleSlug":"find-the-occurrence-of-first-almost-equal-substring"}
+{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3304,"title":"Find the K-th Character in String Game I","titleSlug":"find-the-k-th-character-in-string-game-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3305,"title":"Count of Substrings Containing Every Vowel and K Consonants I","titleSlug":"count-of-substrings-containing-every-vowel-and-k-consonants-i"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3306,"title":"Count of Substrings Containing Every Vowel and K Consonants II","titleSlug":"count-of-substrings-containing-every-vowel-and-k-consonants-ii"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3307,"title":"Find the K-th Character in String Game II","titleSlug":"find-the-k-th-character-in-string-game-ii"}
+{"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3308,"title":"Find Top Performing Driver","titleSlug":"find-top-performing-driver"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3309,"title":"Maximum Possible Number by Binary Concatenation","titleSlug":"maximum-possible-number-by-binary-concatenation"}
+{"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3310,"title":"Remove Methods From Project","titleSlug":"remove-methods-from-project"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3311,"title":"Construct 2D Grid Matching Graph Layout","titleSlug":"construct-2d-grid-matching-graph-layout"}
+{"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3312,"title":"Sorted GCD Pair Queries","titleSlug":"sorted-gcd-pair-queries"}
