@@ -28,19 +28,27 @@ export const plugin: PluginFunction<{}> = function plugin(_schema, documents) {
 
   // TODO: strip out the operation name from the minified GraphQL
 
-  // Note: The import will be moved to the top by ESLint post-processing.
-  return `
-    export type QueryVariables = Simplify<${operationName}QueryVariables>;
-    export type Query = Simplify<${operationName}Query>;  
+  return {
+    prepend: [
+      `
+        import type { Simplify } from "type-fest";
 
-    export const QUERY = ${JSON.stringify(minifiedGraphql)};
+        import { getGraphQLClient } from "../../getGraphQLClient.ts";
+        import type * as Types from "../../graphqlTypes.generated.ts";
+      `,
+    ],
+    append: [
+      `
+        export type QueryVariables = Simplify<${operationName}QueryVariables>;
+        export type Query = Simplify<${operationName}Query>;  
 
-    export function fetchGraphQL(variables: QueryVariables): Promise<Query> {
-      return getGraphQLClient().request(QUERY, variables);
-    }
+        export const QUERY = ${JSON.stringify(minifiedGraphql)};
 
-    import type { Simplify } from 'type-fest';
-
-    import { getGraphQLClient } from "../../getGraphQLClient.ts";
-  `;
+        export function fetchGraphQL(variables: QueryVariables): Promise<Query> {
+          return getGraphQLClient().request(QUERY, variables);
+        }
+      `,
+    ],
+    content: "",
+  };
 };

@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@graphql-codegen/add": "5.0.3",
     "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/near-operation-file-preset": "3.0.0",
     "@types/node": "22.7.4",

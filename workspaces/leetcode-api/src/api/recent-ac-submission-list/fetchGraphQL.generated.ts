@@ -1,8 +1,10 @@
-import type * as Types from "../../graphqlTypes.generated.js";
+// THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
+// Instead, update the generation process or inputs and run `yarn codegen`.
 
 import type { Simplify } from "type-fest";
 
 import { getGraphQLClient } from "../../getGraphQLClient.ts";
+import type * as Types from "../../graphqlTypes.generated.ts";
 
 type RecentAcSubmissionListQueryVariables = Types.Exact<{
   username: Types.Scalars["String"]["input"];

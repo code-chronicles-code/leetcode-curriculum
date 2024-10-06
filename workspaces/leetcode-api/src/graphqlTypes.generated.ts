@@ -1,3 +1,6 @@
+// THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
+// Instead, update the generation process or inputs and run `yarn codegen`.
+
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {
