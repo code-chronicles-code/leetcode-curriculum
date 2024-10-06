@@ -21,6 +21,7 @@ function getTypeFields(depth: number): string {
 
 // TODO: Validate that a depth of 5 is sufficient below.
 
+// TODO: maybe use graphql-query-compress here as well
 const FRAGMENT = squashWhitespace(`
   fragment TypeFields on __Type {
     name

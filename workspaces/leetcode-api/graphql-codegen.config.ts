@@ -23,6 +23,7 @@ const config: CodegenConfig = {
     "src/": {
       preset: "near-operation-file",
       presetConfig: {
+        // TODO: get this to use a ".ts" extension in the output
         baseTypesPath: "~../../graphqlTypes.generated",
         extension: ".generated.ts",
         fileName: "fetchGraphQL",
@@ -41,7 +42,9 @@ const config: CodegenConfig = {
   },
   hooks: {
     afterAllFileWrite: [
+      // The per-operation files can end up with imports in the middle.
       "eslint --fix --rule import-x/first:warn",
+
       "prettier --write",
     ],
   },
