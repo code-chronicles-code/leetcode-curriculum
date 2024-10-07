@@ -1,0 +1,11 @@
+query ActiveDailyCodingChallengeQuestion {
+  activeDailyCodingChallengeQuestion {
+    date
+    question {
+      difficulty
+      questionFrontendId
+      title
+      titleSlug
+    }
+  }
+}

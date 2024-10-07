@@ -4521,7 +4521,8 @@ input StoreAdminCreateOrderInput {
   city: String!
   country: String!
   details: JSONString
-  itemSlug: String!
+  itemSlug: String
+  itemSlugs: [String!]
   note: String
   phone: String!
   recipient: String!
@@ -4797,6 +4798,11 @@ type AnnualReportNode {
   badge: UserBadgeNode!
   content: [String]!
   showPopup: Boolean!
+}
+
+type ApiTokenNode {
+  isCreated: Boolean!
+  token: String
 }
 
 type ApplicationNode {
@@ -9428,6 +9434,7 @@ type Query {
   frontendQuestionSubmissionResults(
     submissionId: String!
   ): [FrontendQuestionResultNode]!
+  generateLeetcodeUserApiToken: ApiTokenNode
   globalRanking(page: Int = 1): GlobalRankingNode
   growthbookTest(featureKey: String!): String!
   hasAccessToFavorite(favoriteSlug: String!): AccessToFavoriteNode!

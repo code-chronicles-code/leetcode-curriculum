@@ -1,4 +1,3 @@
-import { gql } from "graphql-request";
 import { z } from "zod";
 
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
@@ -6,23 +5,9 @@ import { sleep } from "@code-chronicles/util/sleep";
 import { MS_IN_SEC } from "@code-chronicles/util/timeConstants";
 import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
-import { getGraphQLClient } from "./getGraphQLClient.ts";
-import { questionDifficultyZodType } from "./zod-types/questionDifficultyZodType.ts";
-import { questionTitleSlugZodType } from "./zod-types/questionTitleSlugZodType.ts";
-
-const QUERY = gql`
-  query fetchActiveDailyCodingChallengeQuestion {
-    activeDailyCodingChallengeQuestion {
-      date
-      question {
-        difficulty
-        questionFrontendId
-        title
-        titleSlug
-      }
-    }
-  }
-`;
+import { questionDifficultyZodType } from "../../zod-types/questionDifficultyZodType.ts";
+import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
+import { fetchGraphQL } from "./fetchGraphQL.generated.ts";
 
 const questionZodType = z.object({
   difficulty: questionDifficultyZodType,
@@ -48,7 +33,8 @@ export type ActiveDailyCodingChallengeQuestion = z.infer<
 >;
 
 export async function fetchActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
-  const data = await getGraphQLClient().request(QUERY);
+  // TODO: have a way to omit variables when there aren't any
+  const data = await fetchGraphQL({});
 
   return activeDailyCodingChallengeQuestionZodType.parse(data);
 }

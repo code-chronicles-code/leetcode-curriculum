@@ -1,23 +1,8 @@
-import { gql } from "graphql-request";
 import { z } from "zod";
 
-import { getGraphQLClient } from "./getGraphQLClient.ts";
+import { fetchGraphQL } from "./fetchGraphQL.generated.ts";
 
 // TODO: see if there are any fun GraphQL ESLint plugins
-
-const QUERY = gql`
-  query fetchTopic($topicId: Int!) {
-    topic(id: $topicId) {
-      title
-      solutionTags {
-        slug
-      }
-      post {
-        content
-      }
-    }
-  }
-`;
 
 const communitySolutionTopicZodType = z
   .object({
@@ -40,7 +25,8 @@ export type CommunitySolutionTopic = z.infer<
 export async function fetchCommunitySolutionTopic(
   topicId: string,
 ): Promise<CommunitySolutionTopic> {
-  const data = await getGraphQLClient().request(QUERY, { topicId });
+  // TODO: don't lie about the type
+  const data = await fetchGraphQL({ topicId: topicId as unknown as number });
 
   return communitySolutionTopicZodType.parse(data);
 }

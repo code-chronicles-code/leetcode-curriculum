@@ -1,4 +1,4 @@
-query fetchQuestionList(
+query QuestionList(
   $categorySlug: String!
   $limit: Int
   $skip: Int

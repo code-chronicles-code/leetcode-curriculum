@@ -2,12 +2,12 @@ export {
   fetchActiveDailyCodingChallengeQuestionWithDateValidation,
   fetchActiveDailyCodingChallengeQuestionWithoutDateValidation,
   type ActiveDailyCodingChallengeQuestion,
-} from "./fetchActiveDailyCodingChallengeQuestion.ts";
+} from "./api/active-daily-coding-challenge-question/main.ts";
 
 export {
   fetchCommunitySolutionTopic,
   type CommunitySolutionTopic,
-} from "./fetchCommunitySolutionTopic.ts";
+} from "./api/topic/main.ts";
 
 export {
   fetchGraphQLTypeInformation,
@@ -19,12 +19,12 @@ export {
   CategorySlug,
   type QuestionList,
   type QuestionListQuestion,
-} from "./fetchQuestionList.ts";
+} from "./api/question-list/main.ts";
 
 export {
   fetchRecentAcSubmissionList,
   type RecentAcSubmission,
-} from "./fetchRecentAcSubmissionList.ts";
+} from "./api/recent-ac-submission-list/main.ts";
 
 export {
   PAGE_SIZE as SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE,
@@ -33,6 +33,6 @@ export {
   fetchSubmissionList,
   type Submission,
   type SubmissionList,
-} from "./fetchSubmissionList.ts";
+} from "./api/submission-list-non-graphql/main.ts";
 
 export type { QuestionDifficulty } from "./zod-types/questionDifficultyZodType.ts";
