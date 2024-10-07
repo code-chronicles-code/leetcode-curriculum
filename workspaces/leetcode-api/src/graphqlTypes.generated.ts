@@ -5820,7 +5820,7 @@ export type PublishStatus = "PUBLISHED" | "UNKNOWN" | "UNPUBLISHED";
 export type Query = {
   achievement?: Maybe<AchievementNode>;
   achievements?: Maybe<Array<Maybe<AchievementNode>>>;
-  activeDailyCodingChallengeQuestion?: Maybe<DailyChallengeNodeV2>;
+  activeDailyCodingChallengeQuestion: DailyChallengeNodeV2;
   activeDiscountEvent?: Maybe<DiscountEventNode>;
   advertisementByLocation: Array<AdvertisementNode>;
   allComments?: Maybe<PagifiedCommentNode>;
@@ -6060,7 +6060,7 @@ export type Query = {
   questionDiscussionTopic?: Maybe<TopicNode>;
   questionFeedback?: Maybe<PagifiedQuestionFeedbackNode>;
   questionFeedbackReasons: Array<QuestionFeedbackReason>;
-  questionList?: Maybe<PagifiedQuestionNode>;
+  questionList: PagifiedQuestionNode;
   questionNumByTags: Scalars["Int"]["output"];
   questionSatisfactionSurvey: QuestionSatisfactionSurveyNode;
   questionSolutions: QuestionSolutionsNode;
@@ -6075,7 +6075,7 @@ export type Query = {
   randomQuestion?: Maybe<QuestionNode>;
   recaptchaKey?: Maybe<Scalars["String"]["output"]>;
   recaptchaKeyV2?: Maybe<Scalars["String"]["output"]>;
-  recentAcSubmissionList?: Maybe<Array<SubmissionDumpNode>>;
+  recentAcSubmissionList: Array<SubmissionDumpNode>;
   recentSubmissionList?: Maybe<Array<SubmissionDumpNode>>;
   recommendSolutionTags: Array<Maybe<SolutionTagNode>>;
   redeemedTimeTravelTicketCount: Scalars["Int"]["output"];
@@ -7419,7 +7419,7 @@ export type QuestionNode = {
   content?: Maybe<Scalars["String"]["output"]>;
   contributors?: Maybe<Array<Maybe<ContributorNode>>>;
   dataSchemas?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
-  difficulty?: Maybe<Scalars["String"]["output"]>;
+  difficulty: Scalars["String"]["output"];
   /** discussion count for one question, 0 if no question exist */
   discussionCount?: Maybe<Scalars["Int"]["output"]>;
   dislikes?: Maybe<Scalars["Int"]["output"]>;
@@ -7443,7 +7443,7 @@ export type QuestionNode = {
   interpretUrl?: Maybe<Scalars["String"]["output"]>;
   isFavor: Scalars["Boolean"]["output"];
   isLiked?: Maybe<Scalars["Boolean"]["output"]>;
-  isPaidOnly?: Maybe<Scalars["Boolean"]["output"]>;
+  isPaidOnly: Scalars["Boolean"]["output"];
   judgeType?: Maybe<Scalars["String"]["output"]>;
   judgerAvailable?: Maybe<Scalars["Boolean"]["output"]>;
   langToValidPlayground?: Maybe<Scalars["JSONString"]["output"]>;
@@ -7455,7 +7455,7 @@ export type QuestionNode = {
   nextChallenges?: Maybe<Array<QuestionNode>>;
   note?: Maybe<Scalars["String"]["output"]>;
   questionDetailUrl?: Maybe<Scalars["String"]["output"]>;
-  questionFrontendId?: Maybe<Scalars["String"]["output"]>;
+  questionFrontendId: Scalars["String"]["output"];
   questionId?: Maybe<Scalars["String"]["output"]>;
   questionTitle?: Maybe<Scalars["String"]["output"]>;
   questionTitleSlug?: Maybe<Scalars["String"]["output"]>;
@@ -8259,7 +8259,7 @@ export type SubmissionDetailsNode = {
 export type SubmissionDumpNode = {
   flagType?: Maybe<SubmissionFlagTypeEnum>;
   hasNotes?: Maybe<Scalars["Boolean"]["output"]>;
-  id?: Maybe<Scalars["ID"]["output"]>;
+  id: Scalars["ID"]["output"];
   isPending?: Maybe<Scalars["String"]["output"]>;
   lang?: Maybe<Scalars["String"]["output"]>;
   langName?: Maybe<Scalars["String"]["output"]>;
@@ -8270,9 +8270,9 @@ export type SubmissionDumpNode = {
   status?: Maybe<Scalars["Int"]["output"]>;
   statusDisplay?: Maybe<Scalars["String"]["output"]>;
   time?: Maybe<Scalars["String"]["output"]>;
-  timestamp?: Maybe<Scalars["String"]["output"]>;
-  title?: Maybe<Scalars["String"]["output"]>;
-  titleSlug?: Maybe<Scalars["String"]["output"]>;
+  timestamp: Scalars["String"]["output"];
+  title: Scalars["String"]["output"];
+  titleSlug: Scalars["String"]["output"];
   topicTags?: Maybe<Array<Maybe<TopicTagNode>>>;
   url?: Maybe<Scalars["String"]["output"]>;
 };

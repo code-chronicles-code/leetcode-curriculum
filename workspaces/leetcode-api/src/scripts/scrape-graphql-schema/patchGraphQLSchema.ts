@@ -6,7 +6,9 @@ import type { LeetCodeGraphQLType } from "../../fetchGraphQLTypeInformation.ts";
 import { markFieldsNonNull } from "./markFieldsNonNull.ts";
 
 const FIELDS_TO_MARK_NON_NULL: ReadonlyDeep<Record<string, string[]>> = {
-  // Query: ["activeDailyCodingChallengeQuestion"],
+  Query: ["activeDailyCodingChallengeQuestion", "questionList", "recentAcSubmissionList", ],
+  QuestionNode: ["difficulty", "isPaidOnly", "questionFrontendId"],
+  SubmissionDumpNode: ["id", "timestamp", "title", "titleSlug"],
 };
 
 export function patchGraphQLSchema(

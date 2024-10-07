@@ -13,18 +13,15 @@ export const QUERY =
   "query{activeDailyCodingChallengeQuestion{date question{difficulty questionFrontendId title titleSlug}}}";
 
 export const queryResultZodType = z.object({
-  activeDailyCodingChallengeQuestion: z
-    .object({
-      date: z.unknown(),
-      question: z.object({
-        difficulty: z.string().optional().nullable(),
-        questionFrontendId: z.string().optional().nullable(),
-        title: z.string(),
-        titleSlug: z.string(),
-      }),
-    })
-    .optional()
-    .nullable(),
+  activeDailyCodingChallengeQuestion: z.object({
+    date: z.unknown(),
+    question: z.object({
+      difficulty: z.string(),
+      questionFrontendId: z.string(),
+      title: z.string(),
+      titleSlug: z.string(),
+    }),
+  }),
 });
 
 export type QueryResult = z.infer<typeof queryResultZodType>;

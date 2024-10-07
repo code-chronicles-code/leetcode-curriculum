@@ -1,3 +1,6 @@
+# THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
+# Instead, update the generation process or inputs and run `yarn scrape-graphql-schema`.
+
 """
 The `Boolean` scalar type represents `true` or `false`.
 """

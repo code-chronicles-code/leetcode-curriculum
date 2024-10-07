@@ -1,3 +1,6 @@
+# THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
+# Instead, update the generation process or inputs and run `yarn scrape-graphql-schema`.
+
 """
 The `Boolean` scalar type represents `true` or `false`.
 """
@@ -9185,7 +9188,7 @@ type PublishSolution {
 type Query {
   achievement(name: String!): AchievementNode
   achievements: [AchievementNode]
-  activeDailyCodingChallengeQuestion: DailyChallengeNodeV2
+  activeDailyCodingChallengeQuestion: DailyChallengeNodeV2!
   activeDiscountEvent: DiscountEventNode
   advertisementByLocation(adLocation: AdLocationEnum!): [AdvertisementNode!]!
   allComments(
@@ -9713,7 +9716,7 @@ type Query {
     filters: QuestionListFilterInput
     limit: Int = 50
     skip: Int = 0
-  ): PagifiedQuestionNode
+  ): PagifiedQuestionNode!
   questionNumByTags(
     difficultyTagSlugs: [String!]
     knowledgeTagSlugs: [String!]
@@ -9789,7 +9792,7 @@ type Query {
   ): QuestionNode
   recaptchaKey: String
   recaptchaKeyV2: String
-  recentAcSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]
+  recentAcSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]!
   recentSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]
   recommendSolutionTags(questionSlug: String!): [SolutionTagNode]!
   redeemedTimeTravelTicketCount: Int!
@@ -10221,7 +10224,7 @@ type QuestionNode {
   content: String
   contributors: [ContributorNode]
   dataSchemas: [String]
-  difficulty: String
+  difficulty: String!
 
   """
   discussion count for one question, 0 if no question exist
@@ -10248,7 +10251,7 @@ type QuestionNode {
   interpretUrl: String
   isFavor: Boolean!
   isLiked: Boolean
-  isPaidOnly: Boolean
+  isPaidOnly: Boolean!
   judgerAvailable: Boolean
   judgeType: String
   langToValidPlayground: JSONString
@@ -10260,7 +10263,7 @@ type QuestionNode {
   nextChallenges: [QuestionNode!]
   note: String
   questionDetailUrl: String
-  questionFrontendId: String
+  questionFrontendId: String!
   questionId: String
   questionTitle: String
   questionTitleSlug: String
@@ -10851,7 +10854,7 @@ type SubmissionDetailsNode {
 type SubmissionDumpNode {
   flagType: SubmissionFlagTypeEnum
   hasNotes: Boolean
-  id: ID
+  id: ID!
   isPending: String
   lang: String
   langName: String
@@ -10862,9 +10865,9 @@ type SubmissionDumpNode {
   status: Int
   statusDisplay: String
   time: String
-  timestamp: String
-  title: String
-  titleSlug: String
+  timestamp: String!
+  title: String!
+  titleSlug: String!
   topicTags: [TopicTagNode]
   url: String
 }

@@ -13,21 +13,18 @@ export const QUERY =
   "query($categorySlug:String!,$limit:Int,$skip:Int,$filters:QuestionListFilterInput!){questionList(categorySlug:$categorySlug limit:$limit skip:$skip filters:$filters){data{difficulty isPaidOnly questionFrontendId title titleSlug}totalNum}}";
 
 export const queryResultZodType = z.object({
-  questionList: z
-    .object({
-      totalNum: z.number(),
-      data: z.array(
-        z.object({
-          difficulty: z.string().optional().nullable(),
-          isPaidOnly: z.boolean().optional().nullable(),
-          questionFrontendId: z.string().optional().nullable(),
-          title: z.string(),
-          titleSlug: z.string(),
-        }),
-      ),
-    })
-    .optional()
-    .nullable(),
+  questionList: z.object({
+    totalNum: z.number(),
+    data: z.array(
+      z.object({
+        difficulty: z.string(),
+        isPaidOnly: z.boolean(),
+        questionFrontendId: z.string(),
+        title: z.string(),
+        titleSlug: z.string(),
+      }),
+    ),
+  }),
 });
 
 export type QueryResult = z.infer<typeof queryResultZodType>;
