@@ -18,12 +18,10 @@ export type QuestionListQuestion = z.infer<typeof questionZodType>;
 
 const questionListZodType = z
   .object({
-    questionList: z.object({
-      data: z.array(questionZodType),
-      totalNum: z.number().int().nonnegative(),
-    }),
+    data: z.array(questionZodType),
+    totalNum: z.number().int().nonnegative(),
   })
-  .transform(({ questionList: { data, totalNum } }) => ({
+  .transform(({ data, totalNum }) => ({
     questions: data,
     totalNum,
   }));
@@ -52,12 +50,12 @@ export async function fetchQuestionList({
   limit: number;
   skip: number;
 }): Promise<QuestionList> {
-  const data = await fetchGraphQL({
+  const { questionList } = await fetchGraphQL({
     categorySlug,
     filters,
     limit,
     skip,
   });
 
-  return questionListZodType.parse(data);
+  return questionListZodType.parse(questionList);
 }
