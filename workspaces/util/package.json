@@ -25,7 +25,7 @@
     "typecheck": "tsc --pretty --project ."
   },
   "peerDependencies": {
-    "invariant": "2.2.4",
+    "invariant": "*",
     "nullthrows": "*",
     "zod": "3.23.8"
   },

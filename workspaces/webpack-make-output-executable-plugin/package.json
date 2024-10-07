@@ -14,7 +14,7 @@
   },
   "type": "module",
   "exports": {
-    ".": "./src/WebpackMakeOutputExecutablePlugin.ts"
+    ".": "./src/main.ts"
   },
   "scripts": {
     "format": "prettier --color --write .",

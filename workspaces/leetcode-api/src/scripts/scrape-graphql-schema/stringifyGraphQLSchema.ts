@@ -11,7 +11,8 @@ import {
   type GraphQLType,
 } from "graphql";
 import nullthrows from "nullthrows";
-import prettier from "prettier";
+import { format as prettierFormat } from "prettier";
+import type { ReadonlyDeep } from "type-fest";
 
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 import { getRandomBytes } from "@code-chronicles/util/getRandomBytes";
@@ -23,10 +24,11 @@ import { encodeValue } from "./encodeValue.ts";
 import { getFakeScalarType } from "./getFakeScalarType.ts";
 import { parseEncodedValues } from "./parseEncodedValues.ts";
 
+// TODO: migrate sorts to .toSorted once that's more common
+
 export async function stringifyGraphQLSchema(
-  types: readonly LeetCodeGraphQLType[],
+  types: Iterable<ReadonlyDeep<LeetCodeGraphQLType>>,
 ): Promise<string> {
-  // TODO: migrate to .toSorted once that's more common
   const sortedTypes = [...types].sort((a, b) =>
     compareStringsCaseInsensitive(a.name, b.name),
   );
@@ -171,5 +173,5 @@ export async function stringifyGraphQLSchema(
 
   maybeThrow(validateSchema(buildSchema(schema)));
 
-  return await prettier.format(schema, { parser: "graphql" });
+  return await prettierFormat(schema, { parser: "graphql" });
 }

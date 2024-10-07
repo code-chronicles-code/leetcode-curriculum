@@ -2,6 +2,8 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 import type { Types as GraphQLCodegen } from "@graphql-codegen/plugin-helpers";
 import immutableUpdate from "immutability-helper";
 
+import { SCHEMA_PATCHED_FILE } from "./src/scripts/scrape-graphql-schema/constants.ts";
+
 const commonTypeScriptPluginConfig: GraphQLCodegen.PluginConfig = {
   arrayInputCoercion: false,
   enumsAsTypes: true,
@@ -45,7 +47,7 @@ const nearOperationFilePreset: GraphQLCodegen.ConfiguredOutput = {
 };
 
 const config: CodegenConfig = {
-  schema: "schema.graphql",
+  schema: SCHEMA_PATCHED_FILE,
   documents: ["src/api/**/query.graphql"],
   overwrite: true,
   emitLegacyCommonJSImports: false,
