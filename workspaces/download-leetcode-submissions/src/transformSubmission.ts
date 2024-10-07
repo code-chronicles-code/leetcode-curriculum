@@ -1,4 +1,4 @@
-import type { Submission } from "@code-chronicles/leetcode-api";
+import type { Submission } from "@code-chronicles/leetcode-api/submission-list-non-graphql";
 import { sha512 } from "@code-chronicles/util/sha512";
 
 export type TransformedSubmission = Omit<

@@ -106,11 +106,11 @@ const submissionListZodType = z.object({
 
 export type SubmissionList = z.infer<typeof submissionListZodType>;
 
-export const PAGE_SIZE = 20;
+export const SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE = 20;
 
 export async function fetchSubmissionList({
   // Note: Even if you specify a higher limit it seems LeetCode caps this to the page size.
-  limit = PAGE_SIZE,
+  limit = SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE,
   page = 0,
   session,
 }: {
@@ -120,7 +120,8 @@ export async function fetchSubmissionList({
 }): Promise<SubmissionList> {
   const url = new URL("https://leetcode.com/api/submissions/");
   url.search = new URLSearchParams({
-    offset: String(page * PAGE_SIZE),
+    // TODO: maybe take in an offset argument instead
+    offset: String(page * SUBMISSIONS_LIST_DEFAULT_PAGE_SIZE),
     limit: String(limit),
   }).toString();
 

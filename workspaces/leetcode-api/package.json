@@ -13,7 +13,10 @@
     "url": "https://github.com/miorel"
   },
   "type": "module",
-  "exports": "./src/main.ts",
+  "exports": {
+    "./*": "./src/api/*/main.ts",
+    ".": null
+  },
   "scripts": {
     "codegen": "cross-env NODE_OPTIONS=\"--import tsx\" graphql-codegen-esm --config graphql-codegen.config.ts",
     "format": "prettier --color --write .",

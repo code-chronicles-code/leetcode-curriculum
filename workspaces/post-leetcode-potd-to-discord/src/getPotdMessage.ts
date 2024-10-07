@@ -1,4 +1,4 @@
-import type { ActiveDailyCodingChallengeQuestion } from "@code-chronicles/leetcode-api";
+import type { ActiveDailyCodingChallengeQuestion } from "@code-chronicles/leetcode-api/active-daily-coding-challenge-question";
 import { SEC_IN_DAY } from "@code-chronicles/util/timeConstants";
 import { yearMonthDayToTimestampInSeconds } from "@code-chronicles/util/yearMonthDayToTimestampInSeconds";
 
