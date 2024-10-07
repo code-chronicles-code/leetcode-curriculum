@@ -27,7 +27,7 @@ export type QueryVariables =
 export type Query = Simplify<ActiveDailyCodingChallengeQuestionQuery>;
 
 export const QUERY =
-  "query ActiveDailyCodingChallengeQuestion{activeDailyCodingChallengeQuestion{date question{difficulty questionFrontendId title titleSlug}}}";
+  "query{activeDailyCodingChallengeQuestion{date question{difficulty questionFrontendId title titleSlug}}}";
 
 export function fetchGraphQL(variables: QueryVariables): Promise<Query> {
   return getGraphQLClient().request(QUERY, variables);

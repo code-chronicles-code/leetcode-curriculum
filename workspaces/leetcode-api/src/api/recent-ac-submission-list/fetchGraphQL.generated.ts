@@ -24,7 +24,7 @@ export type QueryVariables = Simplify<RecentAcSubmissionListQueryVariables>;
 export type Query = Simplify<RecentAcSubmissionListQuery>;
 
 export const QUERY =
-  "query RecentAcSubmissionList($username:String!,$limit:Int!){recentAcSubmissionList(username:$username,limit:$limit){id title titleSlug timestamp}}";
+  "query($username:String!,$limit:Int!){recentAcSubmissionList(username:$username,limit:$limit){id title titleSlug timestamp}}";
 
 export function fetchGraphQL(variables: QueryVariables): Promise<Query> {
   return getGraphQLClient().request(QUERY, variables);

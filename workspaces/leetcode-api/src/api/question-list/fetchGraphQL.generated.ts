@@ -30,7 +30,7 @@ export type QueryVariables = Simplify<QuestionListQueryVariables>;
 export type Query = Simplify<QuestionListQuery>;
 
 export const QUERY =
-  "query QuestionList($categorySlug:String!,$limit:Int,$skip:Int,$filters:QuestionListFilterInput!){questionList(categorySlug:$categorySlug limit:$limit skip:$skip filters:$filters){data{difficulty isPaidOnly questionFrontendId title titleSlug}totalNum}}";
+  "query($categorySlug:String!,$limit:Int,$skip:Int,$filters:QuestionListFilterInput!){questionList(categorySlug:$categorySlug limit:$limit skip:$skip filters:$filters){data{difficulty isPaidOnly questionFrontendId title titleSlug}totalNum}}";
 
 export function fetchGraphQL(variables: QueryVariables): Promise<Query> {
   return getGraphQLClient().request(QUERY, variables);
