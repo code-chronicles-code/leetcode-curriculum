@@ -11,14 +11,14 @@ export type QuestionListQueryVariables = Types.Exact<{
 }>;
 
 export type QuestionListQuery = {
-  questionList?: {
+  questionList: {
     totalNum: number;
     data: Array<{
-      difficulty?: string | null;
-      isPaidOnly?: boolean | null;
-      questionFrontendId?: string | null;
+      difficulty: string;
+      isPaidOnly: boolean;
+      questionFrontendId: string;
       title: string;
       titleSlug: string;
     }>;
-  } | null;
+  };
 };

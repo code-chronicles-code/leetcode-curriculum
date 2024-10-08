@@ -13,17 +13,14 @@ export const QUERY =
   "query($username:String!,$limit:Int!){recentAcSubmissionList(username:$username,limit:$limit){id title titleSlug timestamp}}";
 
 export const queryResultZodType = z.object({
-  recentAcSubmissionList: z
-    .array(
-      z.object({
-        id: z.string().optional().nullable(),
-        title: z.string().optional().nullable(),
-        titleSlug: z.string().optional().nullable(),
-        timestamp: z.string().optional().nullable(),
-      }),
-    )
-    .optional()
-    .nullable(),
+  recentAcSubmissionList: z.array(
+    z.object({
+      id: z.string(),
+      title: z.string(),
+      titleSlug: z.string(),
+      timestamp: z.string(),
+    }),
+  ),
 });
 
 export type QueryResult = z.infer<typeof queryResultZodType>;

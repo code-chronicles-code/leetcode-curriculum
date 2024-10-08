@@ -1,41 +1,37 @@
-import { writeFile } from "node:fs/promises";
-
-import { buildSchema, validateSchema } from "graphql";
 import invariant from "invariant";
 
+import { filterMapValues } from "@code-chronicles/util/filterMapValues";
 import { isNonNullish } from "@code-chronicles/util/isNonNullish";
-import { maybeThrow } from "@code-chronicles/util/maybeThrow";
 import { popMany } from "@code-chronicles/util/popMany";
 import { sleep } from "@code-chronicles/util/sleep";
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
-import { SCHEMA_FILE } from "./constants.ts";
+import { SCHEMA_ORIGINAL_FILE, SCHEMA_PATCHED_FILE } from "./constants.ts";
 import {
   fetchGraphQLTypeInformation,
   type InnerType,
   type LeetCodeGraphQLType,
 } from "../../fetchGraphQLTypeInformation.ts";
+import { patchGraphQLSchema } from "./patchGraphQLSchema.ts";
 import { readSeedGraphQLTypeNames } from "./readSeedGraphQLTypeNames.ts";
-import { stringifyGraphQLSchema } from "./stringifyGraphQLSchema.ts";
+import { writeGraphQLSchemaFile } from "./writeGraphQLSchemaFile.ts";
 
 const BATCH_SIZE = 100;
 
 const OPTIONAL_TYPES = new Set(["Subscription"]);
 
 async function main(): Promise<void> {
-  const stack: string[] = [];
+  const fetchStack: string[] = [];
   const typeInfos = new Map<string, LeetCodeGraphQLType | null>();
   const pushTypeName = (typeName: string) => {
-    if (!/^[A-Za-z0-9_]+$/.test(typeName)) {
-      throw new Error("Bad type name " + typeName);
-    }
+    invariant(/^[A-Za-z0-9_]+$/.test(typeName), "Bad type name " + typeName);
 
     if (typeInfos.has(typeName)) {
       return;
     }
 
     typeInfos.set(typeName, null);
-    stack.push(typeName);
+    fetchStack.push(typeName);
   };
 
   const pushType = (innerType: InnerType) => {
@@ -51,8 +47,10 @@ async function main(): Promise<void> {
   (await readSeedGraphQLTypeNames()).forEach(pushTypeName);
 
   await whileReturnsTrueAsync(async () => {
-    const typeNames = popMany(stack, BATCH_SIZE);
-    console.error(`Fetching ${typeNames.join(", ")}, ${stack.length} to go`);
+    const typeNames = popMany(fetchStack, BATCH_SIZE);
+    console.error(
+      `Fetching ${typeNames.join(", ")}, ${fetchStack.length} to go`,
+    );
 
     const typeInfosBatch = await fetchGraphQLTypeInformation(
       typeNames,
@@ -95,7 +93,7 @@ async function main(): Promise<void> {
       }
     }
 
-    if (stack.length === 0) {
+    if (fetchStack.length === 0) {
       return false;
     }
 
@@ -103,13 +101,15 @@ async function main(): Promise<void> {
     return true;
   });
 
-  const schema = await stringifyGraphQLSchema(
-    [...typeInfos.values()].filter(isNonNullish),
-  );
+  const nonNullishTypeInfos = filterMapValues(typeInfos, isNonNullish);
 
-  maybeThrow(validateSchema(buildSchema(schema)));
-
-  await writeFile(SCHEMA_FILE, schema, { encoding: "utf8" });
+  await Promise.all([
+    writeGraphQLSchemaFile(SCHEMA_ORIGINAL_FILE, nonNullishTypeInfos.values()),
+    writeGraphQLSchemaFile(
+      SCHEMA_PATCHED_FILE,
+      patchGraphQLSchema(nonNullishTypeInfos).values(),
+    ),
+  ]);
 }
 
 main().catch((err) => {

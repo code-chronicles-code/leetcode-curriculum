@@ -9,10 +9,10 @@ export type RecentAcSubmissionListQueryVariables = Types.Exact<{
 }>;
 
 export type RecentAcSubmissionListQuery = {
-  recentAcSubmissionList?: Array<{
-    id?: string | null;
-    title?: string | null;
-    titleSlug?: string | null;
-    timestamp?: string | null;
-  }> | null;
+  recentAcSubmissionList: Array<{
+    id: string;
+    title: string;
+    titleSlug: string;
+    timestamp: string;
+  }>;
 };

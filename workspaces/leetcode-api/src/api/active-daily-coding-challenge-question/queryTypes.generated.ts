@@ -8,13 +8,13 @@ export type ActiveDailyCodingChallengeQuestionQueryVariables = Types.Exact<{
 }>;
 
 export type ActiveDailyCodingChallengeQuestionQuery = {
-  activeDailyCodingChallengeQuestion?: {
-    date?: unknown;
+  activeDailyCodingChallengeQuestion: {
+    date: string;
     question: {
-      difficulty?: string | null;
-      questionFrontendId?: string | null;
+      difficulty: string;
+      questionFrontendId: string;
       title: string;
       titleSlug: string;
     };
-  } | null;
+  };
 };

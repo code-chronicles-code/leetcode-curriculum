@@ -1,2 +1,2 @@
-schema.graphql linguist-generated
+schema-*.graphql linguist-generated
 *.generated.ts linguist-generated

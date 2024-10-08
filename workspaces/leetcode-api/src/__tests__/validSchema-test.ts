@@ -3,11 +3,17 @@ import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "@jest/globals";
 import { buildSchema, validateSchema } from "graphql";
 
-import { SCHEMA_FILE } from "../scripts/scrape-graphql-schema/constants.ts";
+import {
+  SCHEMA_ORIGINAL_FILE,
+  SCHEMA_PATCHED_FILE,
+} from "../scripts/scrape-graphql-schema/constants.ts";
 
 describe("GraphQL schema", () => {
-  it("validates", async () => {
-    const schema = buildSchema(await readFile(SCHEMA_FILE, "utf8"));
-    expect(validateSchema(schema)).toStrictEqual([]);
-  });
+  it.each([SCHEMA_ORIGINAL_FILE, SCHEMA_PATCHED_FILE])(
+    "validates %s",
+    async (schemaPath) => {
+      const schema = buildSchema(await readFile(schemaPath, "utf8"));
+      expect(validateSchema(schema)).toStrictEqual([]);
+    },
+  );
 });

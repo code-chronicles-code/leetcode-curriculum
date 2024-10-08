@@ -3,7 +3,7 @@ import { isTypeAliasDeclaration } from "typescript";
 
 import { only } from "@code-chronicles/util/only";
 
-import { getCodeForTypeScriptNode } from "./getCodeForTypeScriptNode.ts";
+import { stringifyTypeScriptNode } from "./stringifyTypeScriptNode.ts";
 import { readTypeScriptSourceFile } from "./readTypeScriptSourceFile.ts";
 
 export async function generateQueryResultZodType(
@@ -24,5 +24,5 @@ export async function generateQueryResultZodType(
     customJSDocFormatTypes: {},
   });
 
-  return getCodeForTypeScriptNode(statement);
+  return stringifyTypeScriptNode(statement);
 }
