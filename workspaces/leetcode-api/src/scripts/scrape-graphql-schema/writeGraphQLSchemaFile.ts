@@ -11,7 +11,7 @@ import { stringifyGraphQLSchema } from "./stringifyGraphQLSchema.ts";
 const HEADER = `
 # THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
 # Instead, update the generation process or inputs and run \`yarn scrape-graphql-schema\`.
-`
+`;
 
 export async function writeGraphQLSchemaFile(
   filePath: string,
@@ -21,5 +21,7 @@ export async function writeGraphQLSchemaFile(
 
   maybeThrow(validateSchema(buildSchema(schema)));
 
-  await writeFile(filePath, HEADER.trim() + "\n\n" + schema, { encoding: "utf8" });
+  await writeFile(filePath, HEADER.trim() + "\n\n" + schema, {
+    encoding: "utf8",
+  });
 }

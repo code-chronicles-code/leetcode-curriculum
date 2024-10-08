@@ -48,7 +48,7 @@ export type Scalars = {
    * Use of this type is *not recommended* as you lose the benefits of having a defined, static
    * schema (one of the key benefits of GraphQL).
    */
-  JSONString: { input: unknown; output: unknown };
+  JSONString: { input: unknown; output: string };
   /**
    * Leverages the internal Python implmeentation of UUID (uuid.UUID) to provide native UUID objects
    * in fields, resolvers and input.
@@ -7400,15 +7400,15 @@ export type QuestionListFilterInput = {
 };
 
 export type QuestionNode = {
-  acRate?: Maybe<Scalars["Float"]["output"]>;
+  acRate: Scalars["Float"]["output"];
   adminUrl?: Maybe<Scalars["String"]["output"]>;
-  allowDiscuss?: Maybe<Scalars["Boolean"]["output"]>;
+  allowDiscuss: Scalars["Boolean"]["output"];
   article?: Maybe<Scalars["JSONString"]["output"]>;
   articleTopicId?: Maybe<Scalars["String"]["output"]>;
   attachments: Array<QuestionAttachmentNode>;
   boundTopicId?: Maybe<Scalars["Int"]["output"]>;
   canSeeQuestion: Scalars["Boolean"]["output"];
-  categoryTitle?: Maybe<Scalars["String"]["output"]>;
+  categoryTitle: Scalars["String"]["output"];
   challengeQuestion?: Maybe<ChallengeQuestionNode>;
   challengeQuestionsV2: Array<ChallengeQuestionNode>;
   codeDefinition?: Maybe<Scalars["JSONString"]["output"]>;
@@ -7417,66 +7417,66 @@ export type QuestionNode = {
   companyTagStatsV2?: Maybe<Scalars["JSONString"]["output"]>;
   companyTags?: Maybe<Array<CompanyTagNode>>;
   content?: Maybe<Scalars["String"]["output"]>;
-  contributors?: Maybe<Array<Maybe<ContributorNode>>>;
-  dataSchemas?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
+  contributors: Array<Maybe<ContributorNode>>;
+  dataSchemas: Array<Maybe<Scalars["String"]["output"]>>;
   difficulty: Scalars["String"]["output"];
   /** discussion count for one question, 0 if no question exist */
-  discussionCount?: Maybe<Scalars["Int"]["output"]>;
-  dislikes?: Maybe<Scalars["Int"]["output"]>;
-  enableDebugger?: Maybe<Scalars["Boolean"]["output"]>;
-  enableRunCode?: Maybe<Scalars["Boolean"]["output"]>;
-  enableSubmit?: Maybe<Scalars["Boolean"]["output"]>;
-  enableTestMode?: Maybe<Scalars["Boolean"]["output"]>;
-  envInfo?: Maybe<Scalars["String"]["output"]>;
+  discussionCount: Scalars["Int"]["output"];
+  dislikes: Scalars["Int"]["output"];
+  enableDebugger: Scalars["Boolean"]["output"];
+  enableRunCode: Scalars["Boolean"]["output"];
+  enableSubmit: Scalars["Boolean"]["output"];
+  enableTestMode: Scalars["Boolean"]["output"];
+  envInfo: Scalars["String"]["output"];
   exampleTestcaseList: Array<Maybe<Scalars["String"]["output"]>>;
-  exampleTestcases?: Maybe<Scalars["String"]["output"]>;
+  exampleTestcases: Scalars["String"]["output"];
   freqBar?: Maybe<Scalars["Float"]["output"]>;
   frequency: Scalars["Float"]["output"];
   frontendPreviews?: Maybe<Scalars["JSONString"]["output"]>;
   hasFrontendPreview: Scalars["Boolean"]["output"];
   hasSolution: Scalars["Boolean"]["output"];
   hasVideoSolution: Scalars["Boolean"]["output"];
-  hide?: Maybe<Scalars["Boolean"]["output"]>;
+  hide: Scalars["Boolean"]["output"];
   hideLastTestcases?: Maybe<HideLastTestcasesNode>;
-  hints?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
-  infoVerified?: Maybe<Scalars["Boolean"]["output"]>;
-  interpretUrl?: Maybe<Scalars["String"]["output"]>;
+  hints: Array<Maybe<Scalars["String"]["output"]>>;
+  infoVerified: Scalars["Boolean"]["output"];
+  interpretUrl: Scalars["String"]["output"];
   isFavor: Scalars["Boolean"]["output"];
   isLiked?: Maybe<Scalars["Boolean"]["output"]>;
   isPaidOnly: Scalars["Boolean"]["output"];
-  judgeType?: Maybe<Scalars["String"]["output"]>;
-  judgerAvailable?: Maybe<Scalars["Boolean"]["output"]>;
+  judgeType: Scalars["String"]["output"];
+  judgerAvailable: Scalars["Boolean"]["output"];
   langToValidPlayground?: Maybe<Scalars["JSONString"]["output"]>;
   libraryUrl?: Maybe<Scalars["String"]["output"]>;
-  likes?: Maybe<Scalars["Int"]["output"]>;
-  metaData?: Maybe<Scalars["String"]["output"]>;
-  mysqlSchemas?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
+  likes: Scalars["Int"]["output"];
+  metaData: Scalars["String"]["output"];
+  mysqlSchemas: Array<Maybe<Scalars["String"]["output"]>>;
   nextChallengePairs?: Maybe<Scalars["JSONString"]["output"]>;
-  nextChallenges?: Maybe<Array<QuestionNode>>;
+  nextChallenges: Array<QuestionNode>;
   note?: Maybe<Scalars["String"]["output"]>;
-  questionDetailUrl?: Maybe<Scalars["String"]["output"]>;
+  questionDetailUrl: Scalars["String"]["output"];
   questionFrontendId: Scalars["String"]["output"];
-  questionId?: Maybe<Scalars["String"]["output"]>;
-  questionTitle?: Maybe<Scalars["String"]["output"]>;
-  questionTitleSlug?: Maybe<Scalars["String"]["output"]>;
-  questionType?: Maybe<Scalars["String"]["output"]>;
-  randomQuestionUrl?: Maybe<Scalars["String"]["output"]>;
-  sampleTestCase?: Maybe<Scalars["String"]["output"]>;
-  sessionId?: Maybe<Scalars["String"]["output"]>;
+  questionId: Scalars["String"]["output"];
+  questionTitle: Scalars["String"]["output"];
+  questionTitleSlug: Scalars["String"]["output"];
+  questionType: Scalars["String"]["output"];
+  randomQuestionUrl: Scalars["String"]["output"];
+  sampleTestCase: Scalars["String"]["output"];
+  sessionId: Scalars["String"]["output"];
   similarQuestionList: Array<Maybe<QuestionNode>>;
-  similarQuestions?: Maybe<Scalars["JSONString"]["output"]>;
+  similarQuestions: Scalars["JSONString"]["output"];
   solution?: Maybe<ArticleNode>;
   /** solution for one question, 0 if no question exist */
-  solutionNum?: Maybe<Scalars["Int"]["output"]>;
-  stats?: Maybe<Scalars["JSONString"]["output"]>;
-  status?: Maybe<Scalars["String"]["output"]>;
-  submitUrl?: Maybe<Scalars["String"]["output"]>;
+  solutionNum: Scalars["Int"]["output"];
+  stats: Scalars["JSONString"]["output"];
+  status: Scalars["String"]["output"];
+  submitUrl: Scalars["String"]["output"];
   title: Scalars["String"]["output"];
   titleSlug: Scalars["String"]["output"];
-  topicTags?: Maybe<Array<TopicTagNode>>;
+  topicTags: Array<TopicTagNode>;
   translatedContent?: Maybe<Scalars["String"]["output"]>;
   translatedTitle?: Maybe<Scalars["String"]["output"]>;
-  urlManager?: Maybe<Scalars["JSONString"]["output"]>;
+  urlManager: Scalars["JSONString"]["output"];
 };
 
 export type QuestionNodeNextChallengePairsArgs = {
