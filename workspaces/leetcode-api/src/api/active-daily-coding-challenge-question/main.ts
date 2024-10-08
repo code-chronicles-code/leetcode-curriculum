@@ -16,17 +16,13 @@ const questionZodType = z.object({
   titleSlug: questionTitleSlugZodType,
 });
 
-const activeDailyCodingChallengeQuestionZodType = z
-  .object({
-    activeDailyCodingChallengeQuestion: z.object({
-      date: z
-        .string()
-        .trim()
-        .regex(/^\d{4}-\d{2}-\d{2}$/),
-      question: questionZodType,
-    }),
-  })
-  .transform((data) => data.activeDailyCodingChallengeQuestion);
+const activeDailyCodingChallengeQuestionZodType = z.object({
+  date: z
+    .string()
+    .trim()
+    .regex(/^\d{4}-\d{2}-\d{2}$/),
+  question: questionZodType,
+});
 
 export type ActiveDailyCodingChallengeQuestion = z.infer<
   typeof activeDailyCodingChallengeQuestionZodType
@@ -34,9 +30,11 @@ export type ActiveDailyCodingChallengeQuestion = z.infer<
 
 export async function fetchActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
   // TODO: have a way to omit variables when there aren't any
-  const data = await fetchGraphQL({});
+  const { activeDailyCodingChallengeQuestion } = await fetchGraphQL({});
 
-  return activeDailyCodingChallengeQuestionZodType.parse(data);
+  return activeDailyCodingChallengeQuestionZodType.parse(
+    activeDailyCodingChallengeQuestion,
+  );
 }
 
 export async function fetchActiveDailyCodingChallengeQuestionWithDateValidation({

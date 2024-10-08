@@ -20,11 +20,7 @@ const submissionZodType = z.object({
 
 export type RecentAcSubmission = z.infer<typeof submissionZodType>;
 
-const recentAcSubmissionListZodType = z
-  .object({
-    recentAcSubmissionList: z.array(submissionZodType),
-  })
-  .transform((data) => data.recentAcSubmissionList);
+const recentAcSubmissionListZodType = z.array(submissionZodType);
 
 export async function fetchRecentAcSubmissionList({
   limit = 50,
@@ -33,7 +29,7 @@ export async function fetchRecentAcSubmissionList({
   limit?: number;
   username: string;
 }): Promise<RecentAcSubmission[]> {
-  const data = await fetchGraphQL({ username, limit });
+  const { recentAcSubmissionList } = await fetchGraphQL({ username, limit });
 
-  return recentAcSubmissionListZodType.parse(data);
+  return recentAcSubmissionListZodType.parse(recentAcSubmissionList);
 }

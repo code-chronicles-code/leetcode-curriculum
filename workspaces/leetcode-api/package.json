@@ -42,11 +42,12 @@
     "cross-env": "7.0.3",
     "eslint": "9.12.0",
     "graphql-query-compress": "1.2.4",
+    "immutability-helper": "patch:immutability-helper@npm%3A3.1.1#~/.yarn/patches/immutability-helper-npm-3.1.1-482f1f8f58.patch",
     "jest": "29.7.0",
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
+    "ts-to-zod": "3.13.0",
     "tsx": "4.19.1",
-    "type-fest": "4.26.1",
     "typescript": "5.6.2"
   }
 }
