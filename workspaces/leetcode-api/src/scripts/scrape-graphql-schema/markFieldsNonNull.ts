@@ -11,7 +11,6 @@ export function markFieldsNonNull(
   return immutableUpdate(typeInfo, {
     fields: {
       $apply: (fields: ReadonlyDeep<LeetCodeGraphQLType>["fields"]) => {
-        const arr = nullthrows(fields);
         const remainingFieldNames = new Set(fieldNames);
 
         return nullthrows(fields).map((field) => {
@@ -22,6 +21,9 @@ export function markFieldsNonNull(
           remainingFieldNames.delete(field.name);
 
           if (field.type.kind === "NON_NULL") {
+            console.error(
+              `${typeInfo.name}.${field.name} is already non-null!`,
+            );
             return field;
           }
 
