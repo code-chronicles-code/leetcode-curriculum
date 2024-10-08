@@ -1,18 +1,29 @@
 import { z } from "zod";
 
+import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
 
 import { fetchGraphQL, type QueryVariables } from "./fetchGraphQL.generated.ts";
 import { questionDifficultyZodType } from "../../zod-types/questionDifficultyZodType.ts";
 import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
 
-const questionZodType = z.object({
-  difficulty: questionDifficultyZodType,
-  isPaidOnly: z.boolean(),
-  questionFrontendId: numericIdAsNumberZodType,
-  title: z.string().trim().min(1),
-  titleSlug: questionTitleSlugZodType,
-});
+const questionZodType = z
+  .object({
+    challengeQuestionsV2: z
+      .array(z.object({ date: z.string() }).transform(({ date }) => date))
+      .transform((dates) =>
+        [...dates].sort(compareStringsCaseInsensitive).reverse(),
+      ),
+    difficulty: questionDifficultyZodType,
+    isPaidOnly: z.boolean(),
+    questionFrontendId: numericIdAsNumberZodType,
+    title: z.string().trim().min(1),
+    titleSlug: questionTitleSlugZodType,
+  })
+  .transform(({ challengeQuestionsV2, ...rest }) => ({
+    chalengeQuestionDates: challengeQuestionsV2,
+    ...rest,
+  }));
 
 export type QuestionListQuestion = z.infer<typeof questionZodType>;
 

@@ -33,7 +33,7 @@ export type Scalars = {
    * value as specified by
    * [iso8601](https://en.wikipedia.org/wiki/ISO_8601).
    */
-  Date: { input: unknown; output: unknown };
+  Date: { input: unknown; output: string };
   /**
    * The `DateTime` scalar type represents a DateTime
    * value as specified by
@@ -41,7 +41,7 @@ export type Scalars = {
    */
   DateTime: { input: unknown; output: string };
   /** The `Decimal` scalar type represents a python Decimal. */
-  Decimal: { input: unknown; output: unknown };
+  Decimal: { input: unknown; output: string };
   /**
    * Allows use of a JSON String for input / output from the GraphQL schema.
    *
@@ -53,7 +53,7 @@ export type Scalars = {
    * Leverages the internal Python implmeentation of UUID (uuid.UUID) to provide native UUID objects
    * in fields, resolvers and input.
    */
-  UUID: { input: unknown; output: unknown };
+  UUID: { input: string; output: string };
 };
 
 export type AcStatsNode = {

@@ -10,7 +10,7 @@ import type {
 } from "./queryTypes.generated.ts";
 
 export const QUERY =
-  "query($categorySlug:String!,$limit:Int,$skip:Int,$filters:QuestionListFilterInput!){questionList(categorySlug:$categorySlug limit:$limit skip:$skip filters:$filters){data{difficulty isPaidOnly questionFrontendId title titleSlug}totalNum}}";
+  "query($categorySlug:String!,$limit:Int,$skip:Int,$filters:QuestionListFilterInput!){questionList(categorySlug:$categorySlug limit:$limit skip:$skip filters:$filters){data{challengeQuestionsV2{date}difficulty isPaidOnly questionFrontendId title titleSlug}totalNum}}";
 
 export const queryResultZodType = z.object({
   questionList: z.object({
@@ -22,6 +22,11 @@ export const queryResultZodType = z.object({
         questionFrontendId: z.string(),
         title: z.string(),
         titleSlug: z.string(),
+        challengeQuestionsV2: z.array(
+          z.object({
+            date: z.string(),
+          }),
+        ),
       }),
     ),
   }),

@@ -11,6 +11,9 @@ query QuestionList(
     filters: $filters
   ) {
     data {
+      challengeQuestionsV2 {
+        date
+      }
       difficulty
       isPaidOnly
       questionFrontendId
