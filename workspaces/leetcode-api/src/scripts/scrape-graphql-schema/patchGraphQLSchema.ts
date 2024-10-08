@@ -5,7 +5,9 @@ import { replaceInMap } from "@code-chronicles/util/replaceInMap";
 import type { LeetCodeGraphQLType } from "../../fetchGraphQLTypeInformation.ts";
 import { markFieldsNonNull } from "./markFieldsNonNull.ts";
 
-const FIELDS_TO_MARK_NON_NULL: ReadonlyDeep<Record<string, string[]>> = {
+// TODO: support setting list values to be non-null
+
+const FIELDS_TO_MARK_NON_NULL = {
   Query: [
     "activeDailyCodingChallengeQuestion",
     "questionList",
@@ -50,13 +52,12 @@ const FIELDS_TO_MARK_NON_NULL: ReadonlyDeep<Record<string, string[]>> = {
     "similarQuestions",
     "solutionNum",
     "stats",
-    "status",
     "submitUrl",
     "topicTags",
     "urlManager",
   ],
   SubmissionDumpNode: ["id", "timestamp", "title", "titleSlug"],
-};
+} as const;
 
 export function patchGraphQLSchema(
   scrapedTypeInfos: ReadonlyMap<string, ReadonlyDeep<LeetCodeGraphQLType>>,

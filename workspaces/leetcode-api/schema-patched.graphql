@@ -10280,7 +10280,7 @@ type QuestionNode {
   """
   solutionNum: Int!
   stats: JSONString!
-  status: String!
+  status: String
   submitUrl: String!
   title: String!
   titleSlug: String!
