@@ -12,6 +12,10 @@ const commonTypeScriptPluginConfig: GraphQLCodegen.PluginConfig = {
   useTypeImports: true,
 
   scalars: {
+    DateTime: {
+      input: "unknown",
+      output: "string",
+    },
     JSONString: {
       input: "unknown",
       output: "string",

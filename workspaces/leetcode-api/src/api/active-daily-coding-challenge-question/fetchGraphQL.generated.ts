@@ -14,7 +14,7 @@ export const QUERY =
 
 export const queryResultZodType = z.object({
   activeDailyCodingChallengeQuestion: z.object({
-    date: z.unknown(),
+    date: z.string(),
     question: z.object({
       difficulty: z.string(),
       questionFrontendId: z.string(),

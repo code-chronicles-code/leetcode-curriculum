@@ -39,7 +39,7 @@ export type Scalars = {
    * value as specified by
    * [iso8601](https://en.wikipedia.org/wiki/ISO_8601).
    */
-  DateTime: { input: unknown; output: unknown };
+  DateTime: { input: unknown; output: string };
   /** The `Decimal` scalar type represents a python Decimal. */
   Decimal: { input: unknown; output: unknown };
   /**

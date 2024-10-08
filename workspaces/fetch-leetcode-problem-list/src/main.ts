@@ -11,7 +11,7 @@ import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsy
 
 const FILENAME = "problems.jsonl";
 
-const LIMIT = 50;
+const LIMIT = 500;
 
 async function main(): Promise<void> {
   // TODO: warn early if the file already exists
