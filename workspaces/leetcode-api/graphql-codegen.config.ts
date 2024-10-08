@@ -11,18 +11,30 @@ const commonTypeScriptPluginConfig: GraphQLCodegen.PluginConfig = {
   skipTypename: true,
   useTypeImports: true,
 
+  strictScalars: true,
   scalars: {
+    Date: {
+      input: "unknown",
+      output: "string",
+    },
     DateTime: {
       input: "unknown",
+      output: "string",
+    },
+    Decimal: {
+      input: "unknown",
+      // For example: "4.816"
       output: "string",
     },
     JSONString: {
       input: "unknown",
       output: "string",
     },
+    UUID: {
+      input: "string",
+      output: "string",
+    },
   },
-
-  // TODO: add strictScalars: true
 };
 
 const headerPlugin: GraphQLCodegen.OutputConfig = {

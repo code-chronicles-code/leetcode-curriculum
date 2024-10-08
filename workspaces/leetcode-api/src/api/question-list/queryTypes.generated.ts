@@ -19,6 +19,7 @@ export type QuestionListQuery = {
       questionFrontendId: string;
       title: string;
       titleSlug: string;
+      challengeQuestionsV2: Array<{ date: string }>;
     }>;
   };
 };
