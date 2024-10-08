@@ -7469,7 +7469,7 @@ export type QuestionNode = {
   /** solution for one question, 0 if no question exist */
   solutionNum: Scalars["Int"]["output"];
   stats: Scalars["JSONString"]["output"];
-  status: Scalars["String"]["output"];
+  status?: Maybe<Scalars["String"]["output"]>;
   submitUrl: Scalars["String"]["output"];
   title: Scalars["String"]["output"];
   titleSlug: Scalars["String"]["output"];
