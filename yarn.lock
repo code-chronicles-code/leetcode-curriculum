@@ -1332,7 +1332,7 @@ __metadata:
     type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
   peerDependencies:
-    invariant: 2.2.4
+    invariant: "*"
     nullthrows: "*"
     zod: 3.23.8
   languageName: unknown
