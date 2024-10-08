@@ -11,6 +11,13 @@ const commonTypeScriptPluginConfig: GraphQLCodegen.PluginConfig = {
   skipTypename: true,
   useTypeImports: true,
 
+  scalars: {
+    JSONString: {
+      input: "unknown",
+      output: "string",
+    },
+  },
+
   // TODO: add strictScalars: true
 };
 
