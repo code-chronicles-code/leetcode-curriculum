@@ -9188,7 +9188,7 @@ type PublishSolution {
 type Query {
   achievement(name: String!): AchievementNode
   achievements: [AchievementNode]
-  activeDailyCodingChallengeQuestion: DailyChallengeNodeV2
+  activeDailyCodingChallengeQuestion: DailyChallengeNodeV2!
   activeDiscountEvent: DiscountEventNode
   advertisementByLocation(adLocation: AdLocationEnum!): [AdvertisementNode!]!
   allComments(
@@ -9716,7 +9716,7 @@ type Query {
     filters: QuestionListFilterInput
     limit: Int = 50
     skip: Int = 0
-  ): PagifiedQuestionNode
+  ): PagifiedQuestionNode!
   questionNumByTags(
     difficultyTagSlugs: [String!]
     knowledgeTagSlugs: [String!]
@@ -9792,7 +9792,7 @@ type Query {
   ): QuestionNode
   recaptchaKey: String
   recaptchaKeyV2: String
-  recentAcSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]
+  recentAcSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]!
   recentSubmissionList(limit: Int, username: String): [SubmissionDumpNode!]
   recommendSolutionTags(questionSlug: String!): [SolutionTagNode]!
   redeemedTimeTravelTicketCount: Int!
@@ -10205,15 +10205,15 @@ type QuestionLastSolveNode {
 }
 
 type QuestionNode {
-  acRate: Float
+  acRate: Float!
   adminUrl: String
-  allowDiscuss: Boolean
+  allowDiscuss: Boolean!
   article: JSONString
   articleTopicId: String
   attachments: [QuestionAttachmentNode!]!
   boundTopicId: Int
   canSeeQuestion: Boolean!
-  categoryTitle: String
+  categoryTitle: String!
   challengeQuestion: ChallengeQuestionNode
   challengeQuestionsV2: [ChallengeQuestionNode!]!
   codeDefinition: JSONString
@@ -10222,72 +10222,72 @@ type QuestionNode {
   companyTagStats: JSONString
   companyTagStatsV2: JSONString
   content: String
-  contributors: [ContributorNode]
-  dataSchemas: [String]
-  difficulty: String
+  contributors: [ContributorNode]!
+  dataSchemas: [String]!
+  difficulty: String!
 
   """
   discussion count for one question, 0 if no question exist
   """
-  discussionCount: Int
-  dislikes: Int
-  enableDebugger: Boolean
-  enableRunCode: Boolean
-  enableSubmit: Boolean
-  enableTestMode: Boolean
-  envInfo: String
+  discussionCount: Int!
+  dislikes: Int!
+  enableDebugger: Boolean!
+  enableRunCode: Boolean!
+  enableSubmit: Boolean!
+  enableTestMode: Boolean!
+  envInfo: String!
   exampleTestcaseList: [String]!
-  exampleTestcases: String
+  exampleTestcases: String!
   freqBar: Float
   frequency: Float!
   frontendPreviews: JSONString
   hasFrontendPreview: Boolean!
   hasSolution: Boolean!
   hasVideoSolution: Boolean!
-  hide: Boolean
+  hide: Boolean!
   hideLastTestcases: HideLastTestcasesNode
-  hints: [String]
-  infoVerified: Boolean
-  interpretUrl: String
+  hints: [String]!
+  infoVerified: Boolean!
+  interpretUrl: String!
   isFavor: Boolean!
   isLiked: Boolean
-  isPaidOnly: Boolean
-  judgerAvailable: Boolean
-  judgeType: String
+  isPaidOnly: Boolean!
+  judgerAvailable: Boolean!
+  judgeType: String!
   langToValidPlayground: JSONString
   libraryUrl: String
-  likes: Int
-  metaData: String
-  mysqlSchemas: [String]
+  likes: Int!
+  metaData: String!
+  mysqlSchemas: [String]!
   nextChallengePairs(questionId: String): JSONString
-  nextChallenges: [QuestionNode!]
+  nextChallenges: [QuestionNode!]!
   note: String
-  questionDetailUrl: String
-  questionFrontendId: String
-  questionId: String
-  questionTitle: String
-  questionTitleSlug: String
-  questionType: String
-  randomQuestionUrl: String
-  sampleTestCase: String
-  sessionId: String
+  questionDetailUrl: String!
+  questionFrontendId: String!
+  questionId: String!
+  questionTitle: String!
+  questionTitleSlug: String!
+  questionType: String!
+  randomQuestionUrl: String!
+  sampleTestCase: String!
+  sessionId: String!
   similarQuestionList: [QuestionNode]!
-  similarQuestions: JSONString
+  similarQuestions: JSONString!
   solution: ArticleNode
 
   """
   solution for one question, 0 if no question exist
   """
-  solutionNum: Int
-  stats: JSONString
+  solutionNum: Int!
+  stats: JSONString!
   status: String
-  submitUrl: String
+  submitUrl: String!
   title: String!
   titleSlug: String!
-  topicTags: [TopicTagNode!]
+  topicTags: [TopicTagNode!]!
   translatedContent: String
   translatedTitle: String
-  urlManager: JSONString
+  urlManager: JSONString!
 }
 
 type QuestionSatisfactionSurveyNode {
@@ -10854,7 +10854,7 @@ type SubmissionDetailsNode {
 type SubmissionDumpNode {
   flagType: SubmissionFlagTypeEnum
   hasNotes: Boolean
-  id: ID
+  id: ID!
   isPending: String
   lang: String
   langName: String
@@ -10865,9 +10865,9 @@ type SubmissionDumpNode {
   status: Int
   statusDisplay: String
   time: String
-  timestamp: String
-  title: String
-  titleSlug: String
+  timestamp: String!
+  title: String!
+  titleSlug: String!
   topicTags: [TopicTagNode]
   url: String
 }
