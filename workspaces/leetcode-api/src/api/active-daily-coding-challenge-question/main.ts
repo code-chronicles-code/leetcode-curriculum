@@ -29,8 +29,7 @@ export type ActiveDailyCodingChallengeQuestion = z.infer<
 >;
 
 export async function fetchActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
-  // TODO: have a way to omit variables when there aren't any
-  const { activeDailyCodingChallengeQuestion } = await fetchGraphQL({});
+  const { activeDailyCodingChallengeQuestion } = await fetchGraphQL();
 
   return activeDailyCodingChallengeQuestionZodType.parse(
     activeDailyCodingChallengeQuestion,
