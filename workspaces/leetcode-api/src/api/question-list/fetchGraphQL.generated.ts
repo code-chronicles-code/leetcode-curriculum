@@ -42,7 +42,7 @@ export const queryResultZodType = z.object({
         titleSlug: z.string(),
       }),
     ),
-    totalNum: z.number().int(),
+    totalNum: z.number().int().nonnegative(),
   }),
 });
 
