@@ -1,9 +1,9 @@
 import { z } from "zod";
 
-import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
-import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
+import { numericIdAsNumberZodType } from "@code-chronicles/util/zod-types/numericIdAsNumberZodType";
+import { numericIdAsStringZodType } from "@code-chronicles/util/zod-types/numericIdAsStringZodType";
 
-import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
+import { slugZodType } from "../../zod-types/slugZodType.ts";
 
 export const SUBMISSION_STATUS_TO_DISPLAY_TEXT: ReadonlyMap<number, string> =
   new Map([
@@ -66,7 +66,7 @@ const submissionZodType = (() => {
         .transform((value) => Array.from(value).map((c) => c === "1"))
         .nullable(),
       // eslint-disable-next-line camelcase
-      title_slug: questionTitleSlugZodType,
+      title_slug: slugZodType,
       // eslint-disable-next-line camelcase
       has_notes: z.boolean(),
       // eslint-disable-next-line camelcase

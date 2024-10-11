@@ -10224,7 +10224,7 @@ type QuestionNode {
   content: String
   contributors: [ContributorNode]!
   dataSchemas: [String]!
-  difficulty: String!
+  difficulty: String! @enum(values: ["Easy", "Medium", "Hard"])
 
   """
   discussion count for one question, 0 if no question exist
@@ -10266,7 +10266,7 @@ type QuestionNode {
   questionFrontendId: String!
   questionId: String!
   questionTitle: String!
-  questionTitleSlug: String!
+  questionTitleSlug: String! @slug
   questionType: String!
   randomQuestionUrl: String!
   sampleTestCase: String!
@@ -10283,7 +10283,7 @@ type QuestionNode {
   status: String
   submitUrl: String!
   title: String!
-  titleSlug: String!
+  titleSlug: String! @slug
   topicTags: [TopicTagNode!]!
   translatedContent: String
   translatedTitle: String
@@ -10867,7 +10867,7 @@ type SubmissionDumpNode {
   time: String
   timestamp: String!
   title: String!
-  titleSlug: String!
+  titleSlug: String! @slug
   topicTags: [TopicTagNode]
   url: String
 }
@@ -11988,3 +11988,7 @@ type WordListTypeNode {
 }
 
 directive @nonnegative on FIELD_DEFINITION
+
+directive @slug on FIELD_DEFINITION
+
+directive @enum(values: [String!]!) on FIELD_DEFINITION

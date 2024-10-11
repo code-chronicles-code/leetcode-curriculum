@@ -5,8 +5,11 @@ import {
   type ObjectTypeDefinitionNode,
 } from "graphql";
 import immutableUpdate from "immutability-helper";
+import { nameNode } from "./astNodeBuilders.ts";
 
-export const CUSTOM_DIRECTIVES = ["nonnegative"] as const;
+// TODO: keep in sync with DirectivesConfig in graphqlToZod
+
+export const CUSTOM_DIRECTIVES = ["nonnegative", "slug"] as const;
 
 // TODO: memoize by directiveName?
 
@@ -30,10 +33,7 @@ export function addDirectiveToField(
           ...prevDirectives,
           {
             kind: Kind.DIRECTIVE,
-            name: {
-              kind: Kind.NAME,
-              value: directiveName,
-            },
+            name: nameNode(directiveName),
           },
         ];
       },

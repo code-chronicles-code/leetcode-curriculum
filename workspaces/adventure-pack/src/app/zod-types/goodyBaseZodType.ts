@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { nonBlankStringZodType } from "@code-chronicles/util/nonBlankStringZodType";
+import { nonBlankStringZodType } from "@code-chronicles/util/zod-types/nonBlankStringZodType";
 
 export const goodyBaseZodType = z.object({
   importedBy: z.array(nonBlankStringZodType),

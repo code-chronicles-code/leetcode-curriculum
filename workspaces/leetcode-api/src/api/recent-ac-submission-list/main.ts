@@ -1,21 +1,16 @@
 import { z } from "zod";
 
-import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
+import { numericIdAsStringZodType } from "@code-chronicles/util/zod-types/numericIdAsStringZodType";
+import { timestampZodType } from "@code-chronicles/util/zod-types/timestampZodType";
 
-import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
+import { slugZodType } from "../../zod-types/slugZodType.ts";
 import { fetchGraphQL } from "./fetchGraphQL.generated.ts";
 
 const submissionZodType = z.object({
   id: numericIdAsStringZodType,
   title: z.string().trim().min(1),
-  titleSlug: questionTitleSlugZodType,
-
-  // TODO: reusable ZodType for timestamps as well
-  timestamp: z
-    .string()
-    .trim()
-    .regex(/^[1-9][0-9]*$/)
-    .transform((value) => parseInt(value, 10)),
+  titleSlug: slugZodType,
+  timestamp: timestampZodType,
 });
 
 export type RecentAcSubmission = z.infer<typeof submissionZodType>;
