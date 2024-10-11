@@ -1019,8 +1019,9 @@ __metadata:
     "@graphql-codegen/near-operation-file-preset": "npm:3.0.0"
     "@types/node": "npm:22.7.5"
     cross-env: "npm:7.0.3"
+    dedent: "npm:1.5.3"
     eslint: "npm:9.12.0"
-    graphql: "npm:16.9.0"
+    graphql: "patch:graphql@npm%3A16.9.0#~/.yarn/patches/graphql-npm-16.9.0-a36f71845f.patch"
     graphql-query-compress: "npm:1.2.4"
     graphql-request: "npm:7.1.0"
     immutability-helper: "patch:immutability-helper@npm%3A3.1.1#~/.yarn/patches/immutability-helper-npm-3.1.1-482f1f8f58.patch"
@@ -4556,7 +4557,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dedent@npm:^1.0.0":
+"dedent@npm:1.5.3, dedent@npm:^1.0.0":
   version: 1.5.3
   resolution: "dedent@npm:1.5.3"
   peerDependencies:
@@ -6070,6 +6071,13 @@ __metadata:
   version: 16.9.0
   resolution: "graphql@npm:16.9.0"
   checksum: 10c0/a8850f077ff767377237d1f8b1da2ec70aeb7623cdf1dfc9e1c7ae93accc0c8149c85abe68923be9871a2934b1bce5a2496f846d4d56e1cfb03eaaa7ddba9b6a
+  languageName: node
+  linkType: hard
+
+"graphql@patch:graphql@npm%3A16.9.0#~/.yarn/patches/graphql-npm-16.9.0-a36f71845f.patch":
+  version: 16.9.0
+  resolution: "graphql@patch:graphql@npm%3A16.9.0#~/.yarn/patches/graphql-npm-16.9.0-a36f71845f.patch::version=16.9.0&hash=86f7fb"
+  checksum: 10c0/be10d5136ee69eaf1148cdd89fcb1d973a7e3a04ea7ed70af6aaa5966a8446a65388fadd775ea786401f3044877b91029eb93f3fcad392a4ba7476670f8122a7
   languageName: node
   linkType: hard
 

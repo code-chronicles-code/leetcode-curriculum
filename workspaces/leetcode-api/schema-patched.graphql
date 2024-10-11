@@ -1,5 +1,5 @@
 # THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
-# Instead, update the generation process or inputs and run `yarn scrape-graphql-schema`.
+# Instead, update the generation process or inputs and run `yarn patch-graphql-schema`.
 
 """
 The `Boolean` scalar type represents `true` or `false`.
@@ -8396,7 +8396,7 @@ type PagifiedQuestionNode {
   data: [QuestionNode!]!
   numPerPage: Int!
   pageNum: Int!
-  totalNum: Int!
+  totalNum: Int! @nonnegative
 }
 
 type PagifiedTopicNode {
@@ -10205,7 +10205,7 @@ type QuestionLastSolveNode {
 }
 
 type QuestionNode {
-  acRate: Float!
+  acRate: Float! @nonnegative
   adminUrl: String
   allowDiscuss: Boolean!
   article: JSONString
@@ -10229,8 +10229,8 @@ type QuestionNode {
   """
   discussion count for one question, 0 if no question exist
   """
-  discussionCount: Int!
-  dislikes: Int!
+  discussionCount: Int! @nonnegative
+  dislikes: Int! @nonnegative
   enableDebugger: Boolean!
   enableRunCode: Boolean!
   enableSubmit: Boolean!
@@ -10256,7 +10256,7 @@ type QuestionNode {
   judgeType: String!
   langToValidPlayground: JSONString
   libraryUrl: String
-  likes: Int!
+  likes: Int! @nonnegative
   metaData: String!
   mysqlSchemas: [String]!
   nextChallengePairs(questionId: String): JSONString
@@ -10278,7 +10278,7 @@ type QuestionNode {
   """
   solution for one question, 0 if no question exist
   """
-  solutionNum: Int!
+  solutionNum: Int! @nonnegative
   stats: JSONString!
   status: String
   submitUrl: String!
@@ -11986,3 +11986,5 @@ type WordListTypeNode {
   name: String!
   slug: String!
 }
+
+directive @nonnegative on FIELD_DEFINITION

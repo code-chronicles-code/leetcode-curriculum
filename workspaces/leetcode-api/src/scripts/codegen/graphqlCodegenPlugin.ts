@@ -1,4 +1,5 @@
 import type { PluginFunction } from "@graphql-codegen/plugin-helpers";
+import dedent from "dedent";
 import graphqlQueryCompress from "graphql-query-compress";
 import { Kind, OperationTypeNode } from "graphql";
 import invariant from "invariant";
@@ -55,15 +56,15 @@ export const plugin: PluginFunction<{}> = function plugin(schema, documents) {
 
   return {
     prepend: [
-      `
+      dedent`
         import { z } from "zod";
 
         import { getGraphQLClient } from "../../getGraphQLClient.ts";
         import type * as Types from "../../graphqlTypes.generated.ts";
-      `,
+      ` + "\n\n",
     ],
     append: [
-      `
+      dedent`
         export const QUERY = ${JSON.stringify(minifiedGraphQL)};
 
         export const queryResultZodType = ${graphqlToZod(nullthrows(schema.getQueryType()), definition.selectionSet)};
@@ -80,7 +81,7 @@ export const plugin: PluginFunction<{}> = function plugin(schema, documents) {
 
           return validatedData;
         }
-      `,
+      ` + "\n\n",
     ],
     content: "",
   };
