@@ -1,39 +1,35 @@
 import { z } from "zod";
 
-import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
+import { numericIdAsNumberZodType } from "@code-chronicles/util/zod-types/numericIdAsNumberZodType";
 import { sleep } from "@code-chronicles/util/sleep";
 import { MS_IN_SEC } from "@code-chronicles/util/timeConstants";
 import { timestampInSecondsToYearMonthDay } from "@code-chronicles/util/timestampInSecondsToYearMonthDay";
 
 import { questionDifficultyZodType } from "../../zod-types/questionDifficultyZodType.ts";
-import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
+import { slugZodType } from "../../zod-types/slugZodType.ts";
 import { fetchGraphQL } from "./fetchGraphQL.generated.ts";
 
 const questionZodType = z.object({
   difficulty: questionDifficultyZodType,
   questionFrontendId: numericIdAsNumberZodType,
   title: z.string().trim().min(1),
-  titleSlug: questionTitleSlugZodType,
+  titleSlug: slugZodType,
 });
 
-const activeDailyCodingChallengeQuestionZodType = z.object({
-  date: z
-    .string()
-    .trim()
-    .regex(/^\d{4}-\d{2}-\d{2}$/),
-  question: questionZodType,
-});
-
-export type ActiveDailyCodingChallengeQuestion = z.infer<
-  typeof activeDailyCodingChallengeQuestionZodType
->;
+export type ActiveDailyCodingChallengeQuestion = {
+  date: string;
+  question: z.infer<typeof questionZodType>;
+};
 
 export async function fetchActiveDailyCodingChallengeQuestionWithoutDateValidation(): Promise<ActiveDailyCodingChallengeQuestion> {
-  const { activeDailyCodingChallengeQuestion } = await fetchGraphQL();
+  const {
+    activeDailyCodingChallengeQuestion: { date, question },
+  } = await fetchGraphQL();
 
-  return activeDailyCodingChallengeQuestionZodType.parse(
-    activeDailyCodingChallengeQuestion,
-  );
+  return {
+    date,
+    question: questionZodType.parse(question),
+  };
 }
 
 export async function fetchActiveDailyCodingChallengeQuestionWithDateValidation({

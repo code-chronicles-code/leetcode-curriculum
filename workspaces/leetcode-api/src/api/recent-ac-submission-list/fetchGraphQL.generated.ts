@@ -5,6 +5,7 @@ import { z } from "zod";
 
 import { getGraphQLClient } from "../../getGraphQLClient.ts";
 import type * as Types from "../../graphqlTypes.generated.ts";
+import { slugZodType } from "../../zod-types/slugZodType.ts";
 
 type RecentAcSubmissionListQueryVariables = Types.Exact<{
   username: Types.Scalars["String"]["input"];
@@ -28,7 +29,7 @@ export const queryResultZodType = z.object({
     z.object({
       id: z.string(),
       title: z.string(),
-      titleSlug: z.string(),
+      titleSlug: slugZodType,
       timestamp: z.string(),
     }),
   ),

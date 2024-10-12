@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { GraphQLError } from "graphql";
 
-import { graphqlKindTypeZodType } from "@code-chronicles/util/graphqlKindTypeZodType";
+import { graphqlKindTypeZodType } from "@code-chronicles/util/zod-types/graphqlKindTypeZodType";
 import { isStringEmptyOrWhitespaceOnly } from "@code-chronicles/util/isStringEmptyOrWhitespaceOnly";
 import {
   type OptionalInsteadOfNullishValues,

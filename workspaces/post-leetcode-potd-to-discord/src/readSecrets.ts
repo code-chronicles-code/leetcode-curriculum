@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 
 import { z } from "zod";
 
-import { numericIdAsStringZodType } from "@code-chronicles/util/numericIdAsStringZodType";
+import { numericIdAsStringZodType } from "@code-chronicles/util/zod-types/numericIdAsStringZodType";
 
 const SECRETS_FILE = "secrets_DO_NOT_COMMIT_OR_SHARE.json";
 

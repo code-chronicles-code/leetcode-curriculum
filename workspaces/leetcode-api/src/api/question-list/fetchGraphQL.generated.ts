@@ -5,6 +5,8 @@ import { z } from "zod";
 
 import { getGraphQLClient } from "../../getGraphQLClient.ts";
 import type * as Types from "../../graphqlTypes.generated.ts";
+import { yyyymmddDateZodType } from "../../zod-types/yyyymmddDateZodType.ts";
+import { slugZodType } from "../../zod-types/slugZodType.ts";
 
 type QuestionListQueryVariables = Types.Exact<{
   categorySlug: Types.Scalars["String"]["input"];
@@ -34,12 +36,12 @@ export const queryResultZodType = z.object({
   questionList: z.object({
     data: z.array(
       z.object({
-        challengeQuestionsV2: z.array(z.object({ date: z.string() })),
-        difficulty: z.string(),
+        challengeQuestionsV2: z.array(z.object({ date: yyyymmddDateZodType })),
+        difficulty: z.enum(["Easy", "Medium", "Hard"]),
         isPaidOnly: z.boolean(),
         questionFrontendId: z.string(),
         title: z.string(),
-        titleSlug: z.string(),
+        titleSlug: slugZodType,
       }),
     ),
     totalNum: z.number().int().nonnegative(),

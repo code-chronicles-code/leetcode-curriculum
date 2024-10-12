@@ -1,7 +1,7 @@
 import type { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
-import { nonBlankStringZodType } from "@code-chronicles/util/nonBlankStringZodType";
+import { nonBlankStringZodType } from "@code-chronicles/util/zod-types/nonBlankStringZodType";
 
 import { goodyBaseZodType } from "./goodyBaseZodType.ts";
 

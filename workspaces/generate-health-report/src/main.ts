@@ -14,6 +14,9 @@ const COMMANDS = [
   "yarn workspace @code-chronicles/adventure-pack build-chrome-extension",
   "yarn workspace @code-chronicles/fetch-leetcode-problem-list build",
   "yarn workspace @code-chronicles/fetch-recent-accepted-leetcode-submissions build",
+  // TODO: assert that no code changes
+  "yarn workspace @code-chronicles/leetcode-api patch-graphql-schema",
+  // TODO: assert that no code changes
   "yarn workspace @code-chronicles/leetcode-api codegen",
   "yarn workspace @code-chronicles/leetcode-zen-mode build",
   "yarn workspace @code-chronicles/post-leetcode-potd-to-discord build",

@@ -1,11 +1,11 @@
 import { z } from "zod";
 
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
-import { numericIdAsNumberZodType } from "@code-chronicles/util/numericIdAsNumberZodType";
+import { numericIdAsNumberZodType } from "@code-chronicles/util/zod-types/numericIdAsNumberZodType";
 
 import { fetchGraphQL, type QueryVariables } from "./fetchGraphQL.generated.ts";
 import { questionDifficultyZodType } from "../../zod-types/questionDifficultyZodType.ts";
-import { questionTitleSlugZodType } from "../../zod-types/questionTitleSlugZodType.ts";
+import { slugZodType } from "../../zod-types/slugZodType.ts";
 
 const questionZodType = z
   .object({
@@ -18,7 +18,7 @@ const questionZodType = z
     isPaidOnly: z.boolean(),
     questionFrontendId: numericIdAsNumberZodType,
     title: z.string().trim().min(1),
-    titleSlug: questionTitleSlugZodType,
+    titleSlug: slugZodType,
   })
   .transform(({ challengeQuestionsV2, ...rest }) => ({
     chalengeQuestionDates: challengeQuestionsV2,
@@ -27,17 +27,10 @@ const questionZodType = z
 
 export type QuestionListQuestion = z.infer<typeof questionZodType>;
 
-const questionListZodType = z
-  .object({
-    data: z.array(questionZodType),
-    totalNum: z.number().int().nonnegative(),
-  })
-  .transform(({ data, totalNum }) => ({
-    questions: data,
-    totalNum,
-  }));
-
-export type QuestionList = z.infer<typeof questionListZodType>;
+export type QuestionList = {
+  questions: QuestionListQuestion[];
+  totalNum: number;
+};
 
 // TODO: see if there's a way we can fetch these...
 export enum CategorySlug {
@@ -61,12 +54,17 @@ export async function fetchQuestionList({
   limit: number;
   skip: number;
 }): Promise<QuestionList> {
-  const { questionList } = await fetchGraphQL({
+  const {
+    questionList: { data, totalNum },
+  } = await fetchGraphQL({
     categorySlug,
     filters,
     limit,
     skip,
   });
 
-  return questionListZodType.parse(questionList);
+  return {
+    questions: data.map((q) => questionZodType.parse(q)),
+    totalNum,
+  };
 }

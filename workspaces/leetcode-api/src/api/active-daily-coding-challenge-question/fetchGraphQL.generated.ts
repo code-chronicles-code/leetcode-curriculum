@@ -5,6 +5,8 @@ import { z } from "zod";
 
 import { getGraphQLClient } from "../../getGraphQLClient.ts";
 import type * as Types from "../../graphqlTypes.generated.ts";
+import { yyyymmddDateZodType } from "../../zod-types/yyyymmddDateZodType.ts";
+import { slugZodType } from "../../zod-types/slugZodType.ts";
 
 type ActiveDailyCodingChallengeQuestionQueryVariables = Types.Exact<{
   [key: string]: never;
@@ -27,12 +29,12 @@ export const QUERY =
 
 export const queryResultZodType = z.object({
   activeDailyCodingChallengeQuestion: z.object({
-    date: z.string(),
+    date: yyyymmddDateZodType,
     question: z.object({
-      difficulty: z.string(),
+      difficulty: z.enum(["Easy", "Medium", "Hard"]),
       questionFrontendId: z.string(),
       title: z.string(),
-      titleSlug: z.string(),
+      titleSlug: slugZodType,
     }),
   }),
 });

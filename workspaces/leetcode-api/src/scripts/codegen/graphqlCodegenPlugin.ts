@@ -54,20 +54,28 @@ export const plugin: PluginFunction<{}> = function plugin(schema, documents) {
     ),
   );
 
+  const [zodOutput, imports] = graphqlToZod(
+    nullthrows(schema.getQueryType()),
+    definition.selectionSet,
+  );
+
   return {
     prepend: [
-      dedent`
-        import { z } from "zod";
+      [
+        dedent`
+          import { z } from "zod";
 
-        import { getGraphQLClient } from "../../getGraphQLClient.ts";
-        import type * as Types from "../../graphqlTypes.generated.ts";
-      ` + "\n\n",
+          import { getGraphQLClient } from "../../getGraphQLClient.ts";
+          import type * as Types from "../../graphqlTypes.generated.ts";
+      `,
+        ...new Set(imports.map((im) => im + "\n")),
+      ].join("") + "\n\n",
     ],
     append: [
       dedent`
         export const QUERY = ${JSON.stringify(minifiedGraphQL)};
 
-        export const queryResultZodType = ${graphqlToZod(nullthrows(schema.getQueryType()), definition.selectionSet)};
+        export const queryResultZodType = ${zodOutput};
 
         export type QueryResult = z.infer<typeof queryResultZodType>;
         export type QueryVariables = ${operationName}QueryVariables;

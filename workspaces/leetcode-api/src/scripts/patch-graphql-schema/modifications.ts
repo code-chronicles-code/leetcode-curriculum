@@ -6,6 +6,7 @@ import type {
 
 import { markFieldNonNull as markNonNull } from "./markFieldNonNull.ts";
 import { addDirectiveToField as addDirective } from "./addDirectiveToField.ts";
+import { addEnumDirectiveToField as addEnumDirective } from "./addEnumDirectiveToField.ts";
 
 type SafeObjectMap<T> = Partial<Readonly<Record<string, NonNullable<T>>>>;
 
@@ -31,7 +32,7 @@ export const FIELD_MODIFICATIONS: SafeObjectMap<
     categoryTitle: [markNonNull],
     contributors: [markNonNull],
     dataSchemas: [markNonNull],
-    difficulty: [markNonNull],
+    difficulty: [markNonNull, addEnumDirective(["Easy", "Medium", "Hard"])],
     discussionCount: [markNonNull, addDirective("nonnegative")],
     dislikes: [markNonNull, addDirective("nonnegative")],
     enableDebugger: [markNonNull],
@@ -55,7 +56,7 @@ export const FIELD_MODIFICATIONS: SafeObjectMap<
     questionFrontendId: [markNonNull],
     questionId: [markNonNull],
     questionTitle: [markNonNull],
-    questionTitleSlug: [markNonNull],
+    questionTitleSlug: [markNonNull, addDirective("slug")],
     questionType: [markNonNull],
     randomQuestionUrl: [markNonNull],
     sampleTestCase: [markNonNull],
@@ -64,6 +65,7 @@ export const FIELD_MODIFICATIONS: SafeObjectMap<
     solutionNum: [markNonNull, addDirective("nonnegative")],
     stats: [markNonNull],
     submitUrl: [markNonNull],
+    titleSlug: [addDirective("slug")],
     topicTags: [markNonNull],
     urlManager: [markNonNull],
   },
@@ -71,6 +73,6 @@ export const FIELD_MODIFICATIONS: SafeObjectMap<
     id: [markNonNull],
     timestamp: [markNonNull],
     title: [markNonNull],
-    titleSlug: [markNonNull],
+    titleSlug: [markNonNull, addDirective("slug")],
   },
 };
