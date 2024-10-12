@@ -21,13 +21,14 @@
     "codegen": "cross-env NODE_OPTIONS=\"--import tsx\" graphql-codegen-esm --config graphql-codegen.config.ts",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
+    "patch-graphql-schema": "tsx src/scripts/patch-graphql-schema/main.ts",
     "scrape-graphql-schema": "tsx src/scripts/scrape-graphql-schema/main.ts",
     "test": "tsx ./jest.config.ts",
     "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
-    "graphql": "16.9.0",
+    "graphql": "patch:graphql@npm%3A16.9.0#~/.yarn/patches/graphql-npm-16.9.0-a36f71845f.patch",
     "graphql-request": "7.1.0",
     "invariant": "2.2.4",
     "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch",
@@ -40,6 +41,7 @@
     "@graphql-codegen/near-operation-file-preset": "3.0.0",
     "@types/node": "22.7.5",
     "cross-env": "7.0.3",
+    "dedent": "1.5.3",
     "eslint": "9.12.0",
     "graphql-query-compress": "1.2.4",
     "immutability-helper": "patch:immutability-helper@npm%3A3.1.1#~/.yarn/patches/immutability-helper-npm-3.1.1-482f1f8f58.patch",
@@ -47,6 +49,6 @@
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
     "tsx": "4.19.1",
-    "typescript": "5.6.2"
+    "typescript": "5.6.3"
   }
 }

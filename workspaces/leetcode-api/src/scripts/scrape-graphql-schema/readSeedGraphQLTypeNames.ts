@@ -4,7 +4,7 @@ import { buildSchema } from "graphql";
 
 import { addAllToSet } from "@code-chronicles/util/addAllToSet";
 
-import { SCHEMA_ORIGINAL_FILE } from "./constants.ts";
+import { SCHEMA_FILE_ORIGINAL } from "./constants.ts";
 
 export async function readSeedGraphQLTypeNames(): Promise<string[]> {
   // Start with some built-in types.
@@ -28,7 +28,7 @@ export async function readSeedGraphQLTypeNames(): Promise<string[]> {
   // Try to read additional types from the saved schema file, but don't crash
   // on errors.
   try {
-    const schema = buildSchema(await readFile(SCHEMA_ORIGINAL_FILE, "utf8"));
+    const schema = buildSchema(await readFile(SCHEMA_FILE_ORIGINAL, "utf8"));
     addAllToSet(res, Object.keys(schema.getTypeMap()));
   } catch (err) {
     console.error(err);

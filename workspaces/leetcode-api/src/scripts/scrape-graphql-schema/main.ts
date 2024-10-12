@@ -1,3 +1,6 @@
+import { writeFile } from "node:fs/promises";
+
+import dedent from "dedent";
 import invariant from "invariant";
 
 import { filterMapValues } from "@code-chronicles/util/filterMapValues";
@@ -6,17 +9,22 @@ import { popMany } from "@code-chronicles/util/popMany";
 import { sleep } from "@code-chronicles/util/sleep";
 import { whileReturnsTrueAsync } from "@code-chronicles/util/whileReturnsTrueAsync";
 
-import { SCHEMA_ORIGINAL_FILE, SCHEMA_PATCHED_FILE } from "./constants.ts";
+import { SCHEMA_FILE_ORIGINAL } from "./constants.ts";
 import {
   fetchGraphQLTypeInformation,
   type InnerType,
   type LeetCodeGraphQLType,
 } from "../../fetchGraphQLTypeInformation.ts";
-import { patchGraphQLSchema } from "./patchGraphQLSchema.ts";
 import { readSeedGraphQLTypeNames } from "./readSeedGraphQLTypeNames.ts";
-import { writeGraphQLSchemaFile } from "./writeGraphQLSchemaFile.ts";
+import { stringifyGraphQLSchema } from "./stringifyGraphQLSchema.ts";
 
 const BATCH_SIZE = 100;
+
+const GENERATED_HEADER =
+  dedent`
+    # THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
+    # Instead, update the generation process or inputs and run \`yarn scrape-graphql-schema\`.
+  ` + "\n";
 
 const OPTIONAL_TYPES = new Set(["Subscription"]);
 
@@ -101,15 +109,13 @@ async function main(): Promise<void> {
     return true;
   });
 
-  const nonNullishTypeInfos = filterMapValues(typeInfos, isNonNullish);
+  const schema = await stringifyGraphQLSchema(
+    filterMapValues(typeInfos, isNonNullish).values(),
+  );
 
-  await Promise.all([
-    writeGraphQLSchemaFile(SCHEMA_ORIGINAL_FILE, nonNullishTypeInfos.values()),
-    writeGraphQLSchemaFile(
-      SCHEMA_PATCHED_FILE,
-      patchGraphQLSchema(nonNullishTypeInfos).values(),
-    ),
-  ]);
+  await writeFile(SCHEMA_FILE_ORIGINAL, [GENERATED_HEADER, schema].join("\n"), {
+    encoding: "utf8",
+  });
 }
 
 main().catch((err) => {

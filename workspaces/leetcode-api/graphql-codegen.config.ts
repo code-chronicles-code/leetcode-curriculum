@@ -1,7 +1,9 @@
+import dedent from "dedent";
+
 import type { CodegenConfig } from "@graphql-codegen/cli";
 import type { Types as GraphQLCodegen } from "@graphql-codegen/plugin-helpers";
 
-import { SCHEMA_PATCHED_FILE } from "./src/scripts/scrape-graphql-schema/constants.ts";
+import { SCHEMA_FILE_PATCHED } from "./src/scripts/patch-graphql-schema/constants.ts";
 
 const commonTypeScriptPluginConfig: GraphQLCodegen.PluginConfig = {
   arrayInputCoercion: false,
@@ -38,16 +40,17 @@ const commonTypeScriptPluginConfig: GraphQLCodegen.PluginConfig = {
 
 const headerPlugin: GraphQLCodegen.OutputConfig = {
   add: {
-    content: `
+    content:
+      dedent`
       // THIS FILE IS GENERATED! DO NOT MODIFY IT MANUALLY!!
       // Instead, update the generation process or inputs and run \`yarn codegen\`.
-    `,
+    ` + "\n\n",
     placement: "prepend",
   },
 };
 
 const config: CodegenConfig = {
-  schema: SCHEMA_PATCHED_FILE,
+  schema: SCHEMA_FILE_PATCHED,
   documents: ["src/api/**/query.graphql"],
   overwrite: true,
   emitLegacyCommonJSImports: false,

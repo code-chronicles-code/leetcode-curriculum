@@ -1,0 +1,180 @@
+diff --git a/language/printer.js b/language/printer.js
+index eed3b7cf24d74d744c860ad9cb8e546ed6f4afd7..4754051981ec40f41bce700b96dc569492cf4b41 100644
+--- a/language/printer.js
++++ b/language/printer.js
+@@ -148,7 +148,7 @@ const printDocASTReducer = {
+   // Type System Definitions
+   SchemaDefinition: {
+     leave: ({ description, directives, operationTypes }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['schema', join(directives, ' '), block(operationTypes)], ' '),
+   },
+   OperationTypeDefinition: {
+@@ -156,12 +156,12 @@ const printDocASTReducer = {
+   },
+   ScalarTypeDefinition: {
+     leave: ({ description, name, directives }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['scalar', name, join(directives, ' ')], ' '),
+   },
+   ObjectTypeDefinition: {
+     leave: ({ description, name, interfaces, directives, fields }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         [
+           'type',
+@@ -175,7 +175,7 @@ const printDocASTReducer = {
+   },
+   FieldDefinition: {
+     leave: ({ description, name, arguments: args, type, directives }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       name +
+       (hasMultilineItems(args)
+         ? wrap('(\n', indent(join(args, '\n')), '\n)')
+@@ -186,7 +186,7 @@ const printDocASTReducer = {
+   },
+   InputValueDefinition: {
+     leave: ({ description, name, type, defaultValue, directives }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         [name + ': ' + type, wrap('= ', defaultValue), join(directives, ' ')],
+         ' ',
+@@ -194,7 +194,7 @@ const printDocASTReducer = {
+   },
+   InterfaceTypeDefinition: {
+     leave: ({ description, name, interfaces, directives, fields }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         [
+           'interface',
+@@ -208,7 +208,7 @@ const printDocASTReducer = {
+   },
+   UnionTypeDefinition: {
+     leave: ({ description, name, directives, types }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         ['union', name, join(directives, ' '), wrap('= ', join(types, ' | '))],
+         ' ',
+@@ -216,21 +216,21 @@ const printDocASTReducer = {
+   },
+   EnumTypeDefinition: {
+     leave: ({ description, name, directives, values }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['enum', name, join(directives, ' '), block(values)], ' '),
+   },
+   EnumValueDefinition: {
+     leave: ({ description, name, directives }) =>
+-      wrap('', description, '\n') + join([name, join(directives, ' ')], ' '),
++      wrap('\n', description, '\n') + join([name, join(directives, ' ')], ' '),
+   },
+   InputObjectTypeDefinition: {
+     leave: ({ description, name, directives, fields }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['input', name, join(directives, ' '), block(fields)], ' '),
+   },
+   DirectiveDefinition: {
+     leave: ({ description, name, arguments: args, repeatable, locations }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       'directive @' +
+       name +
+       (hasMultilineItems(args)
+diff --git a/language/printer.mjs b/language/printer.mjs
+index cffc2bf05b7440abe0f6cb92163092666127f182..3cfbdda9f3b0fc3076c287740e4dfa32577895c9 100644
+--- a/language/printer.mjs
++++ b/language/printer.mjs
+@@ -136,7 +136,7 @@ const printDocASTReducer = {
+   // Type System Definitions
+   SchemaDefinition: {
+     leave: ({ description, directives, operationTypes }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['schema', join(directives, ' '), block(operationTypes)], ' '),
+   },
+   OperationTypeDefinition: {
+@@ -144,12 +144,12 @@ const printDocASTReducer = {
+   },
+   ScalarTypeDefinition: {
+     leave: ({ description, name, directives }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['scalar', name, join(directives, ' ')], ' '),
+   },
+   ObjectTypeDefinition: {
+     leave: ({ description, name, interfaces, directives, fields }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         [
+           'type',
+@@ -163,7 +163,7 @@ const printDocASTReducer = {
+   },
+   FieldDefinition: {
+     leave: ({ description, name, arguments: args, type, directives }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       name +
+       (hasMultilineItems(args)
+         ? wrap('(\n', indent(join(args, '\n')), '\n)')
+@@ -174,7 +174,7 @@ const printDocASTReducer = {
+   },
+   InputValueDefinition: {
+     leave: ({ description, name, type, defaultValue, directives }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         [name + ': ' + type, wrap('= ', defaultValue), join(directives, ' ')],
+         ' ',
+@@ -182,7 +182,7 @@ const printDocASTReducer = {
+   },
+   InterfaceTypeDefinition: {
+     leave: ({ description, name, interfaces, directives, fields }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         [
+           'interface',
+@@ -196,7 +196,7 @@ const printDocASTReducer = {
+   },
+   UnionTypeDefinition: {
+     leave: ({ description, name, directives, types }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(
+         ['union', name, join(directives, ' '), wrap('= ', join(types, ' | '))],
+         ' ',
+@@ -204,21 +204,21 @@ const printDocASTReducer = {
+   },
+   EnumTypeDefinition: {
+     leave: ({ description, name, directives, values }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['enum', name, join(directives, ' '), block(values)], ' '),
+   },
+   EnumValueDefinition: {
+     leave: ({ description, name, directives }) =>
+-      wrap('', description, '\n') + join([name, join(directives, ' ')], ' '),
++      wrap('\n', description, '\n') + join([name, join(directives, ' ')], ' '),
+   },
+   InputObjectTypeDefinition: {
+     leave: ({ description, name, directives, fields }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       join(['input', name, join(directives, ' '), block(fields)], ' '),
+   },
+   DirectiveDefinition: {
+     leave: ({ description, name, arguments: args, repeatable, locations }) =>
+-      wrap('', description, '\n') +
++      wrap('\n', description, '\n') +
+       'directive @' +
+       name +
+       (hasMultilineItems(args)
