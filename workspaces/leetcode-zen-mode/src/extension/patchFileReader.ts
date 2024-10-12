@@ -1,7 +1,11 @@
 import { GRAPHQL_XHR_RESPONSE } from "./constants.ts";
 import { rewriteGraphQLData } from "./rewriteGraphQLData.ts";
 
-export function setUpFileReaderReadAsTextInterception(): void {
+/**
+ * Patch the `FileReader` class so that `Blob` objects labeled as LeetCode
+ * GraphQL responses get rewritten.
+ */
+export function patchFileReader(): void {
   const { readAsText } = FileReader.prototype;
 
   FileReader.prototype.readAsText = function (blob) {
