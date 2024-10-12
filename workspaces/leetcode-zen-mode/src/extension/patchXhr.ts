@@ -2,7 +2,12 @@ import nullthrows from "nullthrows";
 
 import { GRAPHQL_XHR_RESPONSE } from "./constants.ts";
 
-export function setUpXhrResponseInterception(): void {
+/**
+ * Patch the `XMLHttpRequest` class so that we can label the responses for
+ * LeetCode's GraphQL requests with a special symbol, that we can later look
+ * for when the response is parsed.
+ */
+export function patchXhr(): void {
   const xhrResponseDescriptor = Object.getOwnPropertyDescriptor(
     XMLHttpRequest.prototype,
     "response",
