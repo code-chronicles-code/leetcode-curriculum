@@ -3310,3 +3310,12 @@
 {"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3310,"title":"Remove Methods From Project","titleSlug":"remove-methods-from-project"}
 {"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3311,"title":"Construct 2D Grid Matching Graph Layout","titleSlug":"construct-2d-grid-matching-graph-layout"}
 {"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3312,"title":"Sorted GCD Pair Queries","titleSlug":"sorted-gcd-pair-queries"}
+{"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3313,"title":"Find the Last Marked Nodes in Tree","titleSlug":"find-the-last-marked-nodes-in-tree"}
+{"chalengeQuestionDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3314,"title":"Construct the Minimum Bitwise Array I","titleSlug":"construct-the-minimum-bitwise-array-i"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3315,"title":"Construct the Minimum Bitwise Array II","titleSlug":"construct-the-minimum-bitwise-array-ii"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3316,"title":"Find Maximum Removals From Source String","titleSlug":"find-maximum-removals-from-source-string"}
+{"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3317,"title":"Find the Number of Possible Ways for an Event","titleSlug":"find-the-number-of-possible-ways-for-an-event"}
+{"chalengeQuestionDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3318,"title":"Find X-Sum of All K-Long Subarrays I","titleSlug":"find-x-sum-of-all-k-long-subarrays-i"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3319,"title":"K-th Largest Perfect Subtree Size in Binary Tree","titleSlug":"k-th-largest-perfect-subtree-size-in-binary-tree"}
+{"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3320,"title":"Count The Number of Winning Sequences","titleSlug":"count-the-number-of-winning-sequences"}
+{"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3321,"title":"Find X-Sum of All K-Long Subarrays II","titleSlug":"find-x-sum-of-all-k-long-subarrays-ii"}
