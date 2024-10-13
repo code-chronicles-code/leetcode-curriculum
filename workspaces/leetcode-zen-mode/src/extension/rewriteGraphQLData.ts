@@ -1,7 +1,9 @@
+import type { JsonValue } from "type-fest";
+
 import { isObject } from "@code-chronicles/util/isObject";
 import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 
-export function rewriteGraphQLData(value: unknown): unknown {
+export function rewriteGraphQLData(value: JsonValue): JsonValue {
   if (Array.isArray(value)) {
     return value.map(rewriteGraphQLData);
   }

@@ -21,7 +21,7 @@ export function patchPageModule<TThis, TArgs extends unknown[], TRes>(
 
     // LeetCode also uses a module which exposes `jsx` and `jsxs` methods,
     // possibly https://web-cell.dev/
-    if (Object.hasOwn(module, "jsx")) {
+    if (Object.hasOwn(module, "jsx") && !jsxs.has(module)) {
       jsxs.add(module);
       module.jsx = module.jsxs = patchJsxFactory(module.jsx);
     }

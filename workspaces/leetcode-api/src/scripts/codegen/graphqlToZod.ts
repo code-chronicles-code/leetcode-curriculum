@@ -113,7 +113,8 @@ function generateZod(
           ],
         ];
       }
-      case "ID": {
+      case "ID":
+      case "JSONString": {
         invariant(directives.length === 0, "Directives not supported here.");
         return [new ZodOutput("z.string()", true), []];
       }
