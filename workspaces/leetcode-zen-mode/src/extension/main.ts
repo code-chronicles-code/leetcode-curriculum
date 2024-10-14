@@ -1,16 +1,27 @@
-import { patchFileReader } from "./patchFileReader.ts";
+import { mapJsonBlobData } from "@code-chronicles/util/mapJsonBlobData";
+
+import { injectXhrBlobResponseMiddleware } from "./injectXhrBlobResponseMiddleware.ts";
 import { patchWebpackChunkLoading } from "./patchWebpackChunkLoading.ts";
-import { patchXhr } from "./patchXhr.ts";
+import { rewriteGraphQLData } from "./rewriteGraphQLData.ts";
 
 function main() {
   // LeetCode's GraphQL client makes requests through `XMLHttpRequest`, then
   // reads the data as `Blob` objects using the `FileReader` API.
   //
-  // So we will label `Blob` objects from `XMLHttpRequest` responses with a
-  // special symbol, and then later, when reading from the marked `Blob`
-  // objects, we will rewrite the data a bit.
-  patchXhr();
-  patchFileReader();
+  // So we will inject some middleware to rewrite `XMLHttpRequest` responses
+  // a bit.
+  injectXhrBlobResponseMiddleware((xhr, blob) => {
+    if (xhr.responseURL === "https://leetcode.com/graphql/") {
+      try {
+        return mapJsonBlobData(blob, rewriteGraphQLData);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    // No-op for requests that aren't for LeetCode's GraphQL endpoint.
+    return blob;
+  });
 
   // Additionally, we will patch some of the actual page code! We will do so
   // by trying to intercept `webpack` chunk loading, so that we can patch the
