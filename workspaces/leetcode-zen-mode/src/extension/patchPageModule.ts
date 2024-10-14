@@ -1,16 +1,13 @@
 import { patchJsxFactory } from "./patchJsxFactory.ts";
 
+// TODO: weak set?
 const jsxs = new Set();
 
-export function patchPageModule<TThis, TArgs extends unknown[], TRes>(
-  moduleFn: (this: TThis, ...args: TArgs) => TRes,
-): (this: TThis, ...args: TArgs) => TRes {
-  return function () {
-    const res = moduleFn.apply(
-      this,
-      Array.from(arguments) as Parameters<typeof moduleFn>,
-    );
+export function patchPageModule<T extends Function>(moduleFn: T): T {
+  return function (this: ThisParameterType<T>) {
+    const res = moduleFn.apply(this, arguments);
 
+    // TODO: more defensive programming
     const module = arguments[0].exports;
 
     // The core React module is some module with a `useLayoutEffect` property.
@@ -27,5 +24,5 @@ export function patchPageModule<TThis, TArgs extends unknown[], TRes>(
     }
 
     return res;
-  };
+  } as unknown as T;
 }

@@ -1,5 +1,3 @@
-import type { JsonValue } from "type-fest";
-
 import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
 import { isString } from "@code-chronicles/util/isString";
 import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
@@ -9,7 +7,7 @@ import { rewriteLeetCodeAggregateDataForDifficulty } from "./rewriteLeetCodeAggr
 
 import { PREFERRED_STRING_CASE, STRING_CASE_CHECKERS } from "./stringCase.ts";
 
-export function rewriteLeetCodeGraphQLData(value: JsonValue): JsonValue {
+export function rewriteLeetCodeGraphQLData(value: unknown): unknown {
   if (Array.isArray(value)) {
     // Arrays get some extra processing.
     const rewrittenValue = rewriteLeetCodeAggregateDataForDifficulty(value);

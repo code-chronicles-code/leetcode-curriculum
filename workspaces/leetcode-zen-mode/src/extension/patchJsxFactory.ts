@@ -15,6 +15,7 @@ type CreateElementFn = (
 export function patchJsxFactory(
   createElementFn: CreateElementFn,
 ): CreateElementFn {
+  // TODO: match the length of createElementFn
   return function (_elementType, props) {
     try {
       // Remove the Difficulty dropdown on `/problemset/`. The dropdown is
@@ -47,6 +48,7 @@ export function patchJsxFactory(
 
     return createElementFn.apply(
       this,
+      // Slight lie but `.apply` will work with the `arguments` object.
       arguments as unknown as Parameters<CreateElementFn>,
     );
   };
