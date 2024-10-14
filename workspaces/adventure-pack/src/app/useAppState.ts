@@ -68,9 +68,9 @@ function reducer(state: AppState, action: Action): AppState {
     }
   }
 
-  // @ts-expect-error Switch should be exhaustive.
+  // @ts-expect-error Unreachable code, switch should be exhaustive.
   console.error("Unhandled action type:", action);
-  // @ts-expect-error Switch should be exhaustive.
+  // @ts-expect-error Unreachable code, switch should be exhaustive.
   return state;
 }
 

@@ -1,3 +1,5 @@
+import { isString } from "@code-chronicles/util/isString";
+
 import { patchPageModule } from "./patchPageModule.ts";
 
 /**
@@ -14,7 +16,7 @@ export function patchWebpackChunkLoading() {
   // subscribe to pushes into this array.
   window.self = new Proxy(originalSelf, {
     set(target, prop, webpackChunk) {
-      if (typeof prop === "string" && prop.startsWith("webpackChunk")) {
+      if (isString(prop) && prop.startsWith("webpackChunk")) {
         // Once we've found the magic `webpack` array we remove the proxy,
         // parts of the page seem to break without this.
         window.self = originalSelf;

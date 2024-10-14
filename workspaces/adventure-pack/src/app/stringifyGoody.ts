@@ -42,8 +42,8 @@ export function stringifyGoody(goody: Goody): string {
     }
   }
 
-  // @ts-expect-error Switch should be exhaustive.
+  // @ts-expect-error Unreachable code, switch should be exhaustive.
   console.error("Unsupported goody language:", goody);
-  // @ts-expect-error Switch should be exhaustive.
+  // @ts-expect-error Unreachable code, switch should be exhaustive.
   return goody.code;
 }
