@@ -1,47 +1,53 @@
+import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
+import { isString } from "@code-chronicles/util/isString";
+
 function Null() {
   return null;
 }
 
-export function patchJsxFactory<TThis, TArgs extends unknown[], TRes>(
-  createFn: (this: TThis, ...args: TArgs) => TRes,
-): (this: TThis, ...args: TArgs) => TRes {
-  return function () {
-    try {
-      const props = arguments[1] ?? {};
+type CreateElementFn = (
+  this: unknown,
+  elementType: unknown,
+  props: unknown,
+  ...children: unknown[]
+) => unknown;
 
+export function patchJsxFactory(
+  createElementFn: CreateElementFn,
+): CreateElementFn {
+  return function (_elementType, props) {
+    try {
       // Remove the Difficulty dropdown on `/problemset/`. The dropdown is
       // implemented as a React element with an `items` prop which is an
       // array. We'll replace it with a React element that renders nothing.
       if (
+        isNonArrayObject(props) &&
         Array.isArray(props.items) &&
-        props.items.some((it: Record<string, unknown>) => it.value === "EASY")
+        props.items.some(
+          (it: Record<string, unknown>) =>
+            isString(it.value) && /^easy$/i.test(it.value),
+        )
       ) {
-        return createFn.apply(this, [Null, {}] as Parameters<typeof createFn>);
+        return createElementFn.apply(this, [Null, {}]);
       }
 
-      // Update the session progress component on `/problemset/` to show a
-      // single entry, based on the total number of problems.
-      if (props.userSessionProgress) {
-        for (const key of ["progresses", "submitPercentages"]) {
-          if (Array.isArray(props.userSessionProgress[key])) {
-            const total = props.userSessionProgress[key].find(
-              (it: Record<string, unknown>) => it.difficulty === "TOTAL",
-            );
-
-            props.userSessionProgress[key] = [
-              total,
-              { ...total, difficulty: "EASY" },
-            ];
-          }
-        }
+      // Remove the non-Easy sections of the problems solved panel on user
+      // profiles. These are implemented as React elements with a `category`
+      // prop which is a problem difficulty.
+      if (
+        isNonArrayObject(props) &&
+        isString(props.category) &&
+        /^(?:medium|hard)$/i.test(props.category)
+      ) {
+        return createElementFn.apply(this, [Null, {}]);
       }
     } catch (err) {
       console.error(err);
     }
 
-    return createFn.apply(
+    return createElementFn.apply(
       this,
-      Array.from(arguments) as Parameters<typeof createFn>,
+      arguments as unknown as Parameters<CreateElementFn>,
     );
   };
 }

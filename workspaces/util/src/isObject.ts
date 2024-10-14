@@ -1,3 +1,4 @@
+// TODO: deprecate in favor of the clearer name `isNonArrayObject`
 export function isObject(
   value: unknown,
 ): value is Record<PropertyKey, unknown> {

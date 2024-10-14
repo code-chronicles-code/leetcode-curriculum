@@ -2,7 +2,7 @@ import { mapJsonBlobData } from "@code-chronicles/util/mapJsonBlobData";
 
 import { injectXhrBlobResponseMiddleware } from "./injectXhrBlobResponseMiddleware.ts";
 import { patchWebpackChunkLoading } from "./patchWebpackChunkLoading.ts";
-import { rewriteGraphQLData } from "./rewriteGraphQLData.ts";
+import { rewriteLeetCodeGraphQLData } from "./rewriteLeetCodeGraphQLData.ts";
 
 function main() {
   // LeetCode's GraphQL client makes requests through `XMLHttpRequest`, then
@@ -13,7 +13,7 @@ function main() {
   injectXhrBlobResponseMiddleware((xhr, blob) => {
     if (xhr.responseURL === "https://leetcode.com/graphql/") {
       try {
-        return mapJsonBlobData(blob, rewriteGraphQLData);
+        return mapJsonBlobData(blob, rewriteLeetCodeGraphQLData);
       } catch (err) {
         console.error(err);
       }
