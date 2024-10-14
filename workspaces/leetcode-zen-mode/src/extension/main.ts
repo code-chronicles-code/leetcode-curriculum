@@ -10,17 +10,17 @@ function main() {
   //
   // So we will inject some middleware to rewrite `XMLHttpRequest` responses
   // a bit.
-  injectXhrBlobResponseMiddleware(async (xhr, blob) => {
-    // No-op for requests that aren't for LeetCode's GraphQL endpoint.
-    if (xhr.responseURL !== "https://leetcode.com/graphql/") {
-      return blob;
+  injectXhrBlobResponseMiddleware((xhr, blob) => {
+    if (xhr.responseURL === "https://leetcode.com/graphql/") {
+      try {
+        return mapJsonBlobData(blob, rewriteGraphQLData);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
-    try {
-      return mapJsonBlobData(blob, rewriteGraphQLData);
-    } catch (err) {
-      console.error(err);
-    }
+    // No-op for requests that aren't for LeetCode's GraphQL endpoint.
+    return blob;
   });
 
   // Additionally, we will patch some of the actual page code! We will do so

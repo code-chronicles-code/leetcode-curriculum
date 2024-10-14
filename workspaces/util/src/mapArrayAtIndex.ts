@@ -1,4 +1,4 @@
-import { Writable } from "type-fest";
+import type { Writable } from "type-fest";
 
 export function mapArrayAtIndex<
   TArray extends readonly unknown[],
