@@ -1,9 +1,7 @@
 import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
 import { isString } from "@code-chronicles/util/isString";
-
-function Null() {
-  return null;
-}
+import { assignFunctionCosmeticProperties } from "@code-chronicles/util/object-properties/assignFunctionCosmeticProperties";
+import { NullReactElement } from "@code-chronicles/util/browser-extensions/NullReactElement";
 
 type CreateElementFn = (
   this: unknown,
@@ -15,8 +13,7 @@ type CreateElementFn = (
 export function patchJsxFactory(
   createElementFn: CreateElementFn,
 ): CreateElementFn {
-  // TODO: match the length of createElementFn
-  return function (_elementType, props) {
+  return assignFunctionCosmeticProperties(function (_elementType, props) {
     try {
       // Remove the Difficulty dropdown on `/problemset/`. The dropdown is
       // implemented as a React element with an `items` prop which is an
@@ -29,7 +26,7 @@ export function patchJsxFactory(
             isString(it.value) && /^easy$/i.test(it.value),
         )
       ) {
-        return createElementFn.apply(this, [Null, {}]);
+        return createElementFn.apply(this, [NullReactElement, {}]);
       }
 
       // Remove the non-Easy sections of the problems solved panel on user
@@ -40,7 +37,7 @@ export function patchJsxFactory(
         isString(props.category) &&
         /^(?:medium|hard)$/i.test(props.category)
       ) {
-        return createElementFn.apply(this, [Null, {}]);
+        return createElementFn.apply(this, [NullReactElement, {}]);
       }
     } catch (err) {
       console.error(err);
@@ -51,5 +48,5 @@ export function patchJsxFactory(
       // Slight lie but `.apply` will work with the `arguments` object.
       arguments as unknown as Parameters<CreateElementFn>,
     );
-  };
+  }, createElementFn);
 }

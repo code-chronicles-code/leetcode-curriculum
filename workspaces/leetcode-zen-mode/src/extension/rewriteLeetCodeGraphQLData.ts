@@ -4,7 +4,6 @@ import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 import { stringToCase } from "@code-chronicles/util/stringToCase";
 
 import { rewriteLeetCodeAggregateDataForDifficulty } from "./rewriteLeetCodeAggregateDataForDifficulty.ts";
-
 import { PREFERRED_STRING_CASE, STRING_CASE_CHECKERS } from "./stringCase.ts";
 
 export function rewriteLeetCodeGraphQLData(value: unknown): unknown {
