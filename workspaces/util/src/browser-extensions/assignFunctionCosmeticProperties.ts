@@ -1,5 +1,5 @@
 /**
- * Copy some of the cosmetic properties (`name`, `length`) from the `source`
+ * Copies some of the cosmetic properties (`name`, `length`) from the `source`
  * function to the `target` function. Returns the `target`.
  */
 export function assignFunctionCosmeticProperties<T extends Function>(
