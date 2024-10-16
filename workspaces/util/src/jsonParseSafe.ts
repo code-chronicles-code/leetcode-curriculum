@@ -1,19 +1,16 @@
 import type { JsonValue } from "type-fest";
 
+import type { Result } from "@code-chronicles/util/getResult";
+import { resultify } from "./resultify.ts";
+
 // TODO: could have more interesting typing when there's a reviver
 
-export function jsonParseSafe(text: string): { data: JsonValue } | undefined;
+type JsonParseSafe = {
+  (text: string): Result<JsonValue>;
 
-export function jsonParseSafe(
-  ...args: Parameters<typeof JSON.parse>
-): { data: unknown } | undefined;
+  (...args: Parameters<typeof JSON.parse>): Result<unknown>;
+};
 
-export function jsonParseSafe(
-  ...args: Parameters<typeof JSON.parse>
-): { data: JsonValue } | undefined {
-  try {
-    return { data: JSON.parse(...args) };
-  } catch {
-    return undefined;
-  }
-}
+export const jsonParseSafe: JsonParseSafe = resultify(
+  JSON.parse,
+) as JsonParseSafe;

@@ -1,7 +1,7 @@
 import invariant from "invariant";
 import type { Promisable } from "type-fest";
 
-import { assignFunctionCosmeticProperties } from "@code-chronicles/util/browser-extensions/assignFunctionCosmeticProperties";
+import { assignFunctionCosmeticProperties } from "@code-chronicles/util/object-properties/assignFunctionCosmeticProperties";
 import { isDataPropertyDescriptor } from "@code-chronicles/util/object-properties/isDataPropertyDescriptor";
 import { mapArrayAtIndex } from "@code-chronicles/util/mapArrayAtIndex";
 import { redefineObjectProperty } from "@code-chronicles/util/object-properties/redefineObjectProperty";
@@ -13,7 +13,7 @@ import type { PropertyDescriptorOf } from "@code-chronicles/util/object-properti
 
 type ReadAsText = typeof FileReader.prototype.readAsText;
 
-type MiddlewareFn = (
+type Middleware = (
   xhr: XMLHttpRequest,
   ...readAsTextArgs: Parameters<ReadAsText>
 ) => Promisable<Blob | void | undefined>;
@@ -34,7 +34,7 @@ type MiddlewareFn = (
  * in the future.
  */
 export function injectXhrBlobResponseMiddleware(
-  middlewareFn: MiddlewareFn,
+  middlewareFn: Middleware,
 ): void {
   const getXhrForBlob = startRecordingXhrResponseBlobs();
 

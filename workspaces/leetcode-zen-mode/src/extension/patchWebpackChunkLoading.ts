@@ -1,4 +1,4 @@
-import { assignFunctionCosmeticProperties } from "@code-chronicles/util/browser-extensions/assignFunctionCosmeticProperties";
+import { assignFunctionCosmeticProperties } from "@code-chronicles/util/object-properties/assignFunctionCosmeticProperties";
 import { isString } from "@code-chronicles/util/isString";
 
 import { patchPageModule } from "./patchPageModule.ts";
