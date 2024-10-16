@@ -10,7 +10,7 @@ export function mergeObjects<TObj extends Record<string, unknown>>(
 ): TObj {
   const groupedEntries = [
     ...groupBy(
-      [...objects].flatMap(Object.entries) as [string, TObj][],
+      [...objects].flatMap(Object.entries) as [keyof TObj, TObj[keyof TObj]][],
       ([key]) => key,
     ),
   ];

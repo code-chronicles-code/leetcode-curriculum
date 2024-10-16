@@ -1,28 +1,15 @@
-import type { JsonArray, JsonObject } from "type-fest";
 import nullthrows from "nullthrows";
 
 import { firstOrThrow } from "@code-chronicles/util/firstOrThrow";
 import { groupBy } from "@code-chronicles/util/groupBy";
 import { isArrayOfNumbers } from "@code-chronicles/util/isArrayOfNumbers";
-import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
-import { isString } from "@code-chronicles/util/isString";
 import { mergeObjects } from "@code-chronicles/util/mergeObjects";
 import { only } from "@code-chronicles/util/only";
 import { sum } from "@code-chronicles/util/sum";
 import { stringToCase, type Case } from "@code-chronicles/util/stringToCase";
 
+import { isArrayOfDataByDifficulty } from "./isArrayOfDataByDifficulty.ts";
 import { PREFERRED_STRING_CASE, STRING_CASE_CHECKERS } from "./stringCase.ts";
-
-function isArrayOfDataByDifficulty(
-  arr: JsonArray,
-): arr is ({ difficulty: string } & JsonObject)[] {
-  return arr.every(
-    (elem) =>
-      isNonArrayObject(elem) &&
-      Object.hasOwn(elem, "difficulty") &&
-      isString(elem.difficulty),
-  );
-}
 
 /**
  * Some of the LeetCode GraphQL data is aggregate statistics about problems
@@ -30,8 +17,8 @@ function isArrayOfDataByDifficulty(
  * re-aggregate.
  */
 export function rewriteLeetCodeAggregateDataForDifficulty(
-  arr: JsonArray,
-): JsonArray {
+  arr: unknown[],
+): unknown[] {
   // Do nothing if it's not the kind of data we're looking for.
   if (!isArrayOfDataByDifficulty(arr)) {
     return arr;
