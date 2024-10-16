@@ -1,6 +1,7 @@
 import { injectJsonParseMiddleware } from "@code-chronicles/util/browser-extensions/injectJsonParseMiddleware";
 
-import { patchWebpackChunkLoading } from "./patchWebpackChunkLoading.ts";
+import { injectWebpackChunkLoadingMiddleware } from "./injectWebpackChunkLoadingMiddleware.ts";
+import { patchPageModule } from "./patchPageModule.ts";
 import { rewriteLeetCodeGraphQLData } from "./rewriteLeetCodeGraphQLData.ts";
 
 function main(): void {
@@ -14,8 +15,8 @@ function main(): void {
 
   // Additionally, we will patch some of the actual page code! We will do so
   // by trying to intercept `webpack` chunk loading, so that we can patch the
-  // modules used by the page.
-  patchWebpackChunkLoading();
+  // packages used by the page.
+  injectWebpackChunkLoadingMiddleware(patchPageModule);
 }
 
 main();

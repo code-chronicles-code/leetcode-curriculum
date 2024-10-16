@@ -1,17 +1,21 @@
 import { assignFunctionCosmeticProperties } from "@code-chronicles/util/object-properties/assignFunctionCosmeticProperties";
+import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
 import { isString } from "@code-chronicles/util/isString";
 
-import { patchPageModule } from "./patchPageModule.ts";
-import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
+type Middleware = (packageFactory: Function) => Function;
 
 type Push = typeof Array.prototype.push;
 
 /**
  * Patches `webpack` chunk loading so that we can intercept and patch the
- * modules used by the page.
+ * packages used by the page.
  */
-export function patchWebpackChunkLoading(): void {
+export function injectWebpackChunkLoadingMiddleware(
+  middlewareFn: Middleware,
+): void {
   const prevSelf = window.self;
+
+  // TODO: update comment to not be LeetCode-specific
 
   // LeetCode's `webpack` works by pushing information about chunks onto a
   // globally defined array named something like `webpackChunk_N_E`. The array
@@ -22,13 +26,12 @@ export function patchWebpackChunkLoading(): void {
     set(target, prop, newValue) {
       const res = Reflect.set(target, prop, newValue);
 
-      if (
-        !(
-          isString(prop) &&
-          prop.startsWith("webpackChunk") &&
-          typeof (newValue ?? {}).push === "function"
-        )
-      ) {
+      if (!(isString(prop) && prop.startsWith("webpackChunk"))) {
+        return res;
+      }
+
+      if (typeof newValue?.push !== "function") {
+        // TODO: console.error something interesting
         return res;
       }
 
@@ -37,7 +40,7 @@ export function patchWebpackChunkLoading(): void {
       window.self = prevSelf;
 
       // The `webpack` bootstrapping code reassigns the array's `push`
-      // method. We will intercept this reassignment so we can patch modules
+      // method. We will intercept this reassignment so we can patch packages
       // before they are registered.
       let push: Push = newValue.push;
       Object.defineProperty(newValue, "push", {
@@ -74,7 +77,7 @@ export function patchWebpackChunkLoading(): void {
                   continue;
                 }
 
-                modules[key as any] = patchPageModule(module);
+                modules[key as any] = middlewareFn(module);
               }
             }
 
