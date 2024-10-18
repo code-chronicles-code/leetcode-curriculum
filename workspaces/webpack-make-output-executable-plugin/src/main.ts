@@ -4,10 +4,9 @@ import path from "node:path";
 import type { Compiler } from "webpack";
 
 export class WebpackMakeOutputExecutablePlugin {
-  // eslint-disable-next-line class-methods-use-this -- This is the interface expected by webpack.
   apply(compiler: Compiler): void {
     compiler.hooks.afterEmit.tapPromise(
-      "WebpackMakeOutputExecutablePlugin",
+      this.constructor.name,
       async (compilation) => {
         const promises: Promise<void>[] = [];
 

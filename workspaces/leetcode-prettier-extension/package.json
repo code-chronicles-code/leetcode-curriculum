@@ -14,9 +14,9 @@
     "url": "https://github.com/miorel"
   },
   "type": "module",
-  "exports": "./src/extension/main.ts",
+  "exports": "./src/main.ts",
   "scripts": {
-    "build": "tsx src/scripts/writeManifest.ts && cross-env NODE_OPTIONS=\"--import tsx\" webpack",
+    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "typecheck": "tsc --pretty --project ."
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
-    "@code-chronicles/util": "workspace:*",
+    "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*",
     "@types/node": "22.7.6",
     "cross-env": "7.0.3",
     "eslint": "9.12.0",
