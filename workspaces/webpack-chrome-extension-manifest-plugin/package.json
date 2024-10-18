@@ -1,43 +1,36 @@
 {
-  "name": "@code-chronicles/leetcode-zen-mode",
-  "description": "TODO: add a nice description",
+  "name": "@code-chronicles/webpack-chrome-extension-manifest-plugin",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
-    "directory": "workspaces/leetcode-zen-mode"
+    "directory": "workspaces/webpack-chrome-extension-manifest-plugin"
   },
   "author": {
     "name": "Miorel-Lucian Palii",
     "url": "https://github.com/miorel"
   },
   "type": "module",
-  "exports": "./src/main.ts",
+  "exports": {
+    ".": "./src/main.ts"
+  },
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "typecheck": "tsc --pretty --project ."
   },
   "dependencies": {
-    "@code-chronicles/util": "workspace:*",
-    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
+    "@code-chronicles/util": "workspace:*"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
-    "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*",
     "@types/node": "22.7.6",
-    "cross-env": "7.0.3",
     "eslint": "9.12.0",
-    "fork-ts-checker-webpack-plugin": "9.0.2",
     "prettier": "3.3.3",
-    "ts-loader": "9.5.1",
-    "tsx": "4.19.1",
     "type-fest": "4.26.1",
     "typescript": "5.6.3",
-    "webpack": "5.95.0",
-    "webpack-cli": "5.1.4"
+    "webpack": "5.95.0"
   }
 }
