@@ -3,7 +3,8 @@ name: Set Up Everything
 inputs:
   node-version:
     required: true
-    default: latest
+    # TODO: replace with latest, it was causing some Yarn checksum issues recently though
+    default: 22.6.0
 
 runs:
   using: composite
