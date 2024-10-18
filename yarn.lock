@@ -1046,6 +1046,7 @@ __metadata:
     cross-env: "npm:7.0.3"
     eslint: "npm:9.12.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
+    monaco-editor: "npm:0.52.0"
     prettier: "npm:3.3.3"
     ts-loader: "npm:9.5.1"
     tsx: "npm:4.19.1"
@@ -8359,6 +8360,13 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 10c0/46ea0f3ffa8bc6a5bc0c7081ffc3907777f0ed6516888d40a518c5111f8366d97d2678911ad1a6882bf592fa9de6c784fea32e1687bb94e1f4944170af48a5cf
+  languageName: node
+  linkType: hard
+
+"monaco-editor@npm:0.52.0":
+  version: 0.52.0
+  resolution: "monaco-editor@npm:0.52.0"
+  checksum: 10c0/962c75272568eb1556835f0097da2c7768bffe1116b252bb8b3aefd34f31e2dc46baa27e3911c0a6617bf556e6d6802e6e9f0f5548edd832c33872a8a0c146d3
   languageName: node
   linkType: hard
 
