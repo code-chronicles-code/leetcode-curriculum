@@ -3319,3 +3319,9 @@
 {"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3319,"title":"K-th Largest Perfect Subtree Size in Binary Tree","titleSlug":"k-th-largest-perfect-subtree-size-in-binary-tree"}
 {"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3320,"title":"Count The Number of Winning Sequences","titleSlug":"count-the-number-of-winning-sequences"}
 {"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3321,"title":"Find X-Sum of All K-Long Subarrays II","titleSlug":"find-x-sum-of-all-k-long-subarrays-ii"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3322,"title":"Premier League Table Ranking III","titleSlug":"premier-league-table-ranking-iii"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3323,"title":"Minimize Connected Groups by Inserting Interval","titleSlug":"minimize-connected-groups-by-inserting-interval"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3324,"title":"Find the Sequence of Strings Appeared on the Screen","titleSlug":"find-the-sequence-of-strings-appeared-on-the-screen"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3325,"title":"Count Substrings With K-Frequency Characters I","titleSlug":"count-substrings-with-k-frequency-characters-i"}
+{"chalengeQuestionDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3326,"title":"Minimum Division Operations to Make Array Non Decreasing","titleSlug":"minimum-division-operations-to-make-array-non-decreasing"}
+{"chalengeQuestionDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3327,"title":"Check if DFS Strings Are Palindromes","titleSlug":"check-if-dfs-strings-are-palindromes"}
