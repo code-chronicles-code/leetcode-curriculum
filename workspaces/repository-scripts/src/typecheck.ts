@@ -30,7 +30,7 @@ export async function run(): Promise<void> {
 
       await spawnWithSafeStdio(
         "yarn",
-        ["workspaces", "foreach", "-pA", "run", "typecheck"],
+        ["workspaces", "foreach", "-pAvv", "run", "typecheck"],
         { stdio: "inherit", env },
       );
     } else {
@@ -44,6 +44,8 @@ export async function run(): Promise<void> {
     }
   } catch (err) {
     console.error(err);
+
+    // eslint-disable-next-line require-atomic-updates -- Updating `process.exitCode` on error is logical.
     process.exitCode = 1;
   }
 }
