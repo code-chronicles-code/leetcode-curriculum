@@ -19,13 +19,14 @@
     "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "typecheck": "tsc --pretty --project ."
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
   },
   "dependencies": {
     "prettier": "3.3.3"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*",
     "@types/node": "22.7.6",
     "cross-env": "7.0.3",

@@ -855,6 +855,7 @@ __metadata:
   resolution: "@code-chronicles/adventure-pack@workspace:workspaces/adventure-pack"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@jest/globals": "npm:29.7.0"
     "@types/node": "npm:22.7.6"
@@ -897,6 +898,7 @@ __metadata:
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.7.6"
@@ -918,6 +920,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@code-chronicles/eslint-config@workspace:workspaces/eslint-config"
   dependencies:
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@stylistic/eslint-plugin-js": "npm:2.9.0"
     "@stylistic/eslint-plugin-ts": "npm:2.9.0"
     "@typescript-eslint/eslint-plugin": "npm:8.10.0"
@@ -929,6 +932,7 @@ __metadata:
     eslint-plugin-jest: "npm:28.8.3"
     globals: "npm:15.11.0"
     prettier: "npm:3.3.3"
+    tsx: "npm:4.19.1"
     typescript: "npm:5.6.3"
   languageName: unknown
   linkType: soft
@@ -939,6 +943,7 @@ __metadata:
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.7.6"
@@ -960,6 +965,7 @@ __metadata:
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.7.6"
@@ -995,6 +1001,7 @@ __metadata:
   resolution: "@code-chronicles/javascript-leetcode-month@workspace:workspaces/javascript-leetcode-month"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@types/mdast": "npm:4.0.4"
     "@types/node": "npm:22.7.6"
@@ -1013,6 +1020,7 @@ __metadata:
   resolution: "@code-chronicles/leetcode-api@workspace:workspaces/leetcode-api"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@graphql-codegen/add": "npm:5.0.3"
     "@graphql-codegen/cli": "npm:5.0.3"
@@ -1041,6 +1049,7 @@ __metadata:
   resolution: "@code-chronicles/leetcode-prettier-extension@workspace:workspaces/leetcode-prettier-extension"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*"
     "@types/node": "npm:22.7.6"
     cross-env: "npm:7.0.3"
@@ -1062,6 +1071,7 @@ __metadata:
   resolution: "@code-chronicles/leetcode-zen-mode@workspace:workspaces/leetcode-zen-mode"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*"
     "@types/node": "npm:22.7.6"
@@ -1085,6 +1095,7 @@ __metadata:
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/leetcode-api": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/invariant": "npm:2.2.37"
@@ -1106,7 +1117,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@code-chronicles/repository-scripts@workspace:workspaces/repository-scripts":
+"@code-chronicles/repository-scripts@workspace:*, @code-chronicles/repository-scripts@workspace:workspaces/repository-scripts":
   version: 0.0.0-use.local
   resolution: "@code-chronicles/repository-scripts@workspace:workspaces/repository-scripts"
   dependencies:
@@ -1126,6 +1137,7 @@ __metadata:
   resolution: "@code-chronicles/util@workspace:workspaces/util"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@jest/globals": "npm:29.7.0"
     "@types/node": "npm:22.7.6"
@@ -1148,10 +1160,12 @@ __metadata:
   resolution: "@code-chronicles/webpack-chrome-extension-manifest-plugin@workspace:workspaces/webpack-chrome-extension-manifest-plugin"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@types/node": "npm:22.7.6"
     eslint: "npm:9.12.0"
     prettier: "npm:3.3.3"
+    tsx: "npm:4.19.1"
     type-fest: "npm:4.26.1"
     typescript: "npm:5.6.3"
     webpack: "npm:5.95.0"
@@ -1163,9 +1177,11 @@ __metadata:
   resolution: "@code-chronicles/webpack-make-output-executable-plugin@workspace:workspaces/webpack-make-output-executable-plugin"
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@types/node": "npm:22.7.6"
     eslint: "npm:9.12.0"
     prettier: "npm:3.3.3"
+    tsx: "npm:4.19.1"
     typescript: "npm:5.6.3"
     webpack: "npm:5.95.0"
   languageName: unknown
@@ -9386,11 +9402,13 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
     "@yarnpkg/types": "npm:4.0.0"
     eslint: "npm:9.12.0"
     husky: "npm:9.1.6"
     lint-staged: "npm:15.2.10"
     prettier: "npm:3.3.3"
+    tsx: "npm:4.19.1"
   languageName: unknown
   linkType: soft
 

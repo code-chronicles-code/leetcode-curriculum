@@ -55,7 +55,7 @@
     "lint": "eslint --color --max-warnings=0 .",
     "postinstall": "yarn goodies:java:install && yarn goodies:kotlin:install && yarn goodies:python3:install",
     "test": "yarn goodies:java:test && yarn goodies:kotlin:test && yarn goodies:python3:test && yarn goodies:typescript:test && yarn package-goodies:test",
-    "typecheck": "tsc --pretty --project ."
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
   },
   "dependencies": {
     "immutability-helper": "patch:immutability-helper@npm%3A3.1.1#~/.yarn/patches/immutability-helper-npm-3.1.1-482f1f8f58.patch",
@@ -67,6 +67,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/util": "workspace:*",
     "@jest/globals": "29.7.0",
     "@types/node": "22.7.6",
