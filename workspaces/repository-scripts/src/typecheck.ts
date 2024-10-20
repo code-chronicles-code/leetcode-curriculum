@@ -25,13 +25,13 @@ export async function run(): Promise<void> {
         "Looks like you're running typecheck in the root workspace, will typecheck the whole project!",
       );
 
-      // Strip out the `npm_lifecycle_event` environment variable so that we'll recursively run the script on the root workspace again!
-      const { npm_lifecycle_event: _, ...env } = process.env;
+      // We could strip out the `npm_lifecycle_event` environment variable so that we'll recursively run the script on the root workspace again:
+      // const { npm_lifecycle_event: _, ...env } = process.env;
 
       await spawnWithSafeStdio(
         "yarn",
         ["workspaces", "foreach", "-pAvv", "run", "typecheck"],
-        { stdio: "inherit", env },
+        { stdio: "inherit" },
       );
     } else {
       console.warn(
