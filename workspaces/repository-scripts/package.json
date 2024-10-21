@@ -13,11 +13,14 @@
     "url": "https://github.com/miorel"
   },
   "type": "module",
+  "exports": {
+    "./typecheck": "./src/typecheck.ts"
+  },
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "start": "tsx src/main.ts",
-    "typecheck": "tsc --pretty --project ."
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",

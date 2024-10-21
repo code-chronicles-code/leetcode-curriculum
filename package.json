@@ -13,15 +13,17 @@
     "lint": "yarn workspace @code-chronicles/repository-scripts start lint",
     "prepare": "husky",
     "test": "yarn workspace @code-chronicles/repository-scripts start test",
-    "typecheck": "yarn workspace @code-chronicles/repository-scripts start typecheck"
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/repository-scripts": "workspace:*",
     "@yarnpkg/types": "4.0.0",
     "eslint": "9.12.0",
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
-    "prettier": "3.3.3"
+    "prettier": "3.3.3",
+    "tsx": "4.19.1"
   },
   "packageManager": "yarn@4.5.1"
 }

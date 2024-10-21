@@ -22,7 +22,7 @@
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "test": "tsx ./jest.config.ts",
-    "typecheck": "tsc --pretty --project ."
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
   },
   "peerDependencies": {
     "invariant": "*",
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/util": "workspace:*",
     "@jest/globals": "29.7.0",
     "@types/node": "22.7.6",

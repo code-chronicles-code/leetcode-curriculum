@@ -24,7 +24,7 @@
     "patch-graphql-schema": "tsx src/scripts/patch-graphql-schema/main.ts",
     "scrape-graphql-schema": "tsx src/scripts/scrape-graphql-schema/main.ts",
     "test": "tsx ./jest.config.ts",
-    "typecheck": "tsc --pretty --project ."
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/repository-scripts": "workspace:*",
     "@graphql-codegen/add": "5.0.3",
     "@graphql-codegen/cli": "5.0.3",
     "@graphql-codegen/near-operation-file-preset": "3.0.0",
