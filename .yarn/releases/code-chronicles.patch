@@ -1,0 +1,172 @@
+From: Miorel-Lucian Palii <mlpalii@gmail.com>
+Date: Sun, 20 Oct 2024 20:42:19 -0700
+Subject: Code Chronicles Yarn patch!
+
+---
+ .../sources/commands/set/version/sources.ts   | 16 ++++++++----
+ .../sources/commands/foreach.ts               | 10 ++++++--
+ .../sources/commands/build/bundle.ts          |  9 ++++++-
+ packages/yarnpkg-core/sources/Manifest.ts     |  3 +--
+ packages/yarnpkg-core/sources/Report.ts       | 25 +++++++++++--------
+ 5 files changed, 42 insertions(+), 21 deletions(-)
+
+diff --git a/packages/plugin-essentials/sources/commands/set/version/sources.ts b/packages/plugin-essentials/sources/commands/set/version/sources.ts
+index dc38915c1d06f9f41638c55b973fb08f2f695358..0ab5eec31a8109f165a146d4822369a3f31bb8f5 100644
+--- a/packages/plugin-essentials/sources/commands/set/version/sources.ts
++++ b/packages/plugin-essentials/sources/commands/set/version/sources.ts
+@@ -2,7 +2,8 @@ import {BaseCommand}
+ import {Configuration, MessageName, StreamReport, execUtils, formatUtils, CommandContext, Report, hashUtils, Project} from '@yarnpkg/core';
+ import {Filename, PortablePath, npath, ppath, xfs}                                                                    from '@yarnpkg/fslib';
+ import {Command, Option, Usage}                                                                                       from 'clipanion';
+-import {tmpdir}                                                                                                       from 'os';
++import {tmpdir}                                                                                                       from 'node:os';
++import path                                                                                                           from 'node:path'
+ 
+ import {buildAndSavePlugin, BuildAndSavePluginsSpec}                                                                  from '../../plugin/import/sources';
+ import {getAvailablePlugins}                                                                                          from '../../plugin/list';
+@@ -33,6 +34,9 @@ const updateWorkflow = ({branch}: {branch: string}) => [
+ ];
+ 
+ const buildWorkflow = ({plugins, noMinify}: {noMinify: boolean, plugins: Array<string>}, output: PortablePath, target: PortablePath) => [
++  // [Code Chronicles] Apply our custom patch! This should be a file in the
++  // same directory as the currently running instance of Yarn.
++  [`git`, `am`, path.resolve(path.dirname(process.argv[1]), `code-chronicles.patch`)],
+   [`yarn`, `build:cli`, ...new Array<string>().concat(...plugins.map(plugin => [`--plugin`, ppath.resolve(target, plugin as Filename)])), ...noMinify ? [`--no-minify`] : [], `|`],
+   [IS_WIN32 ? `move` : `mv`, `packages/yarnpkg-cli/bundles/yarn.js`, npath.fromPortablePath(output), `|`],
+ ];
+@@ -109,10 +113,12 @@ export default class SetVersionSourcesCommand extends BaseCommand {
+       const commitHash = await execUtils.execvp(`git`, [`rev-parse`, `--short`, `HEAD`], {cwd: target, strict: true});
+       const bundlePath = ppath.join(target, `packages/yarnpkg-cli/bundles/yarn-${commitHash.stdout.trim()}.js`);
+ 
+-      if (!xfs.existsSync(bundlePath)) {
+-        await runWorkflow(buildWorkflow(this, bundlePath, target), {configuration, context: this.context, target});
+-        report.reportSeparator();
+-      }
++      // [Code Chronicles] Previously, the build was conditioned on the bundle
++      // path not existing, but given that we'll be patching Yarn, it's safer
++      // to just rebuild, it doesn't doesn't take a particularly long time and
++      // it makes sure that the latest patch got applied.
++      await runWorkflow(buildWorkflow(this, bundlePath, target), {configuration, context: this.context, target});
++      report.reportSeparator();
+ 
+       const bundleBuffer = await xfs.readFilePromise(bundlePath);
+ 
+diff --git a/packages/plugin-workspace-tools/sources/commands/foreach.ts b/packages/plugin-workspace-tools/sources/commands/foreach.ts
+index 47668fc447c882119b4efb7b75453e2dac30a99e..00ee50e0cf7f25c4d0e6bf5820b8c9696868f3ce 100644
+--- a/packages/plugin-workspace-tools/sources/commands/foreach.ts
++++ b/packages/plugin-workspace-tools/sources/commands/foreach.ts
+@@ -260,7 +260,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+       }
+ 
+       if (this.exclude.length > 0 && (micromatch.isMatch(structUtils.stringifyIdent(workspace.anchoredLocator), this.exclude) || micromatch.isMatch(workspace.relativeCwd,  this.exclude))) {
+-        log(`Excluding ${workspace.relativeCwd} because it matches the --include filter`);
++        log(`Excluding ${workspace.relativeCwd} because it matches the --exclude filter`);
+         continue;
+       }
+ 
+@@ -484,7 +484,8 @@ function getPrefix(workspace: Workspace, {configuration, commandIndex, label}: G
+   if (!label)
+     return null;
+ 
+-  const name = structUtils.stringifyIdent(workspace.anchoredLocator);
++  // [Code Chronicles] Strip prefix from the workspace name for more concise output.
++  const name = stripPrefix(structUtils.stringifyIdent(workspace.anchoredLocator), '@code-chronicles/');
+ 
+   const prefix = `[${name}]:`;
+ 
+@@ -493,3 +494,8 @@ function getPrefix(workspace: Workspace, {configuration, commandIndex, label}: G
+ 
+   return formatUtils.pretty(configuration, prefix, colorName);
+ }
++
++// [Code Chronicles] Added from `@code-chronicles/util`.
++function stripPrefix(s: string, prefix: string): string {
++  return s.startsWith(prefix) ? s.slice(prefix.length) : s;
++}
+diff --git a/packages/yarnpkg-builder/sources/commands/build/bundle.ts b/packages/yarnpkg-builder/sources/commands/build/bundle.ts
+index 7a6140a5235e3a617f164068bed5e80e34fa11fc..fa621790e28931c084e9a451dcbfaabc24639bb3 100644
+--- a/packages/yarnpkg-builder/sources/commands/build/bundle.ts
++++ b/packages/yarnpkg-builder/sources/commands/build/bundle.ts
+@@ -21,7 +21,10 @@ const pkgJsonVersion = (basedir: string): string => {
+ 
+ const suggestHash = async (basedir: string) => {
+   try {
+-    const unique = await execFile(`git`, [`show`, `-s`, `--pretty=format:%ad.%h`, `--date=short`], {cwd: basedir});
++    // [Code Chronicles] Since we applied a custom patch to Yarn, we also
++    // check the hash of `HEAD^` so that the hash is based on the Yarn
++    // repository.
++    const unique = await execFile(`git`, [`show`, `HEAD^`, `-s`, `--pretty=format:%ad.%h`, `--date=short`], {cwd: basedir});
+     return `git.${unique.stdout.trim().replace(/-/g, ``).replace(`.`, `.hash-`)}`;
+   } catch {
+     return null;
+@@ -96,6 +99,10 @@ export default class BuildBundleCommand extends Command {
+         ? `${version}.${hash}`
+         : `${version}-${hash}`;
+ 
++    // [Code Chronicles] Update the bunlde version to indicate that we've
++    // patched Yarn!
++    version += `-code-chronicles-patch`;
++
+     const report = await StreamReport.start({
+       configuration,
+       includeFooter: false,
+diff --git a/packages/yarnpkg-core/sources/Manifest.ts b/packages/yarnpkg-core/sources/Manifest.ts
+index fd70bb8333bf83b5d88bb8213e7bfcf966ac3e8c..36adb65a518b83483d3e6a03fd2032307de8f111 100644
+--- a/packages/yarnpkg-core/sources/Manifest.ts
++++ b/packages/yarnpkg-core/sources/Manifest.ts
+@@ -783,10 +783,9 @@ export class Manifest {
+     else
+       delete data.packageManager;
+ 
++    // [Code Chronicles] I prefer being explicit about the private flag.
+     if (this.private)
+       data.private = true;
+-    else
+-      delete data.private;
+ 
+     if (this.license !== null)
+       data.license = this.license;
+diff --git a/packages/yarnpkg-core/sources/Report.ts b/packages/yarnpkg-core/sources/Report.ts
+index 2ba2250e91bdf55e8ca6cba106cd6ce242c87526..39e1fcafff2ac1d5b6429062e94b9c9065f589d0 100644
+--- a/packages/yarnpkg-core/sources/Report.ts
++++ b/packages/yarnpkg-core/sources/Report.ts
+@@ -231,22 +231,25 @@ export abstract class Report {
+       let chunkStr = decoder.write(chunk);
+       let lineIndex;
+ 
+-      do {
++      // [Code Chronicles] This code wants to be an infinite loop.
++      while (true) {
+         lineIndex = chunkStr.indexOf(`\n`);
+ 
+-        if (lineIndex !== -1) {
+-          const line = buffer + chunkStr.substring(0, lineIndex);
++        if (lineIndex === -1) {
++          break;
++        }
++
++        const line = buffer + chunkStr.substring(0, lineIndex);
+ 
+-          chunkStr = chunkStr.substring(lineIndex + 1);
+-          buffer = ``;
++        chunkStr = chunkStr.substring(lineIndex + 1);
++        buffer = ``;
+ 
+-          if (prefix !== null) {
+-            this.reportInfo(null, `${prefix} ${line}`);
+-          } else {
+-            this.reportInfo(null, line);
+-          }
++        if (prefix !== null) {
++          this.reportInfo(null, `${prefix} ${line}`);
++        } else {
++          this.reportInfo(null, line);
+         }
+-      } while (lineIndex !== -1);
++      }
+ 
+       buffer += chunkStr;
+     });
+-- 
+2.46.0
+
