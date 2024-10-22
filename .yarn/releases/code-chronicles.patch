@@ -11,7 +11,7 @@ Subject: Code Chronicles Yarn patch!
  5 files changed, 72 insertions(+), 26 deletions(-)
 
 diff --git a/packages/plugin-essentials/sources/commands/set/version/sources.ts b/packages/plugin-essentials/sources/commands/set/version/sources.ts
-index dc38915..0ab5eec 100644
+index dc38915c1d06f9f41638c55b973fb08f2f695358..0ab5eec31a8109f165a146d4822369a3f31bb8f5 100644
 --- a/packages/plugin-essentials/sources/commands/set/version/sources.ts
 +++ b/packages/plugin-essentials/sources/commands/set/version/sources.ts
 @@ -2,7 +2,8 @@ import {BaseCommand}
@@ -52,7 +52,7 @@ index dc38915..0ab5eec 100644
        const bundleBuffer = await xfs.readFilePromise(bundlePath);
  
 diff --git a/packages/plugin-workspace-tools/sources/commands/foreach.ts b/packages/plugin-workspace-tools/sources/commands/foreach.ts
-index 47668fc..fefe4d7 100644
+index 47668fc447c882119b4efb7b75453e2dac30a99e..fefe4d75e5bfd45c081171b5e1f242bceb777c01 100644
 --- a/packages/plugin-workspace-tools/sources/commands/foreach.ts
 +++ b/packages/plugin-workspace-tools/sources/commands/foreach.ts
 @@ -260,7 +260,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
@@ -97,7 +97,7 @@ index 47668fc..fefe4d7 100644
 +  return s.startsWith(prefix) ? s.slice(prefix.length) : s;
 +}
 diff --git a/packages/yarnpkg-builder/sources/commands/build/bundle.ts b/packages/yarnpkg-builder/sources/commands/build/bundle.ts
-index 7a6140a..fa62179 100644
+index 7a6140a5235e3a617f164068bed5e80e34fa11fc..fa621790e28931c084e9a451dcbfaabc24639bb3 100644
 --- a/packages/yarnpkg-builder/sources/commands/build/bundle.ts
 +++ b/packages/yarnpkg-builder/sources/commands/build/bundle.ts
 @@ -21,7 +21,10 @@ const pkgJsonVersion = (basedir: string): string => {
@@ -124,7 +124,7 @@ index 7a6140a..fa62179 100644
        configuration,
        includeFooter: false,
 diff --git a/packages/yarnpkg-core/sources/Manifest.ts b/packages/yarnpkg-core/sources/Manifest.ts
-index fd70bb8..36adb65 100644
+index fd70bb8333bf83b5d88bb8213e7bfcf966ac3e8c..36adb65a518b83483d3e6a03fd2032307de8f111 100644
 --- a/packages/yarnpkg-core/sources/Manifest.ts
 +++ b/packages/yarnpkg-core/sources/Manifest.ts
 @@ -783,10 +783,9 @@ export class Manifest {
@@ -140,7 +140,7 @@ index fd70bb8..36adb65 100644
      if (this.license !== null)
        data.license = this.license;
 diff --git a/packages/yarnpkg-core/sources/Report.ts b/packages/yarnpkg-core/sources/Report.ts
-index 2ba2250..12cd143 100644
+index 2ba2250e91bdf55e8ca6cba106cd6ce242c87526..12cd143314464e1088407129b0198dbdfee78174 100644
 --- a/packages/yarnpkg-core/sources/Report.ts
 +++ b/packages/yarnpkg-core/sources/Report.ts
 @@ -221,32 +221,46 @@ export abstract class Report {
