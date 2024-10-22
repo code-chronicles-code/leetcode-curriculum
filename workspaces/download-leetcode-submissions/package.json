@@ -19,7 +19,7 @@
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
     "start": "tsx src/main.ts",
-    "typecheck": "tsc --pretty --project ."
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
   },
   "dependencies": {
     "@code-chronicles/leetcode-api": "workspace:*",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*",
     "@types/node": "22.7.6",
     "cross-env": "7.0.3",
