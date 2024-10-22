@@ -1,17 +1,17 @@
 From: Miorel-Lucian Palii <mlpalii@gmail.com>
-Date: Sun, 20 Oct 2024 20:42:19 -0700
+Date: Mon, 21 Oct 2024 19:50:25 -0700
 Subject: Code Chronicles Yarn patch!
 
 ---
- .../sources/commands/set/version/sources.ts   | 16 ++++++++----
- .../sources/commands/foreach.ts               | 10 ++++++--
- .../sources/commands/build/bundle.ts          |  9 ++++++-
- packages/yarnpkg-core/sources/Manifest.ts     |  3 +--
- packages/yarnpkg-core/sources/Report.ts       | 25 +++++++++++--------
- 5 files changed, 42 insertions(+), 21 deletions(-)
+ .../sources/commands/set/version/sources.ts   | 16 ++++--
+ .../sources/commands/foreach.ts               | 17 ++++--
+ .../sources/commands/build/bundle.ts          |  9 +++-
+ packages/yarnpkg-core/sources/Manifest.ts     |  3 +-
+ packages/yarnpkg-core/sources/Report.ts       | 53 ++++++++++++++-----
+ 5 files changed, 72 insertions(+), 26 deletions(-)
 
 diff --git a/packages/plugin-essentials/sources/commands/set/version/sources.ts b/packages/plugin-essentials/sources/commands/set/version/sources.ts
-index dc38915c1d06f9f41638c55b973fb08f2f695358..0ab5eec31a8109f165a146d4822369a3f31bb8f5 100644
+index dc38915..0ab5eec 100644
 --- a/packages/plugin-essentials/sources/commands/set/version/sources.ts
 +++ b/packages/plugin-essentials/sources/commands/set/version/sources.ts
 @@ -2,7 +2,8 @@ import {BaseCommand}
@@ -52,7 +52,7 @@ index dc38915c1d06f9f41638c55b973fb08f2f695358..0ab5eec31a8109f165a146d4822369a3
        const bundleBuffer = await xfs.readFilePromise(bundlePath);
  
 diff --git a/packages/plugin-workspace-tools/sources/commands/foreach.ts b/packages/plugin-workspace-tools/sources/commands/foreach.ts
-index 47668fc447c882119b4efb7b75453e2dac30a99e..00ee50e0cf7f25c4d0e6bf5820b8c9696868f3ce 100644
+index 47668fc..fefe4d7 100644
 --- a/packages/plugin-workspace-tools/sources/commands/foreach.ts
 +++ b/packages/plugin-workspace-tools/sources/commands/foreach.ts
 @@ -260,7 +260,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
@@ -64,7 +64,16 @@ index 47668fc447c882119b4efb7b75453e2dac30a99e..00ee50e0cf7f25c4d0e6bf5820b8c969
          continue;
        }
  
-@@ -484,7 +484,8 @@ function getPrefix(workspace: Workspace, {configuration, commandIndex, label}: G
+@@ -448,7 +448,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+ 
+ 
+ function createStream(report: Report, {prefix, interlaced}: {prefix: string | null, interlaced: boolean}): [Writable, Promise<boolean>] {
+-  const streamReporter = report.createStreamReporter(prefix);
++  const streamReporter = report.createStreamReporter(prefix, interlaced);
+ 
+   const defaultStream = new miscUtils.DefaultStream();
+   defaultStream.pipe(streamReporter, {end: false});
+@@ -484,12 +484,19 @@ function getPrefix(workspace: Workspace, {configuration, commandIndex, label}: G
    if (!label)
      return null;
  
@@ -72,9 +81,13 @@ index 47668fc447c882119b4efb7b75453e2dac30a99e..00ee50e0cf7f25c4d0e6bf5820b8c969
 +  // [Code Chronicles] Strip prefix from the workspace name for more concise output.
 +  const name = stripPrefix(structUtils.stringifyIdent(workspace.anchoredLocator), '@code-chronicles/');
  
-   const prefix = `[${name}]:`;
+-  const prefix = `[${name}]:`;
++  const prefix = `[${name}]`;
  
-@@ -493,3 +494,8 @@ function getPrefix(workspace: Workspace, {configuration, commandIndex, label}: G
+-  const colors = [`#2E86AB`, `#A23B72`, `#F18F01`, `#C73E1D`, `#CCE2A3`];
++  // [Code Chronicles] Add a few more colors.
++  const colors = [`#00A6ED`, `#2E86AB`, `#A23B72`, `#F18F01`, `#C73E1D`, `#CCE2A3`, `#FF69B4`, `#3D9970`];
+   const colorName = colors[commandIndex % colors.length];
  
    return formatUtils.pretty(configuration, prefix, colorName);
  }
@@ -84,7 +97,7 @@ index 47668fc447c882119b4efb7b75453e2dac30a99e..00ee50e0cf7f25c4d0e6bf5820b8c969
 +  return s.startsWith(prefix) ? s.slice(prefix.length) : s;
 +}
 diff --git a/packages/yarnpkg-builder/sources/commands/build/bundle.ts b/packages/yarnpkg-builder/sources/commands/build/bundle.ts
-index 7a6140a5235e3a617f164068bed5e80e34fa11fc..fa621790e28931c084e9a451dcbfaabc24639bb3 100644
+index 7a6140a..fa62179 100644
 --- a/packages/yarnpkg-builder/sources/commands/build/bundle.ts
 +++ b/packages/yarnpkg-builder/sources/commands/build/bundle.ts
 @@ -21,7 +21,10 @@ const pkgJsonVersion = (basedir: string): string => {
@@ -111,7 +124,7 @@ index 7a6140a5235e3a617f164068bed5e80e34fa11fc..fa621790e28931c084e9a451dcbfaabc
        configuration,
        includeFooter: false,
 diff --git a/packages/yarnpkg-core/sources/Manifest.ts b/packages/yarnpkg-core/sources/Manifest.ts
-index fd70bb8333bf83b5d88bb8213e7bfcf966ac3e8c..36adb65a518b83483d3e6a03fd2032307de8f111 100644
+index fd70bb8..36adb65 100644
 --- a/packages/yarnpkg-core/sources/Manifest.ts
 +++ b/packages/yarnpkg-core/sources/Manifest.ts
 @@ -783,10 +783,9 @@ export class Manifest {
@@ -127,10 +140,31 @@ index fd70bb8333bf83b5d88bb8213e7bfcf966ac3e8c..36adb65a518b83483d3e6a03fd203230
      if (this.license !== null)
        data.license = this.license;
 diff --git a/packages/yarnpkg-core/sources/Report.ts b/packages/yarnpkg-core/sources/Report.ts
-index 2ba2250e91bdf55e8ca6cba106cd6ce242c87526..39e1fcafff2ac1d5b6429062e94b9c9065f589d0 100644
+index 2ba2250..12cd143 100644
 --- a/packages/yarnpkg-core/sources/Report.ts
 +++ b/packages/yarnpkg-core/sources/Report.ts
-@@ -231,22 +231,25 @@ export abstract class Report {
+@@ -221,32 +221,46 @@ export abstract class Report {
+     }
+   }
+ 
+-  createStreamReporter(prefix: string | null = null) {
++  createStreamReporter(prefix: string | null = null, interlaced: boolean = false) {
+     const stream = new PassThrough();
+     const decoder = new StringDecoder();
+ 
+     let buffer = ``;
+ 
++    let didWrite = false;
++    const shouldUseGitHubActionLogGroup = !interlaced && isRunningInGitHubActions() && prefix != null;
++
+     stream.on(`data`, chunk => {
++      // [Code Chronicles] Label the stream if there's any output.
++      // Per https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#grouping-log-lines
++      if (!didWrite && shouldUseGitHubActionLogGroup) {
++        didWrite = true;
++        this.reportInfo(null, `::group::${prefix}`);
++      }
++
        let chunkStr = decoder.write(chunk);
        let lineIndex;
  
@@ -157,7 +191,8 @@ index 2ba2250e91bdf55e8ca6cba106cd6ce242c87526..39e1fcafff2ac1d5b6429062e94b9c90
 -          } else {
 -            this.reportInfo(null, line);
 -          }
-+        if (prefix !== null) {
++        // [Code Chronicles] Override when using a log group.
++        if (prefix !== null && !shouldUseGitHubActionLogGroup) {
 +          this.reportInfo(null, `${prefix} ${line}`);
 +        } else {
 +          this.reportInfo(null, line);
@@ -167,6 +202,35 @@ index 2ba2250e91bdf55e8ca6cba106cd6ce242c87526..39e1fcafff2ac1d5b6429062e94b9c90
  
        buffer += chunkStr;
      });
+@@ -255,14 +269,27 @@ export abstract class Report {
+       const last = decoder.end();
+ 
+       if (last !== ``) {
+-        if (prefix !== null) {
++        // [Code Chronicles] Override when using a log group.
++        if (prefix !== null && !shouldUseGitHubActionLogGroup) {
+           this.reportInfo(null, `${prefix} ${last}`);
+         } else {
+           this.reportInfo(null, last);
+         }
+       }
++
++      // [Code Chronicles] Label the stream if there's any output.
++      // Per https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#grouping-log-lines
++      if (didWrite && shouldUseGitHubActionLogGroup) {
++        this.reportInfo(null, `::endgroup::`);
++      }
+     });
+ 
+     return stream;
+   }
+ }
++
++// [Code Chronicles] Added from `@code-chronicles/util`.
++function isRunningInGitHubActions(): boolean {
++  // Per https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/variables#default-environment-variables
++  return process.env.GITHUB_ACTIONS === "true";
++}
 -- 
 2.46.0
 

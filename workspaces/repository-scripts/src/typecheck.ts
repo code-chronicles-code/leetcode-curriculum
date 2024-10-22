@@ -1,6 +1,7 @@
 import process from "node:process";
 
 import { spawnWithSafeStdio } from "@code-chronicles/util/spawnWithSafeStdio";
+import { isRunningInGitHubActions } from "@code-chronicles/util/isRunningInGitHubActions";
 
 export async function run(): Promise<void> {
   try {
@@ -30,7 +31,14 @@ export async function run(): Promise<void> {
 
       await spawnWithSafeStdio(
         "yarn",
-        ["workspaces", "foreach", "-pAvv", "run", "typecheck"],
+        [
+          "workspaces",
+          "foreach",
+          "-pAvv",
+          isRunningInGitHubActions() ? null : "-i",
+          "run",
+          "typecheck",
+        ].filter((arg) => arg != null),
         { stdio: "inherit" },
       );
     } else {
