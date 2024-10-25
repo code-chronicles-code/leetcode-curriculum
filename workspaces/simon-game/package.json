@@ -1,0 +1,53 @@
+{
+  "name": "@code-chronicles/simon-game",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
+    "directory": "workspaces/simon-game"
+  },
+  "author": {
+    "name": "Miorel-Lucian Palii",
+    "url": "https://github.com/miorel"
+  },
+  "type": "module",
+  "exports": "./src/main.ts",
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
+    "format": "prettier --color --write .",
+    "lint": "eslint --color --max-warnings=0 .",
+    "start": "tsx src/main.ts",
+    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
+  },
+  "dependencies": {
+    "@code-chronicles/leetcode-api": "workspace:*",
+    "@code-chronicles/util": "workspace:*",
+    "bufferutil": "4.0.8",
+    "discord.js": "14.15.3",
+    "invariant": "2.2.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "utf-8-validate": "6.0.4",
+    "ws": "8.18.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@code-chronicles/eslint-config": "workspace:*",
+    "@code-chronicles/repository-scripts": "workspace:*",
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*",
+    "@types/invariant": "2.2.37",
+    "@types/node": "22.7.6",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "cross-env": "7.0.3",
+    "eslint": "9.12.0",
+    "fork-ts-checker-webpack-plugin": "9.0.2",
+    "prettier": "3.3.3",
+    "tsx": "4.19.1",
+    "typescript": "5.6.3",
+    "webpack": "5.95.0",
+    "webpack-cli": "5.1.4"
+  }
+}

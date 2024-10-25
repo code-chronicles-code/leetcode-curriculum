@@ -1132,6 +1132,38 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@code-chronicles/simon-game@workspace:workspaces/simon-game":
+  version: 0.0.0-use.local
+  resolution: "@code-chronicles/simon-game@workspace:workspaces/simon-game"
+  dependencies:
+    "@code-chronicles/eslint-config": "workspace:*"
+    "@code-chronicles/leetcode-api": "workspace:*"
+    "@code-chronicles/repository-scripts": "workspace:*"
+    "@code-chronicles/util": "workspace:*"
+    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
+    "@types/invariant": "npm:2.2.37"
+    "@types/node": "npm:22.7.6"
+    "@types/react": "npm:18.3.11"
+    "@types/react-dom": "npm:18.3.1"
+    bufferutil: "npm:4.0.8"
+    cross-env: "npm:7.0.3"
+    discord.js: "npm:14.15.3"
+    eslint: "npm:9.12.0"
+    fork-ts-checker-webpack-plugin: "npm:9.0.2"
+    invariant: "npm:2.2.4"
+    prettier: "npm:3.3.3"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
+    tsx: "npm:4.19.1"
+    typescript: "npm:5.6.3"
+    utf-8-validate: "npm:6.0.4"
+    webpack: "npm:5.95.0"
+    webpack-cli: "npm:5.1.4"
+    ws: "npm:8.18.0"
+    zod: "npm:3.23.8"
+  languageName: unknown
+  linkType: soft
+
 "@code-chronicles/util@workspace:*, @code-chronicles/util@workspace:workspaces/util":
   version: 0.0.0-use.local
   resolution: "@code-chronicles/util@workspace:workspaces/util"
