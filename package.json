@@ -10,16 +10,16 @@
   "type": "module",
   "scripts": {
     "format": "yarn workspace @code-chronicles/repository-scripts start format",
-    "lint": "yarn workspace @code-chronicles/repository-scripts start lint",
+    "lint": "code-chronicles-lint",
     "prepare": "husky",
     "test": "yarn workspace @code-chronicles/repository-scripts start test",
-    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
+    "typecheck": "code-chronicles-typecheck"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/repository-scripts": "workspace:*",
     "@yarnpkg/types": "4.0.0",
-    "eslint": "9.12.0",
+    "eslint": "9.13.0",
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "prettier": "3.3.3",

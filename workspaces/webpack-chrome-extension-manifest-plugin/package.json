@@ -18,8 +18,8 @@
   },
   "scripts": {
     "format": "prettier --color --write .",
-    "lint": "eslint --color --max-warnings=0 .",
-    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
+    "lint": "code-chronicles-lint",
+    "typecheck": "code-chronicles-typecheck"
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*"
@@ -27,8 +27,8 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/repository-scripts": "workspace:*",
-    "@types/node": "22.7.6",
-    "eslint": "9.12.0",
+    "@types/node": "22.8.1",
+    "eslint": "9.13.0",
     "prettier": "3.3.3",
     "tsx": "4.19.1",
     "type-fest": "4.26.1",

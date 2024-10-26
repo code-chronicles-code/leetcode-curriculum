@@ -1,7 +1,6 @@
-import { execSync } from "node:child_process";
 import path from "node:path";
 
-import { DefinePlugin, type Configuration } from "webpack";
+import type { Configuration } from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 const config: Configuration = {

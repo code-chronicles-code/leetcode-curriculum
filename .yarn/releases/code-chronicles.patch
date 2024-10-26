@@ -1,14 +1,14 @@
 From: Miorel-Lucian Palii <mlpalii@gmail.com>
-Date: Mon, 21 Oct 2024 19:50:25 -0700
+Date: Fri, 25 Oct 2024 21:06:12 -0700
 Subject: Code Chronicles Yarn patch!
 
 ---
  .../sources/commands/set/version/sources.ts   | 16 ++++--
- .../sources/commands/foreach.ts               | 17 ++++--
+ .../sources/commands/foreach.ts               | 49 ++++++++++++-----
  .../sources/commands/build/bundle.ts          |  9 +++-
  packages/yarnpkg-core/sources/Manifest.ts     |  3 +-
  packages/yarnpkg-core/sources/Report.ts       | 53 ++++++++++++++-----
- 5 files changed, 72 insertions(+), 26 deletions(-)
+ 5 files changed, 95 insertions(+), 35 deletions(-)
 
 diff --git a/packages/plugin-essentials/sources/commands/set/version/sources.ts b/packages/plugin-essentials/sources/commands/set/version/sources.ts
 index dc38915c1d06f9f41638c55b973fb08f2f695358..0ab5eec31a8109f165a146d4822369a3f31bb8f5 100644
@@ -52,10 +52,35 @@ index dc38915c1d06f9f41638c55b973fb08f2f695358..0ab5eec31a8109f165a146d4822369a3
        const bundleBuffer = await xfs.readFilePromise(bundlePath);
  
 diff --git a/packages/plugin-workspace-tools/sources/commands/foreach.ts b/packages/plugin-workspace-tools/sources/commands/foreach.ts
-index 47668fc447c882119b4efb7b75453e2dac30a99e..fefe4d75e5bfd45c081171b5e1f242bceb777c01 100644
+index 47668fc447c882119b4efb7b75453e2dac30a99e..8487c94a62f158fd1c26c64984d8413c9492c38d 100644
 --- a/packages/plugin-workspace-tools/sources/commands/foreach.ts
 +++ b/packages/plugin-workspace-tools/sources/commands/foreach.ts
-@@ -260,7 +260,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+@@ -240,11 +240,23 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+       }
+     }
+ 
++    // Default to maximum verbosity in terminal environments.
++    const verbosity = this.verbose ?? ((this.context.stdout as WriteStream).isTTY ? Infinity : 0);
++    const label = verbosity > 0;
++    const timing = verbosity > 1;
++    let commandCount = 0;
++
+     for (const workspace of selection) {
+       if (scriptName && !workspace.manifest.scripts.has(scriptName) && !isGlobalScript) {
+         const accessibleBinaries = await scriptUtils.getWorkspaceAccessibleBinaries(workspace);
+         if (!accessibleBinaries.has(scriptName)) {
+-          log(`Excluding ${workspace.relativeCwd} because it doesn't have a "${scriptName}" script`);
++          // [Code Chronicles] Report what we skipped for explicitness.
++          if (label && !this.dryRun) {
++            const prefix = getPrefix(workspace, {configuration, label, commandIndex: commandCount++});
++            this.context.stdout.write(`${prefix} Skipping because there's no "${scriptName}" script\n`);
++          } else {
++            log(`Excluding ${workspace.relativeCwd} because it doesn't have a "${scriptName}" script\n`);
++          }
+           continue;
+         }
+       }
+@@ -260,7 +272,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
        }
  
        if (this.exclude.length > 0 && (micromatch.isMatch(structUtils.stringifyIdent(workspace.anchoredLocator), this.exclude) || micromatch.isMatch(workspace.relativeCwd,  this.exclude))) {
@@ -64,7 +89,54 @@ index 47668fc447c882119b4efb7b75453e2dac30a99e..fefe4d75e5bfd45c081171b5e1f242bc
          continue;
        }
  
-@@ -448,7 +448,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+@@ -275,11 +287,6 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+     if (this.dryRun)
+       return 0;
+ 
+-    // Default to maximum verbosity in terminal environments.
+-    const verbosity = this.verbose ?? ((this.context.stdout as WriteStream).isTTY ? Infinity : 0);
+-    const label = verbosity > 0;
+-    const timing = verbosity > 1;
+-
+     const concurrency = this.parallel ?
+       (this.jobs === `unlimited`
+         ? Infinity
+@@ -296,7 +303,6 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+     const needsProcessing = new Map<LocatorHash, Workspace>();
+     const processing = new Set<DescriptorHash>();
+ 
+-    let commandCount = 0;
+     let finalExitCode: number | null = null;
+ 
+     let abortNextCommands = false;
+@@ -324,11 +330,16 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+ 
+           const start = Date.now();
+ 
++          // [Code Chronicles] Update the environment to indicate that it's a
++          // `yarn workspaces foreach`.
++          const oldEnv = process.env;
++          process.env = {...oldEnv, CODE_CHRONICLES_RUNNING_VIA_YARN_WORKSPACES_FOREACH: `1`};
+           const exitCode = (await this.cli.run([this.commandName, ...this.args], {
+             cwd: workspace.cwd,
+             stdout,
+             stderr,
+           })) || 0;
++          process.env = oldEnv;
+ 
+           stdout.end();
+           stderr.end();
+@@ -399,7 +410,8 @@ export default class WorkspacesForeachCommand extends BaseCommand {
+ 
+           commandPromises.push(limit(async () => {
+             const exitCode = await runCommand(workspace, {
+-              commandIndex: ++commandCount,
++              // [Code Chronicles] Start the `commandIndex` at 0.
++              commandIndex: commandCount++,
+             });
+ 
+             needsProcessing.delete(identHash);
+@@ -448,7 +460,7 @@ export default class WorkspacesForeachCommand extends BaseCommand {
  
  
  function createStream(report: Report, {prefix, interlaced}: {prefix: string | null, interlaced: boolean}): [Writable, Promise<boolean>] {
@@ -73,7 +145,15 @@ index 47668fc447c882119b4efb7b75453e2dac30a99e..fefe4d75e5bfd45c081171b5e1f242bc
  
    const defaultStream = new miscUtils.DefaultStream();
    defaultStream.pipe(streamReporter, {end: false});
-@@ -484,12 +484,19 @@ function getPrefix(workspace: Workspace, {configuration, commandIndex, label}: G
+@@ -480,16 +492,25 @@ type GetPrefixOptions = {
+   label: boolean;
+ };
+ 
++
++// [Code Chronicles] Add a few more colors.
++const WORKSPACE_COLORS = [`#00A6ED`, `#2E86AB`, `#A23B72`, `#F18F01`, `#C73E1D`, `#CCE2A3`, `#FF69B4`, `#3D9970`];
++
+ function getPrefix(workspace: Workspace, {configuration, commandIndex, label}: GetPrefixOptions) {
    if (!label)
      return null;
  
@@ -85,9 +165,8 @@ index 47668fc447c882119b4efb7b75453e2dac30a99e..fefe4d75e5bfd45c081171b5e1f242bc
 +  const prefix = `[${name}]`;
  
 -  const colors = [`#2E86AB`, `#A23B72`, `#F18F01`, `#C73E1D`, `#CCE2A3`];
-+  // [Code Chronicles] Add a few more colors.
-+  const colors = [`#00A6ED`, `#2E86AB`, `#A23B72`, `#F18F01`, `#C73E1D`, `#CCE2A3`, `#FF69B4`, `#3D9970`];
-   const colorName = colors[commandIndex % colors.length];
+-  const colorName = colors[commandIndex % colors.length];
++  const colorName = WORKSPACE_COLORS[commandIndex % WORKSPACE_COLORS.length];
  
    return formatUtils.pretty(configuration, prefix, colorName);
  }
