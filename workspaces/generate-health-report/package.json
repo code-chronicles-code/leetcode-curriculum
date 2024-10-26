@@ -15,9 +15,9 @@
   "type": "module",
   "scripts": {
     "format": "prettier --color --write .",
-    "lint": "eslint --color --max-warnings=0 .",
+    "lint": "code-chronicles-lint",
     "start": "tsx src/main.ts",
-    "typecheck": "tsc --pretty --project ."
+    "typecheck": "code-chronicles-typecheck"
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
@@ -26,8 +26,8 @@
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
-    "@types/node": "22.7.6",
-    "eslint": "9.12.0",
+    "@types/node": "22.8.1",
+    "eslint": "9.13.0",
     "prettier": "3.3.3",
     "typescript": "5.6.3"
   }

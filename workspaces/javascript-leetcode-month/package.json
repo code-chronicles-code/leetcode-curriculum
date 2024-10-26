@@ -15,17 +15,17 @@
   "type": "module",
   "scripts": {
     "format": "prettier --color --write .",
-    "lint": "eslint --color --max-warnings=0 .",
+    "lint": "code-chronicles-lint",
     "prep-write-up-for-leetcode": "tsx scripts/prep-write-up-for-leetcode.ts",
-    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
+    "typecheck": "code-chronicles-typecheck"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/util": "workspace:*",
     "@types/mdast": "4.0.4",
-    "@types/node": "22.7.6",
-    "eslint": "9.12.0",
+    "@types/node": "22.8.1",
+    "eslint": "9.13.0",
     "mdast": "3.0.0",
     "prettier": "3.3.3",
     "remark": "15.0.1",

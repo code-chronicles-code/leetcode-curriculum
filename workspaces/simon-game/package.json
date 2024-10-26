@@ -17,32 +17,23 @@
   "scripts": {
     "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
-    "lint": "eslint --color --max-warnings=0 .",
-    "start": "tsx src/main.ts",
-    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
+    "lint": "code-chronicles-lint",
+    "typecheck": "code-chronicles-typecheck"
   },
   "dependencies": {
     "@code-chronicles/leetcode-api": "workspace:*",
     "@code-chronicles/util": "workspace:*",
-    "bufferutil": "4.0.8",
-    "discord.js": "14.15.3",
-    "invariant": "2.2.4",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "utf-8-validate": "6.0.4",
-    "ws": "8.18.0",
-    "zod": "3.23.8"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/repository-scripts": "workspace:*",
-    "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*",
-    "@types/invariant": "2.2.37",
-    "@types/node": "22.7.6",
-    "@types/react": "18.3.11",
+    "@types/node": "22.8.1",
+    "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "cross-env": "7.0.3",
-    "eslint": "9.12.0",
+    "eslint": "9.13.0",
     "fork-ts-checker-webpack-plugin": "9.0.2",
     "prettier": "3.3.3",
     "tsx": "4.19.1",

@@ -18,8 +18,8 @@
   "scripts": {
     "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
-    "lint": "eslint --color --max-warnings=0 .",
-    "typecheck": "tsx -e 'require(\"@code-chronicles/repository-scripts/typecheck\").run()'"
+    "lint": "code-chronicles-lint",
+    "typecheck": "code-chronicles-typecheck"
   },
   "dependencies": {
     "prettier": "3.3.3"
@@ -28,9 +28,9 @@
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*",
-    "@types/node": "22.7.6",
+    "@types/node": "22.8.1",
     "cross-env": "7.0.3",
-    "eslint": "9.12.0",
+    "eslint": "9.13.0",
     "fork-ts-checker-webpack-plugin": "9.0.2",
     "monaco-editor": "0.52.0",
     "ts-loader": "9.5.1",
