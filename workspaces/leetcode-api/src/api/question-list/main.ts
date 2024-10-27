@@ -21,7 +21,7 @@ const questionZodType = z
     titleSlug: slugZodType,
   })
   .transform(({ challengeQuestionsV2, ...rest }) => ({
-    chalengeQuestionDates: challengeQuestionsV2,
+    challengeQuestionDates: challengeQuestionsV2,
     ...rest,
   }));
 
