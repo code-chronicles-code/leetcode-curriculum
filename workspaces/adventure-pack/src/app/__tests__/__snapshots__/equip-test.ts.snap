@@ -1571,14 +1571,34 @@ iteratorPrototype.toIterable = function () {
   return this;
 };
 
+globalThis.Iterator ??= {};
+globalThis.Iterator.from ??= function (object) {
+  const toIterable = iteratorPrototype.toIterable;
+
+  const iteratorFactory = object[Symbol.iterator];
+  if (typeof iteratorFactory === "function") {
+    return toIterable.call(iteratorFactory.call(object));
+  }
+
+  if (Object.prototype.isPrototypeOf.call(iteratorPrototype, object)) {
+    return toIterable.call(object);
+  }
+
+  if (typeof object.next === "function") {
+    return (function* () {
+      yield* toIterable.call(object);
+    })();
+  }
+
+  throw new TypeError(
+    "Object is not an iterator, iterable, or an object with a next method",
+  );
+};
+
 iteratorPrototype.flatMap ??= function* (callbackFn) {
   let index = 0;
   for (const element of this.toIterable()) {
-    const res = callbackFn(element, index);
-    if (!(Symbol.iterator in res || typeof res.next === "function")) {
-      throw new TypeError("Callback must return an iterable or iterator");
-    }
-    yield* Symbol.iterator in res ? res : res.toIterable();
+    yield* Iterator.from(callbackFn(element, index)).toIterable();
     ++index;
   }
 };
@@ -3719,6 +3739,14 @@ declare global {
 
     toIterable(this: Iterator<T>): IterableIterator<T>;
   }
+
+  interface IteratorConstructor {
+    from<T>(
+      object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
+    ): IterableIterator<T>;
+  }
+
+  const Iterator: IteratorConstructor;
 }
 
 Function.returnThis = function <T>(this: T): T {
@@ -3737,19 +3765,42 @@ iteratorPrototype.toIterable = function <T>(
   return this as unknown as IterableIterator<T>;
 };
 
+(globalThis as Record<string, unknown>).Iterator ??= {};
+((globalThis as Record<string, unknown>).Iterator as { from: unknown }).from ??=
+  function <T>(
+    object: Iterator<T> | Iterable<T> | { next(): IteratorResult<T> },
+  ): IterableIterator<T> {
+    const toIterable = iteratorPrototype.toIterable as (
+      this: Iterator<T>,
+    ) => IterableIterator<T>;
+
+    const iteratorFactory = (object as Iterable<T>)[Symbol.iterator];
+    if (typeof iteratorFactory === "function") {
+      return toIterable.call(iteratorFactory.call(object));
+    }
+
+    if (Object.prototype.isPrototypeOf.call(iteratorPrototype, object)) {
+      return toIterable.call(object as Iterator<T>);
+    }
+
+    if (typeof (object as Record<string, unknown>).next === "function") {
+      return (function* () {
+        yield* toIterable.call(object as Iterator<T>);
+      })();
+    }
+
+    throw new TypeError(
+      "Object is not an iterator, iterable, or an object with a next method",
+    );
+  };
+
 iteratorPrototype.flatMap ??= function* <TIn, TOut>(
   this: Iterator<TIn>,
   callbackFn: (element: TIn, index: number) => Iterator<TOut> | Iterable<TOut>,
 ): Generator<TOut, void, undefined> {
   let index = 0;
   for (const element of this.toIterable()) {
-    const res = callbackFn(element, index);
-    if (!(Symbol.iterator in res || typeof res.next === "function")) {
-      throw new TypeError("Callback must return an iterable or iterator");
-    }
-    yield* Symbol.iterator in res
-      ? (res as Iterable<TOut>)
-      : (res as Iterator<TOut>).toIterable();
+    yield* Iterator.from(callbackFn(element, index)).toIterable();
     ++index;
   }
 };
