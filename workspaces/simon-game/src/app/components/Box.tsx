@@ -1,6 +1,11 @@
 import React from "react";
 
-type Props = { color?: string; height?: number; width?: number };
+type Props = {
+  color?: string;
+  height?: number;
+  width?: number;
+  margin?: number;
+};
 
 export function Box(props: Props) {
   return (
@@ -10,7 +15,7 @@ export function Box(props: Props) {
         height: props.height ?? 100,
         width: props.width ?? 100,
         borderRadius: 20, // rounded corners
-        margin: 10, // spaces
+        margin: props.margin, // spaces between boxes
       }}
     />
   );
