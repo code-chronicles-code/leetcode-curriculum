@@ -1,16 +1,17 @@
 import React from "react";
 
-type Props = { color?: string };
+type Props = { color?: string; height?: number; width?: number };
 
 export function Box(props: Props) {
-  const style = {
-    backgroundColor: props.color || "lightblue",
-    height: 100,
-    width: 100,
-  };
   return (
     <div
-      style= {style}
+      style={{
+        backgroundColor: props.color ?? "lightblue",
+        height: props.height ?? 100,
+        width: props.width ?? 100,
+        borderRadius: 20, // rounded corners
+        margin: 10, // spaces
+      }}
     />
   );
 }
