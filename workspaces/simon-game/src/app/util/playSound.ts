@@ -7,7 +7,7 @@
  * @param volume - The volume of the sound, typically between 0 and 1.
  */
 export const playSound = (
-  context: BaseAudioContext,
+  context: AudioContext,
   frequency: number,
   duration: number,
   volume: number,
