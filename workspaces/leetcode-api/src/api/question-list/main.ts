@@ -1,19 +1,34 @@
 import { z } from "zod";
 
 import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
+import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
+import { partition } from "@code-chronicles/util/partition";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/zod-types/numericIdAsNumberZodType";
 
 import { fetchGraphQL, type QueryVariables } from "./fetchGraphQL.generated.ts";
 import { questionDifficultyZodType } from "../../zod-types/questionDifficultyZodType.ts";
 import { slugZodType } from "../../zod-types/slugZodType.ts";
 
+type ChallengeData = {
+  dailyChallengeDates: string[];
+  weeklyChallengeDates: string[];
+};
+
 const questionZodType = z
   .object({
     challengeQuestionsV2: z
-      .array(z.object({ date: z.string() }).transform(({ date }) => date))
-      .transform((dates) =>
-        [...dates].sort(compareStringsCaseInsensitive).reverse(),
-      ),
+      .array(z.object({ date: z.string(), type: z.enum(["DAILY", "WEEKLY"]) }))
+      .transform((challenges): ChallengeData => {
+        const [dailyChallengeDates, weeklyChallengeDates] = partition(
+          challenges,
+          (c) => c.type === "DAILY",
+        );
+        return mapObjectValues(
+          { dailyChallengeDates, weeklyChallengeDates },
+          (group) =>
+            group.map((c) => c.date).sort(compareStringsCaseInsensitive),
+        ) as ChallengeData;
+      }),
     difficulty: questionDifficultyZodType,
     isPaidOnly: z.boolean(),
     questionFrontendId: numericIdAsNumberZodType,
@@ -21,7 +36,7 @@ const questionZodType = z
     titleSlug: slugZodType,
   })
   .transform(({ challengeQuestionsV2, ...rest }) => ({
-    challengeQuestionDates: challengeQuestionsV2,
+    ...challengeQuestionsV2,
     ...rest,
   }));
 

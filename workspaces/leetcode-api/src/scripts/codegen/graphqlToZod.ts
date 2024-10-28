@@ -2,6 +2,7 @@ import invariant from "invariant";
 import nullthrows from "nullthrows";
 
 import {
+  GraphQLEnumType,
   GraphQLList,
   GraphQLNonNull,
   GraphQLObjectType,
@@ -200,6 +201,16 @@ function generateZod(
         true,
       ),
       selections.flatMap((s) => s[1]),
+    ];
+  }
+
+  if (currentType instanceof GraphQLEnumType) {
+    return [
+      new ZodOutput(
+        `z.enum(${JSON.stringify(currentType.getValues().map((v) => v.value))})`,
+        true,
+      ),
+      [],
     ];
   }
 

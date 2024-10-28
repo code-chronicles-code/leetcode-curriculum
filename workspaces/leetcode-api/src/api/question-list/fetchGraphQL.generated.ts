@@ -24,19 +24,27 @@ type QuestionListQuery = {
       questionFrontendId: string;
       title: string;
       titleSlug: string;
-      challengeQuestionsV2: Array<{ date: string }>;
+      challengeQuestionsV2: Array<{
+        date: string;
+        type: Types.ChallengeQuestionTypeEnum;
+      }>;
     }>;
   };
 };
 
 export const QUERY =
-  "query($categorySlug:String!,$limit:Int,$skip:Int,$filters:QuestionListFilterInput!){questionList(categorySlug:$categorySlug limit:$limit skip:$skip filters:$filters){data{challengeQuestionsV2{date}difficulty isPaidOnly questionFrontendId title titleSlug}totalNum}}";
+  "query($categorySlug:String!,$limit:Int,$skip:Int,$filters:QuestionListFilterInput!){questionList(categorySlug:$categorySlug limit:$limit skip:$skip filters:$filters){data{challengeQuestionsV2{date type}difficulty isPaidOnly questionFrontendId title titleSlug}totalNum}}";
 
 export const queryResultZodType = z.object({
   questionList: z.object({
     data: z.array(
       z.object({
-        challengeQuestionsV2: z.array(z.object({ date: yyyymmddDateZodType })),
+        challengeQuestionsV2: z.array(
+          z.object({
+            date: yyyymmddDateZodType,
+            type: z.enum(["DAILY", "WEEKLY"]),
+          }),
+        ),
         difficulty: z.enum(["Easy", "Medium", "Hard"]),
         isPaidOnly: z.boolean(),
         questionFrontendId: z.string(),
