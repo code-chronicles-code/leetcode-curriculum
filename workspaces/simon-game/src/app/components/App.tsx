@@ -6,7 +6,10 @@ export function App() {
   return (
     <div>
       <Box color="red" />
-      <Box color="#0050B5" /> //cobalt blue
+      <Box color={
+        // cobalt blue
+        "#0050B5"
+      } /> 
       <Box color="green" />
       <Box color="yellow" />
     </div>
