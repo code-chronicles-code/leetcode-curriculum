@@ -49,7 +49,7 @@ Each line of the output is JSON metadata for a problem, for example:
 
 <!-- prettier-ignore-start -->
 ```json
-{"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1,"title":"Two Sum","titleSlug":"two-sum"}
+{"dailyChallengeDates":["2021-08-02","2024-08-27"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1,"title":"Two Sum","titleSlug":"two-sum"}
 ```
 <!-- prettier-ignore-end -->
 

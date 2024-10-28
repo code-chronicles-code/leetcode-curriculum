@@ -1896,12 +1896,62 @@ enum ProfileUpdateErrorEnum {
   INVALID_JOB_TITLE
 }
 
+"""
+An enumeration.
+"""
+enum ProgressCalendarQueryTypeEnum {
+  """
+  solved
+  """
+  SOLVED
+
+  """
+  submission
+  """
+  SUBMISSION
+}
+
 enum ProgressOrderByEnum {
   FRONTEND_ID
   DIFFICULTY
   LAST_SOLVED
   WRONG_ATTEMPTS
   TOTAL_SOLVES
+}
+
+"""
+An enumeration.
+"""
+enum ProgressQuestionSortEnum {
+  """
+  lastSubmittedAt
+  """
+  LAST_SUBMITTED_AT
+
+  """
+  questionFrontendId
+  """
+  QUESTION_FRONTEND_ID
+
+  """
+  numSubmitted
+  """
+  NUM_SUBMITTED
+}
+
+"""
+An enumeration.
+"""
+enum ProgressQuestionStatusEnum {
+  """
+  solved
+  """
+  SOLVED
+
+  """
+  attempted
+  """
+  ATTEMPTED
 }
 
 """
@@ -2295,6 +2345,21 @@ enum SessionStatus {
 An enumeration.
 """
 enum SortingEnum {
+  """
+  ascending
+  """
+  ASCENDING
+
+  """
+  descending
+  """
+  DESCENDING
+}
+
+"""
+An enumeration.
+"""
+enum SortingOrderDescribedEnum {
   """
   ascending
   """
@@ -4179,6 +4244,12 @@ input DeleteAccountInput {
   usernameOrEmail: String!
 }
 
+input DeleteAccountInputV2 {
+  otherReason: String = ""
+  password: String
+  reason: DeleteAccountReason!
+}
+
 input DeleteUserRequestInput {
   endDate: DateTime
   limit: Int! = 20
@@ -4587,6 +4658,15 @@ input UserManagementStripeChargesInput {
   startedAt: DateTime
   status: StripeChargeStatusEnum
   userId: ID!
+}
+
+input UserProgressQuestionListInput {
+  difficulty: [DifficultyDescribedEnum!]
+  limit: Int = 10
+  questionStatus: ProgressQuestionStatusEnum
+  skip: Int = 0
+  sortField: ProgressQuestionSortEnum = 1
+  sortOrder: SortingOrderDescribedEnum
 }
 
 input VacRecordsInput {
@@ -5031,7 +5111,7 @@ type ChallengeQuestionNode {
   incompleteChallengeCount: Int!
   status: ChallengeQuestionStatusEnum!
   streakCount: Int!
-  type: ChallengeQuestionTypeEnum
+  type: ChallengeQuestionTypeEnum!
 }
 
 type ChannelNode {
@@ -5636,6 +5716,14 @@ type DebugSessionNode {
 user apply to delete account, account gets frozen after success
 """
 type DeleteAccount {
+  ok: Boolean!
+  planDeleteDate: Date
+}
+
+"""
+user apply to delete account, account gets frozen after success
+"""
+type DeleteAccountV2 {
   ok: Boolean!
   planDeleteDate: Date
 }
@@ -7153,6 +7241,7 @@ type ManagementStoreOrderNode {
   id: ID!
   items: String
   note: String
+  noteByStaff: String
   orderId: String!
   status: UmStoreOrderStatusEnum!
   trackingId: String
@@ -7509,6 +7598,11 @@ type Mutation {
   user apply to delete account, account gets frozen after success
   """
   deleteAccount(data: DeleteAccountInput!): DeleteAccount
+
+  """
+  user apply to delete account, account gets frozen after success
+  """
+  deleteAccountV2(data: DeleteAccountInputV2!): DeleteAccountV2
   deleteCodeFromPlayground(
     langSlug: String
     uuid: String
@@ -7835,7 +7929,7 @@ type Mutation {
   ): StoreAdminCreateOrder
   storeOrderEdit(
     id: ID!
-    note: String
+    noteByStaff: String
     status: UmStoreOrderStatusEnum
     trackingId: String
   ): StoreOrderEdit
@@ -9186,6 +9280,10 @@ type PublishSolution {
 }
 
 type Query {
+  """
+  get ab record by ab test name
+  """
+  abRecordName(abName: String!): Boolean!
   achievement(name: String!): AchievementNode
   achievements: [AchievementNode]
   activeDailyCodingChallengeQuestion: DailyChallengeNodeV2!
@@ -10085,6 +10183,45 @@ type Query {
   userProfileUserQuestionProgressV2(
     userSlug: String!
   ): UserQuestionProgressNodeV2!
+
+  """
+  get user's session progress, solved and submission calendar
+  """
+  userProgressCalendarV2(
+    month: Int
+    queryType: ProgressCalendarQueryTypeEnum!
+    year: Int!
+  ): UserProgressCalendarNodeV2
+
+  """
+  get user's first submission year
+  """
+  userProgressFirstSubmissionYear: Int
+
+  """
+  get user's session progress of knowledge favorite
+  """
+  userProgressKnowledgeList: UserProgressKnowledgeInfoListNode
+
+  """
+  get user's session progress
+  """
+  userProgressQuestionList(
+    filters: UserProgressQuestionListInput = {
+      sort_field: 1
+      skip: 0
+      limit: 10
+    }
+  ): UserProgressQuestionListNode
+
+  """
+  get user's session progress of submission list
+  """
+  userProgressSubmissionList(
+    limit: Int!
+    offset: Int!
+    questionSlug: String!
+  ): UserProgressSubmissionListNode
   userRecentTopics(limit: Int, username: String): [TopicNode!]
   userReports(
     endDate: DateTime
@@ -10709,6 +10846,11 @@ type StoreOrderNode {
   id: ID
   items: [StoreItemNode!]!
   note: String!
+
+  """
+  Invisible to user
+  """
+  noteByStaff: String
   orderId: String!
   status: String!
   storeorderoperationlogSet: [OrderOperationLogNode!]!
@@ -11829,10 +11971,94 @@ type UserProfileNode {
   yearsOfExperience: Int
 }
 
+type UserProgressCalendarNodeV2 {
+  """
+  Solved everyday info within one month
+  """
+  dateSolvedInfoWithinMonth: [UserProgressSolvedQuestionDateNode!]
+
+  """
+  Number of submissions everyday within one month
+  """
+  dateSubmissionNumWithinMonth: [UserProgressSubmissionQuestionDateNode!]
+
+  """
+  Solved every month info within one year
+  """
+  monthSolvedInfoWithinYear: [UserProgressSolvedQuestionMonthNode!]
+
+  """
+  Number of submissions every month within one year
+  """
+  monthSubmissionNumWithinYear: [UserProgressSubmissionQuestionMonthNode!]
+}
+
+type UserProgressKnowledgeInfoListNode {
+  progressKnowledgeInfo: [UserProgressKnowledgeInfoNode!]!
+}
+
+type UserProgressKnowledgeInfoNode {
+  finishedNum: Int!
+  knowledgeTag: CommonTagNode!
+  totalNum: Int!
+}
+
+type UserProgressQuestionListNode {
+  questions: [UserProgressQuestionNode]
+  totalNum: Int
+}
+
+type UserProgressQuestionNode {
+  difficulty: DifficultyDescribedEnum!
+  frontendId: String!
+  lastResult: SubmissionStatusEnum
+  lastSubmittedAt: DateTime
+  numSubmitted: Int
+  questionStatus: ProgressQuestionStatusEnum!
+  title: String!
+  titleSlug: String!
+  topicTags: [CommonTagNode!]
+  translatedTitle: String
+}
+
+type UserProgressSolvedQuestionDateNode {
+  date: Date!
+  easySolvedNum: Int!
+  hardSolvedNum: Int!
+  mediumSolvedNum: Int!
+}
+
+type UserProgressSolvedQuestionMonthNode {
+  easySolvedNum: Int!
+  hardSolvedNum: Int!
+  mediumSolvedNum: Int!
+  month: Int!
+}
+
+type UserProgressSubmissionListNode {
+  submissions: [SubmissionDumpNode!]
+  totalNum: Int
+}
+
+type UserProgressSubmissionQuestionDateNode {
+  date: Date!
+  numSubmitted: Int!
+}
+
+type UserProgressSubmissionQuestionMonthNode {
+  month: Int!
+  numSubmitted: Int!
+}
+
 type UserQuestionProgressNodeV2 {
   numAcceptedQuestions: [QuestionCountNode!]!
   numFailedQuestions: [QuestionCountNode!]!
   numUntouchedQuestions: [QuestionCountNode!]!
+
+  """
+  用户所有题目击败其他用户的题目百分比
+  """
+  totalQuestionBeatsPercentage: Float
 
   """
   用户击败其他用户的题目百分比

@@ -543,7 +543,7 @@ export type ChallengeQuestionNode = {
   incompleteChallengeCount: Scalars["Int"]["output"];
   status: ChallengeQuestionStatusEnum;
   streakCount: Scalars["Int"]["output"];
-  type?: Maybe<ChallengeQuestionTypeEnum>;
+  type: ChallengeQuestionTypeEnum;
 };
 
 /** challenge question status enums */
@@ -1206,6 +1206,12 @@ export type DeleteAccountInput = {
   usernameOrEmail: Scalars["String"]["input"];
 };
 
+export type DeleteAccountInputV2 = {
+  otherReason?: InputMaybe<Scalars["String"]["input"]>;
+  password?: InputMaybe<Scalars["String"]["input"]>;
+  reason: DeleteAccountReason;
+};
+
 /** An enumeration. */
 export type DeleteAccountReason =
   /** Moving to another LeetCode account */
@@ -1218,6 +1224,12 @@ export type DeleteAccountReason =
   | "SECURITY_CONCERN"
   /** Want to start over with a new account */
   | "START_OVER";
+
+/** user apply to delete account, account gets frozen after success */
+export type DeleteAccountV2 = {
+  ok: Scalars["Boolean"]["output"];
+  planDeleteDate?: Maybe<Scalars["Date"]["output"]>;
+};
 
 export type DeleteCodeFromPlayground = {
   error?: Maybe<Scalars["String"]["output"]>;
@@ -2882,6 +2894,7 @@ export type ManagementStoreOrderNode = {
   id: Scalars["ID"]["output"];
   items?: Maybe<Scalars["String"]["output"]>;
   note?: Maybe<Scalars["String"]["output"]>;
+  noteByStaff?: Maybe<Scalars["String"]["output"]>;
   orderId: Scalars["String"]["output"];
   status: UmStoreOrderStatusEnum;
   trackingId?: Maybe<Scalars["String"]["output"]>;
@@ -3181,6 +3194,8 @@ export type Mutation = {
   createTopicWithCategory?: Maybe<CreateTopicWithCategory>;
   /** user apply to delete account, account gets frozen after success */
   deleteAccount?: Maybe<DeleteAccount>;
+  /** user apply to delete account, account gets frozen after success */
+  deleteAccountV2?: Maybe<DeleteAccountV2>;
   deleteCodeFromPlayground?: Maybe<DeleteCodeFromPlayground>;
   deleteComment?: Maybe<DeleteComment>;
   deleteComments?: Maybe<DeleteComments>;
@@ -3573,6 +3588,10 @@ export type MutationCreateTopicWithCategoryArgs = {
 
 export type MutationDeleteAccountArgs = {
   data: DeleteAccountInput;
+};
+
+export type MutationDeleteAccountV2Args = {
+  data: DeleteAccountInputV2;
 };
 
 export type MutationDeleteCodeFromPlaygroundArgs = {
@@ -4078,7 +4097,7 @@ export type MutationStoreAdminCreateOrderArgs = {
 
 export type MutationStoreOrderEditArgs = {
   id: Scalars["ID"]["input"];
-  note?: InputMaybe<Scalars["String"]["input"]>;
+  noteByStaff?: InputMaybe<Scalars["String"]["input"]>;
   status?: InputMaybe<UmStoreOrderStatusEnum>;
   trackingId?: InputMaybe<Scalars["String"]["input"]>;
 };
@@ -5787,6 +5806,13 @@ export type ProfileUpdateErrorEnum =
   | "INVALID_SKILL_TAGS"
   | "INVALID_WEBSITE";
 
+/** An enumeration. */
+export type ProgressCalendarQueryTypeEnum =
+  /** solved */
+  | "SOLVED"
+  /** submission */
+  | "SUBMISSION";
+
 export type ProgressListFilterInput = {
   difficulty?: InputMaybe<DifficultyEnum>;
   orderBy?: InputMaybe<ProgressOrderByEnum>;
@@ -5801,6 +5827,22 @@ export type ProgressOrderByEnum =
   | "LAST_SOLVED"
   | "TOTAL_SOLVES"
   | "WRONG_ATTEMPTS";
+
+/** An enumeration. */
+export type ProgressQuestionSortEnum =
+  /** lastSubmittedAt */
+  | "LAST_SUBMITTED_AT"
+  /** numSubmitted */
+  | "NUM_SUBMITTED"
+  /** questionFrontendId */
+  | "QUESTION_FRONTEND_ID";
+
+/** An enumeration. */
+export type ProgressQuestionStatusEnum =
+  /** attempted */
+  | "ATTEMPTED"
+  /** solved */
+  | "SOLVED";
 
 /** An enumeration. */
 export type ProgressStatus = "ACCEPTED" | "ATTEMPTED" | "UNATTEMPTED";
@@ -5818,6 +5860,8 @@ export type PublishSolution = {
 export type PublishStatus = "PUBLISHED" | "UNKNOWN" | "UNPUBLISHED";
 
 export type Query = {
+  /** get ab record by ab test name */
+  abRecordName: Scalars["Boolean"]["output"];
   achievement?: Maybe<AchievementNode>;
   achievements?: Maybe<Array<Maybe<AchievementNode>>>;
   activeDailyCodingChallengeQuestion: DailyChallengeNodeV2;
@@ -6181,6 +6225,16 @@ export type Query = {
   userOfficialSolutionFeedback?: Maybe<OfficialSolutionFeedbackBriefNode>;
   /** 获取用户当前 session 的做题进展，新版接口 */
   userProfileUserQuestionProgressV2: UserQuestionProgressNodeV2;
+  /** get user's session progress, solved and submission calendar */
+  userProgressCalendarV2?: Maybe<UserProgressCalendarNodeV2>;
+  /** get user's first submission year */
+  userProgressFirstSubmissionYear?: Maybe<Scalars["Int"]["output"]>;
+  /** get user's session progress of knowledge favorite */
+  userProgressKnowledgeList?: Maybe<UserProgressKnowledgeInfoListNode>;
+  /** get user's session progress */
+  userProgressQuestionList?: Maybe<UserProgressQuestionListNode>;
+  /** get user's session progress of submission list */
+  userProgressSubmissionList?: Maybe<UserProgressSubmissionListNode>;
   userRecentTopics?: Maybe<Array<TopicNode>>;
   userReports?: Maybe<PagifiedUserReportNode>;
   userSolutionTopics?: Maybe<TopicConnection>;
@@ -6198,6 +6252,10 @@ export type Query = {
   worldSubcountries?: Maybe<Array<Scalars["String"]["output"]>>;
   /** list of yearly medals which are qualified to acquire */
   yearlyMedalsQualified?: Maybe<Array<MedalBriefNode>>;
+};
+
+export type QueryAbRecordNameArgs = {
+  abName: Scalars["String"]["input"];
 };
 
 export type QueryAchievementArgs = {
@@ -7250,6 +7308,22 @@ export type QueryUserProfileUserQuestionProgressV2Args = {
   userSlug: Scalars["String"]["input"];
 };
 
+export type QueryUserProgressCalendarV2Args = {
+  month?: InputMaybe<Scalars["Int"]["input"]>;
+  queryType: ProgressCalendarQueryTypeEnum;
+  year: Scalars["Int"]["input"];
+};
+
+export type QueryUserProgressQuestionListArgs = {
+  filters?: InputMaybe<UserProgressQuestionListInput>;
+};
+
+export type QueryUserProgressSubmissionListArgs = {
+  limit: Scalars["Int"]["input"];
+  offset: Scalars["Int"]["input"];
+  questionSlug: Scalars["String"]["input"];
+};
+
 export type QueryUserRecentTopicsArgs = {
   limit?: InputMaybe<Scalars["Int"]["input"]>;
   username?: InputMaybe<Scalars["String"]["input"]>;
@@ -8003,6 +8077,13 @@ export type SortingEnum =
   /** descending */
   | "DESCENDING";
 
+/** An enumeration. */
+export type SortingOrderDescribedEnum =
+  /** ascending */
+  | "ASCENDING"
+  /** descending */
+  | "DESCENDING";
+
 export type SortingOrderEnum = "ASCENDING" | "DESCENDING";
 
 export type SponsorNode = {
@@ -8101,6 +8182,8 @@ export type StoreOrderNode = {
   id?: Maybe<Scalars["ID"]["output"]>;
   items: Array<StoreItemNode>;
   note: Scalars["String"]["output"];
+  /** Invisible to user */
+  noteByStaff?: Maybe<Scalars["String"]["output"]>;
   orderId: Scalars["String"]["output"];
   status: Scalars["String"]["output"];
   storeorderoperationlogSet: Array<OrderOperationLogNode>;
@@ -10015,10 +10098,93 @@ export type UserProfileOccupation =
   /** Professional */
   | "A_2";
 
+export type UserProgressCalendarNodeV2 = {
+  /** Solved everyday info within one month */
+  dateSolvedInfoWithinMonth?: Maybe<Array<UserProgressSolvedQuestionDateNode>>;
+  /** Number of submissions everyday within one month */
+  dateSubmissionNumWithinMonth?: Maybe<
+    Array<UserProgressSubmissionQuestionDateNode>
+  >;
+  /** Solved every month info within one year */
+  monthSolvedInfoWithinYear?: Maybe<Array<UserProgressSolvedQuestionMonthNode>>;
+  /** Number of submissions every month within one year */
+  monthSubmissionNumWithinYear?: Maybe<
+    Array<UserProgressSubmissionQuestionMonthNode>
+  >;
+};
+
+export type UserProgressKnowledgeInfoListNode = {
+  progressKnowledgeInfo: Array<UserProgressKnowledgeInfoNode>;
+};
+
+export type UserProgressKnowledgeInfoNode = {
+  finishedNum: Scalars["Int"]["output"];
+  knowledgeTag: CommonTagNode;
+  totalNum: Scalars["Int"]["output"];
+};
+
+export type UserProgressQuestionListInput = {
+  difficulty?: InputMaybe<Array<DifficultyDescribedEnum>>;
+  limit?: InputMaybe<Scalars["Int"]["input"]>;
+  questionStatus?: InputMaybe<ProgressQuestionStatusEnum>;
+  skip?: InputMaybe<Scalars["Int"]["input"]>;
+  sortField?: InputMaybe<ProgressQuestionSortEnum>;
+  sortOrder?: InputMaybe<SortingOrderDescribedEnum>;
+};
+
+export type UserProgressQuestionListNode = {
+  questions?: Maybe<Array<Maybe<UserProgressQuestionNode>>>;
+  totalNum?: Maybe<Scalars["Int"]["output"]>;
+};
+
+export type UserProgressQuestionNode = {
+  difficulty: DifficultyDescribedEnum;
+  frontendId: Scalars["String"]["output"];
+  lastResult?: Maybe<SubmissionStatusEnum>;
+  lastSubmittedAt?: Maybe<Scalars["DateTime"]["output"]>;
+  numSubmitted?: Maybe<Scalars["Int"]["output"]>;
+  questionStatus: ProgressQuestionStatusEnum;
+  title: Scalars["String"]["output"];
+  titleSlug: Scalars["String"]["output"];
+  topicTags?: Maybe<Array<CommonTagNode>>;
+  translatedTitle?: Maybe<Scalars["String"]["output"]>;
+};
+
+export type UserProgressSolvedQuestionDateNode = {
+  date: Scalars["Date"]["output"];
+  easySolvedNum: Scalars["Int"]["output"];
+  hardSolvedNum: Scalars["Int"]["output"];
+  mediumSolvedNum: Scalars["Int"]["output"];
+};
+
+export type UserProgressSolvedQuestionMonthNode = {
+  easySolvedNum: Scalars["Int"]["output"];
+  hardSolvedNum: Scalars["Int"]["output"];
+  mediumSolvedNum: Scalars["Int"]["output"];
+  month: Scalars["Int"]["output"];
+};
+
+export type UserProgressSubmissionListNode = {
+  submissions?: Maybe<Array<SubmissionDumpNode>>;
+  totalNum?: Maybe<Scalars["Int"]["output"]>;
+};
+
+export type UserProgressSubmissionQuestionDateNode = {
+  date: Scalars["Date"]["output"];
+  numSubmitted: Scalars["Int"]["output"];
+};
+
+export type UserProgressSubmissionQuestionMonthNode = {
+  month: Scalars["Int"]["output"];
+  numSubmitted: Scalars["Int"]["output"];
+};
+
 export type UserQuestionProgressNodeV2 = {
   numAcceptedQuestions: Array<QuestionCountNode>;
   numFailedQuestions: Array<QuestionCountNode>;
   numUntouchedQuestions: Array<QuestionCountNode>;
+  /** 用户所有题目击败其他用户的题目百分比 */
+  totalQuestionBeatsPercentage?: Maybe<Scalars["Float"]["output"]>;
   /** 用户击败其他用户的题目百分比 */
   userSessionBeatsPercentage: Array<LevelBeatPercentageMixin>;
 };

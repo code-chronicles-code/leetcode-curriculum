@@ -13,6 +13,7 @@ query QuestionList(
     data {
       challengeQuestionsV2 {
         date
+        type
       }
       difficulty
       isPaidOnly

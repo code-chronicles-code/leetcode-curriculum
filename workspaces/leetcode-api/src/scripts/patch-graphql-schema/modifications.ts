@@ -18,6 +18,9 @@ export const FIELD_MODIFICATIONS: SafeObjectMap<
     ) => FieldDefinitionNode)[]
   >
 > = {
+  ChallengeQuestionNode: {
+    type: [markNonNull],
+  },
   PagifiedQuestionNode: {
     totalNum: [addDirective("nonnegative")],
   },
