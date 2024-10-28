@@ -33,7 +33,7 @@ export const queryResultZodType = z.object({
     question: z.object({
       difficulty: z.enum(["Easy", "Medium", "Hard"]),
       questionFrontendId: z.string(),
-      title: z.string(),
+      title: z.string().trim(),
       titleSlug: slugZodType,
     }),
   }),

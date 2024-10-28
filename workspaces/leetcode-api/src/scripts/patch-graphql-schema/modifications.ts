@@ -68,6 +68,7 @@ export const FIELD_MODIFICATIONS: SafeObjectMap<
     solutionNum: [markNonNull, addDirective("nonnegative")],
     stats: [markNonNull],
     submitUrl: [markNonNull],
+    title: [addDirective("trim")],
     titleSlug: [addDirective("slug")],
     topicTags: [markNonNull],
     urlManager: [markNonNull],
@@ -75,7 +76,7 @@ export const FIELD_MODIFICATIONS: SafeObjectMap<
   SubmissionDumpNode: {
     id: [markNonNull],
     timestamp: [markNonNull],
-    title: [markNonNull],
+    title: [markNonNull, addDirective("trim")],
     titleSlug: [markNonNull, addDirective("slug")],
   },
 };

@@ -48,7 +48,7 @@ export const queryResultZodType = z.object({
         difficulty: z.enum(["Easy", "Medium", "Hard"]),
         isPaidOnly: z.boolean(),
         questionFrontendId: z.string(),
-        title: z.string(),
+        title: z.string().trim(),
         titleSlug: slugZodType,
       }),
     ),

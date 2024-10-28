@@ -18,6 +18,7 @@ import {
 type DirectivesConfig = {
   nonnegative?: boolean;
   slug?: boolean;
+  trim?: boolean;
   enumValues?: string[];
 };
 
@@ -47,6 +48,11 @@ function parseDirectives(
       case "slug": {
         invariant(!directive.arguments?.length, "No arguments allowed!");
         res.slug = true;
+        break;
+      }
+      case "trim": {
+        invariant(!directive.arguments?.length, "No arguments allowed!");
+        res.trim = true;
         break;
       }
       default: {
@@ -91,10 +97,7 @@ function generateZod(
       }
       case "Int": {
         const { nonnegative, ...rest } = parseDirectives(directives);
-        invariant(
-          Object.values(rest).every((v) => v === false),
-          "Unsupported directives!",
-        );
+        invariant(Object.keys(rest).length === 0, "Unsupported directives!");
 
         return [
           new ZodOutput(
@@ -120,14 +123,11 @@ function generateZod(
         return [new ZodOutput("z.string()", true), []];
       }
       case "String": {
-        const { slug, enumValues, ...rest } = parseDirectives(directives);
-        invariant(!(slug && enumValues), "Incompatible directive combination!");
-        invariant(
-          Object.values(rest).every((v) => v === false),
-          "Unsupported directives!",
-        );
+        const { slug, trim, enumValues, ...rest } = parseDirectives(directives);
+        invariant(Object.keys(rest).length === 0, "Unsupported directives!");
 
         if (enumValues) {
+          invariant(!slug && !trim, "Incompatible directive combination!");
           return [
             new ZodOutput(`z.enum(${JSON.stringify(enumValues)})`, true),
             [],
@@ -135,13 +135,17 @@ function generateZod(
         }
 
         if (slug) {
+          invariant(!trim, "@trim is redundant when @slug is enabled!");
           return [
             new ZodOutput("slugZodType", true),
             ['import { slugZodType } from "../../zod-types/slugZodType.ts"'],
           ];
         }
 
-        return [new ZodOutput("z.string()", true), []];
+        return [
+          new ZodOutput(["z.string()", trim ? ".trim()" : ""].join(""), true),
+          [],
+        ];
       }
       default: {
         throw new Error("Unsupported scalar type: " + currentType.name);

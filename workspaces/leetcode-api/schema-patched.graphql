@@ -10419,7 +10419,7 @@ type QuestionNode {
   stats: JSONString!
   status: String
   submitUrl: String!
-  title: String!
+  title: String! @trim
   titleSlug: String! @slug
   topicTags: [TopicTagNode!]!
   translatedContent: String
@@ -11008,7 +11008,7 @@ type SubmissionDumpNode {
   statusDisplay: String
   time: String
   timestamp: String!
-  title: String!
+  title: String! @trim
   titleSlug: String! @slug
   topicTags: [TopicTagNode]
   url: String
@@ -12216,5 +12216,7 @@ type WordListTypeNode {
 directive @nonnegative on FIELD_DEFINITION
 
 directive @slug on FIELD_DEFINITION
+
+directive @trim on FIELD_DEFINITION
 
 directive @enum(values: [String!]!) on FIELD_DEFINITION
