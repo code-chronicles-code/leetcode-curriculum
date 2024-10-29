@@ -5,6 +5,7 @@ import { DefinePlugin, type Configuration } from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import { WEB_APP_DIST } from "./src/scripts/build/constants.ts";
+import { WriteIndexHtmlWebpackPlugin } from "./src/scripts/build/WriteIndexHtmlWebpackPlugin.tsx";
 
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
 
@@ -42,6 +43,8 @@ const config: Configuration = {
     new DefinePlugin({
       ADVENTURE_PACK_COMMIT_HASH: JSON.stringify(commitHash),
     }),
+
+    new WriteIndexHtmlWebpackPlugin(commitHash),
 
     new ForkTsCheckerWebpackPlugin(),
   ],
