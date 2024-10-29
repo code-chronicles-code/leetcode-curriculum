@@ -16,7 +16,7 @@ export function App() {
     );
 
   return (
-    <div style={{display: "flex", gap: 10}}>
+    <div style={{ display: "flex", gap: 10 }}>
       <Box
         color="red"
         handleClick={() => handleOnClick(buttonSoundConfig.frequencies.red)}
