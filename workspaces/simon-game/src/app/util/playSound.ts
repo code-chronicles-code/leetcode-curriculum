@@ -6,12 +6,12 @@
  * @param duration - The duration of the sound in milliseconds.
  * @param volume - The volume of the sound, typically between 0 and 1.
  */
-export default function playSound(
+export const playSound = (
   context: AudioContext,
   frequency: number,
   duration: number,
   volume: number,
-) {
+) => {
   if (frequency <= 0) {
     throw new Error("Frequency must be a positive number.");
   }
@@ -30,9 +30,16 @@ export default function playSound(
   const gainNode = context.createGain();
   gainNode.gain.setValueAtTime(volume, context.currentTime);
 
+  // Creates the smooth fades-in / fade-out sound effect (Avoids the popping sounds)
+  gainNode.gain.linearRampToValueAtTime(volume, context.currentTime + 0.01);
+  gainNode.gain.linearRampToValueAtTime(
+    0,
+    context.currentTime + duration / 1000 - 0.01,
+  );
+
   oscillatorNode.connect(gainNode);
   gainNode.connect(context.destination);
 
   oscillatorNode.start();
   oscillatorNode.stop(context.currentTime + duration / 1000);
-}
+};

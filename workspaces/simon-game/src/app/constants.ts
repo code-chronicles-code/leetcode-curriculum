@@ -1,5 +1,10 @@
 export const buttonSoundConfig = {
   duration: 300,
   volume: 0.1,
-  frequencies: [261.63, 329.63, 392.0, 523.25],
+  frequencies: {
+    red: 261.63,
+    cobaltBlue: 329.63,
+    green: 392.0,
+    yellow: 523.25,
+  },
 };
