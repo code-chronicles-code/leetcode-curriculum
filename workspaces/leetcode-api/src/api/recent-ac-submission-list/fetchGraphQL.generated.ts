@@ -28,7 +28,7 @@ export const queryResultZodType = z.object({
   recentAcSubmissionList: z.array(
     z.object({
       id: z.string(),
-      title: z.string(),
+      title: z.string().trim(),
       titleSlug: slugZodType,
       timestamp: z.string(),
     }),

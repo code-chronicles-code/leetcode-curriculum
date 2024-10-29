@@ -9,7 +9,7 @@ import { nameNode } from "./astNodeBuilders.ts";
 
 // TODO: keep in sync with DirectivesConfig in graphqlToZod
 
-export const CUSTOM_DIRECTIVES = ["nonnegative", "slug"] as const;
+export const CUSTOM_DIRECTIVES = ["nonnegative", "slug", "trim"] as const;
 
 // TODO: memoize by directiveName?
 
