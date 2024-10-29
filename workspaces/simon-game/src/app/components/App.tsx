@@ -4,8 +4,9 @@ import playSound from "../util/playSound.ts";
 
 import { Box } from "./Box.tsx";
 
+let audioContext: AudioContext | null = null;
+
 export function App() {
-  let audioContext: AudioContext | null = null;
   return (
     <div>
       {buttonSoundConfig.frequencies.map((freq, index) => (
