@@ -18,36 +18,38 @@ export class WriteIndexHtmlWebpackPlugin {
           compilation.emitAsset(
             "index.html",
             new compiler.webpack.sources.RawSource(
-              ReactDOMServer.renderToStaticMarkup(
-                <html lang="en-US">
-                  <head>
-                    <meta charSet="utf-8" />
-                    <title>Adventure Pack</title>
-                    <link
-                      rel="preconnect"
-                      href="https://fonts.googleapis.com"
-                      crossOrigin=""
-                    />
-                    <link
-                      rel="preconnect"
-                      href="https://fonts.gstatic.com"
-                      crossOrigin=""
-                    />
-                    <link
-                      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
-                      rel="stylesheet"
-                    />
-                    <script async src="main.js" />
-                    <script async src="dependencies.js" />
-                    <link href="style.css" rel="stylesheet" />
-                  </head>
-                  <body>
-                    <div id="main">
-                      <App commitHash={this.commitHash} />
-                    </div>
-                  </body>
-                </html>,
-              ) + "\n",
+              "<!DOCTYPE html>\n" +
+                ReactDOMServer.renderToStaticMarkup(
+                  <html lang="en-US">
+                    <head>
+                      <meta charSet="utf-8" />
+                      <title>Adventure Pack</title>
+                      <link
+                        rel="preconnect"
+                        href="https://fonts.googleapis.com"
+                        crossOrigin=""
+                      />
+                      <link
+                        rel="preconnect"
+                        href="https://fonts.gstatic.com"
+                        crossOrigin=""
+                      />
+                      <link
+                        href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+                        rel="stylesheet"
+                      />
+                      <script async src="main.js" />
+                      <script async src="dependencies.js" />
+                      <link href="style.css" rel="stylesheet" />
+                    </head>
+                    <body>
+                      <div id="main">
+                        <App commitHash={this.commitHash} />
+                      </div>
+                    </body>
+                  </html>,
+                ) +
+                "\n",
             ),
           );
         },
