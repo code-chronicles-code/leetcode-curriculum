@@ -6,12 +6,12 @@
  * @param duration - The duration of the sound in milliseconds.
  * @param volume - The volume of the sound, typically between 0 and 1.
  */
-export const playSound = (
+export default function playSound(
   context: AudioContext,
   frequency: number,
   duration: number,
   volume: number,
-) => {
+) {
   if (frequency <= 0) {
     throw new Error("Frequency must be a positive number.");
   }
@@ -35,4 +35,4 @@ export const playSound = (
 
   oscillatorNode.start();
   oscillatorNode.stop(context.currentTime + duration / 1000);
-};
+}
