@@ -1,43 +1,15 @@
 import React from "react";
-import { buttonSoundConfig } from "../constants.ts";
-import { playSound } from "../util/playSound.ts";
 
 import { Box } from "./Box.tsx";
-
-let audioContext: AudioContext | null = null;
+import { playNote } from "../util/playNote.ts";
+import { config } from "../constants.ts";
 
 export function App() {
-  const handleOnClick = (freq: number) =>
-    playSound(
-      (audioContext ??= new AudioContext()),
-      freq,
-      buttonSoundConfig.duration,
-      buttonSoundConfig.volume,
-    );
-
   return (
     <div style={{ display: "flex", gap: 10 }}>
-      <Box
-        color="red"
-        handleClick={() => handleOnClick(buttonSoundConfig.frequencies.red)}
-      />
-      <Box
-        color={
-          // cobalt blue
-          "#0050B5"
-        }
-        handleClick={() =>
-          handleOnClick(buttonSoundConfig.frequencies.cobaltBlue)
-        }
-      />
-      <Box
-        color="green"
-        handleClick={() => handleOnClick(buttonSoundConfig.frequencies.green)}
-      />
-      <Box
-        color="yellow"
-        handleClick={() => handleOnClick(buttonSoundConfig.frequencies.yellow)}
-      />
+      {config.boxes.map((box) => (
+        <Box color={box.color} onClick={() => playNote(box.frequency)} />
+      ))}
     </div>
   );
 }

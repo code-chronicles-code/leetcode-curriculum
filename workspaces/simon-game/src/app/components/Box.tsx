@@ -5,7 +5,7 @@ type Props = {
   height?: number;
   width?: number;
   margin?: number;
-  handleClick: () => void;
+  onClick: () => void;
 };
 
 export function Box({
@@ -13,20 +13,20 @@ export function Box({
   height = 100,
   width = 100,
   margin,
-  handleClick,
+  onClick,
 }: Props) {
   return (
     <button
       style={{
         backgroundColor: color,
-        height: height,
-        width: width,
+        height,
+        width,
         borderRadius: 20, // rounded corners
-        margin: margin, // spaces between boxes
+        margin, // spaces between boxes
         cursor: "pointer",
         border: 0,
       }}
-      onClick={handleClick}
+      onClick={onClick}
     />
   );
 }
