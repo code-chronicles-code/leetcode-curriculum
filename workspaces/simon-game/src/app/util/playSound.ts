@@ -34,7 +34,10 @@ export const playSound = (
   gainNode.gain.setValueAtTime(volumePct, audioContext.currentTime);
 
   // Creates the smooth fades-in / fade-out sound effect (Avoids the popping sounds)
-  gainNode.gain.linearRampToValueAtTime(volumePct, audioContext.currentTime + 0.01);
+  gainNode.gain.linearRampToValueAtTime(
+    volumePct,
+    audioContext.currentTime + 0.01,
+  );
   gainNode.gain.linearRampToValueAtTime(
     0,
     audioContext.currentTime + durationMs / 1000 - 0.01,
