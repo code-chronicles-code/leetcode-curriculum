@@ -6,7 +6,7 @@ let audioContext: AudioContext | null = null;
  * @param context - The audio context to use for generating the sound.
  * @param frequency - The frequency of the sound in Hertz
  * @param durationMs - The duration of the sound in milliseconds.
- * @param volume - The volume of the sound, typically between 0 and 1.
+ * @param volumePct - The volume of the sound, typically between 0 and 1.
  */
 export const playSound = (
   frequency: number,
@@ -34,10 +34,7 @@ export const playSound = (
   gainNode.gain.setValueAtTime(volumePct, audioContext.currentTime);
 
   // Creates the smooth fades-in / fade-out sound effect (Avoids the popping sounds)
-  gainNode.gain.linearRampToValueAtTime(
-    volumePct,
-    audioContext.currentTime + 0.01,
-  );
+  gainNode.gain.linearRampToValueAtTime(volumePct, audioContext.currentTime + 0.01);
   gainNode.gain.linearRampToValueAtTime(
     0,
     audioContext.currentTime + durationMs / 1000 - 0.01,

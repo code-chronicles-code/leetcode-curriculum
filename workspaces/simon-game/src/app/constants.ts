@@ -1,7 +1,7 @@
 export const config = {
   soundDurationMs: 300,
   volumePct: 0.1,
-  buttons: [
+  boxes: [
     {
       color: "red",
       frequency: 261.63,
