@@ -1,4 +1,8 @@
+import { MS_IN_SEC } from "@code-chronicles/util/timeConstants";
+
 let audioContext: AudioContext | null = null;
+
+const FADE_DURATION = 0.01;
 
 /**
  * Plays a sound using the Web Audio API.
@@ -8,21 +12,21 @@ let audioContext: AudioContext | null = null;
  * @param durationMs - The duration of the sound in milliseconds.
  * @param volumePct - The volume of the sound, typically between 0 and 1.
  */
-export const playSound = (
+export function playSound(
   frequency: number,
   durationMs: number,
   volumePct: number,
-) => {
+): void {
   if (frequency <= 0) {
-    throw new Error("Frequency must be a positive number.");
+    throw new RangeError("Frequency must be a positive number.");
   }
 
   if (durationMs <= 0) {
-    throw new Error("Duration must be a positive number.");
+    throw new RangeError("Duration must be a positive number.");
   }
 
   if (volumePct < 0 || volumePct > 1) {
-    throw new Error("Volume must be between 0 and 1.");
+    throw new RangeError("Volume must be between 0 and 1.");
   }
 
   audioContext ??= new AudioContext();
@@ -36,16 +40,16 @@ export const playSound = (
   // Creates the smooth fades-in / fade-out sound effect (Avoids the popping sounds)
   gainNode.gain.linearRampToValueAtTime(
     volumePct,
-    audioContext.currentTime + 0.01,
+    audioContext.currentTime + FADE_DURATION,
   );
   gainNode.gain.linearRampToValueAtTime(
     0,
-    audioContext.currentTime + durationMs / 1000 - 0.01,
+    audioContext.currentTime + durationMs / MS_IN_SEC - FADE_DURATION,
   );
 
   oscillatorNode.connect(gainNode);
   gainNode.connect(audioContext.destination);
 
   oscillatorNode.start();
-  oscillatorNode.stop(audioContext.currentTime + durationMs / 1000);
-};
+  oscillatorNode.stop(audioContext.currentTime + durationMs / MS_IN_SEC);
+}
