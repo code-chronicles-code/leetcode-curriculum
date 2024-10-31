@@ -5,18 +5,28 @@ type Props = {
   height?: number;
   width?: number;
   margin?: number;
+  onClick: () => void;
 };
 
-export function Box(props: Props) {
+export function Box({
+  color = "lightblue",
+  height = 100,
+  width = 100,
+  margin,
+  onClick,
+}: Props) {
   return (
-    <div
+    <button
       style={{
-        backgroundColor: props.color ?? "lightblue",
-        height: props.height ?? 100,
-        width: props.width ?? 100,
+        backgroundColor: color,
+        height,
+        width,
         borderRadius: 20, // rounded corners
-        margin: props.margin, // spaces between boxes
+        margin, // spaces between boxes
+        cursor: "pointer",
+        border: 0,
       }}
+      onClick={onClick}
     />
   );
 }
