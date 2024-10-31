@@ -7,7 +7,7 @@ export class WebpackChromeExtensionManifestPlugin {
   constructor(private manifest: JsonObject) {}
 
   apply(compiler: Compiler) {
-    compiler.hooks.compilation.tap("ManifestPlugin", (compilation) => {
+    compiler.hooks.compilation.tap(this.constructor.name, (compilation) => {
       compilation.hooks.processAssets.tap(
         {
           name: this.constructor.name,
