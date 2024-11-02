@@ -5,18 +5,22 @@ import { playNote } from "../util/playNote.ts";
 import { config } from "../constants.ts";
 
 export function App() {
-  const [playerMoves, setPlayerMoves] = useState<number[]>([]);
+  const [playerMoves, setPlayerMoves] = useState<readonly number[]>([]);
   return (
-    <div style={{ display: "flex", gap: 10 }}>
-      {config.boxes.map((box, index) => (
-        <Box
-          color={box.color}
-          onClick={() => {
-            playNote(box.frequency);
-            setPlayerMoves([...playerMoves, index]);
-          }}
-        />
-      ))}
-    </div>
+    <>
+      <div style={{ display: "flex", gap: 10 }}>
+        {config.boxes.map((box, index) => (
+          <Box
+            key={index}
+            color={box.color}
+            onClick={() => {
+              playNote(box.frequency);
+              setPlayerMoves((prev) => [...prev, index]);
+            }}
+          />
+        ))}
+      </div>
+      <pre>{JSON.stringify(playerMoves, null, 2)}</pre>
+    </>
   );
 }
