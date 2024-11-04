@@ -59,8 +59,11 @@ To use:
    <!-- prettier-ignore-start -->
    <!-- The two spaces at the end of the next line are intentional and necessary for rendering a single line break. -->
 
-   > ✨ New LeetCode problem of the day: [1460. Make Two Arrays Equal by Reversing Subarrays](https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/) ✨  
-   > It's marked easy, so don't overthink it!
+   > ✨ New LeetCode problem of the day: [1460. Make Two Arrays Equal by Reversing Subarrays](https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/) (marked Easy) ✨
+   >
+   > ##### Problem due: ⏳ in 20 hours ⏳
+
+   Note that the "in 20 hours" is a [Discord relative timestamp](https://discord.com/developers/docs/reference#message-formatting-timestamp-styles) so it will remain up-to-date as time passes.
 
    <!-- prettier-ignore-end -->
 

@@ -25,6 +25,7 @@
     "@code-chronicles/leetcode-api": "workspace:*",
     "@code-chronicles/util": "workspace:*",
     "bufferutil": "4.0.8",
+    "dedent": "1.5.3",
     "discord.js": "14.15.3",
     "invariant": "2.2.4",
     "utf-8-validate": "6.0.4",
