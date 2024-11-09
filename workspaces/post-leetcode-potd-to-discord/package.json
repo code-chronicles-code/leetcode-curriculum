@@ -28,7 +28,7 @@
     "dedent": "1.5.3",
     "discord.js": "14.15.3",
     "invariant": "2.2.4",
-    "utf-8-validate": "6.0.4",
+    "utf-8-validate": "6.0.5",
     "ws": "8.18.0",
     "zod": "3.23.8"
   },
@@ -37,14 +37,14 @@
     "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*",
     "@types/invariant": "2.2.37",
-    "@types/node": "22.8.1",
+    "@types/node": "22.9.0",
     "cross-env": "7.0.3",
-    "eslint": "9.13.0",
+    "eslint": "9.14.0",
     "fork-ts-checker-webpack-plugin": "9.0.2",
     "prettier": "3.3.3",
-    "tsx": "4.19.1",
+    "tsx": "4.19.2",
     "typescript": "5.6.3",
-    "webpack": "5.95.0",
+    "webpack": "5.96.1",
     "webpack-cli": "5.1.4"
   }
 }

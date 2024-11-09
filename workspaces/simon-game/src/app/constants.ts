@@ -1,22 +1,24 @@
+import { getConcertPitch } from "@code-chronicles/util/getConcertPitch";
+
 export const config = {
   soundDurationMs: 300,
   volumePct: 0.1,
   boxes: [
     {
       color: "red",
-      frequency: 261.63,
+      frequency: getConcertPitch("C4"),
     },
     {
       color: "#0050B5", // cobalt blue
-      frequency: 329.63,
+      frequency: getConcertPitch("E4"),
     },
     {
       color: "green",
-      frequency: 392.0,
+      frequency: getConcertPitch("G4"),
     },
     {
       color: "yellow",
-      frequency: 523.25,
+      frequency: getConcertPitch("C5"),
     },
   ],
 };
