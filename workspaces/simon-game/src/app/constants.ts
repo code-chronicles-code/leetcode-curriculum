@@ -1,4 +1,7 @@
+import { arpeggiate } from "@code-chronicles/util/arpeggiate";
 import { getConcertPitch } from "@code-chronicles/util/getConcertPitch";
+
+const [note1, note2, note3, note4] = arpeggiate(getConcertPitch("C4"), 1);
 
 export const config = {
   soundDurationMs: 300,
@@ -6,19 +9,19 @@ export const config = {
   boxes: [
     {
       color: "red",
-      frequency: getConcertPitch("C4"),
+      frequency: note1,
     },
     {
       color: "#0050B5", // cobalt blue
-      frequency: getConcertPitch("E4"),
+      frequency: note2,
     },
     {
       color: "green",
-      frequency: getConcertPitch("G4"),
+      frequency: note3,
     },
     {
       color: "yellow",
-      frequency: getConcertPitch("C5"),
+      frequency: note4,
     },
   ],
 };

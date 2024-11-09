@@ -1,5 +1,8 @@
-import invariant from "invariant";
 import nullthrows from "nullthrows";
+
+import { assertIsIntegerString } from "@code-chronicles/util/assertIsIntegerString";
+import { shiftOctaves } from "@code-chronicles/util/shiftOctaves";
+import { shiftSemitones } from "@code-chronicles/util/shiftSemitones";
 
 const NOTES = {
   c: -9,
@@ -27,9 +30,7 @@ export function getConcertPitch(note: string, a4Pitch: number = 440): number {
     semitones += ACCIDENTALS[note[index++] as keyof typeof ACCIDENTALS];
   }
 
-  const octaveString = note.slice(index);
-  invariant(/^-?\d+/.test(octaveString), "Invalid octave!");
-  const octaves = parseInt(octaveString, 10) - 4;
+  const octaves = assertIsIntegerString(note.slice(index)) - 4;
 
-  return a4Pitch * Math.pow(2, octaves + semitones / 12);
+  return shiftSemitones(shiftOctaves(a4Pitch, octaves), semitones);
 }

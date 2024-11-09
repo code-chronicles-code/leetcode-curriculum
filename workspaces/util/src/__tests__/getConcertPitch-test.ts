@@ -55,5 +55,45 @@ describe("getConcertPitch", () => {
 
   // TODO: test that note can be uppercase or lowercase
 
-  // TODO: test some invalid inputs
+  it.each([
+    // Invalid note:
+    "H4",
+    "I4",
+    "Do4",
+
+    // Invalid accidental:
+    "A%4",
+    "BB4",
+    "C++11",
+
+    // Invalid octave:
+    "Aa",
+
+    // Out-of-order note:
+    "4A",
+    "C4#",
+
+    // Extra characters in the octave:
+    "A04",
+    "A+4",
+    "A4.",
+    "A4.0",
+
+    // Missing note:
+    "4",
+    "#4",
+
+    // Missing octave:
+    "A",
+    "Ab",
+    "C#",
+
+    // Other fun stuff:
+    "",
+    "440",
+    "Doe, a deer",
+    "Hello, World!",
+  ])("throws on invalid input %p", (s) => {
+    expect(() => getConcertPitch(s)).toThrow();
+  });
 });
