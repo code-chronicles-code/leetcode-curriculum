@@ -1,10 +1,12 @@
 import { execSync } from "node:child_process";
 import path from "node:path";
 
-import { DefinePlugin, type Configuration } from "webpack";
+import CopyPlugin from "copy-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import { DefinePlugin, type Configuration } from "webpack";
 
 import { WEB_APP_DIST } from "./src/scripts/build/constants.ts";
+import { WriteGoodiesJsonWebpackPlugin } from "./src/scripts/build/WriteGoodiesJsonWebpackPlugin.tsx";
 import { WriteIndexHtmlWebpackPlugin } from "./src/scripts/build/WriteIndexHtmlWebpackPlugin.tsx";
 
 const commitHash = execSync("git rev-parse HEAD").toString().trim();
@@ -44,6 +46,9 @@ const config: Configuration = {
       ADVENTURE_PACK_COMMIT_HASH: JSON.stringify(commitHash),
     }),
 
+    // Add the other assets needed for the app.
+    new CopyPlugin({ patterns: [{ from: "css", to: WEB_APP_DIST }] }),
+    new WriteGoodiesJsonWebpackPlugin(),
     new WriteIndexHtmlWebpackPlugin(commitHash),
 
     new ForkTsCheckerWebpackPlugin(),
