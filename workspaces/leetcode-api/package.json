@@ -29,7 +29,7 @@
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
     "graphql": "patch:graphql@npm%3A16.9.0#~/.yarn/patches/graphql-npm-16.9.0-a36f71845f.patch",
-    "graphql-request": "7.1.0",
+    "graphql-request": "7.1.2",
     "invariant": "2.2.4",
     "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch",
     "zod": "3.23.8"
@@ -40,16 +40,16 @@
     "@graphql-codegen/add": "5.0.3",
     "@graphql-codegen/cli": "5.0.3",
     "@graphql-codegen/near-operation-file-preset": "3.0.0",
-    "@types/node": "22.8.1",
+    "@types/node": "22.9.0",
     "cross-env": "7.0.3",
     "dedent": "1.5.3",
-    "eslint": "9.13.0",
+    "eslint": "9.14.0",
     "graphql-query-compress": "1.2.4",
     "immutability-helper": "patch:immutability-helper@npm%3A3.1.1#~/.yarn/patches/immutability-helper-npm-3.1.1-482f1f8f58.patch",
     "jest": "29.7.0",
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
-    "tsx": "4.19.1",
+    "tsx": "4.19.2",
     "typescript": "5.6.3"
   }
 }

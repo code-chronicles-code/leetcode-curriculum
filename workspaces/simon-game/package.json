@@ -21,7 +21,6 @@
     "typecheck": "code-chronicles-typecheck"
   },
   "dependencies": {
-    "@code-chronicles/leetcode-api": "workspace:*",
     "@code-chronicles/util": "workspace:*",
     "react": "18.3.1",
     "react-dom": "18.3.1"
@@ -29,16 +28,16 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/repository-scripts": "workspace:*",
-    "@types/node": "22.8.1",
+    "@types/node": "22.9.0",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "cross-env": "7.0.3",
-    "eslint": "9.13.0",
+    "eslint": "9.14.0",
     "fork-ts-checker-webpack-plugin": "9.0.2",
     "prettier": "3.3.3",
-    "tsx": "4.19.1",
+    "tsx": "4.19.2",
     "typescript": "5.6.3",
-    "webpack": "5.95.0",
+    "webpack": "5.96.1",
     "webpack-cli": "5.1.4"
   }
 }

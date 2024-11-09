@@ -34,12 +34,12 @@
     "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/util": "workspace:*",
     "@jest/globals": "29.7.0",
-    "@types/node": "22.8.1",
-    "eslint": "9.13.0",
+    "@types/node": "22.9.0",
+    "eslint": "9.14.0",
     "jest": "29.7.0",
     "prettier": "3.3.3",
     "ts-jest": "29.2.5",
-    "tsx": "4.19.1",
+    "tsx": "4.19.2",
     "type-fest": "4.26.1",
     "typescript": "5.6.3"
   }
