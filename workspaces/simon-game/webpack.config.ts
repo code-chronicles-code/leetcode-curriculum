@@ -3,9 +3,10 @@ import path from "node:path";
 import type { Configuration } from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
+import { WriteIndexHtmlWebpackPlugin } from "./src/scripts/build/WriteIndexHtmlWebpackPlugin.tsx";
+
 const config: Configuration = {
   target: "web",
-  // TODO: for Chrome extension we will need devtool: "cheap-source-map" since we can't eval.
   entry: "./src/app/main.tsx",
   output: {
     filename: "[name].js",
@@ -33,7 +34,11 @@ const config: Configuration = {
     conditionNames: ["import"],
   },
 
-  plugins: [new ForkTsCheckerWebpackPlugin()],
+  plugins: [
+    new ForkTsCheckerWebpackPlugin(),
+
+    new WriteIndexHtmlWebpackPlugin(),
+  ],
 
   optimization: {
     splitChunks: {
