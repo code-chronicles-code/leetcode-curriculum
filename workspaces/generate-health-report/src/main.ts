@@ -20,6 +20,7 @@ const COMMANDS = [
   "yarn workspace @code-chronicles/leetcode-api codegen",
   "yarn workspace @code-chronicles/leetcode-zen-mode build",
   "yarn workspace @code-chronicles/post-leetcode-potd-to-discord build",
+  "yarn workspace @code-chronicles/simon-game build",
 ];
 
 async function main(): Promise<void> {
