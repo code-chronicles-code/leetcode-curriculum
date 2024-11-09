@@ -1,6 +1,7 @@
 import type { ReadonlyDeep } from "type-fest";
 import { z } from "zod";
 
+import { GOODIES_FILENAME } from "./constants.ts";
 import { javaGoodyZodType } from "./zod-types/javaGoodyZodType.ts";
 import { javaScriptGoodyZodType } from "./zod-types/javaScriptGoodyZodType.ts";
 import { kotlinGoodyZodType } from "./zod-types/kotlinGoodyZodType.ts";
@@ -18,7 +19,7 @@ const goodiesByLanguage = z.object({
 export type GoodiesByLanguage = ReadonlyDeep<z.infer<typeof goodiesByLanguage>>;
 
 export async function fetchGoodies(): Promise<GoodiesByLanguage> {
-  const response = await fetch("goodies.json");
+  const response = await fetch(GOODIES_FILENAME);
 
   if (!response.ok) {
     throw new Error(`Got status ${response.status} from server!`);
