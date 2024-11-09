@@ -21,6 +21,10 @@ concurrency:
 
 jobs:
   post-leetcode-potd-to-discord:
+    # Only run this job on the original repository! To run this on your fork,
+    # update or remove the line below.
+    if: github.repository == 'code-chronicles-code/leetcode-curriculum'
+
     environment:
       name: post-leetcode-potd-to-discord
 

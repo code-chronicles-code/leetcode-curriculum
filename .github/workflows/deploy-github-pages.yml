@@ -24,6 +24,10 @@ concurrency:
 
 jobs:
   deploy-github-pages:
+    # Only run this job on the original repository! To run this on your fork,
+    # update or remove the line below.
+    if: github.repository == 'code-chronicles-code/leetcode-curriculum'
+
     environment:
       name: deploy-github-pages
       url: ${{ steps.deployment.outputs.page_url }}

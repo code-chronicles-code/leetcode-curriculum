@@ -22,6 +22,10 @@ permissions:
 
 jobs:
   update-problem-data:
+    # Only run this job on the original repository! To run this on your fork,
+    # update or remove the line below.
+    if: github.repository == 'code-chronicles-code/leetcode-curriculum'
+
     runs-on: ubuntu-latest
 
     steps:
