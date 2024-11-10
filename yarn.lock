@@ -1028,6 +1028,7 @@ __metadata:
     prettier: "npm:3.3.3"
     ts-jest: "npm:29.2.5"
     tsx: "npm:4.19.2"
+    type-fest: "npm:4.26.1"
     typescript: "npm:5.6.3"
     zod: "npm:3.23.8"
   languageName: unknown
