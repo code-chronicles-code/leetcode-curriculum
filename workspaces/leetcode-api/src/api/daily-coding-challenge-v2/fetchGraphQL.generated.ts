@@ -9,8 +9,8 @@ import { yyyymmddDateZodType } from "../../zod-types/yyyymmddDateZodType.ts";
 import { slugZodType } from "../../zod-types/slugZodType.ts";
 
 type DailyCodingChallengeV2QueryVariables = Types.Exact<{
-  month?: Types.InputMaybe<Types.Scalars["Int"]["input"]>;
-  year?: Types.InputMaybe<Types.Scalars["Int"]["input"]>;
+  month: Types.Scalars["Int"]["input"];
+  year: Types.Scalars["Int"]["input"];
 }>;
 
 type DailyCodingChallengeV2Query = {
@@ -37,7 +37,7 @@ type DailyCodingChallengeV2Query = {
 };
 
 export const QUERY =
-  "query($month:Int,$year:Int){dailyCodingChallengeV2(month:$month,year:$year){challenges{date question{difficulty questionFrontendId title titleSlug}}weeklyChallenges{date question{difficulty questionFrontendId title titleSlug}}}}";
+  "query($month:Int!,$year:Int!){dailyCodingChallengeV2(month:$month,year:$year){challenges{date question{difficulty questionFrontendId title titleSlug}}weeklyChallenges{date question{difficulty questionFrontendId title titleSlug}}}}";
 
 export const queryResultZodType = z.object({
   dailyCodingChallengeV2: z

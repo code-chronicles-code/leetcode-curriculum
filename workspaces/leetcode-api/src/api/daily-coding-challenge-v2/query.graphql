@@ -1,4 +1,4 @@
-query DailyCodingChallengeV2($month: Int, $year: Int) {
+query DailyCodingChallengeV2($month: Int!, $year: Int!) {
   dailyCodingChallengeV2(month: $month, year: $year) {
     challenges {
       date
