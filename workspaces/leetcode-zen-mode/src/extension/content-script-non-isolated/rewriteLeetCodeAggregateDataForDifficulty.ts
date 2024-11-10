@@ -83,6 +83,7 @@ export function rewriteLeetCodeAggregateDataForDifficulty(
         if (isArrayOfNumbers(values)) {
           const total = sum(values);
 
+          // TODO: weighted average
           if (key === "percentage") {
             return total / (values.length || 1);
           }
