@@ -22,6 +22,8 @@
     "typecheck": "code-chronicles-typecheck"
   },
   "dependencies": {
+    "@code-chronicles/util": "workspace:*",
+    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch",
     "prettier": "3.3.3"
   },
   "devDependencies": {
