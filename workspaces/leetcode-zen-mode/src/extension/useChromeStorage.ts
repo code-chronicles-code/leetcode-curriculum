@@ -1,9 +1,8 @@
 import immutableUpdate from "immutability-helper";
 import { useSyncExternalStore } from "react";
 
+import { getChrome } from "@code-chronicles/util/browser-extensions/chrome/getChrome";
 import { getUniqueId } from "@code-chronicles/util/getUniqueId";
-
-import { getChrome } from "./getChrome.ts";
 
 let storage: Record<string, unknown> | null = null;
 

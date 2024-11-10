@@ -1,5 +1,9 @@
-export function maybeThrow(errors: readonly [unknown, unknown[]]): never;
+import type { NonEmptyArray } from "@code-chronicles/util/NonEmptyArray";
+
+export function maybeThrow(errors: Readonly<NonEmptyArray<unknown>>): never;
+
 export function maybeThrow(errors: readonly unknown[]): void;
+
 export function maybeThrow(errors: readonly unknown[]): void {
   if (errors.length === 0) {
     return;

@@ -1,6 +1,7 @@
 import { z } from "zod";
 
-import { getChrome } from "./getChrome.ts";
+import { getChrome } from "@code-chronicles/util/browser-extensions/chrome/getChrome";
+
 import { useChromeStorage } from "./useChromeStorage.ts";
 
 export const DIFFICULTIES = ["Easy", "Medium", "Hard"] as const;
