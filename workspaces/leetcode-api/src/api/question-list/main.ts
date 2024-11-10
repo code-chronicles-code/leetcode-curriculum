@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { compareStringsCaseInsensitive } from "@code-chronicles/util/compareStringsCaseInsensitive";
+import { compareStrings } from "@code-chronicles/util/compareStrings";
 import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 import { partition } from "@code-chronicles/util/partition";
 import { numericIdAsNumberZodType } from "@code-chronicles/util/zod-types/numericIdAsNumberZodType";
@@ -25,8 +25,7 @@ const questionZodType = z
         );
         return mapObjectValues(
           { dailyChallengeDates, weeklyChallengeDates },
-          (group) =>
-            group.map((c) => c.date).sort(compareStringsCaseInsensitive),
+          (group) => group.map((c) => c.date).sort(compareStrings),
         ) as ChallengeData;
       }),
     difficulty: questionDifficultyZodType,
