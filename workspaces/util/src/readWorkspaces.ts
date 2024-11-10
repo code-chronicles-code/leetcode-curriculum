@@ -17,6 +17,7 @@ const workspaceZodType = z.union([
 
 export type Workspace = z.infer<typeof workspaceZodType>;
 
+// TODO: rename to `readYarnWorkspaces`
 export async function readWorkspaces(): Promise<Workspace[]> {
   const yarnCommandResult = await execWithArgsOrThrowOnNzec("yarn", [
     "workspaces",
