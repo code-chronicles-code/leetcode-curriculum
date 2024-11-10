@@ -1,23 +1,44 @@
+import nullthrows from "nullthrows";
+
 import { assignFunctionCosmeticProperties } from "@code-chronicles/util/object-properties/assignFunctionCosmeticProperties";
 import { coalesceResults } from "@code-chronicles/util/coalesceResults";
 import { isString } from "@code-chronicles/util/isString";
 import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
-
-type Middleware = (moduleFn: unknown) => unknown;
+import { Queue } from "@code-chronicles/util/Queue";
 
 type Push = typeof Array.prototype.push;
 
-/**
- * Injects middleware that runs when the current page is loading code chunks
- * built using `webpack`, allowing the patching of modules that make up the
- * page.
- *
- * Works when `webpack` was run using the "array-push" `output.chunkFormat`:
- * https://webpack.js.org/configuration/output/#outputchunkformat
- */
-export function injectWebpackChunkLoadingMiddleware(
-  middlewareFn: Middleware,
-): void {
+const pendingWebpackChunkLoads = new Queue<() => void>();
+let isWebpackChunkLoadingPaused = false;
+
+function maybeProcessPendingWebpackChunkLoads(): void {
+  while (!isWebpackChunkLoadingPaused && pendingWebpackChunkLoads.size > 0) {
+    nullthrows(pendingWebpackChunkLoads.pop())();
+  }
+}
+
+export function pauseWebpackChunkLoading(): void {
+  isWebpackChunkLoadingPaused = true;
+}
+
+export function resumeWebpackChunkLoading(): void {
+  isWebpackChunkLoadingPaused = false;
+  maybeProcessPendingWebpackChunkLoads();
+}
+
+type Middleware = (moduleFn: unknown) => unknown;
+
+const middlewares: Middleware[] = [];
+
+let isManagingWebpackChunkLoading = false;
+
+function startManagingWebpackChunkLoading(): void {
+  if (isManagingWebpackChunkLoading) {
+    return;
+  }
+
+  // TODO: also handle `window.webpackJsonp`
+
   // `webpack`'s "array-push" chunk format works by pushing information about
   // chunks onto a globally defined array named something like
   // `webpackChunk_N_E`. The array is accessed as `self.webpackChunk_N_E`, so
@@ -39,13 +60,19 @@ export function injectWebpackChunkLoadingMiddleware(
       }
 
       // Once we've found the magic `webpack` array we remove the proxy,
-      // parts of the page seem to break without this.
+      // parts of the page seemed to break without this when I tested this on
+      // LeetCode's website.
       globalThis.self = prevSelf;
 
       // The `webpack` bootstrapping code reassigns the array's `push`
       // method. We will intercept this reassignment so we can patch modules
       // before they are registered.
       let push: Push = newValue.push;
+
+      // We'll also track the length of this array, so that we can fake the
+      // return value of `push` even when we've paused
+      let length: number = Number(newValue?.length ?? 0);
+
       Object.defineProperty(newValue, "push", {
         get() {
           return push;
@@ -95,7 +122,10 @@ export function injectWebpackChunkLoadingMiddleware(
                     Object.hasOwn(module, "exports")
                   ) {
                     // eslint-disable-next-line import-x/no-commonjs -- It's not our code that's CommonJS.
-                    module.exports = middlewareFn(module.exports);
+                    module.exports = middlewares.reduce(
+                      (m, fn) => fn(m),
+                      module.exports,
+                    );
                   } else {
                     console.error(
                       "Surprising `webpack` module format: ",
@@ -108,11 +138,17 @@ export function injectWebpackChunkLoadingMiddleware(
               }
             }
 
-            return newPush.apply(
-              this,
-              // Slight lie but `.apply` will work with the `arguments` object.
-              arguments as unknown as Parameters<TNewPush>,
+            pendingWebpackChunkLoads.push(() =>
+              newPush.apply(
+                this,
+                // Slight lie but `.apply` will work with the `arguments` object.
+                arguments as unknown as Parameters<TNewPush>,
+              ),
             );
+
+            maybeProcessPendingWebpackChunkLoads();
+
+            return arguments.length;
           };
 
           push = assignFunctionCosmeticProperties(wrappedNewPush, newPush);
@@ -122,4 +158,21 @@ export function injectWebpackChunkLoadingMiddleware(
       return res;
     },
   });
+
+  isManagingWebpackChunkLoading = true;
+}
+
+/**
+ * Injects middleware that runs when the current page is loading code chunks
+ * built using `webpack`, allowing the patching of modules that make up the
+ * page.
+ *
+ * Works when `webpack` was run using the "array-push" `output.chunkFormat`:
+ * https://webpack.js.org/configuration/output/#outputchunkformat
+ */
+export function injectWebpackChunkLoadingMiddleware(
+  middlewareFn: Middleware,
+): void {
+  startManagingWebpackChunkLoading();
+  middlewares.push(middlewareFn);
 }
