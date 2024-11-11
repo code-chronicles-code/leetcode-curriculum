@@ -1,0 +1,15 @@
+diff --git a/index.d.ts b/index.d.ts
+index e0bdd370b90c09973074493e8ecaf3ae250b562d..a8981b34374e54d9beb588a2eeaaac43803cbe45 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -5,9 +5,7 @@
+ ////////////////////
+ // Global object
+ ////////////////////
+-interface Window {
+-    chrome: typeof chrome;
+-}
++export type Chrome = typeof chrome;
+ 
+ ////////////////////
+ // Accessibility Features

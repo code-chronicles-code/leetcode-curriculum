@@ -3,10 +3,12 @@ import type { Compiler } from "webpack";
 
 import { jsonStringifyPrettyInDev } from "@code-chronicles/util/jsonStringifyPrettyInDev";
 
+// TODO: consider generalizing to a simple JSON plugin
+
 export class WebpackChromeExtensionManifestPlugin {
   constructor(private manifest: JsonObject) {}
 
-  apply(compiler: Compiler) {
+  apply(compiler: Compiler): void {
     compiler.hooks.compilation.tap(this.constructor.name, (compilation) => {
       compilation.hooks.processAssets.tap(
         {

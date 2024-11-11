@@ -1,5 +1,5 @@
 import { injectJsonParseMiddleware } from "@code-chronicles/util/browser-extensions/injectJsonParseMiddleware";
-import { injectWebpackChunkLoadingMiddleware } from "@code-chronicles/util/browser-extensions/injectWebpackChunkLoadingMiddleware";
+import { injectWebpackChunkLoadingMiddleware } from "@code-chronicles/util/browser-extensions/webpackChunkLoading";
 
 import { patchLeetCodeModule } from "./patchLeetCodeModule.ts";
 import { rewriteLeetCodeGraphQLData } from "./rewriteLeetCodeGraphQLData.ts";

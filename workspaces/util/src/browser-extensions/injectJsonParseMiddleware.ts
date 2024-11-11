@@ -10,7 +10,7 @@ type JsonParse = typeof JSON.parse;
 // The types are declared as `unknown` because the `JSON.parse` invocation
 // could conceivably happen with a `reviver` parameter that can result in
 // arbitrary types.
-type Middleware = (value: unknown) => unknown;
+type Middleware = (value: unknown, prevImplementation: JsonParse) => unknown;
 
 /**
  * Injects a function to process and possibly replace the output of a
@@ -40,6 +40,7 @@ export function injectJsonParseMiddleware(middlewareFn: Middleware): void {
             // Slight lie but `.apply` will work with the `arguments` object.
             arguments as unknown as Parameters<JsonParse>,
           ),
+          prevImplementation,
         );
       };
 

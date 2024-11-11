@@ -3,6 +3,8 @@ import path from "node:path";
 
 import type { Compiler } from "webpack";
 
+// TODO: consider merging webpack plugins into single workspace
+
 export class WebpackMakeOutputExecutablePlugin {
   apply(compiler: Compiler): void {
     compiler.hooks.afterEmit.tapPromise(

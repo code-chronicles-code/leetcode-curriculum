@@ -1066,11 +1066,16 @@ __metadata:
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@types/react": "npm:18.3.12"
+    "@types/react-dom": "npm:18.3.1"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
+    immutability-helper: "patch:immutability-helper@npm%3A3.1.1#~/.yarn/patches/immutability-helper-npm-3.1.1-482f1f8f58.patch"
     nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
     ts-loader: "npm:9.5.1"
     tsx: "npm:4.19.2"
     type-fest: "npm:4.26.1"
@@ -1159,6 +1164,7 @@ __metadata:
     "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@jest/globals": "npm:29.7.0"
+    "@types/chrome": "patch:@types/chrome@npm%3A0.0.280#~/.yarn/patches/@types-chrome-npm-0.0.280-34ee4ba05a.patch"
     "@types/node": "npm:22.9.0"
     eslint: "npm:9.14.0"
     jest: "npm:29.7.0"
@@ -2840,6 +2846,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/chrome@npm:0.0.280":
+  version: 0.0.280
+  resolution: "@types/chrome@npm:0.0.280"
+  dependencies:
+    "@types/filesystem": "npm:*"
+    "@types/har-format": "npm:*"
+  checksum: 10c0/fb4ee8d67d9a306c2be826da8516f9e584cfbbed5d5693b809aabaf1e5a777c728fe6239e9bfcb1065a38f80b59a4db59e5576df521cc0b9bf0db445722efe67
+  languageName: node
+  linkType: hard
+
+"@types/chrome@patch:@types/chrome@npm%3A0.0.280#~/.yarn/patches/@types-chrome-npm-0.0.280-34ee4ba05a.patch":
+  version: 0.0.280
+  resolution: "@types/chrome@patch:@types/chrome@npm%3A0.0.280#~/.yarn/patches/@types-chrome-npm-0.0.280-34ee4ba05a.patch::version=0.0.280&hash=28b420"
+  dependencies:
+    "@types/filesystem": "npm:*"
+    "@types/har-format": "npm:*"
+  checksum: 10c0/e30744feb6ad29cc54f3817a51fb7291efe2adb4b8b44a1e93c73fd902a0d99b152dfd701c577ef76a9a04d3b2d29dbda6af463a95bcf73664e257c836eefdb5
+  languageName: node
+  linkType: hard
+
 "@types/debug@npm:^4.0.0":
   version: 4.1.12
   resolution: "@types/debug@npm:4.1.12"
@@ -2876,12 +2902,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/filesystem@npm:*":
+  version: 0.0.36
+  resolution: "@types/filesystem@npm:0.0.36"
+  dependencies:
+    "@types/filewriter": "npm:*"
+  checksum: 10c0/3ebec32f0494b0a2612187d148e9f253ff55672c53f566d9a1e6d891eb6e2372df93c252b594b2775bc53e6660c4c37fdb05dc1b26e72b60a31010da8e1f7317
+  languageName: node
+  linkType: hard
+
+"@types/filewriter@npm:*":
+  version: 0.0.33
+  resolution: "@types/filewriter@npm:0.0.33"
+  checksum: 10c0/363ef9a658a961ceae04f52934562e4ebdcdc3a2564dd8544f593d77113c16574938b6ba4fea0bee418c37bda0668c1e03dfedb6adf00d55853f51fb3a59247b
+  languageName: node
+  linkType: hard
+
 "@types/graceful-fs@npm:^4.1.3":
   version: 4.1.9
   resolution: "@types/graceful-fs@npm:4.1.9"
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/235d2fc69741448e853333b7c3d1180a966dd2b8972c8cbcd6b2a0c6cd7f8d582ab2b8e58219dbc62cce8f1b40aa317ff78ea2201cdd8249da5025adebed6f0b
+  languageName: node
+  linkType: hard
+
+"@types/har-format@npm:*":
+  version: 1.2.16
+  resolution: "@types/har-format@npm:1.2.16"
+  checksum: 10c0/77e952bc219db0c1f0588cab3b95865bc343b922e8423a76fbbd6a757c40709a256933fa415eb8fefda6ea5897c8e3dd3191bb8a82b37c13d9232467d31ae485
   languageName: node
   linkType: hard
 

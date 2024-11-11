@@ -14,7 +14,12 @@
     "url": "https://github.com/miorel"
   },
   "type": "module",
-  "exports": "./src/main.ts",
+  "exports": {
+    "./content-script-isolated": "./src/extension/content-script-isolated/main.ts",
+    "./content-script-non-isolated": "./src/extension/content-script-non-isolated/main.ts",
+    "./options-ui": "./src/extension/options-ui/main.tsx",
+    ".": null
+  },
   "scripts": {
     "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
@@ -23,13 +28,18 @@
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",
-    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
+    "immutability-helper": "patch:immutability-helper@npm%3A3.1.1#~/.yarn/patches/immutability-helper-npm-3.1.1-482f1f8f58.patch",
+    "nullthrows": "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@code-chronicles/repository-scripts": "workspace:*",
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*",
     "@types/node": "22.9.0",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
     "cross-env": "7.0.3",
     "eslint": "9.14.0",
     "fork-ts-checker-webpack-plugin": "9.0.2",
