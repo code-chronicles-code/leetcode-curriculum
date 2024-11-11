@@ -29,23 +29,20 @@ function getContentScriptEntry(
   };
 }
 
+const entryPoints = {
+  [CONTENT_SCRIPT_ISOLATED_FILENAME]: "./content-script-isolated",
+  [CONTENT_SCRIPT_NON_ISOLATED_FILENAME]: "./content-script-non-isolated",
+  [OPTIONS_SCRIPT_FILENAME]: "./options-ui",
+} as const;
+
 const config: Configuration = {
   target: "web",
-  entry: {
-    [stripSuffixOrThrow(CONTENT_SCRIPT_ISOLATED_FILENAME, ".js")]: path.resolve(
-      __dirname,
-      packageJson.exports["./content-script-isolated"],
-    ),
-    [stripSuffixOrThrow(CONTENT_SCRIPT_NON_ISOLATED_FILENAME, ".js")]:
-      path.resolve(
-        __dirname,
-        packageJson.exports["./content-script-non-isolated"],
-      ),
-    [stripSuffixOrThrow(OPTIONS_SCRIPT_FILENAME, ".js")]: path.resolve(
-      __dirname,
-      packageJson.exports["./options-ui"],
-    ),
-  },
+  entry: Object.fromEntries(
+    Object.entries(entryPoints).map(([filename, exportKey]) => [
+      stripSuffixOrThrow(filename, ".js"),
+      path.resolve(__dirname, packageJson.exports[exportKey]),
+    ]),
+  ),
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
