@@ -12,7 +12,11 @@ const pendingWebpackChunkLoads = new Queue<() => void>();
 let isWebpackChunkLoadingPaused = false;
 
 function maybeProcessPendingWebpackChunkLoads(): void {
-  while (!isWebpackChunkLoadingPaused && pendingWebpackChunkLoads.size > 0) {
+  while (
+    // eslint-disable-next-line no-unmodified-loop-condition -- We include this in case one of the callbacks modifies the condition.
+    !isWebpackChunkLoadingPaused &&
+    pendingWebpackChunkLoads.size > 0
+  ) {
     nullthrows(pendingWebpackChunkLoads.pop())();
   }
 }
@@ -70,7 +74,7 @@ function startManagingWebpackChunkLoading(): void {
       let push: Push = newValue.push;
 
       // We'll also track the length of this array, so that we can fake the
-      // return value of `push` even when we've paused
+      // return value of `push` even when we've paused chunk loading.
       let length: number = Number(newValue?.length ?? 0);
 
       Object.defineProperty(newValue, "push", {
@@ -124,6 +128,7 @@ function startManagingWebpackChunkLoading(): void {
                     // eslint-disable-next-line import-x/no-commonjs -- It's not our code that's CommonJS.
                     module.exports = middlewares.reduce(
                       (m, fn) => fn(m),
+                      // eslint-disable-next-line import-x/no-commonjs -- It's not our code that's CommonJS.
                       module.exports,
                     );
                   } else {
@@ -148,7 +153,9 @@ function startManagingWebpackChunkLoading(): void {
 
             maybeProcessPendingWebpackChunkLoads();
 
-            return arguments.length;
+            // The `push` method is supposed to return the updated length,
+            // so we'll fake that as well.
+            return (length += arguments.length);
           };
 
           push = assignFunctionCosmeticProperties(wrappedNewPush, newPush);

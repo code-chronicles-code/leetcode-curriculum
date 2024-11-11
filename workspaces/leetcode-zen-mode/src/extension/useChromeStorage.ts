@@ -30,6 +30,7 @@ function getSnapshot(): Record<string, unknown> {
           return;
         }
 
+        // TODO: combine all the changes into one update
         for (const [key, change] of Object.entries(changes)) {
           if (Object.hasOwn(change, "newValue")) {
             storage = immutableUpdate(storage, {
@@ -52,16 +53,11 @@ const subscribers = new Map<string, () => void>();
 
 function subscribe(sub: () => void): () => void {
   const id = getUniqueId();
-  console.log("subscribing " + id);
   subscribers.set(id, sub);
-  return () => {
-    subscribers.delete(id);
-    console.log("unsubscribing " + id);
-  };
+  return () => subscribers.delete(id);
 }
 
 function notifySubscribers(): void {
-  console.log("notifying " + [...subscribers.keys()].join(", "));
   for (const sub of subscribers.values()) {
     sub();
   }

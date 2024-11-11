@@ -15,7 +15,8 @@
   },
   "type": "module",
   "exports": {
-    "./content-script": "./src/extension/content-script/main.ts",
+    "./content-script-isolated": "./src/extension/content-script-isolated/main.ts",
+    "./content-script-non-isolated": "./src/extension/content-script-non-isolated/main.ts",
     "./options-ui": "./src/extension/options-ui/main.tsx",
     ".": null
   },

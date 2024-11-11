@@ -1,6 +1,7 @@
 import path from "node:path";
 
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import type { JsonValue } from "type-fest";
 import type { Configuration } from "webpack";
 
 import { WebpackChromeExtensionManifestPlugin } from "@code-chronicles/webpack-chrome-extension-manifest-plugin";
@@ -9,17 +10,37 @@ import { stripSuffixOrThrow } from "@code-chronicles/util/stripSuffixOrThrow";
 import { WriteOptionsHtmlWebpackPlugin } from "./src/scripts/build/WriteOptionsHtmlWebpackPlugin.tsx";
 import packageJson from "./package.json" with { type: "json" };
 
-const CONTENT_SCRIPT_FILENAME = "content-script.js";
 const OPTIONS_HTML_FILENAME = "options.html";
 const OPTIONS_SCRIPT_FILENAME = "options.js";
+
+const CONTENT_SCRIPT_ISOLATED_FILENAME = "content-script-isolated.js";
+const CONTENT_SCRIPT_NON_ISOLATED_FILENAME = "content-script-non-isolated.js";
+
+function getContentScriptEntry(
+  jsFilename: string,
+  world: "MAIN" | "ISOLATED",
+): JsonValue {
+  return {
+    matches: ["https://*.leetcode.com/*"],
+    js: [jsFilename],
+    // eslint-disable-next-line camelcase
+    run_at: "document_start",
+    world,
+  };
+}
 
 const config: Configuration = {
   target: "web",
   entry: {
-    [stripSuffixOrThrow(CONTENT_SCRIPT_FILENAME, ".js")]: path.resolve(
+    [stripSuffixOrThrow(CONTENT_SCRIPT_ISOLATED_FILENAME, ".js")]: path.resolve(
       __dirname,
-      packageJson.exports["./content-script"],
+      packageJson.exports["./content-script-isolated"],
     ),
+    [stripSuffixOrThrow(CONTENT_SCRIPT_NON_ISOLATED_FILENAME, ".js")]:
+      path.resolve(
+        __dirname,
+        packageJson.exports["./content-script-non-isolated"],
+      ),
     [stripSuffixOrThrow(OPTIONS_SCRIPT_FILENAME, ".js")]: path.resolve(
       __dirname,
       packageJson.exports["./options-ui"],
@@ -71,13 +92,8 @@ const config: Configuration = {
 
       // eslint-disable-next-line camelcase
       content_scripts: [
-        {
-          matches: ["https://*.leetcode.com/*"],
-          js: [CONTENT_SCRIPT_FILENAME],
-          // eslint-disable-next-line camelcase
-          run_at: "document_start",
-          world: "MAIN",
-        },
+        getContentScriptEntry(CONTENT_SCRIPT_NON_ISOLATED_FILENAME, "MAIN"),
+        getContentScriptEntry(CONTENT_SCRIPT_ISOLATED_FILENAME, "ISOLATED"),
       ],
 
       // eslint-disable-next-line camelcase

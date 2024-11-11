@@ -6,7 +6,7 @@ export function only<T>(iterable: Iterable<T>): T {
     const { length } = iterable;
     invariant(
       length === 1,
-      "Given array has length %d, not 1 as expected!",
+      "Given array has length %s, not 1 as expected!",
       length,
     );
     return iterable[0];
