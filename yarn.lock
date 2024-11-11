@@ -1065,7 +1065,6 @@ __metadata:
     "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*"
-    "@types/chrome": "patch:@types/chrome@npm%3A0.0.280#~/.yarn/patches/@types-chrome-npm-0.0.280-34ee4ba05a.patch"
     "@types/node": "npm:22.9.0"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
