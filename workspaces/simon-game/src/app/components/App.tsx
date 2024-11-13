@@ -13,6 +13,8 @@ export function App() {
     0, 1, 2, 3,
   ]);
 
+  console.log(_correctMoves, _setCorrectMoves);
+
   if (gameState === "pre-game") {
     return (
       <div style={{ display: "flex", gap: 10 }}>
