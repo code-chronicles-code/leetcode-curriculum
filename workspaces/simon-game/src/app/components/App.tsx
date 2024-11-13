@@ -9,7 +9,9 @@ type GameState = "pre-game" | "game-over" | "player-turn" | "cpu-turn";
 export function App() {
   const [playerMoves, setPlayerMoves] = useState<readonly number[]>([]);
   const [gameState, setGameState] = useState<GameState>("pre-game");
-  const [_correctMoves, _setCorrectMoves] = useState<readonly number[]>([0,1,2,3]);
+  const [_correctMoves, _setCorrectMoves] = useState<readonly number[]>([
+    0, 1, 2, 3,
+  ]);
 
   if (gameState === "pre-game") {
     return (
