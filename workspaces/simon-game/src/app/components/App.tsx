@@ -56,7 +56,6 @@ export function App() {
                 );
                 if (!isCorrectSequence) {
                   setGameState("game-over");
-                  return [];
                 }
                 if (
                   isCorrectSequence &&
