@@ -6,14 +6,15 @@ import { config } from "../constants.ts";
 
 type GameState = "pre-game" | "game-over" | "player-turn" | "cpu-turn";
 
+// TODO: Move this to a new file later
+function randNum(upperBound: number): number {
+  return Math.floor(Math.random() * upperBound);
+}
+
 export function App() {
   const [playerMoves, setPlayerMoves] = useState<readonly number[]>([]);
   const [gameState, setGameState] = useState<GameState>("pre-game");
-  const [_correctMoves, _setCorrectMoves] = useState<readonly number[]>([
-    0, 1, 2, 3,
-  ]);
-
-  console.log(_correctMoves, _setCorrectMoves);
+  const [correctMoves, setCorrectMoves] = useState<readonly number[]>([]);
 
   if (gameState === "pre-game") {
     return (
@@ -21,6 +22,7 @@ export function App() {
         <button
           onClick={() => {
             setGameState("cpu-turn");
+            setCorrectMoves((prev) => [...prev, randNum(4)]); // TODO: Add to cpu-turn state instead once created
           }}
         >
           Start Game
@@ -44,7 +46,8 @@ export function App() {
           />
         ))}
       </div>
-      <pre>{JSON.stringify(playerMoves, null, 2)}</pre>
+      <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
+      <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
     </>
   );
 }
