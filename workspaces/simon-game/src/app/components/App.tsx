@@ -4,7 +4,10 @@ import { Box } from "./Box.tsx";
 import { playNote } from "../util/playNote.ts";
 import { config } from "../constants.ts";
 
-function isSequenceCorrect(check: number[], correct: number[]): boolean {
+function isSequenceCorrect(
+  check: readonly number[],
+  correct: readonly number[],
+): boolean {
   return check.every((element, i) => element === correct[i]);
 }
 
@@ -45,11 +48,36 @@ export function App() {
             color={box.color}
             onClick={() => {
               playNote(box.frequency);
-              setPlayerMoves((prev) => [...prev, index]);
+              setPlayerMoves((prev) => {
+                const newPlayerMoves = [...prev, index];
+                const isCorrectSequence = isSequenceCorrect(
+                  newPlayerMoves,
+                  correctMoves,
+                );
+                if (!isCorrectSequence) {
+                  setGameState("game-over");
+                  return [];
+                }
+                if (
+                  isCorrectSequence &&
+                  newPlayerMoves.length === correctMoves.length
+                ) {
+                  setGameState("cpu-turn");
+                  return [];
+                }
+                if (
+                  isCorrectSequence &&
+                  newPlayerMoves.length < correctMoves.length
+                ) {
+                  setGameState("player-turn");
+                }
+                return newPlayerMoves;
+              });
             }}
           />
         ))}
       </div>
+      <pre>Game State: {gameState}</pre>
       <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
       <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
     </>
