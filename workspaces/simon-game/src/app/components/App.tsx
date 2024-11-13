@@ -4,6 +4,10 @@ import { Box } from "./Box.tsx";
 import { playNote } from "../util/playNote.ts";
 import { config } from "../constants.ts";
 
+function isSequenceCorrect(check: number[], correct: number[]): boolean {
+  return check.every((element, i) => element === correct[i]);
+}
+
 type GameState = "pre-game" | "game-over" | "player-turn" | "cpu-turn";
 
 // TODO: Move this to a new file later
