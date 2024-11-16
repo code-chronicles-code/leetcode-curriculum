@@ -4,6 +4,14 @@ import { Box } from "./Box.tsx";
 import { playNote } from "../util/playNote.ts";
 import { config } from "../constants.ts";
 
+// TODO: Make this a reusable utility
+function isPrefixCorrect(
+  prefix: readonly number[],
+  correct: readonly number[],
+): boolean {
+  return prefix.every((element, i) => element === correct[i]);
+}
+
 type GameState = "pre-game" | "game-over" | "player-turn" | "cpu-turn";
 
 // TODO: Move this to a new file later
@@ -41,11 +49,28 @@ export function App() {
             color={box.color}
             onClick={() => {
               playNote(box.frequency);
-              setPlayerMoves((prev) => [...prev, index]);
+              setPlayerMoves(() => {
+                const newPlayerMoves = [...playerMoves, index];
+                const isSequenceCorrect = isPrefixCorrect(
+                  newPlayerMoves,
+                  correctMoves,
+                );
+                if (!isSequenceCorrect) {
+                  setGameState("game-over");
+                  return newPlayerMoves;
+                }
+                if (newPlayerMoves.length === correctMoves.length) {
+                  setGameState("cpu-turn");
+                  return [];
+                }
+                setGameState("player-turn");
+                return newPlayerMoves;
+              });
             }}
           />
         ))}
       </div>
+      <pre>Game State: {gameState}</pre>
       <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
       <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
     </>
