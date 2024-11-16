@@ -4,11 +4,12 @@ import { Box } from "./Box.tsx";
 import { playNote } from "../util/playNote.ts";
 import { config } from "../constants.ts";
 
-function isSequenceCorrect(
-  check: readonly number[],
+// TODO: Make this a reusable utility
+function isPrefixCorrect(
+  prefix: readonly number[],
   correct: readonly number[],
 ): boolean {
-  return check.every((element, i) => element === correct[i]);
+  return prefix.every((element, i) => element === correct[i]);
 }
 
 type GameState = "pre-game" | "game-over" | "player-turn" | "cpu-turn";
@@ -48,28 +49,21 @@ export function App() {
             color={box.color}
             onClick={() => {
               playNote(box.frequency);
-              setPlayerMoves((prev) => {
-                const newPlayerMoves = [...prev, index];
-                const isCorrectSequence = isSequenceCorrect(
+              setPlayerMoves(() => {
+                const newPlayerMoves = [...playerMoves, index];
+                const isSequenceCorrect = isPrefixCorrect(
                   newPlayerMoves,
                   correctMoves,
                 );
-                if (!isCorrectSequence) {
+                if (!isSequenceCorrect) {
                   setGameState("game-over");
+                  return newPlayerMoves;
                 }
-                if (
-                  isCorrectSequence &&
-                  newPlayerMoves.length === correctMoves.length
-                ) {
+                if (newPlayerMoves.length === correctMoves.length) {
                   setGameState("cpu-turn");
                   return [];
                 }
-                if (
-                  isCorrectSequence &&
-                  newPlayerMoves.length < correctMoves.length
-                ) {
-                  setGameState("player-turn");
-                }
+                setGameState("player-turn");
                 return newPlayerMoves;
               });
             }}
