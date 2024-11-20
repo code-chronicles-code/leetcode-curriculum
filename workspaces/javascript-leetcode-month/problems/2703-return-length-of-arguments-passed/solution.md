@@ -2,7 +2,7 @@
 
 [View this Write-up on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/solutions/5722508/content/) | [View Problem on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/)
 
-> [!WARNING]  
+> \[!WARNING]\
 > This page includes spoilers. For a spoiler-free introduction to the problem, see [the README file](README.md).
 
 ## Summary
@@ -57,10 +57,10 @@ const greet = function (name) {
 
 For some reason, this is the style that LeetCode favors for its pure JavaScript templates. Except, LeetCode also uses [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var), which is a terrible example to set, because `var` is essentially deprecated. Why? Programmers have generally come to expect block-scoped variables, but `var` is function-scoped. All the modern codebases I've seen use [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) and [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) instead, and you should too. I'm assuming `var`'s behavior could not be changed or removed for backward compatibility, but there's no reason to use it in new code.
 
-> [!TIP]  
+> \[!TIP]\
 > **Did you know that you can modify the code provided by LeetCode?** The only rule is the updated code has to be compatible with the interface expected by LeetCode. Changing the function declaration syntax is a minor change, and I will always replace the use of `var` for pure JavaScript solutions.
 
-> [!NOTE]  
+> \[!NOTE]\
 > **Are the two ways we saw of declaring a function different only in syntax?** If you're new to JavaScript, it's safe to consider them identical, because in practice they are. If you're an advanced JavaScript user, can you name the subtle differences? Answer will be revealed at the end of this doc!
 
 ### Rest Parameters
@@ -73,7 +73,7 @@ Note that the code provided by LeetCode for this problem already uses a rest par
 
 We're almost ready to write a solution! Since the rest parameter will be a JavaScript array, we need to know how to check the size of a JavaScript array, and the answer is the [`length` property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)! Note that `length` gives us raw numeric data, so we don't have to invoke it like `foo.length()`, we simply read the property as `foo.length`.
 
-> [!NOTE]  
+> \[!NOTE]\
 > **What happens if we try to _assign a value_ to an array's length?** In other words, what happens if we declare an array like `arr = [3, 1, 4, 1, 5, 9]` and then we run `arr.length = 3`? Or `arr.length = 10`? Open up your browser's JavaScript console and try it! Answer will be revealed at the end of this doc.
 
 ### `arguments` Object
@@ -116,7 +116,7 @@ type StringOrNumber = string | number;
 
 LeetCode's TypeScript template for this problem is unnecessarily complicated. It declares our rest parameter as an array of JSON values, and it defines a recursive type to express this! While this is interesting to illustrate the power of TypeScript, for this problem we don't care what arguments we get, we just care how many we get. Therefore I think it's sufficient to declare the arguments as being of type [`unknown`](https://www.typescriptlang.org/docs/handbook/2/functions.html#unknown). This is the safe way to say that we don't know the type. TypeScript will require us to test the type of the value before doing anything with it.
 
-> [!WARNING]  
+> \[!WARNING]\
 > In many LeetCode problems you will see `any`, which is the _unsafe_ way of saying we don't know the type. Unlike `unknown`, `any` allows us to do _anything_ with the value. It bypasses the typechecker for that section of code, and if we're not careful it can even leak to code that interacts with that section of code. It's best to avoid `any` as much as possible.
 
 We can additionally mark array arguments as [`readonly`](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#readonly-and-const) when we don't intend to mutate them, as you'll see below.
@@ -269,7 +269,7 @@ const argumentsLength = function (..._args: readonly unknown[]): number {
  */
 ```
 
-> [!NOTE]  
+> \[!NOTE]\
 > **So what does happen if we try to use `arguments` in an arrow function?** If you're an advanced JavaScript user, try it out! Answers below...
 
 ## Answers to Bonus Questions
@@ -316,5 +316,5 @@ const argumentsLength = function (..._args: readonly unknown[]): number {
    console.log(enclosing("a", "b")); // prints 2
    ```
 
-> [!TIP]  
+> \[!TIP]\
 > Thanks for reading! If you enjoyed this write-up, feel free to [up-vote it on LeetCode](https://leetcode.com/problems/return-length-of-arguments-passed/solutions/5722508/)! 🙏
