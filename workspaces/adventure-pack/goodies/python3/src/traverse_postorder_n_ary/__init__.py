@@ -25,5 +25,5 @@ def traverse_postorder_n_ary(
             continue
 
         stack.append((node, True))
-        for child in node.children[::-1]:
+        for child in reversed(node.children):
             stack.append((child, False))
