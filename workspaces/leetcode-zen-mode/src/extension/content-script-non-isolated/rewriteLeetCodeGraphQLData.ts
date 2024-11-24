@@ -20,8 +20,13 @@ export function rewriteLeetCodeGraphQLData(
   prevJsonParse: typeof JSON.parse,
 ): unknown {
   if (Array.isArray(value)) {
+    const { preferredDifficulty } = getPublicSettings(prevJsonParse);
+
     // Arrays get some extra processing.
-    const rewrittenValue = rewriteLeetCodeAggregateDataForDifficulty(value);
+    const rewrittenValue = rewriteLeetCodeAggregateDataForDifficulty(
+      value,
+      preferredDifficulty,
+    );
 
     // Recursively process array values.
     return rewrittenValue.map((value) =>

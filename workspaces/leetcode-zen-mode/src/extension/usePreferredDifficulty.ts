@@ -8,6 +8,8 @@ import {
   type Difficulty,
 } from "./problemDifficulties.ts";
 
+// TODO: set the whole public settings
+
 async function setPreferredDifficulty(
   newPreferredDifficulty: Difficulty,
 ): Promise<void> {

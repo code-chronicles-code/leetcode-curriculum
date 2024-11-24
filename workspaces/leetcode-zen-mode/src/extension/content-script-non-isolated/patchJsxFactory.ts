@@ -37,6 +37,7 @@ export function patchJsxFactory<T extends CreateElementFn>(
         if (
           isNonArrayObject(props) &&
           isString(props.category) &&
+          // TODO: use the preferred difficulty
           /^(?:medium|hard)$/i.test(props.category)
         ) {
           return createElementFn.apply(this, [NullReactElement, {}]);
