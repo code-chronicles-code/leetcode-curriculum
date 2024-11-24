@@ -305,7 +305,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2023-02-15","2024-04-22"],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":305,"title":"Number of Islands II","titleSlug":"number-of-islands-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":306,"title":"Additive Number","titleSlug":"additive-number"}
 {"dailyChallengeDates":["2021-06-18","2022-07-31"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":307,"title":"Range Sum Query - Mutable","titleSlug":"range-sum-query-mutable"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":308,"title":"Range Sum Query 2D - Mutable","titleSlug":"range-sum-query-2d-mutable"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":308,"title":"Range Sum Query 2D - Mutable","titleSlug":"range-sum-query-2d-mutable"}
 {"dailyChallengeDates":["2020-07-30","2021-10-15","2022-12-23"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":309,"title":"Best Time to Buy and Sell Stock with Cooldown","titleSlug":"best-time-to-buy-and-sell-stock-with-cooldown"}
 {"dailyChallengeDates":["2020-11-04","2021-12-16","2024-04-23"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":310,"title":"Minimum Height Trees","titleSlug":"minimum-height-trees"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2022-03-22","2023-05-08"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":311,"title":"Sparse Matrix Multiplication","titleSlug":"sparse-matrix-multiplication"}
@@ -3350,3 +3350,18 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3350,"title":"Adjacent Increasing Subarrays Detection II","titleSlug":"adjacent-increasing-subarrays-detection-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3351,"title":"Sum of Good Subsequences","titleSlug":"sum-of-good-subsequences"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3352,"title":"Count K-Reducible Numbers Less Than N","titleSlug":"count-k-reducible-numbers-less-than-n"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3353,"title":"Minimum Total Operations","titleSlug":"minimum-total-operations"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3354,"title":"Make Array Elements Equal to Zero","titleSlug":"make-array-elements-equal-to-zero"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3355,"title":"Zero Array Transformation I","titleSlug":"zero-array-transformation-i"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3356,"title":"Zero Array Transformation II","titleSlug":"zero-array-transformation-ii"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3357,"title":"Minimize the Maximum Adjacent Element Difference","titleSlug":"minimize-the-maximum-adjacent-element-difference"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3358,"title":"Books with NULL Ratings","titleSlug":"books-with-null-ratings"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3359,"title":"Find Sorted Submatrices With Maximum Element at Most K","titleSlug":"find-sorted-submatrices-with-maximum-element-at-most-k"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3360,"title":"Stone Removal Game","titleSlug":"stone-removal-game"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3361,"title":"Shift Distance Between Two Strings","titleSlug":"shift-distance-between-two-strings"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3362,"title":"Zero Array Transformation III","titleSlug":"zero-array-transformation-iii"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3363,"title":"Find the Maximum Number of Fruits Collected","titleSlug":"find-the-maximum-number-of-fruits-collected"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3364,"title":"Minimum Positive Sum Subarray","titleSlug":"minimum-positive-sum-subarray"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3365,"title":"Rearrange K Substrings to Form Target String","titleSlug":"rearrange-k-substrings-to-form-target-string"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3366,"title":"Minimum Array Sum","titleSlug":"minimum-array-sum"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3367,"title":"Maximize Sum of Weights after Edge Removals","titleSlug":"maximize-sum-of-weights-after-edge-removals"}
