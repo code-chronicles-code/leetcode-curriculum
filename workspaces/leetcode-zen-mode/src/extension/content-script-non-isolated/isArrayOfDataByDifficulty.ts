@@ -1,10 +1,13 @@
 import { isNonArrayObject } from "@code-chronicles/util/isNonArrayObject";
-import { isString } from "@code-chronicles/util/isString";
+
+import { difficultyZodType, type Difficulty } from "../problemDifficulties.ts";
 
 export function isArrayOfDataByDifficulty(
   arr: unknown[],
-): arr is ({ difficulty: string } & Record<string, unknown>)[] {
+): arr is ({ difficulty: Difficulty } & Record<string, unknown>)[] {
   return arr.every(
-    (elem) => isNonArrayObject(elem) && isString(elem.difficulty),
+    (elem) =>
+      isNonArrayObject(elem) &&
+      difficultyZodType.safeParse(elem.difficulty).success,
   );
 }

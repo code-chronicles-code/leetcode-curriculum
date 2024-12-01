@@ -1,6 +1,8 @@
 import { getChrome } from "@code-chronicles/util/browser-extensions/chrome/getChrome";
 
-import { SETTINGS_ATTRIBUTE, SETTINGS_STORAGE_KEY } from "../constants.ts";
+import { PUBLIC_SETTINGS_STORAGE_KEY } from "../shared/public-settings/constants.ts";
+import { publicSettingsZodType } from "../shared/public-settings/publicSettingsZodType.ts";
+import { writePublicSettingsToDocumentAttribute } from "../shared/public-settings/writePublicSettingsToDocumentAttribute.ts";
 
 /**
  * Entry point for the extension content script that will run in an isolated
@@ -18,10 +20,15 @@ async function main(): Promise<void> {
     return;
   }
 
-  const settings = await chrome.storage.sync.get(SETTINGS_STORAGE_KEY);
-  document.documentElement.setAttribute(
-    SETTINGS_ATTRIBUTE,
-    JSON.stringify(settings[SETTINGS_STORAGE_KEY]),
+  const unsafePublicSettings: unknown = (
+    await chrome.storage.sync.get(PUBLIC_SETTINGS_STORAGE_KEY)
+  )[PUBLIC_SETTINGS_STORAGE_KEY];
+  if (unsafePublicSettings == null) {
+    return;
+  }
+
+  writePublicSettingsToDocumentAttribute(
+    publicSettingsZodType.parse(unsafePublicSettings),
   );
 }
 

@@ -10,6 +10,7 @@ import { stringToCase, type Case } from "@code-chronicles/util/stringToCase";
 
 import { isArrayOfDataByDifficulty } from "./isArrayOfDataByDifficulty.ts";
 import { PREFERRED_STRING_CASE, STRING_CASE_CHECKERS } from "./stringCase.ts";
+import type { Difficulty } from "../problemDifficulties.ts";
 
 /**
  * Some of the LeetCode GraphQL data is aggregate statistics about problems
@@ -18,6 +19,7 @@ import { PREFERRED_STRING_CASE, STRING_CASE_CHECKERS } from "./stringCase.ts";
  */
 export function rewriteLeetCodeAggregateDataForDifficulty(
   arr: unknown[],
+  uncasedPreferredDifficulty: Difficulty,
 ): unknown[] {
   // Do nothing if it's not the kind of data we're looking for.
   if (!isArrayOfDataByDifficulty(arr)) {
@@ -38,27 +40,33 @@ export function rewriteLeetCodeAggregateDataForDifficulty(
 
   // Prepare some difficulty strings that will come in handy below.
   const allDifficulty = stringToCase("all", difficultyStringCase);
-  const easyDifficulty = stringToCase("easy", difficultyStringCase);
+  const casedPreferredDifficulty = stringToCase(
+    uncasedPreferredDifficulty,
+    difficultyStringCase,
+  );
 
   const elementsByDifficulty = groupBy(arr, (elem) =>
     stringToCase(elem.difficulty, difficultyStringCase),
   );
 
-  // If we have a single "All" item and items with difficulties besides
-  // "All" and "Easy", we will get rid of the extra items, and instead use
-  // a single "Easy" item that's a copy of the "All" item with an updated
-  // difficulty.
+  // If we have a single "All" item and items with difficulties besides "All"
+  // and the preferred difficulty, we will get rid of the extra items, and
+  // instead use a single item that's a copy of the "All" item with an updated
+  // difficulty to be the preferred one.
   if (
     elementsByDifficulty.get(allDifficulty)?.length === 1 &&
     [...elementsByDifficulty.keys()].some(
       (difficulty) =>
-        difficulty !== allDifficulty && difficulty !== easyDifficulty,
+        difficulty !== allDifficulty && difficulty !== casedPreferredDifficulty,
     )
   ) {
     const allElement = only(
       nullthrows(elementsByDifficulty.get(allDifficulty)),
     );
-    return [allElement, { ...allElement, difficulty: easyDifficulty }];
+    return [
+      allElement,
+      { ...allElement, difficulty: casedPreferredDifficulty },
+    ];
   }
 
   // Another option is that we don't have an "All" item. In this case we
@@ -71,18 +79,19 @@ export function rewriteLeetCodeAggregateDataForDifficulty(
   if (
     [...elementsByDifficulty.values()].every((group) => group.length === 1) &&
     [...elementsByDifficulty.keys()].some(
-      (difficulty) => difficulty !== easyDifficulty,
+      (difficulty) => difficulty !== casedPreferredDifficulty,
     )
   ) {
     return [
       mergeObjects(arr, (values, key) => {
         if (key === "difficulty") {
-          return easyDifficulty;
+          return casedPreferredDifficulty;
         }
 
         if (isArrayOfNumbers(values)) {
           const total = sum(values);
 
+          // TODO: weighted average
           if (key === "percentage") {
             return total / (values.length || 1);
           }
