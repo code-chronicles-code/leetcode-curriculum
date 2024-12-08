@@ -18,7 +18,8 @@
     "build": "cross-env NODE_OPTIONS=\"--import tsx\" webpack",
     "format": "prettier --color --write .",
     "lint": "code-chronicles-lint",
-    "typecheck": "code-chronicles-typecheck"
+    "typecheck": "code-chronicles-typecheck",
+    "foo": "tsx src/foo.ts"
   },
   "dependencies": {
     "@code-chronicles/util": "workspace:*",

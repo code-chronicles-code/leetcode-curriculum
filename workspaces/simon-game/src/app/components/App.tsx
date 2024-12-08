@@ -24,55 +24,132 @@ export function App() {
   const [gameState, setGameState] = useState<GameState>("pre-game");
   const [correctMoves, setCorrectMoves] = useState<readonly number[]>([]);
 
-  if (gameState === "pre-game") {
-    return (
-      <div style={{ display: "flex", gap: 10 }}>
-        <button
-          onClick={() => {
-            setGameState("cpu-turn");
-            setCorrectMoves((prev) => [...prev, randNum(4)]); // TODO: Add to cpu-turn state instead once created
-          }}
-        >
-          Start Game
-        </button>
-        Simon Game
-      </div>
-    );
-  }
-
-  return (
-    <>
-      <div style={{ display: "flex", gap: 10 }}>
-        {config.boxes.map((box, index) => (
-          <Box
-            key={index}
-            color={box.color}
+  switch (gameState) {
+    case "cpu-turn": {
+      return (
+        <>
+          <div style={{ display: "flex", gap: 10 }}>
+            {config.boxes.map((box, index) => (
+              <Box
+                key={index}
+                color={box.color}
+                onClick={() => {
+                  playNote(box.frequency);
+                  setPlayerMoves(() => {
+                    const newPlayerMoves = [...playerMoves, index];
+                    const isSequenceCorrect = isPrefixCorrect(
+                      newPlayerMoves,
+                      correctMoves,
+                    );
+                    if (!isSequenceCorrect) {
+                      setGameState("game-over");
+                      return newPlayerMoves;
+                    }
+                    if (newPlayerMoves.length === correctMoves.length) {
+                      setGameState("cpu-turn");
+                      return [];
+                    }
+                    setGameState("player-turn");
+                    return newPlayerMoves;
+                  });
+                }}
+              />
+            ))}
+          </div>
+          <pre>Game State: {gameState}</pre>
+          <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
+          <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
+        </>
+      );
+    }
+    case "game-over": {
+      return (
+        <>
+          <div style={{ display: "flex", gap: 10 }}>
+            {config.boxes.map((box, index) => (
+              <Box
+                key={index}
+                color={box.color}
+                onClick={() => {
+                  playNote(box.frequency);
+                  setPlayerMoves(() => {
+                    const newPlayerMoves = [...playerMoves, index];
+                    const isSequenceCorrect = isPrefixCorrect(
+                      newPlayerMoves,
+                      correctMoves,
+                    );
+                    if (!isSequenceCorrect) {
+                      setGameState("game-over");
+                      return newPlayerMoves;
+                    }
+                    if (newPlayerMoves.length === correctMoves.length) {
+                      setGameState("cpu-turn");
+                      return [];
+                    }
+                    setGameState("player-turn");
+                    return newPlayerMoves;
+                  });
+                }}
+              />
+            ))}
+          </div>
+          <pre>Game State: {gameState}</pre>
+          <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
+          <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
+        </>
+      );
+    }
+    case "player-turn": {
+      return (
+        <>
+          <div style={{ display: "flex", gap: 10 }}>
+            {config.boxes.map((box, index) => (
+              <Box
+                key={index}
+                color={box.color}
+                onClick={() => {
+                  playNote(box.frequency);
+                  setPlayerMoves(() => {
+                    const newPlayerMoves = [...playerMoves, index];
+                    const isSequenceCorrect = isPrefixCorrect(
+                      newPlayerMoves,
+                      correctMoves,
+                    );
+                    if (!isSequenceCorrect) {
+                      setGameState("game-over");
+                      return newPlayerMoves;
+                    }
+                    if (newPlayerMoves.length === correctMoves.length) {
+                      setGameState("cpu-turn");
+                      return [];
+                    }
+                    setGameState("player-turn");
+                    return newPlayerMoves;
+                  });
+                }}
+              />
+            ))}
+          </div>
+          <pre>Game State: {gameState}</pre>
+          <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
+          <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
+        </>
+      );
+    }
+    case "pre-game": {
+      return (
+        <div style={{ display: "flex", gap: 10 }}>
+          <button
             onClick={() => {
-              playNote(box.frequency);
-              setPlayerMoves(() => {
-                const newPlayerMoves = [...playerMoves, index];
-                const isSequenceCorrect = isPrefixCorrect(
-                  newPlayerMoves,
-                  correctMoves,
-                );
-                if (!isSequenceCorrect) {
-                  setGameState("game-over");
-                  return newPlayerMoves;
-                }
-                if (newPlayerMoves.length === correctMoves.length) {
-                  setGameState("cpu-turn");
-                  return [];
-                }
-                setGameState("player-turn");
-                return newPlayerMoves;
-              });
+              setGameState("cpu-turn");
+              setCorrectMoves((prev) => [...prev, randNum(4)]); // TODO: Add to cpu-turn state instead once created
             }}
-          />
-        ))}
-      </div>
-      <pre>Game State: {gameState}</pre>
-      <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
-      <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
-    </>
-  );
+          >
+            Start Game
+          </button>
+          Simon Game
+        </div>
+      );
+    }
+  }
 }
