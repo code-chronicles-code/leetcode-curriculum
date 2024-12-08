@@ -109,23 +109,13 @@ export function App() {
                 color={box.color}
                 onClick={() => {
                   playNote(box.frequency);
-                  setPlayerMoves(() => {
-                    const newPlayerMoves = [...playerMoves, index];
-                    const isSequenceCorrect = isPrefixCorrect(
-                      newPlayerMoves,
-                      correctMoves,
-                    );
-                    if (!isSequenceCorrect) {
-                      setGameState("game-over");
-                      return newPlayerMoves;
-                    }
-                    if (newPlayerMoves.length === correctMoves.length) {
-                      setGameState("cpu-turn");
-                      return [];
-                    }
-                    setGameState("player-turn");
-                    return newPlayerMoves;
-                  });
+                  const newPlayerMoves = [...playerMoves, index];
+                  setPlayerMoves(newPlayerMoves);
+                  if (!isPrefixCorrect(newPlayerMoves, correctMoves)) {
+                    setGameState("game-over");
+                  } else if (newPlayerMoves.length === correctMoves.length) {
+                    setGameState("cpu-turn");
+                  }
                 }}
               />
             ))}
