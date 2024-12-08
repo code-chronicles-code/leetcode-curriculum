@@ -356,7 +356,6 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":356,"title":"Line Reflection","titleSlug":"line-reflection"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":357,"title":"Count Numbers with Unique Digits","titleSlug":"count-numbers-with-unique-digits"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2023-09-08"],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":358,"title":"Rearrange String k Distance Apart","titleSlug":"rearrange-string-k-distance-apart"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":["2020-08-01"],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":359,"title":"Logger Rate Limiter","titleSlug":"logger-rate-limiter"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":360,"title":"Sort Transformed Array","titleSlug":"sort-transformed-array"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":361,"title":"Bomb Enemy","titleSlug":"bomb-enemy"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2022-09-08"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":362,"title":"Design Hit Counter","titleSlug":"design-hit-counter"}
@@ -3371,3 +3370,12 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3371,"title":"Identify the Largest Outlier in an Array","titleSlug":"identify-the-largest-outlier-in-an-array"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3372,"title":"Maximize the Number of Target Nodes After Connecting Trees I","titleSlug":"maximize-the-number-of-target-nodes-after-connecting-trees-i"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3373,"title":"Maximize the Number of Target Nodes After Connecting Trees II","titleSlug":"maximize-the-number-of-target-nodes-after-connecting-trees-ii"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3374,"title":"First Letter Capitalization II","titleSlug":"first-letter-capitalization-ii"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3375,"title":"Minimum Operations to Make Array Values Equal to K","titleSlug":"minimum-operations-to-make-array-values-equal-to-k"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3376,"title":"Minimum Time to Break Locks I","titleSlug":"minimum-time-to-break-locks-i"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3377,"title":"Digit Operations to Make Two Integers Equal","titleSlug":"digit-operations-to-make-two-integers-equal"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3378,"title":"Count Connected Components in LCM Graph","titleSlug":"count-connected-components-in-lcm-graph"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3379,"title":"Transformed Array","titleSlug":"transformed-array"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3380,"title":"Maximum Area Rectangle With Point Constraints I","titleSlug":"maximum-area-rectangle-with-point-constraints-i"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3381,"title":"Maximum Subarray Sum With Length Divisible by K","titleSlug":"maximum-subarray-sum-with-length-divisible-by-k"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3382,"title":"Maximum Area Rectangle With Point Constraints II","titleSlug":"maximum-area-rectangle-with-point-constraints-ii"}
