@@ -35,7 +35,7 @@ export function App() {
 
   const newGame = () => {
     setGameState("cpu-turn");
-    setCorrectMoves([]); // TODO: Add to cpu-turn state instead once created
+    setCorrectMoves([]);
     setPlayerMoves([]);
   };
 
