@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Box } from "./Box.tsx";
 import { playNote } from "../util/playNote.ts";
@@ -24,36 +24,28 @@ export function App() {
   const [gameState, setGameState] = useState<GameState>("pre-game");
   const [correctMoves, setCorrectMoves] = useState<readonly number[]>([]);
 
+  useEffect(() => {
+    if (gameState !== "cpu-turn") {
+      return;
+    }
+    setCorrectMoves((prev) => [...prev, randNum(4)]);
+    setPlayerMoves([]);
+    setGameState("player-turn");
+  }, [gameState]);
+
+  const newGame = () => {
+    setGameState("cpu-turn");
+    setCorrectMoves([]); // TODO: Add to cpu-turn state instead once created
+    setPlayerMoves([]);
+  };
+
   switch (gameState) {
     case "cpu-turn": {
       return (
         <>
           <div style={{ display: "flex", gap: 10 }}>
             {config.boxes.map((box, index) => (
-              <Box
-                key={index}
-                color={box.color}
-                onClick={() => {
-                  playNote(box.frequency);
-                  setPlayerMoves(() => {
-                    const newPlayerMoves = [...playerMoves, index];
-                    const isSequenceCorrect = isPrefixCorrect(
-                      newPlayerMoves,
-                      correctMoves,
-                    );
-                    if (!isSequenceCorrect) {
-                      setGameState("game-over");
-                      return newPlayerMoves;
-                    }
-                    if (newPlayerMoves.length === correctMoves.length) {
-                      setGameState("cpu-turn");
-                      return [];
-                    }
-                    setGameState("player-turn");
-                    return newPlayerMoves;
-                  });
-                }}
-              />
+              <Box key={index} color={box.color} isDisabled />
             ))}
           </div>
           <pre>Game State: {gameState}</pre>
@@ -65,37 +57,8 @@ export function App() {
     case "game-over": {
       return (
         <>
-          <div style={{ display: "flex", gap: 10 }}>
-            {config.boxes.map((box, index) => (
-              <Box
-                key={index}
-                color={box.color}
-                onClick={() => {
-                  playNote(box.frequency);
-                  setPlayerMoves(() => {
-                    const newPlayerMoves = [...playerMoves, index];
-                    const isSequenceCorrect = isPrefixCorrect(
-                      newPlayerMoves,
-                      correctMoves,
-                    );
-                    if (!isSequenceCorrect) {
-                      setGameState("game-over");
-                      return newPlayerMoves;
-                    }
-                    if (newPlayerMoves.length === correctMoves.length) {
-                      setGameState("cpu-turn");
-                      return [];
-                    }
-                    setGameState("player-turn");
-                    return newPlayerMoves;
-                  });
-                }}
-              />
-            ))}
-          </div>
-          <pre>Game State: {gameState}</pre>
-          <pre>Player Moves: {JSON.stringify(playerMoves, null, 2)}</pre>
-          <pre>Correct Moves: {JSON.stringify(correctMoves, null, 2)}</pre>
+          <h1>Game Over ... Start again ...</h1>
+          <button onClick={newGame}>New Game</button>
         </>
       );
     }
@@ -129,14 +92,7 @@ export function App() {
     case "pre-game": {
       return (
         <div style={{ display: "flex", gap: 10 }}>
-          <button
-            onClick={() => {
-              setGameState("cpu-turn");
-              setCorrectMoves((prev) => [...prev, randNum(4)]); // TODO: Add to cpu-turn state instead once created
-            }}
-          >
-            Start Game
-          </button>
+          <button onClick={newGame}>Start Game</button>
           Simon Game
         </div>
       );
