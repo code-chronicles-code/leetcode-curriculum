@@ -484,7 +484,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2020-08-15","2022-05-01"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":484,"title":"Find Permutation","titleSlug":"find-permutation"}
 {"dailyChallengeDates":["2021-09-21"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":485,"title":"Max Consecutive Ones","titleSlug":"max-consecutive-ones"}
 {"dailyChallengeDates":["2023-07-28"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":486,"title":"Predict the Winner","titleSlug":"predict-the-winner"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":["2022-10-29","2023-11-29"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":487,"title":"Max Consecutive Ones II","titleSlug":"max-consecutive-ones-ii"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":["2022-10-29","2023-11-29","2025-02-22"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":487,"title":"Max Consecutive Ones II","titleSlug":"max-consecutive-ones-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":488,"title":"Zuma Game","titleSlug":"zuma-game"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2020-08-29","2022-05-08"],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":489,"title":"Robot Room Cleaner","titleSlug":"robot-room-cleaner"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2020-08-22","2023-08-15"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":490,"title":"The Maze","titleSlug":"the-maze"}
@@ -870,7 +870,7 @@
 {"dailyChallengeDates":["2021-03-24"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":870,"title":"Advantage Shuffle","titleSlug":"advantage-shuffle"}
 {"dailyChallengeDates":["2021-06-12","2022-08-20"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":871,"title":"Minimum Number of Refueling Stops","titleSlug":"minimum-number-of-refueling-stops"}
 {"dailyChallengeDates":["2022-12-08","2024-01-09"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":872,"title":"Leaf-Similar Trees","titleSlug":"leaf-similar-trees"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":873,"title":"Length of Longest Fibonacci Subsequence","titleSlug":"length-of-longest-fibonacci-subsequence"}
+{"dailyChallengeDates":["2025-02-27"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":873,"title":"Length of Longest Fibonacci Subsequence","titleSlug":"length-of-longest-fibonacci-subsequence"}
 {"dailyChallengeDates":["2024-09-04"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":874,"title":"Walking Robot Simulation","titleSlug":"walking-robot-simulation"}
 {"dailyChallengeDates":["2022-01-20","2023-03-08"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":875,"title":"Koko Eating Bananas","titleSlug":"koko-eating-bananas"}
 {"dailyChallengeDates":["2020-04-08","2021-12-28","2022-12-05","2024-03-07"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":876,"title":"Middle of the Linked List","titleSlug":"middle-of-the-linked-list"}
@@ -886,7 +886,7 @@
 {"dailyChallengeDates":["2020-05-27","2022-12-21"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":886,"title":"Possible Bipartition","titleSlug":"possible-bipartition"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":887,"title":"Super Egg Drop","titleSlug":"super-egg-drop"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":888,"title":"Fair Candy Swap","titleSlug":"fair-candy-swap"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":889,"title":"Construct Binary Tree from Preorder and Postorder Traversal","titleSlug":"construct-binary-tree-from-preorder-and-postorder-traversal"}
+{"dailyChallengeDates":["2025-02-23"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":889,"title":"Construct Binary Tree from Preorder and Postorder Traversal","titleSlug":"construct-binary-tree-from-preorder-and-postorder-traversal"}
 {"dailyChallengeDates":["2021-05-21","2022-07-29"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":890,"title":"Find and Replace Pattern","titleSlug":"find-and-replace-pattern"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":891,"title":"Sum of Subsequence Widths","titleSlug":"sum-of-subsequence-widths"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":892,"title":"Surface Area of 3D Shapes","titleSlug":"surface-area-of-3d-shapes"}
@@ -1025,7 +1025,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1025,"title":"Divisor Game","titleSlug":"divisor-game"}
 {"dailyChallengeDates":["2020-11-09","2021-12-31","2022-12-09","2024-01-11"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1026,"title":"Maximum Difference Between Node and Ancestor","titleSlug":"maximum-difference-between-node-and-ancestor"}
 {"dailyChallengeDates":["2023-06-23"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1027,"title":"Longest Arithmetic Subsequence","titleSlug":"longest-arithmetic-subsequence"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1028,"title":"Recover a Tree From Preorder Traversal","titleSlug":"recover-a-tree-from-preorder-traversal"}
+{"dailyChallengeDates":["2025-02-22"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1028,"title":"Recover a Tree From Preorder Traversal","titleSlug":"recover-a-tree-from-preorder-traversal"}
 {"dailyChallengeDates":["2020-06-03","2022-03-25"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1029,"title":"Two City Scheduling","titleSlug":"two-city-scheduling"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1030,"title":"Matrix Cells in Distance Order","titleSlug":"matrix-cells-in-distance-order"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1031,"title":"Maximum Sum of Two Non-Overlapping Subarrays","titleSlug":"maximum-sum-of-two-non-overlapping-subarrays"}
@@ -1076,7 +1076,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":1076,"title":"Project Employees II","titleSlug":"project-employees-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1077,"title":"Project Employees III","titleSlug":"project-employees-iii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1078,"title":"Occurrences After Bigram","titleSlug":"occurrences-after-bigram"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1079,"title":"Letter Tile Possibilities","titleSlug":"letter-tile-possibilities"}
+{"dailyChallengeDates":["2025-02-17"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1079,"title":"Letter Tile Possibilities","titleSlug":"letter-tile-possibilities"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1080,"title":"Insufficient Nodes in Root to Leaf Paths","titleSlug":"insufficient-nodes-in-root-to-leaf-paths"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1081,"title":"Smallest Subsequence of Distinct Characters","titleSlug":"smallest-subsequence-of-distinct-characters"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":1082,"title":"Sales Analysis I","titleSlug":"sales-analysis-i"}
@@ -1089,7 +1089,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1089,"title":"Duplicate Zeros","titleSlug":"duplicate-zeros"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1090,"title":"Largest Values From Labels","titleSlug":"largest-values-from-labels"}
 {"dailyChallengeDates":["2021-02-13","2022-05-16","2023-06-01"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1091,"title":"Shortest Path in Binary Matrix","titleSlug":"shortest-path-in-binary-matrix"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1092,"title":"Shortest Common Supersequence","titleSlug":"shortest-common-supersequence"}
+{"dailyChallengeDates":["2025-02-28"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1092,"title":"Shortest Common Supersequence","titleSlug":"shortest-common-supersequence"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1093,"title":"Statistics from a Large Sample","titleSlug":"statistics-from-a-large-sample"}
 {"dailyChallengeDates":["2020-09-21","2022-01-06"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1094,"title":"Car Pooling","titleSlug":"car-pooling"}
 {"dailyChallengeDates":["2023-10-12"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1095,"title":"Find in Mountain Array","titleSlug":"find-in-mountain-array"}
@@ -1258,7 +1258,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1258,"title":"Synonymous Sentences","titleSlug":"synonymous-sentences"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2023-02-22"],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":1259,"title":"Handshakes That Don't Cross","titleSlug":"handshakes-that-dont-cross"}
 {"dailyChallengeDates":["2022-04-11"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1260,"title":"Shift 2D Grid","titleSlug":"shift-2d-grid"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1261,"title":"Find Elements in a Contaminated Binary Tree","titleSlug":"find-elements-in-a-contaminated-binary-tree"}
+{"dailyChallengeDates":["2025-02-21"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1261,"title":"Find Elements in a Contaminated Binary Tree","titleSlug":"find-elements-in-a-contaminated-binary-tree"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1262,"title":"Greatest Sum Divisible by Three","titleSlug":"greatest-sum-divisible-by-three"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1263,"title":"Minimum Moves to Move a Box to Their Target Location","titleSlug":"minimum-moves-to-move-a-box-to-their-target-location"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1264,"title":"Page Recommendations","titleSlug":"page-recommendations"}
@@ -1349,7 +1349,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1349,"title":"Maximum Students Taking Exam","titleSlug":"maximum-students-taking-exam"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":1350,"title":"Students With Invalid Departments","titleSlug":"students-with-invalid-departments"}
 {"dailyChallengeDates":["2023-06-08"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1351,"title":"Count Negative Numbers in a Sorted Matrix","titleSlug":"count-negative-numbers-in-a-sorted-matrix"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1352,"title":"Product of the Last K Numbers","titleSlug":"product-of-the-last-k-numbers"}
+{"dailyChallengeDates":["2025-02-14"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1352,"title":"Product of the Last K Numbers","titleSlug":"product-of-the-last-k-numbers"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1353,"title":"Maximum Number of Events That Can Be Attended","titleSlug":"maximum-number-of-events-that-can-be-attended"}
 {"dailyChallengeDates":["2021-05-09","2022-06-24"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1354,"title":"Construct Target Array With Multiple Sums","titleSlug":"construct-target-array-with-multiple-sums"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1355,"title":"Activity Participants","titleSlug":"activity-participants"}
@@ -1412,7 +1412,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":1412,"title":"Find the Quiet Students in All Exams","titleSlug":"find-the-quiet-students-in-all-exams"}
 {"dailyChallengeDates":["2021-11-11"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1413,"title":"Minimum Value to Get Positive Step by Step Sum","titleSlug":"minimum-value-to-get-positive-step-by-step-sum"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1414,"title":"Find the Minimum Number of Fibonacci Numbers Whose Sum Is K","titleSlug":"find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1415,"title":"The k-th Lexicographical String of All Happy Strings of Length n","titleSlug":"the-k-th-lexicographical-string-of-all-happy-strings-of-length-n"}
+{"dailyChallengeDates":["2025-02-19"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1415,"title":"The k-th Lexicographical String of All Happy Strings of Length n","titleSlug":"the-k-th-lexicographical-string-of-all-happy-strings-of-length-n"}
 {"dailyChallengeDates":["2023-04-23"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1416,"title":"Restore The Array","titleSlug":"restore-the-array"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1417,"title":"Reformat The String","titleSlug":"reformat-the-string"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1418,"title":"Display Table of Food Orders in a Restaurant","titleSlug":"display-table-of-food-orders-in-a-restaurant"}
@@ -1521,7 +1521,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1521,"title":"Find a Value of a Mysterious Function Closest to Target","titleSlug":"find-a-value-of-a-mysterious-function-closest-to-target"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2021-11-15"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1522,"title":"Diameter of N-Ary Tree","titleSlug":"diameter-of-n-ary-tree"}
 {"dailyChallengeDates":["2023-02-13"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1523,"title":"Count Odd Numbers in an Interval Range","titleSlug":"count-odd-numbers-in-an-interval-range"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1524,"title":"Number of Sub-arrays With Odd Sum","titleSlug":"number-of-sub-arrays-with-odd-sum"}
+{"dailyChallengeDates":["2025-02-25"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1524,"title":"Number of Sub-arrays With Odd Sum","titleSlug":"number-of-sub-arrays-with-odd-sum"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1525,"title":"Number of Good Ways to Split a String","titleSlug":"number-of-good-ways-to-split-a-string"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1526,"title":"Minimum Number of Increments on Subarrays to Form a Target Array","titleSlug":"minimum-number-of-increments-on-subarrays-to-form-a-target-array"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1527,"title":"Patients With a Condition","titleSlug":"patients-with-a-condition"}
@@ -1715,7 +1715,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1715,"title":"Count Apples and Oranges","titleSlug":"count-apples-and-oranges"}
 {"dailyChallengeDates":["2023-12-06"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1716,"title":"Calculate Money in Leetcode Bank","titleSlug":"calculate-money-in-leetcode-bank"}
 {"dailyChallengeDates":["2024-07-12"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1717,"title":"Maximum Score From Removing Substrings","titleSlug":"maximum-score-from-removing-substrings"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1718,"title":"Construct the Lexicographically Largest Valid Sequence","titleSlug":"construct-the-lexicographically-largest-valid-sequence"}
+{"dailyChallengeDates":["2025-02-16"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1718,"title":"Construct the Lexicographically Largest Valid Sequence","titleSlug":"construct-the-lexicographically-largest-valid-sequence"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1719,"title":"Number Of Ways To Reconstruct A Tree","titleSlug":"number-of-ways-to-reconstruct-a-tree"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1720,"title":"Decode XORed Array","titleSlug":"decode-xored-array"}
 {"dailyChallengeDates":["2021-03-14","2022-04-04","2023-05-15"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1721,"title":"Swapping Nodes in a Linked List","titleSlug":"swapping-nodes-in-a-linked-list"}
@@ -1723,7 +1723,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1723,"title":"Find Minimum Time to Finish All Jobs","titleSlug":"find-minimum-time-to-finish-all-jobs"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":1724,"title":"Checking Existence of Edge Length Limited Paths II","titleSlug":"checking-existence-of-edge-length-limited-paths-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1725,"title":"Number Of Rectangles That Can Form The Largest Square","titleSlug":"number-of-rectangles-that-can-form-the-largest-square"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1726,"title":"Tuple with Same Product","titleSlug":"tuple-with-same-product"}
+{"dailyChallengeDates":["2025-02-06"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1726,"title":"Tuple with Same Product","titleSlug":"tuple-with-same-product"}
 {"dailyChallengeDates":["2023-11-26"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1727,"title":"Largest Submatrix With Rearrangements","titleSlug":"largest-submatrix-with-rearrangements"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1728,"title":"Cat and Mouse II","titleSlug":"cat-and-mouse-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1729,"title":"Find Followers Count","titleSlug":"find-followers-count"}
@@ -1746,14 +1746,14 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2024-12-29"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1746,"title":"Maximum Subarray Sum After One Operation","titleSlug":"maximum-subarray-sum-after-one-operation"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1747,"title":"Leetflex Banned Accounts","titleSlug":"leetflex-banned-accounts"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1748,"title":"Sum of Unique Elements","titleSlug":"sum-of-unique-elements"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1749,"title":"Maximum Absolute Sum of Any Subarray","titleSlug":"maximum-absolute-sum-of-any-subarray"}
+{"dailyChallengeDates":["2025-02-26"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1749,"title":"Maximum Absolute Sum of Any Subarray","titleSlug":"maximum-absolute-sum-of-any-subarray"}
 {"dailyChallengeDates":["2024-03-05"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1750,"title":"Minimum Length of String After Deleting Similar Ends","titleSlug":"minimum-length-of-string-after-deleting-similar-ends"}
 {"dailyChallengeDates":["2023-07-15"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1751,"title":"Maximum Number of Events That Can Be Attended II","titleSlug":"maximum-number-of-events-that-can-be-attended-ii"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1752,"title":"Check if Array Is Sorted and Rotated","titleSlug":"check-if-array-is-sorted-and-rotated"}
+{"dailyChallengeDates":["2025-02-02"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1752,"title":"Check if Array Is Sorted and Rotated","titleSlug":"check-if-array-is-sorted-and-rotated"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1753,"title":"Maximum Score From Removing Stones","titleSlug":"maximum-score-from-removing-stones"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1754,"title":"Largest Merge Of Two Strings","titleSlug":"largest-merge-of-two-strings"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1755,"title":"Closest Subsequence Sum","titleSlug":"closest-subsequence-sum"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1756,"title":"Design Most Recently Used Queue","titleSlug":"design-most-recently-used-queue"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":["2025-02-15"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1756,"title":"Design Most Recently Used Queue","titleSlug":"design-most-recently-used-queue"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1757,"title":"Recyclable and Low Fat Products","titleSlug":"recyclable-and-low-fat-products"}
 {"dailyChallengeDates":["2023-12-24"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1758,"title":"Minimum Changes To Make Alternating Binary String","titleSlug":"minimum-changes-to-make-alternating-binary-string"}
 {"dailyChallengeDates":["2023-11-09"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1759,"title":"Count Number of Homogenous Substrings","titleSlug":"count-number-of-homogenous-substrings"}
@@ -1787,7 +1787,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1787,"title":"Make the XOR of All Segments Equal to Zero","titleSlug":"make-the-xor-of-all-segments-equal-to-zero"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":1788,"title":"Maximize the Beauty of the Garden","titleSlug":"maximize-the-beauty-of-the-garden"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1789,"title":"Primary Department for Each Employee","titleSlug":"primary-department-for-each-employee"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1790,"title":"Check if One String Swap Can Make Strings Equal","titleSlug":"check-if-one-string-swap-can-make-strings-equal"}
+{"dailyChallengeDates":["2025-02-05"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1790,"title":"Check if One String Swap Can Make Strings Equal","titleSlug":"check-if-one-string-swap-can-make-strings-equal"}
 {"dailyChallengeDates":["2024-06-27"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1791,"title":"Find Center of Star Graph","titleSlug":"find-center-of-star-graph"}
 {"dailyChallengeDates":["2024-12-15"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1792,"title":"Maximum Average Pass Ratio","titleSlug":"maximum-average-pass-ratio"}
 {"dailyChallengeDates":["2023-10-22"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1793,"title":"Maximum Score of a Good Subarray","titleSlug":"maximum-score-of-a-good-subarray"}
@@ -1797,7 +1797,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1797,"title":"Design Authentication Manager","titleSlug":"design-authentication-manager"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1798,"title":"Maximum Number of Consecutive Values You Can Make","titleSlug":"maximum-number-of-consecutive-values-you-can-make"}
 {"dailyChallengeDates":["2023-05-14"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1799,"title":"Maximize Score After N Operations","titleSlug":"maximize-score-after-n-operations"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1800,"title":"Maximum Ascending Subarray Sum","titleSlug":"maximum-ascending-subarray-sum"}
+{"dailyChallengeDates":["2025-02-04"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1800,"title":"Maximum Ascending Subarray Sum","titleSlug":"maximum-ascending-subarray-sum"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1801,"title":"Number of Orders in the Backlog","titleSlug":"number-of-orders-in-the-backlog"}
 {"dailyChallengeDates":["2023-06-10"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1802,"title":"Maximum Value at a Given Index in a Bounded Array","titleSlug":"maximum-value-at-a-given-index-in-a-bounded-array"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1803,"title":"Count Pairs With XOR in a Range","titleSlug":"count-pairs-with-xor-in-a-range"}
@@ -1849,7 +1849,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1849,"title":"Splitting a String Into Descending Consecutive Values","titleSlug":"splitting-a-string-into-descending-consecutive-values"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1850,"title":"Minimum Adjacent Swaps to Reach the Kth Smallest Number","titleSlug":"minimum-adjacent-swaps-to-reach-the-kth-smallest-number"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1851,"title":"Minimum Interval to Include Each Query","titleSlug":"minimum-interval-to-include-each-query"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1852,"title":"Distinct Numbers in Each Subarray","titleSlug":"distinct-numbers-in-each-subarray"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":["2025-02-01"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1852,"title":"Distinct Numbers in Each Subarray","titleSlug":"distinct-numbers-in-each-subarray"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":1853,"title":"Convert Date Format","titleSlug":"convert-date-format"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1854,"title":"Maximum Population Year","titleSlug":"maximum-population-year"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1855,"title":"Maximum Distance Between a Pair of Values","titleSlug":"maximum-distance-between-a-pair-of-values"}
@@ -1907,7 +1907,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1907,"title":"Count Salary Categories","titleSlug":"count-salary-categories"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2023-01-29"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1908,"title":"Game of Nim","titleSlug":"game-of-nim"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1909,"title":"Remove One Element to Make the Array Strictly Increasing","titleSlug":"remove-one-element-to-make-the-array-strictly-increasing"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1910,"title":"Remove All Occurrences of a Substring","titleSlug":"remove-all-occurrences-of-a-substring"}
+{"dailyChallengeDates":["2025-02-11"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1910,"title":"Remove All Occurrences of a Substring","titleSlug":"remove-all-occurrences-of-a-substring"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1911,"title":"Maximum Alternating Subsequence Sum","titleSlug":"maximum-alternating-subsequence-sum"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1912,"title":"Design Movie Rental System","titleSlug":"design-movie-rental-system"}
 {"dailyChallengeDates":["2023-12-18"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1913,"title":"Maximum Product Difference Between Two Pairs","titleSlug":"maximum-product-difference-between-two-pairs"}
@@ -1977,7 +1977,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1977,"title":"Number of Ways to Separate Numbers","titleSlug":"number-of-ways-to-separate-numbers"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1978,"title":"Employees Whose Manager Left the Company","titleSlug":"employees-whose-manager-left-the-company"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":1979,"title":"Find Greatest Common Divisor of Array","titleSlug":"find-greatest-common-divisor-of-array"}
-{"dailyChallengeDates":["2023-11-16"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1980,"title":"Find Unique Binary String","titleSlug":"find-unique-binary-string"}
+{"dailyChallengeDates":["2023-11-16","2025-02-20"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1980,"title":"Find Unique Binary String","titleSlug":"find-unique-binary-string"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":1981,"title":"Minimize the Difference Between Target and Chosen Elements","titleSlug":"minimize-the-difference-between-target-and-chosen-elements"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":1982,"title":"Find Array Given Subset Sums","titleSlug":"find-array-given-subset-sums"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":1983,"title":"Widest Pair of Indices With Equal Range Sum","titleSlug":"widest-pair-of-indices-with-equal-range-sum"}
@@ -2339,14 +2339,14 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":2339,"title":"All the Matches of the League","titleSlug":"all-the-matches-of-the-league"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2340,"title":"Minimum Adjacent Swaps to Make a Valid Array","titleSlug":"minimum-adjacent-swaps-to-make-a-valid-array"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2341,"title":"Maximum Number of Pairs in Array","titleSlug":"maximum-number-of-pairs-in-array"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2342,"title":"Max Sum of a Pair With Equal Sum of Digits","titleSlug":"max-sum-of-a-pair-with-equal-sum-of-digits"}
+{"dailyChallengeDates":["2025-02-12"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2342,"title":"Max Sum of a Pair With Equal Sum of Digits","titleSlug":"max-sum-of-a-pair-with-equal-sum-of-digits"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2343,"title":"Query Kth Smallest Trimmed Number","titleSlug":"query-kth-smallest-trimmed-number"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":2344,"title":"Minimum Deletions to Make Array Divisible","titleSlug":"minimum-deletions-to-make-array-divisible"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2345,"title":"Finding the Number of Visible Mountains","titleSlug":"finding-the-number-of-visible-mountains"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2346,"title":"Compute the Rank as a Percentage","titleSlug":"compute-the-rank-as-a-percentage"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2347,"title":"Best Poker Hand","titleSlug":"best-poker-hand"}
 {"dailyChallengeDates":["2023-03-21"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2348,"title":"Number of Zero-Filled Subarrays","titleSlug":"number-of-zero-filled-subarrays"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2349,"title":"Design a Number Container System","titleSlug":"design-a-number-container-system"}
+{"dailyChallengeDates":["2025-02-08"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2349,"title":"Design a Number Container System","titleSlug":"design-a-number-container-system"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":2350,"title":"Shortest Impossible Sequence of Rolls","titleSlug":"shortest-impossible-sequence-of-rolls"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2351,"title":"First Letter to Appear Twice","titleSlug":"first-letter-to-appear-twice"}
 {"dailyChallengeDates":["2023-06-13"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2352,"title":"Equal Row and Column Pairs","titleSlug":"equal-row-and-column-pairs"}
@@ -2361,7 +2361,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2023-08-01"],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":2361,"title":"Minimum Costs Using the Train Line","titleSlug":"minimum-costs-using-the-train-line"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":2362,"title":"Generate the Invoice","titleSlug":"generate-the-invoice"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2363,"title":"Merge Similar Items","titleSlug":"merge-similar-items"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2364,"title":"Count Number of Bad Pairs","titleSlug":"count-number-of-bad-pairs"}
+{"dailyChallengeDates":["2025-02-09"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2364,"title":"Count Number of Bad Pairs","titleSlug":"count-number-of-bad-pairs"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2365,"title":"Task Scheduler II","titleSlug":"task-scheduler-ii"}
 {"dailyChallengeDates":["2023-08-30"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":2366,"title":"Minimum Replacements to Sort the Array","titleSlug":"minimum-replacements-to-sort-the-array"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2367,"title":"Number of Arithmetic Triplets","titleSlug":"number-of-arithmetic-triplets"}
@@ -2372,7 +2372,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2372,"title":"Calculate the Influence of Each Salesperson","titleSlug":"calculate-the-influence-of-each-salesperson"}
 {"dailyChallengeDates":["2024-05-12"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2373,"title":"Largest Local Values in a Matrix","titleSlug":"largest-local-values-in-a-matrix"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2374,"title":"Node With Highest Edge Score","titleSlug":"node-with-highest-edge-score"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2375,"title":"Construct Smallest Number From DI String","titleSlug":"construct-smallest-number-from-di-string"}
+{"dailyChallengeDates":["2025-02-18"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2375,"title":"Construct Smallest Number From DI String","titleSlug":"construct-smallest-number-from-di-string"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":2376,"title":"Count Special Integers","titleSlug":"count-special-integers"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":2377,"title":"Sort the Olympic Table","titleSlug":"sort-the-olympic-table"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2378,"title":"Choose Edges to Maximize Score in a Tree","titleSlug":"choose-edges-to-maximize-score-in-a-tree"}
@@ -2464,7 +2464,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2464,"title":"Minimum Subarrays in a Valid Split","titleSlug":"minimum-subarrays-in-a-valid-split"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2465,"title":"Number of Distinct Averages","titleSlug":"number-of-distinct-averages"}
 {"dailyChallengeDates":["2023-05-13","2024-12-30"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2466,"title":"Count Ways To Build Good Strings","titleSlug":"count-ways-to-build-good-strings"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2467,"title":"Most Profitable Path in a Tree","titleSlug":"most-profitable-path-in-a-tree"}
+{"dailyChallengeDates":["2025-02-24"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2467,"title":"Most Profitable Path in a Tree","titleSlug":"most-profitable-path-in-a-tree"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":2468,"title":"Split Message Based on Limit","titleSlug":"split-message-based-on-limit"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2469,"title":"Convert the Temperature","titleSlug":"convert-the-temperature"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2470,"title":"Number of Subarrays With LCM Equal to K","titleSlug":"number-of-subarrays-with-lcm-equal-to-k"}
@@ -2596,7 +2596,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2596,"title":"Check Knight Tour Configuration","titleSlug":"check-knight-tour-configuration"}
 {"dailyChallengeDates":["2024-05-23"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2597,"title":"The Number of Beautiful Subsets","titleSlug":"the-number-of-beautiful-subsets"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2598,"title":"Smallest Missing Non-negative Integer After Operations","titleSlug":"smallest-missing-non-negative-integer-after-operations"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2599,"title":"Make the Prefix Sum Non-negative","titleSlug":"make-the-prefix-sum-non-negative"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":["2025-02-08"],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2599,"title":"Make the Prefix Sum Non-negative","titleSlug":"make-the-prefix-sum-non-negative"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2600,"title":"K Items With the Maximum Sum","titleSlug":"k-items-with-the-maximum-sum"}
 {"dailyChallengeDates":["2024-11-11"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2601,"title":"Prime Subtraction Operation","titleSlug":"prime-subtraction-operation"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2602,"title":"Minimum Operations to Make All Array Elements Equal","titleSlug":"minimum-operations-to-make-all-array-elements-equal"}
@@ -2695,7 +2695,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2695,"title":"Array Wrapper","titleSlug":"array-wrapper"}
 {"dailyChallengeDates":["2024-10-07"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2696,"title":"Minimum String Length After Removing Substrings","titleSlug":"minimum-string-length-after-removing-substrings"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":2697,"title":"Lexicographically Smallest Palindrome","titleSlug":"lexicographically-smallest-palindrome"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2698,"title":"Find the Punishment Number of an Integer","titleSlug":"find-the-punishment-number-of-an-integer"}
+{"dailyChallengeDates":["2025-02-15"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":2698,"title":"Find the Punishment Number of an Integer","titleSlug":"find-the-punishment-number-of-an-integer"}
 {"dailyChallengeDates":["2024-08-30"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":2699,"title":"Modify Graph Edge Weights","titleSlug":"modify-graph-edge-weights"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":2700,"title":"Differences Between Two Objects","titleSlug":"differences-between-two-objects"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":2701,"title":"Consecutive Transactions with Increasing Amounts","titleSlug":"consecutive-transactions-with-increasing-amounts"}
@@ -3063,7 +3063,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":["2024-03-08"],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3063,"title":"Linked List Frequency","titleSlug":"linked-list-frequency"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3064,"title":"Guess the Number Using Bitwise Questions I","titleSlug":"guess-the-number-using-bitwise-questions-i"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3065,"title":"Minimum Operations to Exceed Threshold Value I","titleSlug":"minimum-operations-to-exceed-threshold-value-i"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3066,"title":"Minimum Operations to Exceed Threshold Value II","titleSlug":"minimum-operations-to-exceed-threshold-value-ii"}
+{"dailyChallengeDates":["2025-02-13"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3066,"title":"Minimum Operations to Exceed Threshold Value II","titleSlug":"minimum-operations-to-exceed-threshold-value-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3067,"title":"Count Pairs of Connectable Servers in a Weighted Tree Network","titleSlug":"count-pairs-of-connectable-servers-in-a-weighted-tree-network"}
 {"dailyChallengeDates":["2024-05-19"],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3068,"title":"Find the Maximum Sum of Node Values","titleSlug":"find-the-maximum-sum-of-node-values"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3069,"title":"Distribute Elements Into Two Arrays I","titleSlug":"distribute-elements-into-two-arrays-i"}
@@ -3102,7 +3102,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3102,"title":"Minimize Manhattan Distances","titleSlug":"minimize-manhattan-distances"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3103,"title":"Find Trending Hashtags II","titleSlug":"find-trending-hashtags-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":true,"questionFrontendId":3104,"title":"Find Longest Self-Contained Substring","titleSlug":"find-longest-self-contained-substring"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3105,"title":"Longest Strictly Increasing or Strictly Decreasing Subarray","titleSlug":"longest-strictly-increasing-or-strictly-decreasing-subarray"}
+{"dailyChallengeDates":["2025-02-03"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3105,"title":"Longest Strictly Increasing or Strictly Decreasing Subarray","titleSlug":"longest-strictly-increasing-or-strictly-decreasing-subarray"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3106,"title":"Lexicographically Smallest String After Operations With Constraint","titleSlug":"lexicographically-smallest-string-after-operations-with-constraint"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3107,"title":"Minimum Operations to Make Median of Array Equal to K","titleSlug":"minimum-operations-to-make-median-of-array-equal-to-k"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3108,"title":"Minimum Cost Walk in Weighted Graph","titleSlug":"minimum-cost-walk-in-weighted-graph"}
@@ -3148,7 +3148,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3148,"title":"Maximum Difference Score in a Grid","titleSlug":"maximum-difference-score-in-a-grid"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3149,"title":"Find the Minimum Cost Array Permutation","titleSlug":"find-the-minimum-cost-array-permutation"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3150,"title":"Invalid Tweets II","titleSlug":"invalid-tweets-ii"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3151,"title":"Special Array I","titleSlug":"special-array-i"}
+{"dailyChallengeDates":["2025-02-01"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3151,"title":"Special Array I","titleSlug":"special-array-i"}
 {"dailyChallengeDates":["2024-12-09"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3152,"title":"Special Array II","titleSlug":"special-array-ii"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3153,"title":"Sum of Digit Differences of All Pairs","titleSlug":"sum-of-digit-differences-of-all-pairs"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3154,"title":"Find Number of Ways to Reach the K-th Stair","titleSlug":"find-number-of-ways-to-reach-the-k-th-stair"}
@@ -3157,7 +3157,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3157,"title":"Find the Level of Tree with Minimum Sum","titleSlug":"find-the-level-of-tree-with-minimum-sum"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3158,"title":"Find the XOR of Numbers Which Appear Twice","titleSlug":"find-the-xor-of-numbers-which-appear-twice"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3159,"title":"Find Occurrences of an Element in an Array","titleSlug":"find-occurrences-of-an-element-in-an-array"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3160,"title":"Find the Number of Distinct Colors Among the Balls","titleSlug":"find-the-number-of-distinct-colors-among-the-balls"}
+{"dailyChallengeDates":["2025-02-07"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3160,"title":"Find the Number of Distinct Colors Among the Balls","titleSlug":"find-the-number-of-distinct-colors-among-the-balls"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3161,"title":"Block Placement Queries","titleSlug":"block-placement-queries"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3162,"title":"Find the Number of Good Pairs I","titleSlug":"find-the-number-of-good-pairs-i"}
 {"dailyChallengeDates":["2024-11-04"],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3163,"title":"String Compression III","titleSlug":"string-compression-iii"}
@@ -3171,7 +3171,7 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3171,"title":"Find Subarray With Bitwise OR Closest to K","titleSlug":"find-subarray-with-bitwise-or-closest-to-k"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3172,"title":"Second Day Verification","titleSlug":"second-day-verification"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":true,"questionFrontendId":3173,"title":"Bitwise OR of Adjacent Elements","titleSlug":"bitwise-or-of-adjacent-elements"}
-{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3174,"title":"Clear Digits","titleSlug":"clear-digits"}
+{"dailyChallengeDates":["2025-02-10"],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3174,"title":"Clear Digits","titleSlug":"clear-digits"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3175,"title":"Find The First Player to win K Games in a Row","titleSlug":"find-the-first-player-to-win-k-games-in-a-row"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3176,"title":"Find the Maximum Length of a Good Subsequence I","titleSlug":"find-the-maximum-length-of-a-good-subsequence-i"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3177,"title":"Find the Maximum Length of a Good Subsequence II","titleSlug":"find-the-maximum-length-of-a-good-subsequence-ii"}
@@ -3418,3 +3418,28 @@
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3418,"title":"Maximum Amount of Money Robot Can Earn","titleSlug":"maximum-amount-of-money-robot-can-earn"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3419,"title":"Minimize the Maximum Edge Weight of Graph","titleSlug":"minimize-the-maximum-edge-weight-of-graph"}
 {"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3420,"title":"Count Non-Decreasing Subarrays After K Operations","titleSlug":"count-non-decreasing-subarrays-after-k-operations"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3421,"title":"Find Students Who Improved","titleSlug":"find-students-who-improved"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3422,"title":"Minimum Operations to Make Subarray Elements Equal","titleSlug":"minimum-operations-to-make-subarray-elements-equal"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3423,"title":"Maximum Difference Between Adjacent Elements in a Circular Array","titleSlug":"maximum-difference-between-adjacent-elements-in-a-circular-array"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3424,"title":"Minimum Cost to Make Arrays Identical","titleSlug":"minimum-cost-to-make-arrays-identical"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3425,"title":"Longest Special Path","titleSlug":"longest-special-path"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3426,"title":"Manhattan Distances of All Arrangements of Pieces","titleSlug":"manhattan-distances-of-all-arrangements-of-pieces"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3427,"title":"Sum of Variable Length Subarrays","titleSlug":"sum-of-variable-length-subarrays"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3428,"title":"Maximum and Minimum Sums of at Most Size K Subsequences","titleSlug":"maximum-and-minimum-sums-of-at-most-size-k-subsequences"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3429,"title":"Paint House IV","titleSlug":"paint-house-iv"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3430,"title":"Maximum and Minimum Sums of at Most Size K Subarrays","titleSlug":"maximum-and-minimum-sums-of-at-most-size-k-subarrays"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3431,"title":"Minimum Unlocked Indices to Sort Nums","titleSlug":"minimum-unlocked-indices-to-sort-nums"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3432,"title":"Count Partitions with Even Sum Difference","titleSlug":"count-partitions-with-even-sum-difference"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3433,"title":"Count Mentions Per User","titleSlug":"count-mentions-per-user"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3434,"title":"Maximum Frequency After Subarray Operation","titleSlug":"maximum-frequency-after-subarray-operation"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3435,"title":"Frequencies of Shortest Supersequences","titleSlug":"frequencies-of-shortest-supersequences"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3436,"title":"Find Valid Emails","titleSlug":"find-valid-emails"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":true,"questionFrontendId":3437,"title":"Permutations III","titleSlug":"permutations-iii"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3438,"title":"Find Valid Pair of Adjacent Digits in String","titleSlug":"find-valid-pair-of-adjacent-digits-in-string"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3439,"title":"Reschedule Meetings for Maximum Free Time I","titleSlug":"reschedule-meetings-for-maximum-free-time-i"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3440,"title":"Reschedule Meetings for Maximum Free Time II","titleSlug":"reschedule-meetings-for-maximum-free-time-ii"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3441,"title":"Minimum Cost Good Caption","titleSlug":"minimum-cost-good-caption"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Easy","isPaidOnly":false,"questionFrontendId":3442,"title":"Maximum Difference Between Even and Odd Frequency I","titleSlug":"maximum-difference-between-even-and-odd-frequency-i"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Medium","isPaidOnly":false,"questionFrontendId":3443,"title":"Maximum Manhattan Distance After K Changes","titleSlug":"maximum-manhattan-distance-after-k-changes"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3444,"title":"Minimum Increments for Target Multiples in an Array","titleSlug":"minimum-increments-for-target-multiples-in-an-array"}
+{"dailyChallengeDates":[],"weeklyChallengeDates":[],"difficulty":"Hard","isPaidOnly":false,"questionFrontendId":3445,"title":"Maximum Difference Between Even and Odd Frequency II","titleSlug":"maximum-difference-between-even-and-odd-frequency-ii"}
