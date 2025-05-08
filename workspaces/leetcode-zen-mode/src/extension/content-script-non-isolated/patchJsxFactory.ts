@@ -3,6 +3,8 @@ import { isString } from "@code-chronicles/util/isString";
 import { assignFunctionCosmeticProperties } from "@code-chronicles/util/object-properties/assignFunctionCosmeticProperties";
 import { NullReactElement } from "@code-chronicles/util/browser-extensions/NullReactElement";
 
+import { difficultyZodType } from "../problemDifficulties.ts";
+
 type CreateElementFn = (
   this: unknown,
   elementType: unknown,
@@ -23,7 +25,7 @@ export function patchJsxFactory<T extends CreateElementFn>(
           Array.isArray(props.items) &&
           props.items.some(
             (it: Record<string, unknown>) =>
-              isString(it.value) && /^easy$/i.test(it.value),
+              difficultyZodType.safeParse(it.value).success,
           )
         ) {
           return createElementFn.apply(this, [NullReactElement, {}]);
@@ -35,6 +37,7 @@ export function patchJsxFactory<T extends CreateElementFn>(
         if (
           isNonArrayObject(props) &&
           isString(props.category) &&
+          // TODO: use the preferred difficulty
           /^(?:medium|hard)$/i.test(props.category)
         ) {
           return createElementFn.apply(this, [NullReactElement, {}]);
