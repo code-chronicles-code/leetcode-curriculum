@@ -2,7 +2,7 @@ from typing import Generator, TypeVar
 from math import inf
 
 T = TypeVar("T")
-NestedList = T | list["nested_list"]
+NestedList = T | list["NestedList"]
 
 
 def flatten(
