@@ -68,7 +68,11 @@ const submissionZodType = (() => {
       // eslint-disable-next-line camelcase
       title_slug: slugZodType,
       // eslint-disable-next-line camelcase
-      has_notes: z.boolean(),
+      has_notes: z
+        .boolean()
+        // The `has_notes` field can sometimes come back null, see for example submission 1201108107 which has an auto-generated note.
+        .nullable()
+        .transform((val) => val ?? true),
       // eslint-disable-next-line camelcase
       flag_type: int,
     })
