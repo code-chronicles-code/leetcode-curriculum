@@ -23,7 +23,10 @@ describe("traversePreOrderNAry", () => {
   it("visits parent before children", () => {
     const root: Node = {
       val: 1,
-      children: [{ val: 2, children: [] }, { val: 3, children: [] }],
+      children: [
+        { val: 2, children: [] },
+        { val: 3, children: [] },
+      ],
     };
     expect([...traversePreOrderNAry(root)].map((n) => n.val)).toStrictEqual([
       1, 2, 3,
