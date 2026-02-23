@@ -1499,6 +1499,25 @@ exports[`App can render goody: JavaScript traversePreOrder 1`] = `
 }"
 `;
 
+exports[`App can render goody: JavaScript traversePreOrderNAry 1`] = `
+"export function* traversePreOrderNAry(root) {
+  if (root == null) {
+    return;
+  }
+
+  const stack = [root];
+
+  do {
+    const node = stack.pop();
+    yield node;
+    // TODO: add an Array.prototype.valuesReversed() goody and use it here
+    for (let i = node.children.length - 1; i >= 0; --i) {
+      stack.push(node.children[i]);
+    }
+  } while (stack.length > 0);
+}"
+`;
+
 exports[`App can render goody: Kotlin gcd(Int,Int) 1`] = `
 "package gcd_int_int
 
@@ -3155,6 +3174,27 @@ exports[`App can render goody: TypeScript traversePreOrder 1`] = `
     if (node != null) {
       yield node;
       stack.push(node.right, node.left);
+    }
+  } while (stack.length > 0);
+}"
+`;
+
+exports[`App can render goody: TypeScript traversePreOrderNAry 1`] = `
+"export function* traversePreOrderNAry<T extends { children: T[] }>(
+  root: T | null | undefined,
+): Generator<T, void, void> {
+  if (root == null) {
+    return;
+  }
+
+  const stack: T[] = [root];
+
+  do {
+    const node = stack.pop()!;
+    yield node;
+    // TODO: add an Array.prototype.valuesReversed() goody and use it here
+    for (let i = node.children.length - 1; i >= 0; --i) {
+      stack.push(node.children[i]);
     }
   } while (stack.length > 0);
 }"
