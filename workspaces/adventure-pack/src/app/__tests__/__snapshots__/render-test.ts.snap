@@ -1263,6 +1263,20 @@ exports[`App can render goody: JavaScript Object.getUnsafe 1`] = `
 };"
 `;
 
+exports[`App can render goody: JavaScript Object.groupBy 1`] = `
+"Object.groupBy ??= function (iterable, callbackFn) {
+  const groups = {};
+
+  let index = 0;
+  for (const value of iterable) {
+    const key = callbackFn(value, index++);
+    (groups[key] ??= []).push(value);
+  }
+
+  return groups;
+};"
+`;
+
 exports[`App can render goody: JavaScript Object.prototype.entries 1`] = `
 "import "Iterator.prototype.map";
 import "Object.prototype.keys";
@@ -2827,6 +2841,32 @@ Object.getUnsafe = function (
     res = (res as Record<string, unknown>)[property];
   }
   return res;
+};"
+`;
+
+exports[`App can render goody: TypeScript Object.groupBy 1`] = `
+"declare global {
+  interface ObjectConstructor {
+    groupBy<V>(
+      iterable: Iterable<V>,
+      callbackFn: (value: V, index: number) => string,
+    ): Partial<Record<string, V[]>>;
+  }
+}
+
+Object.groupBy ??= function <V>(
+  iterable: Iterable<V>,
+  callbackFn: (value: V, index: number) => string,
+): Partial<Record<string, V[]>> {
+  const groups: Partial<Record<string, V[]>> = {};
+
+  let index = 0;
+  for (const value of iterable) {
+    const key = callbackFn(value, index++);
+    (groups[key] ??= []).push(value);
+  }
+
+  return groups;
 };"
 `;
 
