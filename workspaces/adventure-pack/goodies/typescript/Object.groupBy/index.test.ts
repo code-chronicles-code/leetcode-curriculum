@@ -42,8 +42,9 @@ describe("Object.groupBy", () => {
       "nine",
       "ten",
     ];
-    const result = Object.groupBy(words, (word) =>
-      word.replace(/[aeiou]/gi, "").length + "!"
+    const result = Object.groupBy(
+      words,
+      (word) => word.replace(/[aeiou]/gi, "").length + "!",
     );
 
     expect(Object.keys(result)).toStrictEqual(["2!", "1!", "3!"]);
