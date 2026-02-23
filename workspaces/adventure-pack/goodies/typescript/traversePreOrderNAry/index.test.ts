@@ -24,12 +24,22 @@ describe("traversePreOrderNAry", () => {
     const root: Node = {
       val: 1,
       children: [
-        { val: 2, children: [] },
+        {
+          val: 2,
+          children: [
+            { val: 5, children: [] },
+            { val: 6, children: [] },
+          ],
+        },
         { val: 3, children: [] },
+        {
+          val: 4,
+          children: [{ val: 7, children: [] }],
+        },
       ],
     };
     expect([...traversePreOrderNAry(root)].map((n) => n.val)).toStrictEqual([
-      1, 2, 3,
+      1, 2, 5, 6, 3, 4, 7,
     ]);
   });
 

@@ -10,6 +10,7 @@ export function* traversePreOrderNAry<T extends { children: T[] }>(
   do {
     const node = stack.pop()!;
     yield node;
+    // TODO: add an Array.prototype.valuesReversed() goody and use it here
     for (let i = node.children.length - 1; i >= 0; --i) {
       stack.push(node.children[i]);
     }
