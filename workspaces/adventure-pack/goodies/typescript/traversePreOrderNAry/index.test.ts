@@ -5,11 +5,8 @@ import { traversePreOrderNAry } from "./index.ts";
 type Node = { val: number; children: Node[] };
 
 describe("traversePreOrderNAry", () => {
-  it("returns empty for null root", () => {
+  it("yields nothing for null/undefined root", () => {
     expect([...traversePreOrderNAry(null)]).toStrictEqual([]);
-  });
-
-  it("returns empty for undefined root", () => {
     expect([...traversePreOrderNAry(undefined)]).toStrictEqual([]);
   });
 
