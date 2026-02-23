@@ -43,7 +43,7 @@ describe("Object.groupBy", () => {
       "ten",
     ];
     const result = Object.groupBy(words, (word) =>
-      String(word.replace(/[aeiou]/gi, "").length + "!"),
+      word.replace(/[aeiou]/gi, "").length + "!"
     );
 
     expect(Object.keys(result)).toStrictEqual(["2!", "1!", "3!"]);
@@ -57,7 +57,7 @@ describe("Object.groupBy", () => {
     ""[Symbol.iterator](),
     (function* () {})(),
   ])("handles empty iterables", (iterable) => {
-    const result = Object.groupBy(iterable, (x) => String(x));
+    const result = Object.groupBy(iterable, String);
 
     expect(result).toStrictEqual({});
   });
@@ -144,7 +144,7 @@ describe("Object.groupBy", () => {
   it("throws for non-iterable arguments", () => {
     expect(() => {
       // @ts-expect-error Invalid argument.
-      Object.groupBy(123, (x: number) => String(x));
+      Object.groupBy(123, String);
     }).toThrow(TypeError);
   });
 });
