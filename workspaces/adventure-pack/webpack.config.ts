@@ -2,6 +2,7 @@ import { execSync } from "node:child_process";
 import path from "node:path";
 
 import CopyPlugin from "copy-webpack-plugin";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { DefinePlugin, type Configuration } from "webpack";
 
 import { WEB_APP_DIST } from "./src/scripts/build/constants.ts";
@@ -49,6 +50,15 @@ const config: Configuration = {
     new CopyPlugin({ patterns: [{ from: "css", to: WEB_APP_DIST }] }),
     new WriteGoodiesJsonWebpackPlugin(),
     new WriteIndexHtmlWebpackPlugin(commitHash),
+
+    // allowUnreachableCode necessary for tsgo (exhaustive switch handling differs from tsc)
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        configOverwrite: {
+          compilerOptions: { allowUnreachableCode: true },
+        },
+      },
+    }),
   ],
 
   optimization: {
