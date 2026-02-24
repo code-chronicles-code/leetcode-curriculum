@@ -1,7 +1,6 @@
 import path from "node:path";
 
 import type { Configuration } from "webpack";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import { WriteIndexHtmlWebpackPlugin } from "./src/scripts/build/WriteIndexHtmlWebpackPlugin.tsx";
 
@@ -35,15 +34,6 @@ const config: Configuration = {
   },
 
   plugins: [
-    // allowUnreachableCode necessary for tsgo (exhaustive switch handling differs from tsc)
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        configOverwrite: {
-          compilerOptions: { allowUnreachableCode: true },
-        },
-      },
-    }),
-
     new WriteIndexHtmlWebpackPlugin(),
   ],
 

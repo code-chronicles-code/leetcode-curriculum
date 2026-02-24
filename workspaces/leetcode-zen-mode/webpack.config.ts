@@ -1,6 +1,5 @@
 import path from "node:path";
 
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import type { JsonValue } from "type-fest";
 import type { Configuration } from "webpack";
 
@@ -70,15 +69,6 @@ const config: Configuration = {
   },
 
   plugins: [
-    // allowUnreachableCode necessary for tsgo (exhaustive switch handling differs from tsc)
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        configOverwrite: {
-          compilerOptions: { allowUnreachableCode: true },
-        },
-      },
-    }),
-
     new WriteOptionsHtmlWebpackPlugin({
       htmlFilename: OPTIONS_HTML_FILENAME,
       jsFilename: OPTIONS_SCRIPT_FILENAME,

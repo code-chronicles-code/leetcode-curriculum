@@ -6,7 +6,6 @@ import {
   type Configuration,
   type ExternalItemFunctionData,
 } from "webpack";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import { WebpackMakeOutputExecutablePlugin } from "@code-chronicles/webpack-make-output-executable-plugin";
 
@@ -69,15 +68,6 @@ const config: Configuration = {
     }),
 
     new WebpackMakeOutputExecutablePlugin(),
-
-    // allowUnreachableCode necessary for tsgo (exhaustive switch handling differs from tsc)
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        configOverwrite: {
-          compilerOptions: { allowUnreachableCode: true },
-        },
-      },
-    }),
   ],
 };
 

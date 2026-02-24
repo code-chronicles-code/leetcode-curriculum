@@ -1,6 +1,5 @@
 import path from "node:path";
 
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import type { Configuration } from "webpack";
 import { WebpackChromeExtensionManifestPlugin } from "@code-chronicles/webpack-chrome-extension-manifest-plugin";
 
@@ -38,15 +37,6 @@ const config: Configuration = {
   },
 
   plugins: [
-    // allowUnreachableCode necessary for tsgo (exhaustive switch handling differs from tsc)
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        configOverwrite: {
-          compilerOptions: { allowUnreachableCode: true },
-        },
-      },
-    }),
-
     new WebpackChromeExtensionManifestPlugin({
       name: "LeetCode Prettier Formatting",
       description: packageJson.description,
