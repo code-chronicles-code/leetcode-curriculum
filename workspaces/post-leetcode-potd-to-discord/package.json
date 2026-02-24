@@ -38,6 +38,7 @@
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*",
     "@types/invariant": "2.2.37",
     "@types/node": "22.9.0",
+    "@typescript/native-preview": "7.0.0-dev.20260217.1",
     "cross-env": "7.0.3",
     "eslint": "9.14.0",
     "fork-ts-checker-webpack-plugin": "9.0.2",

@@ -68,7 +68,7 @@ async function main(): Promise<void> {
     return;
   }
 
-  await reportCommandAndSpawn("tsc", ["--pretty", "--project", "."], {
+  await reportCommandAndSpawn("tsgo", ["--pretty", "--project", "."], {
     stdio: "inherit",
     env,
   });

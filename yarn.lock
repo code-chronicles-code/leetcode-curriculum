@@ -850,6 +850,7 @@ __metadata:
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
     "@types/react-syntax-highlighter": "npm:15.5.13"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     copy-webpack-plugin: "npm:12.0.2"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
@@ -891,6 +892,7 @@ __metadata:
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
@@ -914,6 +916,7 @@ __metadata:
     "@stylistic/eslint-plugin-ts": "npm:2.10.1"
     "@typescript-eslint/eslint-plugin": "npm:8.13.0"
     "@typescript-eslint/parser": "npm:8.13.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     eslint: "npm:9.14.0"
     eslint-import-resolver-typescript: "npm:3.6.3"
     eslint-plugin-import: "npm:2.31.0"
@@ -936,6 +939,7 @@ __metadata:
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
@@ -958,6 +962,7 @@ __metadata:
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
@@ -977,6 +982,7 @@ __metadata:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     eslint: "npm:9.14.0"
     nullthrows: "patch:nullthrows@npm%3A1.1.1#~/.yarn/patches/nullthrows-npm-1.1.1-3d1f817134.patch"
     prettier: "npm:3.3.3"
@@ -994,6 +1000,7 @@ __metadata:
     "@code-chronicles/util": "workspace:*"
     "@types/mdast": "npm:4.0.4"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     eslint: "npm:9.14.0"
     mdast: "npm:3.0.0"
     prettier: "npm:3.3.3"
@@ -1015,6 +1022,7 @@ __metadata:
     "@graphql-codegen/cli": "npm:5.0.3"
     "@graphql-codegen/near-operation-file-preset": "npm:3.0.0"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     cross-env: "npm:7.0.3"
     dedent: "npm:1.5.3"
     eslint: "npm:9.14.0"
@@ -1042,6 +1050,7 @@ __metadata:
     "@code-chronicles/util": "workspace:*"
     "@code-chronicles/webpack-chrome-extension-manifest-plugin": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
@@ -1068,6 +1077,7 @@ __metadata:
     "@types/node": "npm:22.9.0"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
@@ -1096,6 +1106,7 @@ __metadata:
     "@code-chronicles/webpack-make-output-executable-plugin": "workspace:*"
     "@types/invariant": "npm:2.2.37"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     bufferutil: "npm:4.0.8"
     cross-env: "npm:7.0.3"
     dedent: "npm:1.5.3"
@@ -1121,6 +1132,7 @@ __metadata:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     chalk: "npm:5.3.0"
     eslint: "npm:9.14.0"
     prettier: "npm:3.3.3"
@@ -1143,6 +1155,7 @@ __metadata:
     "@types/node": "npm:22.9.0"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     cross-env: "npm:7.0.3"
     eslint: "npm:9.14.0"
     fork-ts-checker-webpack-plugin: "npm:9.0.2"
@@ -1166,6 +1179,7 @@ __metadata:
     "@jest/globals": "npm:29.7.0"
     "@types/chrome": "patch:@types/chrome@npm%3A0.0.280#~/.yarn/patches/@types-chrome-npm-0.0.280-34ee4ba05a.patch"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     eslint: "npm:9.14.0"
     jest: "npm:29.7.0"
     prettier: "npm:3.3.3"
@@ -1188,6 +1202,7 @@ __metadata:
     "@code-chronicles/repository-scripts": "workspace:*"
     "@code-chronicles/util": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     eslint: "npm:9.14.0"
     prettier: "npm:3.3.3"
     tsx: "npm:4.19.2"
@@ -1204,6 +1219,7 @@ __metadata:
     "@code-chronicles/eslint-config": "workspace:*"
     "@code-chronicles/repository-scripts": "workspace:*"
     "@types/node": "npm:22.9.0"
+    "@typescript/native-preview": "npm:7.0.0-dev.20260217.1"
     eslint: "npm:9.14.0"
     prettier: "npm:3.3.3"
     tsx: "npm:4.19.2"
@@ -3215,6 +3231,87 @@ __metadata:
     "@typescript-eslint/types": "npm:8.13.0"
     eslint-visitor-keys: "npm:^3.4.3"
   checksum: 10c0/50b35f3cf673aaed940613f0007f7c4558a89ebef15c49824e65b6f084b700fbf01b01a4e701e24bbe651297a39678645e739acd255255f1603867a84bef0383
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-darwin-arm64@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview-darwin-arm64@npm:7.0.0-dev.20260217.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-darwin-x64@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview-darwin-x64@npm:7.0.0-dev.20260217.1"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-linux-arm64@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview-linux-arm64@npm:7.0.0-dev.20260217.1"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-linux-arm@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview-linux-arm@npm:7.0.0-dev.20260217.1"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-linux-x64@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview-linux-x64@npm:7.0.0-dev.20260217.1"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-win32-arm64@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview-win32-arm64@npm:7.0.0-dev.20260217.1"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview-win32-x64@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview-win32-x64@npm:7.0.0-dev.20260217.1"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@typescript/native-preview@npm:7.0.0-dev.20260217.1":
+  version: 7.0.0-dev.20260217.1
+  resolution: "@typescript/native-preview@npm:7.0.0-dev.20260217.1"
+  dependencies:
+    "@typescript/native-preview-darwin-arm64": "npm:7.0.0-dev.20260217.1"
+    "@typescript/native-preview-darwin-x64": "npm:7.0.0-dev.20260217.1"
+    "@typescript/native-preview-linux-arm": "npm:7.0.0-dev.20260217.1"
+    "@typescript/native-preview-linux-arm64": "npm:7.0.0-dev.20260217.1"
+    "@typescript/native-preview-linux-x64": "npm:7.0.0-dev.20260217.1"
+    "@typescript/native-preview-win32-arm64": "npm:7.0.0-dev.20260217.1"
+    "@typescript/native-preview-win32-x64": "npm:7.0.0-dev.20260217.1"
+  dependenciesMeta:
+    "@typescript/native-preview-darwin-arm64":
+      optional: true
+    "@typescript/native-preview-darwin-x64":
+      optional: true
+    "@typescript/native-preview-linux-arm":
+      optional: true
+    "@typescript/native-preview-linux-arm64":
+      optional: true
+    "@typescript/native-preview-linux-x64":
+      optional: true
+    "@typescript/native-preview-win32-arm64":
+      optional: true
+    "@typescript/native-preview-win32-x64":
+      optional: true
+  bin:
+    tsgo: bin/tsgo.js
+  checksum: 10c0/894bcdef98b8eb44a9b349a854b80c12d4260582cc258c31f249ca1acb97c909705f79ff26248b76573a751ecdddb452985faf0fa1e665d4a50783a59a1a768e
   languageName: node
   linkType: hard
 

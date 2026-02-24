@@ -27,6 +27,7 @@
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
     "@types/node": "22.9.0",
+    "@typescript/native-preview": "7.0.0-dev.20260217.1",
     "eslint": "9.14.0",
     "prettier": "3.3.3",
     "typescript": "5.6.3"
