@@ -17,5 +17,6 @@ export function stringToCase(s: string, stringCase: Case): string {
 
   // @ts-expect-error Unreachable code, switch should be exhaustive.
   console.error(`Unsupported case: ${stringCase}`);
+  // @ts-expect-error Unreachable code, switch should be exhaustive.
   return s;
 }

@@ -36,7 +36,6 @@
     "@jest/globals": "29.7.0",
     "@types/chrome": "patch:@types/chrome@npm%3A0.0.280#~/.yarn/patches/@types-chrome-npm-0.0.280-34ee4ba05a.patch",
     "@types/node": "22.9.0",
-    "@typescript/native-preview": "7.0.0-dev.20260217.1",
     "eslint": "9.14.0",
     "jest": "29.7.0",
     "prettier": "3.3.3",
