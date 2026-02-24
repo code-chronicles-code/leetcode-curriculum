@@ -70,7 +70,14 @@ const config: Configuration = {
   },
 
   plugins: [
-    new ForkTsCheckerWebpackPlugin(),
+    // allowUnreachableCode necessary for tsgo (exhaustive switch handling differs from tsc)
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        configOverwrite: {
+          compilerOptions: { allowUnreachableCode: true },
+        },
+      },
+    }),
 
     new WriteOptionsHtmlWebpackPlugin({
       htmlFilename: OPTIONS_HTML_FILENAME,
