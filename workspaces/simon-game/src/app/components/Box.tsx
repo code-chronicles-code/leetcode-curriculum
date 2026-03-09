@@ -3,17 +3,19 @@ import React from "react";
 type Props = {
   color?: string;
   height?: number;
-  width?: number;
+  isDisabled?: boolean;
   margin?: number;
-  onClick: () => void;
+  onClick?: () => void;
+  width?: number;
 };
 
 export function Box({
   color = "lightblue",
   height = 100,
-  width = 100,
+  isDisabled = false,
   margin,
   onClick,
+  width = 100,
 }: Props) {
   return (
     <button
@@ -23,10 +25,10 @@ export function Box({
         width,
         borderRadius: 20, // rounded corners
         margin, // spaces between boxes
-        cursor: "pointer",
+        cursor: isDisabled ? undefined : "pointer",
         border: 0,
       }}
-      onClick={onClick}
+      onClick={isDisabled ? undefined : onClick}
     />
   );
 }
