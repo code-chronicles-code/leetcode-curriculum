@@ -6,7 +6,7 @@ import { getUniqueId } from "@code-chronicles/util/getUniqueId";
 
 let storage: Record<string, unknown> | null = null;
 
-async function writeChanges(): Promise<void> {
+async function readLatestStorageAndNotify(): Promise<void> {
   const chrome = getChrome();
   if (!chrome) {
     return;
@@ -20,13 +20,15 @@ let promise: Promise<void> | null = null;
 
 function getSnapshot(): Record<string, unknown> {
   if (!storage) {
-    throw (promise ??= writeChanges().finally(() => {
+    throw (promise ??= readLatestStorageAndNotify().finally(() => {
       promise = null;
 
       // We never clear the listener but that seems ok.
       getChrome()?.storage.sync.onChanged.addListener((changes) => {
         if (!storage) {
-          writeChanges();
+          // We weren't able to read the storage for some reason... let's try
+          // again?
+          readLatestStorageAndNotify();
           return;
         }
 
@@ -49,6 +51,7 @@ function getSnapshot(): Record<string, unknown> {
   return storage;
 }
 
+// TODO: use a proper event emitter
 const subscribers = new Map<string, () => void>();
 
 function subscribe(sub: () => void): () => void {
@@ -63,6 +66,7 @@ function notifySubscribers(): void {
   }
 }
 
+// TODO: move this hook to the util package
 export function useChromeStorage(): Record<string, unknown> {
   return useSyncExternalStore(subscribe, getSnapshot, () => ({}));
 }

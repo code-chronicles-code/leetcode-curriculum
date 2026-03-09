@@ -1,10 +1,7 @@
 import React from "react";
 
-import {
-  usePreferredDifficulty,
-  DIFFICULTIES,
-  type Difficulty,
-} from "../../usePreferredDifficulty.ts";
+import { usePreferredDifficulty } from "../../usePreferredDifficulty.ts";
+import { DIFFICULTIES, difficultyZodType } from "../../problemDifficulties.ts";
 
 function Options() {
   const [preferredDifficulty, setPreferredDifficulty] =
@@ -17,7 +14,7 @@ function Options() {
         <select
           value={preferredDifficulty}
           onChange={(ev) =>
-            setPreferredDifficulty(ev.target.value as Difficulty)
+            setPreferredDifficulty(difficultyZodType.parse(ev.target.value))
           }
         >
           {DIFFICULTIES.map((difficultyOption) => (

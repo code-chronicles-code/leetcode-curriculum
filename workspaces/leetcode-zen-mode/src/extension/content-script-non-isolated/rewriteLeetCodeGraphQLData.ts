@@ -3,25 +3,16 @@ import { isString } from "@code-chronicles/util/isString";
 import { mapObjectValues } from "@code-chronicles/util/mapObjectValues";
 import { stringToCase } from "@code-chronicles/util/stringToCase";
 
-import { SETTINGS_ATTRIBUTE } from "../constants.ts";
 import { rewriteLeetCodeAggregateDataForDifficulty } from "./rewriteLeetCodeAggregateDataForDifficulty.ts";
 import { PREFERRED_STRING_CASE, STRING_CASE_CHECKERS } from "./stringCase.ts";
-import type { Difficulty } from "../usePreferredDifficulty.ts";
+import { difficultyZodType } from "../problemDifficulties.ts";
+import type { PublicSettings } from "../shared/public-settings/publicSettingsZodType.ts";
+import { readPublicSettingsFromDocumentAttribute } from "../shared/public-settings/readPublicSettingsFromDocumentAttribute.ts";
 
-let preferredDifficulty: Difficulty | null = null;
-function getPreferredDifficulty(prevJsonParse: typeof JSON.parse): Difficulty {
-  if (preferredDifficulty == null) {
-    try {
-      preferredDifficulty = (prevJsonParse(
-        String(document.documentElement.getAttribute(SETTINGS_ATTRIBUTE)),
-      ) ?? "Easy") as Difficulty;
-    } catch (err) {
-      console.error(err);
-      preferredDifficulty = "Easy";
-    }
-  }
-
-  return preferredDifficulty;
+let publicSettings: PublicSettings | null = null;
+function getPublicSettings(prevJsonParse: typeof JSON.parse): PublicSettings {
+  return (publicSettings ??=
+    readPublicSettingsFromDocumentAttribute(prevJsonParse));
 }
 
 export function rewriteLeetCodeGraphQLData(
@@ -29,8 +20,13 @@ export function rewriteLeetCodeGraphQLData(
   prevJsonParse: typeof JSON.parse,
 ): unknown {
   if (Array.isArray(value)) {
+    const { preferredDifficulty } = getPublicSettings(prevJsonParse);
+
     // Arrays get some extra processing.
-    const rewrittenValue = rewriteLeetCodeAggregateDataForDifficulty(value);
+    const rewrittenValue = rewriteLeetCodeAggregateDataForDifficulty(
+      value,
+      preferredDifficulty,
+    );
 
     // Recursively process array values.
     return rewrittenValue.map((value) =>
@@ -46,11 +42,12 @@ export function rewriteLeetCodeGraphQLData(
   }
 
   // Rewrite difficulty strings!
-  if (isString(value) && /^(?:easy|medium|hard)$/i.test(value)) {
+  if (isString(value) && difficultyZodType.safeParse(value).success) {
     const stringCase =
       STRING_CASE_CHECKERS.find(([, checker]) => checker(value))?.[0] ??
       PREFERRED_STRING_CASE;
-    return stringToCase(getPreferredDifficulty(prevJsonParse), stringCase);
+    const { preferredDifficulty } = getPublicSettings(prevJsonParse);
+    return stringToCase(preferredDifficulty, stringCase);
   }
 
   // Pass everything else through unchanged.
